@@ -1,0 +1,178 @@
+.TH "DistributedClientArrayMediator" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DistributedClientArrayMediator \- A mediator of distributed system between master and slaves\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DistributedClientArrayMediator\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDistributedClientArrayMediator\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBconstruct\fP (std::shared_ptr< \fBlibrary::XML\fP >) override"
+.br
+.RI "\fIConstruct data of the \fBEntity\fP from an XML object\&. \fP"
+.ti -1c
+.RI "virtual void \fBstart\fP () override"
+.br
+.RI "\fIStart interaction\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoXML\fP () const  \-> std::shared_ptr< \fBlibrary::XML\fP > override"
+.br
+.RI "\fIGet an XML object represents the \fBEntityGroup\fP\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A mediator of distributed system between master and slaves\&. 
+
+\fBDistributedClientArrayMediator\fP is a \fBDistributedSystemArrayMediator\fP specialized in clients' driver\&. \fBDistributedClientArrayMediator\fP is a client for its master and also manages children clients' slaves\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBDistributedSystemArrayMediator\fP class is used to realizing a mediator system of tree-structured distributed processing system\&. \fBDistributedSystemArrayMediator\fP intermediates between origin-master(\fBDistributedSystemArray\fP) and its slaves(slave::DistributedSystem)\&. 
+.PP
+\fBDistributedSystemArrayMediator\fP is a master(DistributedSystemArray) within the framework of slaves systems (slave::DistributedSystem objects) and also can be a slave system (slave::DistributedSystem) within framework of its master(DistributedSystemArray) by having \fBDistributedSlaveSystemMediator\fP\&. 
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBDistributedSystemArray\fP class is an \fBExternalSystemArray\fP and an abstract class containing and managing distributed system drivers within framework of master\&. The \fBDistributedSystemArray\fP class allocates \fBDistributedSystemRole\fP objects to \fBDistributedSystem\fP objects for optimization\&. 
+.PP
+Unlike the \fBExternalSystemRole\fP class which is dependent on an \fBExternalSystem\fP, \fBDistributedSystemRole\fP is not dependent on a \fBDistributedSystem\fP and even can be allocated to multiple \fBDistributedSystem\fP objects\&. Allocation of DistributedSystemRole(s) to DistributedSystem(s) is determined by estimation of performance index pursuing best distribution\&. If number of \fBDistributedSystem\fP and \fBDistributedSystemRole\fP objects is not a lot, optimize by combined permuation algorithm\&. Else the objects are a lot, the allocation will be optimized by genetic algorithm\&. 
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBExternalSystemArray\fP is an abstract class containing and managing external system drivers\&. 
+.PP
+Also, \fBExternalSystemArray\fP can access to ExternalSystemRole(s) directly\&. With the method, you can use an \fBExternalSystemRole\fP as 'logical proxy' of an \fBExternalSystem\fP\&. Of course, the \fBExternalSystemRole\fP is belonged to an \fBExternalSystem\fP\&. However, if you access an \fBExternalSystemRole\fP from an \fBExternalSystemArray\fP directly, not passing by a belonged \fBExternalSystem\fP, and send an \fBInvoke\fP message even you're not knowing which \fBExternalSystem\fP is related in, the \fBExternalSystemRole\fP acted a role of proxy\&. 
+.PP
+It's called as 'Proxy pattern'\&. With the pattern, you can only concentrate on \fBExternalSystemRole\fP itself, what to do with \fBInvoke\fP message, irrespective of the \fBExternalSystemRole\fP is belonged to which \fBExternalSystem\fP\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBExternalSystemArray::getRole\fP('something')->sendData(invoke);
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void construct (std::shared_ptr< \fBlibrary::XML\fP > xml)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Construct data of the \fBEntity\fP from an XML object\&. Constructs the \fBEntityGroup\fP's own member variables only from the input XML object\&. 
+.PP
+Do not consider about constructing children \fBEntity\fP objects' data in \fBEntityGroup::construct()\fP\&. Those children \fBEntity\fP objects' data will constructed by their own \fBconstruct()\fP method\&. Even insertion of XML objects representing children are done by abstract method of \fBEntityGroup::toXML()\fP\&. 
+.PP
+Constructs only data of \fBEntityGroup\fP's own\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+Construct data of the \fBEntity\fP from an XML object\&. 
+.RE
+.PP
+Overrides the \fBconstruct()\fP method and fetch data of member variables from the XML\&. 
+.PP
+By recommended guidance, data representing member variables are contained in properties of the put XML object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxml\fP An xml used to construct data of entity 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBDistributedClientArray\fP\&.
+.SS "virtual void start ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Start interaction\&. An abstract method starting interaction with external systems\&. 
+.PP
+If external systems are servers, starts connection to them, else clients, opens a server and accepts the external systems\&. You can addict your own procudures of starting drivers, but if you directly override method of abstract \fBExternalSystemArray\fP, be careful about virtual inheritance\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBDistributedClientArray::start()\fP calls \fBDistributedSystemArray::start()\fP and \fBExternalClientArray\fP:\fBstart()\fP 
+.PP
+
+.PP
+Reimplemented from \fBDistributedClientArray\fP\&.
+.SS "virtual auto toXML () const \-> std::shared_ptr<\fBlibrary::XML\fP>\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get an XML object represents the \fBEntityGroup\fP\&. Archives the \fBEntityGroup\fP's own member variables only to the returned XML object\&. 
+.PP
+Do not consider about archiving children \fBEntity\fP objects' data in \fBEntityGroup::toXML()\fP\&. Those children \fBEntity\fP objects will converted to XML object by their own \fBtoXML()\fP method\&. The insertion of XML objects representing children are done by abstract method of \fBEntityGroup::toXML()\fP\&. 
+.PP
+Archives only data of \fBEntityGroup\fP's own\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+Get an XML object represents the \fBEntity\fP\&. 
+.RE
+.PP
+Returns an XML object that can represents the \fBEntity\fP containing member variables into properties\&. 
+.PP
+A member variable (not object, but atomic value like number, string or date) is categorized as a property within the framework of entity side\&. Thus, when overriding a \fBtoXML()\fP method and archiving member variables to an XML object to return, puts each variable to be a property belongs to only an XML object\&. 
+.PP
+Don't archive the member variable of atomic value to XML::value causing enormouse creation of XML objects to number of member variables\&. An \fBEntity\fP must be represented by only an XML instance (tag)\&. 
+.PP
+Standard Usage  Non-standard usage abusing value   <memberList>
+.br
+      <member id='jhnam88' name='Jeongho+Nam' birthdate='1988-03-11' />
+.br
+      <member id='master' name='Administartor' birthdate='2011-07-28' />
+.br
+ </memberList>  <member>
+.br
+      <id>jhnam88</id>
+.br
+      <name>Jeongho+Nam</name>
+.br
+      <birthdate>1988-03-11</birthdate>
+.br
+ </member>   
+.PP
+\fBReturns:\fP
+.RS 4
+An XML object representing the \fBEntity\fP\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBDistributedClientArray\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>samchon::namtree::NTEntityGroup</compoundname>
+    <includes refid="df/dcf/NTEntityGroup_8hpp" local="no">NTEntityGroup.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a033498738df3fab18344d8b3c2981185" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>NTEntityGroup</definition>
+        <argsstring>()</argsstring>
+        <name>NTEntityGroup</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/namtree/NTEntityGroup.hpp" line="32" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/namtree/NTEntityGroup.cpp" bodystart="6" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a5044eb72ef4b497ae11f1c85a686992d" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ~NTEntityGroup</definition>
+        <argsstring>()=default</argsstring>
+        <name>~NTEntityGroup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/namtree/NTEntityGroup.hpp" line="33" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a6a51329ee523db0789ec57afa0495dd8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>auto</type>
+        <definition>virtual auto begin</definition>
+        <argsstring>() const  -&gt; std::shared_ptr&lt; NTIterator &gt;=0</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>Return iterator to beginning. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns an iterator referring the first element in the historical data container. <simplesect kind="note"><para>If the container is empty, the returned iterator is same with <ref refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a550f33fdf4fb2c72d96f325b4b5dafe8" kindref="member">end()</ref>.</para></simplesect>
+<simplesect kind="return"><para></para></simplesect>
+An iterator to the first element in the container. </para><para>The iterator containes the first element&apos;s pair; key and value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/namtree/NTEntityGroup.hpp" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a550f33fdf4fb2c72d96f325b4b5dafe8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>auto</type>
+        <definition>virtual auto end</definition>
+        <argsstring>() const  -&gt; std::shared_ptr&lt; NTIterator &gt;=0</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>Return iterator to end. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns an iterator referring to the past-the-end element in the historical data container. </para><para>The past-the-end element is the theoretical element that would follow the last element in the <ref refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup" kindref="compound">NTEntityGroup</ref> container. It does not point to any element, and thus shall not be dereferenced. </para><para>Because the ranges used by functions of the <ref refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup" kindref="compound">NTEntityGroup</ref> do not include the element reference by their closing iterator, this function is often used in combination with <ref refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a6a51329ee523db0789ec57afa0495dd8" kindref="member">NTEntityGroup::begin()</ref> to specify a range including all the elements in the container. </para><para><simplesect kind="note"><para></para></simplesect>
+Returned iterator from <ref refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a550f33fdf4fb2c72d96f325b4b5dafe8" kindref="member">NTEntityGroup::end()</ref> does not refer any element. Trying to accessing element by the iterator will cause throwing exception (out of range). </para><para>If the container is empty, this function returns the same as <ref refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a6a51329ee523db0789ec57afa0495dd8" kindref="member">NTEntityGroup::begin()</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/namtree/NTEntityGroup.hpp" line="65" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A historical, studying data. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup" kindref="compound">NTEntityGroup</ref> is an abstract class representing historical, regressive data </para><para>The NTEntitGroup is used to studying data evolving and training <ref refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" kindref="compound">NTCriteria</ref>, representing Artificial neural network. </para><para><image type="html" name="namtree_criteria.png"></image>
+ <image type="latex" name="namtree_criteria.png"></image>
+</para><para><simplesect kind="see"><para><ref refid="d4/d05/namespacesamchon_1_1namtree" kindref="compound">samchon::namtree</ref> </para></simplesect>
+<simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/namtree/NTEntityGroup.hpp" line="27" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/namtree/NTEntityGroup.hpp" bodystart="26" bodyend="66"/>
+    <listofallmembers>
+      <member refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a6a51329ee523db0789ec57afa0495dd8" prot="public" virt="pure-virtual"><scope>samchon::namtree::NTEntityGroup</scope><name>begin</name></member>
+      <member refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a550f33fdf4fb2c72d96f325b4b5dafe8" prot="public" virt="pure-virtual"><scope>samchon::namtree::NTEntityGroup</scope><name>end</name></member>
+      <member refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a033498738df3fab18344d8b3c2981185" prot="public" virt="non-virtual"><scope>samchon::namtree::NTEntityGroup</scope><name>NTEntityGroup</name></member>
+      <member refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup_1a5044eb72ef4b497ae11f1c85a686992d" prot="public" virt="virtual"><scope>samchon::namtree::NTEntityGroup</scope><name>~NTEntityGroup</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

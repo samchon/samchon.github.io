@@ -1,0 +1,222 @@
+.TH "NTCriteria" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NTCriteria \- Criteria, a conditional expression with weight\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NTCriteria\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBconstruct\fP (std::shared_ptr< \fBlibrary::XML\fP >) override"
+.br
+.RI "\fIConstruct data of the Entity from an XML object\&. \fP"
+.ti -1c
+.RI "virtual auto \fBTAG\fP () const  \-> std::string override"
+.br
+.RI "\fIA tag name when represented by XML\&. \fP"
+.ti -1c
+.RI "virtual auto \fBCHILD_TAG\fP () const  \-> std::string override"
+.br
+.RI "\fIA tag name of children\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoXML\fP () const  \-> std::shared_ptr< \fBlibrary::XML\fP > override"
+.br
+.RI "\fIGet an XML object represents the EntityGroup\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBcreateChild\fP (std::shared_ptr< \fBlibrary::XML\fP >) \-> \fBNTCriteria\fP *override"
+.br
+.RI "\fIFactory method of a child Entity\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Criteria, a conditional expression with weight\&. 
+
+\fBNTCriteria\fP is an object realizing ANN(Artificial Neural Network)\&. 
+.PP
+You can make the ANN model having weight and bias\&. 
+.PP
+.PD 0
+.IP "1." 4
+A conditional expression with weight  
+.PP
+F(x) = (\fBNTSide\fP < \fBNTSide\fP ? 1: 0) X weight 
+.PP
+.PP
+NTCrietria is made up for conditional expression\&. 
+.PP
+.PD 0
+.IP "  \(bu" 4
+When the expression is true, returns 1 * weight  
+.IP "  \(bu" 4
+When the expression is false, returns 0  
+.PP
+
+.IP "2." 4
+Hierarchical relationship  
+.PD 0
+
+.IP "  \(bu" 4
+In vertical relationship: multiply (X)  
+.IP "  \(bu" 4
+In horizontal relationship: plus (+)  
+.PP
+.PP
+.PP
+With that rule, you can make enormous conditions\&. I can sure there's not any condition can'be be expressed by the model\&. 
+.PP
+.PP
+.PP
+ 
+.PP
+
+.IP "3." 4
+Making bias  
+.PP
+Just make a \fBNTCriteria\fP returns only true\&. 
+.PP
+.PP
+It's the bias returns only weight\&. 
+.PP
+.PP
+
+.IP "4." 4
+Explore  
+.PD 0
+
+.IP "  1." 6
+Exporing in a \fBNTCriteria\fP (optimize a side)  
+.PP
+Make a \fBNTSide\fP to be nullptr, then \fBNTCriteria\fP will explore the best value\&.
+.PP
+.PP
+Nam-Tree will calculate the condtions from minimum to maximum in \fBINTExplore\fP reach to the precision, by the method of multi-demensional grid\&. 
+.PP
+.PP
+
+.IP "  2." 6
+Exploring parameter in \fBNTSide\fP  
+.PP
+If you set the parameterMNap to be empty, Nam-Tree will explore the best parameter until reach to the precision in INTExploreParameter from minimum to maximum\&. 
+.PP
+.PP
+.PP
+ 
+.PP
+
+.IP "  3." 6
+Exploring by creating \fBNTCriteria\fP  
+.PP
+(Creates lots of hierarchical conditions and tests them) 
+.PP
+.PP
+If all the side (left and right) in a \fBNTCriteria\fP are nullptr, the \fBNTCriteria\fP will make a lot of children NTCriteria(s) to test lots of cases, so that derives the best condition set will be made up\&. 
+.PP
+.PP
+This process will ride on same routines of 4-1 and 4-2, for each created cases\&. Of course, this process needs too much time, so that you may need to be patient\&. 
+.PP
+
+.PP
+
+.PP
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::namtree\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void construct (std::shared_ptr< \fBlibrary::XML\fP > xml)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Construct data of the Entity from an XML object\&. Constructs the EntityGroup's own member variables only from the input XML object\&. 
+.PP
+Do not consider about constructing children Entity objects' data in EntityGroup::construct()\&. Those children Entity objects' data will constructed by their own \fBconstruct()\fP method\&. Even insertion of XML objects representing children are done by abstract method of EntityGroup::toXML()\&. 
+.PP
+Constructs only data of EntityGroup's own\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEntityGroup< _Container, _ETy, _Ty >\fP\&.
+.SS "auto createChild (std::shared_ptr< \fBlibrary::XML\fP >) \->  \fBNTCriteria\fP *override\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Factory method of a child Entity\&. EntityGroup::createChild() is a factory method creating a new child Entity which is belonged to the EntityGroup\&. This method is called by EntityGroup::construct()\&. The children construction methods Entity::construct() will be called by abstract method of the EntityGroup::construct()\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A new child Entity belongs to EntityGroup\&. 
+.RE
+.PP
+
+.PP
+Implements \fBEntityGroup< _Container, _ETy, _Ty >\fP\&.
+.SS "auto TAG () const \->  std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name when represented by XML\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A tag name 
+.RE
+.PP
+
+.PP
+Implements \fBEntity\fP\&.
+.SS "auto CHILD_TAG () const \->  std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name of children\&. < TAG>
+.br
+      <CHILD_TAG />
+.br
+      <CHILD_TAG />
+.br
+ </TAG> 
+.PP
+Implements \fBIEntityGroup\fP\&.
+.SS "auto toXML () const \-> std::shared_ptr<\fBlibrary::XML\fP>\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get an XML object represents the EntityGroup\&. Archives the EntityGroup's own member variables only to the returned XML object\&. 
+.PP
+Do not consider about archiving children Entity objects' data in EntityGroup::toXML()\&. Those children Entity objects will converted to XML object by their own \fBtoXML()\fP method\&. The insertion of XML objects representing children are done by abstract method of EntityGroup::toXML()\&. 
+.PP
+Archives only data of EntityGroup's own\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEntityGroup< _Container, _ETy, _Ty >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

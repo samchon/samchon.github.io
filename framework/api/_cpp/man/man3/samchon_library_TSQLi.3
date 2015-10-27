@@ -1,0 +1,97 @@
+.TH "TSQLi" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+TSQLi \- A SQL interface for T-SQL\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <TSQLi\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTSQLi\fP (int \fBport\fP=1433)"
+.br
+.RI "\fIConstruct from port\&. \fP"
+.ti -1c
+.RI "virtual auto \fBcreateStatement\fP () \-> std::shared_ptr< \fBSQLStatement\fP >"
+.br
+.RI "\fIFactory method for creating T-SQL statement\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A SQL interface for T-SQL\&. 
+
+
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBSQLi\fP is an abstract class managing connection (session) with a specific database and manages SQL statements are executed and results are returned within the context of a connection\&. 
+.PP
+The reason why SQLStatement(s) are managed by \fBSQLi\fP is because of a principle of DBMS, DBMS system doesn't allow simultaneous query from a session (connection)\&. Only a query (process0) is allowed at a time\&. If you try to simultaneous query from a \fBSQLi\fP, ODBC throws error\&. To avoid the error, an execute of query from \fBSQLStatement\fP will lock a mutex of \fBSQLi\fP to ensure exclusiveness\&. 
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+To ensure the exclusiveness, you've to make \fBSQLStatement\fP from \fBSQLi\fP\&. Do not make \fBSQLStatement\fP by yourself\&. call SQLi::createSQLStatement() instead\&. Even you make a derived class from \fBSQLStatement\fP, don't make its constructor to have public accessor\&. 
+.PP
+Becuase execution of a sql statement causes lock on mutex in \fBSQLi\fP, you've to destruct the \fBSQLStatement\fP or call \fBSQLStatement::free()\fP method()\&. If you don't, the mutex will not be unlocked, thus you can't do anything by the \fBSQLi\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBTSQLi\fP (int port = \fC1433\fP)"
+
+.PP
+Construct from port\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIport\fP Port number of T-SQL\&. default is 1433\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto createStatement () \-> std::shared_ptr<\fBSQLStatement\fP>\fC [virtual]\fP"
+
+.PP
+Factory method for creating T-SQL statement\&. To realize domain function in T-SQL, 'FOR \fBXML\fP' statement\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+\fBSQLi::createStatement()\fP
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A T-SQL statement 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBSQLi\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

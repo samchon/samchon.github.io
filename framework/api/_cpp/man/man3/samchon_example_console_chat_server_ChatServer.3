@@ -1,0 +1,96 @@
+.TH "ChatServer" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChatServer \- A chat server\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ChatServer\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChatServer\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "void \fBeraseClient\fP (\fBChatClient\fP *client)"
+.br
+.RI "\fIErase client when disconnected\&. \fP"
+.ti -1c
+.RI "virtual void \fBreplyData\fP (std::shared_ptr< \fBprotocol::Invoke\fP >) override"
+.br
+.RI "\fIHandling replied message\&. \fP"
+.ti -1c
+.RI "virtual void \fBsendData\fP (std::shared_ptr< \fBprotocol::Invoke\fP >) override"
+.br
+.RI "\fISending a message\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBPORT\fP () const  \-> int override"
+.br
+.RI "\fIPort number: #33749\&. \fP"
+.ti -1c
+.RI "virtual void \fBaddClient\fP (protocol::Socket *socket) override"
+.br
+.RI "\fIAdd a client\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::set< \fBChatClient\fP * > \fBclientSet\fP"
+.br
+.RI "\fIList of clients\&. \fP"
+.ti -1c
+.RI "\fBlibrary::RWMutex\fP \fBrwMutex\fP"
+.br
+.RI "\fIA rw_mutex managing clientSet\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A chat server\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void replyData (std::shared_ptr< \fBprotocol::Invoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Handling replied message\&. When got a message from a client, sends the message to all clients\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An invoke message represents a chat\&. 
+.RE
+.PP
+
+.SS "void sendData (std::shared_ptr< \fBprotocol::Invoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Sending a message\&. Send a message to all clients\&. Called by \fBreplyData()\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An invoke message represents a chat\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

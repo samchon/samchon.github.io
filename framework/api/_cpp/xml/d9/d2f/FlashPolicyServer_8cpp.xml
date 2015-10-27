@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d9/d2f/FlashPolicyServer_8cpp" kind="file" language="C++">
+    <compoundname>FlashPolicyServer.cpp</compoundname>
+    <includes refid="df/dc9/FlashPolicyServer_8hpp" local="no">samchon/protocol/FlashPolicyServer.hpp</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">boost/asio.hpp</includes>
+    <includes local="no">string</includes>
+    <includes refid="d4/d3b/XML_8hpp" local="no">samchon/library/XML.hpp</includes>
+    <incdepgraph>
+      <node id="3151">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/FlashPolicyServer.cpp</label>
+        <link refid="FlashPolicyServer.cpp"/>
+        <childnode refid="3152" relation="include">
+        </childnode>
+        <childnode refid="3156" relation="include">
+        </childnode>
+        <childnode refid="3157" relation="include">
+        </childnode>
+        <childnode refid="3158" relation="include">
+        </childnode>
+        <childnode refid="3159" relation="include">
+        </childnode>
+      </node>
+      <node id="3166">
+        <label>samchon/library/IOperator.hpp</label>
+        <link refid="dc/d77/IOperator_8hpp_source"/>
+        <childnode refid="3153" relation="include">
+        </childnode>
+      </node>
+      <node id="3155">
+        <label>samchon/protocol/Socket.hpp</label>
+        <link refid="dd/df5/Socket_8hpp_source"/>
+      </node>
+      <node id="3158">
+        <label>string</label>
+      </node>
+      <node id="3161">
+        <label>map</label>
+      </node>
+      <node id="3153">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="3152">
+        <label>samchon/protocol/FlashPolicyServer.hpp</label>
+        <link refid="df/dc9/FlashPolicyServer_8hpp_source"/>
+        <childnode refid="3153" relation="include">
+        </childnode>
+        <childnode refid="3154" relation="include">
+        </childnode>
+        <childnode refid="3155" relation="include">
+        </childnode>
+      </node>
+      <node id="3160">
+        <label>samchon/Map.hpp</label>
+        <link refid="dc/dbe/Map_8hpp_source"/>
+        <childnode refid="3161" relation="include">
+        </childnode>
+      </node>
+      <node id="3157">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="3163">
+        <label>vector</label>
+      </node>
+      <node id="3162">
+        <label>samchon/library/XMLList.hpp</label>
+        <link refid="dd/d37/XMLList_8hpp_source"/>
+        <childnode refid="3153" relation="include">
+        </childnode>
+        <childnode refid="3163" relation="include">
+        </childnode>
+        <childnode refid="3154" relation="include">
+        </childnode>
+      </node>
+      <node id="3168">
+        <label>utility</label>
+      </node>
+      <node id="3164">
+        <label>sstream</label>
+      </node>
+      <node id="3167">
+        <label>samchon/IndexPair.hpp</label>
+        <link refid="d9/ded/IndexPair_8hpp_source"/>
+        <childnode refid="3168" relation="include">
+        </childnode>
+      </node>
+      <node id="3159">
+        <label>samchon/library/XML.hpp</label>
+        <link refid="d4/d3b/XML_8hpp_source"/>
+        <childnode refid="3153" relation="include">
+        </childnode>
+        <childnode refid="3160" relation="include">
+        </childnode>
+        <childnode refid="3162" relation="include">
+        </childnode>
+        <childnode refid="3164" relation="include">
+        </childnode>
+        <childnode refid="3158" relation="include">
+        </childnode>
+        <childnode refid="3165" relation="include">
+        </childnode>
+      </node>
+      <node id="3156">
+        <label>thread</label>
+      </node>
+      <node id="3165">
+        <label>samchon/WeakString.hpp</label>
+        <link refid="d8/d3d/WeakString_8hpp_source"/>
+        <childnode refid="3153" relation="include">
+        </childnode>
+        <childnode refid="3166" relation="include">
+        </childnode>
+        <childnode refid="3158" relation="include">
+        </childnode>
+        <childnode refid="3163" relation="include">
+        </childnode>
+        <childnode refid="3167" relation="include">
+        </childnode>
+      </node>
+      <node id="3154">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;samchon/protocol/FlashPolicyServer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/XML.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="db/d64/namespacesamchon_1_1protocol" kindref="compound">samchon::protocol</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">FlashPolicyServer::FlashPolicyServer()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer" kindref="compound">FlashPolicyServer</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>make_shared&lt;<ref refid="d5/d37/classsamchon_1_1library_1_1XML" kindref="compound">XML</ref>&gt;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>::string()<sp/>+</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;cross-domain-policy&gt;\n&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&lt;allow-access-from<sp/>domain=&apos;*&apos;<sp/>to-ports=&apos;*&apos;<sp/>/&gt;\n&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;/cross-domain-policy&gt;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer_1a1c745f882267e08a314abcc7bb086f38" kindref="member">FlashPolicyServer::FlashPolicyServer</ref>(shared_ptr&lt;XML&gt;<sp/>policy)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;policy<sp/>=<sp/><ref refid="d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer_1ac6a4ee0a0f3353aa71d76a877d8d39c8" kindref="member">policy</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer_1a88271a233d022d104707bef9468bf496" kindref="member">FlashPolicyServer::openServer</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::io_service<sp/>ioService;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::ip::tcp::endpoint<sp/>endPoint(boost::asio::ip::tcp::v4(),<sp/>843);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::asio::ip::tcp::acceptor<sp/>acceptor(ioService,<sp/>endPoint);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::asio::ip::tcp::socket<sp/>*socket<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>boost::asio::ip::tcp::socket(ioService);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>acceptor.accept(*socket);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread(&amp;<ref refid="d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer_1a798de4418853ab14e0c9d72068e56f69" kindref="member">FlashPolicyServer::accept</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>socket).detach();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer_1a798de4418853ab14e0c9d72068e56f69" kindref="member">FlashPolicyServer::accept</ref>(boost::asio::ip::tcp::socket<sp/>*socket)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>data<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&lt;?xml<sp/>version=\&quot;1.0\&quot;?&gt;\n&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer_1ac6a4ee0a0f3353aa71d76a877d8d39c8" kindref="member">policy</ref>-&gt;toString();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;unsigned<sp/>char&gt;<sp/>piece;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>boost::system::error_code<sp/>error;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>piece.assign(1000,<sp/>NULL);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>socket-&gt;read_some(boost::asio::buffer(piece),<sp/>error);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boost::system::error_code<sp/>error;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>socket-&gt;write_some(boost::asio::buffer(data),<sp/>error);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>socket-&gt;close();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>socket;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/FlashPolicyServer.cpp"/>
+  </compounddef>
+</doxygen>

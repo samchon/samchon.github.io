@@ -1,0 +1,160 @@
+.TH "UniqueAcquire" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UniqueAcquire \- Unique acquire from a \fBSemaphore\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <UniqueAcquire\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUniqueAcquire\fP (\fBSemaphore\fP &, bool=true)"
+.br
+.RI "\fIConstruct from semaphore\&. \fP"
+.ti -1c
+.RI "\fBUniqueAcquire\fP (const \fBUniqueAcquire\fP &)=delete"
+.br
+.RI "\fIProhibited Copy Constructor\&. \fP"
+.ti -1c
+.RI "\fBUniqueAcquire\fP (\fBUniqueAcquire\fP &&)"
+.br
+.RI "\fIMove Constructor\&. \fP"
+.ti -1c
+.RI "\fB~UniqueAcquire\fP ()"
+.br
+.RI "\fIDefault Destructor\&. \fP"
+.ti -1c
+.RI "void \fBacquire\fP ()"
+.br
+.RI "\fIAcquire admission\&. \fP"
+.ti -1c
+.RI "void \fBrelease\fP ()"
+.br
+.RI "\fIRelease an admission\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSemaphore\fP * \fBsemaphore\fP"
+.br
+.RI "\fIManaged semaphore\&. \fP"
+.ti -1c
+.RI "bool \fBisLocked\fP"
+.br
+.RI "\fIWhether the semaphore was acquired by the UniqueLock\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Unique acquire from a \fBSemaphore\fP\&. 
+
+A \fBUniqueAcquire\fP is an object manages a \fBSemaphore\fP with unique ownership in both states\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+acquired 
+.IP "\(bu" 2
+released
+.PP
+.PP
+On construction (or by move-assigning to it), the object acquires a semaphore object, for whose acquiring and releasing operations becomes responsible\&. 
+.PP
+This class guarantees a released status on destruction (even if not called explicitly)\&. Therefore it is especially useful as an object with automatic duration, as it guarantees the semaphore object is properly released in case an exception is thrown\&. 
+.PP
+Referenced comments of std::unique_lock 
+.PP
+.PD 0
+.IP "\(bu" 2
+http://www.cplusplus.com/reference/mutex/unique_lock/
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Though, that the \fBUniqueAcquire\fP object does not manage the lifetime of the semaphore object in any way: the duration of the semaphore object shall extend at least until the destruction of the \fBUniqueAcquire\fP that manages it\&. 
+.PP
+The \fBUniqueAcquire\fP is movable, but not copyable\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBUniqueAcquire\fP (\fBSemaphore\fP & semaphore, bool doLock = \fCtrue\fP)"
+
+.PP
+Construct from semaphore\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsemaphore\fP \fBSemaphore\fP to manage 
+.br
+\fIdoLock\fP Whether to lock directly or not 
+.RE
+.PP
+
+.SS "\fBUniqueAcquire\fP (const \fBUniqueAcquire\fP &)\fC [delete]\fP"
+
+.PP
+Prohibited Copy Constructor\&. \fBUniqueAcquire\fP can't be copied\&. Use pointer, reference instead\&. 
+.PP
+If what you want is UniqueAcquire(s) references each other and unlock when all related \fBUniqueAcquire\fP objects are destructed, \fBSharedAcquire\fP is the best way\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobj\fP Tried object to copy\&. 
+.RE
+.PP
+
+.SS "\fBUniqueAcquire\fP (\fBUniqueAcquire\fP && obj)"
+
+.PP
+Move Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIAn\fP object to move 
+.RE
+.PP
+
+.SS "~\fBUniqueAcquire\fP ()"
+
+.PP
+Default Destructor\&. If read lock has done by the UniqueLock, unlock it 
+.SH "Member Function Documentation"
+.PP 
+.SS "void acquire ()"
+
+.PP
+Acquire admission\&. Acquires an admission and increases count of admission by 1\&. 
+.PP
+If the count is over permitted size, wait until other admissions to be released\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Lock on mutex 
+.PP
+
+.SS "void release ()"
+
+.PP
+Release an admission\&. Releases an admission what you've acquired\&. If the admission count was over the limited size, unlock the mutex\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

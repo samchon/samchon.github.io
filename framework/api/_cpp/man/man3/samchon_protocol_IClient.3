@@ -1,0 +1,137 @@
+.TH "IClient" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IClient \- An interface for a client\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IClient\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIClient\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBlisten\fP ()"
+.br
+.RI "\fIListens message from a related system\&. \fP"
+.ti -1c
+.RI "virtual void \fBsendData\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fISends message to a related system\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBBUFFER_SIZE\fP () const  \-> size_t"
+.br
+.RI "\fIBuffer size of network I/O\&. \fP"
+.ti -1c
+.RI "virtual void \fB_replyData\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fIA method for pre-processing replied \fBInvoke\fP message\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "Socket * \fBsocket\fP"
+.br
+.RI "\fISocket for network I/O\&. \fP"
+.ti -1c
+.RI "std::mutex * \fBsendMtx\fP"
+.br
+.RI "\fIA mutex for sending message\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An interface for a client\&. 
+
+\fBIClient\fP is an interface not only for a physical client, but also a driver for a client in a physical server\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBIServer\fP:addClient()  
+.PD 0
+
+.IP "  \(bu" 4
+\fBservice::Server\fP -> \fBservice::User\fP -> \fBservice::Client\fP  
+.IP "  \(bu" 4
+\fBExternalClientArray\fP (A physical server) -> \fBExternalClient\fP (A driver of a client)  
+.PP
+
+.PP
+.PP
+\fBIClient\fP is one of the basic 3 + 1 components that can make any type of network system in Samchon Framework with \fBIProtocol\fP and \fBIServer\fP\&. Looking around classes in Samchon Framework, you can see all classes related with client are implemented from the \fBIClient\fP\&. 
+.PP
+\fBIClient\fP takes a role of real network I/O\&. \fBIClient\fP sends data to otherside network system from \fBIProtocol::sendData()\fP\&. \fBIClient\fP also gets data from otherside network system, generates standard \fBInvoke\fP message from parsing the replied data and shift the \fBInvoke\fP message to \fBIProtocol::replyData()\fP\&. 
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void listen ()\fC [virtual]\fP"
+
+.PP
+Listens message from a related system\&. 
+.PP
+\fBNote:\fP
+.RS 4
+It holds (monopolies) a thread\&. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBIWebClient\fP\&.
+.SS "void sendData (std::shared_ptr< \fBInvoke\fP >)\fC [virtual]\fP"
+
+.PP
+Sends message to a related system\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP \fBInvoke\fP message to send 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBIProtocol\fP\&.
+.PP
+Reimplemented in \fBDistributedSystem\fP, \fBClient\fP, and \fBIWebClient\fP\&.
+.SS "void _replyData (std::shared_ptr< \fBInvoke\fP >)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+A method for pre-processing replied \fBInvoke\fP message\&. You can realize a pre-processing about the replied \fBInvoke\fP message by overriding the \fBIClient::_replyData()\fP\&. 
+.PP
+Archiving a history log, filtering and truncating, let handling the message with a new thread, calculating performance by estimating elapsed time about the \fBInvoke\fP message, and so on\&. Anything you can define pre-processing works before \fBIProtocol::replyData()\fP\&. 
+.PD 0
+
+.IP "\(bu" 2
+Archive history log -> cloud service 
+.IP "\(bu" 2
+Estimating performance -> distributed and parallel processing system
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An invoke message to be pre-processed and shifted to \fBIProtocol::replyData()\fP\&. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBParallelSystem\fP, \fBSlaveSystem\fP, and \fBParallelSystem\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

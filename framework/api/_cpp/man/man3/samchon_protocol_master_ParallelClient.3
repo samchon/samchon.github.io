@@ -1,0 +1,52 @@
+.TH "ParallelClient" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ParallelClient \- A network driver for a parallel client\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ParallelClient\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParallelClient\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A network driver for a parallel client\&. 
+
+\fBParallelClient\fP is an \fBParallelSystem\fP specialized in client driver\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBParallelSystem\fP class is an \fBExternalSystem\fP having performance index and history logs of handled \fBInvoke\fP messages with those elapsed times\&. Those performance index and history logs are used to determine how much segmentation to be allocated\&. 
+.PP
+Each segmentation in requested process (\fBInvoke\fP message) is equivalent\&. Thus, role of \fBParallelSystem\fP objects in a \fBParallelSystemArray\fP are almost same and does not need to specify \fBExternalSystemRole\fP on \fBParallelSystem\fP\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Not a matter to specifying \fBExternalSystemRole\fP objects to each \fBParallelSystem\fP\&. In that case, \fBInvoke\fP messages having segmentation size will be processed by \fBParallelSystem\fP's own logic and \fBInvoke\fP messages without segmentation size will be handled by ordinary logic of \fBExternalSystem\fP's own\&.
+.PP
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

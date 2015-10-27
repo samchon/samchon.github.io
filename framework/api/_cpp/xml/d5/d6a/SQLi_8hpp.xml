@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d5/d6a/SQLi_8hpp" kind="file" language="C++">
+    <compoundname>SQLi.hpp</compoundname>
+    <includes refid="d9/d8f/API_8hpp" local="no">samchon/API.hpp</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">string</includes>
+    <includedby refid="d7/dd7/MSSQLStatement_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/MSSQLStatement.cpp</includedby>
+    <includedby refid="d2/dec/MySQLi_8hpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/MySQLi.hpp</includedby>
+    <includedby refid="d1/dd3/SQLi_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SQLi.cpp</includedby>
+    <includedby refid="d3/d41/SQLLiteConnector_8hpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SQLLiteConnector.hpp</includedby>
+    <includedby refid="d7/d3d/SQLStatement_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SQLStatement.cpp</includedby>
+    <includedby refid="de/dac/TSQLi_8hpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/TSQLi.hpp</includedby>
+    <includedby refid="dc/d4f/Client_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Client.cpp</includedby>
+    <includedby refid="db/dd9/Server_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp</includedby>
+    <includedby refid="d2/dc4/Service_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Service.cpp</includedby>
+    <incdepgraph>
+      <node id="1730">
+        <label>string</label>
+      </node>
+      <node id="1727">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="1729">
+        <label>mutex</label>
+      </node>
+      <node id="1726">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SQLi.hpp</label>
+        <link refid="SQLi.hpp"/>
+        <childnode refid="1727" relation="include">
+        </childnode>
+        <childnode refid="1728" relation="include">
+        </childnode>
+        <childnode refid="1729" relation="include">
+        </childnode>
+        <childnode refid="1730" relation="include">
+        </childnode>
+      </node>
+      <node id="1728">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1734">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/TSQLi.hpp</label>
+        <link refid="de/dac/TSQLi_8hpp_source"/>
+      </node>
+      <node id="1732">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/MySQLi.hpp</label>
+        <link refid="d2/dec/MySQLi_8hpp_source"/>
+      </node>
+      <node id="1731">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SQLi.hpp</label>
+        <link refid="SQLi.hpp"/>
+        <childnode refid="1732" relation="include">
+        </childnode>
+        <childnode refid="1733" relation="include">
+        </childnode>
+        <childnode refid="1734" relation="include">
+        </childnode>
+      </node>
+      <node id="1733">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SQLLiteConnector.hpp</label>
+        <link refid="d3/d41/SQLLiteConnector_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="d9/d2f/classsamchon_1_1library_1_1SQLi" prot="public">samchon::library::SQLi</innerclass>
+    <innernamespace refid="db/df1/namespacesamchon">samchon</innernamespace>
+    <innernamespace refid="d8/dd4/namespacesamchon_1_1library">samchon::library</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/API.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref></highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">library</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SQLStatement;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="d9/d2f/classsamchon_1_1library_1_1SQLi" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SAMCHON_FRAMEWORK_API<sp/><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi" kindref="compound">SQLi</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/def/classsamchon_1_1library_1_1SQLStatement" kindref="compound">SQLStatement</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="55" refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1ada10feddb1e7bd109da11d2f991bebca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1ada10feddb1e7bd109da11d2f991bebca" kindref="member">driver</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1a63c89c04d1feae07ca35558055155ffb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1a63c89c04d1feae07ca35558055155ffb" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>getErrorMessage(</highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>type)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>-&gt;<sp/>std::string;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="76" refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1a228a03b046fa82434aa4f6f0053a7397" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1a228a03b046fa82434aa4f6f0053a7397" kindref="member">hdbc</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1ac85c4f6d5fdfe7668ae126b40d0912d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="de/def/classsamchon_1_1library_1_1SQLStatement" kindref="compound">SQLStatement</ref><sp/>*<ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1ac85c4f6d5fdfe7668ae126b40d0912d4" kindref="member">stmt</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1a88ce305534aa0dde7dac0db848464ce7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::mutex<sp/><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi_1a88ce305534aa0dde7dac0db848464ce7" kindref="member">stmtMutex</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi" kindref="compound">SQLi</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;driver,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~<ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi" kindref="compound">SQLi</ref>();</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>connect</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;ip,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;db,</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;pwd</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>disconnect();</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>createStatement()<sp/>-&gt;<sp/>std::shared_ptr&lt;SQLStatement&gt;;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SQLi.hpp"/>
+  </compounddef>
+</doxygen>

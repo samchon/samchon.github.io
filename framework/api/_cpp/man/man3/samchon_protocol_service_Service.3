@@ -1,0 +1,102 @@
+.TH "Service" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Service \- A service\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Service\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBService\fP (\fBClient\fP *)"
+.br
+.RI "\fIConstruct from \fBClient\fP\&. \fP"
+.ti -1c
+.RI "auto \fBgetClient\fP () const  \-> \fBClient\fP *"
+.br
+.RI "\fIGet \fBClient\fP\&. \fP"
+.ti -1c
+.RI "virtual void \fBsendData\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fIShift the responsibility of sending an \fBInvoke\fP message to \fBClient\fP\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBREQUIRE_AUTHORITY\fP () const  \-> int=NULL"
+.br
+.RI "\fIRequired authority to access the service\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP * \fBclient\fP"
+.br
+.RI "\fI\fBClient\fP object \fBService\fP is belonged to\&. \fP"
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.RI "\fIA name represents a \fBService\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A service\&. 
+
+A service represents an unique functions of a web page 
+.PP
+Most of functinos are realized in here\&. The \fBService\fP is correspondent with a 'a service of a web page'\&. For a cloud \fBServer\fP, there can be enormous \fBService\fP classes\&. Create Services for each functions and Define the functions detail in here\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.PP
+\fBsamchon::protocol::service\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBService\fP (\fBClient\fP * client)"
+
+.PP
+Construct from \fBClient\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP \fBClient\fP object \fBService\fP is belonged to 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void sendData (std::shared_ptr< \fBInvoke\fP >)\fC [virtual]\fP"
+
+.PP
+Shift the responsibility of sending an \fBInvoke\fP message to \fBClient\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIin\fP An \fBInvoke\fP message to be sent to the (physical) client 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBIProtocol\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

@@ -1,0 +1,500 @@
+.TH "samchon::protocol" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+samchon::protocol \- Package of network protocol and libraries\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI " \fBmaster\fP"
+.br
+.RI "\fIPackage for external system, within the framework of master\&. \fP"
+.ti -1c
+.RI " \fBservice\fP"
+.br
+.RI "\fIPackage of cloud service as a server\&. \fP"
+.ti -1c
+.RI " \fBslave\fP"
+.br
+.RI "\fIPackage of external system, within the framework of slave\&. \fP"
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBEntity\fP"
+.br
+.RI "\fIAn entity, a standard data class\&. \fP"
+.ti -1c
+.RI "class \fBEntityArray\fP"
+.br
+.RI "\fIAn \fBEntity\fP and a static array containing \fBEntity\fP objects\&. \fP"
+.ti -1c
+.RI "class \fBEntityGroup\fP"
+.br
+.RI "\fIAn \fBEntity\fP and a container of children \fBEntity\fP objects\&. \fP"
+.ti -1c
+.RI "class \fBEntityList\fP"
+.br
+.RI "\fIAn \fBEntity\fP and a static list containing \fBEntity\fP objects\&. \fP"
+.ti -1c
+.RI "class \fBExternalClient\fP"
+.br
+.RI "\fIA network driver for an external client\&. \fP"
+.ti -1c
+.RI "class \fBExternalClientArray\fP"
+.br
+.RI "\fIAn array of ExternalClient(s) \fP"
+.ti -1c
+.RI "class \fBExternalServer\fP"
+.br
+.RI "\fIA network driver for an external server\&. \fP"
+.ti -1c
+.RI "class \fBExternalServerArray\fP"
+.br
+.RI "\fIAn array of ExternalServer(s) \fP"
+.ti -1c
+.RI "class \fBExternalSystem\fP"
+.br
+.RI "\fIA network driver for an external system\&. \fP"
+.ti -1c
+.RI "class \fBExternalSystemArray\fP"
+.br
+.RI "\fIAn array of ExternalSystem(s)\&. \fP"
+.ti -1c
+.RI "class \fBExternalSystemRole\fP"
+.br
+.RI "\fIA role belongs to an external system\&. \fP"
+.ti -1c
+.RI "class \fBFlashPolicyServer\fP"
+.br
+.RI "\fIA flash policy server\&. \fP"
+.ti -1c
+.RI "class \fBIClient\fP"
+.br
+.RI "\fIAn interface for a client\&. \fP"
+.ti -1c
+.RI "class \fBIEntityChain\fP"
+.br
+.RI "\fIA chain of entity\&. \fP"
+.ti -1c
+.RI "class \fBIEntityGroup\fP"
+.br
+.RI "\fIAn iternface for entity group\&. \fP"
+.ti -1c
+.RI "class \fBIEntityPtrGroup\fP"
+.br
+.ti -1c
+.RI "class \fBIHTMLEntity\fP"
+.br
+.RI "\fIAn interface supporting conversion to html\&. \fP"
+.ti -1c
+.RI "class \fBInvoke\fP"
+.br
+.RI "\fIStandard message of network I/O\&. \fP"
+.ti -1c
+.RI "class \fBInvokeHistory\fP"
+.br
+.RI "\fIA history of an \fBInvoke\fP message\&. \fP"
+.ti -1c
+.RI "class \fBInvokeHistoryArray\fP"
+.br
+.RI "\fIAn array of \fBInvokeHistory\fP\&. \fP"
+.ti -1c
+.RI "class \fBInvokeParameter\fP"
+.br
+.RI "\fIA parameter of an \fBInvoke\fP\&. \fP"
+.ti -1c
+.RI "class \fBIProtocol\fP"
+.br
+.RI "\fIAn interface of \fBInvoke\fP message chain\&. \fP"
+.ti -1c
+.RI "class \fBIServer\fP"
+.br
+.RI "\fIAn interface of a physical server\&. \fP"
+.ti -1c
+.RI "class \fBISQLEntity\fP"
+.br
+.RI "\fIAn interface supporting DB-I/O\&. \fP"
+.ti -1c
+.RI "class \fBIWebClient\fP"
+.br
+.RI "\fIAn interface for a web-client\&. \fP"
+.ti -1c
+.RI "class \fBIWebServer\fP"
+.br
+.RI "\fIAn interface for a physical server following web-socket\&. \fP"
+.ti -1c
+.RI "class \fBServerConnector\fP"
+.br
+.RI "\fIA server connector for a physical client\&. \fP"
+.ti -1c
+.RI "class \fBSystemRole\fP"
+.br
+.RI "\fIA role belongs to a system\&. \fP"
+.ti -1c
+.RI "class \fBWebServerConnector\fP"
+.br
+.RI "\fIA web-socket server connector\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "template<typename _Ty  = Entity> using \fBSharedEntityArray\fP = \fBEntityGroup\fP< std::vector< std::shared_ptr< _Ty >>, _Ty, std::shared_ptr< _Ty > >"
+.br
+.RI "\fIAn \fBEntityGroup\fP with vector container and children capsuled in shared pointers\&. \fP"
+.ti -1c
+.RI "template<typename _Ty  = Entity> using \fBSharedEntityList\fP = \fBEntityGroup\fP< std::list< std::shared_ptr< _Ty >>, _Ty, std::shared_ptr< _Ty > >"
+.br
+.RI "\fIAn \fBEntityGroup\fP with list container and children capsuled in shared pointers\&. \fP"
+.ti -1c
+.RI "template<typename _Ty  = Entity> using \fBUniqueEntityArray\fP = \fBEntityGroup\fP< std::vector< std::unique_ptr< _Ty >>, _Ty, std::unique_ptr< _Ty > >"
+.br
+.RI "\fIAn \fBEntityGroup\fP with vector container and children capsuled in unique pointers\&. \fP"
+.ti -1c
+.RI "template<typename _Ty  = Entity> using \fBUniqueEntityList\fP = \fBEntityGroup\fP< std::list< std::unique_ptr< _Ty >>, _Ty, std::unique_ptr< _Ty > >"
+.br
+.RI "\fIAn \fBEntityGroup\fP with list container and children capsuled in unique pointers\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Package of network protocol and libraries\&. 
+
+
+.PD 0
+
+.IP "\(bu" 2
+.SS "\fBEntity\fP - data classes with utility methods "
+.PP
+.PP
+In Samchon Framework, with entity, boundary and control, entity is the main\&. The entity package provides I/O interface to/from XML, \fBInvoke\fP and DBMS\&. If you need some additional function (role of boundary or control) for an entity, use chain of responsibility pattern starting from the entity\&. 
+.PP
+.PP
+.PP
+When data-set has a 'hierarchical relationship', do not have the children objects by having a container member variable\&. Directly inherits container set\&. Composes the data class (entity) having children by inheriting \fBEntityGroup\fP and terminate the leaf node by inheriting \fBEntity\fP (single object)\&.
+.PP
+ 
+.PP
+
+.IP "\(bu" 2
+.SS "\fBInvoke\fP - standard network I/O message "
+.PP
+.PP
+\fBInvoke\fP is a standard message structure using network I/O in Samchon Framework\&. 
+.PP
+.PP
+.PP
+The \fBInvoke\fP message has an XML structure like the piacture in below\&. We can enjoy lots of benefits by the normalized and standardized message structure used in network I/O\&.
+.br
+ 
+.PP
+The greatest advantage is that we can make any type of network system, even how the system is enourmously complicated\&. As network communication message is standardized, we only need to concentrate on logical relationships between network systems\&. We can handle each network system like a object (class) in OOD\&. And those relationships can be easily designed by using design pattern\&. 
+.PP
+.PP
+.PP
+Furthermore, The module invoke not only provides parsing and converting from/to \fBInvoke\fP message, but also history classes can be used to archiving log or estimating performance of a system\&. The purpose of estimating performance a system, especially, used in module of distributed processing and parallel processing systems\&. 
+.PP
+.PP
+ 
+.PP
+
+.IP "\(bu" 2
+.SS "Intefaces "
+.PP
+.PP
+You can make any type of network system with only three + one interfaces; \fBIProtocol\fP, \fBIServer\fP and \fBIClient\fP + \fBServerConnector\fP which are called basic 3 + 1 components\&. As I've mentiond in previous invoke module, because of standardization of message of network I/O, we only need to concentrate on logical relationship like handling OOD objects 
+.PP
+.PP
+.PP
+The basic 3 + 1 components are top level abstract interfaces for designing network system like handling OOD objects\&. When you see the protocol module from a different view, out of framework, you can find that all the other classes in protocol are another examples combinationing and utilizing those basic 3 + 1 components (interaces)\&. 
+.PP
+.PP
+.PP
+ 
+.PP
+.PP
+ 
+.PP
+
+.IP "\(bu" 2
+.SS "External System "
+.PP
+.PP
+Module \fIexternal_system\fP provides interfaces for interaction with external network system\&. Although, the module \fIexternal_system\fP acts boundary as main role, what you've to concentrate on is the entity\&. Samchon Framework takes responsibility of network communication and you only consider about relationship and role of each \fIexternal network systems\fP\&. 
+.PP
+.PP
+.PP
+\fBExternalSystem\fP objects are managed by \fBExternalSystemArray\fP and the \fBExternalSystemArray\fP can access to an \fBExternalSystemRole\fP belongs to an \fBExternalSystem\fP directly\&. When you send an \fBInvoke\fP message to \fBExternalSystemArray\fP, the \fBExternalSystemArray\fP finds matched \fBExternalSystemRole\fP and the \fBExternalSystemRole\fP shifts the network I/O responsibility to belonged \fBExternalSystem\fP\&. 
+.PP
+.PP
+.PP
+The relationship called as 'Proxy Pattern'\&. With the pattern, 'Proxy', you can concentrate on roles irrespective of where each role is belonged to (you can only concentrate on \fBExternalSystemRole\fP itself, what to do with \fBInvoke\fP message, irrespective of the \fBExternalSystemRole\fP is belonged to which \fBExternalSystem\fP)\&. 
+.PP
+.PP
+.PD 0
+.IP "  \(bu" 4
+\fBExternalSystemArray::sendData()\fP -> ExternalSystemRole(Proxy)::sendData() -> \fBExternalSystem::sendData()\fP  
+.IP "  \(bu" 4
+\fBExternalSystem::replyData()\fP -> ExternalSystemRole(Proxy)::replyData()  
+.PP
+.PP
+.PP
+Whether using the 'Proxy pattern' is on your mind in \fIexternal_system module\fP level\&. 'Proxy pattern' is recommend to use in \fIexternal_system\fP module, but not forced\&. However, since \fIparallel_processing_system\fP module, you've to follow the pattern\&.
+.PP
+ 
+.PP
+
+.IP "\(bu" 2
+.SS "Packages in protocol "
+.PP
+.PD 0
+.IP "  \(bu" 4
+.SS "Cloud service "
+.PP
+.PP
+The 'service' package is for realizing cloud service\&. 
+.PP
+.PP
+.PP
+In Samchon Framework, realizing cloud service, there're two classes representing physical server and client as \fBservice::Server\fP and \fBservice::Client\fP\&. Between the two classes representing boundaries, there is a class representing logical conception user as \fBservice::User\fP\&. In the terminal node under the \fBservice::Client\fP, \fBservice::Service\fP class represents a control\&. 
+.PP
+.PP
+.PP
+The default protocol of the service package is not 'web socket'\&. The default only has message protocol of \fBInvoke\fP, does not have handshake or another pre-defined protocol\&. By the default protocol, you can connect to the cloud server (built from c++, by service package) as a client by a program or plug-in like Flex or C#\&. However you can't connect by web-browser only allowing socket protocol as web-socket\&. 
+.PP
+.PP
+.PP
+To build a cloud service to follow web-socket protocol, inherits derviced classes not from \fBservice::Server\fP, \fBservice::Client\fP, but from service::WebServer, service::WebClient or implements \fBIWebServer\fP, \fBIWebClient\fP which are derived from \fBservice::Server\fP and \fBservice::Client\fP\&. 
+.PP
+.PP
+.SS "Class Diagram "
+.PP
+.PP
+ 
+.PP
+.SS "Sequence Diagram - A client's connection "
+.PP
+.PP
+ 
+.PP
+.SS "Sequence Diagram - Network communication "
+.PP
+.PP
+ 
+.PP
+
+.IP "  \(bu" 4
+.SS "Master system "
+.PP
+.PP
+.PP
+ 
+.PP
+.PP
+In master package, provides distributed and parallel processing system modules which are in framework of master\&. With classes in master package, you can realize any type of distributed or parallel processing system in master side, even how enormouse scale those have\&. 
+.PP
+.PP
+.SS "Distributed Processing System "
+.PP
+.PP
+A distributed processing system of master, a master (\fBmaster::DistributedSystemArray\fP) allocates roles (\fBmaster::DistributedSystemRole\fP) to systems (\fBmaster::DistributedSystem\fP)\&. User does not consider about which roles are allocated to which systems\&. User just accesses to a \fIrole\fP and send or reply message from those roles\&.
+.PP
+.PD 0
+.IP "    \(bu" 6
+It's the proxy pattern have mentioned in external system 
+.PP
+\fBExternalSystem\fP objects are managed by \fBExternalSystemArray\fP and the \fBExternalSystemArray\fP can access to a role belongs to a system directly\&. When you send an \fBInvoke\fP message to \fBExternalSystemArray\fP, the \fBExternalSystemArray\fP finds matched \fBExternalSystemRole\fP and the \fBExternalSystemRole\fP shifts the network I/O responsibility to belonged \fBExternalSystem\fP\&. This relationship called 'Proxy Pattern'\&. By the pattern, 'Proxy', you can concentrate on roles irrespective of where each role is belonged to\&. 
+.PP
+.PP
+.PD 0
+.IP "      \(bu" 8
+\fBExternalSystemArray::sendData()\fP -> ExternalSystemRole(Proxy)::sendData() -> \fBExternalSystem::sendData()\fP  
+.IP "      \(bu" 8
+\fBExternalSystem::replyData()\fP -> ExternalSystemRole(Proxy)::replyData()  
+.PP
+
+.PP
+.PP
+.PP
+However, unlike the case of managing roles from \fBExternalSystemArray\fP, in DistributedSystemArray, roles can be allocated in multiple systems duplicately\&. And the roles can be moved to another systems\&. Those management and allocation of roles are determined by estimation of performance of each system, and required performance of each role\&. 
+.PP
+.PP
+.PP
+ 
+.PP
+.SS "Parallel Processing System "
+.PP
+.PP
+Unlike distributed processing system, the parallel processing system is not complicate\&. It has very simple logic\&. About requested processes, master(master::ParallelSystemArray) allocates each process to each slave system by their own performance index have estimated\&. 
+.PP
+.PP
+.PP
+ 
+.PP
+
+.IP "  \(bu" 4
+.SS "Slave system "
+.PP
+.PP
+A package for composing distributed or parallel processing system in slave side\&. 
+.PP
+.PP
+Slave system get orders from master, processes the orders and report the result with its elapsed time for estimating performance of the slave system\&. 
+.PP
+.PP
+ 
+.PP
+
+.PP
+
+.PP
+.PP
+\fBNote:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+Boost Libraries: http://www.boost.org/ 
+.IP "\(bu" 2
+Boot\&.Asio: http://www.boost.org/doc/libs/1_59_0/doc/html/boost_asio.html
+.PP
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBSharedEntityArray\fP"
+
+.PP
+An \fBEntityGroup\fP with vector container and children capsuled in shared pointers\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Ty\fP A type of children \fBEntity\fP\&. Must be a class derived from an \fBEntity\fP or \fBEntity\fP itself\&.
+.RE
+.PP
+.PP
+For a case of inheritance of SharedEntityArray and the inherited SharedEntityArray also contains entity objects which are inherited from original child entity type, SharedEntityArray supports macros changing returned type of accessor methods\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+SHARED_ENTITY_ARRAY_ELEMENT_ACCESSOR_HEADER 
+.IP "\(bu" 2
+SHARED_ENTITY_ARRAY_ELEMENT_ACCESSOR_BODY
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SS "using \fBSharedEntityList\fP =  \fBEntityGroup\fP < std::list<std::shared_ptr<_Ty>>, _Ty, std::shared_ptr<_Ty> >"
+
+.PP
+An \fBEntityGroup\fP with list container and children capsuled in shared pointers\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Ty\fP A type of children \fBEntity\fP\&. Must be a class derived from an \fBEntity\fP or \fBEntity\fP itself\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SS "using \fBUniqueEntityArray\fP =  \fBEntityGroup\fP < std::vector<std::unique_ptr<_Ty>>, _Ty, std::unique_ptr<_Ty> >"
+
+.PP
+An \fBEntityGroup\fP with vector container and children capsuled in unique pointers\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Ty\fP A type of children \fBEntity\fP\&. Must be a class derived from an \fBEntity\fP or \fBEntity\fP itself\&.
+.RE
+.PP
+.PP
+For a case of inheritance of UniqueEntityArray and the inherited UniqueEntityArray also contains entity objects which are inherited from original child entity type, UniqueEntityArray supports macros changing returned type of accessor methods\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+UNIQUE_ENTITY_ARRAY_ELEMENT_ACCESSOR_HEADER 
+.IP "\(bu" 2
+UNIQUE_ENTITY_ARRAY_ELEMENT_ACCESSOR_BODY
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+std::unique_ptr doesn't allow copy construction\&. It allows only move construction\&. When inserts children objcets not by construct() method but by your hand, Be careful to insert deriving copy construction\&. You've use move constructor\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fI UniqueEntityArray<?>::push_back( move( std::unique_ptr<?>(new ?(\&.\&.\&.)) ) ); \fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SS "using \fBUniqueEntityList\fP =  \fBEntityGroup\fP < std::list<std::unique_ptr<_Ty>>, _Ty, std::unique_ptr<_Ty> >"
+
+.PP
+An \fBEntityGroup\fP with list container and children capsuled in unique pointers\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Ty\fP A type of children \fBEntity\fP\&. Must be a class derived from an \fBEntity\fP or \fBEntity\fP itself\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+std::unique_ptr doesn't allow copy construction\&. It allows only move construction\&. When inserts children objcets not by construct() method but by your hand, Be careful to insert deriving copy construction\&. You've use move constructor\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fI UniqueEntityList<?>::push_back( move( std::unique_ptr<?>(new ?(\&.\&.\&.)) ) ); \fP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

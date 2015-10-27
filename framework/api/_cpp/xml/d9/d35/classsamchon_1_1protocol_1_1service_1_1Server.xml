@@ -1,0 +1,383 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>samchon::protocol::service::Server</compoundname>
+    <basecompoundref refid="d1/d4e/classsamchon_1_1Map" prot="private" virt="non-virtual">samchon::Map&lt; SmartPointer&lt; User &gt; &gt;</basecompoundref>
+    <basecompoundref refid="d4/de8/classsamchon_1_1protocol_1_1IServer" prot="public" virt="non-virtual">IServer</basecompoundref>
+    <derivedcompoundref refid="da/d56/classsamchon_1_1example_1_1chat__service_1_1ChatServer" prot="public" virt="non-virtual">ChatServer</derivedcompoundref>
+    <includes refid="de/d3d/Server_8hpp" local="no">Server.hpp</includes>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a8cff91b331b42f5bb93062e0981d6297" prot="private" static="no">
+        <type><ref refid="db/df1/namespacesamchon_1aeb49f94d88e87f0462b68db05dd3e5ef" kindref="member">Dictionary</ref>&lt; <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref>&lt; <ref refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User" kindref="compound">User</ref> &gt; &gt;</type>
+        <definition>typedef Dictionary&lt;SmartPointer&lt;User&gt; &gt; super</definition>
+        <argsstring></argsstring>
+        <name>super</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="55" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a5d1ee1aad1ca001300d06e9670da0657" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class IPUserPair</definition>
+        <argsstring></argsstring>
+        <name>IPUserPair</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="51" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a38c437d9dcaefebe4efaf0edf00c45de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class User</definition>
+        <argsstring></argsstring>
+        <name>User</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="52" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aef91d516b10c0ca60928add7de598a2c" prot="protected" static="no" mutable="no">
+        <type><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi" kindref="compound">library::SQLi</ref> *</type>
+        <definition>library::SQLi* sqli</definition>
+        <argsstring></argsstring>
+        <name>sqli</name>
+        <briefdescription>
+<para>SQLi for archiving log. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="66" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac4207b6af75215f4857fa9d7601b66c4" prot="private" static="no" mutable="no">
+        <type><ref refid="df/d85/classsamchon_1_1library_1_1RWMutex" kindref="compound">library::RWMutex</ref></type>
+        <definition>library::RWMutex mtx</definition>
+        <argsstring></argsstring>
+        <name>mtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="69" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a601f6f1558a6f66476b707f15ecdb6a0" prot="private" static="no" mutable="no">
+        <type><ref refid="db/df1/namespacesamchon_1aeb49f94d88e87f0462b68db05dd3e5ef" kindref="member">Dictionary</ref>&lt; std::shared_ptr&lt; <ref refid="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair" kindref="compound">IPUserPair</ref> &gt; &gt;</type>
+        <definition>Dictionary&lt;std::shared_ptr&lt;IPUserPair&gt; &gt; ipMap</definition>
+        <argsstring></argsstring>
+        <name>ipMap</name>
+        <briefdescription>
+<para>Dictionary of issuer of session ID of each ip. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="74" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a4bd3d973b37ef92c4536f43b5e0b0d07" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t sequence</definition>
+        <argsstring></argsstring>
+        <name>sequence</name>
+        <briefdescription>
+<para>Sequence for issuing session ID. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="79" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aeba092e64c8fb4630e28b3d333076246" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>auto</type>
+        <definition>virtual auto NAME</definition>
+        <argsstring>() const  -&gt; std::string=0</argsstring>
+        <name>NAME</name>
+        <briefdescription>
+<para>A name can be an identifier of a cloud server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ae7912d67ab0302ef6dbf5590bfaa0f60" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>auto</type>
+        <definition>virtual auto createUser</definition>
+        <argsstring>() -&gt; User *=0</argsstring>
+        <name>createUser</name>
+        <reimplementedby refid="da/d56/classsamchon_1_1example_1_1chat__service_1_1ChatServer_1a1bfa07ed07011f9731265f82f9ee384c">createUser</reimplementedby>
+        <briefdescription>
+<para>Factory method of <ref refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User" kindref="compound">User</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="122" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a9cbdd988cd4a917f6b47162103bfd550" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void addClient</definition>
+        <argsstring>(Socket *) override</argsstring>
+        <name>addClient</name>
+        <reimplements refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a89a707ebf106e0e2cecfee911c45cd6a">addClient</reimplements>
+        <param>
+          <type>Socket *</type>
+          <defname>socket</defname>
+        </param>
+        <briefdescription>
+<para>Handling connection of a client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="127" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="69" bodyend="122"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1af2f1305573ef7939b3e8400354878e0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Server</definition>
+        <argsstring>()</argsstring>
+        <name>Server</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="85" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="31" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aa9320a8b35b2d116b716ae4077358c6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>~Server</definition>
+        <argsstring>()</argsstring>
+        <name>~Server</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="86" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a62902e05a8e33cd3ac5bb515b0f3703b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto getSQLi</definition>
+        <argsstring>() const  -&gt; library::SQLi *</argsstring>
+        <name>getSQLi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="91" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac4dde158d6dd302ea028acb582e9b67a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto size</definition>
+        <argsstring>() const  -&gt; size_t</argsstring>
+        <name>size</name>
+        <briefdescription>
+<para>Size of User(s). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="99" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac9869f6f345741227eeb648e0bb9f84d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto begin</definition>
+        <argsstring>() const  -&gt; const_iterator</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>A const iterator of begin. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Be careful about concurrency </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="106" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a39dd3ec2d538d962ba4bc4af6c0ef2f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto end</definition>
+        <argsstring>() const  -&gt; const_iterator</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>A const iterator of end. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>Be careful about concurrency </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="113" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a2f08fd28e2f9fff304d725255296e961" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void eraseUser</definition>
+        <argsstring>(const std::string &amp;)</argsstring>
+        <name>eraseUser</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <defname>session</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="130" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp" bodystart="123" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A server for (cloud) service. </para>    </briefdescription>
+    <detaileddescription>
+<para>A server class representing the real physical server of a cloud. </para><para>The <ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server" kindref="compound">Server</ref> is very good for development of a cloud server. You can use web or flex as (physical) client. The usage is very simple. In the class <ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server" kindref="compound">Server</ref>, what you need to do are overriding getter of port number and factory method creating an <ref refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User" kindref="compound">User</ref>. </para><para><image type="html" name="protocol_service.png"></image>
+ <image type="latex" name="protocol_service.png"></image>
+</para><para><simplesect kind="note"><para>Override those methods. <itemizedlist>
+<listitem><para><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aeba092e64c8fb4630e28b3d333076246" kindref="member">Server::NAME()</ref> </para></listitem>
+<listitem><para><ref refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a323a09d6b1b257bfcce9cac1b2650bcf" kindref="member">Server::PORT()</ref> </para></listitem>
+<listitem><para><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ae7912d67ab0302ef6dbf5590bfaa0f60" kindref="member">Server::createUser()</ref></para></listitem>
+</itemizedlist>
+</para></simplesect>
+<simplesect kind="see"><para><ref refid="db/d64/namespacesamchon_1_1protocol" kindref="compound">samchon::protocol</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="d8/d70/namespacesamchon_1_1protocol_1_1service" kindref="compound">samchon::protocol::service</ref> </para></simplesect>
+<simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="2593">
+        <label>Server</label>
+        <link refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server"/>
+        <childnode refid="2594" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2595" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2595">
+        <label>IServer</label>
+        <link refid="d4/de8/classsamchon_1_1protocol_1_1IServer"/>
+      </node>
+      <node id="2594">
+        <label>Dictionary&lt; SmartPointer&lt; User &gt; &gt;</label>
+        <link refid="d1/d4e/classsamchon_1_1Map"/>
+      </node>
+      <node id="2596">
+        <label>ChatServer</label>
+        <link refid="da/d56/classsamchon_1_1example_1_1chat__service_1_1ChatServer"/>
+        <childnode refid="2593" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2603">
+        <label>SQLStatement</label>
+        <link refid="de/def/classsamchon_1_1library_1_1SQLStatement"/>
+        <childnode refid="2604" relation="usage">
+          <edgelabel>bindParameterBASizeMap</edgelabel>
+        </childnode>
+        <childnode refid="2602" relation="usage">
+          <edgelabel>sqli</edgelabel>
+        </childnode>
+      </node>
+      <node id="2597">
+        <label>Server</label>
+        <link refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server"/>
+        <childnode refid="2598" relation="private-inheritance">
+        </childnode>
+        <childnode refid="2599" relation="public-inheritance">
+        </childnode>
+        <childnode refid="2600" relation="usage">
+          <edgelabel>mtx</edgelabel>
+        </childnode>
+        <childnode refid="2601" relation="usage">
+          <edgelabel>ipMap</edgelabel>
+        </childnode>
+        <childnode refid="2602" relation="usage">
+          <edgelabel>sqli</edgelabel>
+        </childnode>
+      </node>
+      <node id="2604">
+        <label>Map&lt; size_t, SQL_SIZE_T &gt;</label>
+        <link refid="d1/d4e/classsamchon_1_1Map"/>
+      </node>
+      <node id="2599">
+        <label>IServer</label>
+        <link refid="d4/de8/classsamchon_1_1protocol_1_1IServer"/>
+      </node>
+      <node id="2598">
+        <label>Dictionary&lt; SmartPointer&lt; User &gt; &gt;</label>
+        <link refid="d1/d4e/classsamchon_1_1Map"/>
+      </node>
+      <node id="2601">
+        <label>Map&lt; std::shared_ptr&lt; samchon::protocol::service::IPUserPair &gt; &gt;</label>
+        <link refid="d1/d4e/classsamchon_1_1Map"/>
+      </node>
+      <node id="2602">
+        <label>SQLi</label>
+        <link refid="d9/d2f/classsamchon_1_1library_1_1SQLi"/>
+        <childnode refid="2603" relation="usage">
+          <edgelabel>stmt</edgelabel>
+        </childnode>
+      </node>
+      <node id="2600">
+        <label>RWMutex</label>
+        <link refid="df/d85/classsamchon_1_1library_1_1RWMutex"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" line="50" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.hpp" bodystart="47" bodyend="131"/>
+    <listofallmembers>
+      <member refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a2a20eac5e103a9e3be2dab523c2775e3" prot="protected" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>acceptor</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a9cbdd988cd4a917f6b47162103bfd550" prot="protected" virt="virtual"><scope>samchon::protocol::service::Server</scope><name>addClient</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac9869f6f345741227eeb648e0bb9f84d" prot="public" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>begin</name></member>
+      <member refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a5ae591df94fc66ccb85cbb6565368bca" prot="public" virt="virtual"><scope>samchon::protocol::service::Server</scope><name>close</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ae7912d67ab0302ef6dbf5590bfaa0f60" prot="protected" virt="pure-virtual"><scope>samchon::protocol::service::Server</scope><name>createUser</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a39dd3ec2d538d962ba4bc4af6c0ef2f6" prot="public" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>end</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a2f08fd28e2f9fff304d725255296e961" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>eraseUser</name></member>
+      <member refid="d1/d4e/classsamchon_1_1Map_1a545c462f3efea27e9689670c776cd3d3" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>get</name></member>
+      <member refid="d1/d4e/classsamchon_1_1Map_1ace518b0649014b10ec69a455a78ef7dc" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>get</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a62902e05a8e33cd3ac5bb515b0f3703b" prot="public" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>getSQLi</name></member>
+      <member refid="d1/d4e/classsamchon_1_1Map_1a7d21fcd2b73466da3ca65f2dae888d3f" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>has</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a601f6f1558a6f66476b707f15ecdb6a0" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>ipMap</name></member>
+      <member refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1acb43fd3ca9cd70ea120b70772668410e" prot="public" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>IServer</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac4207b6af75215f4857fa9d7601b66c4" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>mtx</name></member>
+      <member refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a4f40efeae64b5ccb29406a0f8f9e0ce6" prot="protected" virt="virtual"><scope>samchon::protocol::service::Server</scope><name>MY_IP</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aeba092e64c8fb4630e28b3d333076246" prot="protected" virt="pure-virtual"><scope>samchon::protocol::service::Server</scope><name>NAME</name></member>
+      <member refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a9e8555112049fc2b4945120b3c45f8ab" prot="public" virt="virtual"><scope>samchon::protocol::service::Server</scope><name>open</name></member>
+      <member refid="d1/d4e/classsamchon_1_1Map_1aeb58271a651715110b73bc6553553a9c" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>pop</name></member>
+      <member refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a323a09d6b1b257bfcce9cac1b2650bcf" prot="protected" virt="virtual"><scope>samchon::protocol::service::Server</scope><name>PORT</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a4bd3d973b37ef92c4536f43b5e0b0d07" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>sequence</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1af2f1305573ef7939b3e8400354878e0d" prot="public" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>Server</name></member>
+      <member refid="d1/d4e/classsamchon_1_1Map_1a12916456879276c43d0b3ca12e3cf89b" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>set</name></member>
+      <member refid="d1/d4e/classsamchon_1_1Map_1a9f8ba1582bd870c7ce22db5f611b8775" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>set</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac4dde158d6dd302ea028acb582e9b67a" prot="public" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>size</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aef91d516b10c0ca60928add7de598a2c" prot="protected" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>sqli</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a8cff91b331b42f5bb93062e0981d6297" prot="private" virt="non-virtual"><scope>samchon::protocol::service::Server</scope><name>super</name></member>
+      <member refid="d4/de8/classsamchon_1_1protocol_1_1IServer_1a7eb5d612e27167a8359bc3ee5045e6c8" prot="public" virt="virtual"><scope>samchon::protocol::service::Server</scope><name>~IServer</name></member>
+      <member refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aa9320a8b35b2d116b716ae4077358c6b" prot="public" virt="virtual"><scope>samchon::protocol::service::Server</scope><name>~Server</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

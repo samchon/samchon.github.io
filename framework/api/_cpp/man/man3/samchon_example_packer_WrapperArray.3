@@ -1,0 +1,118 @@
+.TH "WrapperArray" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WrapperArray \- An array of wrapper with same category (name)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WrapperArray\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWrapperArray\fP (\fBWrapper\fP *)"
+.br
+.RI "\fIConstruct from a sample wrapper\&. \fP"
+.ti -1c
+.RI "auto \fBtryInsert\fP (\fBProduct\fP *) \-> bool"
+.br
+.RI "\fITry to insert a product into reserved list\&. \fP"
+.ti -1c
+.RI "void \fBoptimize\fP ()"
+.br
+.RI "\fIOptimize to retrieve the best solution\&. \fP"
+.ti -1c
+.RI "auto \fBcalcPrice\fP () const  \-> int"
+.br
+.RI "\fICalculate price of the Wrapper(s) \fP"
+.ti -1c
+.RI "auto \fBtoString\fP () const  \-> std::string"
+.br
+.RI "\fIReturn a string represents Wrapper(s) of same type\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBProduct\fP * > \fBreserved\fP"
+.br
+.RI "\fIA list for reserved Product(s)\&. \fP"
+.ti -1c
+.RI "\fBWrapper\fP * \fBsample\fP"
+.br
+.RI "\fIA sample wrapper used to copy\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An array of wrapper with same category (name)\&. 
+
+\fBWrapperArray\fP reserves Product(s) and generates enough number of Wrapper(s)\&. 
+.PP
+\fBWrapperArray\fP will retrieve the best arrange and packaging method for reserved Product(s)\&. 
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBWrapperArray\fP (\fBWrapper\fP * sample)"
+
+.PP
+Construct from a sample wrapper\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsample\fP A sample wrapper used to copy wrappers\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto tryInsert (\fBProduct\fP * product) \-> bool"
+
+.PP
+Try to insert a product into reserved list\&. If the \fBProduct\fP's volume and weight is equal or less than the \fBWrapper\fP categorized so that enable to insert in a \fBWrapper\fP, reserve the \fBProduct\fP and returns \fItrue\fP\&. If not, does not reserve and just return \fIfalse\fP\&.
+.PP
+\fBReturns:\fP
+.RS 4
+Whether the \fBProduct\fP's volume and weight is equal or less than the \fBWrapper\fP\&. 
+.RE
+.PP
+
+.SS "void optimize ()"
+
+.PP
+Optimize to retrieve the best solution\&. Retrieve the best solution of packaging in level of \fBWrapperArray\fP\&. 
+.PP
+Shuffles sequence of reserved Product(s) by \fBsamchon::library::FactorialGenerator\fP and insert the reserved Products(s) following the sequence creating Wrapper(s) as needed\&. Between the sequences from FactorialGenerator, retrieve and determine the best solution\&. 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Sequence of inserting \fBProduct\fP can affeact to numbers of Wrapper(s) to be used\&. 
+.PP
+It's the reason why even \fBWrapperArray\fP has the \fBoptimize()\fP method\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library::FactorialGenerator\fP 
+.RE
+.PP
+
+.SS "auto calcPrice () const \-> int"
+
+.PP
+Calculate price of the Wrapper(s) Calculate price of all wrapppers'\&. The price does not contain inserted products' 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

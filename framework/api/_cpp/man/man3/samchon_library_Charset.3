@@ -1,0 +1,186 @@
+.TH "Charset" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Charset \- A utility class supporting conversion between multiple character-sets\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Charset\&.hpp>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static auto \fBtoMultibyte\fP (const std::string &) \-> std::string"
+.br
+.RI "\fIConvert utf-8 to multibyte\&. \fP"
+.ti -1c
+.RI "static auto \fBtoMultibyte\fP (const std::wstring &) \-> std::string"
+.br
+.RI "\fIConvert unicode to multibyte\&. \fP"
+.ti -1c
+.RI "static auto \fBtoUTF8\fP (const std::string &) \-> std::string"
+.br
+.RI "\fIConvert multibyte to utf-8\&. \fP"
+.ti -1c
+.RI "static auto \fBtoUTF8\fP (const std::wstring &) \-> std::string"
+.br
+.RI "\fIConvert unicode to utf-8\&. \fP"
+.ti -1c
+.RI "static auto \fBtoUnicode\fP (const std::string &, int) \-> std::wstring"
+.br
+.RI "\fIConvert multibyte or utf-8 to unicode\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A utility class supporting conversion between multiple character-sets\&. 
+
+\fBCharset\fP class, it's easier to think iconv in linux 
+.PP
+Supported character-sets 
+.PP
+.PD 0
+.IP "\(bu" 2
+Multibyte (ANSI) 
+.IP "\(bu" 2
+UTF-8 
+.IP "\(bu" 2
+Unicode (UTF-16)
+.PP
+ 
+.PP
+\fBWarning:\fP
+.RS 4
+In some system, std::wstring is not for utf-8 but for unicode (utf-16)\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "static auto toMultibyte (const std::string &) \->  std::string\fC [static]\fP"
+
+.PP
+Convert utf-8 to multibyte\&. Converts utf-8 string to multibyte string\&. 
+.PP
+If the utf-8 string has header int the front, it will be erased\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+If utf-8 header is not at the front of string, it can't be erased and may cause breakage on letters 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP A utf-8 string would be converted to multibyte 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A multibyte string 
+.RE
+.PP
+
+.SS "static auto toMultibyte (const std::wstring &) \->  std::string\fC [static]\fP"
+
+.PP
+Convert unicode to multibyte\&. Converts unicode string to multibyte string
+.br
+If the unicode string has header in the front, it will be erased
+.PP
+\fBWarning:\fP
+.RS 4
+If unicode header is not at the front of string, it can't be erased and may cause breakage on letters 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP A unicode string to be converted 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A multibyte string 
+.RE
+.PP
+
+.SS "static auto toUTF8 (const std::string &) \->  std::string\fC [static]\fP"
+
+.PP
+Convert multibyte to utf-8\&. Converts multibyte string to utf-8 string
+.br
+If the inputted string is not multibyte, then may cause breakage on letters
+.PP
+\fBWarning:\fP
+.RS 4
+Converted utf-8 string does not contain the header 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP A multibyte string would be converted 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A utf-8 string 
+.RE
+.PP
+
+.SS "static auto toUTF8 (const std::wstring &) \->  std::string\fC [static]\fP"
+
+.PP
+Convert unicode to utf-8\&. Converts unicode string to utf-8 string
+.br
+Generated utf-8 string follows unicode string wheter to have header or not 
+.PD 0
+
+.IP "\(bu" 2
+If the unicode string has header on first, utf-8 will also have the header, too 
+.IP "\(bu" 2
+If not, generated utf-8 string doesn't have the header, either
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP A unicode string would be converted 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A utf-8 string 
+.RE
+.PP
+
+.SS "static auto toUnicode (const std::string &, int) \->  std::wstring\fC [static]\fP"
+
+.PP
+Convert multibyte or utf-8 to unicode\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP A multibyte or utf-8 string would be converted 
+.br
+\fIDesignate\fP str is multibyte or utf-8 string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A unicode string 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

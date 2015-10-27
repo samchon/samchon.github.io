@@ -1,0 +1,90 @@
+.TH "DSInvokeHistory" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DSInvokeHistory \- A reported history of an \fBInvoke\fP message\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DSInvokeHistory\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDSInvokeHistory\fP (\fBDistributedSystem\fP *, \fBDistributedSystemRole\fP *)"
+.br
+.RI "\fIConstruct from a system and role\&. \fP"
+.ti -1c
+.RI "auto \fBgetSystem\fP () const  \-> \fBDistributedSystem\fP *"
+.br
+.RI "\fIGet source system\&. \fP"
+.ti -1c
+.RI "auto \fBgetRole\fP () const  \-> \fBDistributedSystemRole\fP *"
+.br
+.RI "\fIGets source role\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBDistributedSystem\fP * \fBsystem\fP"
+.br
+.RI "\fISource system\&. \fP"
+.ti -1c
+.RI "\fBDistributedSystemRole\fP * \fBrole\fP"
+.br
+.RI "\fISource role\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A reported history of an \fBInvoke\fP message\&. 
+
+
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBInvokeHistory\fP is a class for reporting history log of an \fBInvoke\fP message with elapsed time from a slave to its master\&.
+.PP
+With the elapsed time, consumed time for a process of handling the \fBInvoke\fP message, \fBInvokeHistory\fP is reported to the master\&. The master utilizies the elapsed time to estimating performances of each slave system\&. With the estimated performan index, master retrives the optimal solution of distributing processes\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.PP
+\fBsamchon::protocol::master\fP 
+.PP
+\fBsamchon::protocol::slave\fP
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBDSInvokeHistory\fP (\fBDistributedSystem\fP * system, \fBDistributedSystemRole\fP * role)"
+
+.PP
+Construct from a system and role\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsystem\fP a source system 
+.br
+\fIrole\fP a source role 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

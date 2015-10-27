@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d2/df5/EventDispatcher_8cpp" kind="file" language="C++">
+    <compoundname>EventDispatcher.cpp</compoundname>
+    <includes refid="d3/d60/EventDispatcher_8hpp" local="no">samchon/library/EventDispatcher.hpp</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">atomic</includes>
+    <includes local="no">condition_variable</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">vector</includes>
+    <includes refid="d4/dbf/CriticalMap_8hpp" local="no">samchon/library/CriticalMap.hpp</includes>
+    <includes refid="d5/dd8/CriticalSet_8hpp" local="no">samchon/library/CriticalSet.hpp</includes>
+    <includes refid="df/d7d/Event_8hpp" local="no">samchon/library/Event.hpp</includes>
+    <includes refid="d6/df0/ErrorEvent_8hpp" local="no">samchon/library/ErrorEvent.hpp</includes>
+    <includes refid="d8/d67/ProgressEvent_8hpp" local="no">samchon/library/ProgressEvent.hpp</includes>
+    <incdepgraph>
+      <node id="1198">
+        <label>atomic</label>
+      </node>
+      <node id="1187">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/EventDispatcher.cpp</label>
+        <link refid="EventDispatcher.cpp"/>
+        <childnode refid="1188" relation="include">
+        </childnode>
+        <childnode refid="1203" relation="include">
+        </childnode>
+        <childnode refid="1198" relation="include">
+        </childnode>
+        <childnode refid="1204" relation="include">
+        </childnode>
+        <childnode refid="1190" relation="include">
+        </childnode>
+        <childnode refid="1205" relation="include">
+        </childnode>
+        <childnode refid="1206" relation="include">
+        </childnode>
+        <childnode refid="1207" relation="include">
+        </childnode>
+        <childnode refid="1208" relation="include">
+        </childnode>
+        <childnode refid="1211" relation="include">
+        </childnode>
+        <childnode refid="1212" relation="include">
+        </childnode>
+        <childnode refid="1213" relation="include">
+        </childnode>
+        <childnode refid="1215" relation="include">
+        </childnode>
+      </node>
+      <node id="1200">
+        <label>samchon/library/Semaphore.hpp</label>
+        <link refid="d1/da0/Semaphore_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1201" relation="include">
+        </childnode>
+        <childnode refid="1202" relation="include">
+        </childnode>
+      </node>
+      <node id="1214">
+        <label>string</label>
+      </node>
+      <node id="1196">
+        <label>samchon/library/UniqueWriteLock.hpp</label>
+        <link refid="d5/dcd/UniqueWriteLock_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+      </node>
+      <node id="1191">
+        <label>map</label>
+      </node>
+      <node id="1199">
+        <label>samchon/library/SharedWriteLock.hpp</label>
+        <link refid="d8/d53/SharedWriteLock_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1198" relation="include">
+        </childnode>
+      </node>
+      <node id="1189">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="1209">
+        <label>samchon/Map.hpp</label>
+        <link refid="dc/dbe/Map_8hpp_source"/>
+        <childnode refid="1191" relation="include">
+        </childnode>
+      </node>
+      <node id="1201">
+        <label>samchon/library/UniqueAcquire.hpp</label>
+        <link refid="d6/d66/UniqueAcquire_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+      </node>
+      <node id="1192">
+        <label>samchon/Set.hpp</label>
+        <link refid="d2/d42/Set_8hpp_source"/>
+        <childnode refid="1193" relation="include">
+        </childnode>
+      </node>
+      <node id="1188">
+        <label>samchon/library/EventDispatcher.hpp</label>
+        <link refid="d3/d60/EventDispatcher_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1190" relation="include">
+        </childnode>
+        <childnode refid="1191" relation="include">
+        </childnode>
+        <childnode refid="1192" relation="include">
+        </childnode>
+        <childnode refid="1194" relation="include">
+        </childnode>
+        <childnode refid="1200" relation="include">
+        </childnode>
+      </node>
+      <node id="1213">
+        <label>samchon/library/ErrorEvent.hpp</label>
+        <link refid="d6/df0/ErrorEvent_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1212" relation="include">
+        </childnode>
+        <childnode refid="1214" relation="include">
+        </childnode>
+      </node>
+      <node id="1215">
+        <label>samchon/library/ProgressEvent.hpp</label>
+        <link refid="d8/d67/ProgressEvent_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1212" relation="include">
+        </childnode>
+      </node>
+      <node id="1197">
+        <label>samchon/library/SharedReadLock.hpp</label>
+        <link refid="d0/df1/SharedReadLock_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1198" relation="include">
+        </childnode>
+      </node>
+      <node id="1204">
+        <label>condition_variable</label>
+      </node>
+      <node id="1211">
+        <label>samchon/library/CriticalSet.hpp</label>
+        <link refid="d5/dd8/CriticalSet_8hpp_source"/>
+        <childnode refid="1192" relation="include">
+        </childnode>
+        <childnode refid="1210" relation="include">
+        </childnode>
+      </node>
+      <node id="1207">
+        <label>vector</label>
+      </node>
+      <node id="1194">
+        <label>samchon/library/RWMutex.hpp</label>
+        <link refid="dd/d85/RWMutex_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1195" relation="include">
+        </childnode>
+        <childnode refid="1196" relation="include">
+        </childnode>
+        <childnode refid="1197" relation="include">
+        </childnode>
+        <childnode refid="1199" relation="include">
+        </childnode>
+      </node>
+      <node id="1212">
+        <label>samchon/library/Event.hpp</label>
+        <link refid="df/d7d/Event_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+      </node>
+      <node id="1203">
+        <label>iostream</label>
+      </node>
+      <node id="1208">
+        <label>samchon/library/CriticalMap.hpp</label>
+        <link refid="d4/dbf/CriticalMap_8hpp_source"/>
+        <childnode refid="1209" relation="include">
+        </childnode>
+        <childnode refid="1210" relation="include">
+        </childnode>
+      </node>
+      <node id="1205">
+        <label>mutex</label>
+      </node>
+      <node id="1210">
+        <label>samchon/library/CriticalAllocator.hpp</label>
+        <link refid="d0/da7/CriticalAllocator_8hpp_source"/>
+        <childnode refid="1190" relation="include">
+        </childnode>
+        <childnode refid="1194" relation="include">
+        </childnode>
+      </node>
+      <node id="1202">
+        <label>samchon/library/SharedAcquire.hpp</label>
+        <link refid="d5/ddb/SharedAcquire_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+        <childnode refid="1198" relation="include">
+        </childnode>
+      </node>
+      <node id="1206">
+        <label>thread</label>
+      </node>
+      <node id="1193">
+        <label>set</label>
+      </node>
+      <node id="1195">
+        <label>samchon/library/UniqueReadLock.hpp</label>
+        <link refid="d5/da5/UniqueReadLock_8hpp_source"/>
+        <childnode refid="1189" relation="include">
+        </childnode>
+      </node>
+      <node id="1190">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;samchon/library/EventDispatcher.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;condition_variable&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/CriticalMap.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/CriticalSet.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/Event.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/ErrorEvent.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/ProgressEvent.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-------------------------------------------------------------</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">-------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">EventDispatcher::EventDispatcher()<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">EventDispatcher::EventDispatcher(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/d9b/classsamchon_1_1library_1_1EventDispatcher" kindref="compound">EventDispatcher</ref><sp/>&amp;eventDispatcher)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//DO<sp/>NOT<sp/>COPY<sp/>EVENTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">EventDispatcher::EventDispatcher(<ref refid="d3/d9b/classsamchon_1_1library_1_1EventDispatcher" kindref="compound">EventDispatcher</ref><sp/>&amp;&amp;eventDispatcher)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//COPY<sp/>EVENTS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-------------------------------------------------------------</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/><sp/><sp/><sp/>EVENT<sp/>LISTENER<sp/>IN<sp/>&amp;<sp/>OUT</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">-------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EventDispatcher::addEventListener(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(*listener)(std::shared_ptr&lt;Event&gt;))</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/dc0/classsamchon_1_1library_1_1UniqueWriteLock" kindref="compound">UniqueWriteLock</ref><sp/>uk(mtx);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;set<sp/>=<sp/>eventSetMap[type];</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>set.insert(listener);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EventDispatcher::removeEventListener(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">(*listener)(std::shared_ptr&lt;Event&gt;))</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/dc0/classsamchon_1_1library_1_1UniqueWriteLock" kindref="compound">UniqueWriteLock</ref><sp/>uk(mtx);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eventSetMap.count(type)<sp/>&gt;<sp/>0<sp/>&amp;&amp;<sp/>eventSetMap[type].count(listener)<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eventSetMap[type].erase(listener);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-------------------------------------------------------------</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/><sp/><sp/><sp/>SEND<sp/>EVENT</highlight></codeline>
+<codeline lineno="56"><highlight class="comment">-------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>EventDispatcher::dispatchEvent(shared_ptr&lt;Event&gt;<sp/>event)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock" kindref="compound">UniqueReadLock</ref><sp/>uk(mtx);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type<sp/>=<sp/></highlight><highlight class="keyword">event</highlight><highlight class="normal">-&gt;getType();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(eventSetMap.count(type)<sp/>==<sp/>0<sp/>||<sp/>eventSetMap[type].empty()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;eventSet<sp/>=<sp/>eventSetMap[type];</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=<sp/>eventSet.begin();<sp/>it<sp/>!=<sp/>eventSet.end();<sp/>it++)</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread([it,<sp/>event,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">]</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d1/df7/classsamchon_1_1library_1_1UniqueAcquire" kindref="compound">UniqueAcquire</ref><sp/>u_ac(this-&gt;semaphore);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*it)(event);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}).detach();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>EventDispatcher::dispatchProgressEvent(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>x,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>shared_ptr&lt;ProgressEvent&gt;<sp/>event(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="de/d4a/classsamchon_1_1library_1_1ProgressEvent" kindref="compound">ProgressEvent</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>x,<sp/>size));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>dispatchEvent(event);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*void<sp/>EventDispatcher::eventActivated()</highlight></codeline>
+<codeline lineno="85"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/>sendEvent(Event::ACTIVATE);</highlight></codeline>
+<codeline lineno="87"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="88"><highlight class="comment">void<sp/>EventDispatcher::eventCompleted()</highlight></codeline>
+<codeline lineno="89"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/>sendEvent(Event::COMPLETE);</highlight></codeline>
+<codeline lineno="91"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="92"><highlight class="comment">void<sp/>EventDispatcher::sendRemoved()</highlight></codeline>
+<codeline lineno="93"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/>if<sp/>(eventSetMap.has(Event::REMOVED)<sp/>==<sp/>false)</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"></highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/><sp/><sp/><sp/>shared_ptr&lt;Event&gt;<sp/>event(new<sp/>Event(this,<sp/>Event::REMOVED));</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/>auto<sp/>eventSet<sp/>=<sp/>eventSetMap.get(event-&gt;getType());</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment"><sp/><sp/><sp/><sp/>eventSet-&gt;readLock();</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>eventSet-&gt;begin();<sp/>it<sp/>!=<sp/>eventSet-&gt;end();<sp/>it++)</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*it)(event);</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/><sp/><sp/><sp/>eventSet-&gt;readUnlock();</highlight></codeline>
+<codeline lineno="104"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">void<sp/>EventDispatcher::sendEvent(long<sp/>type)</highlight></codeline>
+<codeline lineno="107"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/>if<sp/>(type<sp/>==<sp/>Event::REMOVED)</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sendRemoved();</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(eventSetMap.has(type)<sp/>==<sp/>false)</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"></highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/>shared_ptr&lt;Event&gt;<sp/>event(new<sp/>Event(this,<sp/>type));</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/>auto<sp/>eventSet<sp/>=<sp/>eventSetMap.get(event-&gt;getType());</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"></highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/><sp/>eventSet-&gt;readLock();</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>eventSet-&gt;begin();<sp/>it<sp/>!=<sp/>eventSet-&gt;end();<sp/>it++)</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread(*it,<sp/>event).detach();</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/><sp/><sp/><sp/>eventSet-&gt;readUnlock();</highlight></codeline>
+<codeline lineno="123"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="124"><highlight class="comment">void<sp/>EventDispatcher::sendError(long<sp/>id)</highlight></codeline>
+<codeline lineno="125"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/><sp/><sp/><sp/>shared_ptr&lt;ErrorEvent&gt;<sp/>event(new<sp/>ErrorEvent(this,<sp/>ErrorEvent::ERROR_OCCURED,<sp/>id));</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"></highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/><sp/><sp/><sp/>errorSet.readLock();</highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>errorSet.begin();<sp/>it<sp/>!=<sp/>errorSet.end();<sp/>it++)</highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread(*it,<sp/>event).detach();</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/><sp/><sp/><sp/>errorSet.readUnlock();</highlight></codeline>
+<codeline lineno="132"><highlight class="comment">}</highlight></codeline>
+<codeline lineno="133"><highlight class="comment">void<sp/>EventDispatcher::sendProgress(unsigned<sp/>long<sp/>long<sp/>x,<sp/>unsigned<sp/>long<sp/>long<sp/>size)</highlight></codeline>
+<codeline lineno="134"><highlight class="comment">{</highlight></codeline>
+<codeline lineno="135"><highlight class="comment"><sp/><sp/><sp/><sp/>shared_ptr&lt;ProgressEvent&gt;<sp/>event(new<sp/>ProgressEvent(this,<sp/>x,<sp/>size));</highlight></codeline>
+<codeline lineno="136"><highlight class="comment"></highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/><sp/><sp/><sp/>progressSet.readLock();</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/>for<sp/>(auto<sp/>it<sp/>=<sp/>progressSet.begin();<sp/>it<sp/>!=<sp/>progressSet.end();<sp/>it++)</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>thread(*it,<sp/>event).detach();</highlight></codeline>
+<codeline lineno="140"><highlight class="comment"><sp/><sp/><sp/><sp/>progressSet.readUnlock();</highlight></codeline>
+<codeline lineno="141"><highlight class="comment">}*/</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/EventDispatcher.cpp"/>
+  </compounddef>
+</doxygen>

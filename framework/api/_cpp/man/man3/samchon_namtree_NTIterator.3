@@ -1,0 +1,122 @@
+.TH "NTIterator" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NTIterator \- Iterator of historical data\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NTIterator\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNTIterator\fP (const \fBNTEntityGroup\fP *)"
+.br
+.RI "\fIConstrut from historical data\&. \fP"
+.ti -1c
+.RI "virtual auto \fBoperator\-\-\fP () const  \-> std::shared_ptr< \fBNTIterator\fP >=0"
+.br
+.RI "\fIGet iterator to previous element\&. \fP"
+.ti -1c
+.RI "virtual auto \fBoperator++\fP () const  \-> std::shared_ptr< \fBNTIterator\fP >=0"
+.br
+.RI "\fIGet iterator to next element\&. \fP"
+.ti -1c
+.RI "virtual auto \fBoperator==\fP (const \fBNTIterator\fP &) const  \-> bool=0"
+.br
+.RI "\fIWhether an iterator is equal with the iterator\&. \fP"
+.ti -1c
+.RI "virtual auto \fBoperator<\fP (const \fBNTIterator\fP &) const  \-> bool=0"
+.br
+.RI "\fIWhether the iterator is less than an iterator\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBNTEntityGroup\fP * \fBdata\fP"
+.br
+.RI "\fIA historical data, source of the iterator\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Iterator of historical data\&. 
+
+\fBNTIterator\fP is an abstract iterator of \fBNTEntityGroup\fP\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::namtree\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual auto operator\-\- () const \->  std::shared_ptr< \fBNTIterator\fP >\fC [pure virtual]\fP"
+
+.PP
+Get iterator to previous element\&. If current iterator is the first item(equal with \fIbegin()\fP), returns end()\&.
+.PP
+\fBReturns:\fP
+.RS 4
+An iterator of the previous item\&. 
+.RE
+.PP
+
+.SS "virtual auto operator++ () const \->  std::shared_ptr< \fBNTIterator\fP >\fC [pure virtual]\fP"
+
+.PP
+Get iterator to next element\&. If current iterator is the last item, returns end()\&.
+.PP
+\fBReturns:\fP
+.RS 4
+An iterator of the next item\&. 
+.RE
+.PP
+
+.SS "virtual auto operator== (const \fBNTIterator\fP &) const \->  bool\fC [pure virtual]\fP"
+
+.PP
+Whether an iterator is equal with the iterator\&. Compare two iterators and returns whether they are equal or not\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobj\fP An iterator to compare 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Indicates whether equal or not\&. 
+.RE
+.PP
+
+.SS "virtual auto operator< (const \fBNTIterator\fP &) const \->  bool\fC [pure virtual]\fP"
+
+.PP
+Whether the iterator is less than an iterator\&. Compare two iterators and returns whether this iterator is less\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobj\fP An iterator to compare 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Indicates whether less or not\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

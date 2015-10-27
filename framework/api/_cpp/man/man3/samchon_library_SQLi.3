@@ -1,0 +1,178 @@
+.TH "SQLi" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SQLi \- A SQL interface; DBMS connector\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SQLi\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSQLi\fP (const std::string &\fBdriver\fP, int \fBport\fP)"
+.br
+.RI "\fIConstruct from driver name and port\&. \fP"
+.ti -1c
+.RI "virtual void \fBconnect\fP (const std::string &ip, const std::string &db, const std::string &id, const std::string &pwd)"
+.br
+.RI "\fIConnect to the DBMS
+.br
+\&. \fP"
+.ti -1c
+.RI "virtual void \fBdisconnect\fP ()"
+.br
+.RI "\fIDisconnect from DBMS\&. \fP"
+.ti -1c
+.RI "virtual auto \fBcreateStatement\fP () \-> std::shared_ptr< \fBSQLStatement\fP >"
+.br
+.RI "\fIFactory method for creating \fBSQLStatement\fP\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBdriver\fP"
+.br
+.RI "\fIDriver; name of DBMS used for connection\&. \fP"
+.ti -1c
+.RI "int \fBport\fP"
+.br
+.RI "\fIPort number of DBMS\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "void * \fBhdbc\fP"
+.br
+.RI "\fIHandler of DB-connector\&. \fP"
+.ti -1c
+.RI "\fBSQLStatement\fP * \fBstmt\fP"
+.br
+.RI "\fI\fBSQLStatement\fP's pointer linked with the \fBSQLi\fP\&. \fP"
+.ti -1c
+.RI "std::mutex \fBstmtMutex\fP"
+.br
+.RI "\fIMutex ensuring concurrency with \fBSQLStatement\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A SQL interface; DBMS connector\&. 
+
+\fBSQLi\fP is an abstract class managing connection (session) with a specific database and manages SQL statements are executed and results are returned within the context of a connection\&. 
+.PP
+The reason why SQLStatement(s) are managed by \fBSQLi\fP is because of a principle of DBMS, DBMS system doesn't allow simultaneous query from a session (connection)\&. Only a query (process0) is allowed at a time\&. If you try to simultaneous query from a \fBSQLi\fP, ODBC throws error\&. To avoid the error, an execute of query from \fBSQLStatement\fP will lock a mutex of \fBSQLi\fP to ensure exclusiveness\&. 
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+To ensure the exclusiveness, you've to make \fBSQLStatement\fP from \fBSQLi\fP\&. Do not make \fBSQLStatement\fP by yourself\&. call SQLi::createSQLStatement() instead\&. Even you make a derived class from \fBSQLStatement\fP, don't make its constructor to have public accessor\&. 
+.PP
+Becuase execution of a sql statement causes lock on mutex in \fBSQLi\fP, you've to destruct the \fBSQLStatement\fP or call \fBSQLStatement::free()\fP method()\&. If you don't, the mutex will not be unlocked, thus you can't do anything by the \fBSQLi\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBSQLi\fP (const std::string & driver, int port)"
+
+.PP
+Construct from driver name and port\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdriver\fP Driver name of DBMS 
+.br
+\fIport\fP Port number of DBMS 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void connect (const std::string & ip, const std::string & db, const std::string & id, const std::string & pwd)\fC [virtual]\fP"
+
+.PP
+Connect to the DBMS
+.br
+\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIip\fP An IP address of the DBMS 
+.br
+\fIdb\fP A name of database to access 
+.br
+\fIid\fP Your own ID authorified from DBMS 
+.br
+\fIpwd\fP A password for the ID
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIexception\fP Error message from DBMS 
+.RE
+.PP
+
+.SS "auto createStatement () \-> std::shared_ptr<\fBSQLStatement\fP>\fC [virtual]\fP"
+
+.PP
+Factory method for creating \fBSQLStatement\fP\&. Recommend to create \fBSQLStatement\fP by this method\&. Direct creation is not recommended as the reason of domain problem of each DBMS
+.PP
+\fBReturns:\fP
+.RS 4
+A \fBSQLStatement\fP matched for the domain \fBSQLi\fP 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBTSQLi\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string driver\fC [protected]\fP"
+
+.PP
+Driver; name of DBMS used for connection\&. 
+.PD 0
+
+.IP "\(bu" 2
+MySQL: "{MySQL Server}" 
+.IP "\(bu" 2
+MS-SQL: "{SQL Server}" 
+.IP "\(bu" 2
+PL-SQL: "{Oracle}" 
+.PP
+
+.SS "int port\fC [protected]\fP"
+
+.PP
+Port number of DBMS\&. 
+.PD 0
+
+.IP "\(bu" 2
+MySQL: 3306 
+.IP "\(bu" 2
+MS-SQL: 1433 
+.IP "\(bu" 2
+PL-SQL: 1521 
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

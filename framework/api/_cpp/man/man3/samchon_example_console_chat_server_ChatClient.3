@@ -1,0 +1,79 @@
+.TH "ChatClient" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChatClient \- A chat client\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ChatClient\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChatClient\fP (\fBChatServer\fP *, protocol::Socket *)"
+.br
+.RI "\fIConstruct from a server and socket\&. \fP"
+.ti -1c
+.RI "virtual \fB~ChatClient\fP ()"
+.br
+.RI "\fIDefault Destructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBreplyData\fP (std::shared_ptr< \fBprotocol::Invoke\fP >) override"
+.br
+.RI "\fIShift responsibility to related chain\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBChatServer\fP * \fBserver\fP"
+.br
+.RI "\fIA \fBChatServer\fP that the \fBChatClient\fP is belonged to\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A chat client\&. 
+
+A simple chat client belonged to a chat server
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBChatClient\fP (\fBChatServer\fP * server, protocol::Socket * socket)"
+
+.PP
+Construct from a server and socket\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIserver\fP A server the client is belonged to\&. 
+.br
+\fIsocket\fP A socket interacting with physical client\&. 
+.RE
+.PP
+
+.SS "~\fBChatClient\fP ()\fC [virtual]\fP"
+
+.PP
+Default Destructor\&. Erase from \fBChatServer::clientSet\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void replyData (std::shared_ptr< \fBprotocol::Invoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Shift responsibility to related chain\&. Call \fBChatServer::replyData()\fP\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

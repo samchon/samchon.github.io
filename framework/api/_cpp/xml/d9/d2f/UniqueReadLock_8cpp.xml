@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d9/d2f/UniqueReadLock_8cpp" kind="file" language="C++">
+    <compoundname>UniqueReadLock.cpp</compoundname>
+    <includes refid="dd/d85/RWMutex_8hpp" local="no">samchon/library/RWMutex.hpp</includes>
+    <incdepgraph>
+      <node id="1838">
+        <label>atomic</label>
+      </node>
+      <node id="1832">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/UniqueReadLock.cpp</label>
+        <link refid="UniqueReadLock.cpp"/>
+        <childnode refid="1833" relation="include">
+        </childnode>
+      </node>
+      <node id="1836">
+        <label>samchon/library/UniqueWriteLock.hpp</label>
+        <link refid="d5/dcd/UniqueWriteLock_8hpp_source"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+      </node>
+      <node id="1839">
+        <label>samchon/library/SharedWriteLock.hpp</label>
+        <link refid="d8/d53/SharedWriteLock_8hpp_source"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1838" relation="include">
+        </childnode>
+      </node>
+      <node id="1834">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="1837">
+        <label>samchon/library/SharedReadLock.hpp</label>
+        <link refid="d0/df1/SharedReadLock_8hpp_source"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1838" relation="include">
+        </childnode>
+      </node>
+      <node id="1833">
+        <label>samchon/library/RWMutex.hpp</label>
+        <link refid="dd/d85/RWMutex_8hpp_source"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+        <childnode refid="1835" relation="include">
+        </childnode>
+        <childnode refid="1836" relation="include">
+        </childnode>
+        <childnode refid="1837" relation="include">
+        </childnode>
+        <childnode refid="1839" relation="include">
+        </childnode>
+      </node>
+      <node id="1835">
+        <label>samchon/library/UniqueReadLock.hpp</label>
+        <link refid="d5/da5/UniqueReadLock_8hpp_source"/>
+        <childnode refid="1834" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;samchon/library/RWMutex.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1ad0cdb29e8f3745fd3299ade9d7ccffc9" kindref="member">UniqueReadLock::UniqueReadLock</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="df/d85/classsamchon_1_1library_1_1RWMutex" kindref="compound">RWMutex</ref><sp/>&amp;mtx,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>doLock)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(doLock<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mtx.<ref refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a664e237001ad049e20494ecf744b347a" kindref="member">readLock</ref>();</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;mtx<sp/>=<sp/>&amp;<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1acaa0dbeb896e84794224771734b15d5e" kindref="member">mtx</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a0774f698e7c923fe33adcfe95cdf9e73" kindref="member">isLocked</ref><sp/>=<sp/>doLock;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1ad0cdb29e8f3745fd3299ade9d7ccffc9" kindref="member">UniqueReadLock::UniqueReadLock</ref>(<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock" kindref="compound">UniqueReadLock</ref><sp/>&amp;&amp;obj)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//MOVE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;mtx<sp/>=<sp/>obj.mtx;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a0774f698e7c923fe33adcfe95cdf9e73" kindref="member">isLocked</ref><sp/>=<sp/>obj.isLocked;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TRUNCATE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>obj.mtx<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>obj.isLocked<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a41a2f19bf4ff6acbd2f39d071301d434" kindref="member">UniqueReadLock::~UniqueReadLock</ref>()</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a0774f698e7c923fe33adcfe95cdf9e73" kindref="member">isLocked</ref><sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mtx-&gt;<ref refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a33de62d0aba5d8a3aa4adf10dd12231b" kindref="member">readUnlock</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/><sp/><sp/><sp/>LOCKERS</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1adb935251a59a654ff19259005a8ed7f7" kindref="member">UniqueReadLock::lock</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="35"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a0774f698e7c923fe33adcfe95cdf9e73" kindref="member">isLocked</ref><sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*flag<sp/>=<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*)&amp;<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a0774f698e7c923fe33adcfe95cdf9e73" kindref="member">isLocked</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>mtx-&gt;<ref refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a664e237001ad049e20494ecf744b347a" kindref="member">readLock</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>*flag<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1ab896fcbef7ce95ee1dc6a8c633240ee6" kindref="member">UniqueReadLock::unlock</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="45"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a0774f698e7c923fe33adcfe95cdf9e73" kindref="member">isLocked</ref><sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*flag<sp/>=<sp/>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*)&amp;<ref refid="de/d6f/classsamchon_1_1library_1_1UniqueReadLock_1a0774f698e7c923fe33adcfe95cdf9e73" kindref="member">isLocked</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>mtx-&gt;<ref refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a33de62d0aba5d8a3aa4adf10dd12231b" kindref="member">readUnlock</ref>();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>*flag<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/UniqueReadLock.cpp"/>
+  </compounddef>
+</doxygen>

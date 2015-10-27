@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d9/d2d/classsamchon_1_1SmartPointer" kind="class" language="C++" prot="public">
+    <compoundname>samchon::SmartPointer</compoundname>
+    <includes refid="d5/d34/SmartPointer_8hpp" local="no">SmartPointer.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>_Ty</declname>
+        <defname>_Ty</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="d9/d2d/classsamchon_1_1SmartPointer_1a793a2cc9e31671f9d907b3b7c3c8926d" prot="private" static="yes" mutable="no">
+        <type>std::map&lt; _Ty *, size_t &gt;</type>
+        <definition>std::map&lt; _Ty *, size_t &gt; useCountMap</definition>
+        <argsstring></argsstring>
+        <name>useCountMap</name>
+        <briefdescription>
+<para><ref refid="d1/d4e/classsamchon_1_1Map" kindref="compound">Map</ref> of use count of each pointer. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="28" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d9/d2d/classsamchon_1_1SmartPointer_1ad5e0dbd36f0d71fce9b00b7f991b2f38" prot="private" static="yes" mutable="no">
+        <type>std::mutex</type>
+        <definition>std::mutex mtx</definition>
+        <argsstring></argsstring>
+        <name>mtx</name>
+        <briefdescription>
+<para>Mutex assigned to useCountMap. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="33" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/d2d/classsamchon_1_1SmartPointer_1a704cd4673b74ddf7a3407eb6105a83f2" prot="private" static="no" mutable="no">
+        <type>_Ty *</type>
+        <definition>_Ty* ptr</definition>
+        <argsstring></argsstring>
+        <name>ptr</name>
+        <briefdescription>
+<para>A pointer managed by <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="39" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1a68345c9394610346467ef754e47a67cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmartPointer</definition>
+        <argsstring>()</argsstring>
+        <name>SmartPointer</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The object is empty (owns no pointer, use count of zero) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="49" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1afae8f9cdf8a1ff3ab783e87970220f18" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmartPointer</definition>
+        <argsstring>(const _Ty *ptr)</argsstring>
+        <name>SmartPointer</name>
+        <param>
+          <type>const _Ty *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Constrct from pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>The object owns ptr, setting the use count to add 1</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pointer to own </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="60" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1ae9e6faf3a11c423ca074f5deceac6921" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmartPointer</definition>
+        <argsstring>(const SmartPointer &amp;smartPointer)</argsstring>
+        <name>SmartPointer</name>
+        <param>
+          <type>const <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref> &amp;</type>
+          <declname>smartPointer</declname>
+        </param>
+        <briefdescription>
+<para>Copy Constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The object shares ownership of smartPointer&apos;s asset and increases the use count</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>smartPointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to copy </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="73" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="73" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1a1cc2139ac79364884eb3b045dd861402" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>SmartPointer</definition>
+        <argsstring>(SmartPointer &amp;&amp;smartPointer)</argsstring>
+        <name>SmartPointer</name>
+        <param>
+          <type><ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref> &amp;&amp;</type>
+          <declname>smartPointer</declname>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>        </briefdescription>
+        <detaileddescription>
+<para>The object acquires the content managed by smartPointer<linebreak/>
+The ceding object becomes empty and there&apos;s no change on use count</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>smartPointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to move </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="84" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="84" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1abfe0bde0256f04c388a66863a34549c3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>~SmartPointer</definition>
+        <argsstring>()</argsstring>
+        <name>~SmartPointer</name>
+        <briefdescription>
+<para>Destroy <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Destroys the object. But, before, it may produce the following side effects depending on the use_count of member</para><para><itemizedlist>
+<listitem><para>If use_count is greater than 1: The use count is decreased by 1. </para></listitem>
+<listitem><para>If use_count is 1 (i.e., the object is the unique owner of the managed pointer): the object pointed by its owned pointer is deleted. </para></listitem>
+<listitem><para>If use_count is zero (i.e., the object is empty), this destructor has no side effects. </para></listitem>
+</itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="105" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="105" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1a4d67210908252d05e2c30351e54141f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void reset</definition>
+        <argsstring>(const _Ty *ptr)</argsstring>
+        <name>reset</name>
+        <param>
+          <type>const _Ty *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Reset pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reset pointer to manage and shrink use count of previous pointer. </para><para>Additionally, a call to this function has the same side effects as if <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref>&apos;s destructor was called before its value changed (including the deletion of the managed object if this <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref> was unique). </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Pointer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whose ownership is taken over by the object. Unlike std::shared_ptr, ptr being managed by another <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref> does not cause any problem </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="128" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="128" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1a6baf34638bd89ff31680f9039d1f2053" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto get</definition>
+        <argsstring>() const  -&gt; _Ty *</argsstring>
+        <name>get</name>
+        <briefdescription>
+<para>Get pointer. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns the stored pointer. </para><para>The stored pointer points to the object the shared_ptr object dereferences to, which is generally the same as its owned pointer. </para><para><simplesect kind="return"><para>The stored pointer </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="154" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="154" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1aaba1ba1b4d27ca52c4956de53b9a83f3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto operator-&gt;</definition>
+        <argsstring>() const  -&gt; _Ty *</argsstring>
+        <name>operator-&gt;</name>
+        <briefdescription>
+<para>Dereference object membr. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a pointer to the object pointed by the stored pointer in order to access one of its members. This member function shall not be called if the stored pointer is a null pointer. </para><para>It returns the same value as <ref refid="d9/d2d/classsamchon_1_1SmartPointer_1a6baf34638bd89ff31680f9039d1f2053" kindref="member">get()</ref>. </para><para><simplesect kind="return"><para>A pointer to be managed by <ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="170" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="170" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1affdf7511964cffba4774c08a70b5d023" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto operator*</definition>
+        <argsstring>() const  -&gt; _Ty &amp;</argsstring>
+        <name>operator*</name>
+        <briefdescription>
+<para>Dereference object. </para>        </briefdescription>
+        <detaileddescription>
+<para>Returns a reference to the object pointerd by pointer. It is equivalent to: *get()</para><para><simplesect kind="return"><para>A reference to the object pointed </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="184" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="184" bodyend="187"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1ad5cbade45bff778e044aefc1a3646983" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void construct</definition>
+        <argsstring>(_Ty *ptr)</argsstring>
+        <name>construct</name>
+        <param>
+          <type>_Ty *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="193" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="193" bodyend="202"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/d2d/classsamchon_1_1SmartPointer_1a7c47a65a57df6d7437a422abfda2b94c" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void destruct</definition>
+        <argsstring>(_Ty *ptr)</argsstring>
+        <name>destruct</name>
+        <param>
+          <type>_Ty *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="203" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="203" bodyend="214"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Global shared pointer<linebreak/>
+. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer</ref> is a global shared pointer based on map, map referencing. </para><para>Manages the storage of a pointer, providing a limited garbage-collection facility, possibly sharing that management with other objects. </para><para>Referenced comments of std::allocator. </para><para><itemizedlist>
+<listitem><para><ulink url="http://www.cplusplus.com/reference/memory/shared_ptr/">http://www.cplusplus.com/reference/memory/shared_ptr/</ulink></para></listitem>
+</itemizedlist>
+<parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>The</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>type of managed object </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" line="23" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/SmartPointer.hpp" bodystart="22" bodyend="215"/>
+    <listofallmembers>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1ad5cbade45bff778e044aefc1a3646983" prot="private" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>construct</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1a7c47a65a57df6d7437a422abfda2b94c" prot="private" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>destruct</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1a6baf34638bd89ff31680f9039d1f2053" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>get</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1ad5e0dbd36f0d71fce9b00b7f991b2f38" prot="private" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>mtx</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1affdf7511964cffba4774c08a70b5d023" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>operator*</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1aaba1ba1b4d27ca52c4956de53b9a83f3" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>operator-&gt;</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1a704cd4673b74ddf7a3407eb6105a83f2" prot="private" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>ptr</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1a4d67210908252d05e2c30351e54141f3" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>reset</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1a68345c9394610346467ef754e47a67cb" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>SmartPointer</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1afae8f9cdf8a1ff3ab783e87970220f18" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>SmartPointer</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1ae9e6faf3a11c423ca074f5deceac6921" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>SmartPointer</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1a1cc2139ac79364884eb3b045dd861402" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>SmartPointer</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1a793a2cc9e31671f9d907b3b7c3c8926d" prot="private" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>useCountMap</name></member>
+      <member refid="d9/d2d/classsamchon_1_1SmartPointer_1abfe0bde0256f04c388a66863a34549c3" prot="public" virt="non-virtual"><scope>samchon::SmartPointer</scope><name>~SmartPointer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

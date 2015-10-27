@@ -1,0 +1,176 @@
+.TH "ErrorEvent" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ErrorEvent \- \fBEvent\fP representing an error\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ErrorEvent\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBErrorEvent\fP (\fBEventDispatcher\fP *, const std::string &)"
+.br
+.RI "\fIConstruct from source and error-id\&. \fP"
+.ti -1c
+.RI "auto \fBgetMessage\fP () const  \-> std::string"
+.br
+.RI "\fIGet error-id\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBmessage\fP"
+.br
+.RI "\fIError message\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBEvent\fP representing an error\&. 
+
+
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+The \fBEvent\fP class is used as the base class for the creation of \fBEvent\fP objects, which are passed as parameters to event listeners when an event occurs\&. 
+.PP
+The properties of the \fBEvent\fP class carry basic information about an event, such as the event's type or source (who made the event) of the event\&. 
+.PP
+For many events, such as the events represented by the \fBEvent\fP class constants, this basic information is sufficient\&. Other events, however, may require more detailed information\&. 
+.PP
+ 
+.PP
+\fBExample source\fP
+.RS 4
+
+.PP
+.nf
+1 #include <iostream>
+2 #include <thread>
+3 #include <chrono>
+4 
+5 #include <samchon/library/EventDispatcher\&.hpp>
+6 #include <samchon/library/Event\&.hpp>
+7 #include <samchon/library/ProgressEvent\&.hpp>
+8 
+9 #ifdef _WIN64
+10 #   ifdef _DEBUG
+11 #       pragma comment(lib, "x64/Debug/SamchonFramework\&.lib")
+12 #   else
+13 #       pragma comment(lib, "x64/Release/SamchonFramework\&.lib")
+14 #   endif
+15 #else
+16 #   ifdef _DEBUG
+17 #       pragma comment(lib, "Debug/SamchonFramework\&.lib")
+18 #   else
+19 #       pragma comment(lib, "Release/SamchonFramework\&.lib")
+20 #   endif
+21 #endif
+22 
+23 using namespace std;
+24 using namespace samchon::library;
+25 
+26 class Process
+27     : public EventDispatcher
+28 {
+29 public:
+30     Process()
+31     {
+32 
+33     };
+34 
+35     void run()
+36     {
+37         dispatchEvent(shared_ptr<Event>(new Event(this, Event::ACTIVATE)));
+38 
+39         for (size_t i = 0; i < 100; i++)
+40         {
+41             this_thread::sleep_for(chrono::seconds(1));
+42             dispatchEvent(shared_ptr<Event>(new ProgressEvent(this, i + 1, 100)));
+43         }
+44 
+45         dispatchEvent(shared_ptr<Event>(new Event(this, Event::COMPLETE)));
+46     };
+47 };
+48 
+49 void handleActivate(shared_ptr<Event> event)
+50 {
+51     cout << "Activated" << endl;
+52 }
+53 void handleComplete(shared_ptr<Event> event)
+54 {
+55     cout << "Completed" << endl;
+56 }
+57 void handleProgress(shared_ptr<Event> event)
+58 {
+59     cout << dynamic_pointer_cast<ProgressEvent>(event)->getPercent() * 100\&.0 << "%" << endl;
+60 }
+61 
+62 void main()
+63 {
+64     Process process;
+65 
+66     process\&.addEventListener(Event::ACTIVATE, handleActivate);
+67     process\&.addEventListener(Event::COMPLETE, handleComplete);
+68     process\&.addEventListener(ProgressEvent::PROGRESS, handleProgress);
+69 
+70     process\&.run();
+71     system("pause");
+72 }
+
+.fi
+.PP
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+\fBEvent\fP is a candidate to be depreciated\&. 
+.PP
+Since C++11, calling member method of a class by a new thread passing by static method and using void pointer are recommeded to avoid\&. As the reason, using \fIstd::thread\fP and \fIstd::bind will\fP be better\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+std::thread: http://www.cplusplus.com/reference/thread/thread/ 
+.IP "\(bu" 2
+std::bind: http://www.cplusplus.com/reference/functional/bind/
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBErrorEvent\fP (\fBEventDispatcher\fP *, const std::string &)"
+
+.PP
+Construct from source and error-id\&. The event object owns its source and type
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsource\fP Source of the event; who made the event 
+.br
+\fIid\fP An error-id 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

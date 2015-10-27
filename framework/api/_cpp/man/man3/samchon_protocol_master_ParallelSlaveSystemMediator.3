@@ -1,0 +1,121 @@
+.TH "ParallelSlaveSystemMediator" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ParallelSlaveSystemMediator \- A parallel slave system for mediation\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ParallelSlaveSystemMediator\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParallelSlaveSystemMediator\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBreplyData\fP (std::shared_ptr< \fBInvoke\fP >) override"
+.br
+.RI "\fIHandling replied message from an external system\&. \fP"
+.ti -1c
+.RI "virtual auto \fBTAG\fP () const  \-> std::string override"
+.br
+.RI "\fIA tag name when represented by XML\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBParallelSystemArrayMediator\fP * \fBmaster\fP"
+.br
+.RI "\fIA master system for mediation\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A parallel slave system for mediation\&. 
+
+\fBParallelSlaveSystemMediator\fP is an abstract class derived from \fBslave::ParallelSystem\fP for realizing tree-structured distriuted processins system\&. \fBParallelSlaveSystemMediator\fP acts a slave system's role for its master, on the above level\&. 
+.PP
+\fBParallelSystemArrayMediator\fP and \fBParallelSlaveSystemMediator\fP classes are paired to act a mediator system role by acting their own role, master system role for below slaves and slave system role for above master system\&. 
+.PP
+ 
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+SlaveSystem, literally, means a slave system belongs to a maste system\&. 
+.PP
+The SlaveSystem class is used in opposite side system of \fBmaster::DistributedSystem\fP and \fBmaster::ParallelSystem\fP and reports elapsed time of each commmand (by \fBInvoke\fP message) for estimation of its performance\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBExternalSystem\fP is a boundary class interacting with an external system by network communication\&. Also, \fBExternalSystem\fP is an abstract class that a network role, which one is server and which one is client, is not determined yet\&. 
+.PP
+The \fBExternalSystem\fP has ExternalSystemRole(s) groupped methods, handling \fBInvoke\fP message interacting with the external system, by subject or unit of a moudle\&. The \fBExternalSystemRole\fP is categorized in a 'control'\&. 
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+The \fBExternalSystem\fP class takes a role of interaction with external system in network level\&. However, within a framework of Samchon Framework, a boundary class like the \fBExternalSystem\fP is not such important\&. You can find some evidence in a relationship between \fBExternalSystemArray\fP, \fBExternalSystem\fP and \fBExternalSystemRole\fP\&. 
+.PP
+Of course, the \fBExternalSystemRole\fP is belonged to an \fBExternalSystem\fP\&. However, if you access an \fBExternalSystemRole\fP from an \fBExternalSystemArray\fP directly, not passing by a belonged \fBExternalSystem\fP, and send an \fBInvoke\fP message even you're not knowing which \fBExternalSystem\fP is related in, it's called 'Proxy pattern'\&.
+.PP
+Like the explanation of 'Proxy pattern', you can utilize an \fBExternalSystemRole\fP as a proxy of an \fBExternalSystem\fP\&. With the pattern, you can only concentrate on \fBExternalSystemRole\fP itself, what to do with \fBInvoke\fP message, irrespective of the \fBExternalSystemRole\fP is belonged to which \fBExternalSystem\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void replyData (std::shared_ptr< \fBInvoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Handling replied message from an external system\&. If there's a related \fBExternalSystemRole\fP, shifts responsibility to the \fBExternalSystemRole\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP Replied \fBInvoke\fP message 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBExternalSystem\fP\&.
+.SS "virtual auto TAG () const \->  std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name when represented by XML\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A tag name 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBExternalSystem\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

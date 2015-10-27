@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d4/d05/namespacesamchon_1_1namtree" kind="namespace" language="C++">
+    <compoundname>samchon::namtree</compoundname>
+    <innerclass refid="d5/d98/classsamchon_1_1namtree_1_1INTExplore" prot="public">samchon::namtree::INTExplore</innerclass>
+    <innerclass refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" prot="public">samchon::namtree::NTCriteria</innerclass>
+    <innerclass refid="dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup" prot="public">samchon::namtree::NTEntityGroup</innerclass>
+    <innerclass refid="d0/d7b/classsamchon_1_1namtree_1_1NTFactory" prot="public">samchon::namtree::NTFactory</innerclass>
+    <innerclass refid="d2/da2/classsamchon_1_1namtree_1_1NTFile" prot="public">samchon::namtree::NTFile</innerclass>
+    <innerclass refid="d4/dd2/classsamchon_1_1namtree_1_1NTIterator" prot="public">samchon::namtree::NTIterator</innerclass>
+    <innerclass refid="db/d29/classsamchon_1_1namtree_1_1NTParameter" prot="public">samchon::namtree::NTParameter</innerclass>
+    <innerclass refid="de/d08/classsamchon_1_1namtree_1_1NTParameterArray" prot="public">samchon::namtree::NTParameterArray</innerclass>
+    <innerclass refid="d4/dff/classsamchon_1_1namtree_1_1NTParameterDetermined" prot="public">samchon::namtree::NTParameterDetermined</innerclass>
+    <innerclass refid="d4/df0/classsamchon_1_1namtree_1_1NTSide" prot="public">samchon::namtree::NTSide</innerclass>
+    <briefdescription>
+<para>Package of Nam-Tree. </para>    </briefdescription>
+    <detaileddescription>
+<para>Nam-Tree is a module of tree-strucrued complicate logical condition model for realizing A.N.N. (Artificial Neural Network). You can make the ANN model with weight and bias and express not only logical condition by your hand, but also construct the logical condition by automaticaly with optimization of genetic algorithm and grid method. </para><para><image type="html" name="namtree.png"></image>
+ <image type="latex" name="namtree.png"></image>
+</para><para><image type="html" name="namtree_back_testing.png"></image>
+ <image type="latex" name="namtree_back_testing.png"></image>
+</para><para>The basic pricinple of Nam-Tree are follow: </para><para><orderedlist>
+<listitem>
+<para>A conditional expression with weight  </para><para>F(x) = (<ref refid="d4/df0/classsamchon_1_1namtree_1_1NTSide" kindref="compound">NTSide</ref> &lt; <ref refid="d4/df0/classsamchon_1_1namtree_1_1NTSide" kindref="compound">NTSide</ref> ? 1: 0) X weight </para><para></para><para>NTCrietria is made up for conditional expression. </para><para><itemizedlist>
+<listitem>
+<para>When the expression is true, returns 1 * weight  </para></listitem>
+<listitem>
+<para>When the expression is false, returns 0  </para></listitem>
+</itemizedlist>
+</para></listitem>
+<listitem>
+<para>Hierarchical relationship  <itemizedlist>
+<listitem>
+<para>In vertical relationship: multiply (X)  </para></listitem>
+<listitem>
+<para>In horizontal relationship: plus (+)  </para></listitem>
+</itemizedlist>
+</para><para></para><para>With that rule, you can make enormous conditions. I can sure there&apos;s not any condition can&apos;be be expressed by the model. </para><para></para><para></para></listitem>
+<listitem>
+<para>Making bias  </para><para>Just make a <ref refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" kindref="compound">NTCriteria</ref> returns only true. </para><para></para><para>It&apos;s the bias returns only weight. </para><para></para><para></para></listitem>
+<listitem>
+<para>Explore  <orderedlist>
+<listitem>
+<para>Exporing in a <ref refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" kindref="compound">NTCriteria</ref> (optimize a side)  </para><para>Make a <ref refid="d4/df0/classsamchon_1_1namtree_1_1NTSide" kindref="compound">NTSide</ref> to be nullptr, then <ref refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" kindref="compound">NTCriteria</ref> will explore the best value.</para><para></para><para></para><para>Nam-Tree will calculate the condtions from minimum to maximum in <ref refid="d5/d98/classsamchon_1_1namtree_1_1INTExplore" kindref="compound">INTExplore</ref> reach to the precision, by the method of multi-demensional grid. </para><para></para><para></para></listitem>
+<listitem>
+<para>Exploring parameter in <ref refid="d4/df0/classsamchon_1_1namtree_1_1NTSide" kindref="compound">NTSide</ref>  </para><para>If you set the parameterMNap to be empty, Nam-Tree will explore the best parameter until reach to the precision in INTExploreParameter from minimum to maximum. </para><para></para><para></para><para><image type="html" name="namtree_grid_method.png"></image>
+ <image type="latex" name="namtree_grid_method.png"></image>
+</para><para></para></listitem>
+<listitem>
+<para>Exploring by creating <ref refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" kindref="compound">NTCriteria</ref>  </para><para>(Creates lots of hierarchical conditions and tests them) </para><para></para><para></para><para>If all the side (left and right) in a <ref refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" kindref="compound">NTCriteria</ref> are nullptr, the <ref refid="de/dfd/classsamchon_1_1namtree_1_1NTCriteria" kindref="compound">NTCriteria</ref> will make a lot of children NTCriteria(s) to test lots of cases, so that derives the best condition set will be made up. </para><para></para><para></para><para>This process will ride on same routines of 4-1 and 4-2, for each created cases. Of course, this process needs too much time, so that you may need to be patient. </para><para></para></listitem>
+</orderedlist>
+</para></listitem>
+</orderedlist>
+</para><para><image type="html" name="namtree_criteria.png"></image>
+ <image type="latex" name="namtree_criteria.png"></image>
+</para><para><image type="html" name="namtree_file.png"></image>
+ <image type="latex" name="namtree_file.png"></image>
+</para><para><simplesect kind="note"><para></para></simplesect>
+Previous version of the Samchon Framework, <ref refid="d2/da2/classsamchon_1_1namtree_1_1NTFile" kindref="compound">NTFile</ref> class had a function script on the <ref refid="d2/da2/classsamchon_1_1namtree_1_1NTFile" kindref="compound">NTFile</ref> and Nam-Tree module compiled the script like Nam-Tree moudle of Flex standalone that is keeping the compiling method. </para><para>However, modern Samchon Framework&apos;s C++ <ref refid="d2/da2/classsamchon_1_1namtree_1_1NTFile" kindref="compound">NTFile</ref> class doesn&apos;t have a function script and does not compile. I don&apos;t know a way to compile a script in lots of operating systems, so I dropped the compiling method. Until update, <ref refid="d0/d7b/classsamchon_1_1namtree_1_1NTFactory" kindref="compound">NTFactory</ref> has function pointers in a Dictionary and <ref refid="d2/da2/classsamchon_1_1namtree_1_1NTFile" kindref="compound">NTFile</ref> reference them. Users must put own methods into the Dictionary by their hands. </para><para>I will solve the problem sooon. Until next generation of Samchon Framework, put your own function pointers to a Dictionary in <ref refid="d0/d7b/classsamchon_1_1namtree_1_1NTFactory" kindref="compound">NTFactory</ref> by your hand please. Sorry for my unripe skill on programming. </para><para><simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/documentation/namtree.hpp" line="94" column="1"/>
+  </compounddef>
+</doxygen>

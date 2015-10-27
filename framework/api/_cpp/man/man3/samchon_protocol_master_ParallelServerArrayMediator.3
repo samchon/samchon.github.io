@@ -1,0 +1,111 @@
+.TH "ParallelServerArrayMediator" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ParallelServerArrayMediator \- A mediator of parallel system between master and slaves\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ParallelServerArrayMediator\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParallelServerArrayMediator\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBstart\fP () override"
+.br
+.RI "\fIStart interaction\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A mediator of parallel system between master and slaves\&. 
+
+\fBParallelServerArrayMediator\fP is a \fBParallelSystemArrayMediator\fP specialized in servers' driver\&. \fBParallelServerArrayMediator\fP is a server for its master and also manages children servers' slaves\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBParallelSystemArrayMediator\fP class is used to realizing a mediator system of tree-structured parallel processing system\&. \fBParallelSystemArrayMediator\fP intermediates between origin-master(\fBParallelSystemArray\fP) and its slaves(slave::ParallelSystem)\&. 
+.PP
+\fBParallelSystemArrayMediator\fP is a master(ParallelSystemArray) within the framework of slaves systems (\fBslave::ParallelSystem\fP objects) and also can be a slave system (\fBslave::ParallelSystem\fP) within framework of its master(ParallelSystemArray) by having \fBParallelSlaveSystemMediator\fP\&. 
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBParallelSystemArray\fP is an \fBExternalSystemArray\fP and an abstract class containing\&. and managing parallel system drvers within framework of master\&. The \fBParallelSystemArray\fP class allocates segmented processes (\fBInvoke\fP message containing segmentation size) following by each system's performance index\&. 
+.PP
+Unlike \fBDistributedSystemArray\fP, \fBParallelSystemArray\fP does not have such complicate relationships and logics\&. All segmentation sent by sendData(Invoke, size_t) requires uniform performance\&. \fBParallelSystemArray\fP just calculates each system's performance index by elapsing time such easily\&. 
+.PP
+Of course, \fBDistributedSystemArray\fP determines which size of segmentation allocation will be suitable for each system by the performance index 
+.PP
+\&.
+.PP
+Each segmentation in requested process (\fBInvoke\fP message) is equivalent\&. Thus, role of \fBParallelSystem\fP objects in a \fBParallelSystemArray\fP are almost same and does not need to specify \fBExternalSystemRole\fP on each \fBParallelSystem\fP\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Not a matter to specifying \fBExternalSystemRole\fP objects to each \fBParallelSystem\fP\&. In that case, \fBInvoke\fP messages having segmentation size will be processed by \fBParallelSystemArray\fP's own logic and \fBInvoke\fP messages without segmentation size will be handled by ordinary logic of \fBExternalSystemArray\fP's own\&.
+.PP
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBExternalSystemArray\fP is an abstract class containing and managing external system drivers\&. 
+.PP
+Also, \fBExternalSystemArray\fP can access to ExternalSystemRole(s) directly\&. With the method, you can use an \fBExternalSystemRole\fP as 'logical proxy' of an \fBExternalSystem\fP\&. Of course, the \fBExternalSystemRole\fP is belonged to an \fBExternalSystem\fP\&. However, if you access an \fBExternalSystemRole\fP from an \fBExternalSystemArray\fP directly, not passing by a belonged \fBExternalSystem\fP, and send an \fBInvoke\fP message even you're not knowing which \fBExternalSystem\fP is related in, the \fBExternalSystemRole\fP acted a role of proxy\&. 
+.PP
+It's called as 'Proxy pattern'\&. With the pattern, you can only concentrate on \fBExternalSystemRole\fP itself, what to do with \fBInvoke\fP message, irrespective of the \fBExternalSystemRole\fP is belonged to which \fBExternalSystem\fP\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBExternalSystemArray::getRole\fP('something')->sendData(invoke);
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void start ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Start interaction\&. An abstract method starting interaction with external systems\&. 
+.PP
+If external systems are servers, starts connection to them, else clients, opens a server and accepts the external systems\&. You can addict your own procudures of starting drivers, but if you directly override method of abstract \fBExternalSystemArray\fP, be careful about virtual inheritance\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBDistributedClientArray::start()\fP calls \fBDistributedSystemArray::start()\fP and \fBExternalClientArray\fP:\fBstart()\fP 
+.PP
+
+.PP
+Reimplemented from \fBParallelSystemArrayMediator\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

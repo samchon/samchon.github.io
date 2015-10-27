@@ -1,0 +1,123 @@
+.TH "GeometryPoint" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+GeometryPoint \- A geometry coordinates (point)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <GeometryPoint\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGeometryPoint\fP (int)"
+.br
+.RI "\fIConstruct from uid\&. \fP"
+.ti -1c
+.RI "\fBGeometryPoint\fP (int, double, double)"
+.br
+.RI "\fIConstruct from uid and geometry coordinates\&. \fP"
+.ti -1c
+.RI "auto \fBcalcDistance\fP (const \fBGeometryPoint\fP &) const  \-> double"
+.br
+.RI "\fICalculate distance between target Branch\&. \fP"
+.ti -1c
+.RI "auto \fBtoString\fP () const  \-> std::string"
+.br
+.RI "\fIConvert the Branch to String\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBuid\fP"
+.br
+.RI "\fIAn unique id for uniqueness\&. \fP"
+.ti -1c
+.RI "double \fBlongitude\fP"
+.br
+.RI "\fIThe longitude; coordinates X\&. \fP"
+.ti -1c
+.RI "double \fBlatitude\fP"
+.br
+.RI "\fIThe latitude, coordinates Y\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A geometry coordinates (point) 
+
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBGeometryPoint\fP (int uid)"
+
+.PP
+Construct from uid\&. Geometry coordinates, longitude and latitude will have a random value between 
+.PD 0
+
+.IP "\(bu" 2
+Longitude between 0 and 180\&. 
+.IP "\(bu" 2
+Latitude between -90 and 90\&. 
+.PP
+
+.SS "\fBGeometryPoint\fP (int uid, double longitude, double latitude)"
+
+.PP
+Construct from uid and geometry coordinates\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlongitude\fP Longitude, a coordinate of the geometry point 
+.br
+\fIlatitude\fP Latitude, a coordinate of the geometry point 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto calcDistance (const \fBGeometryPoint\fP & point) const \-> double"
+
+.PP
+Calculate distance between target Branch\&. Referenced from http://thesunrises.tistory.com/958 (Geometry points to killometers) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbranch\fP The target Branch to calculate 
+.RE
+.PP
+
+.SS "auto toString () const \-> std::string"
+
+.PP
+Convert the Branch to String\&. Have of form of tab and enter delimeters for Excel\&. 
+.PD 0
+
+.IP "\(bu" 2
+.PP
+.nf
+ {$uid}   {$longitude}    {$latitude} 
+.fi
+.PP
+
+.PP
+\fBReturns:\fP
+.RS 4
+A string represents the \fBGeometryPoint\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

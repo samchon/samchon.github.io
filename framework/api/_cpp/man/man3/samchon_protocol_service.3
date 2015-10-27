@@ -1,0 +1,785 @@
+.TH "samchon::protocol::service" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+samchon::protocol::service \- Package of cloud service as a server\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBClient\fP"
+.br
+.RI "\fIA network boundary with the client in an \fBUser\fP\&. \fP"
+.ti -1c
+.RI "class \fBIPUserPair\fP"
+.br
+.RI "\fIRelationship between IP address and \fBUser\fP for issuing session\&. \fP"
+.ti -1c
+.RI "class \fBServer\fP"
+.br
+.RI "\fIA server for (cloud) service\&. \fP"
+.ti -1c
+.RI "class \fBService\fP"
+.br
+.RI "\fIA service\&. \fP"
+.ti -1c
+.RI "class \fBServiceKeeper\fP"
+.br
+.RI "\fIA keeper blocking destrunction of \fBUser\fP and \fBClient\fP\&. \fP"
+.ti -1c
+.RI "class \fBUser\fP"
+.br
+.RI "\fI\fBUser\fP containing Client(s) with session-id\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Package of cloud service as a server\&. 
+
+In Samchon Framework, realizing cloud service, there're two classes representing physical server and client as \fBServer\fP and \fBClient\fP\&. Between the two classes representing boundaries, there is a class representing logical conception user as \fBUser\fP\&. In the terminal node under the \fBClient\fP, \fBService\fP class represents a control\&. 
+.PP
+The default protocol of the service package is not 'web socket'\&. The default only has message protocol of \fBInvoke\fP, does not have handshake or another pre-defined protocol\&. By the default protocol, you can connect to the cloud server (built from c++, by service package) as a client by a program or plug-in like Flex or C#\&. However you can't connect by web-browser only allowing socket protocol as web-socket\&. 
+.PP
+To build a cloud service to follow web-socket protocol, inherits derviced classes not from \fBServer\fP, \fBClient\fP, but from WebServer, WebClient or implements \fBIWebServer\fP, \fBIWebClient\fP which are derived from \fBServer\fP and \fBClient\fP\&. 
+.PP
+.SS "Class Diagram "
+.PP
+ 
+.PP
+.SS "Sequence Diagram - A client's connection "
+.PP
+ 
+.PP
+.SS "Sequence Diagram - Network communication "
+.PP
+ 
+.PP
+.SS "Simple example - Chat service "
+.PP
+\fBexamples/chat_service/ChatServer\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <samchon/protocol/service/Server\&.hpp>
+3 
+4 namespace samchon
+5 {
+6     namespace example
+7     {
+8         namespace chat_service
+9         {
+10             class ChatRoomArray;
+11             class ChatRoom;
+12 
+22             class ChatServer
+23                 : public protocol::service::Server
+24             {
+25             protected:
+26                 typedef protocol::service::Server super;
+27 
+28                 virtual auto PORT() const -> int override
+29                 {
+30                     return 37749;
+31                 };
+32 
+33             private:
+37                 ChatRoomArray *roomArray;
+38 
+39             public:
+43                 ChatServer();
+44                 virtual ~ChatServer();
+45 
+46             protected:
+47                 virtual auto createUser() -> protocol::service::User* override;
+48 
+49             public:
+53                 auto getChatRoomArray() const -> ChatRoomArray*;
+54             };
+55         };
+56     };
+57 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatUser\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <samchon/protocol/service/User\&.hpp>
+3 
+4 namespace samchon
+5 {
+6     namespace example
+7     {
+8         namespace chat_service
+9         {
+19             class ChatUser
+20                 : public protocol::service::User
+21             {
+22             public:
+26                 ChatUser(protocol::service::Server*);
+27                 virtual ~ChatUser() = default;
+28 
+29             protected:
+30                 virtual auto createClient() -> protocol::service::Client* override;
+31             };
+32         };
+33     };
+34 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatClient\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <samchon/protocol/service/Client\&.hpp>
+3 
+4 namespace samchon
+5 {
+6     namespace example
+7     {
+8         namespace chat_service
+9         {
+19             class ChatClient
+20                 : public protocol::service::Client
+21             {
+22             public:
+26                 ChatClient(protocol::service::User*);
+27                 virtual ~ChatClient() = default;
+28 
+29             protected:
+30                 auto createService(const std::string &) -> protocol::service::Service* override;
+31             };
+32         };
+33     };
+34 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatService\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <samchon/protocol/service/Service\&.hpp>
+3 
+4 namespace samchon
+5 {
+6     namespace example
+7     {
+8         namespace chat_service
+9         {
+10             class ChatRoom;
+11 
+22             class ChatService
+23                 : public protocol::service::Service
+24             {
+25             private:
+26                 typedef protocol::service::Service super;
+27 
+32                 ChatRoom *room;
+33 
+34             public:
+38                 ChatService(protocol::service::Client*);
+39                 virtual ~ChatService();
+40 
+41                 virtual void replyData(std::shared_ptr<protocol::Invoke>) override;
+42             };
+43         };
+44     };
+45 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ListService\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <samchon/protocol/service/Service\&.hpp>
+3 
+4 namespace samchon
+5 {
+6     namespace example
+7     {
+8         namespace chat_service
+9         {
+10             class ListService;
+11 
+21             class ListService
+22                 : public protocol::service::Service
+23             {
+24             private:
+25                 typedef protocol::service::Service super;
+26 
+27             public:
+31                 ListService(protocol::service::Client*);
+32                 virtual ~ListService() = default;
+33 
+34                 virtual void replyData(std::shared_ptr<protocol::Invoke> invoke) override;
+35 
+36             private:
+42                 void createRoom(const std::string &);
+43 
+44                 void handleRoomArray(std::shared_ptr<library::XML>);
+45                 void handleMakeRoom(bool);
+46                 void handleRoomArray(bool);
+47             };
+48         };
+49     };
+50 };
+
+.fi
+.PP
+.RE
+.PP
+\fBexamples/chat_service/ChatRoomArray\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <samchon/library/CriticalDictionary\&.hpp>
+3 #include <samchon/protocol/IEntityGroup\&.hpp>
+4 
+5 namespace samchon
+6 {
+7     namespace library { class XML; };
+8     namespace protocol { class Invoke; };
+9 
+10     namespace example
+11     {
+12         namespace chat_service
+13         {
+14             class ChatRoom;
+15             
+16             class ChatServer;
+17             class ChatUser;
+18 
+31             class ChatRoomArray
+32                 : public CriticalDictionary<std::shared_ptr<ChatRoom>>,
+33                 public protocol::IEntityGroup
+34             {
+35             protected:
+36                 typedef CriticalDictionary<std::shared_ptr<ChatRoom>> super;
+37                 
+38                 virtual auto TAG() const -> std::string { return "roomArray"; };
+39                 virtual auto CHILD_TAG() const -> std::string { return "room"; };
+40 
+41             private:
+45                 ChatServer *server;
+46                 
+47             public:
+48                 /* -----------------------------------------------------------------
+49                     CONSTRUCTORS
+50                 ----------------------------------------------------------------- */
+54                 ChatRoomArray(ChatServer*);
+55                 virtual ~ChatRoomArray() = default;
+56                 
+57                 /* -----------------------------------------------------------------
+58                     NOTIFIER
+59                 ----------------------------------------------------------------- */
+64                 void notify();
+65 
+66             private:
+67                 /* -----------------------------------------------------------------
+68                     EXPORTERS
+69                 ----------------------------------------------------------------- */
+73                 auto toXML() const -> std::shared_ptr<library::XML>;
+74 
+78                 auto toInvoke() const -> std::shared_ptr<protocol::Invoke>;
+79             };
+80         };
+81     };
+82 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatRoom\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <samchon/protocol/Entity\&.hpp>
+3 #include <samchon/protocol/IProtocol\&.hpp>
+4 
+5 #include <string>
+6 #include <samchon/library/CriticalSet\&.hpp>
+7 
+8 
+9 namespace samchon
+10 {
+11     namespace example
+12     {
+13         namespace chat_service
+14         {
+15             class ChatUser;
+16             class ChatService;
+17 
+18             class ChatRoomArray;
+19 
+33             class ChatRoom
+34                 : public protocol::Entity,
+35                 public protocol::IProtocol
+36             {
+37             protected:
+38                 typedef protocol::Entity super;
+39 
+40                 virtual auto TAG() const -> std::string { return "room"; };
+41 
+42             private:
+46                 ChatRoomArray *roomArray;
+47 
+52                 std::string name;
+53 
+57                 ChatUser *host;
+58 
+62                 library::CriticalSet<ChatService*> participants;
+63 
+64             public:
+65                 /* -----------------------------------------------------------
+66                     CONSTRUCTORS
+67                 ----------------------------------------------------------- */
+75                 ChatRoom(ChatRoomArray*, const std::string &, ChatUser*);
+76                 virtual ~ChatRoom() = default;
+77                 
+82                 void registerClient(ChatService*);
+83 
+88                 void eraseClient(ChatService*);
+89 
+90                 /* -----------------------------------------------------------
+91                     CHAIN OF RESPONSIBILITY
+92                 ----------------------------------------------------------- */
+93                 virtual void replyData(std::shared_ptr<protocol::Invoke>) override;
+94                 virtual void sendData(std::shared_ptr<protocol::Invoke>) override;  
+95 
+96             public:
+97                 /* -----------------------------------------------------------
+98                     GETTERS
+99                 ----------------------------------------------------------- */
+100                 virtual auto toXML() const -> std::shared_ptr<library::XML> override;
+101             };
+102         };
+103     };
+104 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatMessage\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <set>
+3 #include <string>
+4 
+5 #include <samchon/protocol/Entity\&.hpp>
+6 
+7 namespace samchon
+8 {
+9     namespace example
+10     {
+11         namespace chat_service
+12         {
+24             class ChatMessage
+25                 : public protocol::Entity
+26             {
+27             protected:
+28                 typedef protocol::Entity super;
+29 
+30                 virtual auto TAG() const -> std::string
+31                 {
+32                     return "message";
+33                 };
+34 
+35             private:
+39                 std::string orator;
+40 
+45                 std::string listener;
+46 
+50                 std::string message;
+51 
+52             public:
+53                 /* -----------------------------------------------------------
+54                     CONSTRUCTORS
+55                 ----------------------------------------------------------- */
+59                 ChatMessage();
+60                 virtual ~ChatMessage() = default;
+61 
+62                 virtual void construct(std::shared_ptr<library::XML>);
+63 
+64                 /* -----------------------------------------------------------
+65                     GETTERS
+66                 ----------------------------------------------------------- */
+71                 auto getListener() const -> std::string;
+72 
+73                 virtual auto toXML() const -> std::shared_ptr<library::XML>;
+74             };
+75         };
+76     };
+77 };
+
+.fi
+.PP
+.RE
+.PP
+\fBexamples/chat_service/ChatServer\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatUser\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatClient\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatService\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "ChatService\&.hpp"
+2 #include "ChatRoom\&.hpp"
+3 
+4 #include <samchon/protocol/Invoke\&.hpp>
+5 
+6 using namespace std;
+7 using namespace samchon::protocol;
+8 using namespace samchon::protocol::service;
+9 using namespace samchon::example::chat_service;
+10 
+11 ChatService::ChatService(Client *client)
+12     : super(client)
+13 {
+14     
+15 }
+16 ChatService::~ChatService()
+17 {
+18     if(room == nullptr)
+19         return;
+20 
+21     room->eraseClient(this);
+22 }
+23 
+24 void ChatService::replyData(shared_ptr<Invoke> invoke)
+25 {
+26     if(invoke->getListener() == "sendMessage")
+27         room->replyData(invoke);
+28 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ListService\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+
+.fi
+.PP
+.RE
+.PP
+\fBexamples/chat_service/ChatRoomArray\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "ChatRoomArray\&.hpp"
+2 #include "ChatRoom\&.hpp"
+3 
+4 #include "ChatServer\&.hpp"
+5 #include "ChatUser\&.hpp"
+6 #include "ChatClient\&.hpp"
+7 #include "ListService\&.hpp"
+8 
+9 #include <thread>
+10 #include <samchon/library/XML\&.hpp>
+11 #include <samchon/protocol/Invoke\&.hpp>
+12 
+13 using namespace std;
+14 using namespace samchon::library;
+15 using namespace samchon::protocol;
+16 using namespace samchon::example::chat_service;
+17 
+18 ChatRoomArray::ChatRoomArray(ChatServer *server)
+19     : super(),
+20     IEntityGroup()
+21 {
+22     this->server = server;
+23 }
+24 
+25 void ChatRoomArray::notify()
+26 {
+27     shared_ptr<Invoke> &invoke = this->toInvoke();
+28 
+29     UniqueReadLock uk(get_allocator()\&.getMutex());
+30     for (auto it = server->begin(); it != server->end(); it++)
+31     {
+32         auto user = it->second;
+33 
+34         for (auto u_it = user->begin(); u_it != user->end(); u_it++)
+35         {
+36             auto client = u_it->second;
+37             auto service = client->getService();
+38 
+39             if (dynamic_cast<ListService>(service) != nullptr)
+40                 thread(&IProtocol::sendData, service, invoke)\&.detach();
+41         }
+42     }
+43 }
+44 
+45 auto ChatRoomArray::toXML() const -> shared_ptr<XML>
+46 {
+47     shared_ptr<XML> xml(new XML());
+48     xml->setTag(TAG());
+49 
+50     UniqueReadLock uk(get_allocator()\&.getMutex());
+51     for(auto it = begin(); it != end(); it++)
+52         xml->push_back(it->second->toXML());
+53 
+54     return xml;
+55 }
+56 auto ChatRoomArray::toInvoke() const -> shared_ptr<Invoke>
+57 {
+58     Invoke *invoke = new Invoke("handleRoomArray", toXML());
+59     return shared_ptr<Invoke>(invoke);
+60 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatRoom\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "ChatRoom\&.hpp"
+2 #include "ChatRoomArray\&.hpp"
+3 #include "ChatMessage\&.hpp"
+4 
+5 #include "ChatUser\&.hpp"
+6 #include "ChatClient\&.hpp"
+7 #include "ChatService\&.hpp"
+8 
+9 #include <samchon/library/XML\&.hpp>
+10 #include <samchon/protocol/Invoke\&.hpp>
+11 
+12 using namespace std;
+13 using namespace samchon::library;
+14 using namespace samchon::protocol;
+15 using namespace samchon::example::chat_service;
+16 
+17 /* -----------------------------------------------------------
+18     CONSTRUCTORS
+19 ----------------------------------------------------------- */
+20 ChatRoom::ChatRoom(ChatRoomArray *roomArray, const string &name, ChatUser *host)
+21     : super(),
+22     IProtocol()
+23 {
+24     this->roomArray = roomArray;
+25 
+26     this->name = name;
+27     this->host = host;
+28 }
+29 
+30 void ChatRoom::registerClient(ChatService *service)
+31 {
+32     participants\&.insert(service);
+33 
+34     sendData(shared_ptr<Invoke>(new Invoke("handleRoom", toXML())));
+35     roomArray->notify();
+36 }
+37 void ChatRoom::eraseClient(ChatService *service)
+38 {
+39     if (participants\&.erase(service) == 0)
+40         roomArray->erase(this->name);
+41     else
+42         sendData(shared_ptr<Invoke>(new Invoke("handleRoom", toXML())));
+43 
+44     roomArray->notify();
+45 }
+46 
+47 /* -----------------------------------------------------------
+48     CHAIN OF RESPONSIBILITY
+49 ----------------------------------------------------------- */
+50 void ChatRoom::replyData(shared_ptr<Invoke> invoke)
+51 {
+52     if(invoke->getListener() == "sendMessage")
+53     {
+54         shared_ptr<Invoke> ivk(new Invoke("handleMessage"));
+55         ivk->at(0) = invoke->at(0);
+56 
+57         sendData(ivk);
+58     }
+59 }
+60 void ChatRoom::sendData(shared_ptr<Invoke> invoke)
+61 {
+62     UniqueReadLock uk(participants\&.get_allocator()\&.getMutex());
+63 
+64     if(invoke->getListener() == "handleMessage")
+65     {
+66         ChatMessage message;
+67         message\&.construct(invoke->at(0)->getValueAsXML());
+68 
+69         if(message\&.getListener()\&.empty() == true)
+70             for (auto it = participants\&.begin(); it != participants\&.end(); it++)
+71                 (*it)->sendData(invoke);
+72         else
+73             for (auto it = participants\&.begin(); it != participants\&.end(); it++)
+74                 if((*it)->getClient()->getUser()->getID() == message\&.getListener())
+75                     (*it)->sendData(invoke);
+76     }
+77     else
+78         for (auto it = participants\&.begin(); it != participants\&.end(); it++)
+79             (*it)->sendData(invoke);
+80 }
+81 
+82 /* -----------------------------------------------------------
+83     EXPORTS
+84 ----------------------------------------------------------- */
+85 auto ChatRoom::toXML() const -> shared_ptr<XML>
+86 {
+87     shared_ptr<XML> &xml = super::toXML();
+88     xml->setProperty("name", name);
+89     xml->setProperty("host", host->getID());
+90 
+91     for (auto it = participants\&.begin(); it != participants\&.end(); it++)
+92     {
+93         shared_ptr<XML> participant(new XML());
+94         participant->setTag("participant");
+95         participant->setValue((*it)->getClient()->getUser()->getID());
+96 
+97         xml->push_back(participant);
+98     }
+99     return xml;
+100 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/chat_service/ChatMessage\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "ChatMessage\&.hpp"
+2 
+3 #include <samchon/library/XML\&.hpp>
+4 
+5 using namespace std;
+6 using namespace samchon::library;
+7 using namespace samchon::protocol;
+8 using namespace samchon::example::chat_service;
+9 
+10 /* -----------------------------------------------------------
+11     CONSTRUCTORS
+12 ----------------------------------------------------------- */
+13 ChatMessage::ChatMessage()
+14     : super()
+15 {
+16 }
+17 void ChatMessage::construct(shared_ptr<XML> xml)
+18 {
+19     this->orator = xml->getProperty("orator");
+20     this->message = xml->getProperty("message");
+21 
+22     if(xml->hasProperty("listener") == true)
+23         this->listener = xml->getProperty("listener");
+24     else
+25         this->listener\&.clear();
+26 }
+27 
+28 /* -----------------------------------------------------------
+29     GETTERS
+30 ----------------------------------------------------------- */
+31 auto ChatMessage::getListener() const -> string
+32 {
+33     return listener;
+34 }
+35 auto ChatMessage::toXML() const -> shared_ptr<XML>
+36 {
+37     shared_ptr<XML> &xml = super::toXML();
+38     xml->setProperty("orator", orator);
+39     xml->setProperty("message", message);
+40 
+41     if(listener\&.empty() == false)
+42         xml->setProperty("listener", listener);
+43     return xml;
+44 }
+45 
+
+.fi
+.PP
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

@@ -1,0 +1,75 @@
+.TH "IProtocol" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IProtocol \- An interface of \fBInvoke\fP message chain\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IProtocol\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIProtocol\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBreplyData\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fIReply a message\&. \fP"
+.ti -1c
+.RI "virtual void \fBsendData\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fISend a message\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An interface of \fBInvoke\fP message chain\&. 
+
+\fBIProtocol\fP is an interface for \fBInvoke\fP message, which is standard message of network I/O in Samchon Framework, chain\&. The \fBIProtocol\fP interface is used to network drivers and some classes which are in a relationship of chain of responsibility with those network drivers\&. 
+.PP
+\fBIProtocol\fP is one of the basic 3 + 1 components that can make any type of network system in Samchon Framework with \fBIServer\fP and \fBIClient\fP\&. Following the 'chain of responsibility' pattern, looking around classes in Samchon Framework, you can see all related classes with network I/O are implemented from the \fBIProtocol\fP\&. 
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void replyData (std::shared_ptr< \fBInvoke\fP >)\fC [virtual]\fP"
+
+.PP
+Reply a message\&. Handles a replied \fBInvoke\fP message or shifts the responsibility to related chain\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An \fBInvoke\fP message gotten from a network system 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBUser\fP, \fBClient\fP, \fBDistributedSystem\fP, \fBExternalSystemArray\fP, \fBExternalSystem\fP, \fBDistributedSlaveSystemMediator\fP, and \fBParallelSlaveSystemMediator\fP\&.
+.SS "virtual void sendData (std::shared_ptr< \fBInvoke\fP >)\fC [virtual]\fP"
+
+.PP
+Send a message\&. Sends \fBInvoke\fP message to a network system or shifts the responsibility to related chain\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An \fBInvoke\fP message to send to a network system 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBUser\fP, \fBDistributedSystem\fP, \fBClient\fP, \fBExternalSystemRole\fP, \fBExternalSystemArray\fP, \fBDistributedSystemRole\fP, \fBService\fP, \fBIClient\fP, and \fBIWebClient\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

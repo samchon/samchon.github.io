@@ -1,0 +1,626 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>samchon::protocol::IHTMLEntity</compoundname>
+    <derivedcompoundref refid="dc/daa/classMemberArray" prot="public" virt="virtual">MemberArray</derivedcompoundref>
+    <includes refid="d3/dd6/IHTMLEntity_8hpp" local="no">IHTMLEntity.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a636a076ebade80d57d98312872151f5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IHTMLEntity</definition>
+        <argsstring>()</argsstring>
+        <name>IHTMLEntity</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="47" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1add27a23e92b6fafee0854bc3e42d8286" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ~IHTMLEntity</definition>
+        <argsstring>()=default</argsstring>
+        <name>~IHTMLEntity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="48" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a49c11764568730f71f7aad1c68087fea" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>auto</type>
+        <definition>virtual auto toHTML</definition>
+        <argsstring>() const  -&gt; std::string=0</argsstring>
+        <name>toHTML</name>
+        <briefdescription>
+<para>Get an html string represents the <ref refid="d0/d3e/classsamchon_1_1protocol_1_1Entity" kindref="compound">Entity</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A string represents the <ref refid="d0/d3e/classsamchon_1_1protocol_1_1Entity" kindref="compound">Entity</ref> by html tags. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="164" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a0fa5fbf09fefa5aac27299c01df681e6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename _Ty</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>_Args</declname>
+            <defname>_Args</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>static auto toTH</definition>
+        <argsstring>(const _Ty &amp;val, const _Args &amp;...args) -&gt; std::string</argsstring>
+        <name>toTH</name>
+        <param>
+          <type>const _Ty &amp;</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const _Args &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Get a string represents a &lt;th&gt; tag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>_Ty</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of an argument to be contained with a &lt;td&gt; tag. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left varadic template arguments&apos; type</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Returns a string represents a title columns with &lt;th&gt; tag by varadic template method. </para><para>Supported parameters: that can converted to string </para><para><itemizedlist>
+<listitem>
+<para>number  <itemizedlist>
+<listitem>
+<para>(unsigned) short  </para></listitem>
+<listitem>
+<para>(unsigned) long  </para></listitem>
+<listitem>
+<para>(unsigned) long long  </para></listitem>
+<listitem>
+<para>(unsigned) int  </para></listitem>
+<listitem>
+<para>float  </para></listitem>
+<listitem>
+<para>double  </para></listitem>
+<listitem>
+<para>long double  </para></listitem>
+</itemizedlist>
+</para></listitem>
+<listitem>
+<para>string  <itemizedlist>
+<listitem>
+<para>std::string  </para></listitem>
+<listitem>
+<para><ref refid="d8/de4/classsamchon_1_1WeakString" kindref="compound">WeakString</ref>  </para></listitem>
+</itemizedlist>
+</para></listitem>
+</itemizedlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An element to be contained with &lt;td&gt; a tag. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left argument to be contained with &lt;td&gt; tags. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A string of &lt;th&gt; tag represents title columns. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="86" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="86" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ae54d39cc8da8b8bb93cafeae4880aea6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename _Ty</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>static auto toTH</definition>
+        <argsstring>(const _Ty &amp;val) -&gt; std::string</argsstring>
+        <name>toTH</name>
+        <param>
+          <type>const _Ty &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="96" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="96" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1addd08215dd03b35568ba6a85ec7f2260" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename _Ty</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>_Args</declname>
+            <defname>_Args</defname>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>static auto toTR</definition>
+        <argsstring>(const _Ty &amp;val, const _Args &amp;...args) -&gt; std::string</argsstring>
+        <name>toTR</name>
+        <param>
+          <type>const _Ty &amp;</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const _Args &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Get a string represents a &lt;tr&gt; tag. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>_Ty</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of an argument to be contained with a &lt;tr&gt; tag. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left varadic template arguments&apos; type</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>Returns a string represents a data columns of a row with &lt;tr&gt; tag by varadic template method. </para><para>Supported parameters: that can converted to string </para><para><itemizedlist>
+<listitem>
+<para>number  <itemizedlist>
+<listitem>
+<para>(unsigned) short  </para></listitem>
+<listitem>
+<para>(unsigned) long  </para></listitem>
+<listitem>
+<para>(unsigned) long long  </para></listitem>
+<listitem>
+<para>(unsigned) int  </para></listitem>
+<listitem>
+<para>float  </para></listitem>
+<listitem>
+<para>double  </para></listitem>
+<listitem>
+<para>long double  </para></listitem>
+</itemizedlist>
+</para></listitem>
+<listitem>
+<para>string  <itemizedlist>
+<listitem>
+<para>std::string  </para></listitem>
+<listitem>
+<para><ref refid="d8/de4/classsamchon_1_1WeakString" kindref="compound">WeakString</ref>  </para></listitem>
+</itemizedlist>
+</para></listitem>
+</itemizedlist>
+</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An element to be contained with &lt;tr&gt; a tag. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Left argument to be contained with &lt;tr&gt; tags. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A string of &lt;th&gt; tag represents data columns of a row. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="139" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="139" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a2726c572192121097b585576d73e5b45" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename _Ty</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>static auto toTR</definition>
+        <argsstring>(const _Ty &amp;val) -&gt; std::string</argsstring>
+        <name>toTR</name>
+        <param>
+          <type>const _Ty &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="149" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="149" bodyend="157"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ab2ee2f0bad4860607a1898648c768569" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename _Ty</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>_Args</declname>
+            <defname>_Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void fetchTX</definition>
+        <argsstring>(const std::string &amp;tag, std::string &amp;str, size_t &amp;index, size_t size, const _Ty &amp;val, const _Args &amp;...args)</argsstring>
+        <name>fetchTX</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>size_t &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const _Ty &amp;</type>
+          <declname>val</declname>
+        </param>
+        <param>
+          <type>const _Args &amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="168" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="168" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ab65c5b7f789eedf58ebbdfbbc928019c" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename _Ty</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>static void fetchTX</definition>
+        <argsstring>(const std::string &amp;tag, std::string &amp;str, size_t &amp;index, size_t size, const _Ty &amp;val)</argsstring>
+        <name>fetchTX</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type>size_t &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>const _Ty &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="176" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="176" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ab596aba2bc0017433e477c203a45f0a0" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename _Ty</type>
+          </param>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>static auto toTD</definition>
+        <argsstring>(const _Ty &amp;val) -&gt; std::string</argsstring>
+        <name>toTD</name>
+        <param>
+          <type>const _Ty &amp;</type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="188" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="188" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a3bfe879e88399223ed25ae695aa7aea8" prot="protected" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+        </templateparamlist>
+        <type>auto</type>
+        <definition>auto toTD</definition>
+        <argsstring>(const WeakString &amp;) -&gt; std::string</argsstring>
+        <name>toTD</name>
+        <param>
+          <type>const <ref refid="d8/de4/classsamchon_1_1WeakString" kindref="compound">WeakString</ref> &amp;</type>
+          <defname>wstr</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="195" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.cpp" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An interface supporting conversion to html. </para>    </briefdescription>
+    <detaileddescription>
+<para>IHTMEntity is an interface supporting conversion method to html tags. The <ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref> is used to documentation or printing data of the entity to web-screen; In C++, documentation is main reason to implementing the <ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref> and in JS, printing on web-screen is main reason. </para><para><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref> provides abstract method <ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a49c11764568730f71f7aad1c68087fea" kindref="member">toHTML()</ref> and varadic template methods for constituting a table. I&apos;m planning to support lots of utility methods for html tags but I&apos;ve not exprienced developing the homepage or html service. If you&apos;re familiar with the html, please contribute to the <ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref> interface. </para><para><image type="html" name="protocol_entity.png"></image>
+ <image type="latex" name="protocol_entity.png"></image>
+</para><para><simplesect kind="par"><title>Example source</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/protocol/Entity.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/protocol/IHTMLEntity.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/protocol/SharedEntityArray.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/XML.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>ifdef<sp/>_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;x64/Debug/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;x64/Release/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>ifdef<sp/>_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;Debug/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;Release/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="db/d64/namespacesamchon_1_1protocol" kindref="compound">samchon::protocol</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Member<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="d0/d3e/classsamchon_1_1protocol_1_1Entity" kindref="compound">Entity</ref>,<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref></highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="d0/d3e/classsamchon_1_1protocol_1_1Entity" kindref="compound">Entity</ref><sp/>super;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>id;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>name;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>age;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grade;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>Member()<sp/></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>super(),<sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref>()</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>Member(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>age,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>grade)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>super(),<sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref>()</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>id;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;name<sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;age<sp/>=<sp/>age;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;grade<sp/>=<sp/>grade;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~Member()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>construct(shared_ptr&lt;XML&gt;<sp/>xml)</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="57"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;</highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>xml-&gt;getProperty(</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;name<sp/>=<sp/>xml-&gt;getProperty(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;age<sp/>=<sp/>xml-&gt;getProperty&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;age&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;grade<sp/>=<sp/>xml-&gt;getProperty&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;grade&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GETTERSs</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>key()<sp/>const<sp/>-&gt;<sp/><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>::</highlight><highlight class="keywordtype">string</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="68"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;id;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XML<sp/>EXPORTERS</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/><sp/><sp/><sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>TAG()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="76"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;member&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>toXML()<sp/>const<sp/>-&gt;<sp/>shared_ptr&lt;XML&gt;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shared_ptr&lt;XML&gt;<sp/>&amp;xml<sp/>=<sp/>super::toXML();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xml-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;id&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xml-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;name&quot;</highlight><highlight class="normal">,<sp/>name);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xml-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;age&quot;</highlight><highlight class="normal">,<sp/>age);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xml-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;grade&quot;</highlight><highlight class="normal">,<sp/>grade);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>move(xml);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a49c11764568730f71f7aad1c68087fea" kindref="member">toHTML</ref>()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1addd08215dd03b35568ba6a85ec7f2260" kindref="member">toTR</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>name,<sp/>age,<sp/>grade);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">MemberArray</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classsamchon_1_1protocol_1_1EntityGroup" kindref="compound">SharedEntityArray</ref>&lt;Member&gt;,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref></highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="d4/deb/classsamchon_1_1protocol_1_1EntityGroup" kindref="compound">SharedEntityArray&lt;Member&gt;</ref><sp/>super;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>application;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>department;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>Member<sp/>*chief;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/><sp/><sp/><sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>MemberArray()</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>super(),<sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" kindref="compound">IHTMLEntity</ref>()</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;chief<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>~MemberArray()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>You<sp/>don&apos;t<sp/>need<sp/>to<sp/>consider<sp/>children(Member)<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Just<sp/>concentrate<sp/>on<sp/>constructing<sp/>MemberArray&apos;s<sp/>own<sp/>member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>construct(shared_ptr&lt;XML&gt;<sp/>xml)</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="120"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super::construct(xml);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;application<sp/>=<sp/>xml-&gt;getProperty(</highlight><highlight class="stringliteral">&quot;application&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;department<sp/>=<sp/>xml-&gt;getProperty&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">&gt;(</highlight><highlight class="stringliteral">&quot;department&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(xml-&gt;hasProperty(</highlight><highlight class="stringliteral">&quot;chief&quot;</highlight><highlight class="normal">)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>this-&gt;has(<sp/>xml-&gt;getProperty(</highlight><highlight class="stringliteral">&quot;chief&quot;</highlight><highlight class="normal">)<sp/>)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;chief<sp/>=<sp/>this-&gt;</highlight><highlight class="keyword">get</highlight><highlight class="normal">(<sp/>xml-&gt;getProperty(</highlight><highlight class="stringliteral">&quot;cheif&quot;</highlight><highlight class="normal">)<sp/>).</highlight><highlight class="keyword">get</highlight><highlight class="normal">();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//FACTORY<sp/>METHOD<sp/>FOR<sp/>MEMBER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>createChild(shared_ptr&lt;XML&gt;<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)<sp/>-&gt;<sp/>Member*<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Member();</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>XML<sp/>EXPORTERS</highlight></codeline>
+<codeline lineno="139"><highlight class="comment"><sp/><sp/><sp/><sp/>---------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>TAG()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="142"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;memberArray&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>CHILD_TAG()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="146"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;member&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>You<sp/>don&apos;t<sp/>need<sp/>to<sp/>consider<sp/>children(Member)<sp/>objects</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Just<sp/>concentrate<sp/>on<sp/>expressing<sp/>MemberArray&apos;s<sp/>own<sp/>member<sp/>variables</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>toXML()<sp/>const<sp/>-&gt;<sp/>shared_ptr&lt;XML&gt;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shared_ptr&lt;XML&gt;<sp/>&amp;xml<sp/>=<sp/>super::toXML();</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xml-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;application&quot;</highlight><highlight class="normal">,<sp/>application);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xml-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;department&quot;</highlight><highlight class="normal">,<sp/>department);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(chief<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>xml-&gt;setProperty(</highlight><highlight class="stringliteral">&quot;cheif&quot;</highlight><highlight class="normal">,<sp/>chief-&gt;key());</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>move(xml);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a49c11764568730f71f7aad1c68087fea" kindref="member">toHTML</ref>()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>html<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&lt;table&gt;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>html<sp/>+=<sp/><ref refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a0fa5fbf09fefa5aac27299c01df681e6" kindref="member">toTH</ref>(</highlight><highlight class="stringliteral">&quot;ID&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Name&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Age&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Grade&quot;</highlight><highlight class="normal">)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>2;<sp/>i++)</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>html<sp/>+=<sp/>at(i)-&gt;toHTML()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>html<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;&lt;/table&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>move(html);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>str<sp/>=<sp/>string(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>+</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;memberArray<sp/>application=&apos;framework&apos;<sp/>department=&apos;7&apos;<sp/>cheif=&apos;samchon&apos;&gt;\n&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&lt;member<sp/>id=&apos;samchon&apos;<sp/>name=&apos;Jeongho<sp/>Nam&apos;<sp/>age=&apos;27&apos;<sp/>grade=&apos;5&apos;<sp/>/&gt;&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&lt;member<sp/>id=&apos;submaster&apos;<sp/>name=&apos;No<sp/>Name&apos;<sp/>age=&apos;100&apos;<sp/>grade=&apos;4&apos;<sp/>/&gt;&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&lt;member<sp/>id=&apos;john&apos;<sp/>name=&apos;John<sp/>Doe&apos;<sp/>age=&apos;33&apos;<sp/>grade=&apos;2&apos;<sp/>/&gt;&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&lt;member<sp/>id=&apos;bad_man&apos;<sp/>name=&apos;Bad<sp/>Man&apos;<sp/>age=&apos;44&apos;<sp/>grade=&apos;-1&apos;<sp/>/&gt;&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/><sp/><sp/>&lt;member<sp/>id=&apos;guest&apos;<sp/>name=&apos;Guest&apos;<sp/>age=&apos;0&apos;<sp/>grade=&apos;0&apos;<sp/>/&gt;&quot;</highlight><highlight class="normal"><sp/>+</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&lt;/memberArray&gt;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>shared_ptr&lt;XML&gt;<sp/>xml(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>XML(str));</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>MemberArray<sp/>memberArray;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>memberArray.construct(xml);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>memberArray.emplace_back(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Member(</highlight><highlight class="stringliteral">&quot;freshman&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;A<sp/>fresh<sp/>man&quot;</highlight><highlight class="normal">,<sp/>20,<sp/>2));</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>memberArray.emplace_back(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Member(</highlight><highlight class="stringliteral">&quot;senior&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;A<sp/>senior&quot;</highlight><highlight class="normal">,<sp/>70,<sp/>2));</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>memberArray.toXML()-&gt;toString()<sp/>&lt;&lt;<sp/>endl<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>memberArray.toHTML()<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;pause&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+</programlisting></para></simplesect>
+<heading level="4">Result of the example </heading>
+</para><para><image type="html" name="example_entity.png"></image>
+ <image type="latex" name="example_entity.png"></image>
+</para><para><simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" line="39" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IHTMLEntity.hpp" bodystart="38" bodyend="196"/>
+    <listofallmembers>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ab2ee2f0bad4860607a1898648c768569" prot="protected" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>fetchTX</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ab65c5b7f789eedf58ebbdfbbc928019c" prot="protected" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>fetchTX</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a636a076ebade80d57d98312872151f5f" prot="public" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>IHTMLEntity</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a49c11764568730f71f7aad1c68087fea" prot="public" virt="pure-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>toHTML</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ab596aba2bc0017433e477c203a45f0a0" prot="protected" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>toTD</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a3bfe879e88399223ed25ae695aa7aea8" prot="protected" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>toTD</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a0fa5fbf09fefa5aac27299c01df681e6" prot="public" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>toTH</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1ae54d39cc8da8b8bb93cafeae4880aea6" prot="public" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>toTH</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1addd08215dd03b35568ba6a85ec7f2260" prot="public" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>toTR</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1a2726c572192121097b585576d73e5b45" prot="public" virt="non-virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>toTR</name></member>
+      <member refid="db/dae/classsamchon_1_1protocol_1_1IHTMLEntity_1add27a23e92b6fafee0854bc3e42d8286" prot="public" virt="virtual"><scope>samchon::protocol::IHTMLEntity</scope><name>~IHTMLEntity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

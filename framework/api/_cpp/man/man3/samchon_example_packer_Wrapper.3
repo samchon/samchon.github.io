@@ -1,0 +1,104 @@
+.TH "Wrapper" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Wrapper \- A wrapper can contain products\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Wrapper\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWrapper\fP (const std::string &\fBname\fP, int \fBprice\fP, int \fBvolume\fP, int \fBweight\fP)"
+.br
+.RI "\fIConstruct from argument of a wrapper\&. \fP"
+.ti -1c
+.RI "\fBWrapper\fP (const \fBWrapper\fP &wrapper)"
+.br
+.RI "\fICopy Constructor\&. \fP"
+.ti -1c
+.RI "auto \fBtryInsert\fP (\fBProduct\fP *) \-> bool"
+.br
+.RI "\fITry to insert a product into the wrapper\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoString\fP () const  \-> std::string override"
+.br
+.RI "\fIReturn a string represent the wrapper\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A wrapper can contain products\&. 
+
+A wrapper containing products with its limitation of weight and volume\&. 
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBWrapper\fP (const std::string & name, int price, int volume, int weight)"
+
+.PP
+Construct from argument of a wrapper\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Category name of a wrapper, can be identified 
+.br
+\fIprice\fP Price of a wrapper 
+.br
+\fIvolume\fP Limited volume of a wrapper can put in\&. 
+.br
+\fIweight\fP Limited weight of a wrapper can put in\&. 
+.RE
+.PP
+
+.SS "\fBWrapper\fP (const \fBWrapper\fP & wrapper)"
+
+.PP
+Copy Constructor\&. Copy constructor of wrapper does not copy children items\&. Only copies arguments of \fBInstance\fP's\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "auto tryInsert (\fBProduct\fP * product) \-> bool"
+
+.PP
+Try to insert a product into the wrapper\&. If the \fBWrapper\fP has enough volume and limit of weight, inserts the \fBProduct\fP into the \fBWrapper\fP and returns \fItrue\fP\&. If not enough, does not insert and just return \fIfalse\fP\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIproduct\fP A product try to insert in\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Whether to success put in 
+.RE
+.PP
+
+.SS "auto toString () const \-> std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Return a string represent the wrapper\&. Returns a string of the \fBWrapper\fP and Product(s) packaged in\&.
+.PP
+\fBReturns:\fP
+.RS 4
+A string represents the \fBWrapper\fP and contained Product(s)\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBInstance\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

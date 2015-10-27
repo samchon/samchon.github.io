@@ -1,0 +1,176 @@
+.TH "Semaphore" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Semaphore \- A semaphore\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Semaphore\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSemaphore\fP (size_t=2)"
+.br
+.ti -1c
+.RI "void \fBsetSize\fP (size_t)"
+.br
+.RI "\fISet size\&. \fP"
+.ti -1c
+.RI "auto \fBsize\fP () const  \-> size_t"
+.br
+.RI "\fIGet size\&. \fP"
+.ti -1c
+.RI "auto \fBacquiredSize\fP () const  \-> size_t"
+.br
+.RI "\fIGet acquired size\&. \fP"
+.ti -1c
+.RI "void \fBacquire\fP ()"
+.br
+.RI "\fIAcquire admission\&. \fP"
+.ti -1c
+.RI "auto \fBtryAcquire\fP () \-> bool"
+.br
+.RI "\fITry to acquire admission\&. \fP"
+.ti -1c
+.RI "void \fBrelease\fP ()"
+.br
+.RI "\fIRelease an admission\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBsize_\fP"
+.br
+.RI "\fIThe size\&. \fP"
+.ti -1c
+.RI "size_t \fBacquired\fP"
+.br
+.RI "\fIAcquired count\&. \fP"
+.ti -1c
+.RI "std::mutex * \fBmtx\fP"
+.br
+.RI "\fILocker\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A semaphore\&. 
+
+In computer science, particularly in operating systems, a semaphore is a variable or abstract data type that is used for controlling access, by multiple processes, to a common resource in a concurrent system such as a multiprogramming operating system\&. 
+.PP
+A trivial semaphore is a plain variable that is changed (for example, incremented or decremented, or toggled) depending on programmer-defined conditions\&. The variable is then used as a condition to control access to some system resource\&. 
+.PP
+A useful way to think of a semaphore as used in the real-world systems is as a record of how many units of a particular resource are available, coupled with operations to safely (i\&.e\&., without race conditions) adjust that record as units are required or become free, and, if necessary, wait until a unit of the resource becomes available\&. Semaphores are a useful tool in the prevention of race conditions; however, their use is by no means a guarantee that a program is free from these problems\&. Semaphores which allow an arbitrary resource count are called counting semaphores, while semaphores which are restricted to the values 0 and 1 (or locked/unlocked, unavailable/available) are called binary semaphores 
+.PP
+.PD 0
+.IP "\(bu" 2
+Categorized in binary semaphore
+.PP
+.PP
+Referenced Wediapedia 
+.PP
+.PD 0
+.IP "\(bu" 2
+https://en.wikipedia.org/wiki/Semaphore_(programming)
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Of course, semaphore is already defined in linux C and MFC in Window\&. But it is dependent on each operating system, so that cannot be compiled in another OS with those semaphores\&. There's not a class like semaphore in STL yet\&. It's the reason why \fBSemaphore\fP is provided\&. 
+.PP
+As that reason, if STL supports the semaphore in near future, the \fBSemaphore\fP can be depreciated\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBSemaphore\fP (size_t size = \fC2\fP)"
+Constructor\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP The size of the semaphore to permit 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void setSize (size_t val)"
+
+.PP
+Set size\&. Set permitted size of the semaphore\&. 
+.SS "auto size () const \-> size_t"
+
+.PP
+Get size\&. Returns size which means the permitted count of the semaphore
+.PP
+\fBReturns:\fP
+.RS 4
+The size of semaphore 
+.RE
+.PP
+
+.SS "void acquire ()"
+
+.PP
+Acquire admission\&. Acquires an admission and increases count of admission by 1\&. 
+.PP
+If the count is over permitted size, wait until other admissions to be released\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Lock on mutex 
+.PP
+
+.SS "auto tryAcquire () \-> bool"
+
+.PP
+Try to acquire admission\&. If admission count is below the permitted size, acquire admission and increase the count by 1 and return true which means succeded to get admission\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+If the count is matched to the permitted size, lock the mutex
+.PP
+.PP
+Else, do not acquire admission and return false which means failed to get admmission\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Whether succeded to acquire an admission or not 
+.RE
+.PP
+
+.SS "void release ()"
+
+.PP
+Release an admission\&. Releases an admission what you've acquired\&. If the admission count was over the limited size, unlock the mutex\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "size_t size_\fC [private]\fP"
+
+.PP
+The size\&. Permitted size of the semaphore 
+.SS "std::mutex* mtx\fC [private]\fP"
+
+.PP
+Locker\&. Manages lock and unlock of the semaphore 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

@@ -1,0 +1,539 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="db/dd9/Server_8cpp" kind="file" language="C++">
+    <compoundname>Server.cpp</compoundname>
+    <includes refid="de/d3d/Server_8hpp" local="no">samchon/protocol/service/Server.hpp</includes>
+    <includes refid="de/dfd/User_8hpp" local="no">samchon/protocol/service/User.hpp</includes>
+    <includes refid="d3/d3e/IPUserPair_8hpp" local="no">samchon/protocol/service/IPUserPair.hpp</includes>
+    <includes local="no">boost/asio.hpp</includes>
+    <includes local="no">mutex</includes>
+    <includes local="no">thread</includes>
+    <includes local="no">sstream</includes>
+    <includes refid="d5/d34/SmartPointer_8hpp" local="no">samchon/SmartPointer.hpp</includes>
+    <includes refid="d5/d6a/SQLi_8hpp" local="no">samchon/library/SQLi.hpp</includes>
+    <includes refid="de/d5a/Datetime_8hpp" local="no">samchon/library/Datetime.hpp</includes>
+    <includes refid="d4/d3b/XML_8hpp" local="no">samchon/library/XML.hpp</includes>
+    <includes refid="d1/d6e/Invoke_8hpp" local="no">samchon/protocol/Invoke.hpp</includes>
+    <includes refid="d3/da5/InvokeParameter_8hpp" local="no">samchon/protocol/InvokeParameter.hpp</includes>
+    <incdepgraph>
+      <node id="4953">
+        <label>samchon/protocol/EntityGroup.hpp</label>
+        <link refid="d1/d61/EntityGroup_8hpp_source"/>
+        <childnode refid="4954" relation="include">
+        </childnode>
+        <childnode refid="4955" relation="include">
+        </childnode>
+        <childnode refid="4949" relation="include">
+        </childnode>
+      </node>
+      <node id="4932">
+        <label>atomic</label>
+      </node>
+      <node id="4915">
+        <label>samchon/protocol/service/Server.hpp</label>
+        <link refid="de/d3d/Server_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4917" relation="include">
+        </childnode>
+        <childnode refid="4920" relation="include">
+        </childnode>
+        <childnode refid="4923" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+        <childnode refid="4928" relation="include">
+        </childnode>
+      </node>
+      <node id="4944">
+        <label>samchon/library/IOperator.hpp</label>
+        <link refid="dc/d77/IOperator_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+      </node>
+      <node id="4956">
+        <label>samchon/protocol/InvokeParameter.hpp</label>
+        <link refid="d3/da5/InvokeParameter_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4954" relation="include">
+        </childnode>
+        <childnode refid="4940" relation="include">
+        </childnode>
+        <childnode refid="4957" relation="include">
+        </childnode>
+        <childnode refid="4945" relation="include">
+        </childnode>
+      </node>
+      <node id="4920">
+        <label>samchon/protocol/IProtocol.hpp</label>
+        <link refid="dd/d50/IProtocol_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+      </node>
+      <node id="4917">
+        <label>samchon/protocol/IServer.hpp</label>
+        <link refid="d2/de5/IServer_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4919" relation="include">
+        </childnode>
+      </node>
+      <node id="4926">
+        <label>samchon/SmartPointer.hpp</label>
+        <link refid="d5/d34/SmartPointer_8hpp_source"/>
+        <childnode refid="4925" relation="include">
+        </childnode>
+        <childnode refid="4927" relation="include">
+        </childnode>
+      </node>
+      <node id="4919">
+        <label>samchon/protocol/Socket.hpp</label>
+        <link refid="dd/df5/Socket_8hpp_source"/>
+      </node>
+      <node id="4914">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp</label>
+        <link refid="Server.cpp"/>
+        <childnode refid="4915" relation="include">
+        </childnode>
+        <childnode refid="4934" relation="include">
+        </childnode>
+        <childnode refid="4936" relation="include">
+        </childnode>
+        <childnode refid="4938" relation="include">
+        </childnode>
+        <childnode refid="4927" relation="include">
+        </childnode>
+        <childnode refid="4939" relation="include">
+        </childnode>
+        <childnode refid="4940" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+        <childnode refid="4941" relation="include">
+        </childnode>
+        <childnode refid="4942" relation="include">
+        </childnode>
+        <childnode refid="4949" relation="include">
+        </childnode>
+        <childnode refid="4951" relation="include">
+        </childnode>
+        <childnode refid="4956" relation="include">
+        </childnode>
+      </node>
+      <node id="4918">
+        <label>string</label>
+      </node>
+      <node id="4930">
+        <label>samchon/library/UniqueWriteLock.hpp</label>
+        <link refid="d5/dcd/UniqueWriteLock_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+      </node>
+      <node id="4925">
+        <label>map</label>
+      </node>
+      <node id="4954">
+        <label>samchon/protocol/Entity.hpp</label>
+        <link refid="de/da6/Entity_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+      </node>
+      <node id="4942">
+        <label>samchon/library/Datetime.hpp</label>
+        <link refid="de/d5a/Datetime_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4943" relation="include">
+        </childnode>
+      </node>
+      <node id="4933">
+        <label>samchon/library/SharedWriteLock.hpp</label>
+        <link refid="d8/d53/SharedWriteLock_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4932" relation="include">
+        </childnode>
+      </node>
+      <node id="4934">
+        <label>samchon/protocol/service/User.hpp</label>
+        <link refid="de/dfd/User_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4924" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+        <childnode refid="4920" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+        <childnode refid="4928" relation="include">
+        </childnode>
+        <childnode refid="4935" relation="include">
+        </childnode>
+        <childnode refid="4919" relation="include">
+        </childnode>
+      </node>
+      <node id="4916">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="4952">
+        <label>samchon/protocol/SharedEntityArray.hpp</label>
+        <link refid="d5/dc4/SharedEntityArray_8hpp_source"/>
+        <childnode refid="4953" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+      </node>
+      <node id="4924">
+        <label>samchon/Map.hpp</label>
+        <link refid="dc/dbe/Map_8hpp_source"/>
+        <childnode refid="4925" relation="include">
+        </childnode>
+      </node>
+      <node id="4957">
+        <label>samchon/ByteArray.hpp</label>
+        <link refid="df/df6/ByteArray_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+      </node>
+      <node id="4923">
+        <label>samchon/Dictionary.hpp</label>
+        <link refid="d5/dc2/Dictionary_8hpp_source"/>
+        <childnode refid="4924" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+      </node>
+      <node id="4951">
+        <label>samchon/protocol/Invoke.hpp</label>
+        <link refid="d1/d6e/Invoke_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4952" relation="include">
+        </childnode>
+        <childnode refid="4956" relation="include">
+        </childnode>
+      </node>
+      <node id="4955">
+        <label>samchon/protocol/IEntityGroup.hpp</label>
+        <link refid="db/d55/IEntityGroup_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+      </node>
+      <node id="4931">
+        <label>samchon/library/SharedReadLock.hpp</label>
+        <link refid="d0/df1/SharedReadLock_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4932" relation="include">
+        </childnode>
+      </node>
+      <node id="4938">
+        <label>boost/asio.hpp</label>
+      </node>
+      <node id="4921">
+        <label>vector</label>
+      </node>
+      <node id="4935">
+        <label>samchon/protocol/service/ServiceKeeper.hpp</label>
+        <link refid="d7/d79/ServiceKeeper_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4926" relation="include">
+        </childnode>
+      </node>
+      <node id="4950">
+        <label>samchon/library/XMLList.hpp</label>
+        <link refid="dd/d37/XMLList_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+      </node>
+      <node id="4947">
+        <label>utility</label>
+      </node>
+      <node id="4943">
+        <label>samchon/library/Date.hpp</label>
+        <link refid="d1/dcc/Date_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4945" relation="include">
+        </childnode>
+        <childnode refid="4948" relation="include">
+        </childnode>
+      </node>
+      <node id="4940">
+        <label>sstream</label>
+      </node>
+      <node id="4946">
+        <label>samchon/IndexPair.hpp</label>
+        <link refid="d9/ded/IndexPair_8hpp_source"/>
+        <childnode refid="4947" relation="include">
+        </childnode>
+      </node>
+      <node id="4928">
+        <label>samchon/library/RWMutex.hpp</label>
+        <link refid="dd/d85/RWMutex_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4929" relation="include">
+        </childnode>
+        <childnode refid="4930" relation="include">
+        </childnode>
+        <childnode refid="4931" relation="include">
+        </childnode>
+        <childnode refid="4933" relation="include">
+        </childnode>
+      </node>
+      <node id="4936">
+        <label>samchon/protocol/service/IPUserPair.hpp</label>
+        <link refid="d3/d3e/IPUserPair_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4937" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4919" relation="include">
+        </childnode>
+      </node>
+      <node id="4949">
+        <label>samchon/library/XML.hpp</label>
+        <link refid="d4/d3b/XML_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4924" relation="include">
+        </childnode>
+        <childnode refid="4950" relation="include">
+        </childnode>
+        <childnode refid="4940" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4945" relation="include">
+        </childnode>
+      </node>
+      <node id="4927">
+        <label>mutex</label>
+      </node>
+      <node id="4948">
+        <label>chrono</label>
+      </node>
+      <node id="4939">
+        <label>thread</label>
+      </node>
+      <node id="4937">
+        <label>set</label>
+      </node>
+      <node id="4941">
+        <label>samchon/library/SQLi.hpp</label>
+        <link refid="d5/d6a/SQLi_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4922" relation="include">
+        </childnode>
+        <childnode refid="4927" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+      </node>
+      <node id="4929">
+        <label>samchon/library/UniqueReadLock.hpp</label>
+        <link refid="d5/da5/UniqueReadLock_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+      </node>
+      <node id="4945">
+        <label>samchon/WeakString.hpp</label>
+        <link refid="d8/d3d/WeakString_8hpp_source"/>
+        <childnode refid="4916" relation="include">
+        </childnode>
+        <childnode refid="4944" relation="include">
+        </childnode>
+        <childnode refid="4918" relation="include">
+        </childnode>
+        <childnode refid="4921" relation="include">
+        </childnode>
+        <childnode refid="4946" relation="include">
+        </childnode>
+      </node>
+      <node id="4922">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;samchon/protocol/service/Server.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;samchon/protocol/service/User.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&lt;samchon/protocol/service/IPUserPair.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;boost/asio.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;mutex&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;thread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sstream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/SmartPointer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/SQLi.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/Datetime.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/XML.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/protocol/Invoke.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/protocol/InvokeParameter.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="db/d64/namespacesamchon_1_1protocol" kindref="compound">samchon::protocol</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/d70/namespacesamchon_1_1protocol_1_1service" kindref="compound">samchon::protocol::service</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d2/d1e/namespaceboost_1_1asio" kindref="compound">boost::asio</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d0/d23/namespaceboost_1_1asio_1_1ip" kindref="compound">boost::asio::ip</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/>CONSTRUCTORS<sp/>&amp;<sp/>DESTRUCTORS</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">--------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal">Server::Server()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(),<sp/><ref refid="d4/de8/classsamchon_1_1protocol_1_1IServer" kindref="compound">IServer</ref>()</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>sqli<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>sequence<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">Server::~Server()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aef91d516b10c0ca60928add7de598a2c" kindref="member">sqli</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/>GETTERS</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">--------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Server::getSQLi()<sp/>const<sp/>-&gt;<sp/><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi" kindref="compound">SQLi</ref>*</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1aef91d516b10c0ca60928add7de598a2c" kindref="member">sqli</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/><sp/><sp/><sp/>ACCESSORS<sp/>OF<sp/>MAP</highlight></codeline>
+<codeline lineno="52"><highlight class="comment">--------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac4dde158d6dd302ea028acb582e9b67a" kindref="member">Server::size</ref>()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>super::size();</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ac9869f6f345741227eeb648e0bb9f84d" kindref="member">Server::begin</ref>()<sp/>const<sp/>-&gt;<sp/>const_iterator</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>super::begin();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a39dd3ec2d538d962ba4bc4af6c0ef2f6" kindref="member">Server::end</ref>()<sp/>const<sp/>-&gt;<sp/>const_iterator</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>super::end();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/>ACCOUNT<sp/>&amp;<sp/>REGISTER<sp/>MANAGER</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">--------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a9cbdd988cd4a917f6b47162103bfd550" kindref="member">Server::addClient</ref>(Socket<sp/>*socket)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>thread([</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>socket]()</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//GET<sp/>IP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;ip<sp/>=<sp/>socket-&gt;remote_endpoint().address().to_v4().to_string();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>unique_ptr&lt;UniqueWriteLock&gt;<sp/>uk(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d1/dc0/classsamchon_1_1library_1_1UniqueWriteLock" kindref="compound">UniqueWriteLock</ref>(mtx));</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a601f6f1558a6f66476b707f15ecdb6a0" kindref="member">ipMap</ref>.has(ip)<sp/>==<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a601f6f1558a6f66476b707f15ecdb6a0" kindref="member">ipMap</ref>.set</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip,<sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shared_ptr&lt;IPUserPair&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair" kindref="compound">IPUserPair</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>ip))</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>shared_ptr&lt;IPUserPair&gt;<sp/>pair<sp/>=<sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a601f6f1558a6f66476b707f15ecdb6a0" kindref="member">ipMap</ref>.get(ip);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a4bd3d973b37ef92c4536f43b5e0b0d07" kindref="member">sequence</ref>++;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uk-&gt;unlock();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//GET<sp/>SESSION_ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>&amp;sessionID<sp/>=<sp/>pair-&gt;getSessionID(socket,<sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a4bd3d973b37ef92c4536f43b5e0b0d07" kindref="member">sequence</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uk-&gt;lock();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//FAILED<sp/>TO<sp/>GET<sp/>SESSION<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sessionID.empty()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ERASE<sp/>PAIR<sp/>FROM<sp/>CONTAINER</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pair-&gt;userSet.size()<sp/>==<sp/>1)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a601f6f1558a6f66476b707f15ecdb6a0" kindref="member">ipMap</ref>.erase(ip);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>socket;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>iterator<sp/>it<sp/>=<sp/>find(sessionID);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a39dd3ec2d538d962ba4bc4af6c0ef2f6" kindref="member">end</ref>())</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//CREATE<sp/>USER<sp/>AND<sp/>LINK<sp/>CONNECTION<sp/>BY<sp/>PAIR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d2d/classsamchon_1_1SmartPointer" kindref="compound">SmartPointer&lt;User&gt;</ref><sp/>user(<sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1ae7912d67ab0302ef6dbf5590bfaa0f60" kindref="member">createUser</ref>()<sp/>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user-&gt;server<sp/>=<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user-&gt;sessionID<sp/>=<sp/>sessionID;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user-&gt;ipPair<sp/>=<sp/>pair.get();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pair-&gt;userSet.insert(user.get());</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it<sp/>=<sp/>insert({<sp/>sessionID,<sp/>user<sp/>}).first;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uk-&gt;unlock();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uk.reset(</highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//WILL<sp/>HOLD<sp/>A<sp/>THREAD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;second-&gt;addClient(socket);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}).detach();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Server::eraseUser(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;session)</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>Sleep(15<sp/>*<sp/>1000);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d1/dc0/classsamchon_1_1library_1_1UniqueWriteLock" kindref="compound">UniqueWriteLock</ref><sp/>uk(mtx);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="d1/d4e/classsamchon_1_1Map_1a7d21fcd2b73466da3ca65f2dae888d3f" kindref="member">has</ref>(session)<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(session)-&gt;empty()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User" kindref="compound">User</ref><sp/>*user<sp/>=<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">(session).</highlight><highlight class="keyword">get</highlight><highlight class="normal">();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair" kindref="compound">IPUserPair</ref><sp/>*ipPair<sp/>=<sp/>user-&gt;ipPair;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>ipPair-&gt;<ref refid="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair_1a4819b1479fa0611cf24df092b076f0ef" kindref="member">userSet</ref>.erase(user);</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ipPair-&gt;<ref refid="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair_1a4819b1479fa0611cf24df092b076f0ef" kindref="member">userSet</ref>.empty()<sp/>==<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d35/classsamchon_1_1protocol_1_1service_1_1Server_1a601f6f1558a6f66476b707f15ecdb6a0" kindref="member">ipMap</ref>.erase(user-&gt;ipPair-&gt;<ref refid="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair_1a319b95015f17a3dc8b4b43a65c541571" kindref="member">ip</ref>);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>super::erase(session);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/service/Server.cpp"/>
+  </compounddef>
+</doxygen>

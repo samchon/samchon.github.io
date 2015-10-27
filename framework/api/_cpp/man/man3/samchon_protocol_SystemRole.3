@@ -1,0 +1,143 @@
+.TH "SystemRole" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SystemRole \- A role belongs to a system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SystemRole\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSystemRole\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBconstruct\fP (std::shared_ptr< \fBlibrary::XML\fP >) override"
+.br
+.RI "\fIConstruct data of the \fBEntity\fP from an XML object\&. \fP"
+.ti -1c
+.RI "virtual auto \fBkey\fP () const  \-> std::string override"
+.br
+.RI "\fIGet a key that can identify the \fBEntity\fP uniquely\&. \fP"
+.ti -1c
+.RI "auto \fBhasListener\fP (const std::string &) const  \-> bool"
+.br
+.RI "\fITest whether has a listener in the role\&. \fP"
+.ti -1c
+.RI "virtual auto \fBTAG\fP () const  \-> std::string override"
+.br
+.RI "\fIA tag name when represented by XML\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoXML\fP () const  \-> std::shared_ptr< \fBlibrary::XML\fP > override"
+.br
+.RI "\fIGet an XML object represents the \fBEntity\fP\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBname\fP"
+.br
+.RI "\fIA name representing the role\&. \fP"
+.ti -1c
+.RI "std::set< std::string > \fBlisteners\fP"
+.br
+.RI "\fIListeners belongs to the role\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A role belongs to a system\&. 
+
+\fBSystemRole\fP is an abstract and a 'control' class groupping methods, handling \fBInvoke\fP messages interacting with an system that the \fBSystemRole\fP is belonged to, by a subject or unit of a module\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void construct (std::shared_ptr< \fBlibrary::XML\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Construct data of the \fBEntity\fP from an XML object\&. Overrides the \fBconstruct()\fP method and fetch data of member variables from the XML\&. 
+.PP
+By recommended guidance, data representing member variables are contained in properties of the put XML object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxml\fP An xml used to construct data of entity 
+.RE
+.PP
+
+.PP
+Implements \fBEntity\fP\&.
+.SS "auto key () const \-> std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get a key that can identify the \fBEntity\fP uniquely\&. If identifier of the \fBEntity\fP is not atomic value, returns a string represents the composite identifier\&. If identifier of the \fBEntity\fP is not string, converts the identifier to string and returns the string\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+An identifier 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEntity\fP\&.
+.SS "auto TAG () const \->  std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name when represented by XML\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A tag name 
+.RE
+.PP
+
+.PP
+Implements \fBEntity\fP\&.
+.SS "auto toXML () const \-> std::shared_ptr<\fBlibrary::XML\fP>\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get an XML object represents the \fBEntity\fP\&. Returns an XML object that can represents the \fBEntity\fP containing member variables into properties\&. 
+.PP
+A member variable (not object, but atomic value like number, string or date) is categorized as a property within the framework of entity side\&. Thus, when overriding a \fBtoXML()\fP method and archiving member variables to an XML object to return, puts each variable to be a property belongs to only an XML object\&. 
+.PP
+Don't archive the member variable of atomic value to XML::value causing enormouse creation of XML objects to number of member variables\&. An \fBEntity\fP must be represented by only an XML instance (tag)\&. 
+.PP
+Standard Usage  Non-standard usage abusing value   <memberList>
+.br
+      <member id='jhnam88' name='Jeongho+Nam' birthdate='1988-03-11' />
+.br
+      <member id='master' name='Administartor' birthdate='2011-07-28' />
+.br
+ </memberList>  <member>
+.br
+      <id>jhnam88</id>
+.br
+      <name>Jeongho+Nam</name>
+.br
+      <birthdate>1988-03-11</birthdate>
+.br
+ </member>   
+.PP
+\fBReturns:\fP
+.RS 4
+An XML object representing the \fBEntity\fP\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEntity\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

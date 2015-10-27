@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="df/d85/classsamchon_1_1library_1_1RWMutex" kind="class" language="C++" prot="public">
+    <compoundname>samchon::library::RWMutex</compoundname>
+    <includes refid="dd/d85/RWMutex_8hpp" local="no">RWMutex.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/d85/classsamchon_1_1library_1_1RWMutex_1ae8494e7095d2a634e4ad3480b84170d1" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; size_t &gt; *</type>
+        <definition>std::atomic&lt;size_t&gt;* readingCount</definition>
+        <argsstring></argsstring>
+        <name>readingCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="37" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a7b84ac19c3333025ed37469773bb0531" prot="private" static="no" mutable="no">
+        <type>std::atomic&lt; bool &gt; *</type>
+        <definition>std::atomic&lt;bool&gt;* isWriting</definition>
+        <argsstring></argsstring>
+        <name>isWriting</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="38" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a84edb775265e3d915d5bea470bd36b5b" prot="private" static="no" mutable="no">
+        <type>std::mutex *</type>
+        <definition>std::mutex* minusMtx</definition>
+        <argsstring></argsstring>
+        <name>minusMtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="39" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a2607c3ae2ab502fae9a8056de6a1c890" prot="private" static="no" mutable="no">
+        <type>std::condition_variable *</type>
+        <definition>std::condition_variable* cv</definition>
+        <argsstring></argsstring>
+        <name>cv</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="42" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a8e656ea8abd2b9cdf6830d253aa96069" prot="private" static="no" mutable="no">
+        <type>std::mutex *</type>
+        <definition>std::mutex* readMtx</definition>
+        <argsstring></argsstring>
+        <name>readMtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="43" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a74a5217206b23e6c0509dc11674706cb" prot="private" static="no" mutable="no">
+        <type>std::mutex *</type>
+        <definition>std::mutex* writeMtx</definition>
+        <argsstring></argsstring>
+        <name>writeMtx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="44" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a7bd0b673f824e79f996f5cb4987b7d42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RWMutex</definition>
+        <argsstring>()</argsstring>
+        <name>RWMutex</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="50" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.cpp" bodystart="10" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a894e2bb9aac2abece9c193e9c3e6fbc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>~RWMutex</definition>
+        <argsstring>()</argsstring>
+        <name>~RWMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="51" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.cpp" bodystart="20" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a664e237001ad049e20494ecf744b347a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void readLock</definition>
+        <argsstring>() const </argsstring>
+        <name>readLock</name>
+        <briefdescription>
+<para>Lock on read. </para>        </briefdescription>
+        <detaileddescription>
+<para>Increases a reading count. </para><para>When write_lock is on a progress, wait until write_unlock to be called. </para><para><itemizedlist>
+<listitem><para>Reading can be done by multiple sections. </para></listitem>
+<listitem><para>Reading can&apos;t be done when writing.</para></listitem>
+</itemizedlist>
+<simplesect kind="warning"><para>You&apos;ve to call read_unlock when the reading work is terminated. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="65" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.cpp" bodystart="31" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a33de62d0aba5d8a3aa4adf10dd12231b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void readUnlock</definition>
+        <argsstring>() const </argsstring>
+        <name>readUnlock</name>
+        <briefdescription>
+<para>Unlock of read. </para>        </briefdescription>
+        <detaileddescription>
+<para>Decreases a reading count. </para><para>When write_lock had done after read_lock, it continues by read_unlock if the reading count was 1 (read_unlock makes the count to be zero). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="76" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.cpp" bodystart="39" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d85/classsamchon_1_1library_1_1RWMutex_1a21167128d52ec00ba5af8374f67fe0ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void writeLock</definition>
+        <argsstring>()</argsstring>
+        <name>writeLock</name>
+        <briefdescription>
+<para>Lock on writing. </para>        </briefdescription>
+        <detaileddescription>
+<para>Changes writing flag to true. </para><para>If another write_lock or read_lock is on a progress, wait until them to be unlocked. </para><para><itemizedlist>
+<listitem><para>Writing can be done by only a section at once. </para></listitem>
+<listitem><para>Writing can&apos;t be done when reading.</para></listitem>
+</itemizedlist>
+<simplesect kind="note"><para>You&apos;ve to call write_unlock when writing work was terminated. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="91" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.cpp" bodystart="53" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d85/classsamchon_1_1library_1_1RWMutex_1afe79556a7d0c7998519cb181cc9a3614" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void writeUnlock</definition>
+        <argsstring>()</argsstring>
+        <name>writeUnlock</name>
+        <briefdescription>
+<para>Unlock on writing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="96" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.cpp" bodystart="61" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>rw_mutex </para>    </briefdescription>
+    <detaileddescription>
+<para>A mutex divided into reading and writing. </para><para><image type="html" name="library_critical_section.png"></image>
+ <image type="latex" name="library_critical_section.png"></image>
+</para><para><simplesect kind="note"><para></para></simplesect>
+Of course, rw_mutex is already defined in linux C. But it is dependent on the linux OS, so that cannot be compiled in Window having the rw_mutex. There&apos;s not a class like rw_mutex in STL yet. It&apos;s the reason why <ref refid="df/d85/classsamchon_1_1library_1_1RWMutex" kindref="compound">RWMutex</ref> is provided. </para><para>As that reason, if STL supports the rw_mutex in near future, the <ref refid="df/d85/classsamchon_1_1library_1_1RWMutex" kindref="compound">RWMutex</ref> can be depreciated. </para><para><simplesect kind="see"><para><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref> </para></simplesect>
+<simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" line="34" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/RWMutex.hpp" bodystart="33" bodyend="97"/>
+    <listofallmembers>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a2607c3ae2ab502fae9a8056de6a1c890" prot="private" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>cv</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a7b84ac19c3333025ed37469773bb0531" prot="private" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>isWriting</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a84edb775265e3d915d5bea470bd36b5b" prot="private" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>minusMtx</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1ae8494e7095d2a634e4ad3480b84170d1" prot="private" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>readingCount</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a664e237001ad049e20494ecf744b347a" prot="public" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>readLock</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a8e656ea8abd2b9cdf6830d253aa96069" prot="private" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>readMtx</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a33de62d0aba5d8a3aa4adf10dd12231b" prot="public" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>readUnlock</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a7bd0b673f824e79f996f5cb4987b7d42" prot="public" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>RWMutex</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a21167128d52ec00ba5af8374f67fe0ec" prot="public" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>writeLock</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a74a5217206b23e6c0509dc11674706cb" prot="private" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>writeMtx</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1afe79556a7d0c7998519cb181cc9a3614" prot="public" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>writeUnlock</name></member>
+      <member refid="df/d85/classsamchon_1_1library_1_1RWMutex_1a894e2bb9aac2abece9c193e9c3e6fbc1" prot="public" virt="non-virtual"><scope>samchon::library::RWMutex</scope><name>~RWMutex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

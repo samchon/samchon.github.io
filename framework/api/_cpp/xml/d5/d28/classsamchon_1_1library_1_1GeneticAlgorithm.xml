@@ -1,0 +1,732 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm" kind="class" language="C++" prot="public">
+    <compoundname>samchon::library::GeneticAlgorithm</compoundname>
+    <includes refid="dd/de8/GeneticAlgorithm_8hpp" local="no">GeneticAlgorithm.hpp</includes>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>GeneArray</declname>
+        <defname>GeneArray</defname>
+      </param>
+      <param>
+        <type>typename</type>
+        <declname>Compare</declname>
+        <defname>Compare</defname>
+        <defval>std::less&lt;GeneArray&gt;</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a2636431331e510f93a40ef2308bd1e41" prot="private" static="no">
+        <type><ref refid="d8/dcd/classsamchon_1_1library_1_1GAPopulation" kindref="compound">GAPopulation</ref>&lt; GeneArray, Compare &gt;</type>
+        <definition>typedef GAPopulation&lt;GeneArray, Compare&gt; MyPopulation</definition>
+        <argsstring></argsstring>
+        <name>MyPopulation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="86" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a8e1aeb88f9538cc3530184b88baa905a" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool unique</definition>
+        <argsstring></argsstring>
+        <name>unique</name>
+        <briefdescription>
+<para>Whether each element (Gene) is unique in their GeneArray. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="91" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a6a96858958208e182fa72edf689b603e" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double mutationRate</definition>
+        <argsstring></argsstring>
+        <name>mutationRate</name>
+        <briefdescription>
+<para>Rate of mutate ocurrence. </para>        </briefdescription>
+        <detaileddescription>
+<para>The mutationRate determines the percentage of occurence of mutation in a GeneArray.</para><para><simplesect kind="note"><para><itemizedlist>
+<listitem><para>When mutationRate is too high, it is hard to ancitipate studying on genetic algorithm. </para></listitem>
+<listitem><para>When mutationRate is too low and initial set of genes(GeneArray) is far away from optimal, the evolution tends to wandering outside of he optimal. </para></listitem>
+</itemizedlist>
+</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="104" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a8c2f5f5dd719f917fd1c041902dae418" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t tournament</definition>
+        <argsstring></argsstring>
+        <name>tournament</name>
+        <briefdescription>
+<para>Size of tournament in selection. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="109" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a91b21dcd4127c8698adf664170811277" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>GeneticAlgorithm</definition>
+        <argsstring>(bool unique, double mutationRate=0.015, size_t tournament=10)</argsstring>
+        <name>GeneticAlgorithm</name>
+        <param>
+          <type>bool</type>
+          <declname>unique</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>mutationRate</declname>
+          <defval>0.015</defval>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>tournament</declname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+<para>Construct from parameters of Genetic Algorithm. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>unique</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether each Gene is unique in their GeneArray </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mutationRate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Rate of mutation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tournament</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of tournament in selection </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>elitism</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to keep the elitest GeneArray </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="120" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="120" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a554aa9c0214973bcd5c4f9d5bc52aac7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto evolveGeneArray</definition>
+        <argsstring>(std::shared_ptr&lt; GeneArray &gt; geneArray, size_t population, size_t generation) const  -&gt; std::shared_ptr&lt; GeneArray &gt;</argsstring>
+        <name>evolveGeneArray</name>
+        <param>
+          <type>std::shared_ptr&lt; GeneArray &gt;</type>
+          <declname>geneArray</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>population</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>generation</declname>
+        </param>
+        <briefdescription>
+<para>Evolve a GeneArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>Convinient method accessing to <ref refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a00d34b0d124e697c61d1d6c496088fb9" kindref="member">evolvePopulation()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>geneArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An initial set of genes; sequence listing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>population</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of population in a generation </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>generation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of generation in evolution</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A evolved GeneArray optimally </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="138" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="138" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a00d34b0d124e697c61d1d6c496088fb9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto evolvePopulation</definition>
+        <argsstring>(std::shared_ptr&lt; MyPopulation &gt; population) const  -&gt; std::shared_ptr&lt; MyPopulation &gt;</argsstring>
+        <name>evolvePopulation</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="d8/dcd/classsamchon_1_1library_1_1GAPopulation" kindref="compound">MyPopulation</ref> &gt;</type>
+          <declname>population</declname>
+        </param>
+        <briefdescription>
+<para>Evolve population, a mass of GeneArray(es) </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>population</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An initial population </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="154" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="154" bodyend="178"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a48a17ac3ed4f7f3fce5fc739935d40b3" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto selection</definition>
+        <argsstring>(std::shared_ptr&lt; MyPopulation &gt; population) const  -&gt; std::shared_ptr&lt; GeneArray &gt;</argsstring>
+        <name>selection</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="d8/dcd/classsamchon_1_1library_1_1GAPopulation" kindref="compound">MyPopulation</ref> &gt;</type>
+          <declname>population</declname>
+        </param>
+        <briefdescription>
+<para>Select the best GeneArray in population from tournament. </para>        </briefdescription>
+        <detaileddescription>
+<para>Selection is the stage of a genetic algorithm in which individual genomes are chosen from a population for later breeding (using crossover operator). A generic selection procedure may be implemented as follows: </para><para><orderedlist>
+<listitem>
+<para>The fitness function is evaluated for each individual, providing fitness values, which are then normalized. Normalization means dividing the fitness value of each individual by the sum of all fitness values, so that the sum of all resulting fitness values equals 1.  </para></listitem>
+<listitem>
+<para>The population is sorted by descending fitness values.  </para></listitem>
+<listitem>
+<para>Accumulated normalized fitness values are computed (the accumulated fitness value of an individual is the sum of its own fitness value plus the fitness values of all the previous individuals). The accumulated fitness of the last individual should be 1 (otherwise something went wrong in the normalization step).  </para></listitem>
+<listitem>
+<para>A random number R between 0 and 1 is chosen.  </para></listitem>
+<listitem>
+<para>The selected individual is the first one whose accumulated normalized value is greater than R.  </para></listitem>
+</orderedlist>
+</para><para><itemizedlist>
+<listitem><para>Referenced Wekipedia: <ulink url="https://en.wikipedia.org/wiki/Selection_(genetic_algorithm)">https://en.wikipedia.org/wiki/Selection_(genetic_algorithm)</ulink></para></listitem>
+</itemizedlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>population</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The target of tournament </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The best genes derived by the tournament </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="211" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="211" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1af983fbaae30f2cc2647839ec1ccce292" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto crossover</definition>
+        <argsstring>(std::shared_ptr&lt; GeneArray &gt; &amp;parent1, std::shared_ptr&lt; GeneArray &gt; &amp;parent2) const  -&gt; std::shared_ptr&lt; GeneArray &gt;</argsstring>
+        <name>crossover</name>
+        <param>
+          <type>std::shared_ptr&lt; GeneArray &gt; &amp;</type>
+          <declname>parent1</declname>
+        </param>
+        <param>
+          <type>std::shared_ptr&lt; GeneArray &gt; &amp;</type>
+          <declname>parent2</declname>
+        </param>
+        <briefdescription>
+<para>Create a new GeneArray by crossing over two GeneArray(s) </para>        </briefdescription>
+        <detaileddescription>
+<para>crossover is a genetic operator used to vary the programming of a chromosome or chromosomes from one generation to the next. It is analogous to reproduction and biological crossover, upon which genetic algorithms are based. </para><para>Cross over is a process of taking more than one parent solutions and producing a child solution from them. There are methods for selection of the chromosomes. </para><para><itemizedlist>
+<listitem><para>Referenced Wikipedia: <ulink url="https://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)">https://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)</ulink></para></listitem>
+</itemizedlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A parent sequence listing </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A parent sequence listing </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="240" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="240" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a1a484961adb26a59f5689ed43526f54a" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void mutate</definition>
+        <argsstring>(std::shared_ptr&lt; GeneArray &gt; geneArray) const </argsstring>
+        <name>mutate</name>
+        <param>
+          <type>std::shared_ptr&lt; GeneArray &gt;</type>
+          <declname>geneArray</declname>
+        </param>
+        <briefdescription>
+<para>Cause a mutation on the GeneArray. </para>        </briefdescription>
+        <detaileddescription>
+<para>Mutation is a genetic operator used to maintain genetic diversity from one generation of a population of genetic algorithm chromosomes to the next. It is analogous to biological mutation. </para><para>Mutation alters one or more gene values in a chromosome from its initial state. In mutation, the solution may change entirely from the previous solution. Hence GA can come to better solution by using mutation. </para><para>Mutation occurs during evolution according to a user-definable mutation probability. This probability should be set low. If it is set too high, the search will turn into a primitive random search. </para><para><itemizedlist>
+<listitem><para>Referenced Wikipedia: <ulink url="https://en.wikipedia.org/wiki/Mutation_(genetic_algorithm)">https://en.wikipedia.org/wiki/Mutation_(genetic_algorithm)</ulink></para></listitem>
+</itemizedlist>
+<simplesect kind="note"><para></para></simplesect>
+Muttion is pursuing diversity. Mutation is useful for avoiding the following problem. </para><para>When initial set of genes(GeneArray) is far away from optimail, without mutation (only with selection and crossover), the genetic algorithm has a tend to wandering outside of the optimal. </para><para>Genes in the GeneArray will be swapped following percentage of the mutationRate. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>geneArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A container of genes to mutate </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a6a96858958208e182fa72edf689b603e" kindref="member">mutationRate</ref>; </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="312" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="312" bodyend="322"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A genetic algorithm class. </para>    </briefdescription>
+    <detaileddescription>
+<para>In the field of artificial intelligence, a genetic algorithm (GA) is a search heuristic that mimics the process of natural selection. This heuristic (also sometimes called a metaheuristic) is routinely used to generate useful solutions to optimization and search problems. </para><para>Genetic algorithms belong to the larger class of evolutionary algorithms (EA), which generate solutions to optimization problems using techniques inspired by natural evolution, such as inheritance, mutation, selection, and crossover. </para><para><itemizedlist>
+<listitem><para>Referenced Wikipedia: <ulink url="https://en.wikipedia.org/wiki/Genetic_algorithm">https://en.wikipedia.org/wiki/Genetic_algorithm</ulink></para></listitem>
+</itemizedlist>
+</para><para><image type="html" name="library_genetic_algorithm.png"></image>
+ <image type="latex" name="library_genetic_algorithm.png"></image>
+</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>GeneArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array(std::vector) containing genes as elments; sequnce listing.<linebreak/>
+<linebreak/>
+ The GeneArray must be a type of <emphasis>std::vector</emphasis>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Compare</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A comparison class (or struct) returns whether left gene is more optimal.<linebreak/>
+<linebreak/>
+ Default template parameter of Compare is <emphasis>std::less&lt;GeneArray&gt;</emphasis>. It means to compare two std::vector (GeneArray must be a std::vector). Thus, you&apos;ve to keep follwing rules.<linebreak/>
+<linebreak/>
+ If you don&apos;t want to follow the rules or want a custom comparison class, you have to realize a comparison class. The following code is an example realizing the comparison class. <verbatim>- GeneArray is inherited from &lt;i&gt;std::vector&lt;/i&gt;
+- GeneArray has custom &lt;i&gt;auto operator&lt;(const GeneArray &amp;) const -&gt; bool&lt;/i&gt;
+</verbatim></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<programlisting><codeline><highlight class="normal">template<sp/>&lt;typename<sp/>_Ty&gt;</highlight></codeline>
+<codeline><highlight class="normal">struct<sp/>MyCompare</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal">auto<sp/>operator()(const<sp/>_Ty<sp/>&amp;newObj,<sp/>const<sp/>_Ty<sp/>&amp;prevObj)<sp/>const<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+</programlisting></para><para><heading level="3">Example source</heading>
+</para><para>TSP - Traveling Salesman Problem </para><para><simplesect kind="par"><title>examples/tsp/Scheduler.hpp</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;memory&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">example</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">tsp</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Travel;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">GAParameters</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a6a96858958208e182fa72edf689b603e" kindref="member">mutationRate</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>tornament;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>population;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>generation;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Scheduler</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::shared_ptr&lt;Travel&gt;<sp/>travel;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">GAParameters<sp/>gaParameters;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Scheduler(std::shared_ptr&lt;Travel&gt;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"><sp/>GAParameters<sp/>&amp;);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>optimize()<sp/>-&gt;<sp/>std::shared_ptr&lt;Travel&gt;;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">};</highlight></codeline>
+</programlisting> </para></simplesect>
+<simplesect kind="par"><title>examples/tsp/Travel.hpp</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">example</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">tsp</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">GeometryPoint;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Travel</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>std::vector&lt;GeometryPoint*&gt;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>std::vector&lt;GeometryPoint*&gt;<sp/>super;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Travel();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Travel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Travel&amp;);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Travel(Travel&amp;&amp;);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CALCULATORS</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>calcDistance()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>public:</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>operator&lt;(const<sp/>Travel<sp/>&amp;)<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXPORTER</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>toString()<sp/>const<sp/>-&gt;<sp/><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">};</highlight></codeline>
+</programlisting> </para></simplesect>
+<simplesect kind="par"><title>examples/tsp/GeometryPoint.hpp</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">example</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">tsp</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">GeometryPoint</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uid;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>longitude;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GeometryPoint(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>GeometryPoint(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CALCULATOR</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>calcDistance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>GeometryPoint<sp/>&amp;)<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>EXPORTER</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>auto<sp/>toString()<sp/>const<sp/>-&gt;<sp/><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+</programlisting></para></simplesect>
+<simplesect kind="par"><title>examples/tsp/main.cpp</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;Windows.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Scheduler.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Travel.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;GeometryPoint.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d0/d6a/namespacesamchon_1_1example_1_1tsp" kindref="compound">samchon::example::tsp</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>_WIN64</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>ifdef<sp/>_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;x64/Debug/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;x64/Release/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>ifdef<sp/>_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;Debug/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/>pragma<sp/>comment(lib,<sp/>&quot;Release/SamchonFramework.lib&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toClipboard(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>main()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//GEOMETRY<sp/>COORPORATES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>shared_ptr&lt;Travel&gt;<sp/>travel(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="db/dd4/classsamchon_1_1example_1_1tsp_1_1Travel" kindref="compound">Travel</ref>());</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>20;<sp/>i++)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>travel-&gt;push_back(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d3/da4/classsamchon_1_1example_1_1tsp_1_1GeometryPoint" kindref="compound">GeometryPoint</ref>(i<sp/>+<sp/>1));</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//OPTIMIZING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="d9/d92/structsamchon_1_1example_1_1tsp_1_1GAParameters" kindref="compound">GAParameters</ref><sp/>gaParameters<sp/>=<sp/>{.03,<sp/>50,<sp/>100,<sp/>300};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="df/d27/classsamchon_1_1example_1_1tsp_1_1Scheduler" kindref="compound">Scheduler</ref><sp/>scheduler(travel,<sp/>gaParameters);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>travel<sp/>=<sp/>scheduler.optimize();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//PRINTING</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;str<sp/>=<sp/>travel-&gt;toString();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>toClipboard(str);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>cout<sp/>&lt;&lt;<sp/>str<sp/>&lt;&lt;<sp/>endl;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>system(</highlight><highlight class="stringliteral">&quot;pause&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>toClipboard(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;str)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>OpenClipboard(0);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>EmptyClipboard();</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>HGLOBAL<sp/>hg<sp/>=<sp/>GlobalAlloc(GMEM_MOVEABLE,<sp/>str.size());</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!hg)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CloseClipboard();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>memcpy(GlobalLock(hg),<sp/>str.c_str(),<sp/>str.size());</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>GlobalUnlock(hg);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>SetClipboardData(CF_TEXT,<sp/>hg);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>CloseClipboard();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>GlobalFree(hg);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+</programlisting> </para></simplesect>
+<simplesect kind="par"><title>examples/tsp/Scheduler.cpp</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Scheduler.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&quot;Travel.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/GeneticAlgorithm.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d0/d6a/namespacesamchon_1_1example_1_1tsp" kindref="compound">samchon::example::tsp</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">Scheduler::Scheduler(shared_ptr&lt;Travel&gt;<sp/>travel,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d9/d92/structsamchon_1_1example_1_1tsp_1_1GAParameters" kindref="compound">GAParameters</ref><sp/>&amp;gaParameteres)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;travel<sp/>=<sp/>travel;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;gaParameters<sp/>=<sp/>gaParameteres;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Scheduler::optimize()<sp/>-&gt;<sp/>shared_ptr&lt;Travel&gt;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm" kindref="compound">GeneticAlgorithm&lt;Travel&gt;</ref><sp/>geneticAlgorithm</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gaParameters.mutationRate,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gaParameters.tornament</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>travel<sp/>=<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>geneticAlgorithm.evolveGeneArray</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>travel,<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gaParameters.population,<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gaParameters.generation</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>travel;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+</programlisting> </para></simplesect>
+<simplesect kind="par"><title>examples/tsp/Travel.cpp</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Travel.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&quot;GeometryPoint.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/StringUtil.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d0/d6a/namespacesamchon_1_1example_1_1tsp" kindref="compound">samchon::example::tsp</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">Travel::Travel()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super()</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>distance<sp/>=<sp/>INT_MIN;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">Travel::Travel(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/dd4/classsamchon_1_1example_1_1tsp_1_1Travel" kindref="compound">Travel</ref><sp/>&amp;travel)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(travel)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>distance<sp/>=<sp/>INT_MIN;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">Travel::Travel(<ref refid="db/dd4/classsamchon_1_1example_1_1tsp_1_1Travel" kindref="compound">Travel</ref><sp/>&amp;&amp;travel)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(move(travel))</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>distance<sp/>=<sp/>travel.distance;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/><sp/><sp/><sp/>CALCULATORS</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Travel::calcDistance()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(this-&gt;distance<sp/>!=<sp/>INT_MIN)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;distance;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>1;<sp/>i<sp/>&lt;<sp/>size();<sp/>i++)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>distance<sp/>+=<sp/>at(i-1)-&gt;calcDistance(*at(i));</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>((<ref refid="db/dd4/classsamchon_1_1example_1_1tsp_1_1Travel" kindref="compound">Travel</ref>*)</highlight><highlight class="keyword">this</highlight><highlight class="normal">)-&gt;distance<sp/>=<sp/>distance;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>distance;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Travel::operator&lt;(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="db/dd4/classsamchon_1_1example_1_1tsp_1_1Travel" kindref="compound">Travel</ref><sp/>&amp;travel)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;calcDistance()<sp/>&lt;<sp/>travel.calcDistance();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/><sp/><sp/><sp/>EXPORTER</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Travel::toString()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>str<sp/>=</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Distance:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>StringUtil::numberFormat(calcDistance())<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;<sp/>km\n&quot;</highlight><highlight class="normal"><sp/>+<sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;uid<sp/><sp/><sp/><sp/>longitude<sp/><sp/><sp/>latitude\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size();<sp/>i++)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str<sp/>+=<sp/>at(i)-&gt;toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>move(str);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+</programlisting> </para></simplesect>
+<simplesect kind="par"><title>examples/tsp/GeometryPoint.cpp</title><para><programlisting><codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;GeometryPoint.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;random&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cmath&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/Math.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/StringUtil.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d0/d6a/namespacesamchon_1_1example_1_1tsp" kindref="compound">samchon::example::tsp</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">GeometryPoint::GeometryPoint(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uid)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;uid<sp/>=<sp/>uid;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;longitude<sp/>=<sp/><ref refid="de/d8f/classsamchon_1_1library_1_1Math_1a3e509be3d40a5848b84a4a4c468f367b" kindref="member">Math::random</ref>()<sp/>*<sp/>180.0;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;latitude<sp/>=<sp/><ref refid="de/d8f/classsamchon_1_1library_1_1Math_1a3e509be3d40a5848b84a4a4c468f367b" kindref="member">Math::random</ref>()<sp/>*<sp/>180<sp/>-<sp/>90.0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">GeometryPoint::GeometryPoint(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>uid,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>longitude,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;uid<sp/>=<sp/>uid;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;longitude<sp/>=<sp/>longitude;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;latitude<sp/>=<sp/>latitude;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/><sp/><sp/><sp/>CALCULATOR</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>GeometryPoint::calcDistance(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d3/da4/classsamchon_1_1example_1_1tsp_1_1GeometryPoint" kindref="compound">GeometryPoint</ref><sp/>&amp;point)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(longitude<sp/>==<sp/>point.longitude<sp/>&amp;&amp;<sp/>latitude<sp/>==<sp/>point.latitude)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0.0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude_radian1<sp/>=<sp/><ref refid="de/d8f/classsamchon_1_1library_1_1Math_1a4608d85f4f8fdf5cfebf61ac63c81b79" kindref="member">Math::degree_to_radian</ref>(this-&gt;latitude);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude_radian2<sp/>=<sp/><ref refid="de/d8f/classsamchon_1_1library_1_1Math_1a4608d85f4f8fdf5cfebf61ac63c81b79" kindref="member">Math::degree_to_radian</ref>(point.latitude);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>theta<sp/>=<sp/>this-&gt;longitude<sp/>-<sp/>point.longitude;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>val<sp/>=</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sin(latitude_radian1)<sp/>*<sp/>sin(latitude_radian2)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+<sp/>cos(latitude_radian1)<sp/>*<sp/>cos(latitude_radian2)<sp/>*<sp/>cos(<ref refid="de/d8f/classsamchon_1_1library_1_1Math_1a4608d85f4f8fdf5cfebf61ac63c81b79" kindref="member">Math::degree_to_radian</ref>(theta));</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>=<sp/>acos(val);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>=<sp/><ref refid="de/d8f/classsamchon_1_1library_1_1Math_1afbb4acc719f2b5b6db6952baaa0a6d92" kindref="member">Math::radian_to_degree</ref>(val);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>=<sp/>val<sp/>*<sp/>60<sp/>*<sp/>1.1515;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>val<sp/>=<sp/>val<sp/>*<sp/>1.609344;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>val;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/><sp/><sp/><sp/>EXPORTER</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">-----------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>GeometryPoint::toString()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="d2/d53/classsamchon_1_1library_1_1StringUtil_1a10b71ace12a2c3480112a2d5220c7344" kindref="member">StringUtil::substitute</ref></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;{1}\t{2}\t{3}&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uid,<sp/>longitude,<sp/>latitude</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+</programlisting></para></simplesect>
+<heading level="4">Result of the example </heading>
+</para><para><image type="html" name="example_tsp.png"></image>
+ <image type="latex" name="example_tsp.png"></image>
+</para><para><simplesect kind="warning"><para></para></simplesect>
+Be careful for the mistakes of direction or position of Compare. </para><para>Most of logical errors failed to access optimal solution are occured by those mistakens. </para><para><simplesect kind="see"><para><ref refid="d8/dcd/classsamchon_1_1library_1_1GAPopulation" kindref="compound">library::GAPopulation</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref> </para></simplesect>
+<simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" line="84" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/GeneticAlgorithm.hpp" bodystart="83" bodyend="323"/>
+    <listofallmembers>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1af983fbaae30f2cc2647839ec1ccce292" prot="private" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>crossover</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a554aa9c0214973bcd5c4f9d5bc52aac7" prot="public" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>evolveGeneArray</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a00d34b0d124e697c61d1d6c496088fb9" prot="public" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>evolvePopulation</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a91b21dcd4127c8698adf664170811277" prot="public" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>GeneticAlgorithm</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a1a484961adb26a59f5689ed43526f54a" prot="private" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>mutate</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a6a96858958208e182fa72edf689b603e" prot="private" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>mutationRate</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a2636431331e510f93a40ef2308bd1e41" prot="private" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>MyPopulation</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a48a17ac3ed4f7f3fce5fc739935d40b3" prot="private" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>selection</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a8c2f5f5dd719f917fd1c041902dae418" prot="private" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>tournament</name></member>
+      <member refid="d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm_1a8e1aeb88f9538cc3530184b88baa905a" prot="private" virt="non-virtual"><scope>samchon::library::GeneticAlgorithm</scope><name>unique</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

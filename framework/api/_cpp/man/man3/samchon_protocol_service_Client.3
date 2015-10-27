@@ -1,0 +1,314 @@
+.TH "Client" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Client \- A network boundary with the client in an \fBUser\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Client\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBClient\fP (\fBUser\fP *)"
+.br
+.RI "\fIConstruct from \fBUser\fP, No and socket\&. \fP"
+.ti -1c
+.RI "auto \fBgetUser\fP () const  \-> \fBUser\fP *"
+.br
+.RI "\fIGet \fBUser\fP\&. \fP"
+.ti -1c
+.RI "auto \fBgetService\fP () const  \-> \fBService\fP *"
+.br
+.RI "\fIGet \fBService\fP\&. \fP"
+.ti -1c
+.RI "auto \fBgetNo\fP () const  \-> size_t"
+.br
+.RI "\fIGet no\&. \fP"
+.ti -1c
+.RI "void \fBsendData\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fISend \fBInvoke\fP message to (physical) client\&. \fP"
+.ti -1c
+.RI "void \fBreplyData\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fIReply \fBInvoke\fP message from (physical) client\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBcreateService\fP (const std::string &) \-> \fBService\fP *=0"
+.br
+.RI "\fIFactory method of \fBService\fP\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBUser\fP * \fBuser\fP"
+.br
+.RI "\fIAn \fBUser\fP of the \fBClient\fP\&. \fP"
+.ti -1c
+.RI "size_t \fBno\fP"
+.br
+.RI "\fIA sequence number of the \fBClient\fP in an \fBUser\fP\&. \fP"
+.ti -1c
+.RI "\fBService\fP * \fBservice\fP"
+.br
+.RI "\fIA \fBService\fP belongs to the \fBClient\fP\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBconstructService\fP (const std::string &)"
+.br
+.RI "\fIConstruct \fBService\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A network boundary with the client in an \fBUser\fP\&. 
+
+\fBClient\fP is an object interacting with physical client by socket\&. 
+.PP
+The \fBClient\fP is correspond with a Window in JS (UI) 1:1 
+.PP
+.PD 0
+.IP "\(bu" 2
+A Window, the object in UI 
+.IP "\(bu" 2
+A Window, matching with window of a internet browser
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+Method to override 
+.PD 0
+
+.IP "\(bu" 2
+createUser()
+.PP
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.PP
+\fBsamchon::protocol::service\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBClient\fP (\fBUser\fP * user)"
+
+.PP
+Construct from \fBUser\fP, No and socket\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIuser\fP An \fBUser\fP containing the \fBClient\fP 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual auto createService (const std::string &) \->  \fBService\fP *\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Factory method of \fBService\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Requested name representing a \fBService\fP from the (physical) client 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A new \fBService\fP belongs the the \fBClient\fP 
+.RE
+.PP
+
+.PP
+Implemented in \fBChatClient\fP\&.
+.SS "void sendData (std::shared_ptr< \fBInvoke\fP >)\fC [virtual]\fP"
+
+.PP
+Send \fBInvoke\fP message to (physical) client\&. Method sendData of \fBClient\fP does not only send \fBInvoke\fP message to client system, but also archives the \fBInvoke\fP message to database system as a historical-log\&. 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Method sendData monopolies a critical section\&. 
+.PP
+How many threads have called that sendData, the \fBInvoke\fP messages are delivered sequentially\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+Using sendData with a new thread is not recommended
+.PP
+\fBWarning:\fP
+.RS 4
+You can't override this method, sendData\&. 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP \fBInvoke\fP message to send 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBIClient\fP\&.
+.SS "void replyData (std::shared_ptr< \fBInvoke\fP >)\fC [virtual]\fP"
+
+.PP
+Reply \fBInvoke\fP message from (physical) client\&. Handles replied \fBInvoke\fP message from client system\&. 
+.PP
+.PD 0
+.IP "1." 4
+Constructs \fBService\fP  
+.PD 0
+
+.IP "  \(bu" 4
+Constructs \fBService\fP by requested service name\&.  
+.IP "  \(bu" 4
+Notifies client system whether the user satisfies the authority\&.  
+.PP
+
+.IP "2." 4
+Shifts responsibility to related chain\&.  
+.PD 0
+
+.IP "  \(bu" 4
+\fBInvoke\fP message is about member (join, login, etc\&.), shift to \fBUser\fP\&.  
+.IP "  \(bu" 4
+Except that all, shifts to \fBService\fP\&.  
+.PP
+
+.IP "3." 4
+Archives the \fBInvoke\fP message to Database system as a historical-log\&.  
+.PD 0
+
+.IP "  \(bu" 4
+\fBInvoke\fP to HISTORY_INVOKE table, with \fBUser\fP's session and \fBClient\fP's sequence id\&.  
+.IP "  \(bu" 4
+InvokeParameters(s) to HISTORY_INVOKE_PARAMETER with key of HISTORY_INVOKE as foriegn key\&.  
+.PP
+
+.PP
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+\fBHistorical-log\fP
+.RS 4
+
+.RE
+.PP
+HISTORY_INVOKE and HISTORY_INVOKE_PARAMETER has a 1:N relationship 
+.PP
+If you want to modify archiving method, override method of Server::archiveReplyData() 
+.PP
+\fBShifting responsibility to Service\fP
+.RS 4
+
+.RE
+.PP
+\fBService::replyData\fP will be called by a new thread\&. The thread will acquire an admission from semaphore in \fBUser\fP to avoid exhausted allocation of threads\&.
+.PP
+\fBException handling\fP
+.RS 4
+
+.RE
+.PP
+If an std::exception has thrown from \fBService::replyData\fP, the exception will archived in Database (HISTORY_INVOKE_EXCEPTION) 
+.PP
+The most famous thrown parameters like std::exception, std::invalid_argument and std::runtime_error, those are all derived from std::exception\&. 
+.br
+      -> http://www.cplusplus.com/reference/stdexcept/ 
+.PP
+.PD 0
+.IP "\(bu" 2
+std::exception  
+.PD 0
+
+.IP "  \(bu" 4
+std::logic_error  
+.PD 0
+
+.IP "    \(bu" 6
+std::domain_error  
+.IP "    \(bu" 6
+std::invalid_argument  
+.IP "    \(bu" 6
+std::length_error  
+.IP "    \(bu" 6
+std::out_of_range  
+.IP "    \(bu" 6
+std::future_error  
+.PP
+
+.IP "  \(bu" 4
+std::runtime_error  
+.PD 0
+
+.IP "    \(bu" 6
+std::range_error  
+.IP "    \(bu" 6
+std::overflow_error  
+.IP "    \(bu" 6
+std::underflow_error  
+.IP "    \(bu" 6
+std::system_error  
+.PP
+
+.PP
+.PP
+\fBWarning:\fP
+.RS 4
+.RE
+.PP
+You can't override this method, replyData\&. 
+.PP
+.PP
+If you want to modify replyData's rule, override related objects' replyData 
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP \fBInvoke\fP message replied from client system 
+.RE
+.PP
+
+.PP
+
+.PP
+Reimplemented from \fBIProtocol\fP\&.
+.SS "void constructService (const std::string & name)\fC [private]\fP"
+
+.PP
+Construct \fBService\fP\&. Constructs \fBService\fP by requested name from client and notify whether the \fBUser\fP is satisfying authority\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP A name representing type of \fBService\fP 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

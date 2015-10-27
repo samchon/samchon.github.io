@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d4/dcf/classsamchon_1_1protocol_1_1IProtocol" kind="class" language="C++" prot="public">
+    <compoundname>samchon::protocol::IProtocol</compoundname>
+    <derivedcompoundref refid="d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom" prot="public" virt="non-virtual">ChatRoom</derivedcompoundref>
+    <derivedcompoundref refid="dd/dc0/classsamchon_1_1example_1_1console__chat__server_1_1ChatServer" prot="public" virt="non-virtual">ChatServer</derivedcompoundref>
+    <derivedcompoundref refid="d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray" prot="public" virt="virtual">ExternalSystemArray</derivedcompoundref>
+    <derivedcompoundref refid="d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole" prot="public" virt="non-virtual">ExternalSystemRole</derivedcompoundref>
+    <derivedcompoundref refid="d3/dc8/classsamchon_1_1protocol_1_1IClient" prot="public" virt="virtual">IClient</derivedcompoundref>
+    <derivedcompoundref refid="d6/df3/classsamchon_1_1protocol_1_1service_1_1Service" prot="public" virt="non-virtual">Service</derivedcompoundref>
+    <derivedcompoundref refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User" prot="public" virt="non-virtual">User</derivedcompoundref>
+    <derivedcompoundref refid="d5/de8/classsamchon_1_1protocol_1_1SystemRole" prot="public" virt="virtual">SystemRole</derivedcompoundref>
+    <includes refid="dd/d50/IProtocol_8hpp" local="no">IProtocol.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1a6258c530c328dc119e698bb7e7fe222a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>IProtocol</definition>
+        <argsstring>()</argsstring>
+        <name>IProtocol</name>
+        <briefdescription>
+<para>Default Constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IProtocol.hpp" line="37" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IProtocol.cpp" bodystart="4" bodyend="4"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1a51a537c2b3a6ff5eb7b5ed859cc062ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual ~IProtocol</definition>
+        <argsstring>()=default</argsstring>
+        <name>~IProtocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IProtocol.hpp" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1a8debd8a0f208dbf9778fe66248443317" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void replyData</definition>
+        <argsstring>(std::shared_ptr&lt; Invoke &gt;)</argsstring>
+        <name>replyData</name>
+        <reimplementedby refid="df/db1/classsamchon_1_1protocol_1_1master_1_1ParallelSlaveSystemMediator_1a5c675c019fe4a91aee5dd8649e550e93">replyData</reimplementedby>
+        <reimplementedby refid="d5/d46/classsamchon_1_1protocol_1_1master_1_1DistributedSlaveSystemMediator_1a5c675c019fe4a91aee5dd8649e550e93">replyData</reimplementedby>
+        <reimplementedby refid="df/d42/classsamchon_1_1protocol_1_1ExternalSystem_1a5b0e5be870f2d6a26004a8e637a1ce6c">replyData</reimplementedby>
+        <reimplementedby refid="d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray_1a5b0e5be870f2d6a26004a8e637a1ce6c">replyData</reimplementedby>
+        <reimplementedby refid="db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem_1a5c675c019fe4a91aee5dd8649e550e93">replyData</reimplementedby>
+        <reimplementedby refid="df/d31/classsamchon_1_1protocol_1_1service_1_1Client_1a154cfbf14606a016ffe8d2cc4612be14">replyData</reimplementedby>
+        <reimplementedby refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User_1a5b0e5be870f2d6a26004a8e637a1ce6c">replyData</reimplementedby>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> &gt;</type>
+        </param>
+        <briefdescription>
+<para>Reply a message. </para>        </briefdescription>
+        <detaileddescription>
+<para>Handles a replied <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> message or shifts the responsibility to related chain. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>invoke</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> message gotten from a network system </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IProtocol.hpp" line="46" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1ac531693224b79ece2762da1e52bec0b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void sendData</definition>
+        <argsstring>(std::shared_ptr&lt; Invoke &gt;)</argsstring>
+        <name>sendData</name>
+        <reimplementedby refid="d7/d51/classsamchon_1_1protocol_1_1IWebClient_1ae1f443b90ed04fff9af40c8e7015e314">sendData</reimplementedby>
+        <reimplementedby refid="d3/dc8/classsamchon_1_1protocol_1_1IClient_1a7e9e36d7847d933abbf3b1eda35aab0d">sendData</reimplementedby>
+        <reimplementedby refid="d6/df3/classsamchon_1_1protocol_1_1service_1_1Service_1a7e9e36d7847d933abbf3b1eda35aab0d">sendData</reimplementedby>
+        <reimplementedby refid="d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole_1ae1f443b90ed04fff9af40c8e7015e314">sendData</reimplementedby>
+        <reimplementedby refid="d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray_1ae0f466a169b2d23786a2f94ac908672c">sendData</reimplementedby>
+        <reimplementedby refid="d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole_1ae0f466a169b2d23786a2f94ac908672c">sendData</reimplementedby>
+        <reimplementedby refid="df/d31/classsamchon_1_1protocol_1_1service_1_1Client_1a7e9e36d7847d933abbf3b1eda35aab0d">sendData</reimplementedby>
+        <reimplementedby refid="db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem_1ae1f443b90ed04fff9af40c8e7015e314">sendData</reimplementedby>
+        <reimplementedby refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User_1ae0f466a169b2d23786a2f94ac908672c">sendData</reimplementedby>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> &gt;</type>
+        </param>
+        <briefdescription>
+<para>Send a message. </para>        </briefdescription>
+        <detaileddescription>
+<para>Sends <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> message to a network system or shifts the responsibility to related chain. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>invoke</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> message to send to a network system </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IProtocol.hpp" line="54" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An interface of <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> message chain. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol" kindref="compound">IProtocol</ref> is an interface for <ref refid="d8/d82/classsamchon_1_1protocol_1_1Invoke" kindref="compound">Invoke</ref> message, which is standard message of network I/O in Samchon Framework, chain. The <ref refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol" kindref="compound">IProtocol</ref> interface is used to network drivers and some classes which are in a relationship of chain of responsibility with those network drivers. </para><para><ref refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol" kindref="compound">IProtocol</ref> is one of the basic 3 + 1 components that can make any type of network system in Samchon Framework with <ref refid="d4/de8/classsamchon_1_1protocol_1_1IServer" kindref="compound">IServer</ref> and <ref refid="d3/dc8/classsamchon_1_1protocol_1_1IClient" kindref="compound">IClient</ref>. Following the &quot;chain of responsibility&quot; pattern, looking around classes in Samchon Framework, you can see all related classes with network I/O are implemented from the <ref refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol" kindref="compound">IProtocol</ref>. </para><para><image type="html" name="protocol_interface.png"></image>
+ <image type="latex" name="protocol_interface.png"></image>
+</para><para><simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1968">
+        <label>ExternalSystemRole</label>
+        <link refid="d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1957">
+        <label>ParallelClientArray</label>
+        <link refid="d1/dc7/classsamchon_1_1protocol_1_1master_1_1ParallelClientArray"/>
+        <childnode refid="1954" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1966" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1950">
+        <label>IProtocol</label>
+        <link refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol"/>
+      </node>
+      <node id="1966">
+        <label>ParallelSystemArray</label>
+        <link refid="d8/d9c/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArray"/>
+        <childnode refid="1953" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1991">
+        <label>Service</label>
+        <link refid="d6/df3/classsamchon_1_1protocol_1_1service_1_1Service"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1954">
+        <label>ExternalClientArray</label>
+        <link refid="d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray"/>
+        <childnode refid="1953" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1989">
+        <label>ServerConnector</label>
+        <link refid="db/d72/classsamchon_1_1protocol_1_1ServerConnector"/>
+        <childnode refid="1970" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1973">
+        <label>ExternalClient</label>
+        <link refid="dc/dfd/classsamchon_1_1protocol_1_1ExternalClient"/>
+        <childnode refid="1972" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1952">
+        <label>ChatServer</label>
+        <link refid="dd/dc0/classsamchon_1_1example_1_1console__chat__server_1_1ChatServer"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1982">
+        <label>DistributedSlaveServerMediator</label>
+        <link refid="d0/d1d/classsamchon_1_1protocol_1_1master_1_1DistributedSlaveServerMediator"/>
+        <childnode refid="1981" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1986" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1984">
+        <label>ParallelSystem</label>
+        <link refid="d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem"/>
+        <childnode refid="1972" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1985" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1962">
+        <label>ParallelServerArray</label>
+        <link refid="d3/d5d/classsamchon_1_1protocol_1_1master_1_1ParallelServerArray"/>
+        <childnode refid="1959" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1966" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1995">
+        <label>ChatUser</label>
+        <link refid="d7/df1/classsamchon_1_1example_1_1chat__service_1_1ChatUser"/>
+        <childnode refid="1994" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1977">
+        <label>DistributedClientServerMediator</label>
+        <link refid="dd/d60/classsamchon_1_1protocol_1_1master_1_1DistributedClientServerMediator"/>
+        <childnode refid="1976" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1986" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1961">
+        <label>DistributedServerArrayMediator</label>
+        <link refid="d4/d48/classsamchon_1_1protocol_1_1master_1_1DistributedServerArrayMediator"/>
+        <childnode refid="1960" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1965" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1987">
+        <label>IWebClient</label>
+        <link refid="d7/d51/classsamchon_1_1protocol_1_1IWebClient"/>
+        <childnode refid="1970" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1956">
+        <label>DistributedClientArrayMediator</label>
+        <link refid="d9/ddf/classsamchon_1_1protocol_1_1master_1_1DistributedClientArrayMediator"/>
+        <childnode refid="1955" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1965" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1986">
+        <label>DistributedSlaveSystemMediator</label>
+        <link refid="d5/d46/classsamchon_1_1protocol_1_1master_1_1DistributedSlaveSystemMediator"/>
+        <childnode refid="1985" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1990">
+        <label>Client</label>
+        <link refid="df/d31/classsamchon_1_1protocol_1_1service_1_1Client"/>
+        <childnode refid="1970" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1972">
+        <label>ExternalSystem</label>
+        <link refid="df/d42/classsamchon_1_1protocol_1_1ExternalSystem"/>
+        <childnode refid="1970" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1958">
+        <label>ParallelClientArrayMediator</label>
+        <link refid="d4/d53/classsamchon_1_1protocol_1_1master_1_1ParallelClientArrayMediator"/>
+        <childnode refid="1957" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1967" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1970">
+        <label>IClient</label>
+        <link refid="d3/dc8/classsamchon_1_1protocol_1_1IClient"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1955">
+        <label>DistributedClientArray</label>
+        <link refid="d3/db6/classsamchon_1_1protocol_1_1master_1_1DistributedClientArray"/>
+        <childnode refid="1954" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1964" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1967">
+        <label>ParallelSystemArrayMediator</label>
+        <link refid="d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator"/>
+        <childnode refid="1966" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1988">
+        <label>WebServerConnector</label>
+        <link refid="d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector"/>
+        <childnode refid="1987" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1989" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1951">
+        <label>ChatRoom</label>
+        <link refid="d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1976">
+        <label>SlaveClient</label>
+        <link refid="db/d5d/classsamchon_1_1protocol_1_1slave_1_1SlaveClient"/>
+        <childnode refid="1973" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1985" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1980">
+        <label>ParallelServer</label>
+        <link refid="d1/da1/classsamchon_1_1protocol_1_1master_1_1ParallelServer"/>
+        <childnode refid="1978" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1981" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1984" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1971">
+        <label>ChatClient</label>
+        <link refid="d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient"/>
+        <childnode refid="1970" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1990" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1964">
+        <label>DistributedSystemArray</label>
+        <link refid="d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray"/>
+        <childnode refid="1953" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1953">
+        <label>ExternalSystemArray</label>
+        <link refid="d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1993">
+        <label>ListService</label>
+        <link refid="dd/de9/classsamchon_1_1example_1_1chat__service_1_1ListService"/>
+        <childnode refid="1991" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1978">
+        <label>ExternalServer</label>
+        <link refid="df/d4a/classsamchon_1_1protocol_1_1ExternalServer"/>
+        <childnode refid="1972" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1989" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1960">
+        <label>DistributedServerArray</label>
+        <link refid="d0/d26/classsamchon_1_1protocol_1_1master_1_1DistributedServerArray"/>
+        <childnode refid="1959" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1964" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1975">
+        <label>ParallelClient</label>
+        <link refid="d9/dda/classsamchon_1_1protocol_1_1master_1_1ParallelClient"/>
+        <childnode refid="1973" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1976" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1984" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1965">
+        <label>DistributedSystemArrayMediator</label>
+        <link refid="dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator"/>
+        <childnode refid="1964" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1963">
+        <label>ParallelServerArrayMediator</label>
+        <link refid="db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator"/>
+        <childnode refid="1962" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1967" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1981">
+        <label>SlaveServer</label>
+        <link refid="d2/da4/classsamchon_1_1protocol_1_1slave_1_1SlaveServer"/>
+        <childnode refid="1978" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1985" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1992">
+        <label>ChatService</label>
+        <link refid="df/de2/classsamchon_1_1example_1_1chat__service_1_1ChatService"/>
+        <childnode refid="1991" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1985">
+        <label>SlaveSystem</label>
+        <link refid="d1/d4a/classsamchon_1_1protocol_1_1slave_1_1SlaveSystem"/>
+        <childnode refid="1972" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1979">
+        <label>DistributedServer</label>
+        <link refid="d7/da8/classsamchon_1_1protocol_1_1master_1_1DistributedServer"/>
+        <childnode refid="1978" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1983" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1959">
+        <label>ExternalServerArray</label>
+        <link refid="d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray"/>
+        <childnode refid="1953" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1996">
+        <label>SystemRole</label>
+        <link refid="d5/de8/classsamchon_1_1protocol_1_1SystemRole"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1994">
+        <label>User</label>
+        <link refid="df/d87/classsamchon_1_1protocol_1_1service_1_1User"/>
+        <childnode refid="1950" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1969">
+        <label>DistributedSystemRole</label>
+        <link refid="d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole"/>
+        <childnode refid="1968" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1974">
+        <label>DistributedClient</label>
+        <link refid="d2/d26/classsamchon_1_1protocol_1_1master_1_1DistributedClient"/>
+        <childnode refid="1973" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1983" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1983">
+        <label>DistributedSystem</label>
+        <link refid="db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem"/>
+        <childnode refid="1972" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IProtocol.hpp" line="32" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/protocol/IProtocol.hpp" bodystart="31" bodyend="55"/>
+    <listofallmembers>
+      <member refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1a6258c530c328dc119e698bb7e7fe222a" prot="public" virt="non-virtual"><scope>samchon::protocol::IProtocol</scope><name>IProtocol</name></member>
+      <member refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1a8debd8a0f208dbf9778fe66248443317" prot="public" virt="virtual"><scope>samchon::protocol::IProtocol</scope><name>replyData</name></member>
+      <member refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1ac531693224b79ece2762da1e52bec0b6" prot="public" virt="virtual"><scope>samchon::protocol::IProtocol</scope><name>sendData</name></member>
+      <member refid="d4/dcf/classsamchon_1_1protocol_1_1IProtocol_1a51a537c2b3a6ff5eb7b5ed859cc062ad" prot="public" virt="virtual"><scope>samchon::protocol::IProtocol</scope><name>~IProtocol</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

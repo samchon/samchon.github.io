@@ -1,0 +1,151 @@
+.TH "DistributedSystemRole" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DistributedSystemRole \- A role of distributed processing system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <DistributedSystemRole\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDistributedSystemRole\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "auto \fBgetSystem\fP () const  \-> \fBExternalSystem\fP *=delete"
+.br
+.RI "\fIGet an external system -> depreciated\&. \fP"
+.ti -1c
+.RI "auto \fBgetPerformance\fP () const  \-> double"
+.br
+.RI "\fIGet performance\&. \fP"
+.ti -1c
+.RI "auto \fBgetAllocationHistoryList\fP () const  \-> DSRoleHistoryList *"
+.br
+.RI "\fIGet allocation histories\&. \fP"
+.ti -1c
+.RI "auto \fBgetInvokeHistoryList\fP () const  \-> \fBDSInvokeHistoryList\fP *"
+.br
+.RI "\fIGet invoke histories\&. \fP"
+.ti -1c
+.RI "virtual void \fBsendData\fP (std::shared_ptr< \fBInvoke\fP >) override"
+.br
+.RI "\fISend a message\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoXML\fP () const  \-> std::shared_ptr< \fBlibrary::XML\fP > override"
+.br
+.RI "\fIGet an XML object represents the \fBEntity\fP\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::set< \fBDistributedSystem\fP * > \fBallocatedSystems\fP"
+.br
+.RI "\fIAllocated systems of about the role, at now\&. \fP"
+.ti -1c
+.RI "double \fBperformance\fP"
+.br
+.RI "\fIA required performance index\&. \fP"
+.ti -1c
+.RI "DSRoleHistoryList * \fBallocationHistoryList\fP"
+.br
+.RI "\fIA history log for archiving role allocation to a system\&. \fP"
+.ti -1c
+.RI "\fBDSInvokeHistoryList\fP * \fBinvokeHistoryList\fP"
+.br
+.RI "\fIA history log for archiving elapsed time for each process\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A role of distributed processing system\&. 
+
+\fBDistributedSystemRole\fP is an \fBExternalSystemRole\fP allocates for distributed processing system(s)\&. Unlike the \fBExternalSystemRole\fP, \fBDistributedSystemRole\fP can belonged to multiple DistributedSystem(s)\&. 
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBExternalSystemRole\fP is a 'control' class groupping methods, handling \fBInvoke\fP messages interacting with an external system that the \fBExternalSystemRole\fP is belonged to, by a subject or unit of a module\&. 
+.PP
+\fBExternalSystemRole\fP can be a 'logical proxy' for an \fBExternalSystem\fP which is containing the \fBExternalSystemRole\fP\&. Of course, the \fBExternalSystemRole\fP is belonged to an \fBExternalSystem\fP\&. However, if you access an \fBExternalSystemRole\fP from an \fBExternalSystemArray\fP directly, not passing by a belonged \fBExternalSystem\fP, and send an \fBInvoke\fP message even you're not knowing which \fBExternalSystem\fP is related in, the \fBExternalSystemRole\fP acted a role of proxy\&. 
+.PP
+It's called as 'Proxy pattern'\&. With the pattern, you can only concentrate on \fBExternalSystemRole\fP itself, what to do with \fBInvoke\fP message, irrespective of the \fBExternalSystemRole\fP is belonged to which \fBExternalSystem\fP\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto getSystem () const \->  \fBExternalSystem\fP *=delete\fC [delete]\fP"
+
+.PP
+Get an external system -> depreciated\&. Unlike ExternalSysemRole, \fBDistributedSystemRole\fP can be belonged to multiple DistributedSystem(s)\&. By that reason, the \fBgetSystem()\fP, a getter of a single \fBExternalSystem\fP is depreciated\&. 
+.SS "virtual void sendData (std::shared_ptr< \fBInvoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Send a message\&. Sends \fBInvoke\fP message to a network system or shifts the responsibility to related chain\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An \fBInvoke\fP message to send to a network system 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBExternalSystemRole\fP\&.
+.SS "virtual auto toXML () const \-> std::shared_ptr<\fBlibrary::XML\fP>\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get an XML object represents the \fBEntity\fP\&. Returns an XML object that can represents the \fBEntity\fP containing member variables into properties\&. 
+.PP
+A member variable (not object, but atomic value like number, string or date) is categorized as a property within the framework of entity side\&. Thus, when overriding a \fBtoXML()\fP method and archiving member variables to an XML object to return, puts each variable to be a property belongs to only an XML object\&. 
+.PP
+Don't archive the member variable of atomic value to XML::value causing enormouse creation of XML objects to number of member variables\&. An \fBEntity\fP must be represented by only an XML instance (tag)\&. 
+.PP
+Standard Usage  Non-standard usage abusing value   <memberList>
+.br
+      <member id='jhnam88' name='Jeongho+Nam' birthdate='1988-03-11' />
+.br
+      <member id='master' name='Administartor' birthdate='2011-07-28' />
+.br
+ </memberList>  <member>
+.br
+      <id>jhnam88</id>
+.br
+      <name>Jeongho+Nam</name>
+.br
+      <birthdate>1988-03-11</birthdate>
+.br
+ </member>   
+.PP
+\fBReturns:\fP
+.RS 4
+An XML object representing the \fBEntity\fP\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBExternalSystemRole\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

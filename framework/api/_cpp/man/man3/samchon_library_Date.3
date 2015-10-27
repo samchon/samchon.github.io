@@ -1,0 +1,538 @@
+.TH "Date" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Date \- \fBDate\fP (year, month, day in month)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Date\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDate\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "\fBDate\fP (const super &)"
+.br
+.RI "\fICopy Constructor\&. \fP"
+.ti -1c
+.RI "\fBDate\fP (super &&)"
+.br
+.ti -1c
+.RI "\fBDate\fP (int year, int month, int date)"
+.br
+.RI "\fIConstruct from date elements\&. \fP"
+.ti -1c
+.RI "\fBDate\fP (const \fBWeakString\fP &)"
+.br
+.RI "\fIConstructor by std::string\&. \fP"
+.ti -1c
+.RI "\fBDate\fP (long long linuxTime)"
+.br
+.RI "\fIConstruct from linux_time\&. \fP"
+.ti -1c
+.RI "void \fBset\fP (const std::string &)"
+.br
+.RI "\fISetter by string\&. \fP"
+.ti -1c
+.RI "virtual void \fBset\fP (const \fBWeakString\fP &)"
+.br
+.RI "\fISetter by weak_string\&. \fP"
+.ti -1c
+.RI "void \fBset\fP (int year, int month, int date)"
+.br
+.RI "\fISetter by elements of date\&. \fP"
+.ti -1c
+.RI "void \fBset\fP (long long linuxTime)"
+.br
+.RI "\fISetter by linux_time\&. \fP"
+.ti -1c
+.RI "virtual void \fBsetYear\fP (int)"
+.br
+.RI "\fISet year of the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "virtual void \fBsetMonth\fP (int)"
+.br
+.RI "\fISet month of the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "virtual void \fBsetDate\fP (int)"
+.br
+.ti -1c
+.RI "virtual void \fBaddYear\fP (int)"
+.br
+.RI "\fIAdd years to the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "virtual void \fBaddMonth\fP (int)"
+.br
+.RI "\fIAdd months to the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "virtual void \fBaddWeek\fP (int)"
+.br
+.RI "\fIAdd weeks to the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "virtual void \fBaddDate\fP (int)"
+.br
+.RI "\fIAdd days to the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "auto \fBgetYear\fP () const  \-> int"
+.br
+.RI "\fIGet year of the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "auto \fBgetMonth\fP () const  \-> int"
+.br
+.RI "\fIGet month of the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "auto \fBgetDate\fP () const  \-> int"
+.br
+.RI "\fIGet the day in month of the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "auto \fBgetDay\fP () const  \-> int"
+.br
+.RI "\fIGet the day in week of the \fBDate\fP\&. \fP"
+.ti -1c
+.RI "auto \fBtoLinuxTime\fP () const  \-> long long"
+.br
+.RI "\fIConverts the \fBDate\fP to linux_time\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoString\fP () const  \-> std::string"
+.br
+.RI "\fIConverts the \fBDate\fP to std::string\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "auto \fBtoTM\fP () const  \-> struct::tm"
+.br
+.RI "\fIConverts the \fBDate\fP to struct tm\&. \fP"
+.in -1c
+.SS "Static Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static auto \fBcalcSeconds\fP (int year, int month, int date) \-> long long"
+.br
+.RI "\fICalculates how many seconds have flowen since 0000-01-01 00:00:00\&. \fP"
+.ti -1c
+.RI "static auto \fBcalcLastDates\fP (int year) \-> std::array< int, 12 >"
+.br
+.RI "\fICalculates and gets an array of final date of each month for that year\&. \fP"
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::chrono::system_clock::time_point \fBTP_1970\fP = chrono::system_clock::from_time_t(0)"
+.br
+.RI "\fItime_point for 1970-01-01 09:00:00 \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBDate\fP (year, month, day in month) 
+
+\fBDate\fP class is a chrono::time_point<std::chrono::system_clock>\&. 
+.PP
+\fBDate\fP represents the date with year, month and day in month\&. The basic date (local time) is from your operating system\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+A time_point object expresses a point in time relative to a clock's epoch\&. 
+.PP
+Internally, the object stores an object of a duration type, and uses the Clock type as a reference for its epoch\&. 
+.PP
+Referenced comments of std::chrono::time_point 
+.PD 0
+
+.IP "\(bu" 2
+http://www.cplusplus.com/reference/chrono/time_point/
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBDate\fP ()"
+
+.PP
+Default Constructor\&. The date will be now (Now's date from operating system) 
+.SS "\fBDate\fP (const super & date)"
+
+.PP
+Copy Constructor\&. Copy the date from another \fBDate\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdate\fP Target to be copied 
+.RE
+.PP
+
+.SS "\fBDate\fP (super && date)"
+Move Constructor
+.PP
+Gets the date from other and truncate the other
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdate\fP Target to be moved 
+.RE
+.PP
+
+.SS "\fBDate\fP (int year, int month, int date)"
+
+.PP
+Construct from date elements\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIyear\fP ex) 2015 
+.br
+\fImonth\fP January to December\&. 1 ~ 12 
+.br
+\fIdate\fP day in month\&. 1 ~ 31 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIinvalid_argument\fP month or date is invalid\&. 
+.RE
+.PP
+
+.SS "\fBDate\fP (const \fBWeakString\fP & wStr)"
+
+.PP
+Constructor by std::string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP A weak_string expressing the date\&. (1991-01-01) 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIinvalid_argument\fP month or date is invalid\&. 
+.RE
+.PP
+
+.SS "\fBDate\fP (long long linuxTime)"
+
+.PP
+Construct from linux_time\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlinuxTime\fP linux_time to be converted 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "long long calcSeconds (int year, int month, int date) \-> long long\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Calculates how many seconds have flowen since 0000-01-01 00:00:00\&. This static method is used for calculate the linux_time (since 1970-01-01 09:00:00)
+.PP
+\fBReturns:\fP
+.RS 4
+linux_time of the \fBDate\fP 
+.RE
+.PP
+
+.SS "auto calcLastDates (int year) \-> std::array<int, 12>\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Calculates and gets an array of final date of each month for that year\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIyear\fP The target year 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Array of fianl date of each month for that year 
+.RE
+.PP
+
+.SS "void set (const std::string &)"
+
+.PP
+Setter by string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP Y-m-d 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIinvalid_argument\fP month or date is invalid\&. 
+.RE
+.PP
+
+.SS "void set (const \fBWeakString\fP & wStr)\fC [virtual]\fP"
+
+.PP
+Setter by weak_string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwstr\fP Y-m-d 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIinvalid_argument\fP month or date is invalid\&. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "void set (int year, int month, int date)"
+
+.PP
+Setter by elements of date\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIyear\fP ex) 2015 
+.br
+\fImonth\fP January to December\&. 1 ~ 12 
+.br
+\fIdate\fP day in month\&. 1 ~ 31 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIinvalid_argument\fP month or date is invalid\&. 
+.RE
+.PP
+
+.SS "void set (long long linuxTime)"
+
+.PP
+Setter by linux_time\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlinuxTime\fP linux_time to be converted 
+.RE
+.PP
+
+.SS "void setYear (int year)\fC [virtual]\fP"
+
+.PP
+Set year of the \fBDate\fP\&. If previous date is leaf month's expiration date and target year what you want is not leaf, the date will be 28
+.PP
+.PD 0
+.IP "\(bu" 2
+2000-02-29 -> setYear(2001) -> 2001-02-28 
+.IP "\(bu" 2
+2001-02-28 -> setYear(2000) -> 2000-02-08
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Target year 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "void setMonth (int month)\fC [virtual]\fP"
+
+.PP
+Set month of the \fBDate\fP\&. If the expiration date of the month will be shrinked, the date will be changed to the expiration date
+.PP
+.PD 0
+.IP "\(bu" 2
+2000-03-31 -> setMonth(4) -> 2000-04-30 
+.IP "\(bu" 2
+2007-08-31 -> setMonth(9) -> 2007-09-30
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Target month (1 - 12) 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIinvalid_argument\fP month is out of range 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "void setDate (int val)\fC [virtual]\fP"
+Set date of the \fBDate\fP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Target day in month 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIinvalid_argument\fP When date is over expiration date in month 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "void addYear (int val)\fC [virtual]\fP"
+
+.PP
+Add years to the \fBDate\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Years to add 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "void addMonth (int val)\fC [virtual]\fP"
+
+.PP
+Add months to the \fBDate\fP\&. Not a matter to val is over 12\&. If the month is over 12, then years will be added\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Months to add 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "void addWeek (int val)\fC [virtual]\fP"
+
+.PP
+Add weeks to the \fBDate\fP\&. Not a matter that val is too huge\&. If the adding weeks derives modification in month or year, then it will be\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Weeks to add 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "void addDate (int val)\fC [virtual]\fP"
+
+.PP
+Add days to the \fBDate\fP\&. Not a matter that val is too huge\&. If the adding dates derives modification in month or year, then it will be\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP Days to add 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SS "int getYear () const \-> int"
+
+.PP
+Get year of the \fBDate\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Year 
+.RE
+.PP
+
+.SS "int getMonth () const \-> int"
+
+.PP
+Get month of the \fBDate\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Month as integer (1: January, 12: December) 
+.RE
+.PP
+
+.SS "int getDate () const \-> int"
+
+.PP
+Get the day in month of the \fBDate\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Day in month (1 to 31) 
+.RE
+.PP
+
+.SS "int getDay () const \-> int"
+
+.PP
+Get the day in week of the \fBDate\fP\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Day in week to integer (0: Sunday, 1: Monday, \&.\&.\&., 6: Saturday) 
+.RE
+.PP
+
+.SS "auto toTM () const \-> struct ::tm\fC [protected]\fP"
+
+.PP
+Converts the \fBDate\fP to struct tm\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+struct tm representing the \fBDate\fP 
+.RE
+.PP
+
+.SS "auto toLinuxTime () const \-> long long"
+
+.PP
+Converts the \fBDate\fP to linux_time\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+linux_time of the \fBDate\fP 
+.RE
+.PP
+
+.SS "auto toString () const \-> std::string\fC [virtual]\fP"
+
+.PP
+Converts the \fBDate\fP to std::string\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::string expressing the \fBDate\fP 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBDatetime\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "chrono::system_clock::time_point TP_1970 = chrono::system_clock::from_time_t(0)\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+time_point for 1970-01-01 09:00:00 It's the zero(0) in linux_time 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

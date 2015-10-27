@@ -1,0 +1,176 @@
+.TH "samchon::protocol::master" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+samchon::protocol::master \- Package for external system, within the framework of master\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDistributedClient\fP"
+.br
+.RI "\fIA network driver for a distributed client\&. \fP"
+.ti -1c
+.RI "class \fBDistributedClientArray\fP"
+.br
+.RI "\fIAn array of DistributedClient(s)\&. \fP"
+.ti -1c
+.RI "class \fBDistributedClientArrayMediator\fP"
+.br
+.RI "\fIA mediator of distributed system between master and slaves\&. \fP"
+.ti -1c
+.RI "class \fBDistributedClientServerMediator\fP"
+.br
+.RI "\fIA distributed slave client for mediation\&. \fP"
+.ti -1c
+.RI "class \fBDistributedServer\fP"
+.br
+.RI "\fIA network driver for a distributed server\&. \fP"
+.ti -1c
+.RI "class \fBDistributedServerArray\fP"
+.br
+.RI "\fIAn array of DistributedServer(s)\&. \fP"
+.ti -1c
+.RI "class \fBDistributedServerArrayMediator\fP"
+.br
+.RI "\fIA mediator of distributed system between master and slaves\&. \fP"
+.ti -1c
+.RI "class \fBDistributedSlaveServerMediator\fP"
+.br
+.RI "\fIA distributed slave server for mediation\&. \fP"
+.ti -1c
+.RI "class \fBDistributedSlaveSystemMediator\fP"
+.br
+.RI "\fIA distributed slave system for mediation\&. \fP"
+.ti -1c
+.RI "class \fBDistributedSystem\fP"
+.br
+.RI "\fIA network driver for a distributed system\&. \fP"
+.ti -1c
+.RI "class \fBDistributedSystemArray\fP"
+.br
+.RI "\fIAn array of distributed system drivers\&. \fP"
+.ti -1c
+.RI "class \fBDistributedSystemArrayMediator\fP"
+.br
+.RI "\fIA mediator of distributed system between master and slaves\&. \fP"
+.ti -1c
+.RI "class \fBDistributedSystemRole\fP"
+.br
+.RI "\fIA role of distributed processing system\&. \fP"
+.ti -1c
+.RI "class \fBDSInvokeHistory\fP"
+.br
+.RI "\fIA reported history of an \fBInvoke\fP message\&. \fP"
+.ti -1c
+.RI "class \fBDSInvokeHistoryList\fP"
+.br
+.RI "\fIA list of \fBDSInvokeHistory\fP\&. \fP"
+.ti -1c
+.RI "class \fBParallelClient\fP"
+.br
+.RI "\fIA network driver for a parallel client\&. \fP"
+.ti -1c
+.RI "class \fBParallelClientArray\fP"
+.br
+.RI "\fIAn array of ParallelClient(s)\&. \fP"
+.ti -1c
+.RI "class \fBParallelClientArrayMediator\fP"
+.br
+.RI "\fIA mediator of parallel system between master and slaves\&. \fP"
+.ti -1c
+.RI "class \fBParallelServer\fP"
+.br
+.RI "\fIA network driver for a parallel server\&. \fP"
+.ti -1c
+.RI "class \fBParallelServerArray\fP"
+.br
+.RI "\fIAn array of ParallelServer(s)\&. \fP"
+.ti -1c
+.RI "class \fBParallelServerArrayMediator\fP"
+.br
+.RI "\fIA mediator of parallel system between master and slaves\&. \fP"
+.ti -1c
+.RI "class \fBParallelSlaveClientMediator\fP"
+.br
+.RI "\fIA parallel slave client for mediation\&. \fP"
+.ti -1c
+.RI "class \fBParallelSlaveServerMediator\fP"
+.br
+.RI "\fIA parallel slave server for mediation\&. \fP"
+.ti -1c
+.RI "class \fBParallelSlaveSystemMediator\fP"
+.br
+.RI "\fIA parallel slave system for mediation\&. \fP"
+.ti -1c
+.RI "class \fBParallelSystem\fP"
+.br
+.RI "\fIA network driver for a parallel system\&. \fP"
+.ti -1c
+.RI "class \fBParallelSystemArray\fP"
+.br
+.RI "\fIAn array of parallel system drivers\&. \fP"
+.ti -1c
+.RI "class \fBParallelSystemArrayMediator\fP"
+.br
+.RI "\fIA mediator of parallel system between master and slaves\&. \fP"
+.ti -1c
+.RI "class \fBPRInvokeHistory\fP"
+.br
+.RI "\fIA reported history of an \fBInvoke\fP message\&. \fP"
+.ti -1c
+.RI "class \fBPRInvokeHistoryArray\fP"
+.br
+.RI "\fIAn array of \fBPRInvokeHistory\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Package for external system, within the framework of master\&. 
+
+ 
+.PP
+In master package, provides distributed and parallel processing system modules which are in framework of master\&. With classes in master package, you can realize any type of distributed or parallel processing system in master side, even how enormouse scale those have\&. 
+.PP
+.SS "Distributed Processing System "
+.PP
+A distributed processing system of master, a master (\fBmaster::DistributedSystemArray\fP) allocates roles (\fBmaster::DistributedSystemRole\fP) to systems (\fBmaster::DistributedSystem\fP)\&. User does not consider about which roles are allocated to which systems\&. User just accesses to a \fIrole\fP and send or reply message from those roles\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+It's the proxy pattern have mentioned in external system 
+.PP
+\fBExternalSystem\fP objects are managed by \fBExternalSystemArray\fP and the \fBExternalSystemArray\fP can access to a role belongs to a system directly\&. When you send an \fBInvoke\fP message to \fBExternalSystemArray\fP, the \fBExternalSystemArray\fP finds matched \fBExternalSystemRole\fP and the \fBExternalSystemRole\fP shifts the network I/O responsibility to belonged \fBExternalSystem\fP\&. This relationship called 'Proxy Pattern'\&. By the pattern, 'Proxy', you can concentrate on roles irrespective of where each role is belonged to\&. 
+.PP
+.PP
+.PD 0
+.IP "  \(bu" 4
+\fBExternalSystemArray::sendData()\fP -> ExternalSystemRole(Proxy)::sendData() -> \fBExternalSystem::sendData()\fP  
+.IP "  \(bu" 4
+\fBExternalSystem::replyData()\fP -> ExternalSystemRole(Proxy)::replyData()  
+.PP
+
+.PP
+.PP
+However, unlike the case of managing roles from \fBExternalSystemArray\fP, in \fBDistributedSystemArray\fP, roles can be allocated in multiple systems duplicately\&. And the roles can be moved to another systems\&. Those management and allocation of roles are determined by estimation of performance of each system, and required performance of each role\&. 
+.PP
+ 
+.PP
+.SS "Parallel Processing System "
+.PP
+Unlike distributed processing system, the parallel processing system is not complicate\&. It has very simple logic\&. About requested processes, master(master::ParallelSystemArray) allocates each process to each slave system by their own performance index have estimated\&. 
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

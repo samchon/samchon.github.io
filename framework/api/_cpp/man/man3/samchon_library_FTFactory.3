@@ -1,0 +1,92 @@
+.TH "FTFactory" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+FTFactory \- A Factory and manager for file-tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <FTFactory\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFTFactory\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual auto \fBcreateFile\fP (\fBFTFolder\fP *, std::shared_ptr< \fBXML\fP >) \-> \fBFTFile\fP *=0"
+.br
+.RI "\fIFactory method of a file\&. \fP"
+.ti -1c
+.RI "void \fBregisterInstance\fP (\fBFTInstance\fP *)"
+.br
+.RI "\fIRegister file instance to map\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBapplication\fP"
+.br
+.RI "\fIAn application id\&. \fP"
+.ti -1c
+.RI "int \fBcategory\fP"
+.br
+.RI "\fIA categori id\&. \fP"
+.ti -1c
+.RI "std::string \fBmember\fP"
+.br
+.RI "\fIAccount id of a member\&. \fP"
+.ti -1c
+.RI "\fBMap\fP< int, \fBFTInstance\fP * > \fBinstanceMap\fP"
+.br
+.RI "\fI\fBMap\fP of files\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A Factory and manager for file-tree\&. 
+
+\fBFTFactory\fP is a class taking a role of creating \fBFTFile\fP instances and managing them by having their direct pointers\&. \fBFTFactory\fP also has a role of archiving and loading from DB\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "int application\fC [protected]\fP"
+
+.PP
+An application id\&. An enumeration code of an application that managed FTInstance(s) are belonged to\&. 
+.SS "int category\fC [protected]\fP"
+
+.PP
+A categori id\&. An enumeration code of a category that managed FTInstance(s) are belonged to\&. 
+.SS "\fBMap\fP<int, \fBFTInstance\fP*> instanceMap\fC [protected]\fP"
+
+.PP
+\fBMap\fP of files\&. 
+.PD 0
+
+.IP "\(bu" 2
+key: uid 
+.IP "\(bu" 2
+value: pointer of file 
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

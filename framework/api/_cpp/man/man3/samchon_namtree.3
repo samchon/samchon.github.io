@@ -1,0 +1,172 @@
+.TH "samchon::namtree" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+samchon::namtree \- Package of Nam-Tree\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBINTExplore\fP"
+.br
+.RI "\fIAn interface for exploration\&. \fP"
+.ti -1c
+.RI "class \fBNTCriteria\fP"
+.br
+.RI "\fICriteria, a conditional expression with weight\&. \fP"
+.ti -1c
+.RI "class \fBNTEntityGroup\fP"
+.br
+.RI "\fIA historical, studying data\&. \fP"
+.ti -1c
+.RI "class \fBNTFactory\fP"
+.br
+.RI "\fIA factory for Nam-Tree objects\&. \fP"
+.ti -1c
+.RI "class \fBNTFile\fP"
+.br
+.RI "\fIA file archiving metadata of a function\&. \fP"
+.ti -1c
+.RI "class \fBNTIterator\fP"
+.br
+.RI "\fIIterator of historical data\&. \fP"
+.ti -1c
+.RI "class \fBNTParameter\fP"
+.br
+.RI "\fIA metadata of a parameter in a function\&. \fP"
+.ti -1c
+.RI "class \fBNTParameterArray\fP"
+.br
+.RI "\fIAn Array of \fBNTParameter\fP\&. \fP"
+.ti -1c
+.RI "class \fBNTParameterDetermined\fP"
+.br
+.RI "\fIA pre-determined value of a parameter\&. \fP"
+.ti -1c
+.RI "class \fBNTSide\fP"
+.br
+.RI "\fIA side of a conditional expresson\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Package of Nam-Tree\&. 
+
+Nam-Tree is a module of tree-strucrued complicate logical condition model for realizing A\&.N\&.N\&. (Artificial Neural Network)\&. You can make the ANN model with weight and bias and express not only logical condition by your hand, but also construct the logical condition by automaticaly with optimization of genetic algorithm and grid method\&. 
+.PP
+ 
+.PP
+ 
+.PP
+The basic pricinple of Nam-Tree are follow: 
+.PP
+.PD 0
+.IP "1." 4
+A conditional expression with weight  
+.PP
+F(x) = (\fBNTSide\fP < \fBNTSide\fP ? 1: 0) X weight 
+.PP
+.PP
+NTCrietria is made up for conditional expression\&. 
+.PP
+.PD 0
+.IP "  \(bu" 4
+When the expression is true, returns 1 * weight  
+.IP "  \(bu" 4
+When the expression is false, returns 0  
+.PP
+
+.IP "2." 4
+Hierarchical relationship  
+.PD 0
+
+.IP "  \(bu" 4
+In vertical relationship: multiply (X)  
+.IP "  \(bu" 4
+In horizontal relationship: plus (+)  
+.PP
+.PP
+.PP
+With that rule, you can make enormous conditions\&. I can sure there's not any condition can'be be expressed by the model\&. 
+.PP
+.PP
+
+.IP "3." 4
+Making bias  
+.PP
+Just make a \fBNTCriteria\fP returns only true\&. 
+.PP
+.PP
+It's the bias returns only weight\&. 
+.PP
+.PP
+
+.IP "4." 4
+Explore  
+.PD 0
+
+.IP "  1." 6
+Exporing in a \fBNTCriteria\fP (optimize a side)  
+.PP
+Make a \fBNTSide\fP to be nullptr, then \fBNTCriteria\fP will explore the best value\&.
+.PP
+.PP
+.PP
+Nam-Tree will calculate the condtions from minimum to maximum in \fBINTExplore\fP reach to the precision, by the method of multi-demensional grid\&. 
+.PP
+.PP
+
+.IP "  2." 6
+Exploring parameter in \fBNTSide\fP  
+.PP
+If you set the parameterMNap to be empty, Nam-Tree will explore the best parameter until reach to the precision in INTExploreParameter from minimum to maximum\&. 
+.PP
+.PP
+.PP
+ 
+.PP
+
+.IP "  3." 6
+Exploring by creating \fBNTCriteria\fP  
+.PP
+(Creates lots of hierarchical conditions and tests them) 
+.PP
+.PP
+.PP
+If all the side (left and right) in a \fBNTCriteria\fP are nullptr, the \fBNTCriteria\fP will make a lot of children NTCriteria(s) to test lots of cases, so that derives the best condition set will be made up\&. 
+.PP
+.PP
+.PP
+This process will ride on same routines of 4-1 and 4-2, for each created cases\&. Of course, this process needs too much time, so that you may need to be patient\&. 
+.PP
+
+.PP
+
+.PP
+.PP
+ 
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Previous version of the Samchon Framework, \fBNTFile\fP class had a function script on the \fBNTFile\fP and Nam-Tree module compiled the script like Nam-Tree moudle of Flex standalone that is keeping the compiling method\&. 
+.PP
+However, modern Samchon Framework's C++ \fBNTFile\fP class doesn't have a function script and does not compile\&. I don't know a way to compile a script in lots of operating systems, so I dropped the compiling method\&. Until update, \fBNTFactory\fP has function pointers in a Dictionary and \fBNTFile\fP reference them\&. Users must put own methods into the Dictionary by their hands\&. 
+.PP
+I will solve the problem sooon\&. Until next generation of Samchon Framework, put your own function pointers to a Dictionary in \fBNTFactory\fP by your hand please\&. Sorry for my unripe skill on programming\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

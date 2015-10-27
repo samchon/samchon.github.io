@@ -1,0 +1,98 @@
+.TH "IWebClient" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IWebClient \- An interface for a web-client\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <IWebClient\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBIWebClient\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "virtual void \fBlisten\fP () override"
+.br
+.RI "\fIListens message from a related system\&. \fP"
+.ti -1c
+.RI "virtual void \fBsendData\fP (std::shared_ptr< \fBInvoke\fP >) override"
+.br
+.RI "\fISend \fBInvoke\fP message following web-socket protocol\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+An interface for a web-client\&. 
+
+\fBIWebClient\fP is a \fBIClient\fP following web-socket protocol\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBIClient\fP is an interface not only for a physical client, but also a driver for a client in a physical server\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBIServer\fP:addClient()  
+.PD 0
+
+.IP "  \(bu" 4
+\fBservice::Server\fP -> \fBservice::User\fP -> \fBservice::Client\fP  
+.IP "  \(bu" 4
+\fBExternalClientArray\fP (A physical server) -> \fBExternalClient\fP (A driver of a client)  
+.PP
+
+.PP
+.PP
+\fBIClient\fP is one of the basic 3 + 1 components that can make any type of network system in Samchon Framework with \fBIProtocol\fP and \fBIServer\fP\&. Looking around classes in Samchon Framework, you can see all classes related with client are implemented from the \fBIClient\fP\&. 
+.PP
+\fBIClient\fP takes a role of real network I/O\&. \fBIClient\fP sends data to otherside network system from \fBIProtocol::sendData()\fP\&. \fBIClient\fP also gets data from otherside network system, generates standard \fBInvoke\fP message from parsing the replied data and shift the \fBInvoke\fP message to \fBIProtocol::replyData()\fP\&. 
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void listen ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Listens message from a related system\&. 
+.PP
+\fBNote:\fP
+.RS 4
+It holds (monopolies) a thread\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBIClient\fP\&.
+.SS "virtual void sendData (std::shared_ptr< \fBInvoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Send \fBInvoke\fP message following web-socket protocol\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP \fBInvoke\fP message to send associated network system\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBIClient\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

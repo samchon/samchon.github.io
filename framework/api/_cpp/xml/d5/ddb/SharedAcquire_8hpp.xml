@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d5/ddb/SharedAcquire_8hpp" kind="file" language="C++">
+    <compoundname>SharedAcquire.hpp</compoundname>
+    <includes refid="d9/d8f/API_8hpp" local="no">samchon/API.hpp</includes>
+    <includes local="no">atomic</includes>
+    <includedby refid="d1/da0/Semaphore_8hpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/Semaphore.hpp</includedby>
+    <includedby refid="da/de2/SharedAcquire_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SharedAcquire.cpp</includedby>
+    <incdepgraph>
+      <node id="1643">
+        <label>atomic</label>
+      </node>
+      <node id="1642">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="1641">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SharedAcquire.hpp</label>
+        <link refid="SharedAcquire.hpp"/>
+        <childnode refid="1642" relation="include">
+        </childnode>
+        <childnode refid="1643" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1645">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/Semaphore.hpp</label>
+        <link refid="d1/da0/Semaphore_8hpp_source"/>
+        <childnode refid="1646" relation="include">
+        </childnode>
+      </node>
+      <node id="1646">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/EventDispatcher.hpp</label>
+        <link refid="d3/d60/EventDispatcher_8hpp_source"/>
+      </node>
+      <node id="1644">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SharedAcquire.hpp</label>
+        <link refid="SharedAcquire.hpp"/>
+        <childnode refid="1645" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="dc/d48/structstd_1_1atomic" prot="public">std::atomic</innerclass>
+    <innerclass refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" prot="public">samchon::library::SharedAcquire</innerclass>
+    <innernamespace refid="d8/dcc/namespacestd">std</innernamespace>
+    <innernamespace refid="db/df1/namespacesamchon">samchon</innernamespace>
+    <innernamespace refid="d8/dd4/namespacesamchon_1_1library">samchon::library</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/API.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;atomic&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>_Ty&gt;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">atomic;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">library</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Semaphore;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52" refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SAMCHON_FRAMEWORK_API<sp/><ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" kindref="compound">SharedAcquire</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="58" refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire_1a000bdc6218e92334abc77ee4d2111727" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d9/d88/classsamchon_1_1library_1_1Semaphore" kindref="compound">Semaphore</ref><sp/>*<ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire_1a000bdc6218e92334abc77ee4d2111727" kindref="member">semaphore</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire_1a2ba493096607c1b69a7c85acf8d8cabf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::atomic&lt;size_t&gt;<sp/>*<ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire_1a2ba493096607c1b69a7c85acf8d8cabf" kindref="member">reference</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire_1a67f9d594ad70244ea22af78439f83abf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::atomic&lt;bool&gt;<sp/>*<ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire_1a67f9d594ad70244ea22af78439f83abf" kindref="member">isLocked</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" kindref="compound">SharedAcquire</ref>(<ref refid="d9/d88/classsamchon_1_1library_1_1Semaphore" kindref="compound">Semaphore</ref><sp/>&amp;,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" kindref="compound">SharedAcquire</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" kindref="compound">SharedAcquire</ref><sp/>&amp;);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" kindref="compound">SharedAcquire</ref>(<ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" kindref="compound">SharedAcquire</ref>&amp;&amp;);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>~<ref refid="d7/d8e/classsamchon_1_1library_1_1SharedAcquire" kindref="compound">SharedAcquire</ref>();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LOCKERS</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-----------------------------------------------------------<sp/>*/</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>acquire();</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>release();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//auto<sp/>tryAcquire()<sp/>-&gt;<sp/>bool;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/SharedAcquire.hpp"/>
+  </compounddef>
+</doxygen>

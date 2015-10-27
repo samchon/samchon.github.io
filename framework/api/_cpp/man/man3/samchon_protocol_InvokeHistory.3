@@ -1,0 +1,259 @@
+.TH "InvokeHistory" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+InvokeHistory \- A history of an \fBInvoke\fP message\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <InvokeHistory\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBInvokeHistory\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "\fBInvokeHistory\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fIConstruct from an \fBInvoke\fP message\&. \fP"
+.ti -1c
+.RI "virtual void \fBconstruct\fP (std::shared_ptr< \fBlibrary::XML\fP >) override"
+.br
+.RI "\fIConstruct data of the \fBEntity\fP from an XML object\&. \fP"
+.ti -1c
+.RI "void \fBnotifyEnd\fP ()"
+.br
+.RI "\fINotify end of the process\&. \fP"
+.ti -1c
+.RI "virtual auto \fBkey\fP () const  \-> std::string override"
+.br
+.RI "\fIGet a key that can identify the \fBEntity\fP uniquely\&. \fP"
+.ti -1c
+.RI "auto \fBgetUID\fP () const  \-> size_t"
+.br
+.RI "\fIGet uid\&. \fP"
+.ti -1c
+.RI "auto \fBgetListener\fP () const  \-> std::string"
+.br
+.RI "\fIGet listener\&. \fP"
+.ti -1c
+.RI "auto \fBgetStartTime\fP () const  \-> \fBlibrary::Datetime\fP"
+.br
+.RI "\fIGet start time\&. \fP"
+.ti -1c
+.RI "auto \fBgetEndTime\fP () const  \-> \fBlibrary::Datetime\fP"
+.br
+.RI "\fIGet end time\&. \fP"
+.ti -1c
+.RI "auto \fBcalcElapsedTime\fP () const  \-> long long"
+.br
+.RI "\fIGet elapsed time\&. \fP"
+.ti -1c
+.RI "virtual auto \fBTAG\fP () const  \-> std::string override"
+.br
+.RI "\fIA tag name when represented by XML\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoXML\fP () const  \-> std::shared_ptr< \fBlibrary::XML\fP > override"
+.br
+.RI "\fIGet an XML object represents the \fBEntity\fP\&. \fP"
+.ti -1c
+.RI "auto \fBtoInvoke\fP () const  \-> std::shared_ptr< \fBInvoke\fP >"
+.br
+.RI "\fIGet an \fBInvoke\fP message\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBuid\fP"
+.br
+.RI "\fIAn identifier\&. \fP"
+.ti -1c
+.RI "std::string \fBlistener\fP"
+.br
+.RI "\fIA listener of the \fBInvoke\fP message\&. \fP"
+.ti -1c
+.RI "\fBlibrary::Datetime\fP \fBstartTime\fP"
+.br
+.RI "\fIStart time of the history\&. \fP"
+.ti -1c
+.RI "\fBlibrary::Datetime\fP \fBendTime\fP"
+.br
+.RI "\fIEnd time of the history\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A history of an \fBInvoke\fP message\&. 
+
+\fBInvokeHistory\fP is a class for reporting history log of an \fBInvoke\fP message with elapsed time from a slave to its master\&.
+.PP
+With the elapsed time, consumed time for a process of handling the \fBInvoke\fP message, \fBInvokeHistory\fP is reported to the master\&. The master utilizies the elapsed time to estimating performances of each slave system\&. With the estimated performan index, master retrives the optimal solution of distributing processes\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.PP
+\fBsamchon::protocol::master\fP 
+.PP
+\fBsamchon::protocol::slave\fP
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBInvokeHistory\fP (std::shared_ptr< \fBInvoke\fP >)"
+
+.PP
+Construct from an \fBInvoke\fP message\&. \fBInvokeHistory\fP does not archive entire \fBInvoke\fP message, only archives its listener\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP A message to archive its history log 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void construct (std::shared_ptr< \fBlibrary::XML\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Construct data of the \fBEntity\fP from an XML object\&. Overrides the \fBconstruct()\fP method and fetch data of member variables from the XML\&. 
+.PP
+By recommended guidance, data representing member variables are contained in properties of the put XML object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIxml\fP An xml used to construct data of entity 
+.RE
+.PP
+
+.PP
+Implements \fBEntity\fP\&.
+.PP
+Reimplemented in \fBPRInvokeHistory\fP\&.
+.SS "void notifyEnd ()"
+
+.PP
+Notify end of the process\&. Notifies end of a process handling the matched \fBInvoke\fP message to \fBInvokeHistory\fP\&. 
+.PP
+\fBInvokeHistory\fP archives the end datetime and calculates elapsed time as nanoseconds\&. 
+.SS "auto key () const \-> std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get a key that can identify the \fBEntity\fP uniquely\&. If identifier of the \fBEntity\fP is not atomic value, returns a string represents the composite identifier\&. If identifier of the \fBEntity\fP is not string, converts the identifier to string and returns the string\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+An identifier 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEntity\fP\&.
+.SS "auto calcElapsedTime () const \-> long long"
+
+.PP
+Get elapsed time\&. Calculates elapsed time frrom start, end time and Returns it\&. 
+.PP
+The elapsed time will be reported to a master and the master will utilize the elapsed time to estimating performance of the slave system, the \fBInvokeHistory\fP is belonged to\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+An elapsed time expressed as nano seconds\&. 
+.RE
+.PP
+
+.SS "auto TAG () const \->  std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name when represented by XML\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A tag name 
+.RE
+.PP
+
+.PP
+Implements \fBEntity\fP\&.
+.SS "auto toXML () const \-> std::shared_ptr<\fBlibrary::XML\fP>\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Get an XML object represents the \fBEntity\fP\&. Returns an XML object that can represents the \fBEntity\fP containing member variables into properties\&. 
+.PP
+A member variable (not object, but atomic value like number, string or date) is categorized as a property within the framework of entity side\&. Thus, when overriding a \fBtoXML()\fP method and archiving member variables to an XML object to return, puts each variable to be a property belongs to only an XML object\&. 
+.PP
+Don't archive the member variable of atomic value to XML::value causing enormouse creation of XML objects to number of member variables\&. An \fBEntity\fP must be represented by only an XML instance (tag)\&. 
+.PP
+Standard Usage  Non-standard usage abusing value   <memberList>
+.br
+      <member id='jhnam88' name='Jeongho+Nam' birthdate='1988-03-11' />
+.br
+      <member id='master' name='Administartor' birthdate='2011-07-28' />
+.br
+ </memberList>  <member>
+.br
+      <id>jhnam88</id>
+.br
+      <name>Jeongho+Nam</name>
+.br
+      <birthdate>1988-03-11</birthdate>
+.br
+ </member>   
+.PP
+\fBReturns:\fP
+.RS 4
+An XML object representing the \fBEntity\fP\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBEntity\fP\&.
+.PP
+Reimplemented in \fBPRInvokeHistory\fP\&.
+.SS "auto toInvoke () const \-> std::shared_ptr<\fBInvoke\fP>"
+
+.PP
+Get an \fBInvoke\fP message\&. Returns an \fBInvoke\fP message to report to a master that how much time was elapsed on a process handling the \fBInvoke\fP message\&. In master, those reports are used to estimate performance of each slave system\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+An \fBInvoke\fP message to report master\&. 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string listener\fC [protected]\fP"
+
+.PP
+A listener of the \fBInvoke\fP message\&. \fBInvokeHistory\fP does not archive entire data of an \fBInvoke\fP message\&. \fBInvokeHistory\fP only archives its listener\&. The first, formal reason is to save space, avoid wasting spaces\&. 
+.PP
+The second, complicate reason is on an aspect of which systems are using the \fBInvokeHistory\fP class\&. \fBInvokeHistory\fP is designed to let slave reports to master elapsed time of a process used to handling the \fBInvoke\fP message\&. If you want to archive entire history log of \fBInvoke\fP messages, then the subject should be master, not the slave using \fBInvokeHistory\fP classes\&. 
+.SS "\fBlibrary::Datetime\fP startTime\fC [protected]\fP"
+
+.PP
+Start time of the history\&. Means start time of a process handling the \fBInvoke\fP message\&. The start time not only has ordinary arguments represented Datetime (year to seconds), but also has very precise values under seconds, which is expressed as nano seconds (10^-9)\&. 
+.PP
+The precise start time will be used to calculate elapsed time with end time\&. 
+.SS "\fBlibrary::Datetime\fP endTime\fC [protected]\fP"
+
+.PP
+End time of the history\&. Means end time of a process handling the \fBInvoke\fP message\&. The end time not only has ordinary arguments represented Datetime (year to seconds), but also has very precise values under seconds, which is expressed as nano seconds (10^-9)\&. 
+.PP
+The precise end time will be used to calculate elapsed time with start time\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

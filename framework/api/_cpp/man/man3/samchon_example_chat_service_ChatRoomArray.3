@@ -1,0 +1,87 @@
+.TH "ChatRoomArray" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ChatRoomArray \- A manager of chat rooms\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ChatRoomArray\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChatRoomArray\fP (\fBChatServer\fP *)"
+.br
+.RI "\fIConstruct from a chat server\&. \fP"
+.ti -1c
+.RI "void \fBnotify\fP ()"
+.br
+.RI "\fINotify changes of chat rooms\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBCHILD_TAG\fP () const  \-> std::string"
+.br
+.RI "\fIA tag name of children\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "auto \fBtoXML\fP () const  \-> std::shared_ptr< \fBlibrary::XML\fP >"
+.br
+.RI "\fIGet an XML object representing the \fBChatRoomArray\fP\&. \fP"
+.ti -1c
+.RI "auto \fBtoInvoke\fP () const  \-> std::shared_ptr< \fBprotocol::Invoke\fP >"
+.br
+.RI "\fIGet an Invoke message used to notifying change\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBChatServer\fP * \fBserver\fP"
+.br
+.RI "\fIA chat server that rooms are belonged to\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A manager of chat rooms\&. 
+
+An entity list of chat rooms and a manager of chat rooms taking a responsibility of notifying changes of children chat rooms to a related chat server\&. 
+.PP
+ 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual auto CHILD_TAG () const \->  std::string\fC [inline]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name of children\&. < TAG>
+.br
+      <CHILD_TAG />
+.br
+      <CHILD_TAG />
+.br
+ </TAG> 
+.PP
+Implements \fBIEntityGroup\fP\&.
+.SS "void notify ()"
+
+.PP
+Notify changes of chat rooms\&. Notify changes of chat rooms to all clients in the chat server\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

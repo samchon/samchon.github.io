@@ -1,0 +1,294 @@
+.TH "SQLStatement" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SQLStatement \- A sql statement\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SQLStatement\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfree\fP ()"
+.br
+.RI "\fIFree the sql statement\&. \fP"
+.ti -1c
+.RI "void \fBrefresh\fP ()"
+.br
+.RI "\fIRefresh the sql statement\&. \fP"
+.ti -1c
+.RI "template<typename _Ty , typename\&.\&.\&. _Args> void \fBprepare\fP (const std::string &sql, const _Ty &val, const _Args &\&.\&.\&.args)"
+.br
+.RI "\fIPrepare a sql statement\&. \fP"
+.ti -1c
+.RI "void \fBexecute\fP ()"
+.br
+.RI "\fIExecute the prepared sql statement\&. \fP"
+.ti -1c
+.RI "void \fBexecuteDirectly\fP (const std::string &)"
+.br
+.RI "\fIExecute sql-statement direclty\&. \fP"
+.ti -1c
+.RI "auto \fBfetch\fP () const  \-> bool"
+.br
+.RI "\fIFetch a record\&. \fP"
+.ti -1c
+.RI "auto \fBnext\fP () const  \-> bool"
+.br
+.RI "\fIMove cursor to the next sql-statement\&. \fP"
+.ti -1c
+.RI "auto \fBsize\fP () const  \-> size_t"
+.br
+.RI "\fIGet size of columns\&. \fP"
+.ti -1c
+.RI "template<typename _Ty > auto \fBat\fP (size_t index) const  \-> _Ty"
+.br
+.RI "\fIGet column's data by its index\&. \fP"
+.ti -1c
+.RI "template<typename _Ty > auto \fBget\fP (const std::string &) const  \-> _Ty"
+.br
+.RI "\fIGet a column data by its name\&. \fP"
+.ti -1c
+.RI "virtual auto \fBtoXML\fP () const  \-> std::shared_ptr< \fBXML\fP >"
+.br
+.RI "\fIResult sets to \fBXML\fP\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSQLStatement\fP (\fBSQLi\fP *\fBsqli\fP)"
+.br
+.RI "\fIProtected Constructor\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSQLi\fP * \fBsqli\fP"
+.br
+.RI "\fI\fBSQLi\fP who created the \fBSQLStatement\fP\&. \fP"
+.ti -1c
+.RI "void * \fBhstmt\fP"
+.br
+.RI "\fIHandler of sql statement (OBDC) \fP"
+.ti -1c
+.RI "size_t \fBbindParameterCount\fP"
+.br
+.RI "\fICount of binded parameters
+.br
+\&. \fP"
+.ti -1c
+.RI "\fBMap\fP< size_t, SQL_SIZE_T > \fBbindParameterBASizeMap\fP"
+.br
+.RI "\fIA map for binary size\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A sql statement\&. 
+
+A \fBSQLStatement\fP instance is used to executing a SQL statement and returning the results it produces against a SQL database that is opened through a \fBSQLi\fP instance\&. 
+.PP
+Through the \fBSQLi\fP, it's the reason why a principle of DBMS, DBMS system doesn't allow simultaneous query from a session (connection)\&. Only a query (process) is allowed at a time\&. If you try to simultaneous query from a \fBSQLi\fP, ODBC throws error\&. To avoid the error, an execute of query from \fBSQLStatement\fP will lock a mutex of \fBSQLi\fP to ensure exclusiveness\&. 
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+To ensure the exclusiveness, you've to make \fBSQLStatement\fP from \fBSQLi\fP\&. Do not make \fBSQLStatement\fP by yourself\&. call SQLi::createSQLStatement() instead\&. Even you make a derived class from \fBSQLStatement\fP, don't make its constructor to have public accessor\&. 
+.PP
+Becuase execution of a sql statement causes lock on mutex in \fBSQLi\fP, you've to destruct the \fBSQLStatement\fP or call \fBSQLStatement::free()\fP method()\&. If you don't, the mutex will not be unlocked, thus you can't do anything by the \fBSQLi\fP\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBSQLStatement\fP (\fBSQLi\fP * sqli)\fC [protected]\fP"
+
+.PP
+Protected Constructor\&. \fBSQLStatement\fP's constructor have to created by \fBSQLi::createStatement()\fP\&.
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Don't create \fBSQLStatement\fP by yourself\&. 
+.PP
+\fBSQLStatement\fP has to be created by \fBSQLi::createStatement()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsqli\fP Parent \fBSQLi\fP who created the \fBSQLStatement\fP 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void prepare (const std::string & sql, const _Ty & val, const _Args &\&.\&.\&. args)\fC [inline]\fP"
+
+.PP
+Prepare a sql statement\&. Prepare a sql statement with parameters to bind for execution
+.PP
+\fBWarning:\fP
+.RS 4
+Be careful for destructions of binded parameters
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsql\fP A sql-statement to prepare 
+.br
+\fI\&.\&.\&.\fP args The parameters to bind 
+.RE
+.PP
+
+.SS "void execute ()"
+
+.PP
+Execute the prepared sql statement\&. 
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIexception\fP Error message from DBMS 
+.RE
+.PP
+
+.SS "void executeDirectly (const std::string & sql)"
+
+.PP
+Execute sql-statement direclty\&. Executes the given sql-statement without preparing or binding any parameter
+.PP
+\fBWarning:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+Cannot use if prepare statement has already defined\&. Use execute instead\&. 
+.IP "\(bu" 2
+Not recommended when the case of dynamic sql and the sql-statement is not for procedure but for direct access to table\&. Use prepare and execute instead\&.
+.PP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsql\fP sql-statement you want to execute 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIexception\fP Error message from DBMS 
+.br
+\fIexception\fP Method prepare is already called 
+.RE
+.PP
+
+.SS "auto fetch () const \-> bool"
+
+.PP
+Fetch a record\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+
+.RE
+.PP
+Whether succeded to fetch a record\&. 
+.PP
+False means there's not any record or previous record was the last\&. 
+.SS "auto next () const \-> bool"
+
+.PP
+Move cursor to the next sql-statement\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Whether succeded to move cursor to the next statement\&. 
+.RE
+.PP
+
+.SS "auto size () const \-> size_t"
+
+.PP
+Get size of columns\&. Returns the number of columns in a result set\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+Not size of rows\&. 
+.RE
+.PP
+
+.SS "auto at (size_t index) const \-> _Ty
+			\fC [inline]\fP"
+
+.PP
+Get column's data by its index\&. Returns column's data from fetched-record by specified column index
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Index number of a column wants to get 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Data stored in the record at the position of specifield column 
+.RE
+.PP
+
+.SS "auto get (const std::string &) const \-> _Ty
+			\fC [inline]\fP"
+
+.PP
+Get a column data by its name\&. Returns column's data from fetchched-recrod by specified column name
+.PP
+Get data from fetched-record by specified column name
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of a column wants to get 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Data stored in the record at the position of specifield column 
+.RE
+.PP
+
+.SS "auto toXML () const \-> std::shared_ptr<\fBXML\fP>\fC [virtual]\fP"
+
+.PP
+Result sets to \fBXML\fP\&. Converts the records of current sql-statement to \fBXML\fP\&. 
+.PP
+Recommends to override for each DBMS's domain \fBXML\fP rule\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+\fBXML\fP representing records of the statement 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBTSQLStatement\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBMap\fP<size_t, SQL_SIZE_T> bindParameterBASizeMap\fC [protected]\fP"
+
+.PP
+A map for binary size\&. When calls ByteArray::size(), the returned size_t value can't be kept until 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="de/d74/MSSQLi_8cpp" kind="file" language="C++">
+    <compoundname>MSSQLi.cpp</compoundname>
+    <includes refid="de/dac/TSQLi_8hpp" local="no">samchon/library/TSQLi.hpp</includes>
+    <includes refid="d2/da6/TSQLStatement_8hpp" local="no">samchon/library/TSQLStatement.hpp</includes>
+    <incdepgraph>
+      <node id="1525">
+        <label>samchon/library/TSQLi.hpp</label>
+        <link refid="de/dac/TSQLi_8hpp_source"/>
+        <childnode refid="1526" relation="include">
+        </childnode>
+        <childnode refid="1527" relation="include">
+        </childnode>
+      </node>
+      <node id="1532">
+        <label>samchon/library/SQLStatement.hpp</label>
+        <link refid="d3/d37/SQLStatement_8hpp_source"/>
+        <childnode refid="1526" relation="include">
+        </childnode>
+        <childnode refid="1533" relation="include">
+        </childnode>
+        <childnode refid="1528" relation="include">
+        </childnode>
+        <childnode refid="1534" relation="include">
+        </childnode>
+        <childnode refid="1530" relation="include">
+        </childnode>
+        <childnode refid="1536" relation="include">
+        </childnode>
+      </node>
+      <node id="1530">
+        <label>string</label>
+      </node>
+      <node id="1535">
+        <label>map</label>
+      </node>
+      <node id="1526">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="1534">
+        <label>samchon/Map.hpp</label>
+        <link refid="dc/dbe/Map_8hpp_source"/>
+        <childnode refid="1535" relation="include">
+        </childnode>
+      </node>
+      <node id="1536">
+        <label>samchon/ByteArray.hpp</label>
+        <link refid="df/df6/ByteArray_8hpp_source"/>
+        <childnode refid="1526" relation="include">
+        </childnode>
+        <childnode refid="1533" relation="include">
+        </childnode>
+        <childnode refid="1530" relation="include">
+        </childnode>
+      </node>
+      <node id="1533">
+        <label>vector</label>
+      </node>
+      <node id="1529">
+        <label>mutex</label>
+      </node>
+      <node id="1527">
+        <label>samchon/library/SQLi.hpp</label>
+        <link refid="d5/d6a/SQLi_8hpp_source"/>
+        <childnode refid="1526" relation="include">
+        </childnode>
+        <childnode refid="1528" relation="include">
+        </childnode>
+        <childnode refid="1529" relation="include">
+        </childnode>
+        <childnode refid="1530" relation="include">
+        </childnode>
+      </node>
+      <node id="1524">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/MSSQLi.cpp</label>
+        <link refid="MSSQLi.cpp"/>
+        <childnode refid="1525" relation="include">
+        </childnode>
+        <childnode refid="1531" relation="include">
+        </childnode>
+      </node>
+      <node id="1531">
+        <label>samchon/library/TSQLStatement.hpp</label>
+        <link refid="d2/da6/TSQLStatement_8hpp_source"/>
+        <childnode refid="1526" relation="include">
+        </childnode>
+        <childnode refid="1532" relation="include">
+        </childnode>
+      </node>
+      <node id="1528">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;samchon/library/TSQLi.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/TSQLStatement.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">TSQLi::TSQLi(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/><ref refid="d9/d2f/classsamchon_1_1library_1_1SQLi" kindref="compound">SQLi</ref>(</highlight><highlight class="stringliteral">&quot;{SQL<sp/>Server}&quot;</highlight><highlight class="normal">,<sp/>port)<sp/></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">TSQLi::~TSQLi()<sp/>{}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="da/dfd/classsamchon_1_1library_1_1TSQLi_1a270bed8f66bffd0352efe7a9b33e3be8" kindref="member">TSQLi::createStatement</ref>()<sp/>-&gt;<sp/>shared_ptr&lt;SQLStatement&gt;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>shared_ptr&lt;SQLStatement&gt;(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d3/d69/classsamchon_1_1library_1_1TSQLStatement" kindref="compound">TSQLStatement</ref>(</highlight><highlight class="keyword">this</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/MSSQLi.cpp"/>
+  </compounddef>
+</doxygen>

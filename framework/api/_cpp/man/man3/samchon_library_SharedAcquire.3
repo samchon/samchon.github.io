@@ -1,0 +1,138 @@
+.TH "SharedAcquire" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SharedAcquire \- Shared acquire from a \fBSemaphore\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SharedAcquire\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSharedAcquire\fP (\fBSemaphore\fP &, bool=true)"
+.br
+.RI "\fIConstruct from \fBSemaphore\fP\&. \fP"
+.ti -1c
+.RI "\fBSharedAcquire\fP (const \fBSharedAcquire\fP &)"
+.br
+.RI "\fICopy Constructor\&. \fP"
+.ti -1c
+.RI "\fBSharedAcquire\fP (\fBSharedAcquire\fP &&)"
+.br
+.RI "\fIMove Constructor\&. \fP"
+.ti -1c
+.RI "\fB~SharedAcquire\fP ()"
+.br
+.RI "\fIDefault Destructor\&. \fP"
+.ti -1c
+.RI "void \fBacquire\fP ()"
+.br
+.RI "\fIAcquire admission\&. \fP"
+.ti -1c
+.RI "void \fBrelease\fP ()"
+.br
+.RI "\fIRelease an admission\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBSemaphore\fP * \fBsemaphore\fP"
+.br
+.RI "\fIManaged \fBSemaphore\fP\&. \fP"
+.ti -1c
+.RI "std::atomic< size_t > * \fBreference\fP"
+.br
+.RI "\fIReferencing count sharing same \fBSemaphore\fP\&. \fP"
+.ti -1c
+.RI "std::atomic< bool > * \fBisLocked\fP"
+.br
+.RI "\fIWhether the mutex was locked by \fBSharedAcquire\fP\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Shared acquire from a \fBSemaphore\fP\&. 
+
+A \fBSharedAcquire\fP is an object manages a \fBSemaphore\fP with shared ownership in both states\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+acquired 
+.IP "\(bu" 2
+released
+.PP
+.PP
+On default construction, the object acquires a \fBSemaphore\fP object, for whose acquiring and releasing operations becomes responsible\&. When copy constructions, responsibilities of acquiring and releasing \fBSemaphore\fP are shared with copied with those \fBSharedAcquire\fP objects\&. 
+.PP
+The class shared_lock is a general-purpose shared mutex ownership wrapper allowing deferred locking, timed locking and transfer of lock ownership\&. Locking a shared_lock locks the associated shared mutex in shared mode (to lock it in exclusive mode, std::unique_lock can be used) 
+.PP
+This class guarantees a released status on destruction of all shared objects (even if not called explicitly)\&. Therefore it is especially useful as an object with automatic duration, as it guarantees the \fBSemaphore\fP object is properly released in case an exception is thrown\&. 
+.PP
+Referenced comments of std::unique_lock 
+.PP
+.PD 0
+.IP "\(bu" 2
+http://www.cplusplus.com/reference/mutex/unique_lock/
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Though, that the \fBSharedAcquire\fP object does not manage the lifetime of the \fBSemaphore\fP object in any way: the duration of the \fBSemaphore\fP object shall extend at least until the destruction of the \fBSharedAcquire\fP that manages it\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBlibrary::UniqueAcquire\fP 
+.PP
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBSharedAcquire\fP (\fBSemaphore\fP & semaphore, bool doLock = \fCtrue\fP)"
+
+.PP
+Construct from \fBSemaphore\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsemaphore\fP \fBSemaphore\fP to manage 
+.br
+\fIdoLock\fP Whether to lock directly or not 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void acquire ()"
+
+.PP
+Acquire admission\&. Acquires an admission and increases count of admission by 1\&. 
+.PP
+If the count is over permitted size, wait until other admissions to be released\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Lock on mutex 
+.PP
+
+.SS "void release ()"
+
+.PP
+Release an admission\&. Releases an admission what you've acquired\&. If the admission count was over the limited size, unlock the mutex\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

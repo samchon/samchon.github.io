@@ -1,0 +1,144 @@
+.TH "URLVariables" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+URLVariables \- \fBURLVariables\fP class is for representing variables of HTTP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <URLVariables\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBURLVariables\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.ti -1c
+.RI "\fBURLVariables\fP (const \fBWeakString\fP &flashVars)"
+.br
+.RI "\fIConstructor by a string representing encoded properties\&. \fP"
+.ti -1c
+.RI "auto \fBtoString\fP () const  \-> std::string"
+.br
+.RI "\fIGet the string representing \fBURLVariables\fP\&. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static auto \fBencode\fP (const \fBWeakString\fP &) \-> std::string"
+.br
+.RI "\fIEncode a string into a valid URI\&. \fP"
+.ti -1c
+.RI "static auto \fBdecode\fP (const \fBWeakString\fP &) \-> std::string"
+.br
+.RI "\fIDecode a URI string\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBURLVariables\fP class is for representing variables of HTTP\&. 
+
+\fBURLVariables\fP class allows you to transfer variables between an application and server\&. When transfering, \fBURLVariables\fP will be converted to a URI string\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+URI: Uniform Resource Identifier
+.PP
+.PP
+Use URLVariabels objects with methods of \fBHTTPLoader\fP class\&. 
+.PP
+ 
+.PP
+.SS "Example code "
+.PP
+.PP
+.nf
+.fi
+.PP
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBURLVariables\fP (const \fBWeakString\fP & flashVars)"
+
+.PP
+Constructor by a string representing encoded properties\&. Converts the variable string to properties of the specified \fBURLVariables\fP object\&.
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBURLVariables\fP("id=jhnam88&name=Jeongho+Nam') => {{\\'id", "jhnam88"}, {"name", "Jeongho Nam"}}
+.PP
+\fBParameters:\fP
+.RS 4
+\fIA\fP uri-encoded string containing pair of properties 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto encode (const \fBWeakString\fP & wstr) \-> std::string\fC [static]\fP"
+
+.PP
+Encode a string into a valid URI\&. Encodes a string to follow URI standard format\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIA\fP string to encode to URI 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string converted to URI 
+.RE
+.PP
+
+.SS "auto decode (const \fBWeakString\fP & wstr) \-> std::string\fC [static]\fP"
+
+.PP
+Decode a URI string\&. Decodes a URI string to its original
+.PP
+\fBParameters:\fP
+.RS 4
+\fIA\fP string encoded 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string decoded from URI 
+.RE
+.PP
+
+.SS "auto toString () const \-> std::string"
+
+.PP
+Get the string representing \fBURLVariables\fP\&. Returns a string object representing \fBURLVariables\fP following the URI
+.br
+ 
+.PD 0
+
+.IP "\(bu" 2
+\fBURLVariables\fP({{'id', 'jhnam88'}, {'name', 'Jeongho Nam'}})\&.\fBtoString()\fP => 'id=jhnam88&name=Jeongho+Nam'
+.PP
+\fBReturns:\fP
+.RS 4
+A string representing \fBURLVariables\fP following the URI 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

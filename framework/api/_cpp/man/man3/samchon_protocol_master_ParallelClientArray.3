@@ -1,0 +1,69 @@
+.TH "ParallelClientArray" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ParallelClientArray \- An array of ParallelClient(s)\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ParallelClientArray\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParallelClientArray\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+An array of ParallelClient(s)\&. 
+
+\fBParallelClientArray\fP is an \fBParallelSystemArray\fP specialized in clients' driver\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBDistributedSystemArray\fP class is an \fBExternalSystemArray\fP and an abstract class containing and managing distributed system drivers within framework of master\&. The \fBDistributedSystemArray\fP class allocates \fBDistributedSystemRole\fP objects to \fBDistributedSystem\fP objects for optimization\&. 
+.PP
+Unlike the \fBExternalSystemRole\fP class which is dependent on an \fBExternalSystem\fP, \fBDistributedSystemRole\fP is not dependent on a \fBDistributedSystem\fP and even can be allocated to multiple \fBDistributedSystem\fP objects\&. Allocation of DistributedSystemRole(s) to DistributedSystem(s) is determined by estimation of performance index pursuing best distribution\&. If number of \fBDistributedSystem\fP and \fBDistributedSystemRole\fP objects is not a lot, optimize by combined permuation algorithm\&. Else the objects are a lot, the allocation will be optimized by genetic algorithm\&. 
+.PP
+ 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBExternalSystemArray\fP is an abstract class containing and managing external system drivers\&. 
+.PP
+Also, \fBExternalSystemArray\fP can access to ExternalSystemRole(s) directly\&. With the method, you can use an \fBExternalSystemRole\fP as 'logical proxy' of an \fBExternalSystem\fP\&. Of course, the \fBExternalSystemRole\fP is belonged to an \fBExternalSystem\fP\&. However, if you access an \fBExternalSystemRole\fP from an \fBExternalSystemArray\fP directly, not passing by a belonged \fBExternalSystem\fP, and send an \fBInvoke\fP message even you're not knowing which \fBExternalSystem\fP is related in, the \fBExternalSystemRole\fP acted a role of proxy\&. 
+.PP
+It's called as 'Proxy pattern'\&. With the pattern, you can only concentrate on \fBExternalSystemRole\fP itself, what to do with \fBInvoke\fP message, irrespective of the \fBExternalSystemRole\fP is belonged to which \fBExternalSystem\fP\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBExternalSystemArray::getRole\fP('something')->sendData(invoke);
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d4/dbf/CriticalMap_8hpp" kind="file" language="C++">
+    <compoundname>CriticalMap.hpp</compoundname>
+    <includes refid="dc/dbe/Map_8hpp" local="no">samchon/Map.hpp</includes>
+    <includes refid="d0/da7/CriticalAllocator_8hpp" local="no">samchon/library/CriticalAllocator.hpp</includes>
+    <includedby refid="d9/dc9/CriticalDictionary_8hpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalDictionary.hpp</includedby>
+    <includedby refid="d2/df5/EventDispatcher_8cpp" local="no">D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/EventDispatcher.cpp</includedby>
+    <incdepgraph>
+      <node id="1056">
+        <label>atomic</label>
+      </node>
+      <node id="1054">
+        <label>samchon/library/UniqueWriteLock.hpp</label>
+        <link refid="d5/dcd/UniqueWriteLock_8hpp_source"/>
+        <childnode refid="1052" relation="include">
+        </childnode>
+      </node>
+      <node id="1048">
+        <label>map</label>
+      </node>
+      <node id="1057">
+        <label>samchon/library/SharedWriteLock.hpp</label>
+        <link refid="d8/d53/SharedWriteLock_8hpp_source"/>
+        <childnode refid="1052" relation="include">
+        </childnode>
+        <childnode refid="1056" relation="include">
+        </childnode>
+      </node>
+      <node id="1052">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="1047">
+        <label>samchon/Map.hpp</label>
+        <link refid="dc/dbe/Map_8hpp_source"/>
+        <childnode refid="1048" relation="include">
+        </childnode>
+      </node>
+      <node id="1055">
+        <label>samchon/library/SharedReadLock.hpp</label>
+        <link refid="d0/df1/SharedReadLock_8hpp_source"/>
+        <childnode refid="1052" relation="include">
+        </childnode>
+        <childnode refid="1056" relation="include">
+        </childnode>
+      </node>
+      <node id="1051">
+        <label>samchon/library/RWMutex.hpp</label>
+        <link refid="dd/d85/RWMutex_8hpp_source"/>
+        <childnode refid="1052" relation="include">
+        </childnode>
+        <childnode refid="1053" relation="include">
+        </childnode>
+        <childnode refid="1054" relation="include">
+        </childnode>
+        <childnode refid="1055" relation="include">
+        </childnode>
+        <childnode refid="1057" relation="include">
+        </childnode>
+      </node>
+      <node id="1046">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalMap.hpp</label>
+        <link refid="CriticalMap.hpp"/>
+        <childnode refid="1047" relation="include">
+        </childnode>
+        <childnode refid="1049" relation="include">
+        </childnode>
+      </node>
+      <node id="1049">
+        <label>samchon/library/CriticalAllocator.hpp</label>
+        <link refid="d0/da7/CriticalAllocator_8hpp_source"/>
+        <childnode refid="1050" relation="include">
+        </childnode>
+        <childnode refid="1051" relation="include">
+        </childnode>
+      </node>
+      <node id="1053">
+        <label>samchon/library/UniqueReadLock.hpp</label>
+        <link refid="d5/da5/UniqueReadLock_8hpp_source"/>
+        <childnode refid="1052" relation="include">
+        </childnode>
+      </node>
+      <node id="1050">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1059">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalDictionary.hpp</label>
+        <link refid="d9/dc9/CriticalDictionary_8hpp_source"/>
+        <childnode refid="1060" relation="include">
+        </childnode>
+      </node>
+      <node id="1060">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/examples/chat_service/ChatRoomArray.hpp</label>
+        <link refid="da/da6/ChatRoomArray_8hpp_source"/>
+      </node>
+      <node id="1058">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalMap.hpp</label>
+        <link refid="CriticalMap.hpp"/>
+        <childnode refid="1059" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="db/df1/namespacesamchon">samchon</innernamespace>
+    <innernamespace refid="d8/dd4/namespacesamchon_1_1library">samchon::library</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/Map.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/CriticalAllocator.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">library</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>_Kty,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>_Ty,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>_Pr<sp/>=<sp/>std::less&lt;_Kty&gt;&gt;</highlight></codeline>
+<codeline lineno="18" refid="d8/dd4/namespacesamchon_1_1library_1a769ee0a38fd5faebb2ca90fd295ce740" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d1/d4e/classsamchon_1_1Map" kindref="compound">CriticalMap</ref><sp/>=<sp/><ref refid="d1/d4e/classsamchon_1_1Map" kindref="compound">Map&lt;_Kty, _Ty, _Pr, CriticalAllocator&lt;std::pair&lt;const std::string, _Ty&gt;</ref>&gt;&gt;;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalMap.hpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,792 @@
+.TH "WeakString" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WeakString \- A string class only references characeters, reference only\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WeakString\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWeakString\fP ()"
+.br
+.RI "\fIDefault Constructor does not reference any character\&. \fP"
+.ti -1c
+.RI "\fBWeakString\fP (const char *\fBdata\fP, size_t \fBsize\fP)"
+.br
+.RI "\fIConstructor by characters with specified size\&. \fP"
+.ti -1c
+.RI "\fBWeakString\fP (const char *begin, const char *end)"
+.br
+.RI "\fIConstructor by characters of begin and end\&. \fP"
+.ti -1c
+.RI "\fBWeakString\fP (const char *\fBdata\fP)"
+.br
+.RI "\fIConstructor by characters\&. \fP"
+.ti -1c
+.RI "\fBWeakString\fP (const char &ch)"
+.br
+.RI "\fIConstructor by a single character\&. \fP"
+.ti -1c
+.RI "\fBWeakString\fP (std::initializer_list< char > &il)"
+.br
+.RI "\fIConstructor by a initializer list\&. \fP"
+.ti -1c
+.RI "\fBWeakString\fP (const std::string &\fBstr\fP)"
+.br
+.RI "\fIConstructor by string\&. \fP"
+.ti -1c
+.RI "auto \fBdata\fP () const  \-> const char *"
+.br
+.RI "\fIGet string data; referenced characeters\&. \fP"
+.ti -1c
+.RI "auto \fBsize\fP () const  \-> size_t"
+.br
+.RI "\fIReturns size of the characters which are being referenced\&. \fP"
+.ti -1c
+.RI "auto \fBempty\fP () const  \-> bool"
+.br
+.RI "\fITests wheter string is emtpy\&. \fP"
+.ti -1c
+.RI "auto \fBat\fP (size_t index) const  \-> const char &"
+.br
+.RI "\fIGet character of string  Returns a const reference to the character at the specified position\&. \fP"
+.ti -1c
+.RI "auto \fBoperator[]\fP (size_t index) const  \-> const char &"
+.br
+.RI "\fIGet character of string  Returns a const reference to the character at the specified position\&. \fP"
+.ti -1c
+.RI "auto \fBfind\fP (const \fBWeakString\fP &delim, size_t startIndex=NULL) const  \-> size_t"
+.br
+.RI "\fIFinds first occurence in string\&. \fP"
+.ti -1c
+.RI "auto \fBrfind\fP (const \fBWeakString\fP &delim, size_t endIndex=SIZE_MAX) const  \-> size_t"
+.br
+.RI "\fIFinds last occurence in string\&. \fP"
+.ti -1c
+.RI "auto \fBfinds\fP (const std::vector< std::string > &delims, size_t startIndex=0) const  \-> \fBIndexPair\fP< \fBWeakString\fP >"
+.br
+.RI "\fIFinds first occurence in string\&. \fP"
+.ti -1c
+.RI "auto \fBrfinds\fP (const std::vector< std::string > &delims, size_t endIndex=SIZE_MAX) const  \-> \fBIndexPair\fP< \fBWeakString\fP >"
+.br
+.RI "\fIFinds last occurence in string\&. \fP"
+.ti -1c
+.RI "auto \fBsubstr\fP (size_t startIndex, size_t endIndex=SIZE_MAX) const  \-> \fBWeakString\fP"
+.br
+.RI "\fIGenerates a substring\&. \fP"
+.ti -1c
+.RI "auto \fBsubstring\fP (size_t startIndex, size_t \fBsize\fP=SIZE_MAX) const  \-> \fBWeakString\fP"
+.br
+.RI "\fIGenerates a substring\&. \fP"
+.ti -1c
+.RI "auto \fBbetween\fP (const \fBWeakString\fP &start={}, const \fBWeakString\fP &end={}) const  \-> \fBWeakString\fP"
+.br
+.RI "\fIGenerates a substring\&. \fP"
+.ti -1c
+.RI "auto \fBsplit\fP (const \fBWeakString\fP &delim) const  \-> std::vector< \fBWeakString\fP >"
+.br
+.RI "\fIGenerates substrings\&. \fP"
+.ti -1c
+.RI "auto \fBbetweens\fP (const \fBWeakString\fP &start={}, const \fBWeakString\fP &end={}) const  \-> std::vector< \fBWeakString\fP >"
+.br
+.RI "\fIGenerates substrings\&. \fP"
+.ti -1c
+.RI "auto \fBtrim\fP (const std::vector< std::string > &delims) const  \-> \fBWeakString\fP"
+.br
+.RI "\fIRemoves all designated characters from the beginning and end of the specified string\&. \fP"
+.ti -1c
+.RI "auto \fBltrim\fP (const std::vector< std::string > &delims) const  \-> \fBWeakString\fP"
+.br
+.RI "\fIRemoves all designated characters from the beginning of the specified string\&. \fP"
+.ti -1c
+.RI "auto \fBrtrim\fP (const std::vector< std::string > &delims) const  \-> \fBWeakString\fP"
+.br
+.RI "\fIRemoves all designated characters from the end of the specified string\&. \fP"
+.ti -1c
+.RI "auto \fBreplace\fP (const \fBWeakString\fP &before, const \fBWeakString\fP &after) const  \-> std::string"
+.br
+.RI "\fIReplace portion of string once\&. \fP"
+.ti -1c
+.RI "auto \fBreplaceAll\fP (const \fBWeakString\fP &before, const \fBWeakString\fP &after) const  \-> std::string"
+.br
+.RI "\fIReturns a string specified word is replaced\&. \fP"
+.ti -1c
+.RI "auto \fBreplaceAll\fP (const std::vector< std::pair< std::string, std::string >> &pairs) const  \-> std::string"
+.br
+.RI "\fIReturns a string specified words are replaced\&. \fP"
+.ti -1c
+.RI "auto \fBtoLowerCase\fP () const  \-> std::string"
+.br
+.RI "\fIConvert uppercase letters to lowercase\&. \fP"
+.ti -1c
+.RI "auto \fBtoUpperCase\fP () const  \-> std::string"
+.br
+.RI "\fIConvert uppercase letters to lowercase\&. \fP"
+.ti -1c
+.RI "auto \fBstr\fP () const  \-> std::string"
+.br
+.RI "\fIGet the string content\&. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const size_t \fBnpos\fP = \-1"
+.br
+.RI "\fIMaximum value for size_t\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const char * \fBdata_\fP"
+.br
+.RI "\fIReferenced characters's pointer of begining position\&. \fP"
+.ti -1c
+.RI "size_t \fBsize_\fP"
+.br
+.RI "\fI(Specified) size of referenced characters \fP"
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const std::vector< std::string > \fBSPACE_ARRAY\fP = { ' ', '\\t', '\\r', '\\n' }"
+.br
+.RI "\fIAn array containing whitespaces\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A string class only references characeters, reference only\&. 
+
+WeakSring does not consider any construction, modification and destruction of characters\&. 
+.PP
+Thus, you can have greater advantages than std::string on the side of performance and memory, but of course, you can't modify the characeters at all\&. 
+.PP
+ 
+.PP
+\fBWarning:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+\fBWeakString\fP not copy(strcpy) characeters but only references characeters\&. Be careful about destruction of the characters being referenced by the \fBWeakString\fP 
+.IP "\(bu" 2
+\fBWeakString\fP will be used for basic data type in most case\&. Avoid to use \fBWeakString\fP by pre-definition in header (*\&.hpp)
+.PP
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBWeakString\fP ()"
+
+.PP
+Default Constructor does not reference any character\&. Constructs an empty string, with zero size 
+.SS "\fBWeakString\fP (const char * data, size_t size)"
+
+.PP
+Constructor by characters with specified size\&. Constructs by characters to be referenced with limited size\&. 
+.PP
+Although the original size of data is over the specified size, you can limit referencing size of the characters 
+.PP
+.PD 0
+.IP "\(bu" 2
+Referencing a part of characters
+.PP
+\fBWarning:\fP
+.RS 4
+\fBWeakString\fP only references\&. Be careful about destruction of the characters (data)
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP Target characters to be referenced by string 
+.br
+\fIsize\fP 
+.RE
+.PP
+Specified limit-size of characters to be referenced\&. 
+.PP
+If the specified size is greater than original size, it will be ignored 
+.SS "\fBWeakString\fP (const char * begin, const char * end)"
+
+.PP
+Constructor by characters of begin and end\&. Constructs by characters to be referenced with its end position\&. 
+.PP
+Although the original end point of data is over the specified end, you can limit end point of the characters\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Referencing a part of characters
+.PP
+\fBWarning:\fP
+.RS 4
+\fBWeakString\fP only references\&. Be careful about destruction of the characters (data)\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbegin\fP Target characters to be referenced by string 
+.br
+\fIend\fP 
+.RE
+.PP
+Specified end point of characters to be referenced\&. 
+.PP
+If the specified end point is greater than original end point, it will be ignored\&. 
+.SS "\fBWeakString\fP (const char * data)"
+
+.PP
+Constructor by characters\&. References the null-terminated character sequence pointed by ptr
+.PP
+\fBWarning:\fP
+.RS 4
+\fBWeakString\fP only references\&. Be careful about destruction of the characeters (data) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP Target characters to be referenced by string 
+.RE
+.PP
+
+.SS "\fBWeakString\fP (const char & ch)"
+
+.PP
+Constructor by a single character\&. References a single character
+.PP
+\fBWarning:\fP
+.RS 4
+\fBWeakString\fP only references\&. Be careful about destruction of the characeter (data) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIch\fP Target character to be referenced by string 
+.RE
+.PP
+
+.SS "\fBWeakString\fP (std::initializer_list< char > & il)"
+
+.PP
+Constructor by a initializer list\&. References initializer list of character
+.PP
+\fBWarning:\fP
+.RS 4
+\fBWeakString\fP only references\&. Be careful about destruction of the characeters (data) 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIil\fP Target initializer list of characters to be referenced by string 
+.RE
+.PP
+
+.SS "\fBWeakString\fP (const std::string & str)"
+
+.PP
+Constructor by string\&. References whole chracters of the string
+.PP
+\fBWarning:\fP
+.RS 4
+\fBWeakString\fP only references\&. Be careful about destruction of the string 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP Target string to be referenced by string 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto data () const \-> const char*"
+
+.PP
+Get string data; referenced characeters\&. Returns a pointer to an array that contains a null-terminated sequence of characters representing the current value of the string object
+.PP
+\fBWarning:\fP
+.RS 4
+Returned pointer's size can be longer than string's specified size if the string references only a part of the characters 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer of characters being referenced by the string 
+.RE
+.PP
+
+.SS "auto size () const \-> size_t"
+
+.PP
+Returns size of the characters which are being referenced\&. Returns the length of the string, in terms of number of referenced characters
+.PP
+\fBReturns:\fP
+.RS 4
+size of characters being referenced by string 
+.RE
+.PP
+
+.SS "auto empty () const \-> bool"
+
+.PP
+Tests wheter string is emtpy\&. Returns wheter characters' size is zero or not\&. 
+.PP
+Of course, string references nothing, then returns false, too\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Wheter size is zero or not 
+.RE
+.PP
+
+.SS "auto at (size_t index) const \-> const char&"
+
+.PP
+Get character of string  Returns a const reference to the character at the specified position\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+const reference of character at the specified index 
+.RE
+.PP
+
+.SS "auto operator[] (size_t index) const \-> const char&"
+
+.PP
+Get character of string  Returns a const reference to the character at the specified position\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+const reference of character at the specified index 
+.RE
+.PP
+
+.SS "auto find (const \fBWeakString\fP & delim, size_t startIndex = \fCNULL\fP) const \-> size_t"
+
+.PP
+Finds first occurence in string\&. Finds the string after startIndex and returns the position of first occurence of delim\&. 
+.PP
+If delim is not found, returns -1 (npos) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelim\fP The substring of the string which to find 
+.br
+\fIstartIndex\fP Specified starting index of find\&. Default is 0 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Index of first occurence of the specified substring or -1 
+.RE
+.PP
+
+.SS "auto rfind (const \fBWeakString\fP & delim, size_t endIndex = \fCSIZE_MAX\fP) const \-> size_t"
+
+.PP
+Finds last occurence in string\&. Finds the string before endIndex and returns the position of last occurence of delim\&. If delim is not found, returns -1 (npos)
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelim\fP The substring of the string which to find 
+.br
+\fIendIndex\fP Specified last index of find\&. Default is \fBsize()\fP - 1 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Index of first occurence of the specified substring or -1 
+.RE
+.PP
+
+.SS "auto finds (const std::vector< std::string > & delims, size_t startIndex = \fC0\fP) const \-> \fBIndexPair\fP<\fBWeakString\fP>"
+
+.PP
+Finds first occurence in string\&. Finds first occurence position of each delim in the string after startIndex and returns the minimum position of them\&.
+.PP
+\fBNote:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+If startIndex is not specified, then starts from 0\&. 
+.IP "\(bu" 2
+If failed to find any substring, returns -1 (npos)
+.PP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelims\fP The substrings of target(str) which to find 
+.br
+\fIstartIndex\fP Specified starting index of find\&. Default is 0 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+pair<size_t := position, string := matched substring> 
+.RE
+.PP
+
+.SS "auto rfinds (const std::vector< std::string > & delims, size_t endIndex = \fCSIZE_MAX\fP) const \-> \fBIndexPair\fP<\fBWeakString\fP>"
+
+.PP
+Finds last occurence in string\&. Finds last occurence position of each delim in the string before endIndex and returns the maximum position of them\&.
+.PP
+\fBNote:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+If index is not specified, then starts str\&.size() - 1 
+.IP "\(bu" 2
+If failed to find any substring, returns -1 (npos)
+.PP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelims\fP The substrings of target(str) which to find 
+.br
+\fIendIndex\fP Specified starting index of find\&. Default is \fBsize()\fP - 1 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+pair<size_t := position, string := matched substring> 
+.RE
+.PP
+
+.SS "auto substr (size_t startIndex, size_t endIndex = \fCSIZE_MAX\fP) const \-> \fBWeakString\fP"
+
+.PP
+Generates a substring\&. Extracts a substring consisting of the characters starts from startIndex and with a size specified size\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstartIndex\fP 
+.RE
+.PP
+Index of the first character\&. 
+.PP
+If startIndex is greater than endIndex, those will be swapped\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIendIndex\fP 
+.RE
+.PP
+Number of characters to include in substring\&. 
+.PP
+If the specified size is greater than last index of characeters, it will be shrinked\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Sub string by specified index and size 
+.RE
+.PP
+
+.SS "auto substring (size_t startIndex, size_t size = \fCSIZE_MAX\fP) const \-> \fBWeakString\fP"
+
+.PP
+Generates a substring\&. Extracts a substring consisting of the character specified by startIndex and all characters up to endIndex - 1\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+If endIndex is not specified, string::size() will be used instead\&. 
+.IP "\(bu" 2
+If endIndex is greater than startIndex, then those will be swapped
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstartIndex\fP 
+.RE
+.PP
+Index of the first character\&. 
+.PP
+If startIndex is greater than endIndex, those will be swapped\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsize\fP 
+.RE
+.PP
+Index of the last character - 1\&. 
+.PP
+If not specified, then string::size() will be used instead\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Sub string by specified index(es) 
+.RE
+.PP
+
+.SS "auto between (const \fBWeakString\fP & start = \fC{}\fP, const \fBWeakString\fP & end = \fC{}\fP) const \-> \fBWeakString\fP"
+
+.PP
+Generates a substring\&. Extracts a substring consisting of the characters from specified start to end\&. 
+.PP
+It's same with substring( ? = (str\&.find(start) + start\&.size()), find(end, ?) ) 
+.PP
+.PD 0
+.IP "\(bu" 2
+between("ABCD[EFGH]IJK", "[", "]") => "EFGH"
+.PP
+\fBNote:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+If start is not specified, extracts from begin of the string to end 
+.IP "\(bu" 2
+If end is not specified, extracts from start to end of the string 
+.IP "\(bu" 2
+If start and end are all omitted, returns str, itself\&.
+.PP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP A string for separating substring at the front 
+.br
+\fIend\fP A string for separating substring at the end 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+substring by specified terms 
+.RE
+.PP
+
+.SS "auto split (const \fBWeakString\fP & delim) const \-> std::vector<\fBWeakString\fP>"
+
+.PP
+Generates substrings\&. Splits a string in to an array of substrings dividing by the specified delimiter
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelim\fP The pattern which specifies where to split the string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+An array of substrings 
+.RE
+.PP
+
+.SS "auto betweens (const \fBWeakString\fP & start = \fC{}\fP, const \fBWeakString\fP & end = \fC{}\fP) const \-> std::vector<\fBWeakString\fP>"
+
+.PP
+Generates substrings\&. Splits a string into an array of substrings dividing by delimeters of start and end\&. 
+.PP
+It's the array of substrings adjusted the between\&. 
+.PP
+\fBNote:\fP
+.RS 4
+.PD 0
+.IP "\(bu" 2
+If start is omitted, it's same with the split by endStr not having last item 
+.IP "\(bu" 2
+If end is omitted, it's same with the split by startStr not having first item 
+.IP "\(bu" 2
+If start and end are all omitted, returns string, itself
+.PP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstart\fP 
+.RE
+.PP
+A string for separating substring at the front\&. 
+.PP
+If omitted, it's same with split(end) not having last item\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIend\fP 
+.RE
+.PP
+A string for separating substring at the end\&. 
+.PP
+If omitted, it's same with split(start) not having first item\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+An array of substrings 
+.RE
+.PP
+
+.SS "auto trim (const std::vector< std::string > & delims) const \-> \fBWeakString\fP"
+
+.PP
+Removes all designated characters from the beginning and end of the specified string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelims\fP Designated character(s) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Updated string where designated characters was removed from the beginning and end 
+.RE
+.PP
+
+.SS "auto ltrim (const std::vector< std::string > & delims) const \-> \fBWeakString\fP"
+
+.PP
+Removes all designated characters from the beginning of the specified string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelims\fP Designated character(s) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Updated string where designated characters was removed from the beginning 
+.RE
+.PP
+
+.SS "auto rtrim (const std::vector< std::string > & delims) const \-> \fBWeakString\fP"
+
+.PP
+Removes all designated characters from the end of the specified string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdelims\fP Designated character(s) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Updated string where designated characters was removed from the end 
+.RE
+.PP
+
+.SS "auto replace (const \fBWeakString\fP & before, const \fBWeakString\fP & after) const \-> std::string"
+
+.PP
+Replace portion of string once\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbefore\fP A specific word you want to be replaced 
+.br
+\fIafter\fP A specific word you want to replace 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string specific word is replaced once 
+.RE
+.PP
+
+.SS "auto replaceAll (const \fBWeakString\fP & before, const \fBWeakString\fP & after) const \-> std::string"
+
+.PP
+Returns a string specified word is replaced\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbefore\fP A specific word you want to be replaced 
+.br
+\fIafter\fP A specific word you want to replace 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string specified word is replaced 
+.RE
+.PP
+
+.SS "auto replaceAll (const std::vector< std::pair< std::string, std::string >> & pairs) const \-> std::string"
+
+.PP
+Returns a string specified words are replaced\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP Target string to replace 
+.br
+\fIpairs\fP A specific word's pairs you want to replace and to be replaced 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string specified words are replaced 
+.RE
+.PP
+
+.SS "auto toLowerCase () const \-> std::string"
+
+.PP
+Convert uppercase letters to lowercase\&. Returns a string that all uppercase characters are converted to lowercase\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIwstr\fP Target string to convert uppercase to lowercase 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string converted to lowercase 
+.RE
+.PP
+
+.SS "auto toUpperCase () const \-> std::string"
+
+.PP
+Convert uppercase letters to lowercase\&. Returns a string all lowercase characters are converted to uppercase\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP Target string to convert lowercase to uppercase 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string converted to uppercase 
+.RE
+.PP
+
+.SS "auto str () const \-> std::string"
+
+.PP
+Get the string content\&. Returns a string object with a copy of the current contents in the \fBWeakString\fP\&.
+.PP
+\fBReturns:\fP
+.RS 4
+A new string copied from the \fBWeakString\fP 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const size_t npos = \-1\fC [static]\fP"
+
+.PP
+Maximum value for size_t\&. npos is a static member constant value with the greatest possible value for an element of type size_t\&. 
+.PP
+This value, when used as the value for a len (or sublen) parameter in string's member functions, means 'until the end of the string'\&. As a return value, it is usually used to indicate no matches\&. 
+.PP
+This constant is defined with a value of -1, which because size_t is an unsigned integral type, it is the largest possible representable value for this type\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

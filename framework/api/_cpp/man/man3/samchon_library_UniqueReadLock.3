@@ -1,0 +1,166 @@
+.TH "UniqueReadLock" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+UniqueReadLock \- Unique lock for reading\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <UniqueReadLock\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUniqueReadLock\fP (const \fBRWMutex\fP &, bool=true)"
+.br
+.RI "\fIConstruct from mutex\&. \fP"
+.ti -1c
+.RI "\fBUniqueReadLock\fP (const \fBUniqueReadLock\fP &)=delete"
+.br
+.RI "\fIProhibited Copy Constructor\&. \fP"
+.ti -1c
+.RI "\fBUniqueReadLock\fP (\fBUniqueReadLock\fP &&)"
+.br
+.RI "\fIMove Constructor\&. \fP"
+.ti -1c
+.RI "\fB~UniqueReadLock\fP ()"
+.br
+.RI "\fIDefault Destructor\&. \fP"
+.ti -1c
+.RI "void \fBlock\fP () const "
+.br
+.RI "\fILock on read\&. \fP"
+.ti -1c
+.RI "void \fBunlock\fP () const "
+.br
+.RI "\fIUnlock of read\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const \fBRWMutex\fP * \fBmtx\fP"
+.br
+.RI "\fIManaged mutex\&. \fP"
+.ti -1c
+.RI "bool \fBisLocked\fP"
+.br
+.RI "\fIWhether the mutex was locked by UniqueLock\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Unique lock for reading\&. 
+
+A \fBUniqueAcquire\fP is an object manages a \fBRWMutex\fP with unique ownership in both states\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+locked 
+.IP "\(bu" 2
+unlocked
+.PP
+.PP
+On construction (or by move-assigning to it), the object locks a \fBRWMutex\fP object on reading side, for whose locking and unlocking operations becomes responsible\&. 
+.PP
+This class guarantees a unlocked status on destruction (even if not called explicitly)\&. Therefore it is especially useful as an object with automatic duration, as it guarantees the \fBRWMutex\fP object is properly unlocked in case an exception is thrown\&. 
+.PP
+Referenced comments of std::unique_lock 
+.PP
+.PD 0
+.IP "\(bu" 2
+http://www.cplusplus.com/reference/mutex/unique_lock/
+.PP
+ 
+.PP
+\fBNote:\fP
+.RS 4
+Though, that the \fBUniqueReadLock\fP object does not manage the lifetime of the \fBRWMutex\fP object in any way: the duration of the \fBRWMutex\fP object shall extend at least until the destruction of the \fBUniqueReadLock\fP that manages it\&.
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBUniqueReadLock\fP (const \fBRWMutex\fP & mtx, bool doLock = \fCtrue\fP)"
+
+.PP
+Construct from mutex\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImtx\fP Mutex to manage 
+.br
+\fIdoLock\fP Whether to lock directly or not 
+.RE
+.PP
+
+.SS "\fBUniqueReadLock\fP (const \fBUniqueReadLock\fP &)\fC [delete]\fP"
+
+.PP
+Prohibited Copy Constructor\&. \fBUniqueAcquire\fP can't be copied\&. Use pointer, reference instead\&. 
+.PP
+If what you want is UniqueAcquire(s) references each other and unlock when all related \fBUniqueAcquire\fP objects are destructed, \fBSharedAcquire\fP is the best way\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIobj\fP Tried object to copy\&. 
+.RE
+.PP
+
+.SS "\fBUniqueReadLock\fP (\fBUniqueReadLock\fP && obj)"
+
+.PP
+Move Constructor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIAn\fP object to move 
+.RE
+.PP
+
+.SS "~\fBUniqueReadLock\fP ()"
+
+.PP
+Default Destructor\&. If read lock has done by the UniqueLock, unlock it 
+.SH "Member Function Documentation"
+.PP 
+.SS "void lock () const"
+
+.PP
+Lock on read\&. Increases a reading count\&. 
+.PP
+When write_lock is on a progress, wait until write_unlock to be called\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Reading can be done by multiple sections\&. 
+.IP "\(bu" 2
+Reading can't be done when writing\&.
+.PP
+\fBWarning:\fP
+.RS 4
+You've to call read_unlock when the reading work is terminated\&. 
+.RE
+.PP
+
+.SS "void unlock () const"
+
+.PP
+Unlock of read\&. Decreases a reading count\&. 
+.PP
+When write_lock had done after read_lock, it continues by read_unlock if the reading count was 1 (read_unlock makes the count to be zero)\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

@@ -1,0 +1,219 @@
+.TH "Map< _Kty, _Ty, _Pr, _Alloc >" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Map< _Kty, _Ty, _Pr, _Alloc > \- \fBMap\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Map\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "auto \fBhas\fP (const _Kty &key) const  \-> bool"
+.br
+.RI "\fIWhether have the item or not\&. \fP"
+.ti -1c
+.RI "auto \fBget\fP (const _Kty &key) \-> _Ty &"
+.br
+.RI "\fIGet element\&. \fP"
+.ti -1c
+.RI "void \fBset\fP (const _Kty &key, const _Ty &val)"
+.br
+.RI "\fISet element\&. \fP"
+.ti -1c
+.RI "auto \fBpop\fP (const _Kty &key) \-> _Ty"
+.br
+.RI "\fIPop item\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<typename _Kty, typename _Ty, typename _Pr = std::less<_Kty>, typename _Alloc = std::allocator<std::pair<const _Kty, _Ty>>>class samchon::Map< _Kty, _Ty, _Pr, _Alloc >"
+\fBMap\fP\&. 
+
+\fBMap\fP is a std::map some methods are modified 
+.PP
+.PD 0
+.IP "\(bu" 2
+Addicted methods 
+.PD 0
+
+.IP "  \(bu" 4
+has(find(key) != end()) method is addicted  
+.IP "  \(bu" 4
+at method is addicted  
+.IP "  \(bu" 4
+set method is addicted  
+.IP "  \(bu" 4
+pop method is addicted  
+.PP
+
+.IP "\(bu" 2
+Modified methods 
+.PD 0
+
+.IP "  \(bu" 4
+at was depreciated (get is different with at)  
+.PP
+
+.PP
+.PP
+\fB[Inherited] \fP
+.RS 4
+
+.RE
+.PP
+Maps are associative containers that store elements formed by a combination of a key value and a mapped value, following a specific order\&. 
+.PP
+In a map, the key values are generally used to sort and uniquely identify the elements, while the mapped values store the content associated to this key\&. The types of key and mapped value may differ, and are grouped together in member type value_type, which is a pair type combining both: 
+.PP
+.PD 0
+.IP "\(bu" 2
+typedef pair<const Key, T> value_type;
+.PP
+.PP
+Internally, the elements in a map are always sorted by its key following a specific strict weak ordering criterion indicated by its internal comparison object (of type Compare)\&. 
+.PP
+map containers are generally slower than unordered_map containers to access individual elements by their key, but they allow the direct iteration on subsets based on their order\&. 
+.PP
+Maps are typically implemented as binary search trees\&. 
+.PP
+The mapped values in a map can be accessed directly by their corresponding key using the bracket operator ((operator[])\&. 
+.PP
+Maps are typically implemented as binary search trees\&. 
+.PP
+Referenced comments of std::map 
+.PD 0
+
+.IP "\(bu" 2
+http://www.cplusplus.com/reference/map/map/
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Kty\fP 
+.RE
+.PP
+Type of the keys\&. Each element in a map is uniquely identified by its key value\&. 
+.PP
+Aliased as member type map::key_type\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Ty\fP 
+.RE
+.PP
+Type of the mapped value\&. Each element in a map stores some data as its mapped value\&. 
+.PP
+Aliased as member type map::mapped_type\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Pr\fP 
+.RE
+.PP
+A binary predicate that takes two element keys as arguments and returns a bool\&. The expression comp(a,b), where comp is an object of this type and a and b are key values, shall return true if a is considered to go before b in the strict weak ordering the function defines\&. 
+.PP
+The map object uses this expression to determine both the order the elements follow in the container and whether two element keys are equivalent (by comparing them reflexively: they are equivalent if !comp(a,b) && !comp(b,a))\&. No two elements in a map container can have equivalent keys\&. 
+.PP
+This can be a function pointer or a function object\&. This defaults to std::less<T>, which returns the same as applying the less-than operator (a<b)\&. 
+.PP
+Aliased as member type map::key_compare\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Alloc\fP 
+.RE
+.PP
+Type of the allocator object used to define the storage allocation model\&. By default, the allocator class template is used, which defines the simplest memory allocation model and is value-independent\&. 
+.PP
+Aliased as member type map::allocator_type\&. 
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto has (const _Kty & key) const \-> bool
+		\fC [inline]\fP"
+
+.PP
+Whether have the item or not\&. Indicates whether a map has an item having the specified identifier\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP Key value of the element whose mapped value is accessed\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Whether the map has an item having the specified identifier 
+.RE
+.PP
+
+.SS "auto get (const _Kty & key) \-> _Ty&
+		\fC [inline]\fP"
+
+.PP
+Get element\&. Returns a reference to the mapped value of the element identified with key
+.PP
+\fBWarning:\fP
+.RS 4
+get is different with std::map's at\&. get does not create object but throws excention if the matched key doesn't exist\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP Key value of the element whose mapped value is accessed\&. 
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIexception\fP out of range 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A reference object of the mapped value (_Ty) 
+.RE
+.PP
+
+.SS "void set (const _Kty & key, const _Ty & val)\fC [inline]\fP"
+
+.PP
+Set element\&. Set an item as the specified identifier\&. 
+.PP
+If the identifier is already in map, change value of the identifier\&. 
+.br
+ If not, then insert the object with the identifier\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIkey\fP Key value of the element whose mapped value is accessed\&. 
+.br
+\fIval\fP Value, the item\&. 
+.RE
+.PP
+
+.SS "auto pop (const _Kty & key) \-> _Ty
+		\fC [inline]\fP"
+
+.PP
+Pop item\&. Removes an item having specified key and returns the removed element\&.
+.PP
+\fBReturns:\fP
+.RS 4
+An item released by pop 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

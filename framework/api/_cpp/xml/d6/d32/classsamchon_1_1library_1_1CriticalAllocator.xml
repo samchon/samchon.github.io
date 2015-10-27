@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator" kind="class" language="C++" prot="public">
+    <compoundname>samchon::library::CriticalAllocator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::allocator&lt; _Ty &gt;</basecompoundref>
+    <includes refid="d0/da7/CriticalAllocator_8hpp" local="no">CriticalAllocator.hpp</includes>
+    <innerclass refid="dd/df2/structsamchon_1_1library_1_1CriticalAllocator_1_1rebind" prot="public">samchon::library::CriticalAllocator::rebind</innerclass>
+    <templateparamlist>
+      <param>
+        <type>class _Ty</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1abc64dc326bfa7d26b2d2a03cf74429b4" prot="private" static="no">
+        <type>std::allocator&lt; _Ty &gt;</type>
+        <definition>typedef std::allocator&lt;_Ty&gt; super</definition>
+        <argsstring></argsstring>
+        <name>super</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="54" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a60615df8c23ca3f9f1a9bfd1dfdceaca" prot="private" static="no" mutable="no">
+        <type><ref refid="df/d85/classsamchon_1_1library_1_1RWMutex" kindref="compound">RWMutex</ref></type>
+        <definition>RWMutex mtx</definition>
+        <argsstring></argsstring>
+        <name>mtx</name>
+        <briefdescription>
+<para>A rw_mutex for handling concurrency. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="59" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a70dc434a7423a14e3801e9f730982ef8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto getMutex</definition>
+        <argsstring>() -&gt; RWMutex &amp;</argsstring>
+        <name>getMutex</name>
+        <briefdescription>
+<para>Get rw_mutex. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="75" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a3ad8c64cef01580efef285302cd4809e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto getMutex</definition>
+        <argsstring>() const  -&gt; const RWMutex &amp;</argsstring>
+        <name>getMutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="79" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1ab89287137d6086f913bc4c8881aaec41" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class _U</type>
+          </param>
+          <param>
+            <type>class...</type>
+            <declname>_Args</declname>
+            <defname>_Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void construct</definition>
+        <argsstring>(_U *ptr, _Args &amp;&amp;...args)</argsstring>
+        <name>construct</name>
+        <param>
+          <type>_U *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>_Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Lock when constructed.<linebreak/>
+ [Inherited] Construct an object.<linebreak/>
+. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title></title><para>Locks a mutex for concurrency when an elmented is constructed.</para></simplesect>
+<simplesect kind="par"><title>[Inherited] </title><para></para></simplesect>
+Constructs an element object on the location pointed by p. </para><para>Notice that this does not allocate space for the element. It should already be available at p (see member allocate to allocate space). </para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>_U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>_Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a location with enough storage space to contain an element of type _U. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments forwarded to the constructor.<linebreak/>
+ Args is a list of zero or more types. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="109" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="109" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a6bb26c897c31db2c620b4a52d34ecdf8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class _U</type>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void destroy</definition>
+        <argsstring>(_U *ptr)</argsstring>
+        <name>destroy</name>
+        <param>
+          <type>_U *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>Lock when destroyed<linebreak/>
+ [Inherited] Destory an object. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title></title><para>Locks a mutex for concurrency when an child is destroyed</para></simplesect>
+<simplesect kind="par"><title>[Inherited] </title><para></para></simplesect>
+Destroys in-place the object pointed by p. </para><para>Notice that this does not deallocate the storage for the element (see member deallocate to release storage space). </para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>_U</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the object to be destroyed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="134" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="134" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a5d37941dfd941c7802c6c44e23112865" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto allocate</definition>
+        <argsstring>(size_type n, std::allocator&lt; void &gt;::const_pointer hint=NULL) -&gt; pointer</argsstring>
+        <name>allocate</name>
+        <param>
+          <type>size_type</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::allocator&lt; void &gt;::const_pointer</type>
+          <declname>hint</declname>
+          <defval>NULL</defval>
+        </param>
+        <briefdescription>
+<para>Lock when allocated<linebreak/>
+ [Inherited] Allocate block of storage. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks a mutex for concurrency when children elements are deallocated. </para><para><simplesect kind="par"><title>[Inherited]</title><para></para></simplesect>
+Attempts to allocate a block of storage with a size large enough to contain n elements of member type value_type (an alias of the allocator&apos;s template parameter), and returns a pointer to the first element. </para><para>The storage is aligned appropriately for objects of type value_type, but they are not constructed. </para><para>In the standard default allocator, the block of storage is allocated using ::operator new one or more times, and throws bad_alloc if it cannot allocate the total amount of storage requested. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements (each of size sizeof(value_type)) to be allocated.<linebreak/>
+ The member type size_type is an alias of size_t (in the standard default allocator) size_t is an unsigned integral type. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>hint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Either 0 or a value previously obtained by another call to allocate and not yet freed with deallocate. When it is not 0, this value may be used as a hint to improve performance by allocating the new block near the one specified. The address of an adjacent element is often a good choice. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+<simplesect kind="par"><title>A pointer to the initial element in the block of storage.</title><para></para></simplesect>
+<simplesect kind="par"><title>pointer and const_pointer are member types (defined as aliases of T* and const T* respectively in std::allocator).</title><para></para></simplesect>
+<simplesect kind="par"><title>The standard default allocator throws bad_alloc if it cannot allocate the requested amount of storage.</title><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="173" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="173" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1aa967c877a16093a0447db172b3403bd7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void deallocate</definition>
+        <argsstring>(pointer ptr, size_type size)</argsstring>
+        <name>deallocate</name>
+        <param>
+          <type>pointer</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>size_type</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Lock when deallocated<linebreak/>
+ [Inherited] Release block of storage. </para>        </briefdescription>
+        <detaileddescription>
+<para>Locks a mutex for concurrency when children elements are deallocated. </para><para><simplesect kind="par"><title>[Inherited]</title><para></para></simplesect>
+Releases a block of storage previously allocated with member allocate and not yet released. </para><para>The elements in the array are not destroyed by a call to this member function. </para><para>In the default allocator, the block of storage is at some point deallocated using ::operator delete (either during the function call, or later). </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ptr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a block of storage previously allocated with allocator::allocate.<linebreak/>
+ pointer is a member type (defined as an alias of T* in std::allocator&lt;_Ty&gt;). </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of elements allocated on the call to allocator::allocate for this block of storage. The member type size_type is an alias of size_t (in the standard default allocator). size_t is an unsigned integral type. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="201" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="201" bodyend="206"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An allocator ensuring concurrency. </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator" kindref="compound">CriticalAllocator</ref> is a std::allocator ensuring concurrency. </para><para><ref refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator" kindref="compound">CriticalAllocator</ref> keeps safety in multi-threading environment automatically. But it ensures only safety. If a logic needs a mutual exclusion not only level of the container, it&apos;d better to avoid using the <ref refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator" kindref="compound">CriticalAllocator</ref> and use <ref refid="df/d85/classsamchon_1_1library_1_1RWMutex" kindref="compound">RWMutex</ref> by yourself. </para><para><simplesect kind="par"><title>[Inherited]]</title><para></para></simplesect>
+Allocators are classes that define memory models to be used by some parts of the Standard Library, and most specifically, by STL containers. </para><para>This section describes the default allocator template allocator (lowercase). This is the allocator that all standard containers will use if their last (and optional) template parameter is not specified, and is the only predefined allocator in the standard library. &lt;/p&lt;</para><para>Other allocators may be defined. Any class Alloc for which allocator_traits&lt;Alloc&gt; produces a valid instantiation with the appropriate members defined can be used as an allocator on standard containers (Alloc may or may not implement the functionality through member functions). &lt;/p&lt;</para><para>Except for its destructor, no member of the standard default allocator class template shall introduce data races. Calls to member functions that allocate or deallocate storage shall occur in a single total order, and each such deallocation shall happen before the next allocation (if any) in this order. </para><para>Technically, a memory model described by allocators might be specialized for each type of object to be allocated and even may store local data for each container they work with. Although this does not happen with the default allocator. </para><para>Referenced comments of std::allocator </para><para><itemizedlist>
+<listitem><para><ulink url="http://www.cplusplus.com/reference/memory/allocator/">http://www.cplusplus.com/reference/memory/allocator/</ulink></para></listitem>
+</itemizedlist>
+<image type="html" name="library_critical_section.png"></image>
+ <image type="latex" name="library_critical_section.png"></image>
+</para><para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>_Ty</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the elements allocated by the object (aliased as member type value_type).</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref> </para></simplesect>
+<simplesect kind="author"><para>Jeongho Nam </para></simplesect>
+</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="1112">
+        <label>CriticalAllocator&lt; _Ty &gt;</label>
+        <link refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator"/>
+        <childnode refid="1113" relation="usage">
+          <edgelabel>mtx</edgelabel>
+        </childnode>
+      </node>
+      <node id="1113">
+        <label>RWMutex</label>
+        <link refid="df/d85/classsamchon_1_1library_1_1RWMutex"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" line="52" column="1" bodyfile="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/CriticalAllocator.hpp" bodystart="50" bodyend="207"/>
+    <listofallmembers>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a5d37941dfd941c7802c6c44e23112865" prot="public" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>allocate</name></member>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1ab89287137d6086f913bc4c8881aaec41" prot="public" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>construct</name></member>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1aa967c877a16093a0447db172b3403bd7" prot="public" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>deallocate</name></member>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a6bb26c897c31db2c620b4a52d34ecdf8" prot="public" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>destroy</name></member>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a70dc434a7423a14e3801e9f730982ef8" prot="public" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>getMutex</name></member>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a3ad8c64cef01580efef285302cd4809e" prot="public" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>getMutex</name></member>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1a60615df8c23ca3f9f1a9bfd1dfdceaca" prot="private" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>mtx</name></member>
+      <member refid="d6/d32/classsamchon_1_1library_1_1CriticalAllocator_1abc64dc326bfa7d26b2d2a03cf74429b4" prot="private" virt="non-virtual"><scope>samchon::library::CriticalAllocator</scope><name>super</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

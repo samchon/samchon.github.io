@@ -1,0 +1,76 @@
+.TH "ExternalServerArray" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ExternalServerArray \- An array of ExternalServer(s)  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ExternalServerArray\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBstart\fP () override"
+.br
+.RI "\fIStart interaction\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+An array of ExternalServer(s) 
+
+\fBExternalServerArray\fP is an \fBExternalSystemArray\fP specialized in servers' driver\&. 
+.PP
+\fB[Inherited]\fP
+.RS 4
+
+.RE
+.PP
+\fBExternalSystemArray\fP is an abstract class containing and managing external system drivers\&. 
+.PP
+Also, \fBExternalSystemArray\fP can access to ExternalSystemRole(s) directly\&. With the method, you can use an \fBExternalSystemRole\fP as 'logical proxy' of an \fBExternalSystem\fP\&. Of course, the \fBExternalSystemRole\fP is belonged to an \fBExternalSystem\fP\&. However, if you access an \fBExternalSystemRole\fP from an \fBExternalSystemArray\fP directly, not passing by a belonged \fBExternalSystem\fP, and send an \fBInvoke\fP message even you're not knowing which \fBExternalSystem\fP is related in, the \fBExternalSystemRole\fP acted a role of proxy\&. 
+.PP
+It's called as 'Proxy pattern'\&. With the pattern, you can only concentrate on \fBExternalSystemRole\fP itself, what to do with \fBInvoke\fP message, irrespective of the \fBExternalSystemRole\fP is belonged to which \fBExternalSystem\fP\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+\fBExternalSystemArray::getRole\fP('something')->sendData(invoke);
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::protocol\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void start ()\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Start interaction\&. An abstract method starting interaction with external systems\&. 
+.PP
+If external systems are servers, starts connection to them, else clients, opens a server and accepts the external systems\&. You can addict your own procudures of starting drivers, but if you directly override method of abstract \fBExternalSystemArray\fP, be careful about virtual inheritance\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+DistributedClientArray::start() calls DistributedSystemArray::start() and \fBExternalClientArray\fP:\fBstart()\fP 
+.PP
+
+.PP
+Implements \fBExternalSystemArray\fP\&.
+.PP
+Reimplemented in \fBDistributedServerArrayMediator\fP, \fBParallelServerArrayMediator\fP, and \fBDistributedServerArray\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

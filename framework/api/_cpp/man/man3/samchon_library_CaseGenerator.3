@@ -1,0 +1,834 @@
+.TH "CaseGenerator" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CaseGenerator \- Case generator\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <CaseGenerator\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBCaseGenerator\fP (size_t \fBn\fP, size_t \fBr\fP)"
+.br
+.RI "\fIConstruct from size of N and R\&. \fP"
+.ti -1c
+.RI "auto \fBsize\fP () const  \-> size_t"
+.br
+.RI "\fIGet size of all cases\&. \fP"
+.ti -1c
+.RI "virtual auto \fBoperator[]\fP (size_t) const  \-> std::vector< size_t >=0"
+.br
+.RI "\fIGet x'th case\&. \fP"
+.ti -1c
+.RI "auto \fBat\fP (size_t) const  \-> std::vector< size_t >"
+.br
+.ti -1c
+.RI "auto \fBn\fP () const  \-> size_t"
+.br
+.RI "\fIGet size of the N\&. \fP"
+.ti -1c
+.RI "auto \fBr\fP () const  \-> size_t"
+.br
+.RI "\fIGet size of the R\&. \fP"
+.ti -1c
+.RI "auto \fBtoMatrix\fP () const  \-> std::vector< std::vector< size_t >>"
+.br
+.RI "\fICreate a matrix containing all cases\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "size_t \fBn_\fP"
+.br
+.RI "\fIN, size of the candidates\&. \fP"
+.ti -1c
+.RI "size_t \fBr_\fP"
+.br
+.RI "\fIR, size of elements of each case\&. \fP"
+.ti -1c
+.RI "size_t \fBsize_\fP"
+.br
+.RI "\fISize, the number of all cases\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Case generator\&. 
+
+An abstract case generator using like a matrix 
+.PP
+.PD 0
+.IP "\(bu" 2
+nTTr(n^r) -> \fBCombinedPermutationGenerator\fP 
+.IP "\(bu" 2
+nPr -> \fBPermutationGenerator\fP 
+.IP "\(bu" 2
+n! -> \fBFactorialGenerator\fP
+.PP
+.SS "Example source"
+.PP
+Packer - Find the best packaging solution 
+.PP
+ 
+.PP
+\fBexamples/packer/Packer\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <vector>
+3 #include <memory>
+4 #include <string>
+5 
+6 namespace samchon
+7 {
+8     namespace example
+9     {
+10         namespace packer
+11         {
+12             class WrapperArray;
+13             class Wrapper;
+14             class Product;
+15 
+32             class Packer
+33                 : public std::vector<std::shared_ptr<WrapperArray>>
+34             {
+35             private:
+36                 typedef std::vector<std::shared_ptr<WrapperArray>> super;
+37 
+41                 std::vector<Product> *productArray;
+42 
+46                 std::vector<Wrapper> *wrapperArray;
+47 
+48             public:
+49                 /* ---------------------------------------------------------
+50                     CONSTRUCTORS
+51                 --------------------------------------------------------- */
+58                 Packer(std::vector<Product> *, std::vector<Wrapper> *);
+59                 
+67                 Packer(const Packer &);
+68 
+69                 /* ---------------------------------------------------------
+70                     CALCULATE AND OPTIMIZE
+71                 --------------------------------------------------------- */
+75                 void optimize();
+76 
+80                 auto calcPrice() const -> int;
+81 
+82                 /* ---------------------------------------------------------
+83                     EXPORT
+84                 --------------------------------------------------------- */
+88                 auto toString() const -> std::string;
+89             };
+90         };
+91     };
+92 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/WrapperArray\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <vector>
+3 #include <memory>
+4 
+5 namespace samchon
+6 {
+7     namespace example
+8     {
+9         namespace packer
+10         {
+11             class Wrapper;
+12             class Product;
+13 
+26             class WrapperArray
+27                 : private std::vector<std::shared_ptr<Wrapper>>
+28             {
+29             private:
+30                 typedef std::vector<std::shared_ptr<Wrapper>> super;
+31 
+35                 std::vector<Product*> reserved;
+36 
+40                 Wrapper *sample;
+41 
+42             public:
+43                 /* ---------------------------------------------------------
+44                     CONSTRUCTORS
+45                 --------------------------------------------------------- */
+51                 WrapperArray(Wrapper *);
+52 
+63                 auto tryInsert(Product*) -> bool;
+64 
+65                 /* ---------------------------------------------------------
+66                     CALCULATE AND OPTIMIZE
+67                 --------------------------------------------------------- */
+83                 void optimize();
+84 
+89                 auto calcPrice() const -> int;
+90 
+91                 /* ---------------------------------------------------------
+92                     EXPORT
+93                 --------------------------------------------------------- */
+97                 auto toString() const -> std::string;
+98             };
+99         };
+100     };
+101 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/Wrapper\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <vector>
+3 #include "Instance\&.hpp"
+4 
+5 namespace samchon
+6 {
+7     namespace example
+8     {
+9         namespace packer
+10         {
+11             class Product;
+12 
+24             class Wrapper
+25                 : public Instance,
+26                 private std::vector<Product*>
+27             {
+28             private:
+29                 typedef Instance super;
+30 
+31             public:
+32                 /* ---------------------------------------------------------
+33                     CONSTRUCTORS
+34                 --------------------------------------------------------- */
+43                 Wrapper(const std::string &name, int price, int volume, int weight);
+44 
+49                 Wrapper(const Wrapper &wrapper);
+50                 virtual ~Wrapper() = default;
+51                 
+62                 auto tryInsert(Product *) -> bool;
+63 
+64                 /* ---------------------------------------------------------
+65                     EXPORT
+66                 --------------------------------------------------------- */
+73                 virtual auto toString() const -> std::string override;
+74             };
+75         };
+76     };
+77 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/Product\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include "Instance\&.hpp"
+3 
+4 namespace samchon
+5 {
+6     namespace example
+7     {
+8         namespace packer
+9         {
+21             class Product
+22                 : public Instance
+23             {
+24             private:
+25                 typedef Instance super;
+26 
+27             public:
+28                 /* ---------------------------------------------------------
+29                     CONSTRUCTOR
+30                 --------------------------------------------------------- */
+39                 Product(const std::string &name, int price, int volume, int weight);
+40                 virtual ~Product() = default;
+41 
+42                 /* ---------------------------------------------------------
+43                     EXPORT
+44                 --------------------------------------------------------- */
+48                 virtual auto toString() const -> std::string override;
+49             };
+50         };
+51     };
+52 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/Instance\&.hpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include <string>
+3 
+4 namespace samchon
+5 {
+6     namespace example
+7     {
+8         namespace packer
+9         {
+21             class Instance
+22             {
+23             protected:
+27                 std::string name;
+28 
+32                 int price;
+33 
+37                 int volume;
+38 
+42                 int weight;
+43 
+44             public:
+45                 /* ---------------------------------------------------------
+46                     CONSTRUCTORS
+47                 --------------------------------------------------------- */
+56                 Instance(const std::string &name, int price, int volume, int weight);
+57                 virtual ~Instance() = default;
+58 
+59                 /* ---------------------------------------------------------
+60                     GETTERS
+61                 --------------------------------------------------------- */
+65                 auto getName() const -> std::string;
+66 
+70                 auto getPrice() const -> int;
+71 
+75                 auto getVolume() const -> int;
+76 
+80                 auto getWeight() const -> int;
+81 
+82                 /* ---------------------------------------------------------
+83                     EXPORT
+84                 --------------------------------------------------------- */
+88                 virtual auto toString() const -> std::string;
+89             };
+90         };
+91     };
+92 };
+
+.fi
+.PP
+.RE
+.PP
+\fBexamples/packer/main\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include <iostream>
+2 #include <vector>
+3 
+4 #include "Packer\&.hpp"
+5 #   include "Product\&.hpp"
+6 #   include "Wrapper\&.hpp"
+7 
+8 #ifdef _WIN64
+9 #   ifdef _DEBUG
+10 #       pragma comment(lib, "x64/Debug/SamchonFramework\&.lib")
+11 #   else
+12 #       pragma comment(lib, "x64/Release/SamchonFramework\&.lib")
+13 #   endif
+14 #else
+15 #   ifdef _DEBUG
+16 #       pragma comment(lib, "Debug/SamchonFramework\&.lib")
+17 #   else
+18 #       pragma comment(lib, "Release/SamchonFramework\&.lib")
+19 #   endif
+20 #endif
+21 
+22 using namespace std;
+23 using namespace samchon::example::packer;
+24 
+25 void main()
+26 {
+27     vector<Product> productArray =
+28     {
+29         
+30         Product("Eraser", 500, 10, 70),
+31         Product("Pencil", 400, 30, 35),
+32         Product("Pencil", 400, 30, 35),
+33         Product("Pencil", 400, 30, 35),
+34         Product("Book", 8000, 150, 300),
+35         Product("Book", 8000, 150, 300),
+36         Product("Drink", 1000, 75, 250),
+37         Product("Umbrella", 4000, 200, 1000),
+38         Product("Notebook-PC", 800000, 150, 850),
+39         Product("Tablet-PC", 600000, 120, 450)
+40     };
+41     vector<Wrapper> wrapperArray =
+42     {
+43         Wrapper("Large", 100, 200, 1000),
+44         Wrapper("Medium", 70, 150, 500),
+45         Wrapper("Small", 50, 100, 250)
+46     };
+47 
+48     Packer packer(&productArray, &wrapperArray);
+49     packer\&.optimize();
+50 
+51     cout << packer\&.toString() << endl;
+52     system("pause");
+53 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/Packer\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "Packer\&.hpp"
+2 
+3 #include "WrapperArray\&.hpp"
+4 #include "Wrapper\&.hpp"
+5 #include "Product\&.hpp"
+6 
+7 #include <samchon/library/CombinedPermutationGenerator\&.hpp>
+8 
+9 using namespace std;
+10 using namespace samchon::library;
+11 using namespace samchon::example::packer;
+12 
+13 Packer::Packer(vector<Product> *productArray, vector<Wrapper> *wrapperArray)
+14     : super()
+15 {
+16     this->productArray = productArray;
+17     this->wrapperArray = wrapperArray;
+18 
+19     for(size_t i = 0; i < wrapperArray->size(); i++)
+20         emplace_back(new WrapperArray(&wrapperArray->at(i)));
+21 }
+22 Packer::Packer(const Packer &packer)
+23     : Packer(packer\&.productArray, packer\&.wrapperArray)
+24 {
+25 }
+26 
+27 /* ---------------------------------------------------------
+28     CALCULATE AND OPTIMIZE
+29 --------------------------------------------------------- */
+30 void Packer::optimize()
+31 {
+32     if(empty() == true || productArray->empty() == true)
+33         return;
+34 
+35     CombinedPermutationGenerator caseGenerator(size(), productArray->size());
+36     shared_ptr<Packer> minPacker = nullptr;
+37     
+38     for (size_t i = 0; i < caseGenerator\&.size(); i++)
+39     {
+40         vector<size_t> &row = caseGenerator[i];
+41         shared_ptr<Packer> packer(new Packer(*this));
+42         bool validity = true;
+43 
+44         for (size_t j = 0; j < row\&.size(); j++)
+45         {
+46             Product *product = &productArray->at(j);
+47             shared_ptr<WrapperArray> &wrapperArray = packer->at( row[j] );
+48 
+49             if (wrapperArray->tryInsert(product) == false)
+50             {
+51                 validity = false;
+52                 break;
+53             }
+54         }
+55 
+56         if(validity == false)
+57             continue;
+58 
+59         //OPTIMIZE ALL WRAPPERS IN A PACKER
+60         for (size_t j = 0; j < packer->size(); j++)
+61             packer->at(j)->optimize();
+62 
+63         if (minPacker == nullptr ||
+64             packer->calcPrice() < minPacker->calcPrice())
+65         {
+66             minPacker = packer;
+67         }
+68     }
+69 
+70     //COPY
+71     assign(minPacker->begin(), minPacker->end());
+72 }
+73 auto Packer::calcPrice() const -> int
+74 {
+75     int price = 0;
+76     for (size_t i = 0; i < size(); i++)
+77         price += at(i)->calcPrice();
+78 
+79     return price;
+80 }
+81 
+82 /* ---------------------------------------------------------
+83     EXPORT
+84 --------------------------------------------------------- */
+85 auto Packer::toString() const -> string
+86 {
+87     string str = "$" + to_string(calcPrice()) + "\n";
+88     for (int i = 0; i < size(); i++)
+89         str += at(i)->toString() + "\n";
+90 
+91     return move(str);
+92 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/WrapperArray\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "WrapperArray\&.hpp"
+2 #   include "Wrapper\&.hpp"
+3 #   include "Product\&.hpp"
+4 
+5 #include <samchon/library/FactorialGenerator\&.hpp>
+6 #include <mutex>
+7 
+8 using namespace std;
+9 using namespace samchon::library;
+10 using namespace samchon::example::packer;
+11 
+12 /* ---------------------------------------------------------
+13     CONSTRUCTOR
+14 --------------------------------------------------------- */
+15 WrapperArray::WrapperArray(Wrapper *sample)
+16     : super()
+17 {
+18     this->sample = sample;
+19 }
+20 
+21 /* ---------------------------------------------------------
+22     CALCULATE AND OPTIMIZE
+23 --------------------------------------------------------- */
+24 auto WrapperArray::tryInsert(Product *product) -> bool
+25 {
+26     if (product->getVolume() > sample->getVolume() ||
+27         product->getWeight() > sample->getWeight())
+28     {
+29         return false;
+30     }
+31     
+32     reserved\&.push_back(product);
+33     return true;
+34 }
+35 void WrapperArray::optimize()
+36 {
+37     if(reserved\&.empty() == true)
+38         return;
+39     
+40     FactorialGenerator factorial(reserved\&.size());
+41     shared_ptr<WrapperArray> minWrapperArray = nullptr;
+42     
+43     mutex mtx;
+44 
+45     //#pragma omp parallel for
+46     for (int i = 0; i < factorial\&.size(); i++)
+47     {
+48         shared_ptr<WrapperArray> wrapperArray(new WrapperArray(this->sample));
+49         vector<size_t> &row = factorial[i];
+50 
+51         for (size_t j = 0; j < row\&.size(); j++)
+52         {
+53             Product *product = this->reserved[row[j]];
+54             
+55             if (wrapperArray->empty() == true || 
+56                 wrapperArray->at(wrapperArray->size() - 1)->tryInsert(product) == false)
+57             {
+58                 Wrapper *wrapper = new Wrapper(*this->sample);
+59                 wrapper->tryInsert(product);
+60 
+61                 wrapperArray->emplace_back(wrapper);
+62             }
+63         }
+64         
+65         //unique_lock<mutex> uk(mtx);
+66         if (minWrapperArray == nullptr ||
+67             wrapperArray->size() < minWrapperArray->size())
+68         {
+69             minWrapperArray = wrapperArray;
+70         }
+71     }
+72 
+73     assign(minWrapperArray->begin(), minWrapperArray->end());
+74 }
+75 auto WrapperArray::calcPrice() const -> int
+76 {
+77     return sample->getPrice() * (int)size();
+78 }
+79 
+80 /* ---------------------------------------------------------
+81     EXPORT
+82 --------------------------------------------------------- */
+83 auto WrapperArray::toString() const -> string
+84 {
+85     string str = "Category - " + sample->getName() + "\n";
+86     for (size_t i = 0; i < size(); i++)
+87         str += at(i)->toString() + "\n";
+88 
+89     return move(str);
+90 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/Wrapper\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "Wrapper\&.hpp"
+2 #   include "Product\&.hpp"
+3 
+4 using namespace std;
+5 using namespace samchon::example::packer;
+6 
+7 /* ---------------------------------------------------------
+8     CONSTRUCTORS
+9 --------------------------------------------------------- */
+10 Wrapper::Wrapper(const string &name, int price, int volume, int weight)
+11     : super(name, price, volume, weight),
+12     vector<Product*>()
+13 {
+14 }
+15 Wrapper::Wrapper(const Wrapper &wrapper)
+16     : super(wrapper),
+17     vector<Product*>()
+18 {
+19 }
+20 
+21 auto Wrapper::tryInsert(Product *product) -> bool
+22 {
+23     int volume = 0;
+24     int weight = 0;
+25 
+26     for (size_t i = 0; i < size(); i++)
+27     {
+28         volume += at(i)->getVolume();
+29         weight += at(i)->getWeight();
+30     }
+31 
+32     if (product->getVolume() + volume > this->volume || 
+33         product->getWeight() + weight > this->weight)
+34     {
+35         return false;
+36     }
+37 
+38     push_back(product);
+39     return true;
+40 }
+41 
+42 /* ---------------------------------------------------------
+43     EXPORT
+44 --------------------------------------------------------- */
+45 auto Wrapper::toString() const -> string
+46 {
+47     string str = "\tWrapper " + super::toString() + "\n";
+48     for (size_t i = 0; i < size(); i++)
+49         str += "\t\t" + at(i)->toString() + ((i == size() - 1) ? "" : "\n");
+50 
+51     return move(str);
+52 };
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/Product\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #pragma once
+2 #include "Product\&.hpp"
+3 
+4 using namespace std;
+5 using namespace samchon::example::packer;
+6 
+7 Product::Product(const string &name, int price, int volume, int weight)
+8     : super(name, price, volume, weight)
+9 {
+10 }
+11 auto Product::toString() const -> string
+12 {
+13     return "Product " + super::toString();
+14 }
+
+.fi
+.PP
+ 
+.RE
+.PP
+\fBexamples/packer/Instance\&.cpp\fP
+.RS 4
+
+.PP
+.nf
+1 #include "Instance\&.hpp"
+2 
+3 #include <samchon/library/StringUtil\&.hpp>
+4 
+5 using namespace std;
+6 using namespace samchon::library;
+7 using namespace samchon::example::packer;
+8 
+9 /* ---------------------------------------------------------
+10     CONSTRUCTORS
+11 --------------------------------------------------------- */
+12 Instance::Instance(const string &name, int price, int volume, int weight)
+13 {
+14     this->name = name;
+15     this->price = price;
+16     this->volume = volume;
+17     this->weight = weight;
+18 }
+19 
+20 /* ---------------------------------------------------------
+21     GETTERS
+22 --------------------------------------------------------- */
+23 auto Instance::getName() const -> string
+24 {
+25     return name;
+26 }
+27 auto Instance::getPrice() const -> int
+28 {
+29     return price;
+30 }
+31 auto Instance::getVolume() const -> int
+32 {
+33     return volume;
+34 }
+35 auto Instance::getWeight() const -> int
+36 {
+37     return weight;
+38 }
+39 
+40 /* ---------------------------------------------------------
+41     EXPORT
+42 --------------------------------------------------------- */
+43 auto Instance::toString() const -> string
+44 {
+45     return StringUtil::substitute
+46         (
+47             "{1}: ${2}, {3}cm^3, {4}g",
+48             name, price, volume, weight
+49         );
+50 }
+
+.fi
+.PP
+.RE
+.PP
+.SS "Result of the example "
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBCaseGenerator\fP (size_t n, size_t r)"
+
+.PP
+Construct from size of N and R\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP Size of candidates 
+.br
+\fIr\fP Size of elements of each case 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto size () const \-> size_t"
+
+.PP
+Get size of all cases\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Get a number of the all cases 
+.RE
+.PP
+
+.SS "virtual auto operator[] (size_t) const \->  std::vector< size_t >\fC [pure virtual]\fP"
+
+.PP
+Get x'th case\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The row of the x'th in combined permuation case 
+.RE
+.PP
+
+.PP
+Implemented in \fBCombinedPermutationGenerator\fP, and \fBPermutationGenerator\fP\&.
+.SS "auto at (size_t index) const \-> std::vector<size_t>"
+\fBCaseGenerator::operator[]()\fP 
+.SS "auto toMatrix () const \-> std::vector<std::vector<size_t>>"
+
+.PP
+Create a matrix containing all cases\&. 
+.PP
+\fBWarning:\fP
+.RS 4
+Size of n or r is enourmouse, then stack overflow can be occured\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A matrix containing all cases\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

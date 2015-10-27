@@ -1,0 +1,100 @@
+.TH "NTParameterArray" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+NTParameterArray \- An Array of \fBNTParameter\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <NTParameterArray\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBTAG\fP () const  \-> std::string override"
+.br
+.RI "\fIA tag name when represented by XML\&. \fP"
+.ti -1c
+.RI "virtual auto \fBCHILD_TAG\fP () const  \-> std::string override"
+.br
+.RI "\fIA tag name of children\&. \fP"
+.ti -1c
+.RI "\fBNTParameterArray\fP ()"
+.br
+.RI "\fIDefault Constructor\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBcreateChild\fP (std::shared_ptr< \fBlibrary::XML\fP >) \-> \fBNTParameter\fP *override"
+.br
+.RI "\fIFactory method of a child Entity\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An Array of \fBNTParameter\fP\&. 
+
+\fBNTParameterArray\fP is an array class containing \fBNTParameter\fP objects\&. 
+.PP
+The \fBNTParameter\fP is belonged to a \fBNTFile\fP class to realize associate relationship between \fBNTFile\fP and NTParameter(s)\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::namtree\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto TAG () const \->  std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name when represented by XML\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A tag name 
+.RE
+.PP
+
+.PP
+Implements \fBEntity\fP\&.
+.SS "auto CHILD_TAG () const \->  std::string\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+A tag name of children\&. < TAG>
+.br
+      <CHILD_TAG />
+.br
+      <CHILD_TAG />
+.br
+ </TAG> 
+.PP
+Implements \fBIEntityGroup\fP\&.
+.SS "auto createChild (std::shared_ptr< \fBlibrary::XML\fP >) \->  \fBNTParameter\fP *override\fC [override]\fP, \fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Factory method of a child Entity\&. EntityGroup::createChild() is a factory method creating a new child Entity which is belonged to the EntityGroup\&. This method is called by EntityGroup::construct()\&. The children construction methods Entity::construct() will be called by abstract method of the EntityGroup::construct()\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A new child Entity belongs to EntityGroup\&. 
+.RE
+.PP
+
+.PP
+Implements \fBEntityGroup< _Container, _ETy, _Ty >\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

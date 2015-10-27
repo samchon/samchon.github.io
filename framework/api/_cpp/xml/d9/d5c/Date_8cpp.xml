@@ -1,0 +1,1410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d9/d5c/Date_8cpp" kind="file" language="C++">
+    <compoundname>Date.cpp</compoundname>
+    <includes refid="d1/dcc/Date_8hpp" local="no">samchon/library/Date.hpp</includes>
+    <includes local="no">array</includes>
+    <includes refid="d8/d3d/WeakString_8hpp" local="no">samchon/WeakString.hpp</includes>
+    <includes refid="de/d86/StringUtil_8hpp" local="no">samchon/library/StringUtil.hpp</includes>
+    <incdepgraph>
+      <node id="1090">
+        <label>samchon/library/IOperator.hpp</label>
+        <link refid="dc/d77/IOperator_8hpp_source"/>
+        <childnode refid="1089" relation="include">
+        </childnode>
+      </node>
+      <node id="1100">
+        <label>samchon/library/Math.hpp</label>
+        <link refid="d8/df1/Math_8hpp_source"/>
+        <childnode refid="1089" relation="include">
+        </childnode>
+        <childnode refid="1101" relation="include">
+        </childnode>
+        <childnode refid="1094" relation="include">
+        </childnode>
+      </node>
+      <node id="1091">
+        <label>string</label>
+      </node>
+      <node id="1101">
+        <label>map</label>
+      </node>
+      <node id="1089">
+        <label>samchon/API.hpp</label>
+        <link refid="d9/d8f/API_8hpp_source"/>
+      </node>
+      <node id="1093">
+        <label>vector</label>
+      </node>
+      <node id="1095">
+        <label>utility</label>
+      </node>
+      <node id="1097">
+        <label>array</label>
+      </node>
+      <node id="1088">
+        <label>samchon/library/Date.hpp</label>
+        <link refid="d1/dcc/Date_8hpp_source"/>
+        <childnode refid="1089" relation="include">
+        </childnode>
+        <childnode refid="1090" relation="include">
+        </childnode>
+        <childnode refid="1091" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1096" relation="include">
+        </childnode>
+      </node>
+      <node id="1099">
+        <label>sstream</label>
+      </node>
+      <node id="1094">
+        <label>samchon/IndexPair.hpp</label>
+        <link refid="d9/ded/IndexPair_8hpp_source"/>
+        <childnode refid="1095" relation="include">
+        </childnode>
+      </node>
+      <node id="1098">
+        <label>samchon/library/StringUtil.hpp</label>
+        <link refid="de/d86/StringUtil_8hpp_source"/>
+        <childnode refid="1089" relation="include">
+        </childnode>
+        <childnode refid="1091" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1099" relation="include">
+        </childnode>
+        <childnode refid="1094" relation="include">
+        </childnode>
+        <childnode refid="1100" relation="include">
+        </childnode>
+      </node>
+      <node id="1096">
+        <label>chrono</label>
+      </node>
+      <node id="1087">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/Date.cpp</label>
+        <link refid="Date.cpp"/>
+        <childnode refid="1088" relation="include">
+        </childnode>
+        <childnode refid="1097" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1098" relation="include">
+        </childnode>
+      </node>
+      <node id="1092">
+        <label>samchon/WeakString.hpp</label>
+        <link refid="d8/d3d/WeakString_8hpp_source"/>
+        <childnode refid="1089" relation="include">
+        </childnode>
+        <childnode refid="1090" relation="include">
+        </childnode>
+        <childnode refid="1091" relation="include">
+        </childnode>
+        <childnode refid="1093" relation="include">
+        </childnode>
+        <childnode refid="1094" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;samchon/library/Date.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;array&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/WeakString.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;samchon/library/StringUtil.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="db/df1/namespacesamchon" kindref="compound">samchon</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dd4/namespacesamchon_1_1library" kindref="compound">samchon::library</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">chrono::system_clock::time_point<sp/>Date::TP_1970<sp/>=<sp/>chrono::system_clock::from_time_t(0);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">--------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//CONSTRUCTORS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">Date::Date()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super()</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//:<sp/>super(chrono::system_clock::now())</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">Date::Date(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>super<sp/>&amp;date)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(date)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">Date::Date(super<sp/>&amp;&amp;date)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(move(date))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal">Date::Date(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>date)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>set(year,<sp/>month,<sp/>date);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">Date::Date(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/de4/classsamchon_1_1WeakString" kindref="compound">WeakString</ref><sp/>&amp;wStr)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>set(wStr);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">Date::Date(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>linuxTime)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(chrono::system_clock::from_time_t(linuxTime))</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//SEMI-CONSTRUCTORS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::set(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="d8/de4/classsamchon_1_1WeakString" kindref="compound">WeakString</ref><sp/>&amp;wStr)</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="d8/de4/classsamchon_1_1WeakString" kindref="compound">WeakString</ref><sp/>val<sp/>=<sp/>wStr.<ref refid="d8/de4/classsamchon_1_1WeakString_1a275cf101177b195684cd178c5029991b" kindref="member">trim</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year,<sp/>month,<sp/>date;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//시분초까지 있을<sp/>때</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(val.<ref refid="d8/de4/classsamchon_1_1WeakString_1ab7a19c8185f7bd25ae66442151e5bbf2" kindref="member">find</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">)<sp/>!=<sp/>std::string::npos)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>val<sp/>=<sp/>val.<ref refid="d8/de4/classsamchon_1_1WeakString_1add086e67e45d8f9c4aa5adfa2b093c2a" kindref="member">between</ref>(std::string(),<sp/></highlight><highlight class="stringliteral">&quot;<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//년월일 설정</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;WeakString&gt;<sp/>&amp;ymdVec<sp/>=<sp/>val.<ref refid="d8/de4/classsamchon_1_1WeakString_1abaaeec30466e397791dcc467006fed40" kindref="member">split</ref>(</highlight><highlight class="stringliteral">&quot;-&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>year<sp/>=<sp/>stoi(ymdVec[0].str());</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>month<sp/>=<sp/>stoi(ymdVec[1].str());</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>date<sp/>=<sp/>stoi(ymdVec[2].str());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>set(year,<sp/>month,<sp/>date);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::set(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>date)<sp/></highlight><highlight class="comment">//날짜,<sp/>시간<sp/>설정</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(month<sp/>&gt;<sp/>12)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>invalid_argument(</highlight><highlight class="stringliteral">&quot;month<sp/>is<sp/>over<sp/>12&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(date<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>invalid_argument(</highlight><highlight class="stringliteral">&quot;date<sp/>is<sp/>over<sp/>expiration<sp/>date&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>linuxTime<sp/>=<sp/>calcSeconds(year,<sp/>month,<sp/>date);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>set(linuxTime);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::set(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>linuxTime)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;operator-=(chrono::seconds(toLinuxTime()));</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;operator+=(chrono::seconds(linuxTime));</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/>HIDDEN<sp/>METHODS</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">--------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Date::calcLastDates(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year)<sp/>-&gt;<sp/>array&lt;int,<sp/>12&gt;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Last<sp/>dates<sp/>of<sp/>each<sp/>month</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>array&lt;int,<sp/>12&gt;<sp/>monthArray<sp/>=<sp/>{<sp/>31,<sp/>28,<sp/>31,<sp/>30,<sp/>31,<sp/>30,<sp/>31,<sp/>31,<sp/>30,<sp/>31,<sp/>30,<sp/>31<sp/>};</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//When<sp/>the<sp/>year<sp/>contains<sp/>leaf<sp/>month,<sp/>then<sp/>make<sp/>expiration<sp/>date<sp/>of<sp/>Feburary<sp/>to<sp/>29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(year<sp/>%<sp/>4<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(year<sp/>%<sp/>100<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>year<sp/>%<sp/>400<sp/>!=<sp/>0))</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>monthArray[1]<sp/>=<sp/>29;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>move(monthArray);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>Date::calcSeconds(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>date)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>total;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//연,<sp/>월,<sp/>일의<sp/>총<sp/>일수 <sp/><sp/><sp/>total<sp/>=<sp/>(year<sp/>-<sp/>1)<sp/>*<sp/>365<sp/>+<sp/>((year<sp/>-<sp/>1)<sp/>/<sp/>4)<sp/>-<sp/>((year<sp/>-<sp/>1)<sp/>/<sp/>100)<sp/>+<sp/>((year<sp/>-<sp/>1)<sp/>/<sp/>400);
+
+<sp/><sp/><sp/><sp/>//달수만큼<sp/>날자를<sp/>더함
+<sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>month<sp/>-<sp/>1;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>total<sp/>+=<sp/>monthArray[i];
+<sp/><sp/><sp/><sp/>total<sp/>+=<sp/>date;
+
+<sp/><sp/><sp/><sp/>//일자에<sp/>3,600을<sp/>곱한다
+<sp/><sp/>total<sp/>=<sp/>(total<sp/>*<sp/>24<sp/>*<sp/>60<sp/>*<sp/>60);
+<sp/><sp/><sp/><sp/>return<sp/>total;
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/>SETTERS<sp/>OF<sp/>EACH<sp/>COMPONENT
+--------------------------------------------------------------------------<sp/>*/
+//SET<sp/>METHODS
+void<sp/>Date::setYear(int<sp/>year)
+{
+<sp/><sp/><sp/>int<sp/>month<sp/>=<sp/>getMonth();
+<sp/><sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>//윤달에<sp/>29일인데<sp/>addYear을<sp/>하려는 경우
+<sp/><sp/>if
+<sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>newDate<sp/>==<sp/>29<sp/>//현재가<sp/>윤달 29일
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>year<sp/>==<sp/>4<sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!((year<sp/>%<sp/>100<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>year<sp/>%<sp/>400<sp/>!=<sp/>0))
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>//바꿀 연도의<sp/>2월은<sp/>윤달이 아님
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>)
+<sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>28;
+
+<sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setMonth(int<sp/>month)
+{
+<sp/><sp/>if<sp/>(month<sp/>&gt;<sp/>12)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>invalid_argument(&quot;month<sp/>is<sp/>over<sp/>12&quot;);
+
+<sp/><sp/><sp/>//달력
+<sp/><sp/><sp/>int<sp/>year<sp/>=<sp/>getYear();
+<sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];
+
+<sp/><sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setDate(int<sp/>val)
+{
+<sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/>
+}
+
+//ADD<sp/>METHODS
+void<sp/>Date::addYear(int<sp/>val)
+{
+<sp/><sp/><sp/>//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함
+<sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);
+}
+void<sp/>Date::addMonth(int<sp/>val)
+{
+<sp/>//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다
+<sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>total<sp/>=<sp/>(year<sp/>-<sp/>1)<sp/>*<sp/>365<sp/>+<sp/>((year<sp/>-<sp/>1)<sp/>/<sp/>4)<sp/>-<sp/>((year<sp/>-<sp/>1)<sp/>/<sp/>100)<sp/>+<sp/>((year<sp/>-<sp/>1)<sp/>/<sp/>400);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//달수만큼<sp/>날자를<sp/>더함 <sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>month<sp/>-<sp/>1;<sp/>i++)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>total<sp/>+=<sp/>monthArray[i];
+<sp/><sp/><sp/><sp/>total<sp/>+=<sp/>date;
+
+<sp/><sp/><sp/><sp/>//일자에<sp/>3,600을<sp/>곱한다
+<sp/><sp/>total<sp/>=<sp/>(total<sp/>*<sp/>24<sp/>*<sp/>60<sp/>*<sp/>60);
+<sp/><sp/><sp/><sp/>return<sp/>total;
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/>SETTERS<sp/>OF<sp/>EACH<sp/>COMPONENT
+--------------------------------------------------------------------------<sp/>*/
+//SET<sp/>METHODS
+void<sp/>Date::setYear(int<sp/>year)
+{
+<sp/><sp/><sp/>int<sp/>month<sp/>=<sp/>getMonth();
+<sp/><sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>//윤달에<sp/>29일인데<sp/>addYear을<sp/>하려는 경우
+<sp/><sp/>if
+<sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>newDate<sp/>==<sp/>29<sp/>//현재가<sp/>윤달 29일
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>year<sp/>==<sp/>4<sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!((year<sp/>%<sp/>100<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>year<sp/>%<sp/>400<sp/>!=<sp/>0))
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>//바꿀 연도의<sp/>2월은<sp/>윤달이 아님
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>)
+<sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>28;
+
+<sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setMonth(int<sp/>month)
+{
+<sp/><sp/>if<sp/>(month<sp/>&gt;<sp/>12)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>invalid_argument(&quot;month<sp/>is<sp/>over<sp/>12&quot;);
+
+<sp/><sp/><sp/>//달력
+<sp/><sp/><sp/>int<sp/>year<sp/>=<sp/>getYear();
+<sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];
+
+<sp/><sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setDate(int<sp/>val)
+{
+<sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/>
+}
+
+//ADD<sp/>METHODS
+void<sp/>Date::addYear(int<sp/>val)
+{
+<sp/><sp/><sp/>//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함
+<sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);
+}
+void<sp/>Date::addMonth(int<sp/>val)
+{
+<sp/>//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다
+<sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>month<sp/>-<sp/>1;<sp/>i++)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>total<sp/>+=<sp/>monthArray[i];</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>total<sp/>+=<sp/>date;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//일자에<sp/>3,600을<sp/>곱한다 <sp/><sp/>total<sp/>=<sp/>(total<sp/>*<sp/>24<sp/>*<sp/>60<sp/>*<sp/>60);
+<sp/><sp/><sp/><sp/>return<sp/>total;
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/>SETTERS<sp/>OF<sp/>EACH<sp/>COMPONENT
+--------------------------------------------------------------------------<sp/>*/
+//SET<sp/>METHODS
+void<sp/>Date::setYear(int<sp/>year)
+{
+<sp/><sp/><sp/>int<sp/>month<sp/>=<sp/>getMonth();
+<sp/><sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>//윤달에<sp/>29일인데<sp/>addYear을<sp/>하려는 경우
+<sp/><sp/>if
+<sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>newDate<sp/>==<sp/>29<sp/>//현재가<sp/>윤달 29일
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>year<sp/>==<sp/>4<sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!((year<sp/>%<sp/>100<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>year<sp/>%<sp/>400<sp/>!=<sp/>0))
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>//바꿀 연도의<sp/>2월은<sp/>윤달이 아님
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>)
+<sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>28;
+
+<sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setMonth(int<sp/>month)
+{
+<sp/><sp/>if<sp/>(month<sp/>&gt;<sp/>12)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>invalid_argument(&quot;month<sp/>is<sp/>over<sp/>12&quot;);
+
+<sp/><sp/><sp/>//달력
+<sp/><sp/><sp/>int<sp/>year<sp/>=<sp/>getYear();
+<sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];
+
+<sp/><sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setDate(int<sp/>val)
+{
+<sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/>
+}
+
+//ADD<sp/>METHODS
+void<sp/>Date::addYear(int<sp/>val)
+{
+<sp/><sp/><sp/>//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함
+<sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);
+}
+void<sp/>Date::addMonth(int<sp/>val)
+{
+<sp/>//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다
+<sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>total<sp/>=<sp/>(total<sp/>*<sp/>24<sp/>*<sp/>60<sp/>*<sp/>60);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>total;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/>SETTERS<sp/>OF<sp/>EACH<sp/>COMPONENT</highlight></codeline>
+<codeline lineno="117"><highlight class="comment">--------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">//SET<sp/>METHODS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::setYear(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month<sp/>=<sp/>getMonth();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newDate<sp/>=<sp/>getDate();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//윤달에<sp/>29일인데<sp/>addYear을<sp/>하려는 경우 <sp/><sp/>if
+<sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>newDate<sp/>==<sp/>29<sp/>//현재가<sp/>윤달 29일
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>year<sp/>==<sp/>4<sp/>&amp;&amp;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!((year<sp/>%<sp/>100<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>year<sp/>%<sp/>400<sp/>!=<sp/>0))
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/>//바꿀 연도의<sp/>2월은<sp/>윤달이 아님
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>)
+<sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>28;
+
+<sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setMonth(int<sp/>month)
+{
+<sp/><sp/>if<sp/>(month<sp/>&gt;<sp/>12)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>invalid_argument(&quot;month<sp/>is<sp/>over<sp/>12&quot;);
+
+<sp/><sp/><sp/>//달력
+<sp/><sp/><sp/>int<sp/>year<sp/>=<sp/>getYear();
+<sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];
+
+<sp/><sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setDate(int<sp/>val)
+{
+<sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/>
+}
+
+//ADD<sp/>METHODS
+void<sp/>Date::addYear(int<sp/>val)
+{
+<sp/><sp/><sp/>//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함
+<sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);
+}
+void<sp/>Date::addMonth(int<sp/>val)
+{
+<sp/>//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다
+<sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>month<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>newDate<sp/>==<sp/>29<sp/></highlight><highlight class="comment">//현재가<sp/>윤달 29일</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!(</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>year<sp/>==<sp/>4<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!((year<sp/>%<sp/>100<sp/>==<sp/>0<sp/>&amp;&amp;<sp/>year<sp/>%<sp/>400<sp/>!=<sp/>0))</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)<sp/></highlight><highlight class="comment">//바꿀 연도의<sp/>2월은<sp/>윤달이 아님 <sp/><sp/><sp/><sp/><sp/><sp/><sp/>)
+<sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>28;
+
+<sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setMonth(int<sp/>month)
+{
+<sp/><sp/>if<sp/>(month<sp/>&gt;<sp/>12)
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>invalid_argument(&quot;month<sp/>is<sp/>over<sp/>12&quot;);
+
+<sp/><sp/><sp/>//달력
+<sp/><sp/><sp/>int<sp/>year<sp/>=<sp/>getYear();
+<sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];
+
+<sp/><sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setDate(int<sp/>val)
+{
+<sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/>
+}
+
+//ADD<sp/>METHODS
+void<sp/>Date::addYear(int<sp/>val)
+{
+<sp/><sp/><sp/>//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함
+<sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);
+}
+void<sp/>Date::addMonth(int<sp/>val)
+{
+<sp/>//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다
+<sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>28;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>set(year,<sp/>month,<sp/>newDate);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::setMonth(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>month)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(month<sp/>&gt;<sp/>12)</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>invalid_argument(</highlight><highlight class="stringliteral">&quot;month<sp/>is<sp/>over<sp/>12&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//달력 <sp/><sp/><sp/>int<sp/>year<sp/>=<sp/>getYear();
+<sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];
+
+<sp/><sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setDate(int<sp/>val)
+{
+<sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/>
+}
+
+//ADD<sp/>METHODS
+void<sp/>Date::addYear(int<sp/>val)
+{
+<sp/><sp/><sp/>//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함
+<sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);
+}
+void<sp/>Date::addMonth(int<sp/>val)
+{
+<sp/>//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다
+<sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>year<sp/>=<sp/>getYear();</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newDate<sp/>=<sp/>getDate();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(year);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다 <sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];
+
+<sp/><sp/>set(year,<sp/>month,<sp/>newDate);
+}
+void<sp/>Date::setDate(int<sp/>val)
+{
+<sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/>
+}
+
+//ADD<sp/>METHODS
+void<sp/>Date::addYear(int<sp/>val)
+{
+<sp/><sp/><sp/>//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함
+<sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);
+}
+void<sp/>Date::addMonth(int<sp/>val)
+{
+<sp/>//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다
+<sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newDate<sp/>&gt;<sp/>monthArray[month<sp/>-<sp/>1])</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[month<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>set(year,<sp/>month,<sp/>newDate);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::setDate(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>set(getYear(),<sp/>getMonth(),<sp/>val);<sp/></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment">//ADD<sp/>METHODS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::addYear(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//현재가<sp/>2012년 2월 29일(윤달)인데<sp/>1년을<sp/>추가하면 2013년 2월 28일로 변함</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>setYear(getYear()<sp/>+<sp/>val);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::addMonth(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//현재가<sp/>3월 31일인데<sp/>1월이 추가되면 날짜는 4월 30일로 변한다 <sp/><sp/><sp/>int<sp/>newYear<sp/>=<sp/>getYear();
+<sp/><sp/><sp/>int<sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;
+<sp/><sp/><sp/>int<sp/>newDate<sp/>=<sp/>getDate();
+
+<sp/><sp/>if<sp/>(newMonth<sp/>&gt;<sp/>12)
+<sp/>{
+<sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;
+<sp/><sp/>}
+
+<sp/>//달력
+<sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newYear<sp/>=<sp/>getYear();</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newMonth<sp/>=<sp/>getMonth()<sp/>+<sp/>val;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>newDate<sp/>=<sp/>getDate();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newMonth<sp/>&gt;<sp/>12)</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newYear<sp/>=<sp/>newYear<sp/>+<sp/>(newMonth<sp/>-<sp/>1)<sp/>/<sp/>12;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newMonth<sp/>=<sp/>newMonth<sp/>%<sp/>12;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//달력 <sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);
+
+<sp/>//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다
+<sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>std::array&lt;int,<sp/>12&gt;<sp/>&amp;monthArray<sp/>=<sp/>calcLastDates(newYear);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//해당 월의 마지막<sp/>일을<sp/>초과할 때,<sp/>조정한다 <sp/><sp/>//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정
+<sp/><sp/>if<sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];
+
+<sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);
+}
+void<sp/>Date::addWeek(int<sp/>val)
+{
+<sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);
+}
+void<sp/>Date::addDate(int<sp/>val)
+{
+<sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));
+}
+
+/*<sp/>--------------------------------------------------------------------------
+<sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING
+--------------------------------------------------------------------------<sp/>*/
+auto<sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/>long<sp/>long
+{
+<sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*this<sp/>-<sp/>TP_1970;
+<sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);
+
+<sp/><sp/><sp/><sp/>return<sp/>seconds.count();
+}
+int<sp/>Date::getYear()<sp/>const
+{
+<sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_year<sp/>+<sp/>1900;
+}
+int<sp/>Date::getMonth()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/>
+{
+<sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mon<sp/>+<sp/>1;<sp/>
+}
+int<sp/>Date::getDay()<sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_wday;<sp/>
+}
+int<sp/>Date::getDate()<sp/>const<sp/><sp/><sp/><sp/><sp/>
+{<sp/>
+<sp/><sp/><sp/><sp/>auto<sp/>&amp;tm<sp/>=<sp/>toTM();
+<sp/>return<sp/>tm.tm_mday;<sp/>
+}
+
+auto<sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm
+{
+<sp/><sp/>struct<sp/>tm<sp/>tm;
+<sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*this);
+<sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);
+
+<sp/><sp/><sp/><sp/>return<sp/>tm;
+}
+auto<sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/>std::string
+{
+<sp/><sp/>return<sp/>StringUtil::substitute
+<sp/><sp/><sp/><sp/><sp/><sp/>(
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;{1}-{2}-{3}&quot;,
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()
+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>);
+}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//EX-&gt;<sp/>4월인데<sp/>31일이면 4월 30일로 조정</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(newDate<sp/>&gt;<sp/>monthArray[newMonth<sp/>-<sp/>1])</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>newDate<sp/>=<sp/>monthArray[newMonth<sp/>-<sp/>1];</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>set(newYear,<sp/>newMonth,<sp/>newDate);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::addWeek(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val)</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>addDate(7<sp/>*<sp/>val);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Date::addDate(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>val)</highlight></codeline>
+<codeline lineno="195"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>operator+=(chrono::hours(24<sp/>*<sp/>val));</highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>--------------------------------------------------------------------------</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/><sp/><sp/><sp/>GETTERS<sp/>AND<sp/>TO_STRING</highlight></codeline>
+<codeline lineno="201"><highlight class="comment">--------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Date::toLinuxTime()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::system_clock::duration<sp/>duration<sp/>=<sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal"><sp/>-<sp/>TP_1970;</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/>std::chrono::seconds<sp/>seconds<sp/>=<sp/>std::chrono::duration_cast&lt;std::chrono::seconds&gt;(duration);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>seconds.count();</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Date::getYear()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="210"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;tm<sp/>=<sp/>toTM();</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tm.tm_year<sp/>+<sp/>1900;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Date::getMonth()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="215"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;tm<sp/>=<sp/>toTM();</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tm.tm_mon<sp/>+<sp/>1;<sp/></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Date::getDay()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="220"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;tm<sp/>=<sp/>toTM();</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tm.tm_wday;<sp/></highlight></codeline>
+<codeline lineno="223"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Date::getDate()</highlight><highlight class="keyword"><sp/>const<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="225"><highlight class="keyword"></highlight><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;tm<sp/>=<sp/>toTM();</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tm.tm_mday;<sp/></highlight></codeline>
+<codeline lineno="228"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Date::toTM()<sp/>const<sp/>-&gt;<sp/>struct<sp/>tm</highlight></codeline>
+<codeline lineno="231"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">tm<sp/>tm;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>time_t<sp/>tt<sp/>=<sp/>chrono::system_clock::to_time_t(*</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>localtime_s(&amp;tm,<sp/>&amp;tt);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>tm;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Date::toString()<sp/>const<sp/>-&gt;<sp/><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>StringUtil::substitute</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;{1}-{2}-{3}&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>getYear(),<sp/>getMonth(),<sp/>getDate()</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/library/Date.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,475 @@
+.TH "User" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+User \- \fBUser\fP containing Client(s) with session-id\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <User\&.hpp>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBUser\fP (\fBServer\fP *)"
+.br
+.RI "\fIConstruct from server\&. \fP"
+.ti -1c
+.RI "auto \fBgetServer\fP () const  \-> \fBServer\fP *"
+.br
+.RI "\fIGet server\&. \fP"
+.ti -1c
+.RI "auto \fBgetSemaphore\fP () const  \-> \fBlibrary::Semaphore\fP *"
+.br
+.RI "\fIGet semaphore\&. \fP"
+.ti -1c
+.RI "auto \fBgetID\fP () const  \-> std::string"
+.br
+.RI "\fIGet user's account id\&. \fP"
+.ti -1c
+.RI "auto \fBgetAuthority\fP () const  \-> int"
+.br
+.RI "\fIGet authority of user\&. \fP"
+.ti -1c
+.RI "virtual void \fBsendData\fP (std::shared_ptr< \fBInvoke\fP >) override"
+.br
+.RI "\fISend a message\&. \fP"
+.ti -1c
+.RI "virtual void \fBreplyData\fP (std::shared_ptr< \fBInvoke\fP >) override"
+.br
+.RI "\fIReply a message\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual auto \fBcreateClient\fP () \-> \fBClient\fP *=0"
+.br
+.RI "\fIFactory method of a \fBClient\fP\&. \fP"
+.ti -1c
+.RI "virtual auto \fBdoLogin\fP (std::shared_ptr< \fBInvoke\fP >) \-> bool=0"
+.br
+.RI "\fILogin and return whether success\&. \fP"
+.ti -1c
+.RI "virtual auto \fBdoJoin\fP (std::shared_ptr< \fBInvoke\fP >) \-> bool=0"
+.br
+.RI "\fIJoin and returns whether success\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddClient\fP (Socket *)"
+.br
+.RI "\fIAdd a client in user\&. \fP"
+.ti -1c
+.RI "void \fBeraseClient\fP (size_t)"
+.br
+.RI "\fIErase a \fBClient\fP\&. \fP"
+.ti -1c
+.RI "void \fBgoLogin\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fILog-in\&. \fP"
+.ti -1c
+.RI "void \fBgoJoin\fP (std::shared_ptr< \fBInvoke\fP >)"
+.br
+.RI "\fIJoin as a member\&. \fP"
+.ti -1c
+.RI "virtual void \fBgoLogout\fP ()"
+.br
+.RI "\fILog-out\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBServer\fP * \fBserver\fP"
+.br
+.RI "\fI\fBServer\fP containing the user\&. \fP"
+.ti -1c
+.RI "std::string \fBsessionID\fP"
+.br
+.RI "\fISession ID of the user\&. \fP"
+.ti -1c
+.RI "\fBlibrary::RWMutex\fP \fBmtx\fP"
+.br
+.RI "\fIMutex for container\&. \fP"
+.ti -1c
+.RI "\fBlibrary::Semaphore\fP * \fBsemaphore\fP"
+.br
+.RI "\fISemaphore to limit number of thread\&. \fP"
+.ti -1c
+.RI "std::string \fBid\fP"
+.br
+.RI "\fIAccount id\&. \fP"
+.ti -1c
+.RI "int \fBauthority\fP"
+.br
+.RI "\fIAuthority allocated to user\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBUser\fP containing Client(s) with session-id\&. 
+
+The \fBUser\fP does not have any network I/O and its own special work something to do\&. It's a container for groupping clients by their session id\&. Thus, the \fBUser\fP corresponds with an user (Computer) and \fBClient\fP corresponds with a client (A browser window) 
+.PP
+ 
+.PP
+Override those methods 
+.PD 0
+
+.IP "\(bu" 2
+\fBcreateClient()\fP 
+.IP "\(bu" 2
+\fBdoLogin()\fP 
+.IP "\(bu" 2
+\fBdoJoin()\fP
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBUser\fP (\fBServer\fP * server)"
+
+.PP
+Construct from server\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIserver\fP A server who containing users and clients 
+.br
+\fIsessionID\fP A session ID for discriminating \fBUser\fP; A logical identifier 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto getSemaphore () const \-> \fBlibrary::Semaphore\fP*"
+
+.PP
+Get semaphore\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBUser::semaphore\fP 
+.RE
+.PP
+
+.SS "auto getAuthority () const \-> int"
+
+.PP
+Get authority of user\&. 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBUser::authority\fP 
+.RE
+.PP
+
+.SS "void addClient (Socket * socket)\fC [private]\fP"
+
+.PP
+Add a client in user\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsocket\fP Socket for interacting with (physical) client 
+.RE
+.PP
+
+.SS "void eraseClient (size_t no)\fC [private]\fP"
+
+.PP
+Erase a \fBClient\fP\&. Erase a \fBClient\fP from \fBUser\fP by its key(no:int)\&. 
+.PP
+When a network connection between server and user(person) was disconnected, matched \fBClient\fP is erased from \fBUser\fP and the \fBClient\fP object will be destructed\&. 
+.PP
+Some reasons of disconnection 
+.PP
+.PD 0
+.IP "\(bu" 2
+An user(not object but person using UI) closed the Window  
+.IP "\(bu" 2
+A "closeWindow" command has sent to the Window  
+.IP "\(bu" 2
+A network failure has occured  
+.PP
+.PP
+If the \fBClient\fP was the last object remained in the \fBUser\fP, the \fBUser\fP will be destructed too\&. However, the \fBUser\fP is not destructed directly but waits for 15 seconds\&. In the 15 seconds, another \fBClient\fP object was created in \fBUser\fP, the \fBUser\fP doesn't be destructed\&.
+.PP
+Some reasons of postponing destruction for 15 seconds 
+.PP
+.PD 0
+.IP "\(bu" 2
+Page direction(href) or redirection in a browser\&.  
+.IP "\(bu" 2
+Temporary network failure\&.  
+.PP
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+There're some tasks that have to completed irrespectively of network connection\&.
+.PP
+In that case, although user closed the window or logged-out, matched \fBUser\fP, \fBClient\fP and \fBService\fP objects haven't be destructed\&. They must stay alive until the tasks have completed\&.
+.PP
+To stay those objects \fBUser\fP, \fBClient\fP and \fBService\fP, use follwing macros\&. Those macros assure the objects to stay alive until the termination matched each stack\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+KEEP_USER_ALIVE(Client*)  
+.IP "\(bu" 2
+KEEP_CLIENT_ALIVE  
+.IP "\(bu" 2
+KEEP_SERVICE_ALIVE  
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIno\fP Sequence number of the client in user 
+.RE
+.PP
+
+.SS "void goLogin (std::shared_ptr< \fBInvoke\fP >)\fC [private]\fP"
+
+.PP
+Log-in\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP 
+.br
+\fIinvoke\fP 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBUser::doLogin()\fP 
+.RE
+.PP
+
+.SS "void goJoin (std::shared_ptr< \fBInvoke\fP >)\fC [private]\fP"
+
+.PP
+Join as a member\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP An application; who requested the join command 
+.br
+\fIinvoke\fP AN invoke message containing parameters of joinning 
+.RE
+.PP
+\fBSee also:\fP
+.RS 4
+\fBUser::doJoin()\fP 
+.RE
+.PP
+
+.SS "void goLogout ()\fC [private]\fP, \fC [virtual]\fP"
+
+.PP
+Log-out\&. Log-out account; change id and authority to "guest" and 0\&. 
+.PP
+Default is to send "closeWindow" message to all clients except the applicant\&. 
+.PP
+.PD 0
+.IP "\(bu" 2
+Perspective on UI:  
+.PP
+All windows of the user will be closed by getting an invoke message "closeWindow" except who requested the command log-out\&. 
+.PP
+.PP
+The applicant window will moved to default log-in page\&. 
+.PP
+
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIclient\fP A window of browser; client who requested the log-out command 
+.RE
+.PP
+
+.SS "virtual auto doLogin (std::shared_ptr< \fBInvoke\fP >) \->  bool\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Login and return whether success\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP \fBInvoke\fP message containing parameters for logging-in 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Whether the log-in is succeded or not 
+.RE
+.PP
+
+.SS "virtual auto doJoin (std::shared_ptr< \fBInvoke\fP >) \->  bool\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+Join and returns whether success\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP \fBInvoke\fP message containing paramters for joinning 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Whether the join is succeded or not 
+.RE
+.PP
+
+.SS "void sendData (std::shared_ptr< \fBInvoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Send a message\&. Sends \fBInvoke\fP message to a network system or shifts the responsibility to related chain\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An \fBInvoke\fP message to send to a network system 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBIProtocol\fP\&.
+.SS "void replyData (std::shared_ptr< \fBInvoke\fP >)\fC [override]\fP, \fC [virtual]\fP"
+
+.PP
+Reply a message\&. Handles a replied \fBInvoke\fP message or shifts the responsibility to related chain\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinvoke\fP An \fBInvoke\fP message gotten from a network system 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBIProtocol\fP\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string sessionID\fC [private]\fP"
+
+.PP
+Session ID of the user\&. 
+.PP
+\fBOrganization of the Session ID\fP
+.RS 4
+
+.PD 0
+
+.IP "\(bu" 2
+{$name}::{$port}::{$sequence}::{$linux_time}  
+.PD 0
+
+.IP "  1." 6
+$name: Name of the \fBServer\fP; \fBServer::NAME()\fP  
+.IP "  2." 6
+$port: Port number of the \fBServer\fP; \fBServer::PORT()\fP  
+.IP "  3." 6
+$sequence: Sequence number of creation of \fBUser\fP in \fBServer\fP  
+.IP "  4." 6
+$linux_time: Linux time of current time\&.  
+.PP
+If the object \fBServer\fP is re-constructed, $sequence can be duplicated\&. $linux_time is to avoid the duplication so that ensures exclusiveness on session id
+.PP
+
+.PP
+
+.PP
+.RE
+.PP
+
+.SS "\fBlibrary::Semaphore\fP* semaphore\fC [private]\fP"
+
+.PP
+Semaphore to limit number of thread\&. Semaphore in \fBUser\fP is designed to constraint number of thread\&. 
+.PP
+It's recommended to acquire the semaphore when a task from \fBClient\fP or \fBService\fP occurs a new thread and you want to avoid exhausted allocation of new threads\&. 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+If a task influences to all clients in a user globally, use lock instead of acquire 
+.SS "std::string id\fC [private]\fP"
+
+.PP
+Account id\&. Default is "guest" 
+.SS "int authority\fC [private]\fP"
+
+.PP
+Authority allocated to user\&. The authority means authority(right, power) level allocated to the user\&. 
+.PP
+The default value is zero, which means not logged-in user\&. 
+.PP
+\fBNote:\fP
+.RS 4
+.RE
+.PP
+Each number of level is not defined clearly\&. Follwing table is just an example\&. 
+.PP
+Level Definition  -1 
+.PP
+Banned member 
+.PP
+.PP
+The -1 level member is banished by manager or policy 
+.PP
+0 
+.PP
+Guest, Not logged in 
+.PP
+.PP
+.PP
+1 
+.PP
+Unconfired member 
+.PP
+.PP
+The member have applied to the join, but the join was not confirmed by manager or policy yet\&. 
+.PP
+2 
+.PP
+Confirmed member 
+.PP
+.PP
+The member have joined and have already confirmed by manager or policy 
+.PP
+3 
+.PP
+Manager 
+.PP
+.PP
+A manager of the application(cloud service)\&. The manager can
+.PP
+.PD 0
+.IP "\(bu" 2
+Access to the monitoring service\&. (MonitorService)  
+.IP "\(bu" 2
+Access historical log of members whose level are below Manager\&.  
+.IP "\(bu" 2
+Banish or modify level of members whose level are below Manager\&.  </u>   
+.PP
+4 
+.PP
+Administrator or super Manager 
+.PP
+.PP
+Administrator is a Manager of Managers\&. An administrator can do same thing with Managers, but adminstrator even possible to target Managers as below\&. 
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

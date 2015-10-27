@@ -1,0 +1,421 @@
+.TH "Math" 3 "Mon Oct 26 2015" "Version 1.0.0" "Samchon Framework for CPP" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Math \- Utility of \fBMath\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Math\&.hpp>\fP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static auto \fBrandom\fP () \-> double"
+.br
+.RI "\fIGet a random value\&. \fP"
+.ti -1c
+.RI "static auto \fBdegree_to_radian\fP (double) \-> double"
+.br
+.RI "\fIConvert degree to radian\&. \fP"
+.ti -1c
+.RI "static auto \fBradian_to_degree\fP (double) \-> double"
+.br
+.RI "\fIConvert radian to degree\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBminimum\fP (const _Cont &container) \-> \fBIndexPair\fP< _Ty >"
+.br
+.RI "\fICalculate minimum value with its index\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBmaximum\fP (const _Cont &container) \-> \fBIndexPair\fP< _Ty >"
+.br
+.RI "\fICalculate maximum value with its index\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBmean\fP (const _Cont &container) \-> double"
+.br
+.RI "\fICalculate average\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBmedian\fP (const _Cont &container) \-> double"
+.br
+.RI "\fIGet median value\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBmode\fP (const _Cont &container) \-> _Ty"
+.br
+.RI "\fIFind mode value\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBstdev_p\fP (const _Cont &container) \-> double"
+.br
+.RI "\fISquare root of a variance_p\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBstdev_s\fP (const _Cont &container) \-> double"
+.br
+.RI "\fISquare root of a variance_s\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBvariance_p\fP (const _Cont &container) \-> double"
+.br
+.RI "\fICalculate standard deviation for all population\&. \fP"
+.ti -1c
+.RI "template<typename _Cont , typename _Ty  = _Cont::value_type> static auto \fBvariance_s\fP (const _Cont &container) \-> double"
+.br
+.RI "\fICalculate variance for sample\&. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const double \fBE\fP = exp(1\&.0)"
+.br
+.RI "\fIExponent\&. \fP"
+.ti -1c
+.RI "static const double \fBPI\fP = 3\&.141592653589793"
+.br
+.RI "\fI¥ð, Number Pi \fP"
+.ti -1c
+.RI "static const double \fBLN2\fP = 1\&.0 / log2(\fBE\fP)"
+.br
+.RI "\fIlog\*<e\*> 2 \fP"
+.ti -1c
+.RI "static const double \fBLN10\fP = 1\&.0 / log10(\fBE\fP)"
+.br
+.RI "\fIlog\*<e\*> 10 \fP"
+.ti -1c
+.RI "static const double \fBLOG2E\fP = log2(\fBE\fP)"
+.br
+.RI "\fIlog\*<2\*> e \fP"
+.ti -1c
+.RI "static const double \fBLOG10E\fP = log10(\fBE\fP)"
+.br
+.RI "\fIlog\*<10\*> e \fP"
+.ti -1c
+.RI "static const double \fBSQRT1_2\fP = sqrt(\&.5)"
+.br
+.RI "\fISquart root of 0\&.5\&. \fP"
+.ti -1c
+.RI "static const double \fBSQRT2\fP = sqrt(2\&.0)"
+.br
+.RI "\fISquart root of 2\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Utility of \fBMath\fP\&. 
+
+Provides some static values and mathmatical methods\&. 
+.PP
+ 
+.PP
+\fBSee also:\fP
+.RS 4
+\fBsamchon::library\fP 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Jeongho Nam 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "auto random () \-> double\fC [static]\fP"
+
+.PP
+Get a random value\&. Returns a random value following uniform distribution 
+.PP
+\fBReturns:\fP
+.RS 4
+The random value 
+.RE
+.PP
+
+.SS "static auto minimum (const _Cont & container) \-> \fBIndexPair\fP<_Ty>
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Calculate minimum value with its index\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its minimum value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pair of minimum value and its index 
+.RE
+.PP
+
+.SS "static auto maximum (const _Cont & container) \-> \fBIndexPair\fP<_Ty>
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Calculate maximum value with its index\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its minimum value 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Pair of maximum value and its index 
+.RE
+.PP
+
+.SS "static auto mean (const _Cont & container) \-> double
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Calculate average\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its mean 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Average(mean) of the contaier 
+.RE
+.PP
+
+.SS "static auto median (const _Cont & container) \-> double
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Get median value\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its median 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Median value of the container 
+.RE
+.PP
+
+.SS "static auto mode (const _Cont & container) \-> _Ty
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Find mode value\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its mode 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Most appeared value in the container 
+.RE
+.PP
+
+.SS "static auto stdev_p (const _Cont & container) \-> double
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Square root of a variance_p\&. $\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}$ 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its standard deviation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Standard deviation of the container 
+.RE
+.PP
+
+.SS "static auto stdev_s (const _Cont & container) \-> double
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Square root of a variance_s\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its variance 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Variance of the container 
+.RE
+.PP
+
+.SS "static auto variance_p (const _Cont & container) \-> double
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Calculate standard deviation for all population\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its standard deviation 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Standard deviation of the container 
+.RE
+.PP
+
+.SS "static auto variance_s (const _Cont & container) \-> double
+			\fC [inline]\fP, \fC [static]\fP"
+
+.PP
+Calculate variance for sample\&. 
+.PP
+\fBTemplate Parameters:\fP
+.RS 4
+\fI_Cont\fP Type of the container 
+.br
+\fI_Ty\fP 
+.RE
+.PP
+Value type of the container\&. 
+.PP
+Do not modify the default template argument\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcontainer\fP Container to find its variance 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Variance of the container 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const double E = exp(1\&.0)\fC [static]\fP"
+
+.PP
+Exponent\&. A mathematical constant for the base of natural logarithms, expressed as e\&. The approximate value of e is 2\&.71828182845905\&. 
+.SS "const double PI = 3\&.141592653589793\fC [static]\fP"
+
+.PP
+¥ð, Number Pi A mathematical constant for the ratio of the circumference of a circle to its diameter, expressed as pi, with a value of 3\&.141592653589793\&. 
+.SS "const double LN2 = 1\&.0 / log2(\fBE\fP)\fC [static]\fP"
+
+.PP
+log\*<e\*> 2 A mathematical constant for the natural logarithm of 2, expressed as log\*<e\*> 2, with an approximate value of 0\&.6931471805599453\&. 
+.SS "const double LN10 = 1\&.0 / log10(\fBE\fP)\fC [static]\fP"
+
+.PP
+log\*<e\*> 10 A mathematical constant for the natural logarithm of 10, expressed as log\*<e\*> 10, with an approximate value of 2\&.302585092994046\&. 
+.SS "const double LOG2E = log2(\fBE\fP)\fC [static]\fP"
+
+.PP
+log\*<2\*> e A mathematical constant for the base-2 logarithm of the constant e, expressed as log\*<2\*> e, with an approximate value of 1\&.442695040888963387\&. 
+.SS "const double LOG10E = log10(\fBE\fP)\fC [static]\fP"
+
+.PP
+log\*<10\*> e A mathematical constant for the base-10 logarithm of the constant e (\fBMath\&.E\fP), expressed as log\*<10\*> e, with an approximate value of 0\&.4342944819032518\&. The Math\&.log() method computes the natural logarithm of a number\&. Multiply the result of Math\&.log() by \fBMath\&.LOG10E\fP to obtain the base-10 logarithm\&. 
+.SS "const double SQRT1_2 = sqrt(\&.5)\fC [static]\fP"
+
+.PP
+Squart root of 0\&.5\&. A mathematical constant for the square root of one-half, with an approximate value of 0\&.7071067811865476\&. 
+.SS "const double SQRT2 = sqrt(2\&.0)\fC [static]\fP"
+
+.PP
+Squart root of 2\&. A mathematical constant for the square root of 2, with an approximate value of 1\&.4142135623730951\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Samchon Framework for CPP from the source code\&.

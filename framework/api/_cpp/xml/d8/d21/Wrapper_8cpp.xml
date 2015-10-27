@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.10">
+  <compounddef id="d8/d21/Wrapper_8cpp" kind="file" language="C++">
+    <compoundname>Wrapper.cpp</compoundname>
+    <includes refid="d3/d29/Wrapper_8hpp" local="yes">Wrapper.hpp</includes>
+    <includes refid="d9/db2/Product_8hpp" local="yes">Product.hpp</includes>
+    <incdepgraph>
+      <node id="793">
+        <label>string</label>
+      </node>
+      <node id="789">
+        <label>D:/OneDrive/Project/Samchon/framework/cpp/samchon/examples/packer/Wrapper.cpp</label>
+        <link refid="Wrapper.cpp"/>
+        <childnode refid="790" relation="include">
+        </childnode>
+        <childnode refid="794" relation="include">
+        </childnode>
+      </node>
+      <node id="794">
+        <label>Product.hpp</label>
+        <link refid="d9/db2/Product_8hpp_source"/>
+        <childnode refid="792" relation="include">
+        </childnode>
+      </node>
+      <node id="791">
+        <label>vector</label>
+      </node>
+      <node id="790">
+        <label>Wrapper.hpp</label>
+        <link refid="d3/d29/Wrapper_8hpp_source"/>
+        <childnode refid="791" relation="include">
+        </childnode>
+        <childnode refid="792" relation="include">
+        </childnode>
+      </node>
+      <node id="792">
+        <label>Instance.hpp</label>
+        <link refid="d9/dfd/Instance_8hpp_source"/>
+        <childnode refid="793" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;Wrapper.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/><sp/><sp/>include<sp/>&quot;Product.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dcc/namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="d8/dbe/namespacesamchon_1_1example_1_1packer" kindref="compound">samchon::example::packer</ref>;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/><sp/><sp/>CONSTRUCTORS</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">---------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">Wrapper::Wrapper(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>&amp;name,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>price,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>weight)</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(name,<sp/>price,<sp/>volume,<sp/>weight),</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;<ref refid="df/d73/classsamchon_1_1example_1_1packer_1_1Product" kindref="compound">Product</ref>*&gt;()</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper_1af2280b66710e25c66c24b603ee9605dd" kindref="member">Wrapper::Wrapper</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper" kindref="compound">Wrapper</ref><sp/>&amp;wrapper)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>super(wrapper),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;<ref refid="df/d73/classsamchon_1_1example_1_1packer_1_1Product" kindref="compound">Product</ref>*&gt;()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper_1a76bfeb339b591946879ad0292579b141" kindref="member">Wrapper::tryInsert</ref>(<ref refid="df/d73/classsamchon_1_1example_1_1packer_1_1Product" kindref="compound">Product</ref><sp/>*product)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>volume<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>weight<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size();<sp/>i++)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>volume<sp/>+=<sp/>at(i)-&gt;getVolume();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>weight<sp/>+=<sp/>at(i)-&gt;getWeight();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(product-&gt;getVolume()<sp/>+<sp/>volume<sp/>&gt;<sp/>this-&gt;volume<sp/>||<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>product-&gt;getWeight()<sp/>+<sp/>weight<sp/>&gt;<sp/>this-&gt;weight)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>push_back(product);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------------------------------------</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/><sp/><sp/><sp/>EXPORT</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">---------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper_1acf8cb8cc4e3436c1f631ffed7530357c" kindref="member">Wrapper::toString</ref>()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>str<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;\tWrapper<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="dc/d54/classsamchon_1_1example_1_1packer_1_1Instance_1a22a175a3f828497e884c688f7a9aaadb" kindref="member">super::toString</ref>()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>size();<sp/>i++)</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>str<sp/>+=<sp/></highlight><highlight class="stringliteral">&quot;\t\t&quot;</highlight><highlight class="normal"><sp/>+<sp/>at(i)-&gt;toString()<sp/>+<sp/>((i<sp/>==<sp/>size()<sp/>-<sp/>1)<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>move(str);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="D:/OneDrive/Project/Samchon/framework/cpp/samchon/examples/packer/Wrapper.cpp"/>
+  </compounddef>
+</doxygen>
