@@ -4,7 +4,7 @@ var searchData=
   ['name',['NAME',['../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html#aeba092e64c8fb4630e28b3d333076246',1,'samchon::protocol::service::Server']]],
   ['next',['next',['../de/def/classsamchon_1_1library_1_1SQLStatement.html#a4aa958951f386e1c6754cb166772e456',1,'samchon::library::SQLStatement']]],
   ['notify',['notify',['../d2/d9a/classsamchon_1_1example_1_1chat__service_1_1ChatRoomArray.html#a7ff19734eb024bd6f3e2ad95647b1b27',1,'samchon::example::chat_service::ChatRoomArray']]],
-  ['notifyend',['notifyEnd',['../da/d47/classsamchon_1_1protocol_1_1InvokeHistory.html#aed7e9a0ee1d3af5f2e6bd8f2b481fab9',1,'samchon::protocol::InvokeHistory']]],
+  ['notifyend',['notifyEnd',['../da/d47/classsamchon_1_1protocol_1_1InvokeHistory.html#aed7e9a0ee1d3af5f2e6bd8f2b481fab9',1,'samchon::protocol::InvokeHistory::notifyEnd()'],['../d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#a9c924edb507c0e84860adab78c9afd26',1,'samchon::protocol::master::PRInvokeHistory::notifyEnd()'],['../df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a9c924edb507c0e84860adab78c9afd26',1,'samchon::protocol::master::PRMasterHistory::notifyEnd()']]],
   ['ntentitygroup',['NTEntityGroup',['../dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup.html#a033498738df3fab18344d8b3c2981185',1,'samchon::namtree::NTEntityGroup']]],
   ['ntfactory',['NTFactory',['../d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a99d5af29b66baf3db54544cbef71db01',1,'samchon::namtree::NTFactory']]],
   ['ntfile',['NTFile',['../d2/da2/classsamchon_1_1namtree_1_1NTFile.html#a36f8b30ed966ed130bc790dc92066491',1,'samchon::namtree::NTFile']]],

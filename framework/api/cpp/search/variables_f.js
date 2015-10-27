@@ -17,11 +17,12 @@ var searchData=
   ['source',['source',['../d2/d56/classsamchon_1_1library_1_1Event.html#a2b08849622c04e621a15d6add0e98fc6',1,'samchon::library::Event']]],
   ['space_5farray',['SPACE_ARRAY',['../d8/de4/classsamchon_1_1WeakString.html#a6f4bf0424f9ede24b62af1b96658f863',1,'samchon::WeakString']]],
   ['sqli',['sqli',['../de/def/classsamchon_1_1library_1_1SQLStatement.html#a13714007d02c778c7993d06a1010be95',1,'samchon::library::SQLStatement::sqli()'],['../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html#aef91d516b10c0ca60928add7de598a2c',1,'samchon::protocol::service::Server::sqli()']]],
-  ['sqrt1_5f2',['SQRT1_2',['../de/d8f/classsamchon_1_1library_1_1Math.html#a50b83913dc7bb4f2daee3bef1e928d08',1,'samchon::library::Math']]],
-  ['sqrt2',['SQRT2',['../de/d8f/classsamchon_1_1library_1_1Math.html#a0dac55511b8235578f5364bcd618056f',1,'samchon::library::Math']]],
+  ['sqrt1_5f2',['SQRT1_2',['../de/d8f/classsamchon_1_1library_1_1Math.html#a6ee742e04fbb6b1f1fb4280e14ff887a',1,'samchon::library::Math']]],
+  ['sqrt2',['SQRT2',['../de/d8f/classsamchon_1_1library_1_1Math.html#abd2aa50417387251fa6affc8ffa0b06f',1,'samchon::library::Math']]],
   ['starttime',['startTime',['../da/d47/classsamchon_1_1protocol_1_1InvokeHistory.html#a36080028289ec04d10c8f7456b3c9885',1,'samchon::protocol::InvokeHistory']]],
   ['stmt',['stmt',['../d9/d2f/classsamchon_1_1library_1_1SQLi.html#ac85c4f6d5fdfe7668ae126b40d0912d4',1,'samchon::library::SQLi']]],
   ['stmtmutex',['stmtMutex',['../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a88ce305534aa0dde7dac0db848464ce7',1,'samchon::library::SQLi']]],
   ['str',['str',['../d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a5d55e2558544e2ad2ea0b54f8e3d41fc',1,'samchon::protocol::InvokeParameter']]],
-  ['system',['system',['../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html#a873a85820fe5053a53102931f346e4b7',1,'samchon::protocol::ExternalSystemRole::system()'],['../de/d14/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistory.html#a20df4ab50e689202e4d02062a6e64f1e',1,'samchon::protocol::master::DSInvokeHistory::system()']]]
+  ['system',['system',['../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html#a873a85820fe5053a53102931f346e4b7',1,'samchon::protocol::ExternalSystemRole::system()'],['../de/d14/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistory.html#a20df4ab50e689202e4d02062a6e64f1e',1,'samchon::protocol::master::DSInvokeHistory::system()'],['../d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#af752389a0e207678a47649c4bbb82bcf',1,'samchon::protocol::master::PRInvokeHistory::system()']]],
+  ['systemarray',['systemArray',['../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#af56dc87a89e6c66111733b297a661b51',1,'samchon::protocol::master::ParallelSystem']]]
 ];

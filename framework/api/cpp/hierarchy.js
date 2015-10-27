@@ -96,16 +96,19 @@ var hierarchy =
               [ "ParallelClientArrayMediator", "d4/d53/classsamchon_1_1protocol_1_1master_1_1ParallelClientArrayMediator.html", null ]
             ] ]
           ] ],
+          [ "ExternalClientArray", "d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html", null ],
           [ "ExternalServerArray", "d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray.html", [
             [ "DistributedServerArray", "d0/d26/classsamchon_1_1protocol_1_1master_1_1DistributedServerArray.html", [
               [ "DistributedServerArrayMediator", "d4/d48/classsamchon_1_1protocol_1_1master_1_1DistributedServerArrayMediator.html", null ]
             ] ],
+            [ "DistributedServerArray", "d0/d26/classsamchon_1_1protocol_1_1master_1_1DistributedServerArray.html", null ],
             [ "ParallelServerArray", "d3/d5d/classsamchon_1_1protocol_1_1master_1_1ParallelServerArray.html", [
               [ "ParallelServerArrayMediator", "db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator.html", null ]
             ] ]
           ] ],
           [ "DistributedSystemArray", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html", [
             [ "DistributedClientArray", "d3/db6/classsamchon_1_1protocol_1_1master_1_1DistributedClientArray.html", null ],
+            [ "DistributedServerArray", "d0/d26/classsamchon_1_1protocol_1_1master_1_1DistributedServerArray.html", null ],
             [ "DistributedServerArray", "d0/d26/classsamchon_1_1protocol_1_1master_1_1DistributedServerArray.html", null ],
             [ "DistributedSystemArrayMediator", "dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator.html", [
               [ "DistributedClientArrayMediator", "d9/ddf/classsamchon_1_1protocol_1_1master_1_1DistributedClientArrayMediator.html", null ],
@@ -123,23 +126,30 @@ var hierarchy =
         ] ],
         [ "Invoke", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html", null ],
         [ "InvokeHistoryArray", "d1/d7b/classsamchon_1_1protocol_1_1InvokeHistoryArray.html", [
-          [ "PRInvokeHistoryArray", "df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray.html", null ]
+          [ "PRInvokeHistoryArray", "df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray.html", [
+            [ "PRMasterHistoryArray", "d6/dd8/classsamchon_1_1protocol_1_1master_1_1PRMasterHistoryArray.html", null ]
+          ] ]
         ] ],
         [ "DSInvokeHistoryList", "d8/d75/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryList.html", null ]
       ] ],
       [ "EntityList< _Ty >", "d6/d5a/classsamchon_1_1protocol_1_1EntityList.html", null ],
       [ "ExternalSystemRole", "d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html", [
+        [ "DistributedSystemRole", "d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html", null ],
         [ "DistributedSystemRole", "d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html", null ]
       ] ],
       [ "InvokeHistory", "da/d47/classsamchon_1_1protocol_1_1InvokeHistory.html", [
         [ "DSInvokeHistory", "de/d14/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistory.html", null ],
-        [ "PRInvokeHistory", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html", null ]
+        [ "PRInvokeHistory", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html", [
+          [ "PRMasterHistory", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html", null ]
+        ] ]
       ] ],
       [ "InvokeParameter", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html", null ],
       [ "SystemRole", "d5/de8/classsamchon_1_1protocol_1_1SystemRole.html", null ]
     ] ],
     [ "Event", "d2/d56/classsamchon_1_1library_1_1Event.html", [
       [ "ErrorEvent", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html", null ],
+      [ "ErrorEvent", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html", null ],
+      [ "ProgressEvent", "de/d4a/classsamchon_1_1library_1_1ProgressEvent.html", null ],
       [ "ProgressEvent", "de/d4a/classsamchon_1_1library_1_1ProgressEvent.html", null ]
     ] ],
     [ "EventDispatcher", "d3/d9b/classsamchon_1_1library_1_1EventDispatcher.html", null ],
@@ -204,6 +214,7 @@ var hierarchy =
     [ "IPUserPair", "df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair.html", null ],
     [ "IServer", "d4/de8/classsamchon_1_1protocol_1_1IServer.html", [
       [ "ChatServer", "dd/dc0/classsamchon_1_1example_1_1console__chat__server_1_1ChatServer.html", null ],
+      [ "ExternalClientArray", "d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html", null ],
       [ "ExternalClientArray", "d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html", null ],
       [ "IWebServer", "d5/d23/classsamchon_1_1protocol_1_1IWebServer.html", null ],
       [ "Server", "d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html", [

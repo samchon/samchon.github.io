@@ -28,5 +28,7 @@ var namespacesamchon_1_1protocol_1_1master =
     [ "ParallelSystemArray", "d8/d9c/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArray.html", "d8/d9c/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArray" ],
     [ "ParallelSystemArrayMediator", "d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator.html", "d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator" ],
     [ "PRInvokeHistory", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory" ],
-    [ "PRInvokeHistoryArray", "df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray.html", "df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray" ]
+    [ "PRInvokeHistoryArray", "df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray.html", "df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray" ],
+    [ "PRMasterHistory", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory" ],
+    [ "PRMasterHistoryArray", "d6/dd8/classsamchon_1_1protocol_1_1master_1_1PRMasterHistoryArray.html", "d6/dd8/classsamchon_1_1protocol_1_1master_1_1PRMasterHistoryArray" ]
 ];

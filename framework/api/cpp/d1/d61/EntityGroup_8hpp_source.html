@@ -171,55 +171,72 @@ $(document).ready(function(){initNavTree('d1/d61/EntityGroup_8hpp_source.html','
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;            <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a554e0798083a38327f360c61a1ca716b">createChild</a>(std::shared_ptr&lt;library::XML&gt;) -&gt; entity_type* = 0;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;            </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            <span class="comment">/* ------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">                GETTERS</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">            ------------------------------------------------------------------------------------ */</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a531cae9e9c8b395f8cde3f2ca243cc79">  143</a></span>&#160;            <span class="keyword">auto</span> <a class="code" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a531cae9e9c8b395f8cde3f2ca243cc79">has</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span></div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;            {</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                    <span class="keywordflow">if</span> ((*it)-&gt;key() == <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            };</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#af318f1e62268b7e178fdc2a9669444b8">  158</a></span>&#160;            <span class="keyword">auto</span> <span class="keyword">get</span>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>) -&gt; value_type&amp;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">if</span> ((*it)-&gt;key() == <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    <span class="keywordflow">return</span> *it;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                <span class="keywordflow">throw</span> std::exception(<span class="stringliteral">&quot;out of range&quot;</span>);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            };</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#af5c2fb617197f93e98ec6c4b547d9bdd">  173</a></span>&#160;            <span class="keyword">auto</span> <span class="keyword">get</span>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>) <span class="keyword">const</span> -&gt; <span class="keyword">const</span> value_type&amp;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    <span class="keywordflow">if</span> ((*it)-&gt;key() == <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                        <span class="keywordflow">return</span> *it;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                <span class="keywordflow">throw</span> std::exception(<span class="stringliteral">&quot;out of range&quot;</span>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            };</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a30dee0fe2044f2f88579935cc10fc753">  197</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a30dee0fe2044f2f88579935cc10fc753">toXML</a>() const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::shared_ptr&lt;library::XML&gt;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                std::shared_ptr&lt;library::XML&gt; &amp;xml = <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ae1c1e56eb0b3e41f12170628475a7d2a">Entity::toXML</a>();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                std::shared_ptr&lt;library::XMLList&gt; xmlList(<span class="keyword">new</span> <a class="code" href="../../d8/dd4/namespacesamchon_1_1library.html#a28b09b862589c02120500d4096f154a9">library::XMLList</a>());</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                xmlList-&gt;reserve(this-&gt;size());</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    xmlList-&gt;push_back( (*it)-&gt;toXML() );</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                xml-&gt;set(<a class="code" href="../../d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html#abcef66d1cd792f48c12c52ac52198c0f">CHILD_TAG</a>(), xmlList);</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                <span class="keywordflow">return</span> xml;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            };</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        };</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    };</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;};</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="comment">/* ------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">                MODIFIERS</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment">            ------------------------------------------------------------------------------------ */</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keyword">using</span> _Container::erase;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;            <span class="keywordtype">void</span> erase(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                <span class="keywordflow">for</span> (_Container::iterator it = begin(); it != end();)</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                    <span class="keywordflow">if</span> ((*it)-&gt;key() == <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                        it = erase(it);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                        it++;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            };</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;            <span class="comment">/* ------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">                GETTERS</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">            ------------------------------------------------------------------------------------ */</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a531cae9e9c8b395f8cde3f2ca243cc79">  157</a></span>&#160;            <span class="keyword">auto</span> <a class="code" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a531cae9e9c8b395f8cde3f2ca243cc79">has</a>(<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                    <span class="keywordflow">if</span> ((*it)-&gt;key() == <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            };</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#af318f1e62268b7e178fdc2a9669444b8">  172</a></span>&#160;            <span class="keyword">auto</span> <span class="keyword">get</span>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>) -&gt; value_type&amp;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">if</span> ((*it)-&gt;key() == <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    <span class="keywordflow">return</span> *it;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                <span class="keywordflow">throw</span> std::exception(<span class="stringliteral">&quot;out of range&quot;</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            };</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#af5c2fb617197f93e98ec6c4b547d9bdd">  187</a></span>&#160;            <span class="keyword">auto</span> <span class="keyword">get</span>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>) <span class="keyword">const</span> -&gt; <span class="keyword">const</span> value_type&amp;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                    <span class="keywordflow">if</span> ((*it)-&gt;key() == <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183">key</a>)</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                        <span class="keywordflow">return</span> *it;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                <span class="keywordflow">throw</span> std::exception(<span class="stringliteral">&quot;out of range&quot;</span>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;            };</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;            <span class="comment">/* ------------------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">                EXPORTERS</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">            ------------------------------------------------------------------------------------ */</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno"><a class="line" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a30dee0fe2044f2f88579935cc10fc753">  214</a></span>&#160;            <span class="keyword">virtual</span> <span class="keyword">auto</span> <a class="code" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a30dee0fe2044f2f88579935cc10fc753">toXML</a>() const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::shared_ptr&lt;library::XML&gt;</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                std::shared_ptr&lt;library::XML&gt; &amp;xml = <a class="code" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ae1c1e56eb0b3e41f12170628475a7d2a">Entity::toXML</a>();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                std::shared_ptr&lt;library::XMLList&gt; xmlList(<span class="keyword">new</span> <a class="code" href="../../d8/dd4/namespacesamchon_1_1library.html#a28b09b862589c02120500d4096f154a9">library::XMLList</a>());</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                xmlList-&gt;reserve(this-&gt;size());</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = begin(); it != end(); it++)</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    xmlList-&gt;push_back( (*it)-&gt;toXML() );</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;                xml-&gt;set(<a class="code" href="../../d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html#abcef66d1cd792f48c12c52ac52198c0f">CHILD_TAG</a>(), xmlList);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                <span class="keywordflow">return</span> xml;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            };</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;        };</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    };</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;};</div>
 <div class="ttc" id="classsamchon_1_1protocol_1_1Entity_html"><div class="ttname"><a href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html">samchon::protocol::Entity</a></div><div class="ttdoc">An entity, a standard data class. </div><div class="ttdef"><b>Definition:</b> Entity.hpp:52</div></div>
-<div class="ttc" id="classsamchon_1_1protocol_1_1EntityGroup_html_a30dee0fe2044f2f88579935cc10fc753"><div class="ttname"><a href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a30dee0fe2044f2f88579935cc10fc753">samchon::protocol::EntityGroup::toXML</a></div><div class="ttdeci">virtual auto toXML() const  -&gt; std::shared_ptr&lt; library::XML &gt;</div><div class="ttdoc">Get an XML object represents the EntityGroup. </div><div class="ttdef"><b>Definition:</b> EntityGroup.hpp:197</div></div>
+<div class="ttc" id="classsamchon_1_1protocol_1_1EntityGroup_html_a30dee0fe2044f2f88579935cc10fc753"><div class="ttname"><a href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a30dee0fe2044f2f88579935cc10fc753">samchon::protocol::EntityGroup::toXML</a></div><div class="ttdeci">virtual auto toXML() const  -&gt; std::shared_ptr&lt; library::XML &gt;</div><div class="ttdoc">Get an XML object represents the EntityGroup. </div><div class="ttdef"><b>Definition:</b> EntityGroup.hpp:214</div></div>
 <div class="ttc" id="classsamchon_1_1protocol_1_1IEntityGroup_html_abcef66d1cd792f48c12c52ac52198c0f"><div class="ttname"><a href="../../d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html#abcef66d1cd792f48c12c52ac52198c0f">samchon::protocol::IEntityGroup::CHILD_TAG</a></div><div class="ttdeci">virtual auto CHILD_TAG() const  -&gt; std::string=0</div><div class="ttdoc">A tag name of children. </div></div>
 <div class="ttc" id="classsamchon_1_1protocol_1_1EntityGroup_html_a554e0798083a38327f360c61a1ca716b"><div class="ttname"><a href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a554e0798083a38327f360c61a1ca716b">samchon::protocol::EntityGroup::createChild</a></div><div class="ttdeci">virtual auto createChild(std::shared_ptr&lt; library::XML &gt;) -&gt; entity_type *=0</div><div class="ttdoc">Factory method of a child Entity. </div></div>
 <div class="ttc" id="classsamchon_1_1protocol_1_1IEntityGroup_html"><div class="ttname"><a href="../../d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html">samchon::protocol::IEntityGroup</a></div><div class="ttdoc">An iternface for entity group. </div><div class="ttdef"><b>Definition:</b> IEntityGroup.hpp:32</div></div>
@@ -232,7 +249,7 @@ $(document).ready(function(){initNavTree('d1/d61/EntityGroup_8hpp_source.html','
 <div class="ttc" id="namespacesamchon_html"><div class="ttname"><a href="../../db/df1/namespacesamchon.html">samchon</a></div><div class="ttdoc">Top level namespace of products built from samchon. </div><div class="ttdef"><b>Definition:</b> ByteArray.hpp:7</div></div>
 <div class="ttc" id="classsamchon_1_1protocol_1_1Entity_html_ae1c1e56eb0b3e41f12170628475a7d2a"><div class="ttname"><a href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ae1c1e56eb0b3e41f12170628475a7d2a">samchon::protocol::Entity::toXML</a></div><div class="ttdeci">virtual auto toXML() const  -&gt; std::shared_ptr&lt; library::XML &gt;</div><div class="ttdoc">Get an XML object represents the Entity. </div><div class="ttdef"><b>Definition:</b> Entity.cpp:30</div></div>
 <div class="ttc" id="classsamchon_1_1protocol_1_1Entity_html_ac1489c595f4d9e9ceb6fb91463ae195c"><div class="ttname"><a href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ac1489c595f4d9e9ceb6fb91463ae195c">samchon::protocol::Entity::construct</a></div><div class="ttdeci">virtual void construct(std::shared_ptr&lt; library::XML &gt;)=0</div><div class="ttdoc">Construct data of the Entity from an XML object. </div><div class="ttdef"><b>Definition:</b> Entity.cpp:23</div></div>
-<div class="ttc" id="classsamchon_1_1protocol_1_1EntityGroup_html_a531cae9e9c8b395f8cde3f2ca243cc79"><div class="ttname"><a href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a531cae9e9c8b395f8cde3f2ca243cc79">samchon::protocol::EntityGroup::has</a></div><div class="ttdeci">auto has(const std::string &amp;key) const  -&gt; bool</div><div class="ttdoc">Indicates whether a container has an object having the specified identifier. </div><div class="ttdef"><b>Definition:</b> EntityGroup.hpp:143</div></div>
+<div class="ttc" id="classsamchon_1_1protocol_1_1EntityGroup_html_a531cae9e9c8b395f8cde3f2ca243cc79"><div class="ttname"><a href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a531cae9e9c8b395f8cde3f2ca243cc79">samchon::protocol::EntityGroup::has</a></div><div class="ttdeci">auto has(const std::string &amp;key) const  -&gt; bool</div><div class="ttdoc">Indicates whether a container has an object having the specified identifier. </div><div class="ttdef"><b>Definition:</b> EntityGroup.hpp:157</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

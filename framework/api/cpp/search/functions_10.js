@@ -1,8 +1,8 @@
 var searchData=
 [
   ['r',['r',['../de/ddf/classsamchon_1_1library_1_1CaseGenerator.html#a34ce960fc2eb150b7d39e8ca65cd3ed9',1,'samchon::library::CaseGenerator']]],
-  ['radian_5fto_5fdegree',['radian_to_degree',['../de/d8f/classsamchon_1_1library_1_1Math.html#afbb4acc719f2b5b6db6952baaa0a6d92',1,'samchon::library::Math']]],
-  ['random',['random',['../de/d8f/classsamchon_1_1library_1_1Math.html#a3e509be3d40a5848b84a4a4c468f367b',1,'samchon::library::Math']]],
+  ['radian_5fto_5fdegree',['radian_to_degree',['../de/d8f/classsamchon_1_1library_1_1Math.html#afbb4acc719f2b5b6db6952baaa0a6d92',1,'samchon::library::Math::radian_to_degree(double) -&gt; double'],['../de/d8f/classsamchon_1_1library_1_1Math.html#ae5c708450a696c279e98585fcea3e832',1,'samchon::library::Math::radian_to_degree(double) -&gt; double']]],
+  ['random',['random',['../de/d8f/classsamchon_1_1library_1_1Math.html#a3e509be3d40a5848b84a4a4c468f367b',1,'samchon::library::Math::random() -&gt; double'],['../de/d8f/classsamchon_1_1library_1_1Math.html#afa3bff705a436e5d99fa7f82eec1a7bc',1,'samchon::library::Math::random() -&gt; double']]],
   ['read',['read',['../dc/d37/classsamchon_1_1ByteArray.html#ae7e51bdb9d4acbc77330cb67fdb3c0a6',1,'samchon::ByteArray']]],
   ['readlock',['readLock',['../df/d85/classsamchon_1_1library_1_1RWMutex.html#a664e237001ad049e20494ecf744b347a',1,'samchon::library::RWMutex']]],
   ['readreversely',['readReversely',['../dc/d37/classsamchon_1_1ByteArray.html#af31a23a4ca34bc84dbcf28345d2f9d7d',1,'samchon::ByteArray']]],

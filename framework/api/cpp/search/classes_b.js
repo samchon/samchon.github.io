@@ -19,6 +19,8 @@ var searchData=
   ['permutationgenerator',['PermutationGenerator',['../d4/d31/classsamchon_1_1library_1_1PermutationGenerator.html',1,'samchon::library']]],
   ['prinvokehistory',['PRInvokeHistory',['../d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html',1,'samchon::protocol::master']]],
   ['prinvokehistoryarray',['PRInvokeHistoryArray',['../df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray.html',1,'samchon::protocol::master']]],
+  ['prmasterhistory',['PRMasterHistory',['../df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html',1,'samchon::protocol::master']]],
+  ['prmasterhistoryarray',['PRMasterHistoryArray',['../d6/dd8/classsamchon_1_1protocol_1_1master_1_1PRMasterHistoryArray.html',1,'samchon::protocol::master']]],
   ['product',['Product',['../df/d73/classsamchon_1_1example_1_1packer_1_1Product.html',1,'samchon::example::packer']]],
   ['progressevent',['ProgressEvent',['../de/d4a/classsamchon_1_1library_1_1ProgressEvent.html',1,'samchon::library']]]
 ];

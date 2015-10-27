@@ -16,7 +16,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Variables", "functions_vars.html", "functions_vars" ]
       ] ]
     ] ],
     [ "Files", null, [
@@ -28,11 +28,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ae0c650408c3ddcdf4bf4fe07afce6a28",
-"d7/d0a/classsamchon_1_1library_1_1FTInstance.html#a1443a6fadd636dce7f59bbcecd7634e3",
-"d9/ddf/classsamchon_1_1protocol_1_1master_1_1DistributedClientArrayMediator.html#ad05831ec0a538df1e2c5c6fd6767edbd",
-"dd/d7b/classsamchon_1_1library_1_1FactorialGenerator.html",
-"df/de2/classsamchon_1_1example_1_1chat__service_1_1ChatService.html"
+"d3/d66/classsamchon_1_1protocol_1_1IEntityChain.html#a914f10755b6cbf435542607e73c30296",
+"d6/d71/ExternalServerArray_8hpp_source.html",
+"d9/d88/classsamchon_1_1library_1_1Semaphore.html#ae2375b90c0e9df0eb8767576de6d7143",
+"dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator.html#aad9fbd4de53a3243bd213e7158ed2e48",
+"df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#acda7eac740491b5ff33693a3ef2e1537"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

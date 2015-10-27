@@ -120,23 +120,23 @@ $(document).ready(function(){initNavTree('db/d1a/ExternalClientArray_8hpp_source
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">namespace </span>protocol</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html">   22</a></span>&#160;        <span class="keyword">class </span>SAMCHON_FRAMEWORK_API <a class="code" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html">ExternalClientArray</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            : <span class="keyword">public</span> <span class="keyword">virtual</span> <a class="code" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html">ExternalSystemArray</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">private</span> <span class="keyword">virtual</span> <a class="code" href="../../d4/de8/classsamchon_1_1protocol_1_1IServer.html">IServer</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">class </span>SAMCHON_FRAMEWORK_API ExternalClientArray</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            : <span class="keyword">public</span> <span class="keyword">virtual</span> ExternalSystemArray,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">private</span> <span class="keyword">virtual</span> IServer</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">typedef</span> <a class="code" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html">ExternalSystemArray</a> <a class="code" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html">super</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keyword">typedef</span> ExternalSystemArray super;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            </div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a44adb27db8882b3fa685710516c6c120">   32</a></span>&#160;            std::string <a class="code" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a44adb27db8882b3fa685710516c6c120">myIP</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            std::string myIP;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a63c89c04d1feae07ca35558055155ffb">   37</a></span>&#160;            <span class="keywordtype">int</span> <a class="code" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a63c89c04d1feae07ca35558055155ffb">port</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordtype">int</span> port;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">/* ------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">                CONSTRUCTORS</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">            ------------------------------------------------------------------ */</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html">ExternalClientArray</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">virtual</span> ~<a class="code" href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html">ExternalClientArray</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            ExternalClientArray();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">virtual</span> ~ExternalClientArray() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">virtual</span> <span class="keywordtype">void</span> construct(std::shared_ptr&lt;library::XML&gt;) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
@@ -159,12 +159,7 @@ $(document).ready(function(){initNavTree('db/d1a/ExternalClientArray_8hpp_source
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        };</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    };</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="ttc" id="classsamchon_1_1protocol_1_1IServer_html"><div class="ttname"><a href="../../d4/de8/classsamchon_1_1protocol_1_1IServer.html">samchon::protocol::IServer</a></div><div class="ttdoc">An interface of a physical server. </div><div class="ttdef"><b>Definition:</b> IServer.hpp:43</div></div>
-<div class="ttc" id="classsamchon_1_1protocol_1_1ExternalSystemArray_html"><div class="ttname"><a href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html">samchon::protocol::ExternalSystemArray</a></div><div class="ttdoc">An array of ExternalSystem(s). </div><div class="ttdef"><b>Definition:</b> ExternalSystemArray.hpp:39</div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> RWMutex.hpp:4</div></div>
-<div class="ttc" id="classsamchon_1_1protocol_1_1ExternalClientArray_html_a63c89c04d1feae07ca35558055155ffb"><div class="ttname"><a href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a63c89c04d1feae07ca35558055155ffb">samchon::protocol::ExternalClientArray::port</a></div><div class="ttdeci">int port</div><div class="ttdoc">A port number for accepting external clients. </div><div class="ttdef"><b>Definition:</b> ExternalClientArray.hpp:37</div></div>
-<div class="ttc" id="classsamchon_1_1protocol_1_1ExternalClientArray_html"><div class="ttname"><a href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html">samchon::protocol::ExternalClientArray</a></div><div class="ttdoc">An array of ExternalClient(s) </div><div class="ttdef"><b>Definition:</b> ExternalClientArray.hpp:22</div></div>
-<div class="ttc" id="classsamchon_1_1protocol_1_1ExternalClientArray_html_a44adb27db8882b3fa685710516c6c120"><div class="ttname"><a href="../../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a44adb27db8882b3fa685710516c6c120">samchon::protocol::ExternalClientArray::myIP</a></div><div class="ttdeci">std::string myIP</div><div class="ttdoc">A custom ip address of my system to bind. </div><div class="ttdef"><b>Definition:</b> ExternalClientArray.hpp:32</div></div>
 <div class="ttc" id="namespacesamchon_html"><div class="ttname"><a href="../../db/df1/namespacesamchon.html">samchon</a></div><div class="ttdoc">Top level namespace of products built from samchon. </div><div class="ttdef"><b>Definition:</b> ByteArray.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
