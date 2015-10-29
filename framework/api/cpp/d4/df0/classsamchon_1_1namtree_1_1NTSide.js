@@ -1,6 +1,6 @@
 var classsamchon_1_1namtree_1_1NTSide =
 [
-    [ "TAG", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#aa55bc231502ef8e0dd9a9c274d028ac9", null ],
-    [ "construct", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#a4c4b7d9441b10a734e8ce75e67d0375c", null ],
-    [ "toXML", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#ac0248fcb25b3fa4f463d545005fdcbf3", null ]
+    [ "TAG", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#a98efcffd45bd7bf3a74709fec3cf47cc", null ],
+    [ "construct", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#af2c496f57a09aa7704d55ad91659a551", null ],
+    [ "toXML", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#aee1f42f1191f6e4d0ba3cc8e5ac30839", null ]
 ];

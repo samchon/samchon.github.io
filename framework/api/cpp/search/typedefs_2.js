@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sharedentityarray',['SharedEntityArray',['../db/d64/namespacesamchon_1_1protocol.html#aad78260d3d142da970db113839ab3e52',1,'samchon::protocol']]],
-  ['sharedentitylist',['SharedEntityList',['../db/d64/namespacesamchon_1_1protocol.html#a45d013b8bd41de47dc445260d9f5417e',1,'samchon::protocol']]]
+  ['sharedentityarray',['SharedEntityArray',['../db/d64/namespacesamchon_1_1protocol.html#ac380c924aa31626d5ead36576165c76d',1,'samchon::protocol']]],
+  ['sharedentitylist',['SharedEntityList',['../db/d64/namespacesamchon_1_1protocol.html#af3c49cc2b4296fb477db408f86eb5d1f',1,'samchon::protocol']]]
 ];

@@ -1,4 +1,4 @@
 var classsamchon_1_1protocol_1_1slave_1_1ParallelServer =
 [
-    [ "ParallelServer", "de/d8f/classsamchon_1_1protocol_1_1slave_1_1ParallelServer.html#aed97137b605ff79a82b480ad0195a040", null ]
+    [ "ParallelServer", "de/d8f/classsamchon_1_1protocol_1_1slave_1_1ParallelServer.html#a7d6720959068d0a5639539b24d9e2474", null ]
 ];

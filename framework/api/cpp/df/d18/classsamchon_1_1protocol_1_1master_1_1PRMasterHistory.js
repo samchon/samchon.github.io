@@ -1,8 +1,8 @@
 var classsamchon_1_1protocol_1_1master_1_1PRMasterHistory =
 [
-    [ "PRMasterHistory", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a4dbd1c8f0f69c672ae92e72408bbe30f", null ],
-    [ "notifyEnd", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a9c924edb507c0e84860adab78c9afd26", null ],
-    [ "master", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a32947f8305c44a099f7160690c9f3ff1", null ],
-    [ "historyArray", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a15e1681487353b6619a911111577b3a4", null ],
-    [ "completed", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#abc4ec5f15451660f3d6a7d96c919523c", null ]
+    [ "PRMasterHistory", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a86051f7e3eca5a26c9a0ff9bf91b32a2", null ],
+    [ "notifyEnd", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a3c5315b925cb1a3f30ce533ce9201b44", null ],
+    [ "master", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a3a3fc6cfd3939d97ee8565617c5cbca5", null ],
+    [ "historyArray", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#a7ac2d448b64cbeaeae1813df34c84d42", null ],
+    [ "completed", "df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#abd4f13b4ec9e11a7c15ed6d1c1b6ebc4", null ]
 ];

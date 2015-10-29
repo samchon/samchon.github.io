@@ -1,8 +1,8 @@
 var classsamchon_1_1namtree_1_1NTFactory =
 [
-    [ "NTFactory", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a99d5af29b66baf3db54544cbef71db01", null ],
-    [ "createCriteria", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a9c76bbc2ac2fae536324102411350d67", null ],
-    [ "createSide", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a7ccd15221eac9017d4ed107a6f91e5c0", null ],
-    [ "data", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a768ad0d499a1403819029bd67bcc5e2a", null ],
-    [ "sideFunctionMap", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#ad60ae2ea68f4c03e0df3ba186844ddaa", null ]
+    [ "NTFactory", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a96c34a099253c7316296f350b24beea7", null ],
+    [ "createCriteria", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#ac7f523c0d01663415e4538309447cefa", null ],
+    [ "createSide", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a6e95ceee2d74cc4fdc39217dc4b9c9ac", null ],
+    [ "data", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a8673e45189216ad3549ff2934030447f", null ],
+    [ "sideFunctionMap", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html#a1bf7fde494344e0b2f47ccdeb172408e", null ]
 ];

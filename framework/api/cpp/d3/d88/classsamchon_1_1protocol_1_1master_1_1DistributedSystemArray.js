@@ -1,12 +1,12 @@
 var classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray =
 [
-    [ "DistributedSystemArray", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ae0c650408c3ddcdf4bf4fe07afce6a28", null ],
-    [ "construct", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a4ca1bd41b274e7cc42e80b90de4794bc", null ],
-    [ "createRole", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a28a791fd4a4dd3a452d20f3584b14172", null ],
-    [ "start", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a2af117417cc4c8d4311fc92545326905", null ],
-    [ "allocateRoles", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a92116fb900fb70cc01a584c8b2b21ad6", null ],
-    [ "getRole", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a12834460d2f4aae896a0c867e7e3cdc3", null ],
-    [ "toXML", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#aad9fbd4de53a3243bd213e7158ed2e48", null ],
-    [ "roleDictionary", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#aed4a3591c1be729cd5640a5145d1eeed", null ],
-    [ "gaParameters", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ad31ee5207c2ef02bec0e6cc83c7746ae", null ]
+    [ "DistributedSystemArray", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a143db9f0203c25175da032243529a8d2", null ],
+    [ "construct", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a8c0dafdacd53e009bc2e67d280e7b157", null ],
+    [ "createRole", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#aff3795e5196392d0e6e43a33757b18f1", null ],
+    [ "start", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a22e3b5da51d52a11383f3f3569fd6715", null ],
+    [ "allocateRoles", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ab181a72cfd3ca013a5209e1c8238f407", null ],
+    [ "getRole", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a02595fe8ba5717567032f95be1890cd1", null ],
+    [ "toXML", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a9eb29c95bac9e157d260c92b61b1ff4b", null ],
+    [ "roleDictionary", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ad941197cb772b0d2fb9e3a0ae0300456", null ],
+    [ "gaParameters", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a842ed640022fa5f511b164bf25aead4b", null ]
 ];

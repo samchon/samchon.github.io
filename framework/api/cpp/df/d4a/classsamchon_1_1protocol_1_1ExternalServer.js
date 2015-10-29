@@ -1,11 +1,11 @@
 var classsamchon_1_1protocol_1_1ExternalServer =
 [
-    [ "ExternalServer", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#acda7eac740491b5ff33693a3ef2e1537", null ],
-    [ "construct", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a4c4b7d9441b10a734e8ce75e67d0375c", null ],
-    [ "start", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a5d5d9ebd12cd3a7d268bc98a3fc7bf97", null ],
-    [ "getIP", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a39e687dbb407a2d1cc1ba8b2b9299663", null ],
-    [ "getPort", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#acd57c743eeecd39a8f5fe6e299a1b42d", null ],
-    [ "getMyIP", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a2da1e4ba421fb34e8d711b41d76a9ddf", null ],
-    [ "toXML", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#ac0248fcb25b3fa4f463d545005fdcbf3", null ],
-    [ "myIP", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a44adb27db8882b3fa685710516c6c120", null ]
+    [ "ExternalServer", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a95ce288d489d7606e2486e6fffa6d1c0", null ],
+    [ "construct", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a97b92f1102ad1d656172734db44933de", null ],
+    [ "start", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#ae66e632f38f210dcbf41616d10c7c3f5", null ],
+    [ "getIP", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a1a1591a3edaa152f26e6693d1b70cd14", null ],
+    [ "getPort", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#ae63253dd33b85fcf6a17fb6b92b16533", null ],
+    [ "getMyIP", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a3e2e5d732dff6bf42597044e32b62acd", null ],
+    [ "toXML", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a505a1d39ba21af65c06ffd8f351e5fe7", null ],
+    [ "myIP", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#af40a9b0caa2b6ee1455c882e7a02f809", null ]
 ];

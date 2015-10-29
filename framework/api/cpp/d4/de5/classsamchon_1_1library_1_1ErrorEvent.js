@@ -1,8 +1,6 @@
 var classsamchon_1_1library_1_1ErrorEvent =
 [
-    [ "ErrorEvent", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#a0f2d1ea2e59d299f3cee7a8d841e4a6f", null ],
-    [ "ErrorEvent", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#a0f2d1ea2e59d299f3cee7a8d841e4a6f", null ],
-    [ "getMessage", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#ae2d9fd6693ad0e915e8cc1883429629e", null ],
-    [ "getMessage", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#ae2d9fd6693ad0e915e8cc1883429629e", null ],
-    [ "message", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#a36bd74109f547f7f8198faf5a12d2879", null ]
+    [ "ErrorEvent", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#a42b3f5f664e34c925958abddedf4fa8b", null ],
+    [ "getMessage", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#a3ec25cba7118a4005d95650eb00cbefa", null ],
+    [ "message", "d4/de5/classsamchon_1_1library_1_1ErrorEvent.html#a43006ea855c53e95918916d84b272bc3", null ]
 ];

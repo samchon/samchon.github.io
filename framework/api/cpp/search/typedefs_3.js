@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uniqueentityarray',['UniqueEntityArray',['../db/d64/namespacesamchon_1_1protocol.html#ab6fc7d36b7aea823c7eb5d7c3a12b714',1,'samchon::protocol']]],
-  ['uniqueentitylist',['UniqueEntityList',['../db/d64/namespacesamchon_1_1protocol.html#afc95c533631d0d80d5a4b06d0f693ca4',1,'samchon::protocol']]]
+  ['uniqueentityarray',['UniqueEntityArray',['../db/d64/namespacesamchon_1_1protocol.html#aae17764dc7fab52a5368381c33153e3d',1,'samchon::protocol']]],
+  ['uniqueentitylist',['UniqueEntityList',['../db/d64/namespacesamchon_1_1protocol.html#aaf0d82f213507b3d6e9f4bf5dd245a83',1,'samchon::protocol']]]
 ];

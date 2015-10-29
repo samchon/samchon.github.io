@@ -1,6 +1,6 @@
 var classsamchon_1_1protocol_1_1slave_1_1SlaveSystem =
 [
-    [ "SlaveSystem", "d1/d4a/classsamchon_1_1protocol_1_1slave_1_1SlaveSystem.html#a362def5cdbc3b9cdf2a10ccf29c00c36", null ],
-    [ "sendData", "d1/d4a/classsamchon_1_1protocol_1_1slave_1_1SlaveSystem.html#ae0f466a169b2d23786a2f94ac908672c", null ],
-    [ "_replyData", "d1/d4a/classsamchon_1_1protocol_1_1slave_1_1SlaveSystem.html#a16d1dc1a350e9838f43cec43b8326cb8", null ]
+    [ "SlaveSystem", "d1/d4a/classsamchon_1_1protocol_1_1slave_1_1SlaveSystem.html#a69175236994f597a31377ba0f98593e6", null ],
+    [ "sendData", "d1/d4a/classsamchon_1_1protocol_1_1slave_1_1SlaveSystem.html#aa021526e0e36ebdcd5792f4157617e2d", null ],
+    [ "_replyData", "d1/d4a/classsamchon_1_1protocol_1_1slave_1_1SlaveSystem.html#a6b97fafd0aa6e09fbe44b1a7b1c64484", null ]
 ];

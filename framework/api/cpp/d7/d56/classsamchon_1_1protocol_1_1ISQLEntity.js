@@ -1,7 +1,7 @@
 var classsamchon_1_1protocol_1_1ISQLEntity =
 [
-    [ "ISQLEntity", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#a17581642f721818e4d16ff8edc597e05", null ],
-    [ "load", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#acaf35a8be33a8c581bcaef1347bdc531", null ],
-    [ "archive", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#a968d53428a668e3d1e1c3fceee83a0e4", null ],
-    [ "toSQL", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#a10199da9e0302eafc2ece201c78b1237", null ]
+    [ "ISQLEntity", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#ac6cb60454bc5e3de8f266b65fc19df72", null ],
+    [ "load", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#af6a9f8a80a5617bdf48e22af748224a9", null ],
+    [ "archive", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#a2b369863d18d049d7ee8b357938fdd91", null ],
+    [ "toSQL", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#ac4e892c7918f2e0c0082c6eecf91418c", null ]
 ];

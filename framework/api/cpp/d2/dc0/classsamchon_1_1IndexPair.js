@@ -1,6 +1,6 @@
 var classsamchon_1_1IndexPair =
 [
-    [ "getIndex", "d2/dc0/classsamchon_1_1IndexPair.html#a280aa5ab6c82dfcaaf73d49dc4f6f15a", null ],
-    [ "getValue", "d2/dc0/classsamchon_1_1IndexPair.html#ae1f37281fd33eb01762d83d0e2cf9caf", null ],
-    [ "getValue", "d2/dc0/classsamchon_1_1IndexPair.html#a09c97afa079beabad5302938e35c6cb9", null ]
+    [ "getIndex", "d2/dc0/classsamchon_1_1IndexPair.html#a1694bcd398f96f02c8464a5d303fa90c", null ],
+    [ "getValue", "d2/dc0/classsamchon_1_1IndexPair.html#a351d47f786d83ada6c967c83b6542aa3", null ],
+    [ "getValue", "d2/dc0/classsamchon_1_1IndexPair.html#a29180e980527e297d486159150161d6a", null ]
 ];

@@ -1,5 +1,5 @@
 var classsamchon_1_1protocol_1_1WebServerConnector =
 [
-    [ "WebServerConnector", "d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html#af140d23a70e0bde21d1ecca5522c1dc5", null ],
-    [ "connect", "d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html#a1b77cbf0e475cedeb731a4a4e6a0f737", null ]
+    [ "WebServerConnector", "d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html#ae842b8cd9e0dc1e3eb7ecb6336f51407", null ],
+    [ "connect", "d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html#a60153a30662421eff0bfc77ca5989b06", null ]
 ];

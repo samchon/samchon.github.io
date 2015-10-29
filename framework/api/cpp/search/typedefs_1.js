@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dictionary',['Dictionary',['../db/df1/namespacesamchon.html#aeb49f94d88e87f0462b68db05dd3e5ef',1,'samchon']]]
+  ['dictionary',['Dictionary',['../db/df1/namespacesamchon.html#a18b65ef36d3a91e2476b8a67baee0eab',1,'samchon']]]
 ];

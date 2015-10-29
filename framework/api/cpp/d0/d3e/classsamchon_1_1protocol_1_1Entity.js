@@ -1,8 +1,8 @@
 var classsamchon_1_1protocol_1_1Entity =
 [
-    [ "Entity", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#afb4718a8ca5b822cf88129ae04240489", null ],
-    [ "TAG", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a974f48d92f0ef494a8d2c879f82c6426", null ],
-    [ "construct", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ac1489c595f4d9e9ceb6fb91463ae195c", null ],
-    [ "key", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a5f7b0261859ce45be6fc2cef64026183", null ],
-    [ "toXML", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ae1c1e56eb0b3e41f12170628475a7d2a", null ]
+    [ "Entity", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a980f368aa07ce358583982821533a54a", null ],
+    [ "TAG", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ac78bdfa249fe591e2020b04211c5cfc9", null ],
+    [ "construct", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ab2af03896b768918ef482cc65d47fe0f", null ],
+    [ "key", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#abb4726bdc349e1d701039e05eb95ec10", null ],
+    [ "toXML", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a8516db6d4dc71068a48bd1364cf9be23", null ]
 ];

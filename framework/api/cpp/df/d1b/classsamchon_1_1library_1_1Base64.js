@@ -1,5 +1,5 @@
 var classsamchon_1_1library_1_1Base64 =
 [
-    [ "encode", "df/d1b/classsamchon_1_1library_1_1Base64.html#a65947b31faaeffc25c2062e6659600c9", null ],
-    [ "decode", "df/d1b/classsamchon_1_1library_1_1Base64.html#a25752593caa225a5685bc528f07fca22", null ]
+    [ "encode", "df/d1b/classsamchon_1_1library_1_1Base64.html#a6225b7569d94443f3deadac2e7483839", null ],
+    [ "decode", "df/d1b/classsamchon_1_1library_1_1Base64.html#a35a5be80c24fcb9a765fb1a740182443", null ]
 ];
