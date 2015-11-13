@@ -9,6 +9,8 @@ var searchData=
   ['map_3c_20std_3a_3ashared_5fptr_3c_20samchon_3a_3aprotocol_3a_3aservice_3a_3aipuserpair_20_3e_20_3e',['Map&lt; std::shared_ptr&lt; samchon::protocol::service::IPUserPair &gt; &gt;',['../d1/d4e/classsamchon_1_1Map.html',1,'samchon']]],
   ['map_3c_20std_3a_3astring_2c_20std_3a_3ashared_5fptr_3c_20xmllist_20_3e_20_3e',['Map&lt; std::string, std::shared_ptr&lt; XMLList &gt; &gt;',['../d1/d4e/classsamchon_1_1Map.html',1,'samchon']]],
   ['map_3c_20std_3a_3astring_2c_20std_3a_3astring_20_3e',['Map&lt; std::string, std::string &gt;',['../d1/d4e/classsamchon_1_1Map.html',1,'samchon']]],
+  ['master',['Master',['../d1/df7/classsamchon_1_1example_1_1interaction_1_1Master.html',1,'samchon::example::interaction']]],
+  ['masterdriver',['MasterDriver',['../db/d28/classsamchon_1_1example_1_1interaction_1_1MasterDriver.html',1,'samchon::example::interaction']]],
   ['math',['Math',['../de/d8f/classsamchon_1_1library_1_1Math.html',1,'samchon::library']]],
   ['mysqli',['MySQLi',['../d6/dcc/classsamchon_1_1library_1_1MySQLi.html',1,'samchon::library']]]
 ];

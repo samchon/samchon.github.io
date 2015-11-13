@@ -21,5 +21,6 @@ var classsamchon_1_1library_1_1StringUtil =
     [ "toLowerCase", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#adf8abd8dfe8738c995bf9fd83c601bc7", null ],
     [ "toUpperCase", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a954b89485f47ad363f30290a3e7c889a", null ],
     [ "replaceAll", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a74b61e1a509a87c29e7801221113c03d", null ],
-    [ "replaceAll", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a37a5a640beae67123fe5c1bc8442f845", null ]
+    [ "replaceAll", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a37a5a640beae67123fe5c1bc8442f845", null ],
+    [ "removeHTMLSpaces", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a628a6edc50cdde82a38f0d4265ef6fbd", null ]
 ];

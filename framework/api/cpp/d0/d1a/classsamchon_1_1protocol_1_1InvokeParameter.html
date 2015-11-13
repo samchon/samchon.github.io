@@ -225,16 +225,38 @@ Protected Attributes</h2></td></tr>
 <div class="image">
 <img src="../../protocol_invoke.png" alt="protocol_invoke.png"/>
 </div>
- <dl class="section note"><dt>Note</dt><dd></dd></dl>
+ <dl class="section user"><dt>Example Sources</dt><dd><ul>
+<li><a class="el" href="../../dd/d3e/namespacesamchon_1_1example_1_1invoke.html" title="An example using Invoke message and module. ">example::invoke</a> </li>
+<li><a class="el" href="../../d4/d5b/namespacesamchon_1_1example_1_1interaction.html" title="An example of complicate network system. ">example::interaction</a></li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
 <p>A member variable void* representing any type of value is deprecated. </p>
 <p>Since C++11, method of void pointer (Declare a variable as void pointer whose type can not specified. And convert the pointer type to specified one for each case) is recommended to avoid. </p>
 <p>As that reason, the <em>void <em>value</em> was a candidate to be deprecated or to be replaced to <em>boost::any</em>. And the <em>void</em> value</em> is really deprecated since version v1.0. </p>
+<dl class="section user"><dt>[Inherited]</dt><dd></dd></dl>
+<p><a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a> is a class for standardization of expression method using on network I/O by XML. If <a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">Invoke</a> is a standard message protocol of Samchon Framework which must be kept, <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a> is a recommended semi-protocol of message for expressing a data class. Following the semi-protocol <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a> is not imposed but encouraged. </p>
+<p>As we could get advantages from standardization of message for network I/O with <a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">Invoke</a>, we can get additional advantage from standardizing expression method of data class with <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a>. We do not need to know a part of network communication. Thus, with the <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a>, we can only concentrate on entity's own logics and relationships between another entities. <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a> does not need to how network communications are being done. </p>
+<div class="image">
+<img src="../../protocol_entity.png" alt="protocol_entity.png"/>
+</div>
+ <dl class="section user"><dt>Example Sources</dt><dd><ul>
+<li><a class="el" href="../../d7/dc3/namespacesamchon_1_1example_1_1entity.html" title="An example using entity module. ">example::entity</a> </li>
+<li><a class="el" href="../../d8/dbe/namespacesamchon_1_1example_1_1packer.html" title="A packer with number of wrapper type and products. ">example::packer</a> </li>
+<li><a class="el" href="../../d0/d6a/namespacesamchon_1_1example_1_1tsp.html" title="Traveling Salesman Problem Solver. ">example::tsp</a></li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
+<p>I say repeatedly. Expression method of <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a> is recommended, but not imposed. It's a semi protocol for network I/O but not a essential protocol must be kept. The expression method of <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html" title="An entity, a standard data class. ">Entity</a>, using on network I/O, is expressed by XML string. </p>
+<p>If your own network system has a critical performance issue on communication data class, it would be better to using binary communication (with <a class="el" href="../../dc/d37/classsamchon_1_1ByteArray.html" title="Binary data class. ">ByteArray</a> or boost::serialization). Don't worry about the problem! <a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">Invoke</a> also provides methods for binary data (<a class="el" href="../../dc/d37/classsamchon_1_1ByteArray.html" title="Binary data class. ">ByteArray</a>). </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d64/namespacesamchon_1_1protocol.html" title="Package of network protocol and libraries. ">protocol</a> </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Jeongho Nam</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">protocol::Invoke</a> </dd>
 <dd>
 <a class="el" href="../../db/d64/namespacesamchon_1_1protocol.html" title="Package of network protocol and libraries. ">samchon::protocol</a> </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jeongho Nam </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00056">56</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a586009e80986a096a4c7d94f0421ef4d"></a>
 <div class="memitem">
@@ -362,7 +384,7 @@ std::shared_ptr&lt;library::XML&gt;  </li>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00152">152</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00159">159</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 
 </div>
 </div>
@@ -445,7 +467,7 @@ std::shared_ptr&lt;library::XML&gt;  </li>
 
 <p>Default Constructor. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00053">53</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00051">51</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
 </div>
 </div>
@@ -484,9 +506,9 @@ std::shared_ptr&lt;library::XML&gt;  </li>
 
 <p>Implements <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ab2af03896b768918ef482cc65d47fe0f">samchon::protocol::Entity</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00058">58</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00056">56</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00096">byteArray</a>, <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00086">str</a>, and <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00081">type</a>.</p>
+<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00103">byteArray</a>, <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00093">str</a>, and <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00088">type</a>.</p>
 
 </div>
 </div>
@@ -517,9 +539,9 @@ std::shared_ptr&lt;library::XML&gt;  </li>
 
 <p>Reimplemented from <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#abb4726bdc349e1d701039e05eb95ec10">samchon::protocol::Entity</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00119">119</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00117">117</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00069">name</a>.</p>
+<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00076">name</a>.</p>
 
 </div>
 </div>
@@ -538,9 +560,9 @@ std::shared_ptr&lt;library::XML&gt;  </li>
 
 <p>Get name. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00124">124</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00069">name</a>.</p>
+<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00076">name</a>.</p>
 
 </div>
 </div>
@@ -559,9 +581,9 @@ std::shared_ptr&lt;library::XML&gt;  </li>
 
 <p>Get type. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00128">128</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00126">126</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00081">type</a>.</p>
+<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00088">type</a>.</p>
 
 </div>
 </div>
@@ -597,7 +619,7 @@ template&lt;typename _Ty &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00226">226</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00233">233</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 
 </div>
 </div>
@@ -617,9 +639,9 @@ template&lt;typename _Ty &gt; </div>
 <p>Get value as XML object. </p>
 <p>Same with getValue&lt; std::shared_ptr&lt;library::XML&gt; &gt;(); </p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00144">144</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00091">xml</a>.</p>
+<p>References <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00098">xml</a>.</p>
 
 </div>
 </div>
@@ -699,7 +721,7 @@ template&lt;typename _Ty &gt; </div>
 
 <p>Implements <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#ac78bdfa249fe591e2020b04211c5cfc9">samchon::protocol::Entity</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00172">172</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00170">170</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
 </div>
 </div>
@@ -745,9 +767,9 @@ template&lt;typename _Ty &gt; </div>
 
 <p>Reimplemented from <a class="el" href="../../d0/d3e/classsamchon_1_1protocol_1_1Entity.html#a8516db6d4dc71068a48bd1364cf9be23">samchon::protocol::Entity</a>.</p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00177">177</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00175">175</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
-<p>References <a class="el" href="../../df/de9/Entity_8cpp_source.html#l00030">samchon::protocol::Entity::toXML()</a>, <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00081">type</a>, and <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00091">xml</a>.</p>
+<p>References <a class="el" href="../../df/de9/Entity_8cpp_source.html#l00030">samchon::protocol::Entity::toXML()</a>, <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00088">type</a>, and <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00098">xml</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -784,7 +806,7 @@ Here is the call graph for this function:</div>
 
 <p>Get a string of sql statement used to archive history log. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00200">200</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00198">198</a> of file <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html">InvokeParameter.cpp</a>.</p>
 
 </div>
 </div>
@@ -809,9 +831,9 @@ Here is the call graph for this function:</div>
 
 <p>A name can represent the parameter. </p>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00069">69</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00076">76</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00124">getName()</a>, and <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00119">key()</a>.</p>
+<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00122">getName()</a>, and <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00117">key()</a>.</p>
 
 </div>
 </div>
@@ -842,9 +864,9 @@ Here is the call graph for this function:</div>
 <li><a class="el" href="../../dc/d37/classsamchon_1_1ByteArray.html" title="Binary data class. ">ByteArray</a> </li>
 </ul>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00088">88</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00058">construct()</a>, <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00128">getType()</a>, and <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00177">toXML()</a>.</p>
+<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00056">construct()</a>, <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00126">getType()</a>, and <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00175">toXML()</a>.</p>
 
 </div>
 </div>
@@ -868,9 +890,9 @@ Here is the call graph for this function:</div>
 
 <p>A string value if the type is "string" or "number". </p>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00093">93</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00058">construct()</a>.</p>
+<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00056">construct()</a>.</p>
 
 </div>
 </div>
@@ -894,9 +916,9 @@ Here is the call graph for this function:</div>
 
 <p>An XML object if the type is "XML". </p>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00146">getvalueAsXML()</a>, and <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00177">toXML()</a>.</p>
+<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00144">getvalueAsXML()</a>, and <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00175">toXML()</a>.</p>
 
 </div>
 </div>
@@ -920,9 +942,9 @@ Here is the call graph for this function:</div>
 
 <p>A binary value if the type is "ByteArray". </p>
 
-<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00096">96</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html#l00103">103</a> of file <a class="el" href="../../d3/da5/InvokeParameter_8hpp_source.html">InvokeParameter.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00058">construct()</a>.</p>
+<p>Referenced by <a class="el" href="../../dd/d5c/InvokeParameter_8cpp_source.html#l00056">construct()</a>.</p>
 
 </div>
 </div>

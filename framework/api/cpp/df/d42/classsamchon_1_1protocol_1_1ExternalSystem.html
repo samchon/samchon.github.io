@@ -236,14 +236,18 @@ Additional Inherited Members</h2></td></tr>
 <div class="image">
 <img src="../../protocol_external_system.png" alt="protocol_external_system.png"/>
 </div>
- <dl class="section note"><dt>Note</dt><dd></dd></dl>
+ <dl class="section user"><dt>Example Sources</dt><dd><ul>
+<li><a class="el" href="../../d4/d5b/namespacesamchon_1_1example_1_1interaction.html" title="An example of complicate network system. ">example::interaction</a></li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
 <p>The <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a> class takes a role of interaction with external system in network level. However, within a framework of Samchon Framework, a boundary class like the <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a> is not such important. You can find some evidence in a relationship between <a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html" title="An array of ExternalSystem(s). ">ExternalSystemArray</a>, <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a> and <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a>. </p>
 <p>Of course, the <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> is belonged to an <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>. However, if you access an <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> from an <a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html" title="An array of ExternalSystem(s). ">ExternalSystemArray</a> directly, not passing by a belonged <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>, and send an <a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">Invoke</a> message even you're not knowing which <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a> is related in, it's called "Proxy pattern".</p>
 <p>Like the explanation of "Proxy pattern", you can utilize an <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> as a proxy of an <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>. With the pattern, you can only concentrate on <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> itself, what to do with <a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">Invoke</a> message, irrespective of the <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> is belonged to which <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d64/namespacesamchon_1_1protocol.html" title="Package of network protocol and libraries. ">samchon::protocol</a> </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jeongho Nam </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adca3302de2423ab9f815c29259c11d68"></a>
 <div class="memitem">
@@ -303,13 +307,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#ab20cac19627b4c1392d0053266bf1bfd">samchon::protocol::EntityGroup&lt; _Container, _ETy, _Ty &gt;</a>.</p>
 
-<p>Reimplemented in <a class="el" href="../../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#a359833366f654643e58beda27d85cd2b">samchon::protocol::master::DistributedSystem</a>, <a class="el" href="../../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#abcd5cabda3dece97aecc41b681975a2c">samchon::protocol::master::ParallelSystem</a>, <a class="el" href="../../df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a97b92f1102ad1d656172734db44933de">samchon::protocol::ExternalServer</a>, <a class="el" href="../../d7/da8/classsamchon_1_1protocol_1_1master_1_1DistributedServer.html#aa155782153f298f7a09856427808d885">samchon::protocol::master::DistributedServer</a>, and <a class="el" href="../../d1/da1/classsamchon_1_1protocol_1_1master_1_1ParallelServer.html#a4a259e2a05862e5418525d84d2819670">samchon::protocol::master::ParallelServer</a>.</p>
+<p>Reimplemented in <a class="el" href="../../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#a359833366f654643e58beda27d85cd2b">samchon::protocol::master::DistributedSystem</a>, <a class="el" href="../../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#abcd5cabda3dece97aecc41b681975a2c">samchon::protocol::master::ParallelSystem</a>, <a class="el" href="../../df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a97b92f1102ad1d656172734db44933de">samchon::protocol::ExternalServer</a>, <a class="el" href="../../d7/da8/classsamchon_1_1protocol_1_1master_1_1DistributedServer.html#aa155782153f298f7a09856427808d885">samchon::protocol::master::DistributedServer</a>, and <a class="el" href="../../d1/da1/classsamchon_1_1protocol_1_1master_1_1ParallelServer.html#ad948277651e9a18ccb2d4c4db9b48aa9">samchon::protocol::master::ParallelServer</a>.</p>
 
 <p>Definition at line <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html">ExternalSystem.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d1/d61/EntityGroup_8hpp_source.html#l00092">samchon::protocol::EntityGroup&lt; _Container, _ETy, _Ty &gt;::construct()</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00063">ip</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00058">name</a>, and <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00068">port</a>.</p>
+<p>References <a class="el" href="../../d1/d61/EntityGroup_8hpp_source.html#l00092">samchon::protocol::EntityGroup&lt; _Container, _ETy, _Ty &gt;::construct()</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00066">ip</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00061">name</a>, and <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00071">port</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/d4b/ParallelClientArrayMediator_8cpp_source.html#l00023">samchon::protocol::master::ParallelClientArrayMediator::construct()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00018">samchon::protocol::ExternalServer::construct()</a>, <a class="el" href="../../d9/d25/ParallelSystemArrayMediator_8cpp_source.html#l00029">samchon::protocol::master::ParallelSystemArrayMediator::construct()</a>, and <a class="el" href="../../dc/d20/ParallelSystem_8cpp_source.html#l00031">samchon::protocol::master::ParallelSystem::construct()</a>.</p>
+<p>Referenced by <a class="el" href="../../d3/d4b/ParallelClientArrayMediator_8cpp_source.html#l00023">samchon::protocol::master::ParallelClientArrayMediator::construct()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00018">samchon::protocol::ExternalServer::construct()</a>, <a class="el" href="../../d9/d25/ParallelSystemArrayMediator_8cpp_source.html#l00029">samchon::protocol::master::ParallelSystemArrayMediator::construct()</a>, and <a class="el" href="../../dc/d20/ParallelSystem_8cpp_source.html#l00032">samchon::protocol::master::ParallelSystem::construct()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -330,6 +334,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node3" href="../../df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a97b92f1102ad1d656172734db44933de" title="Construct data of the Entity from an XML object. " alt="" coords="241,86,409,127"/>
 <area shape="rect" id="node4" href="../../d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator.html#a95d9dd461f99f9a2b2008709dcdce90e" title="Construct data of the Entity from an XML object. " alt="" coords="231,152,420,208"/>
 <area shape="rect" id="node5" href="../../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#abcd5cabda3dece97aecc41b681975a2c" title="Construct data of the Entity from an XML object. " alt="" coords="246,232,405,288"/>
+<area shape="rect" id="node6" href="../../d1/da1/classsamchon_1_1protocol_1_1master_1_1ParallelServer.html#ad948277651e9a18ccb2d4c4db9b48aa9" title="Construct data of the Entity from an XML object. " alt="" coords="468,232,617,288"/>
 </map>
 </div>
 </p>
@@ -370,10 +375,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem_ae34212173efa782547b63e1d4fc8b185_icgraph.png" border="0" usemap="#df/d42/classsamchon_1_1protocol_1_1ExternalSystem_ae34212173efa782547b63e1d4fc8b185_icgraph" alt=""/></div>
 <map name="df/d42/classsamchon_1_1protocol_1_1ExternalSystem_ae34212173efa782547b63e1d4fc8b185_icgraph" id="df/d42/classsamchon_1_1protocol_1_1ExternalSystem_ae34212173efa782547b63e1d4fc8b185_icgraph">
-<area shape="rect" id="node2" href="../../d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray.html#afd06bc93632af44ce99369857220fb38" title="Start interaction. " alt="" coords="229,5,366,61"/>
-<area shape="rect" id="node4" href="../../d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator.html#a1b93c5e0d70e5133a3b1c98a830197d9" title="Start interaction. " alt="" coords="203,85,392,141"/>
-<area shape="rect" id="node3" href="../../db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator.html#aefd3b9e150756634ca87b1cf2ef2e694" title="Start interaction. " alt="" coords="440,5,620,61"/>
-<area shape="rect" id="node5" href="../../d4/d53/classsamchon_1_1protocol_1_1master_1_1ParallelClientArrayMediator.html#aaa12afa98a6559f105b0767989cec235" title="Start interaction. " alt="" coords="441,85,619,141"/>
+<area shape="rect" id="node2" href="../../d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray.html#afd06bc93632af44ce99369857220fb38" title="Start interaction. " alt="" coords="229,35,366,91"/>
+<area shape="rect" id="node6" href="../../d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator.html#a1b93c5e0d70e5133a3b1c98a830197d9" title="Start interaction. " alt="" coords="203,115,392,171"/>
+<area shape="rect" id="node3" href="../../db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator.html#aefd3b9e150756634ca87b1cf2ef2e694" title="Start interaction. " alt="" coords="450,71,630,127"/>
+<area shape="rect" id="node4" href="../../da/df4/classsamchon_1_1example_1_1interaction_1_1Chief.html#ad666310247b5884a3eb08539d874c4d7" title="Start interaction. " alt="" coords="440,5,640,47"/>
+<area shape="rect" id="node5" href="../../da/df4/classsamchon_1_1example_1_1interaction_1_1Chief.html#a0137844fb42776ef9ad4af46b3b9f1ae" title="Main function. " alt="" coords="688,5,888,47"/>
+<area shape="rect" id="node7" href="../../d4/d53/classsamchon_1_1protocol_1_1master_1_1ParallelClientArrayMediator.html#aaa12afa98a6559f105b0767989cec235" title="Start interaction. " alt="" coords="451,151,629,207"/>
+<area shape="rect" id="node8" href="../../d7/d0a/classsamchon_1_1example_1_1interaction_1_1PackerMediator.html#aca6d01ec9be6c0450b150e82bc7d2f8f" title="Main functino. " alt="" coords="688,159,888,200"/>
 </map>
 </div>
 </p>
@@ -409,7 +417,7 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00033">33</a> of file <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html">ExternalSystem.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00058">name</a>.</p>
+<p>References <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00061">name</a>.</p>
 
 </div>
 </div>
@@ -575,13 +583,13 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="../../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#ad97994c60480c70a72082760ca6868a6">samchon::protocol::EntityGroup&lt; _Container, _ETy, _Ty &gt;</a>.</p>
 
-<p>Reimplemented in <a class="el" href="../../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#a35d5d45e2c3bd17c0bc66d88e89ede07">samchon::protocol::master::DistributedSystem</a>, <a class="el" href="../../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#a6666927b280b7b3a55f394ce2bc845fb">samchon::protocol::master::ParallelSystem</a>, <a class="el" href="../../df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a505a1d39ba21af65c06ffd8f351e5fe7">samchon::protocol::ExternalServer</a>, <a class="el" href="../../d7/da8/classsamchon_1_1protocol_1_1master_1_1DistributedServer.html#a72b41e7cebf17752ecd753f3dfbb9ed9">samchon::protocol::master::DistributedServer</a>, and <a class="el" href="../../d1/da1/classsamchon_1_1protocol_1_1master_1_1ParallelServer.html#a887badfe3f3c33444de5019aa6a65293">samchon::protocol::master::ParallelServer</a>.</p>
+<p>Reimplemented in <a class="el" href="../../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#a35d5d45e2c3bd17c0bc66d88e89ede07">samchon::protocol::master::DistributedSystem</a>, <a class="el" href="../../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#a6666927b280b7b3a55f394ce2bc845fb">samchon::protocol::master::ParallelSystem</a>, <a class="el" href="../../df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a505a1d39ba21af65c06ffd8f351e5fe7">samchon::protocol::ExternalServer</a>, <a class="el" href="../../d7/da8/classsamchon_1_1protocol_1_1master_1_1DistributedServer.html#a72b41e7cebf17752ecd753f3dfbb9ed9">samchon::protocol::master::DistributedServer</a>, and <a class="el" href="../../d1/da1/classsamchon_1_1protocol_1_1master_1_1ParallelServer.html#a65fc91acb6029cd484e7e60837434b21">samchon::protocol::master::ParallelServer</a>.</p>
 
 <p>Definition at line <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00062">62</a> of file <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html">ExternalSystem.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00063">ip</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00058">name</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00068">port</a>, and <a class="el" href="../../d1/d61/EntityGroup_8hpp_source.html#l00214">samchon::protocol::EntityGroup&lt; _Container, _ETy, _Ty &gt;::toXML()</a>.</p>
+<p>References <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00066">ip</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00061">name</a>, <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00071">port</a>, and <a class="el" href="../../d1/d61/EntityGroup_8hpp_source.html#l00214">samchon::protocol::EntityGroup&lt; _Container, _ETy, _Ty &gt;::toXML()</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/d4b/ParallelClientArrayMediator_8cpp_source.html#l00063">samchon::protocol::master::ParallelClientArrayMediator::toXML()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00055">samchon::protocol::ExternalServer::toXML()</a>, <a class="el" href="../../d9/d25/ParallelSystemArrayMediator_8cpp_source.html#l00071">samchon::protocol::master::ParallelSystemArrayMediator::toXML()</a>, and <a class="el" href="../../dc/d20/ParallelSystem_8cpp_source.html#l00097">samchon::protocol::master::ParallelSystem::toXML()</a>.</p>
+<p>Referenced by <a class="el" href="../../d3/d4b/ParallelClientArrayMediator_8cpp_source.html#l00063">samchon::protocol::master::ParallelClientArrayMediator::toXML()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00054">samchon::protocol::ExternalServer::toXML()</a>, <a class="el" href="../../d9/d25/ParallelSystemArrayMediator_8cpp_source.html#l00076">samchon::protocol::master::ParallelSystemArrayMediator::toXML()</a>, and <a class="el" href="../../dc/d20/ParallelSystem_8cpp_source.html#l00099">samchon::protocol::master::ParallelSystem::toXML()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -602,6 +610,7 @@ Here is the caller graph for this function:</div>
 <area shape="rect" id="node3" href="../../df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html#a505a1d39ba21af65c06ffd8f351e5fe7" title="Get an XML object represents the EntityGroup. " alt="" coords="231,86,382,127"/>
 <area shape="rect" id="node4" href="../../d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator.html#ad20c5c37d8b08413dfdfcbe0f9c4329d" title="Get an XML object represents the EntityGroup. " alt="" coords="212,152,401,208"/>
 <area shape="rect" id="node5" href="../../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#a6666927b280b7b3a55f394ce2bc845fb" title="Get an XML object represents the EntityGroup. " alt="" coords="227,232,386,288"/>
+<area shape="rect" id="node6" href="../../d1/da1/classsamchon_1_1protocol_1_1master_1_1ParallelServer.html#a65fc91acb6029cd484e7e60837434b21" title="Get an XML object represents the EntityGroup. " alt="" coords="449,232,599,288"/>
 </map>
 </div>
 </p>
@@ -630,9 +639,9 @@ Here is the caller graph for this function:</div>
 <p>A name can identify an external system. </p>
 <p>The name must be unique in <a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html" title="An array of ExternalSystem(s). ">ExternalSystemArray</a>. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00020">construct()</a>, <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00033">key()</a>, and <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00062">toXML()</a>.</p>
+<p>Referenced by <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00020">construct()</a>, <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00033">key()</a>, <a class="el" href="../../df/d1b/MasterDriver_8hpp_source.html#l00052">samchon::example::interaction::MasterDriver::MasterDriver()</a>, and <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00062">toXML()</a>.</p>
 
 </div>
 </div>
@@ -656,9 +665,9 @@ Here is the caller graph for this function:</div>
 
 <p>An ip address of an external system. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00066">66</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../df/d66/ExternalClientArray_8cpp_source.html#l00050">samchon::protocol::ExternalClientArray::addClient()</a>, <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00020">construct()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00038">samchon::protocol::ExternalServer::getIP()</a>, and <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00062">toXML()</a>.</p>
+<p>Referenced by <a class="el" href="../../df/d66/ExternalClientArray_8cpp_source.html#l00050">samchon::protocol::ExternalClientArray::addClient()</a>, <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00020">construct()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00037">samchon::protocol::ExternalServer::getIP()</a>, <a class="el" href="../../d2/d5d/TSPSlave_8hpp_source.html#l00067">samchon::example::interaction::TSPSlave::main()</a>, <a class="el" href="../../d4/d2d/PackerSlave_8hpp_source.html#l00074">samchon::example::interaction::PackerSlave::main()</a>, <a class="el" href="../../df/d1b/MasterDriver_8hpp_source.html#l00052">samchon::example::interaction::MasterDriver::MasterDriver()</a>, <a class="el" href="../../d4/db3/Slave_8hpp_source.html#l00054">samchon::example::interaction::Slave::Slave()</a>, and <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00062">toXML()</a>.</p>
 
 </div>
 </div>
@@ -682,9 +691,9 @@ Here is the caller graph for this function:</div>
 
 <p>A port number of an external system. </p>
 
-<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00068">68</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html#l00071">71</a> of file <a class="el" href="../../d4/d5d/ExternalSystem_8hpp_source.html">ExternalSystem.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../df/d66/ExternalClientArray_8cpp_source.html#l00050">samchon::protocol::ExternalClientArray::addClient()</a>, <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00020">construct()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00042">samchon::protocol::ExternalServer::getPort()</a>, and <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00062">toXML()</a>.</p>
+<p>Referenced by <a class="el" href="../../df/d66/ExternalClientArray_8cpp_source.html#l00050">samchon::protocol::ExternalClientArray::addClient()</a>, <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00020">construct()</a>, <a class="el" href="../../d5/d9d/ExternalServer_8cpp_source.html#l00041">samchon::protocol::ExternalServer::getPort()</a>, <a class="el" href="../../d2/d5d/TSPSlave_8hpp_source.html#l00067">samchon::example::interaction::TSPSlave::main()</a>, <a class="el" href="../../d4/d2d/PackerSlave_8hpp_source.html#l00074">samchon::example::interaction::PackerSlave::main()</a>, <a class="el" href="../../df/d1b/MasterDriver_8hpp_source.html#l00052">samchon::example::interaction::MasterDriver::MasterDriver()</a>, <a class="el" href="../../d4/db3/Slave_8hpp_source.html#l00054">samchon::example::interaction::Slave::Slave()</a>, and <a class="el" href="../../d3/d51/ExternalSystem_8cpp_source.html#l00062">toXML()</a>.</p>
 
 </div>
 </div>

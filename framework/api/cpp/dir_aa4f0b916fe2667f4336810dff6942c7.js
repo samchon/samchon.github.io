@@ -3,7 +3,6 @@ var dir_aa4f0b916fe2667f4336810dff6942c7 =
     [ "master", "dir_31f0445e831b56c862ce74405f112fc1.html", "dir_31f0445e831b56c862ce74405f112fc1" ],
     [ "service", "dir_e81d7318a7ff62f89f55e4f93ad96ef5.html", "dir_e81d7318a7ff62f89f55e4f93ad96ef5" ],
     [ "slave", "dir_6dc4eccefd528e01e3c0b08a29841027.html", "dir_6dc4eccefd528e01e3c0b08a29841027" ],
-    [ "API.hpp", "dc/d48/protocol_2API_8hpp_source.html", null ],
     [ "Entity.cpp", "df/de9/Entity_8cpp_source.html", null ],
     [ "Entity.hpp", "de/da6/Entity_8hpp_source.html", null ],
     [ "EntityArray.hpp", "dc/db7/EntityArray_8hpp_source.html", null ],
@@ -52,10 +51,12 @@ var dir_aa4f0b916fe2667f4336810dff6942c7 =
     [ "ISQLEntity.cpp", "d6/d71/ISQLEntity_8cpp_source.html", null ],
     [ "ISQLEntity.hpp", "d3/d35/ISQLEntity_8hpp_source.html", null ],
     [ "IWebClient.hpp", "d0/d77/IWebClient_8hpp_source.html", null ],
+    [ "IWebClientBase.cpp", "db/d41/IWebClientBase_8cpp_source.html", null ],
+    [ "IWebClientBase.hpp", "d7/de3/IWebClientBase_8hpp_source.html", null ],
+    [ "IWebServer.cpp", "da/dbc/IWebServer_8cpp_source.html", null ],
     [ "IWebServer.hpp", "d0/d01/IWebServer_8hpp_source.html", null ],
     [ "ServerConnector.cpp", "de/d75/ServerConnector_8cpp_source.html", null ],
     [ "ServerConnector.hpp", "d5/dcf/ServerConnector_8hpp_source.html", null ],
-    [ "SharedEntityArray.cpp", "d6/d49/SharedEntityArray_8cpp_source.html", null ],
     [ "SharedEntityArray.hpp", "d5/dc4/SharedEntityArray_8hpp_source.html", null ],
     [ "SharedEntityList.hpp", "da/d42/SharedEntityList_8hpp_source.html", null ],
     [ "Socket.hpp", "dd/df5/Socket_8hpp_source.html", null ],
@@ -64,5 +65,6 @@ var dir_aa4f0b916fe2667f4336810dff6942c7 =
     [ "UniqueAcquire.cpp", "d3/d76/UniqueAcquire_8cpp_source.html", null ],
     [ "UniqueEntityArray.hpp", "dc/dc8/UniqueEntityArray_8hpp_source.html", null ],
     [ "UniqueEntityList.hpp", "d7/d47/UniqueEntityList_8hpp_source.html", null ],
+    [ "WebServerConnector.cpp", "db/da5/WebServerConnector_8cpp_source.html", null ],
     [ "WebServerConnector.hpp", "d3/d63/WebServerConnector_8hpp_source.html", null ]
 ];

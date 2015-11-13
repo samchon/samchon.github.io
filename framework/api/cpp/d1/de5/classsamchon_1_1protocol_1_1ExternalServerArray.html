@@ -209,13 +209,15 @@ Additional Inherited Members</h2></td></tr>
 <p><a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html" title="An array of ExternalSystem(s). ">ExternalSystemArray</a> is an abstract class containing and managing external system drivers. </p>
 <p>Also, <a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html" title="An array of ExternalSystem(s). ">ExternalSystemArray</a> can access to ExternalSystemRole(s) directly. With the method, you can use an <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> as "logical proxy" of an <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>. Of course, the <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> is belonged to an <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>. However, if you access an <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> from an <a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html" title="An array of ExternalSystem(s). ">ExternalSystemArray</a> directly, not passing by a belonged <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>, and send an <a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">Invoke</a> message even you're not knowing which <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a> is related in, the <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> acted a role of proxy. </p>
 <p>It's called as "Proxy pattern". With the pattern, you can only concentrate on <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> itself, what to do with <a class="el" href="../../d8/d82/classsamchon_1_1protocol_1_1Invoke.html" title="Standard message of network I/O. ">Invoke</a> message, irrespective of the <a class="el" href="../../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html" title="A role belongs to an external system. ">ExternalSystemRole</a> is belonged to which <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html" title="A network driver for an external system. ">ExternalSystem</a>. </p>
-<ul>
-<li><a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html#aec350041c7caf151c4021aa4fa14eb0e" title="Get a role. ">ExternalSystemArray::getRole</a>("something")-&gt;sendData(invoke);</li>
-</ul>
-<div class="image">
+<div class="fragment"><div class="line"><a class="code" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html#aec350041c7caf151c4021aa4fa14eb0e">ExternalSystemArray::getRole</a>(<span class="stringliteral">&quot;something&quot;</span>)-&gt;sendData(invoke);</div>
+</div><!-- fragment --><div class="image">
 <img src="../../protocol_external_system.png" alt="protocol_external_system.png"/>
 </div>
- <dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d64/namespacesamchon_1_1protocol.html" title="Package of network protocol and libraries. ">samchon::protocol</a> </dd></dl>
+ <dl class="section user"><dt>Example Sources</dt><dd><ul>
+<li><a class="el" href="../../d4/d5b/namespacesamchon_1_1example_1_1interaction.html" title="An example of complicate network system. ">example::interaction</a></li>
+</ul>
+</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../db/d64/namespacesamchon_1_1protocol.html" title="Package of network protocol and libraries. ">samchon::protocol</a> </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jeongho Nam </dd></dl>
 
 <p>Definition at line <a class="el" href="../../d6/d71/ExternalServerArray_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d6/d71/ExternalServerArray_8hpp_source.html">ExternalServerArray.hpp</a>.</p>
@@ -250,13 +252,13 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="../../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html#acbce33f261fbeee66eb8fd77082bad6d">samchon::protocol::ExternalSystemArray</a>.</p>
 
-<p>Reimplemented in <a class="el" href="../../d4/d48/classsamchon_1_1protocol_1_1master_1_1DistributedServerArrayMediator.html#ae196961ebdec3cf7b3745042354e9014">samchon::protocol::master::DistributedServerArrayMediator</a>, <a class="el" href="../../db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator.html#aefd3b9e150756634ca87b1cf2ef2e694">samchon::protocol::master::ParallelServerArrayMediator</a>, and <a class="el" href="../../d0/d26/classsamchon_1_1protocol_1_1master_1_1DistributedServerArray.html#a48da21c6cdd6c9124df3a28cb425dc55">samchon::protocol::master::DistributedServerArray</a>.</p>
+<p>Reimplemented in <a class="el" href="../../da/df4/classsamchon_1_1example_1_1interaction_1_1Chief.html#ad666310247b5884a3eb08539d874c4d7">samchon::example::interaction::Chief</a>, <a class="el" href="../../d4/d48/classsamchon_1_1protocol_1_1master_1_1DistributedServerArrayMediator.html#ae196961ebdec3cf7b3745042354e9014">samchon::protocol::master::DistributedServerArrayMediator</a>, <a class="el" href="../../db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator.html#aefd3b9e150756634ca87b1cf2ef2e694">samchon::protocol::master::ParallelServerArrayMediator</a>, and <a class="el" href="../../d0/d26/classsamchon_1_1protocol_1_1master_1_1DistributedServerArray.html#a48da21c6cdd6c9124df3a28cb425dc55">samchon::protocol::master::DistributedServerArray</a>.</p>
 
 <p>Definition at line <a class="el" href="../../dd/dcf/ExternalServerArray_8cpp_source.html#l00015">15</a> of file <a class="el" href="../../dd/dcf/ExternalServerArray_8cpp_source.html">ExternalServerArray.cpp</a>.</p>
 
 <p>References <a class="el" href="../../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html#ae34212173efa782547b63e1d4fc8b185">samchon::protocol::ExternalSystem::start()</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d4/dc7/ParallelServerArrayMediator_8cpp_source.html#l00019">samchon::protocol::master::ParallelServerArrayMediator::start()</a>.</p>
+<p>Referenced by <a class="el" href="../../d4/dc7/ParallelServerArrayMediator_8cpp_source.html#l00019">samchon::protocol::master::ParallelServerArrayMediator::start()</a>, and <a class="el" href="../../d2/d58/Chief_8hpp_source.html#l00064">samchon::example::interaction::Chief::start()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -273,7 +275,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray_afd06bc93632af44ce99369857220fb38_icgraph.png" border="0" usemap="#d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray_afd06bc93632af44ce99369857220fb38_icgraph" alt=""/></div>
 <map name="d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray_afd06bc93632af44ce99369857220fb38_icgraph" id="d1/de5/classsamchon_1_1protocol_1_1ExternalServerArray_afd06bc93632af44ce99369857220fb38_icgraph">
-<area shape="rect" id="node2" href="../../db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator.html#aefd3b9e150756634ca87b1cf2ef2e694" title="Start interaction. " alt="" coords="191,5,371,61"/>
+<area shape="rect" id="node2" href="../../db/d8b/classsamchon_1_1protocol_1_1master_1_1ParallelServerArrayMediator.html#aefd3b9e150756634ca87b1cf2ef2e694" title="Start interaction. " alt="" coords="201,5,381,61"/>
+<area shape="rect" id="node3" href="../../da/df4/classsamchon_1_1example_1_1interaction_1_1Chief.html#ad666310247b5884a3eb08539d874c4d7" title="Start interaction. " alt="" coords="191,86,391,127"/>
+<area shape="rect" id="node4" href="../../da/df4/classsamchon_1_1example_1_1interaction_1_1Chief.html#a0137844fb42776ef9ad4af46b3b9f1ae" title="Main function. " alt="" coords="439,86,639,127"/>
 </map>
 </div>
 </p>

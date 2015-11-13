@@ -20,7 +20,7 @@ var namespacesamchon_1_1library =
     [ "GAParameters", "d3/dcb/structsamchon_1_1library_1_1GAParameters.html", "d3/dcb/structsamchon_1_1library_1_1GAParameters" ],
     [ "GAPopulation", "d8/dcd/classsamchon_1_1library_1_1GAPopulation.html", "d8/dcd/classsamchon_1_1library_1_1GAPopulation" ],
     [ "GeneticAlgorithm", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm" ],
-    [ "HTTPLoader", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html", null ],
+    [ "HTTPLoader", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html", "d7/d67/classsamchon_1_1library_1_1HTTPLoader" ],
     [ "IOperator", "dd/d2e/classsamchon_1_1library_1_1IOperator.html", "dd/d2e/classsamchon_1_1library_1_1IOperator" ],
     [ "Math", "de/d8f/classsamchon_1_1library_1_1Math.html", "de/d8f/classsamchon_1_1library_1_1Math" ],
     [ "MySQLi", "d6/dcc/classsamchon_1_1library_1_1MySQLi.html", "d6/dcc/classsamchon_1_1library_1_1MySQLi" ],

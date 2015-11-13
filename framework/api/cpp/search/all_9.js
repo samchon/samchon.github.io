@@ -15,7 +15,7 @@ var searchData=
   ['initialvalue',['initialValue',['../db/d29/classsamchon_1_1namtree_1_1NTParameter.html#a6d01f8e592a245504c164f0670d53075',1,'samchon::namtree::NTParameter']]],
   ['inprogress',['inProgress',['../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#ace00dee3096d2e369a0fe2bc19207082',1,'samchon::protocol::master::DistributedSystem']]],
   ['instance',['Instance',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html',1,'samchon::example::packer']]],
-  ['instance',['Instance',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a0feb4be69683e230f4a6e11025f1278c',1,'samchon::example::packer::Instance']]],
+  ['instance',['Instance',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a16fb46031efa57dc119e4fd20dfc114f',1,'samchon::example::packer::Instance::Instance()'],['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a11e8951dcba950801bd14b44800458c0',1,'samchon::example::packer::Instance::Instance(const std::string &amp;name, int price, int volume, int weight)']]],
   ['instancemap',['instanceMap',['../d6/d60/classsamchon_1_1library_1_1FTFactory.html#a3a3d460cfa485353e68ba0dcef73baed',1,'samchon::library::FTFactory']]],
   ['intexplore',['INTExplore',['../d5/d98/classsamchon_1_1namtree_1_1INTExplore.html',1,'samchon::namtree']]],
   ['intexplore',['INTExplore',['../d5/d98/classsamchon_1_1namtree_1_1INTExplore.html#a3281952586fe25e76f2ac62b44e56c68',1,'samchon::namtree::INTExplore']]],
@@ -45,8 +45,8 @@ var searchData=
   ['isqlentity',['ISQLEntity',['../d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html',1,'samchon::protocol']]],
   ['isqlentity',['ISQLEntity',['../d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#ac6cb60454bc5e3de8f266b65fc19df72',1,'samchon::protocol::ISQLEntity']]],
   ['issuesessionid',['issueSessionID',['../df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair.html#a82f940b471818a076ededaa38a8bf445',1,'samchon::protocol::service::IPUserPair']]],
-  ['iwebclient',['IWebClient',['../d7/d51/classsamchon_1_1protocol_1_1IWebClient.html#ab219e907a171cdd7366392bb1c774b75',1,'samchon::protocol::IWebClient']]],
-  ['iwebclient',['IWebClient',['../d7/d51/classsamchon_1_1protocol_1_1IWebClient.html',1,'samchon::protocol']]],
-  ['iwebserver',['IWebServer',['../d5/d23/classsamchon_1_1protocol_1_1IWebServer.html#a45d3a55cfde894f0b6334b10f4aa4fc9',1,'samchon::protocol::IWebServer']]],
+  ['iwebclientbase',['IWebClientBase',['../d0/d4f/classsamchon_1_1protocol_1_1IWebClientBase.html#a4f4c6dc26b7d2e355d648dab94ab96a3',1,'samchon::protocol::IWebClientBase']]],
+  ['iwebclientbase',['IWebClientBase',['../d0/d4f/classsamchon_1_1protocol_1_1IWebClientBase.html',1,'samchon::protocol']]],
+  ['iwebserver',['IWebServer',['../d5/d23/classsamchon_1_1protocol_1_1IWebServer.html#a8f64bf8d37a6f07dc099fa4b684e3aad',1,'samchon::protocol::IWebServer']]],
   ['iwebserver',['IWebServer',['../d5/d23/classsamchon_1_1protocol_1_1IWebServer.html',1,'samchon::protocol']]]
 ];

@@ -1,17 +1,6 @@
 var namespacesamchon =
 [
-    [ "example", null, [
-      [ "chat_service", "de/d34/namespacesamchon_1_1example_1_1chat__service.html", "de/d34/namespacesamchon_1_1example_1_1chat__service" ],
-      [ "console_chat_server", "dc/dc4/namespacesamchon_1_1example_1_1console__chat__server.html", "dc/dc4/namespacesamchon_1_1example_1_1console__chat__server" ],
-      [ "packer", null, [
-        [ "Instance", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance" ],
-        [ "Packer", "da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html", "da/da0/classsamchon_1_1example_1_1packer_1_1Packer" ],
-        [ "Product", "df/d73/classsamchon_1_1example_1_1packer_1_1Product.html", "df/d73/classsamchon_1_1example_1_1packer_1_1Product" ],
-        [ "Wrapper", "dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper.html", "dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper" ],
-        [ "WrapperArray", "d4/dfe/classsamchon_1_1example_1_1packer_1_1WrapperArray.html", "d4/dfe/classsamchon_1_1example_1_1packer_1_1WrapperArray" ]
-      ] ],
-      [ "tsp", "d0/d6a/namespacesamchon_1_1example_1_1tsp.html", "d0/d6a/namespacesamchon_1_1example_1_1tsp" ]
-    ] ],
+    [ "example", "df/d93/namespacesamchon_1_1example.html", "df/d93/namespacesamchon_1_1example" ],
     [ "library", "d8/dd4/namespacesamchon_1_1library.html", "d8/dd4/namespacesamchon_1_1library" ],
     [ "namtree", "d4/d05/namespacesamchon_1_1namtree.html", "d4/d05/namespacesamchon_1_1namtree" ],
     [ "protocol", "db/d64/namespacesamchon_1_1protocol.html", "db/d64/namespacesamchon_1_1protocol" ],
