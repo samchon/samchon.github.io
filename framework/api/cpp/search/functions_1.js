@@ -15,7 +15,7 @@ var searchData=
   ['addweek',['addWeek',['../da/d6b/classsamchon_1_1library_1_1Date.html#ab0cb90ab3465407555421207d2a8b6ea',1,'samchon::library::Date::addWeek()'],['../dd/de3/classsamchon_1_1library_1_1Datetime.html#a1383fd1b2065c2c8feb602e9bf2db330',1,'samchon::library::Datetime::addWeek()']]],
   ['addyear',['addYear',['../da/d6b/classsamchon_1_1library_1_1Date.html#a0894007b315e39cce45307d537783a26',1,'samchon::library::Date::addYear()'],['../dd/de3/classsamchon_1_1library_1_1Datetime.html#a0e548f61cf3731713bfcd711b50ab477',1,'samchon::library::Datetime::addYear()']]],
   ['allocate',['allocate',['../d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#af53bf2e9a22f978a5ca042a3c9b6d1e9',1,'samchon::library::CriticalAllocator']]],
-  ['allocateroles',['allocateRoles',['../d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ab181a72cfd3ca013a5209e1c8238f407',1,'samchon::protocol::master::DistributedSystemArray']]],
+  ['allocateroles',['allocateRoles',['../d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a86bdfb5d221d7d30b668f50a8b9313db',1,'samchon::protocol::master::DistributedSystemArray']]],
   ['archive',['archive',['../d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#a2b369863d18d049d7ee8b357938fdd91',1,'samchon::protocol::ISQLEntity']]],
   ['at',['at',['../de/ddf/classsamchon_1_1library_1_1CaseGenerator.html#a182089fc6958911728e9503ad58d8a6f',1,'samchon::library::CaseGenerator::at()'],['../de/def/classsamchon_1_1library_1_1SQLStatement.html#a507484bbe3d4cb631e6e78393cf652a1',1,'samchon::library::SQLStatement::at()'],['../d8/de4/classsamchon_1_1WeakString.html#a4e51ff6fac8e48273d1838b633aaa8ff',1,'samchon::WeakString::at()']]]
 ];

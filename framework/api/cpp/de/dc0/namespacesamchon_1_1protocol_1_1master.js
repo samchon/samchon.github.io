@@ -14,7 +14,7 @@ var namespacesamchon_1_1protocol_1_1master =
     [ "DistributedSystemArrayMediator", "dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator.html", "dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator" ],
     [ "DistributedSystemRole", "d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html", "d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole" ],
     [ "DSInvokeHistory", "de/d14/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistory.html", "de/d14/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistory" ],
-    [ "DSInvokeHistoryList", "d8/d75/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryList.html", "d8/d75/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryList" ],
+    [ "DSInvokeHistoryArray", "da/dc9/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryArray.html", "da/dc9/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryArray" ],
     [ "ParallelClient", "d9/dda/classsamchon_1_1protocol_1_1master_1_1ParallelClient.html", "d9/dda/classsamchon_1_1protocol_1_1master_1_1ParallelClient" ],
     [ "ParallelClientArray", "d1/dc7/classsamchon_1_1protocol_1_1master_1_1ParallelClientArray.html", "d1/dc7/classsamchon_1_1protocol_1_1master_1_1ParallelClientArray" ],
     [ "ParallelClientArrayMediator", "d4/d53/classsamchon_1_1protocol_1_1master_1_1ParallelClientArrayMediator.html", "d4/d53/classsamchon_1_1protocol_1_1master_1_1ParallelClientArrayMediator" ],

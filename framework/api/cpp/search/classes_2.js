@@ -16,5 +16,5 @@ var searchData=
   ['distributedsystemarraymediator',['DistributedSystemArrayMediator',['../dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator.html',1,'samchon::protocol::master']]],
   ['distributedsystemrole',['DistributedSystemRole',['../d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html',1,'samchon::protocol::master']]],
   ['dsinvokehistory',['DSInvokeHistory',['../de/d14/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistory.html',1,'samchon::protocol::master']]],
-  ['dsinvokehistorylist',['DSInvokeHistoryList',['../d8/d75/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryList.html',1,'samchon::protocol::master']]]
+  ['dsinvokehistoryarray',['DSInvokeHistoryArray',['../da/dc9/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryArray.html',1,'samchon::protocol::master']]]
 ];

@@ -18,7 +18,7 @@ var searchData=
   ['addyear',['addYear',['../da/d6b/classsamchon_1_1library_1_1Date.html#a0894007b315e39cce45307d537783a26',1,'samchon::library::Date::addYear()'],['../dd/de3/classsamchon_1_1library_1_1Datetime.html#a0e548f61cf3731713bfcd711b50ab477',1,'samchon::library::Datetime::addYear()']]],
   ['allocate',['allocate',['../d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#af53bf2e9a22f978a5ca042a3c9b6d1e9',1,'samchon::library::CriticalAllocator']]],
   ['allocatedsystems',['allocatedSystems',['../d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html#a6ecf204e10554633bdf0713ff4d869ec',1,'samchon::protocol::master::DistributedSystemRole']]],
-  ['allocateroles',['allocateRoles',['../d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ab181a72cfd3ca013a5209e1c8238f407',1,'samchon::protocol::master::DistributedSystemArray']]],
+  ['allocateroles',['allocateRoles',['../d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a86bdfb5d221d7d30b668f50a8b9313db',1,'samchon::protocol::master::DistributedSystemArray']]],
   ['allocationhistorylist',['allocationHistoryList',['../d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html#ae33a64ac389443b6f2b0109c0b348fa2',1,'samchon::protocol::master::DistributedSystemRole']]],
   ['application',['application',['../d6/d60/classsamchon_1_1library_1_1FTFactory.html#aa1ac8539305852bf7a16996eafc75ede',1,'samchon::library::FTFactory']]],
   ['archive',['archive',['../d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html#a2b369863d18d049d7ee8b357938fdd91',1,'samchon::protocol::ISQLEntity']]],

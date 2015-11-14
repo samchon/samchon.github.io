@@ -149,11 +149,11 @@ var hierarchy =
         ] ],
         [ "samchon::protocol::Invoke", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html", null ],
         [ "samchon::protocol::InvokeHistoryArray", "d1/d7b/classsamchon_1_1protocol_1_1InvokeHistoryArray.html", [
+          [ "samchon::protocol::master::DSInvokeHistoryArray", "da/dc9/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryArray.html", null ],
           [ "samchon::protocol::master::PRInvokeHistoryArray", "df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray.html", [
             [ "samchon::protocol::master::PRMasterHistoryArray", "d6/dd8/classsamchon_1_1protocol_1_1master_1_1PRMasterHistoryArray.html", null ]
           ] ]
-        ] ],
-        [ "samchon::protocol::master::DSInvokeHistoryList", "d8/d75/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistoryList.html", null ]
+        ] ]
       ] ],
       [ "samchon::protocol::EntityList< _Ty >", "d6/d5a/classsamchon_1_1protocol_1_1EntityList.html", null ],
       [ "samchon::protocol::ExternalSystemRole", "d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html", [
