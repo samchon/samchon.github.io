@@ -4,6 +4,7 @@ var classsamchon_1_1library_1_1Date =
     [ "Date", "da/d6b/classsamchon_1_1library_1_1Date.html#a102e33db57eb7fac53b97353848de401", null ],
     [ "Date", "da/d6b/classsamchon_1_1library_1_1Date.html#adbaff50312ab3aea628c014931e8051d", null ],
     [ "Date", "da/d6b/classsamchon_1_1library_1_1Date.html#a8cb926e20a77207db6895a4cca950edf", null ],
+    [ "Date", "da/d6b/classsamchon_1_1library_1_1Date.html#a959f55ca24de6e28b7042909758785a6", null ],
     [ "Date", "da/d6b/classsamchon_1_1library_1_1Date.html#a2d823b0e379f0eee3e6deb09c044597b", null ],
     [ "Date", "da/d6b/classsamchon_1_1library_1_1Date.html#a5fc391df2af4b6e4f09c7b7eace91756", null ],
     [ "calcSeconds", "da/d6b/classsamchon_1_1library_1_1Date.html#a57ecd29f4e9d9e097723565c99eaf0ae", null ],
