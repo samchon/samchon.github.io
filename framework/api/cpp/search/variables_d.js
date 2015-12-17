@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['packer',['packer',['../d9/db5/classsamchon_1_1example_1_1interaction_1_1PackerMaster.html#a9cc5ac5b9517dc782c077915d2252619',1,'samchon::example::interaction::PackerMaster::packer()'],['../d7/d0a/classsamchon_1_1example_1_1interaction_1_1PackerMediator.html#af3b0443f2773bcce61da862e1c24f8c3',1,'samchon::example::interaction::PackerMediator::packer()']]],
+  ['packer',['packer',['../d9/db5/classsamchon_1_1example_1_1interaction_1_1PackerMaster.html#a9fb1162d5c5fdeb8fdd7ab955f03449c',1,'samchon::example::interaction::PackerMaster::packer()'],['../d7/d0a/classsamchon_1_1example_1_1interaction_1_1PackerMediator.html#af3b0443f2773bcce61da862e1c24f8c3',1,'samchon::example::interaction::PackerMediator::packer()']]],
   ['parameterarray',['parameterArray',['../d2/da2/classsamchon_1_1namtree_1_1NTFile.html#aa61a2e3eacf667bbd2222facf060494a',1,'samchon::namtree::NTFile']]],
   ['parent',['parent',['../d7/d0a/classsamchon_1_1library_1_1FTInstance.html#aef1070160f87c373466faaace185887d',1,'samchon::library::FTInstance']]],
   ['participants',['participants',['../d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom.html#ab94e5022f011a27dc32e12ae83c6d0a1',1,'samchon::example::chat_service::ChatRoom']]],
@@ -13,7 +13,7 @@ var searchData=
   ['precision',['precision',['../d5/d98/classsamchon_1_1namtree_1_1INTExplore.html#af1e7bb18a7d00f179103b2091a6baccf',1,'samchon::namtree::INTExplore']]],
   ['price',['price',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#ab035bfc085d9fed7091b9487d574ef60',1,'samchon::example::packer::Instance']]],
   ['processed',['processed',['../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#ac11c7166e6f09977ddd34a0ea6dbd5fc',1,'samchon::protocol::master::DistributedSystem']]],
-  ['productarray',['productArray',['../da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html#aba5df0847c37f40e43f28424eec0f5ff',1,'samchon::example::packer::Packer']]],
+  ['productarray',['productArray',['../da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html#a5cbae3a92436af7b53048934b2b2412e',1,'samchon::example::packer::Packer']]],
   ['progressarray',['progressArray',['../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#a80ae82769aad1893e5c3274898b91eb7',1,'samchon::protocol::master::ParallelSystem::progressArray()'],['../d8/d9c/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArray.html#aaf85318c1117a92e925426d1d85b7143',1,'samchon::protocol::master::ParallelSystemArray::progressArray()']]],
   ['propertymap',['propertyMap',['../d5/d37/classsamchon_1_1library_1_1XML.html#af521de9d076a04b810ead67ef4bb355e',1,'samchon::library::XML']]],
   ['ptr',['ptr',['../d9/d2d/classsamchon_1_1SmartPointer.html#a26e99ae7092b02bd6db742b58a80e3e7',1,'samchon::SmartPointer']]]

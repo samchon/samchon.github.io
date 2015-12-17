@@ -112,56 +112,54 @@ $(document).ready(function(){initNavTree('d5/ddb/SharedAcquire_8hpp_source.html'
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;samchon/API.hpp&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> _Ty&gt;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">struct </span>atomic;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;};</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/df1/namespacesamchon.html">samchon</a></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">namespace </span>library</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">class </span>Semaphore;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">   52</a></span>&#160;        <span class="keyword">class </span>SAMCHON_FRAMEWORK_API <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a0503a75f55d9c4a5c8071993e3b2240e">   58</a></span>&#160;            <a class="code" href="../../d9/d88/classsamchon_1_1library_1_1Semaphore.html">Semaphore</a> *<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a0503a75f55d9c4a5c8071993e3b2240e">semaphore</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#af2420d9f31d229a5f5a283fd5b060c3a">   63</a></span>&#160;            std::atomic&lt;size_t&gt; *<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#af2420d9f31d229a5f5a283fd5b060c3a">reference</a>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#ab1d816639b3ea4a917e9f326fb43fd89">   68</a></span>&#160;            std::atomic&lt;bool&gt; *<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#ab1d816639b3ea4a917e9f326fb43fd89">isLocked</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="comment">/* -----------------------------------------------------------</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">                CONSTRUCTORS</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">            ----------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>(<a class="code" href="../../d9/d88/classsamchon_1_1library_1_1Semaphore.html">Semaphore</a> &amp;, <span class="keywordtype">bool</span> = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>(<span class="keyword">const</span> <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a> &amp;);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>(<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>&amp;&amp;);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            ~<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="comment">/* -----------------------------------------------------------</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">                LOCKERS</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">            ----------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordtype">void</span> acquire();</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">void</span> release();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="comment">//auto tryAcquire() -&gt; bool;</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        };</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    };</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;};</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d8/dcc/namespacestd.html">std</a></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> _Ty&gt;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">struct </span>atomic;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;};</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../db/df1/namespacesamchon.html">samchon</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">namespace </span>library</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">class </span>Semaphore;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">   50</a></span>&#160;        <span class="keyword">class </span>SAMCHON_FRAMEWORK_API <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a0503a75f55d9c4a5c8071993e3b2240e">   56</a></span>&#160;            <a class="code" href="../../d9/d88/classsamchon_1_1library_1_1Semaphore.html">Semaphore</a> *<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a0503a75f55d9c4a5c8071993e3b2240e">semaphore</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#af2420d9f31d229a5f5a283fd5b060c3a">   61</a></span>&#160;            std::atomic&lt;size_t&gt; *<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#af2420d9f31d229a5f5a283fd5b060c3a">reference</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#ab1d816639b3ea4a917e9f326fb43fd89">   66</a></span>&#160;            std::atomic&lt;bool&gt; *<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#ab1d816639b3ea4a917e9f326fb43fd89">isLocked</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="comment">/* -----------------------------------------------------------</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">                CONSTRUCTORS</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">            ----------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>(<a class="code" href="../../d9/d88/classsamchon_1_1library_1_1Semaphore.html">Semaphore</a> &amp;, <span class="keywordtype">bool</span> = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>(<span class="keyword">const</span> <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a> &amp;);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>(<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>&amp;&amp;);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            ~<a class="code" href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">SharedAcquire</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="comment">/* -----------------------------------------------------------</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">                LOCKERS</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">            ----------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordtype">void</span> acquire();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordtype">void</span> release();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="comment">//auto tryAcquire() -&gt; bool;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        };</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    };</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d85/RWMutex_8hpp_source.html#l00004">RWMutex.hpp:4</a></div></div>
-<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">samchon::library::SharedAcquire</a></div><div class="ttdoc">Shared acquire from a Semaphore. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00052">SharedAcquire.hpp:52</a></div></div>
-<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html_a0503a75f55d9c4a5c8071993e3b2240e"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a0503a75f55d9c4a5c8071993e3b2240e">samchon::library::SharedAcquire::semaphore</a></div><div class="ttdeci">Semaphore * semaphore</div><div class="ttdoc">Managed Semaphore. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00058">SharedAcquire.hpp:58</a></div></div>
-<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html_ab1d816639b3ea4a917e9f326fb43fd89"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#ab1d816639b3ea4a917e9f326fb43fd89">samchon::library::SharedAcquire::isLocked</a></div><div class="ttdeci">std::atomic&lt; bool &gt; * isLocked</div><div class="ttdoc">Whether the mutex was locked by SharedAcquire. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00068">SharedAcquire.hpp:68</a></div></div>
-<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html_af2420d9f31d229a5f5a283fd5b060c3a"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#af2420d9f31d229a5f5a283fd5b060c3a">samchon::library::SharedAcquire::reference</a></div><div class="ttdeci">std::atomic&lt; size_t &gt; * reference</div><div class="ttdoc">Referencing count sharing same Semaphore. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00063">SharedAcquire.hpp:63</a></div></div>
+<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html">samchon::library::SharedAcquire</a></div><div class="ttdoc">Shared acquire from a Semaphore. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00050">SharedAcquire.hpp:50</a></div></div>
+<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html_a0503a75f55d9c4a5c8071993e3b2240e"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a0503a75f55d9c4a5c8071993e3b2240e">samchon::library::SharedAcquire::semaphore</a></div><div class="ttdeci">Semaphore * semaphore</div><div class="ttdoc">Managed Semaphore. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00056">SharedAcquire.hpp:56</a></div></div>
+<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html_ab1d816639b3ea4a917e9f326fb43fd89"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#ab1d816639b3ea4a917e9f326fb43fd89">samchon::library::SharedAcquire::isLocked</a></div><div class="ttdeci">std::atomic&lt; bool &gt; * isLocked</div><div class="ttdoc">Whether the mutex was locked by SharedAcquire. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00066">SharedAcquire.hpp:66</a></div></div>
+<div class="ttc" id="classsamchon_1_1library_1_1SharedAcquire_html_af2420d9f31d229a5f5a283fd5b060c3a"><div class="ttname"><a href="../../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#af2420d9f31d229a5f5a283fd5b060c3a">samchon::library::SharedAcquire::reference</a></div><div class="ttdeci">std::atomic&lt; size_t &gt; * reference</div><div class="ttdoc">Referencing count sharing same Semaphore. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/ddb/SharedAcquire_8hpp_source.html#l00061">SharedAcquire.hpp:61</a></div></div>
 <div class="ttc" id="classsamchon_1_1library_1_1Semaphore_html"><div class="ttname"><a href="../../d9/d88/classsamchon_1_1library_1_1Semaphore.html">samchon::library::Semaphore</a></div><div class="ttdoc">A semaphore. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da0/Semaphore_8hpp_source.html#l00051">Semaphore.hpp:51</a></div></div>
 <div class="ttc" id="namespacesamchon_html"><div class="ttname"><a href="../../db/df1/namespacesamchon.html">samchon</a></div><div class="ttdoc">Top level namespace of products built from samchon. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/df6/ByteArray_8hpp_source.html#l00007">ByteArray.hpp:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

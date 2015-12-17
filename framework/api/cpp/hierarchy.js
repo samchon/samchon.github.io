@@ -14,11 +14,6 @@ var hierarchy =
       [ "samchon::library::Datetime", "dd/de3/classsamchon_1_1library_1_1Datetime.html", null ]
     ] ],
     [ "samchon::protocol::Entity", "d0/d3e/classsamchon_1_1protocol_1_1Entity.html", [
-      [ "samchon::protocol::EntityGroup< _Container, Entity * >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", [
-        [ "samchon::protocol::IEntityPtrGroup< _Container >", "d1/d9d/classsamchon_1_1protocol_1_1IEntityPtrGroup.html", null ]
-      ] ],
-      [ "samchon::protocol::EntityGroup< _Container, std::shared_ptr< Entity > >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
-      [ "samchon::protocol::EntityGroup< _Container, std::unique_ptr< Entity > >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
       [ "samchon::example::chat_service::ChatMessage", "df/d7b/classsamchon_1_1example_1_1chat__service_1_1ChatMessage.html", null ],
       [ "samchon::example::chat_service::ChatRoom", "d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom.html", null ],
       [ "samchon::example::packer::Instance", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html", [
@@ -184,9 +179,6 @@ var hierarchy =
     [ "samchon::library::HTTPLoader", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html", null ],
     [ "samchon::protocol::IEntityChain", "d3/d66/classsamchon_1_1protocol_1_1IEntityChain.html", null ],
     [ "samchon::protocol::IEntityGroup", "d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html", [
-      [ "samchon::protocol::EntityGroup< _Container, Entity * >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
-      [ "samchon::protocol::EntityGroup< _Container, std::shared_ptr< Entity > >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
-      [ "samchon::protocol::EntityGroup< _Container, std::unique_ptr< Entity > >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
       [ "samchon::example::chat_service::ChatRoomArray", "d2/d9a/classsamchon_1_1example_1_1chat__service_1_1ChatRoomArray.html", null ],
       [ "samchon::protocol::EntityArray< _Ty >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
       [ "samchon::protocol::EntityGroup< _Container, _ETy, _Ty >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],

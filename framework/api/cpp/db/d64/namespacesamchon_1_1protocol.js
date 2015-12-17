@@ -18,7 +18,6 @@ var namespacesamchon_1_1protocol =
     [ "IClient", "d3/dc8/classsamchon_1_1protocol_1_1IClient.html", "d3/dc8/classsamchon_1_1protocol_1_1IClient" ],
     [ "IEntityChain", "d3/d66/classsamchon_1_1protocol_1_1IEntityChain.html", "d3/d66/classsamchon_1_1protocol_1_1IEntityChain" ],
     [ "IEntityGroup", "d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html", "d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup" ],
-    [ "IEntityPtrGroup", "d1/d9d/classsamchon_1_1protocol_1_1IEntityPtrGroup.html", null ],
     [ "IHTMLEntity", "db/dae/classsamchon_1_1protocol_1_1IHTMLEntity.html", "db/dae/classsamchon_1_1protocol_1_1IHTMLEntity" ],
     [ "Invoke", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html", "d8/d82/classsamchon_1_1protocol_1_1Invoke" ],
     [ "InvokeHistory", "da/d47/classsamchon_1_1protocol_1_1InvokeHistory.html", "da/d47/classsamchon_1_1protocol_1_1InvokeHistory" ],

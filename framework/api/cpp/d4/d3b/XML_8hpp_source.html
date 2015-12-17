@@ -180,84 +180,127 @@ $(document).ready(function(){initNavTree('d4/d3b/XML_8hpp_source.html','../../')
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                this-&gt;value = std::move(sstream.str());</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;            };</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">typename</span> _Ty&gt; </div>
-<div class="line"><a name="l00241"></a><span class="lineno"><a class="line" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a79588c3fceaf2eebe023e53e32a94e2a">  241</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a79588c3fceaf2eebe023e53e32a94e2a">setProperty</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> _Ty &amp;val)</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                std::stringstream sstream;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                sstream &lt;&lt; val;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#afb9bdb905f0e44c48c2720b807362a64">set</a>(name, sstream.str());</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            };</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            <span class="keywordtype">void</span> eraseProperty(<span class="keyword">const</span> std::string&amp;);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <span class="keywordtype">void</span> clearProperties();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> setValue(<span class="keyword">const</span> std::string &amp;val)</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            {</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                this-&gt;value = val;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            };</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> setValue(<span class="keyword">const</span> <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a> &amp;val)</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            {</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                this-&gt;value = val.<a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html#aa9b4f1ebc5d325b1518b1bb56902d57d">str</a>();</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            };</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> _Ty&gt;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            <span class="keywordtype">void</span> insertValue(<span class="keyword">const</span> std::string &amp;tag, <span class="keyword">const</span> _Ty &amp;val)</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            {</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                std::shared_ptr&lt;XML&gt; xml(<span class="keyword">new</span> XML());</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                xml-&gt;setTag(<span class="stringliteral">&quot;tag&quot;</span>);</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                xml-&gt;setValue(val);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            };</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">typename</span> _Ty&gt; </div>
+<div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a788bb72aeae83cb1190368a91f2bc881">  257</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a788bb72aeae83cb1190368a91f2bc881">setProperty</a>(<span class="keyword">const</span> std::string &amp;key, <span class="keyword">const</span> _Ty &amp;val)</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                std::stringstream sstream;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                sstream &lt;&lt; val;</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="comment">/* -----------------------------------------------------------</span></div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">            GETTERS</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">        ----------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;            <span class="keyword">auto</span> getTag() const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
-<div class="line"><a name="l00277"></a><span class="lineno"><a class="line" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#aa1d90382d642ecd98e31e6addb936336">  277</a></span>&#160;            template&lt;class _Ty = <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt; auto getValue() const -&gt; _Ty</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            {</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                std::stringstream sstream;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                sstream &lt;&lt; this-&gt;value;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                _Ty val;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                sstream &gt;&gt; val;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                <span class="keywordflow">return</span> std::move(val);</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;            };</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            </div>
-<div class="line"><a name="l00291"></a><span class="lineno"><a class="line" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a0878451ebbc58512c653c57f3004d74c">  291</a></span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">class</span> _Ty = std::<span class="keywordtype">string</span>&gt; <span class="keyword">auto</span> <a class="code" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a0878451ebbc58512c653c57f3004d74c">getProperty</a>(<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span> -&gt; _Ty</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            {</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                std::stringstream sstream;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                sstream &lt;&lt; propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#a3b1e1bff643f166cf0c9c27e56b9d50c">get</a>(key);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                _Ty val;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                sstream &gt;&gt; val;</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                <span class="keywordflow">return</span> std::move(val);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            };</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keyword">auto</span> hasProperty(<span class="keyword">const</span> std::string &amp;) const -&gt; <span class="keywordtype">bool</span>;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            </div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            auto getPropertyMap() const -&gt; const <a class="code" href="../../d1/d4e/classsamchon_1_1Map.html">Map</a>&lt;<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>, <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt;&amp;;</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;            </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="comment">/* -----------------------------------------------------------</span></div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;<span class="comment">            FILTERS</span></div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment">        ----------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        private:</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            auto calcMinIndex(const <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::vector&lt;<span class="keywordtype">size_t</span>&gt;&amp;) const -&gt; <span class="keywordtype">size_t</span>;</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            auto encodeValue(const <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a> &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            auto decodeValue(const <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a> &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            auto encodeProperty(const <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a> &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            auto decodeProperty(const <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a> &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="comment">/* -----------------------------------------------------------</span></div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">            EXPORTERS</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;<span class="comment">        ----------------------------------------------------------- */</span></div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        public: </div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            auto toString(<span class="keywordtype">size_t</span> level = 0) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#afb9bdb905f0e44c48c2720b807362a64">set</a>(key, sstream.str());</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            };</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> setProperty(<span class="keyword">const</span> std::string &amp;key, <span class="keyword">const</span> std::string &amp;val)</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            {</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#afb9bdb905f0e44c48c2720b807362a64">set</a>(key, val);</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            };</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keywordtype">void</span> setProperty(<span class="keyword">const</span> std::string &amp;key, <span class="keyword">const</span> <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a> &amp;val)</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            {</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#afb9bdb905f0e44c48c2720b807362a64">set</a>(key, val.<a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html#aa9b4f1ebc5d325b1518b1bb56902d57d">str</a>());</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            };</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordtype">void</span> eraseProperty(<span class="keyword">const</span> std::string&amp;);</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;            <span class="keywordtype">void</span> clearProperties();</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        <span class="comment">/* -----------------------------------------------------------</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="comment">            GETTERS</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment">        ----------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;            <span class="keyword">auto</span> getTag() const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;</div>
+<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#aa1d90382d642ecd98e31e6addb936336">  301</a></span>&#160;            template&lt;class _Ty = <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt; auto getValue() const -&gt; _Ty</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                std::stringstream sstream;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;                sstream &lt;&lt; this-&gt;value;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                _Ty val;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                sstream &gt;&gt; val;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="keywordflow">return</span> std::move(val);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            };</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keyword">auto</span> getValue() const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;            {</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;                <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            };</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keyword">auto</span> getValue() const -&gt; <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            };</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            </div>
+<div class="line"><a name="l00324"></a><span class="lineno"><a class="line" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a0878451ebbc58512c653c57f3004d74c">  324</a></span>&#160;            <span class="keyword">template</span>&lt;<span class="keyword">class</span> _Ty = std::<span class="keywordtype">string</span>&gt; <span class="keyword">auto</span> <a class="code" href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a0878451ebbc58512c653c57f3004d74c">getProperty</a>(<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span> -&gt; _Ty</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                std::stringstream sstream;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                sstream &lt;&lt; propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#a3b1e1bff643f166cf0c9c27e56b9d50c">get</a>(key);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                _Ty val;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                sstream &gt;&gt; val;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                <span class="keywordflow">return</span> std::move(val);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            };</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        private:</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            <span class="keywordtype">void</span> fetchString(<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::list&lt;<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>, <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::allocator&lt;<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt;&gt; &amp;, <span class="keywordtype">size_t</span>) const;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        };</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    };</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;};</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keyword">auto</span> getProperty(<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span> -&gt; std::string</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;            {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <span class="keywordflow">return</span> propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#a3b1e1bff643f166cf0c9c27e56b9d50c">get</a>(key);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            };</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keyword">template</span>&lt;&gt; <span class="keyword">auto</span> getProperty(<span class="keyword">const</span> std::string &amp;key) <span class="keyword">const</span> -&gt; <a class="code" href="../../d8/de4/classsamchon_1_1WeakString.html">WeakString</a></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            {</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;                <span class="keywordflow">return</span> propertyMap.<a class="code" href="../../d1/d4e/classsamchon_1_1Map.html#a3b1e1bff643f166cf0c9c27e56b9d50c">get</a>(key);</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            };</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;            <span class="keyword">auto</span> hasProperty(<span class="keyword">const</span> std::string &amp;) const -&gt; <span class="keywordtype">bool</span>;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;            </div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;            auto getPropertyMap() const -&gt; const Map&lt;<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>, <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt;&amp;;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;            </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">/* -----------------------------------------------------------</span></div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;<span class="comment">            FILTERS</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;<span class="comment">        ----------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        private:</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;            auto calcMinIndex(const <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::vector&lt;<span class="keywordtype">size_t</span>&gt;&amp;) const -&gt; <span class="keywordtype">size_t</span>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            auto encodeValue(const WeakString &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            auto decodeValue(const WeakString &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            auto encodeProperty(const WeakString &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;            auto decodeProperty(const WeakString &amp;) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="comment">/* -----------------------------------------------------------</span></div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;<span class="comment">            EXPORTERS</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;<span class="comment">        ----------------------------------------------------------- */</span></div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        public: </div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            auto toString(<span class="keywordtype">size_t</span> level = 0) const -&gt; <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>;</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        private:</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            <span class="keywordtype">void</span> fetchString(<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::list&lt;<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>, <a class="code" href="../../d8/dcc/namespacestd.html">std</a>::allocator&lt;<a class="code" href="../../d8/dcc/namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt;&gt; &amp;, <span class="keywordtype">size_t</span>) const;</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        };</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    };</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;};</div>
 <div class="ttc" id="classsamchon_1_1Map_html"><div class="ttname"><a href="../../d1/d4e/classsamchon_1_1Map.html">samchon::Map</a></div><div class="ttdoc">Map. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dbe/Map_8hpp_source.html#l00088">Map.hpp:88</a></div></div>
 <div class="ttc" id="classsamchon_1_1library_1_1XML_html_ae811d6494797b6fc8044da29c65f5070"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#ae811d6494797b6fc8044da29c65f5070">samchon::library::XML::value</a></div><div class="ttdeci">std::string value</div><div class="ttdoc">Value of the XML. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00094">XML.hpp:94</a></div></div>
 <div class="ttc" id="classsamchon_1_1Map_html_a3b1e1bff643f166cf0c9c27e56b9d50c"><div class="ttname"><a href="../../d1/d4e/classsamchon_1_1Map.html#a3b1e1bff643f166cf0c9c27e56b9d50c">samchon::Map::get</a></div><div class="ttdeci">auto get(const _Kty &amp;key) -&gt; _Ty &amp;</div><div class="ttdoc">Get element. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dbe/Map_8hpp_source.html#l00129">Map.hpp:129</a></div></div>
 <div class="ttc" id="namespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d85/RWMutex_8hpp_source.html#l00004">RWMutex.hpp:4</a></div></div>
+<div class="ttc" id="classsamchon_1_1WeakString_html_aa9b4f1ebc5d325b1518b1bb56902d57d"><div class="ttname"><a href="../../d8/de4/classsamchon_1_1WeakString.html#aa9b4f1ebc5d325b1518b1bb56902d57d">samchon::WeakString::str</a></div><div class="ttdeci">auto str() const  -&gt; std::string</div><div class="ttdoc">Get the string content. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dda/WeakString_8cpp_source.html#l00546">WeakString.cpp:546</a></div></div>
 <div class="ttc" id="classsamchon_1_1library_1_1XML_html_ad3a060587514d1bb86295bc393df4503"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#ad3a060587514d1bb86295bc393df4503">samchon::library::XML::tag</a></div><div class="ttdeci">std::string tag</div><div class="ttdoc">Tag name. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00085">XML.hpp:85</a></div></div>
 <div class="ttc" id="classsamchon_1_1Map_html_afb9bdb905f0e44c48c2720b807362a64"><div class="ttname"><a href="../../d1/d4e/classsamchon_1_1Map.html#afb9bdb905f0e44c48c2720b807362a64">samchon::Map::set</a></div><div class="ttdeci">void set(const _Kty &amp;key, const _Ty &amp;val)</div><div class="ttdoc">Set element. </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dbe/Map_8hpp_source.html#l00150">Map.hpp:150</a></div></div>
-<div class="ttc" id="classsamchon_1_1library_1_1XML_html_a79588c3fceaf2eebe023e53e32a94e2a"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a79588c3fceaf2eebe023e53e32a94e2a">samchon::library::XML::setProperty</a></div><div class="ttdeci">void setProperty(const std::string &amp;name, const _Ty &amp;val)</div><div class="ttdoc">Set a property with its key. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00241">XML.hpp:241</a></div></div>
+<div class="ttc" id="classsamchon_1_1library_1_1XML_html_a788bb72aeae83cb1190368a91f2bc881"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a788bb72aeae83cb1190368a91f2bc881">samchon::library::XML::setProperty</a></div><div class="ttdeci">void setProperty(const std::string &amp;key, const _Ty &amp;val)</div><div class="ttdoc">Set a property with its key. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00257">XML.hpp:257</a></div></div>
 <div class="ttc" id="classsamchon_1_1library_1_1XML_html"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html">samchon::library::XML</a></div><div class="ttdoc">XML is a class representing xml object. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00072">XML.hpp:72</a></div></div>
 <div class="ttc" id="classsamchon_1_1library_1_1XML_html_ad49b002e54c7c113b3ecf542d20c475b"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#ad49b002e54c7c113b3ecf542d20c475b">samchon::library::XML::setValue</a></div><div class="ttdeci">void setValue(const _Ty &amp;val)</div><div class="ttdoc">Set value of the XML. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00229">XML.hpp:229</a></div></div>
-<div class="ttc" id="classsamchon_1_1library_1_1XML_html_a0878451ebbc58512c653c57f3004d74c"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a0878451ebbc58512c653c57f3004d74c">samchon::library::XML::getProperty</a></div><div class="ttdeci">auto getProperty(const std::string &amp;key) const  -&gt; _Ty</div><div class="ttdoc">Get property. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00291">XML.hpp:291</a></div></div>
+<div class="ttc" id="classsamchon_1_1library_1_1XML_html_a0878451ebbc58512c653c57f3004d74c"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#a0878451ebbc58512c653c57f3004d74c">samchon::library::XML::getProperty</a></div><div class="ttdeci">auto getProperty(const std::string &amp;key) const  -&gt; _Ty</div><div class="ttdoc">Get property. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00324">XML.hpp:324</a></div></div>
 <div class="ttc" id="namespacesamchon_html"><div class="ttname"><a href="../../db/df1/namespacesamchon.html">samchon</a></div><div class="ttdoc">Top level namespace of products built from samchon. </div><div class="ttdef"><b>Definition:</b> <a href="../../df/df6/ByteArray_8hpp_source.html#l00007">ByteArray.hpp:7</a></div></div>
 <div class="ttc" id="classsamchon_1_1WeakString_html"><div class="ttname"><a href="../../d8/de4/classsamchon_1_1WeakString.html">samchon::WeakString</a></div><div class="ttdoc">A string class only references characeters, reference only. </div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d3d/WeakString_8hpp_source.html#l00032">WeakString.hpp:32</a></div></div>
 <div class="ttc" id="classsamchon_1_1library_1_1XML_html_af521de9d076a04b810ead67ef4bb355e"><div class="ttname"><a href="../../d5/d37/classsamchon_1_1library_1_1XML.html#af521de9d076a04b810ead67ef4bb355e">samchon::library::XML::propertyMap</a></div><div class="ttdeci">Map&lt; std::string, std::string &gt; propertyMap</div><div class="ttdoc">Properties belongs to the XML. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3b/XML_8hpp_source.html#l00106">XML.hpp:106</a></div></div>

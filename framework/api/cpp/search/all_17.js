@@ -1,6 +1,7 @@
 var searchData=
 [
   ['_7echatclient',['~ChatClient',['../d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient.html#aa5e3fa84e54a1107313f3e3c559df6ea',1,'samchon::example::console_chat_server::ChatClient']]],
+  ['_7eeventdispatcher',['~EventDispatcher',['../d3/d9b/classsamchon_1_1library_1_1EventDispatcher.html#abb5f401014e87f03027d6c4450964e55',1,'samchon::library::EventDispatcher']]],
   ['_7esharedacquire',['~SharedAcquire',['../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a89cecdb88b62d07f2b4fb1e1f5fb8ac1',1,'samchon::library::SharedAcquire']]],
   ['_7esharedreadlock',['~SharedReadLock',['../d7/de5/classsamchon_1_1library_1_1SharedReadLock.html#a5b4519c00471e96f5bb4fed2b1e0da6d',1,'samchon::library::SharedReadLock']]],
   ['_7esharedwritelock',['~SharedWriteLock',['../da/d5f/classsamchon_1_1library_1_1SharedWriteLock.html#aaabd1cde38b3e528ea042c532e0b0258',1,'samchon::library::SharedWriteLock']]],

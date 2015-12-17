@@ -10,7 +10,7 @@ var classsamchon_1_1library_1_1XML =
     [ "addAllProperty", "d5/d37/classsamchon_1_1library_1_1XML.html#abe5fca01b65f9f2a4c66db50ef0f7e2a", null ],
     [ "setTag", "d5/d37/classsamchon_1_1library_1_1XML.html#a9383756dabed89931635bb6b656bb6c6", null ],
     [ "setValue", "d5/d37/classsamchon_1_1library_1_1XML.html#ad49b002e54c7c113b3ecf542d20c475b", null ],
-    [ "setProperty", "d5/d37/classsamchon_1_1library_1_1XML.html#a79588c3fceaf2eebe023e53e32a94e2a", null ],
+    [ "setProperty", "d5/d37/classsamchon_1_1library_1_1XML.html#a788bb72aeae83cb1190368a91f2bc881", null ],
     [ "eraseProperty", "d5/d37/classsamchon_1_1library_1_1XML.html#aedc79e4a4c9a9e8e786e084cfdb9320a", null ],
     [ "clearProperties", "d5/d37/classsamchon_1_1library_1_1XML.html#a7784aec05d2c777f1ed31b9cc74e8aaf", null ],
     [ "getTag", "d5/d37/classsamchon_1_1library_1_1XML.html#a7915c5b6c89a70142c009ffe246d2aad", null ],
