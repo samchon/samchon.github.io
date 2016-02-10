@@ -149,6 +149,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="std.base.container.icontainer.html#empty" class="tsd-kind-icon">empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="std.base.container.icontainer.html#end" class="tsd-kind-icon">end</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="std.base.container.icontainer.html#erase" class="tsd-kind-icon">erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="std.base.container.icontainer.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="std.base.container.icontainer.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="std.base.container.icontainer.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
@@ -317,7 +318,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/IContainer.ts#L129">base/container/IContainer.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/IContainer.ts#L145">base/container/IContainer.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,7 +345,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/IContainer.ts#L145">base/container/IContainer.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/IContainer.ts#L161">base/container/IContainer.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -373,6 +374,49 @@
 							<p>An iterator pointing to the element that followed the last element erased by the function
 								call. This is the <code>Container.end</code> if the operation erased the last element in the
 							sequence.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="insert" class="tsd-anchor"></a>
+					<h3>insert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/IContainer.ts#L130">base/container/IContainer.ts:130</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Insert an element. </p>
+								</div>
+								<p> The container is extended by inserting a new element before the element at the specified
+									<i>position</i>. This effectively increases the <a href="std.base.container.icontainer.html#size">container size</a> by the amount of
+								elements inserted. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <a href="../classes/std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Position in the <a href="std.base.container.icontainer.html">IContainer</a> where the new element is inserted.
+											<a href="../classes/std.list.html#iterator">iterator</a> is a member type, defined as a <a href="../classes/std.base.container.iterator.html">random access iterator</a>
+										type that points to elements.</p>
+									</div>
+								</li>
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to be copied to the inserted element.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator that points to the newly inserted element.</p>
 						</li>
 					</ul>
 				</section>
@@ -523,6 +567,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="std.base.container.icontainer.html#erase" class="tsd-kind-icon">erase</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="std.base.container.icontainer.html#insert" class="tsd-kind-icon">insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
 								<a href="std.base.container.icontainer.html#push" class="tsd-kind-icon">push</a>
