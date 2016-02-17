@@ -76,6 +76,68 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p> Red-black Tree. </p>
+					</div>
+					<h3> Definition in Wekipedia </h3>
+					<p> A red–black tree is a kind of self-balancing binary search tree. Each node of the binary tree has an
+						extra bit, and that bit is often interpreted as the color (red or black) of the node. These color bits are
+					used to ensure the tree remains approximately balanced during insertions and deletions. </p>
+					<p> Balance is preserved by painting each node of the tree with one of two colors (typically called &#39;red&#39;
+						and &#39;black&#39;) in a way that satisfies certain properties, which collectively constrain how unbalanced the
+						tree can become in the worst case. When the tree is modified, the new tree is subsequently rearranged and
+						repainted to restore the coloring properties. The properties are designed in such a way that this
+					rearranging and recoloring can be performed efficiently. </p>
+					<p> The balancing of the tree is not perfect but it is good enough to allow it to guarantee searching in
+						O(log n) time, where n is the total number of elements in the tree. The insertion and deletion operations,
+					along with the tree rearrangement and recoloring, are also performed in O(log n) time. </p>
+					<p> Tracking the color of each node requires only 1 bit of information per node because there are only two
+						colors. The tree does not contain any other data specific to its being a red–black tree so its memory
+						footprint is almost identical to a classic (uncolored) binary search tree. In many cases the additional bit
+					of information can be stored at no additional memory cost. </p>
+					<p><h4> Properties </h4></p>
+					<p> In addition to the requirements imposed on a binary search tree the following must be satisfied by a
+					red–black tree: </p>
+					<ol>
+						<li> A node is either red or black. </li>
+						<li> The root is black. This rule is sometimes omitted. Since the root can always be changed from red to
+						black, but not necessarily vice versa, this rule has little effect on analysis. </li>
+						<li> All leaves (NIL; <code>null</code>) are black. </li>
+						<li> If a node is red, then both its children are black. </li>
+						<li> Every path from a given node to any of its descendant NIL nodes contains the same number of black
+							nodes. Some definitions: the number of black nodes from the root to a node is the node&#39;s black depth;
+							the uniform number of black nodes in all paths from root to the leaves is called the black-height of
+						the red–black tree. </li>
+					</ol>
+					<p> These constraints enforce a critical property of red–black trees: the path from the root to the
+						farthest leaf is no more than twice as long as the path from the root to the nearest leaf. The result is
+						that the tree is roughly height-balanced. Since operations such as inserting, deleting, and finding values
+						require worst-case time proportional to the height of the tree, this theoretical upper bound on the height
+					allows red–black trees to be efficient in the worst case, unlike ordinary binary search trees. </p>
+					<p> To see why this is guaranteed, it suffices to consider the effect of properties 4 and 5 together. For a
+						red–black tree T, let B be the number of black nodes in property 5. Let the shortest possible path from the
+						root of T to any leaf consist of B black nodes. Longer possible paths may be constructed by inserting red
+						nodes. However, property 4 makes it impossible to insert more than one consecutive red node. Therefore,
+						ignoring any black NIL leaves, the longest possible path consists of 2<em>B nodes, alternating black and red
+					(this is the worst case). Counting the black NIL leaves, the longest possible path consists of 2</em>B-1 nodes. </p>
+					<p> The shortest possible path has all black nodes, and the longest possible path alternates between red
+						and black nodes. Since all maximal paths have the same number of black nodes, by property 5, this shows
+					that no path is more than twice as long as any other path. </p>
+					<ul>
+						<li> Reference: <a href="https://en.wikipedia.org/w/index.php?title=Red%E2%80%93black_tree&amp;redirect=no">https://en.wikipedia.org/w/index.php?title=Red%E2%80%93black_tree&amp;redirect=no</a> </li>
+					</ul>
+					<dl class="tsd-comment-tags">
+						<dt>inventor</dt>
+						<dd><p>Rudolf Bayer</p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Migrated by Jeongho Nam</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -157,7 +219,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L5">base/tree/XTree.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L70">base/tree/XTree.ts:70</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -178,7 +240,7 @@
 					<div class="tsd-signature tsd-kind-icon">root<span class="tsd-signature-symbol">:</span> <a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L5">base/tree/XTree.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L70">base/tree/XTree.ts:70</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -195,7 +257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L172">base/tree/XTree.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L235">base/tree/XTree.ts:235</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -218,7 +280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L199">base/tree/XTree.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L262">base/tree/XTree.ts:262</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -241,7 +303,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L207">base/tree/XTree.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L270">base/tree/XTree.ts:270</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -264,7 +326,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L223">base/tree/XTree.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L286">base/tree/XTree.ts:286</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -287,7 +349,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L238">base/tree/XTree.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L301">base/tree/XTree.ts:301</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -310,7 +372,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L253">base/tree/XTree.ts:253</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L316">base/tree/XTree.ts:316</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -333,7 +395,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L279">base/tree/XTree.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L342">base/tree/XTree.ts:342</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -356,7 +418,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L343">base/tree/XTree.ts:343</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L406">base/tree/XTree.ts:406</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -379,7 +441,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L59">base/tree/XTree.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L122">base/tree/XTree.ts:122</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -402,7 +464,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L34">base/tree/XTree.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L97">base/tree/XTree.ts:97</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -425,7 +487,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L88">base/tree/XTree.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L151">base/tree/XTree.ts:151</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -448,7 +510,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L110">base/tree/XTree.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L173">base/tree/XTree.ts:173</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -471,7 +533,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L118">base/tree/XTree.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L181">base/tree/XTree.ts:181</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -494,7 +556,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L126">base/tree/XTree.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L189">base/tree/XTree.ts:189</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -517,7 +579,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L142">base/tree/XTree.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L205">base/tree/XTree.ts:205</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -540,7 +602,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L158">base/tree/XTree.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L221">base/tree/XTree.ts:221</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -563,7 +625,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L76">base/tree/XTree.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L139">base/tree/XTree.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -589,7 +651,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L78">base/tree/XTree.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L141">base/tree/XTree.ts:141</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -615,7 +677,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L327">base/tree/XTree.ts:327</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L390">base/tree/XTree.ts:390</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -641,7 +703,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L301">base/tree/XTree.ts:301</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L364">base/tree/XTree.ts:364</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -664,7 +726,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L314">base/tree/XTree.ts:314</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L377">base/tree/XTree.ts:377</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>

@@ -79,11 +79,23 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Static class holding enumeration codes of color of Red-black tree.</p>
+						<p> Static class holding enumeration codes of color of Red-black tree. </p>
 					</div>
+					<p> Color codes imposed to nodes of RB-Tree are following those rules: </p>
+					<ol>
+						<li> A node is either red or black. </li>
+						<li> The root is black. This rule is sometimes omitted. Since the root can always be changed from red to
+						black, but not necessarily vice versa, this rule has little effect on analysis. </li>
+						<li> All leaves (NIL; <code>null</code>) are black. </li>
+						<li> If a node is red, then both its children are black. </li>
+						<li> Every path from a given node to any of its descendant NIL nodes contains the same number of black
+							nodes. Some definitions: the number of black nodes from the root to a node is the node&#39;s black depth;
+							the uniform number of black nodes in all paths from root to the leaves is called the black-height of
+						the red–black tree. </li>
+					</ol>
 					<dl class="tsd-comment-tags">
 						<dt>author</dt>
-						<dd><p>Jeongho Nam</p>
+						<dd><p>Migrated by Jeongho Nam</p>
 						</dd>
 					</dl>
 				</div>
@@ -122,9 +134,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/Color.ts#L10">base/tree/Color.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/Color.ts#L32">base/tree/Color.ts:32</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Code of color black. </p>
+								</div>
+								<ul>
+									<li> Those are clearly black: root, leaf nodes or children nodes of red. </li>
+									<li> Every path from a given nodes containes the same number of black nodes exclude NIL(s). </li>
+								</ul>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -139,9 +160,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/Color.ts#L11">base/tree/Color.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/Color.ts#L39">base/tree/Color.ts:39</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Code of color red. </p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>

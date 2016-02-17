@@ -144,6 +144,7 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/std.base.container.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/std.base.container.ideque.html" class="tsd-signature-type">IDeque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -173,7 +174,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.list.html#assign" class="tsd-kind-icon">assign</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.list.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#back" class="tsd-kind-icon">back</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.list.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.list.html#clear" class="tsd-kind-icon">clear</a></li>
@@ -189,7 +190,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="std.list.html#insertbyval" class="tsd-kind-icon">insert<wbr>ByVal</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#popback" class="tsd-kind-icon">pop<wbr>Back</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#popfront" class="tsd-kind-icon">pop<wbr>Front</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.list.html#push" class="tsd-kind-icon">push</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.list.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#pushback" class="tsd-kind-icon">push<wbr>Back</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#pushfront" class="tsd-kind-icon">push<wbr>Front</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.list.html#size" class="tsd-kind-icon">size</a></li>
@@ -215,18 +216,14 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L70">List.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L71">List.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Fill Constructor. </p>
+									<p> Default Constructor. </p>
 								</div>
-								<p> Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided). </p>
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<p> Constructs an empty container, with no elements. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.list.html" class="tsd-signature-type">List</a></h4>
 						</li>
@@ -234,18 +231,14 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L82">List.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L85">List.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Fill Constructor. </p>
+									<p> Initializer list Constructor. </p>
 								</div>
-								<p> Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided). </p>
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<p> Constructs a container with a copy of each of the elements in <i>array</i>, in the same order. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -259,7 +252,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L87">List.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L94">List.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -289,23 +282,25 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L98">List.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L105">List.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Fill Constructor. </p>
+									<p> Copy Constructor. </p>
 								</div>
-								<p> Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided). </p>
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<p> Constructs a container with a copy of each of the elements in <i>container</i>, in the same order. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>container: <a href="../interfaces/std.base.container.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Another container object of the same type (with the same class template
+											arguments <code>T</code>), whose contents are either copied or acquired.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.list.html" class="tsd-signature-type">List</a></h4>
@@ -314,26 +309,33 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L103">List.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L115">List.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Fill Constructor. </p>
+									<p> Range Constructor. </p>
 								</div>
-								<p> Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided). </p>
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<p> Constructs a container with as many elements as the range (<i>begin</i>, <i>end<i>), with each
+								element emplace-constructed from its corresponding element in that range, in the same order. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Input interator of the initial position in a sequence.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Input interator of the final position in a sequence.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.list.html" class="tsd-signature-type">List</a></h4>
@@ -349,7 +351,7 @@
 					<div class="tsd-signature tsd-kind-icon">begin_<span class="tsd-signature-symbol">:</span> <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L60">List.ts:60</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L61">List.ts:61</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -364,7 +366,7 @@
 					<div class="tsd-signature tsd-kind-icon">end_<span class="tsd-signature-symbol">:</span> <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L65">List.ts:65</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L66">List.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -379,7 +381,7 @@
 					<div class="tsd-signature tsd-kind-icon">size_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L70">List.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L71">List.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -401,7 +403,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L55">List.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L56">List.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a></h4>
@@ -411,52 +413,46 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 					<a name="assign" class="tsd-anchor"></a>
 					<h3>assign</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">assign<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">assign<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">assign<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">assign&lt;U&gt;<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L160">List.ts:160</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L171">List.ts:171</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Assign container content. </p>
 								</div>
-								<p> Assigns new contents to the Container, replacing its current contents, and modifying its size
-								accordingly. </p>
+								<p> Assigns new contents to the <a href="../interfaces/std.base.container.ilist.html">container</a>, replacing its current contents,
+								and modifying its <a href="std.list.html#size">size</a> accordingly. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>New size of the container.</p>
-									</div>
+									<h5>n: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Value to fill the container with. Each of the <i>n</i> elements in the container will be
-										initialized to a copy of this value.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#assign">assign</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L165">List.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L176">List.ts:176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,13 +462,19 @@
 								<p> Assigns new contents to the container, replacing its current contents, and modifying its
 								<a href="std.list.html#size">size</a> accordingly. </p>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -488,21 +490,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#back">back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L279">List.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L274">List.ts:274</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Access last element. </p>
-									<p> Returns a value in the last element of the List. </p>
+									<p> Returns a value of the last element in the <a href="../interfaces/std.base.container.ilist.html">container</a>. </p>
 								</div>
 								<p> Unlike member <a href="std.list.html#end">end()</a>, which returns an iterator just past this element,
 								this function returns a direct value. </p>
-								<p> Calling this function on an empty container causes undefined behavior. </p>
+								<p> Calling this function on an <a href="std.list.html#empty">empty</a> <a href="../interfaces/std.base.container.ilist.html">container</a> causes undefined behavior. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>A value in the last element of the List.</p>
+							<p>A value of the last element of the <a href="../interfaces/std.base.container.ilist.html">container</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -515,10 +518,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#begin">begin</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L231">List.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L242">List.ts:242</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,10 +547,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#clear">clear</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L213">List.ts:213</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L224">List.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -569,7 +572,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#empty">empty</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#empty">empty</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/Container.ts#L139">base/container/Container.ts:139</a></li>
@@ -597,10 +600,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#end">end</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L239">List.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L250">List.ts:250</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -635,7 +638,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L540">List.ts:540</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L517">List.ts:517</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -665,7 +668,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L559">List.ts:559</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L536">List.ts:536</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -709,7 +712,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L572">List.ts:572</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L549">List.ts:549</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -734,7 +737,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L580">List.ts:580</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L557">List.ts:557</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -761,21 +764,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#front">front</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L263">List.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L266">List.ts:266</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Access first element. </p>
-									<p> Returns a value in the first element of the List. </p>
+									<p> Returns a value of the first element in the <a href="../interfaces/std.base.container.ilist.html">container</a>. </p>
 								</div>
 								<p> Unlike member <a href="std.list.html#end">end()</a>, which returns an iterator just past this element,
 								this function returns a direct value. </p>
-								<p> Calling this function on an empty container causes undefined behavior. </p>
+								<p> Calling this function on an <a href="std.list.html#empty">empty</a> <a href="../interfaces/std.base.container.ilist.html">container</a> causes undefined behavior. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>A value in the first element of the List.</p>
+							<p>A value of the first element of the <a href="../interfaces/std.base.container.ilist.html">container</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -792,7 +796,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L400">List.ts:400</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L377">List.ts:377</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -804,7 +808,6 @@
 								inserted. </p>
 								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be
 								efficient inserting and removing elements in any position, even in the middle of the sequence. </p>
-								<p> The arguments determine how many elements are inserted and to which values they are initialized. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -830,7 +833,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L413">List.ts:413</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L390">List.ts:390</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -868,7 +871,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L425">List.ts:425</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L402">List.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -911,7 +914,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L484">List.ts:484</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L461">List.ts:461</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -942,7 +945,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L449">List.ts:449</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L426">List.ts:426</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -973,7 +976,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L440">List.ts:440</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L417">List.ts:417</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1001,15 +1004,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L373">List.ts:373</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L352">List.ts:352</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Delete last element. </p>
-								</div>
-								<p> Removes the last element in the List container, effectively reducing the container
-								<a href="std.list.html#size">size</a> by one. </p>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1024,48 +1026,57 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#popfront">popFront</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L362">List.ts:362</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L344">List.ts:344</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Delete first element. </p>
 								</div>
-								<p> Removes first last element in the List container, effectively reducing the container
+								<p> Removes the first element in the <a href="../interfaces/std.base.container.ideque.html">container</a>, effectively reducing its
 								<a href="std.list.html#size">size</a> by one. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 					<a name="push" class="tsd-anchor"></a>
 					<h3>push</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">push<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">push&lt;U&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L296">List.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L291">List.ts:291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Insert elements. </p>
+								</div>
+								<p> Appends new elements to the container, and returns the new size of the <code>Container</code>. </p>
 							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h4>
+								</li>
+							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>items: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>items: <span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>New size of the Container.</p>
 						</li>
 					</ul>
 				</section>
@@ -1078,24 +1089,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#pushback">pushBack</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L341">List.ts:341</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L326">List.ts:326</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Add element at the end. </p>
 								</div>
-								<p> Adds a new element at the lend of the <a href="std.list.html">List</a> container, after its current last
-								element. This effectively increases the container <a href="std.list.html#size">size</a> by one. </p>
+								<p> Adds a new element at the end of the <a href="../interfaces/std.base.container.ilist.html">container</a>, after its current last element.
+								This effectively increases the <a href="../interfaces/std.base.container.ilist.html">container</a> <a href="std.list.html#size">size</a> by one. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Value to be copied to the new element.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1111,24 +1120,23 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#pushfront">pushFront</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L312">List.ts:312</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L302">List.ts:302</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Insert element at beginning. </p>
 								</div>
-								<p> Inserts a new element at the beginning of the list, right before its current first element.
-								This effectively increases the container size by one. </p>
+								<p> Inserts a new element at the beginning of the <a href="../interfaces/std.base.container.ideque.html">container</a>, right before its
+									current first element. This effectively increases the <a href="../interfaces/std.base.container.ideque.html">container</a> <a href="std.list.html#size">size</a> by
+								one. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Value to be inserted as an element.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1144,10 +1152,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#size">size</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.container.ideque.html">IDeque</a>.<a href="../interfaces/std.base.container.ideque.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L247">List.ts:247</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/List.ts#L258">List.ts:258</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1216,7 +1224,7 @@
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-static">
 								<a href="std.list.html#iterator" class="tsd-kind-icon">iterator</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 								<a href="std.list.html#assign" class="tsd-kind-icon">assign</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -1264,7 +1272,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.list.html#popfront" class="tsd-kind-icon">pop<wbr>Front</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 								<a href="std.list.html#push" class="tsd-kind-icon">push</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
