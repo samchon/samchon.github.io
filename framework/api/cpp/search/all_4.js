@@ -11,7 +11,7 @@ var searchData=
   ['decompress',['decompress',['../dc/d37/classsamchon_1_1ByteArray.html#afee383009332dcfb0d17cc8e0619c1a0',1,'samchon::ByteArray']]],
   ['degree_5fto_5fradian',['degree_to_radian',['../de/d8f/classsamchon_1_1library_1_1Math.html#abe515875bcad5a048f806102076c9096',1,'samchon::library::Math']]],
   ['denominator',['denominator',['../de/d4a/classsamchon_1_1library_1_1ProgressEvent.html#afbcb742ac7baf3ff2fd113be7b638664',1,'samchon::library::ProgressEvent']]],
-  ['deprecated_20list',['Deprecated List',['../da/d58/deprecated.html',1,'']]],
+  ['deprecated_20list',['Deprecated List',['../deprecated.html',1,'']]],
   ['destroy',['destroy',['../d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#abe22860864b977368f7539d2b27238e3',1,'samchon::library::CriticalAllocator']]],
   ['dictionary',['Dictionary',['../db/df1/namespacesamchon.html#a18b65ef36d3a91e2476b8a67baee0eab',1,'samchon']]],
   ['disconnect',['disconnect',['../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a53877f6e0173fa6b5deae7dcf7f14dad',1,'samchon::library::SQLi']]],

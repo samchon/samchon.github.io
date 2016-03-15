@@ -8,5 +8,5 @@ var searchData=
   ['clientset',['clientSet',['../dd/dc0/classsamchon_1_1example_1_1console__chat__server_1_1ChatServer.html#ad22e0b6b71064f5a6442c63b86f7271f',1,'samchon::example::console_chat_server::ChatServer']]],
   ['comment',['comment',['../d7/d0a/classsamchon_1_1library_1_1FTInstance.html#a91f4042853fee1e575dfa9f27e55a45c',1,'samchon::library::FTInstance']]],
   ['completed',['completed',['../df/d18/classsamchon_1_1protocol_1_1master_1_1PRMasterHistory.html#abd4f13b4ec9e11a7c15ed6d1c1b6ebc4',1,'samchon::protocol::master::PRMasterHistory']]],
-  ['cookiemap',['cookieMap',['../d7/d67/classsamchon_1_1library_1_1HTTPLoader.html#a5e8bede28339dd8a14a959ffc9a74cc4',1,'samchon::library::HTTPLoader']]]
+  ['cookiemap',['cookieMap',['../d7/d67/classsamchon_1_1library_1_1HTTPLoader.html#a5c8376d40ae95fae1022be475e4755ec',1,'samchon::library::HTTPLoader']]]
 ];

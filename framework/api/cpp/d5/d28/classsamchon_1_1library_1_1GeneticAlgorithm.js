@@ -1,5 +1,6 @@
 var classsamchon_1_1library_1_1GeneticAlgorithm =
 [
+    [ "GeneticAlgorithm", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#a53939a18159544675c27b8bf30f9a23e", null ],
     [ "GeneticAlgorithm", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#a09b3f75a44907da0e065c1008f08dff6", null ],
     [ "evolveGeneArray", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#a09d14f4275c309f08d74ffa09b6dd69f", null ],
     [ "evolvePopulation", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#a05e5330e7d893ce9b3381fcf15f2885f", null ],

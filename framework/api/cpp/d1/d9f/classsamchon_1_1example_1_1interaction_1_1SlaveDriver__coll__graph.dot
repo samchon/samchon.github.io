@@ -1,0 +1,47 @@
+digraph "samchon::example::interaction::SlaveDriver"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="samchon::example::interaction\l::SlaveDriver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="samchon::protocol::\lmaster::ParallelClient",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dda/classsamchon_1_1protocol_1_1master_1_1ParallelClient.html",tooltip="A network driver for a parallel client. "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="samchon::protocol::\lmaster::ParallelSystem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html",tooltip="A network driver for a parallel system. "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="samchon::protocol::\lExternalSystem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html",tooltip="A network driver for an external system. "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SharedEntityArray\<\l ExternalSystemRole \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html",tooltip="An Entity and a container of children Entity objects. "];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="samchon::protocol::\lEntity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d3e/classsamchon_1_1protocol_1_1Entity.html",tooltip="An entity, a standard data class. "];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="samchon::protocol::\lIEntityGroup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html",tooltip="An iternface for entity group. "];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="samchon::protocol::\lIClient",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/dc8/classsamchon_1_1protocol_1_1IClient.html",tooltip="An interface for a client. "];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="samchon::protocol::\lIProtocol",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html",tooltip="An interface of Invoke message chain. "];
+  Node10 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" systemArray" ,fontname="Helvetica"];
+  Node10 [label="samchon::protocol::\lmaster::ParallelSystemArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d9c/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArray.html",tooltip="An array of parallel system drivers. "];
+  Node11 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="samchon::protocol::\lExternalSystemArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html",tooltip="An array of ExternalSystem(s). "];
+  Node12 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="SharedEntityArray\<\l ExternalSystem \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html",tooltip="An Entity and a container of children Entity objects. "];
+  Node6 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" progressArray\nhistoryArray" ,fontname="Helvetica"];
+  Node13 [label="samchon::protocol::\lmaster::PRMasterHistoryArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/dd8/classsamchon_1_1protocol_1_1master_1_1PRMasterHistoryArray.html",tooltip="An array of invoke histories of master. "];
+  Node14 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="samchon::protocol::\lmaster::PRInvokeHistoryArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d50/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistoryArray.html",tooltip="An array of PRInvokeHistory. "];
+  Node15 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="samchon::protocol::\lInvokeHistoryArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d7b/classsamchon_1_1protocol_1_1InvokeHistoryArray.html",tooltip="An array of InvokeHistory. "];
+  Node16 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="SharedEntityArray\<\l InvokeHistory \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html",tooltip="An Entity and a container of children Entity objects. "];
+  Node6 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" master" ,fontname="Helvetica"];
+  Node14 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" progressArray\nhistoryArray" ,fontname="Helvetica"];
+  Node17 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="samchon::protocol::\lExternalClient",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/dfd/classsamchon_1_1protocol_1_1ExternalClient.html",tooltip="A network driver for an external client. "];
+  Node4 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

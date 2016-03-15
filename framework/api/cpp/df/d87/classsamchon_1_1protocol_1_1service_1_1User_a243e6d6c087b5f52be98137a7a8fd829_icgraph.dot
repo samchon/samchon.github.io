@@ -1,0 +1,27 @@
+digraph "samchon::protocol::service::User::doLogin"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="samchon::protocol::\lservice::User::doLogin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="samchon::protocol::\lservice::User::goLogin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d87/classsamchon_1_1protocol_1_1service_1_1User.html#a14900b68dc5c3c373257d17cd0f8835b",tooltip="Log-in. "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="samchon::protocol::\lservice::User::replyData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d87/classsamchon_1_1protocol_1_1service_1_1User.html#ab4e88592466db9b3805887e701b1fb65",tooltip="Reply a message. "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="samchon::protocol::\lservice::Client::sendData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d31/classsamchon_1_1protocol_1_1service_1_1Client.html#ac4852bf9ea2a070f3940ec7ed4d3dc6a",tooltip="Send Invoke message to (physical) client. "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="samchon::protocol::\lservice::Client::construct\lService",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d31/classsamchon_1_1protocol_1_1service_1_1Client.html#a292737005aa6820224c721023611d875",tooltip="Construct Service. "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="samchon::protocol::\lservice::Service::sendData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/df3/classsamchon_1_1protocol_1_1service_1_1Service.html#abf3980854281a448cbf326f90eb7a0f6",tooltip="Shift the responsibility of sending an Invoke message to Client. "];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="samchon::protocol::\lservice::User::sendData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d87/classsamchon_1_1protocol_1_1service_1_1User.html#a4587887539af19e7e647d452107b2c03",tooltip="Send a message. "];
+  Node7 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="samchon::protocol::\lservice::User::goJoin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d87/classsamchon_1_1protocol_1_1service_1_1User.html#a3313ed1682f8d15dd0db252ea9b46d7d",tooltip="Join as a member. "];
+  Node8 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="samchon::protocol::\lservice::User::goLogout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d87/classsamchon_1_1protocol_1_1service_1_1User.html#ad584b485b5980521e8f56f09b705faab",tooltip="Log-out. "];
+  Node9 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

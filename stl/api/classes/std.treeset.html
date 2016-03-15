@@ -80,8 +80,8 @@
 						<i>key</i>, of type <code>T</code>), and each value must be unique. The value of the elements in a
 						<a href="std.treeset.html">TreeSet</a> cannot be modified once in the container (the elements are always const), but they
 					can be inserted or removed from the container. </p>
-					<p> Internally, the elements in a set are always sorted following a specific strict weak ordering
-					criterion indicated by its internal comparison method (of <a href="../modules/std.html#less">less</a>). </p>
+					<p> Internally, the elements in a <a href="std.treeset.html">TreeSet</a> are always sorted following a specific strict weak
+					ordering criterion indicated by its internal comparison method (of <a href="../modules/std.html#less">less</a>). </p>
 					<p> <a href="std.treeset.html">TreeSet</a> containers are generally slower than <a href="std.hashset.html">HashSet</a> containers to access
 						individual elements by their <i>key</i>, but they allow the direct iteration on subsets based on their
 					order. </p>
@@ -165,23 +165,25 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.treeset.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.treeset.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.treeset.html#clear" class="tsd-kind-icon">clear</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.treeset.html#constructbyarray" class="tsd-kind-icon">construct<wbr>ByArray</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.treeset.html#constructbycontainer" class="tsd-kind-icon">construct<wbr>ByContainer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.treeset.html#constructbyrange" class="tsd-kind-icon">construct<wbr>ByRange</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.treeset.html#constructbyarray" class="tsd-kind-icon">construct<wbr>ByArray</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.treeset.html#constructbycontainer" class="tsd-kind-icon">construct<wbr>ByContainer</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.treeset.html#constructbyrange" class="tsd-kind-icon">construct<wbr>ByRange</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.treeset.html#count" class="tsd-kind-icon">count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.treeset.html#empty" class="tsd-kind-icon">empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.treeset.html#end" class="tsd-kind-icon">end</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treeset.html#equalrange" class="tsd-kind-icon">equal<wbr>Range</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.treeset.html#erase" class="tsd-kind-icon">erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.treeset.html#find" class="tsd-kind-icon">find</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treeset.html#findnear" class="tsd-kind-icon">find<wbr>Near</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.treeset.html#handleerase" class="tsd-kind-icon">handle<wbr>Erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.treeset.html#handleinsert" class="tsd-kind-icon">handle<wbr>Insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.treeset.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.treeset.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.treeset.html#insertbyrange" class="tsd-kind-icon">insert<wbr>ByRange</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-private"><a href="std.treeset.html#insertbyval" class="tsd-kind-icon">insert<wbr>ByVal</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treeset.html#lowerbound" class="tsd-kind-icon">lower<wbr>Bound</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.treeset.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.treeset.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treeset.html#upperbound" class="tsd-kind-icon">upper<wbr>Bound</a></li>
 							</ul>
 						</section>
 					</div>
@@ -222,13 +224,18 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Default Constructor</p>
+									<p>Contruct from elements.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>array: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Elements to be contained.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.treeset.html" class="tsd-signature-type">TreeSet</a></h4>
@@ -237,12 +244,12 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.uniqueset.html">UniqueSet</a>.<a href="std.base.container.uniqueset.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L70">TreeSet.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L75">TreeSet.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Default Constructor</p>
+									<p>Copy Constructor.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -257,21 +264,31 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.uniqueset.html">UniqueSet</a>.<a href="std.base.container.uniqueset.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L72">TreeSet.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L80">TreeSet.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Default Constructor</p>
+									<p>Range Constructor.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Input interator of the initial position in a sequence.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Input interator of the final position in a sequence.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.treeset.html" class="tsd-signature-type">TreeSet</a></h4>
@@ -322,7 +339,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L89">TreeSet.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L103">TreeSet.ts:103</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -364,7 +381,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L131">base/container/SetContainer.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L137">base/container/SetContainer.ts:137</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -393,7 +410,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L97">TreeSet.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L111">TreeSet.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -406,10 +423,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 					<a name="constructbyarray" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> construct<wbr>ByArray</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> construct<wbr>ByArray</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 						<li class="tsd-signature tsd-kind-icon">construct<wbr>ByArray<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -417,9 +434,11 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#constructbyarray">constructByArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L64">base/container/SetContainer.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L67">base/container/SetContainer.ts:67</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -430,10 +449,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 					<a name="constructbycontainer" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> construct<wbr>ByContainer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> construct<wbr>ByContainer</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 						<li class="tsd-signature tsd-kind-icon">construct<wbr>ByContainer<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -441,9 +460,11 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#constructbycontainer">constructByContainer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L74">base/container/SetContainer.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L76">base/container/SetContainer.ts:76</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -454,10 +475,10 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 					<a name="constructbyrange" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> construct<wbr>ByRange</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> construct<wbr>ByRange</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 						<li class="tsd-signature tsd-kind-icon">construct<wbr>ByRange<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -465,9 +486,11 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#constructbyrange">constructByRange</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L78">base/container/SetContainer.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L84">base/container/SetContainer.ts:84</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -547,7 +570,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L139">base/container/SetContainer.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L145">base/container/SetContainer.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -570,6 +593,48 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="equalrange" class="tsd-anchor"></a>
+					<h3>equal<wbr>Range</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">equal<wbr>Range<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L222">TreeSet.ts:222</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Get range of equal elements. </p>
+								</div>
+								<p> Because all elements in a {@link Set} container are unique, the range returned will contain a
+								single element at most. </p>
+								<p> If no matches are found, the range returned has a length of zero, with both iterators pointing to
+									the first element that is considered to go after <i>val</i> according to the container&#39;s
+								internal comparison object (key_comp). </p>
+								<p> Two elements of a {@link Set} are considered equivalent if the container&#39;s comparison object
+									returns false reflexively (i.e., no matter the order in which the elements are passed as arguments).
+								</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to search for.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The function returns a <a href="std.pair.html">Pair</a>, whose member <a href="std.pair.html#first">Pair.first</a> is the lower bound of
+								the range (the same as <a href="std.treeset.html#lowerbound">lowerBound</a>), and <a href="std.pair.html#second">Pair.second</a> is the upper bound
+							(the same as <a href="std.treeset.html#upperbound">upperBound</a>).</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="erase" class="tsd-anchor"></a>
 					<h3>erase</h3>
@@ -584,7 +649,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L277">base/container/SetContainer.ts:277</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L283">base/container/SetContainer.ts:283</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -608,7 +673,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L282">base/container/SetContainer.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L288">base/container/SetContainer.ts:288</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -630,7 +695,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L293">base/container/SetContainer.ts:293</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L299">base/container/SetContainer.ts:299</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -670,7 +735,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L110">TreeSet.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L124">TreeSet.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -679,29 +744,6 @@
 									<dd></dd>
 								</dl>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>val: <span class="tsd-signature-type">T</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="findnear" class="tsd-anchor"></a>
-					<h3>find<wbr>Near</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Near<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L120">TreeSet.ts:120</a></li>
-								</ul>
-							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -723,7 +765,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#handleerase">handleErase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L178">TreeSet.ts:178</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L275">TreeSet.ts:275</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -753,7 +795,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#handleinsert">handleInsert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L170">TreeSet.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L267">TreeSet.ts:267</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -783,7 +825,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L155">base/container/SetContainer.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L161">base/container/SetContainer.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -885,7 +927,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#insertbyrange">insertByRange</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L258">base/container/SetContainer.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L264">base/container/SetContainer.ts:264</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -914,7 +956,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#insertbyval">insertByVal</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L140">TreeSet.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L237">TreeSet.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -926,6 +968,49 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="lowerbound" class="tsd-anchor"></a>
+					<h3>lower<wbr>Bound</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">lower<wbr>Bound<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L156">TreeSet.ts:156</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return iterator to lower bound. </p>
+								</div>
+								<p> Returns an iterator pointing to the first element in the container which is not considered to go
+								before <i>val</i> (i.e., either it is equivalent or goes after). </p>
+								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
+								iterator to the first element for which key_comp(element, val) would return false. </p>
+								<p> If the {@link Set} class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>), the
+								function returns an iterator to the first element that is not less than <i>val</i>. </p>
+								<p> A similar member function, <a href="std.treeset.html#upperbound">upperBound</a>, has the same behavior as <a href="std.treeset.html#lowerbound">lowerBound</a>,
+									except in the case that the {@link Set} contains an element equivalent to <i>val</i>: In this case
+									<a href="std.treeset.html#lowerbound">lowerBound</a> returns an iterator pointing to that element, whereas <a href="std.treeset.html#upperbound">upperBound</a> returns
+								an iterator pointing to the next element. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to compare.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the the first element in the container which is not considered to go before
+							<i>val</i>, or {@link Set.end} if all elements are considered to go before <i>val</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -942,7 +1027,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L189">base/container/SetContainer.ts:189</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L195">base/container/SetContainer.ts:195</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -981,7 +1066,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L173">base/container/SetContainer.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L179">base/container/SetContainer.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -991,6 +1076,49 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 							<p>The number of elements in the container.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="upperbound" class="tsd-anchor"></a>
+					<h3>upper<wbr>Bound</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">upper<wbr>Bound<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeSet.ts#L190">TreeSet.ts:190</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return iterator to upper bound. </p>
+								</div>
+								<p> Returns an iterator pointing to the first element in the container which is not considered to go
+								after <i>val</i>. </p>
+								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
+								iterator to the first element for which key_comp(element, val) would return true. </p>
+								<p> If the {@link Set} class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>), the
+								function returns an iterator to the first element that is greater than <i>val</i>. </p>
+								<p> A similar member function, <a href="std.treeset.html#lowerbound">lowerBound</a>, has the same behavior as <a href="std.treeset.html#upperbound">upperBound</a>, except
+									in the case that the {@link Set} contains an element equivalent to <i>val</i>: In this case
+									<a href="std.treeset.html#lowerbound">lowerBound</a> returns an iterator pointing to that element, whereas <a href="std.treeset.html#upperbound">upperBound</a> returns
+								an iterator pointing to the next element. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to compare.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the the first element in the container which is not considered to go before
+							<i>val</i>, or {@link Set.end} if all elements are considered to go after <i>val</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -1053,13 +1181,13 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.treeset.html#clear" class="tsd-kind-icon">clear</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 								<a href="std.treeset.html#constructbyarray" class="tsd-kind-icon">construct<wbr>ByArray</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 								<a href="std.treeset.html#constructbycontainer" class="tsd-kind-icon">construct<wbr>ByContainer</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
 								<a href="std.treeset.html#constructbyrange" class="tsd-kind-icon">construct<wbr>ByRange</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
@@ -1071,14 +1199,14 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.treeset.html#end" class="tsd-kind-icon">end</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.treeset.html#equalrange" class="tsd-kind-icon">equal<wbr>Range</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.treeset.html#erase" class="tsd-kind-icon">erase</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.treeset.html#find" class="tsd-kind-icon">find</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="std.treeset.html#findnear" class="tsd-kind-icon">find<wbr>Near</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 								<a href="std.treeset.html#handleerase" class="tsd-kind-icon">handle<wbr>Erase</a>
@@ -1098,11 +1226,17 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-private">
 								<a href="std.treeset.html#insertbyval" class="tsd-kind-icon">insert<wbr>ByVal</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.treeset.html#lowerbound" class="tsd-kind-icon">lower<wbr>Bound</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 								<a href="std.treeset.html#push" class="tsd-kind-icon">push</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.treeset.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.treeset.html#upperbound" class="tsd-kind-icon">upper<wbr>Bound</a>
 							</li>
 						</ul>
 					</li>

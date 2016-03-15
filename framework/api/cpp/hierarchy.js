@@ -176,6 +176,13 @@ var hierarchy =
     [ "samchon::library::GAParameters", "d3/dcb/structsamchon_1_1library_1_1GAParameters.html", null ],
     [ "samchon::library::GAPopulation< GeneArray, Compare >", "d8/dcd/classsamchon_1_1library_1_1GAPopulation.html", null ],
     [ "samchon::library::GeneticAlgorithm< GeneArray, Compare >", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", null ],
+    [ "samchon::HashMap< Key, T, Hash, Pred, Alloc >", "d0/dee/classsamchon_1_1HashMap.html", null ],
+    [ "samchon::HashMap< std::string, std::shared_ptr< XMLList > >", "d0/dee/classsamchon_1_1HashMap.html", [
+      [ "samchon::library::XML", "d5/d37/classsamchon_1_1library_1_1XML.html", null ]
+    ] ],
+    [ "samchon::HashMap< std::string, std::string >", "d0/dee/classsamchon_1_1HashMap.html", [
+      [ "samchon::library::URLVariables", "dc/d30/classsamchon_1_1library_1_1URLVariables.html", null ]
+    ] ],
     [ "samchon::library::HTTPLoader", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html", null ],
     [ "samchon::protocol::IEntityChain", "d3/d66/classsamchon_1_1protocol_1_1IEntityChain.html", null ],
     [ "samchon::protocol::IEntityGroup", "d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html", [
@@ -241,12 +248,6 @@ var hierarchy =
     [ "samchon::Map< size_t, SQL_SIZE_T >", "d1/d4e/classsamchon_1_1Map.html", null ],
     [ "samchon::Map< std::shared_ptr< samchon::protocol::master::DistributedSystemRole > >", "d1/d4e/classsamchon_1_1Map.html", null ],
     [ "samchon::Map< std::shared_ptr< samchon::protocol::service::IPUserPair > >", "d1/d4e/classsamchon_1_1Map.html", null ],
-    [ "samchon::Map< std::string, std::shared_ptr< XMLList > >", "d1/d4e/classsamchon_1_1Map.html", [
-      [ "samchon::library::XML", "d5/d37/classsamchon_1_1library_1_1XML.html", null ]
-    ] ],
-    [ "samchon::Map< std::string, std::string >", "d1/d4e/classsamchon_1_1Map.html", [
-      [ "samchon::library::URLVariables", "dc/d30/classsamchon_1_1library_1_1URLVariables.html", null ]
-    ] ],
     [ "samchon::library::Math", "de/d8f/classsamchon_1_1library_1_1Math.html", null ],
     [ "samchon::namtree::NTEntityGroup", "dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup.html", null ],
     [ "samchon::library::RWMutex", "df/d85/classsamchon_1_1library_1_1RWMutex.html", null ],

@@ -176,16 +176,18 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.treemultimap.html#count" class="tsd-kind-icon">count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.treemultimap.html#empty" class="tsd-kind-icon">empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.treemultimap.html#end" class="tsd-kind-icon">end</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treemultimap.html#equalrange" class="tsd-kind-icon">equal<wbr>Range</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.treemultimap.html#erase" class="tsd-kind-icon">erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.treemultimap.html#find" class="tsd-kind-icon">find</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treemultimap.html#findnear" class="tsd-kind-icon">find<wbr>Near</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.treemultimap.html#handleerase" class="tsd-kind-icon">handle<wbr>Erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.treemultimap.html#handleinsert" class="tsd-kind-icon">handle<wbr>Insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.treemultimap.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.treemultimap.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-private"><a href="std.treemultimap.html#insertbypair" class="tsd-kind-icon">insert<wbr>ByPair</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected"><a href="std.treemultimap.html#insertbyrange" class="tsd-kind-icon">insert<wbr>ByRange</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treemultimap.html#lowerbound" class="tsd-kind-icon">lower<wbr>Bound</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.treemultimap.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.treemultimap.html#upperbound" class="tsd-kind-icon">upper<wbr>Bound</a></li>
 							</ul>
 						</section>
 					</div>
@@ -285,7 +287,7 @@
 									<h5>begin: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>nput interator of the initial position in a sequence.</p>
+											<p>Input interator of the initial position in a sequence.</p>
 										</div>
 									</div>
 								</li>
@@ -592,6 +594,44 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="equalrange" class="tsd-anchor"></a>
+					<h3>equal<wbr>Range</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">equal<wbr>Range<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L233">TreeMultiMap.ts:233</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Get range of equal elements. </p>
+								</div>
+								<p> Returns the bounds of a range that includes all the elements in the container which have a key
+								equivalent to <i>k</i> </p>.
+								<p> If no matches are found, the range returned has a length of zero, with both iterators pointing to
+									the first element that has a key considered to go after <i>k</i> according to the container&#39;s internal
+								comparison object (key_comp). </p>
+								<p> Two keys are considered equivalent if the container&#39;s comparison object returns false reflexively
+								(i.e., no matter the order in which the keys are passed as arguments). </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">Key</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">, </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The function returns a <a href="std.pair.html">Pair</a>, whose member <a href="std.pair.html#first">Pair.first</a> is the lower bound of
+								the range (the same as <a href="std.treemultimap.html#lowerbound">lowerBound</a>), and <a href="std.pair.html#second">Pair.second</a> is the upper bound
+							(the same as <a href="std.treemultimap.html#upperbound">upperBound</a>).</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="erase" class="tsd-anchor"></a>
 					<h3>erase</h3>
@@ -605,7 +645,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.mapcontainer.html">MapContainer</a>.<a href="std.base.container.mapcontainer.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L254">base/container/MapContainer.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L250">base/container/MapContainer.ts:250</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -620,7 +660,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.mapcontainer.html">MapContainer</a>.<a href="std.base.container.mapcontainer.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L255">base/container/MapContainer.ts:255</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L251">base/container/MapContainer.ts:251</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -635,7 +675,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.mapcontainer.html">MapContainer</a>.<a href="std.base.container.mapcontainer.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L256">base/container/MapContainer.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L252">base/container/MapContainer.ts:252</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -681,29 +721,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="findnear" class="tsd-anchor"></a>
-					<h3>find<wbr>Near</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Near<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L136">TreeMultiMap.ts:136</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>key: <span class="tsd-signature-type">Key</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 					<a name="handleerase" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle<wbr>Erase</h3>
@@ -715,7 +732,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.mapcontainer.html">MapContainer</a>.<a href="std.base.container.mapcontainer.html#handleerase">handleErase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L197">TreeMultiMap.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L289">TreeMultiMap.ts:289</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -745,7 +762,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.mapcontainer.html">MapContainer</a>.<a href="std.base.container.mapcontainer.html#handleinsert">handleInsert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L189">TreeMultiMap.ts:189</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L281">TreeMultiMap.ts:281</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -904,7 +921,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.mapcontainer.html">MapContainer</a>.<a href="std.base.container.mapcontainer.html#insertbypair">insertByPair</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L156">TreeMultiMap.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L248">TreeMultiMap.ts:248</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -939,7 +956,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.mapcontainer.html">MapContainer</a>.<a href="std.base.container.mapcontainer.html#insertbyrange">insertByRange</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L244">base/container/MapContainer.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MapContainer.ts#L240">base/container/MapContainer.ts:240</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -964,6 +981,46 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="lowerbound" class="tsd-anchor"></a>
+					<h3>lower<wbr>Bound</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">lower<wbr>Bound<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L158">TreeMultiMap.ts:158</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return iterator to lower bound. </p>
+								</div>
+								<p> Returns an iterator pointing to the first element in the container whose key is not considered to
+								go before <i>k</i> (i.e., either it is equivalent or goes after). </p>
+								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
+								iterator to the first element for which key_comp(<i>k</i>, element_key) would return false. </p>
+								<p> If the <a href="std.treemultimap.html">TreeMultiMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
+								the function returns an iterator to the first element whose key is not less than <i>k</i> </p>.
+								<p> A similar member function, <a href="std.treemultimap.html#upperbound">upperBound</a>, has the same behavior as <a href="std.treemultimap.html#lowerbound">lowerBound</a>, except
+									in the case that the <a href="std.treemultimap.html">TreeMultiMap</a> contains an element with keys equivalent to <i>k</i>:
+									In this case, <a href="std.treemultimap.html#lowerbound">lowerBound</a> returns an iterator pointing to the first of such elements,
+								whereas <a href="std.treemultimap.html#upperbound">upperBound</a> returns an iterator pointing to the element following the last. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">Key</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the the first element in the container whose key is not considered to go before
+							<i>k</i>, or <a href="std.treemultimap.html#end">TreeMultiMap.end</a> if all keys are considered to go before <i>k</i>.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="size" class="tsd-anchor"></a>
 					<h3>size</h3>
@@ -984,6 +1041,46 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="upperbound" class="tsd-anchor"></a>
+					<h3>upper<wbr>Bound</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">upper<wbr>Bound<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/TreeMultiMap.ts#L198">TreeMultiMap.ts:198</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return iterator to upper bound. </p>
+								</div>
+								<p> Returns an iterator pointing to the first element in the container whose key is considered to
+								go after <i>k</i> </p>.
+								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
+								iterator to the first element for which key_comp(<i>k</i>, element_key) would return true. </p>
+								<p> If the <a href="std.treemultimap.html">TreeMultiMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
+								the function returns an iterator to the first element whose key is greater than <i>k</i> </p>.
+								<p> A similar member function, <a href="std.treemultimap.html#lowerbound">lowerBound</a>, has the same behavior as <a href="std.treemultimap.html#upperbound">upperBound</a>, except
+									in the case that the <a href="std.treemultimap.html">TreeMultiMap</a> contains an element with keys equivalent to <i>k</i>:
+									In this case <a href="std.treemultimap.html#lowerbound">lowerBound</a> returns an iterator pointing to first of such element, whereas
+								<a href="std.treemultimap.html#upperbound">upperBound</a> returns an iterator pointing to the element following the last. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>key: <span class="tsd-signature-type">Key</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the the first element in the container whose key is considered to go after
+							<i>k</i>, or <a href="std.treemultimap.html#end">TreeMultiMap.end</a> if no keys are considered to go after <i>k</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -1064,14 +1161,14 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.treemultimap.html#end" class="tsd-kind-icon">end</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.treemultimap.html#equalrange" class="tsd-kind-icon">equal<wbr>Range</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.treemultimap.html#erase" class="tsd-kind-icon">erase</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.treemultimap.html#find" class="tsd-kind-icon">find</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="std.treemultimap.html#findnear" class="tsd-kind-icon">find<wbr>Near</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
 								<a href="std.treemultimap.html#handleerase" class="tsd-kind-icon">handle<wbr>Erase</a>
@@ -1091,8 +1188,14 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited tsd-is-protected">
 								<a href="std.treemultimap.html#insertbyrange" class="tsd-kind-icon">insert<wbr>ByRange</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.treemultimap.html#lowerbound" class="tsd-kind-icon">lower<wbr>Bound</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.treemultimap.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.treemultimap.html#upperbound" class="tsd-kind-icon">upper<wbr>Bound</a>
 							</li>
 						</ul>
 					</li>
