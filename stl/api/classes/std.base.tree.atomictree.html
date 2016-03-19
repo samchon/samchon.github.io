@@ -162,7 +162,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#root">root</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L70">base/tree/XTree.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L67">base/tree/XTree.ts:67</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -180,13 +180,97 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L230">base/tree/XTree.ts:230</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L453">base/tree/XTree.ts:453</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Erase an element with its node. </p>
+								</div>
+								<p> In a regular binary search tree when deleting a node with two non-leaf children, we find either the
+									maximum element in its left subtree (which is the in-order predecessor) or the minimum element in its
+									right subtree (which is the in-order successor) and move its value into the node being deleted (as shown
+									here). We then delete the node we copied the value from, which must have fewer than two non-leaf children.
+									(Non-leaf children, rather than all children, are specified here because unlike normal binary search
+									trees, red–black trees can have leaf nodes anywhere, so that all nodes are either internal nodes with
+									two children or leaf nodes with, by definition, zero children. In effect, internal nodes having two leaf
+									children in a red–black tree are like the leaf nodes in a regular binary search tree.) Because merely
+									copying a value does not violate any red–black properties, this reduces to the problem of deleting a node
+									with at most one non-leaf child. Once we have solved that problem, the solution applies equally to the
+									case where the node we originally want to delete has at most one non-leaf child as to the case just
+								considered where it has two non-leaf children. </p>
+								<p> Therefore, for the remainder of this discussion we address the deletion of a node with at most one
+									non-leaf child. We use the label M to denote the node to be deleted; C will denote a selected child of M,
+									which we will also call &quot;its child&quot;. If M does have a non-leaf child, call that its child, C; otherwise,
+								choose either leaf as its child, C. </p>
+								<p> If M is a red node, we simply replace it with its child C, which must be black by property 4.
+									(This can only occur when M has two leaf children, because if the red node M had a black non-leaf child
+									on one side but just a leaf child on the other side, then the count of black nodes on both sides would
+									be different, thus the tree would violate property 5.) All paths through the deleted node will simply
+									pass through one fewer red node, and both the deleted node&#39;s parent and child must be black,
+									so property 3 (all leaves are black) and property 4 (both children of every red node are black) still
+								hold. </p>
+								<p> Another simple case is when M is black and C is red. Simply removing a black node could break
+									Properties 4 (“Both children of every red node are black”) and 5 (“All paths from any given node to its
+									leaf nodes contain the same number of black nodes”), but if we repaint C black, both of these properties
+								are preserved. </p>
+								<p> The complex case is when both M and C are black. (This can only occur when deleting a black node
+									which has two leaf children, because if the black node M had a black non-leaf child on one side but just
+									a leaf child on the other side, then the count of black nodes on both sides would be different, thus the
+									tree would have been an invalid red–black tree by violation of property 5.) We begin by replacing M with
+									its child C. We will relabel this child C (in its new position) N, and its sibling (its new parent&#39;s
+									other child) S. (S was previously the sibling of M.) In the diagrams below, we will also use P for N&#39;s
+									new parent (M&#39;s old parent), SL for S&#39;s left child, and SR for S&#39;s right child (S cannot be a leaf
+									because if M and C were black, then P&#39;s one subtree which included M counted two black-height and thus
+									P&#39;s other subtree which includes S must also count two black-height, which cannot be the case if S is a
+								leaf node). </p>
+								<p><h4> Notes </h4></p>
+								<ol>
+									<li> The label N will be used to denote the current node (colored black). In the diagrams N carries a
+										blue contour. At the beginning, this is the replacement node and a leaf, but the entire procedure
+										may also be applied recursively to other nodes (see case 3). In between some cases, the roles and
+										labels of the nodes are exchanged, but in each case, every label continues to represent the same
+									node it represented at the beginning of the case. </li>
+									<li> If a node in the right (target) half of a diagram carries a blue contour it will become the current
+										node in the next iteration and there the other nodes will be newly assigned relative to it. Any
+										color shown in the diagram is either assumed in its case or implied by those assumptions.
+										White represents an arbitrary color (either red or black), but the same in both halves of the
+									diagram. </li>
+									<li> A numbered triangle represents a subtree of unspecified depth. A black circle atop a triangle means
+									that black-height of subtree is greater by one compared to subtree without this circle. </li>
+								</ol>
+								<p> If both N and its original parent are black, then deleting this original parent causes paths which
+									proceed through N to have one fewer black node than paths that do not. As this violates property 5
+									(all paths from any given node to its leaf nodes contain the same number of black nodes), the tree must
+								be rebalanced. There are several cases to consider: </p>
+								<ol>
+									<li> N is the new root. </li>
+									<li> S is red. </li>
+									<li> P, S, and S&#39;s children are black. </li>
+									<li> S and S&#39;s children are black, but P is red. </li>
+									<li> S is black, S&#39;s left child is red, S&#39;s right child is black, and N is the left child of its parent. </li>
+									<li> S is black, S&#39;s right child is red, and N is the left child of its parent P. </li>
+								</ol>
+								<p> Again, the function calls all use tail recursion, so the algorithm is in-place. </p>
+								<p> In the algorithm above, all cases are chained in order, except in delete case 3 where it can recurse
+									to case 1 back to the parent node: this is the only case where an iterative implementation will
+									effectively loop. No more than h loops back to case 1 will occur (where h is the height of the tree).
+									And because the probability for escalation decreases exponentially with each iteration the average
+								removal cost is constant. </p>
+								<p> Additionally, no tail recursion ever occurs on a child node, so the tail recursion loop can only
+									move from a child back to its successive ancestors. If a rotation occurs in case 2 (which is the only
+									possibility of rotation within the loop of cases 1–3), then the parent of the node N becomes red after
+									the rotation and we will exit the loop. Therefore, at most one rotation will occur within this loop.
+									Since no more than two additional rotations will occur after exiting the loop, at most three rotations
+								occur in total. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An element to erase.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -267,13 +351,66 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L148">base/tree/XTree.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L203">base/tree/XTree.ts:203</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Insert an element with a new node. </p>
+								</div>
+								<p> Insertion begins by adding the node as any binary search tree insertion does and by coloring it red.
+									Whereas in the binary search tree, we always add a leaf, in the red–black tree, leaves contain no
+									information, so instead we add a red interior node, with two black leaves, in place of an existing black
+								leaf. </p>
+								<p> What happens next depends on the color of other nearby nodes. The term uncle node will be used to
+								refer to the sibling of a node&#39;s parent, as in human family trees. Note that: </p>
+								<ul>
+									<li> property 3 (all leaves are black) always holds. </li>
+									<li> property 4 (both children of every red node are black) is threatened only by adding a red node,
+									repainting a black node red, or a rotation. </li>
+									<li> property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes)
+										is threatened only by adding a black node, repainting a red node black (or vice versa), or a
+									rotation. </li>
+								</ul>
+								<p><h4> Notes </h4></p>
+								<ol>
+									<li> The label N will be used to denote the current node (colored red). In the diagrams N carries a
+										blue contour. At the beginning, this is the new node being inserted, but the entire procedure may
+										also be applied recursively to other nodes (see case 3). P will denote N&#39;s parent node,
+										G will denote N&#39;s grandparent, and U will denote N&#39;s uncle. In between some cases, the roles and
+										labels of the nodes are exchanged, but in each case, every label continues to represent the same
+									node it represented at the beginning of the case. </li>
+									<li> If a node in the right (target) half of a diagram carries a blue contour it will become the current
+										node in the next iteration and there the other nodes will be newly assigned relative to it. Any
+									color shown in the diagram is either assumed in its case or implied by those assumptions. </li>
+									<li> A numbered triangle represents a subtree of unspecified depth. A black circle atop a triangle means
+									that black-height of subtree is greater by one compared to subtree without this circle. </li>
+								</ol>
+								<p> There are several cases of red–black tree insertion to handle: </p>
+								<ul>
+									<li> N is the root node, i.e., first node of red–black tree. </li>
+									<li> N&#39;s parent (P) is black. </li>
+									<li> N&#39;s parent (P) and uncle (U) are red. </li>
+									<li> N is added to right of left child of grandparent, or N is added to left of right child of
+									grandparent (P is red and U is black). </li>
+									<li> N is added to left of left child of grandparent, or N is added to right of right child of
+									grandparent (P is red and U is black). </li>
+								</ul>
+								<p><h4> Note </h4></p>
+								<p> Note that inserting is actually in-place, since all the calls above use tail recursion. </p>
+								<p> In the algorithm above, all cases are chained in order, except in insert case 3 where it can recurse
+									to case 1 back to the grandparent node: this is the only case where an iterative implementation will
+									effectively loop. Because the problem of repair is escalated to the next higher level but one, it takes
+									maximally h⁄2 iterations to repair the tree (where h is the height of the tree). Because the probability
+								for escalation decreases exponentially with each iteration the average insertion cost is constant. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An element to insert.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
