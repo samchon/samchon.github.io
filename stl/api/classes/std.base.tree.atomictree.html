@@ -88,7 +88,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="std.base.tree.xtree.html" class="tsd-signature-type">XTree</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="std.base.tree.rbtree.html" class="tsd-signature-type">RBTree</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">AtomicTree</span>
@@ -116,12 +116,16 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.tree.atomictree.html#erase" class="tsd-kind-icon">erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.tree.atomictree.html#erase" class="tsd-kind-icon">erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.tree.atomictree.html#fetchmaximum" class="tsd-kind-icon">fetch<wbr>Maximum</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.tree.atomictree.html#find" class="tsd-kind-icon">find</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="std.base.tree.atomictree.html#findbyval" class="tsd-kind-icon">find<wbr>ByVal</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.tree.atomictree.html#insert" class="tsd-kind-icon">insert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.tree.atomictree.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.tree.atomictree.html#isequals" class="tsd-kind-icon">is<wbr>Equals</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.tree.atomictree.html#isless" class="tsd-kind-icon">is<wbr>Less</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.tree.atomictree.html#replacenode" class="tsd-kind-icon">replace<wbr>Node</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.tree.atomictree.html#rotateleft" class="tsd-kind-icon">rotate<wbr>Left</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.tree.atomictree.html#rotateright" class="tsd-kind-icon">rotate<wbr>Right</a></li>
 							</ul>
 						</section>
 					</div>
@@ -138,7 +142,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="std.base.tree.rbtree.html">RBTree</a>.<a href="std.base.tree.rbtree.html#constructor">constructor</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/AtomicTree.ts#L7">base/tree/AtomicTree.ts:7</a></li>
 								</ul>
@@ -162,25 +166,31 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#root">root</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L67">base/tree/XTree.ts:67</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L15">base/tree/XTree.ts:15</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Root node.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="erase" class="tsd-anchor"></a>
 					<h3>erase</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#erase">erase</a></p>
+								<p>Inherited from <a href="std.base.tree.rbtree.html">RBTree</a>.<a href="std.base.tree.rbtree.html#erase">erase</a></p>
+								<p>Overwrites <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L453">base/tree/XTree.ts:453</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/RBTree.ts#L524">base/tree/RBTree.ts:524</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -192,64 +202,101 @@
 									right subtree (which is the in-order successor) and move its value into the node being deleted (as shown
 									here). We then delete the node we copied the value from, which must have fewer than two non-leaf children.
 									(Non-leaf children, rather than all children, are specified here because unlike normal binary search
-									trees, red–black trees can have leaf nodes anywhere, so that all nodes are either internal nodes with
+									trees, red-black trees can have leaf nodes anywhere, so that all nodes are either internal nodes with
 									two children or leaf nodes with, by definition, zero children. In effect, internal nodes having two leaf
-									children in a red–black tree are like the leaf nodes in a regular binary search tree.) Because merely
-									copying a value does not violate any red–black properties, this reduces to the problem of deleting a node
+									children in a red-black tree are like the leaf nodes in a regular binary search tree.) Because merely
+									copying a value does not violate any red-black properties, this reduces to the problem of deleting a node
 									with at most one non-leaf child. Once we have solved that problem, the solution applies equally to the
 									case where the node we originally want to delete has at most one non-leaf child as to the case just
 								considered where it has two non-leaf children. </p>
 								<p> Therefore, for the remainder of this discussion we address the deletion of a node with at most one
-									non-leaf child. We use the label M to denote the node to be deleted; C will denote a selected child of M,
-									which we will also call &quot;its child&quot;. If M does have a non-leaf child, call that its child, C; otherwise,
-								choose either leaf as its child, C. </p>
-								<p> If M is a red node, we simply replace it with its child C, which must be black by property 4.
-									(This can only occur when M has two leaf children, because if the red node M had a black non-leaf child
-									on one side but just a leaf child on the other side, then the count of black nodes on both sides would
-									be different, thus the tree would violate property 5.) All paths through the deleted node will simply
-									pass through one fewer red node, and both the deleted node&#39;s parent and child must be black,
-									so property 3 (all leaves are black) and property 4 (both children of every red node are black) still
-								hold. </p>
-								<p> Another simple case is when M is black and C is red. Simply removing a black node could break
-									Properties 4 (“Both children of every red node are black”) and 5 (“All paths from any given node to its
-									leaf nodes contain the same number of black nodes”), but if we repaint C black, both of these properties
-								are preserved. </p>
-								<p> The complex case is when both M and C are black. (This can only occur when deleting a black node
-									which has two leaf children, because if the black node M had a black non-leaf child on one side but just
-									a leaf child on the other side, then the count of black nodes on both sides would be different, thus the
-									tree would have been an invalid red–black tree by violation of property 5.) We begin by replacing M with
-									its child C. We will relabel this child C (in its new position) N, and its sibling (its new parent&#39;s
-									other child) S. (S was previously the sibling of M.) In the diagrams below, we will also use P for N&#39;s
-									new parent (M&#39;s old parent), SL for S&#39;s left child, and SR for S&#39;s right child (S cannot be a leaf
-									because if M and C were black, then P&#39;s one subtree which included M counted two black-height and thus
-									P&#39;s other subtree which includes S must also count two black-height, which cannot be the case if S is a
-								leaf node). </p>
+									non-leaf child. We use the label <b>M</b> to denote the node to be deleted; <b>C</b> will denote a
+									selected child of <b>M</b>, which we will also call &quot;its child&quot;. If <b>M</b> does have a non-leaf child,
+								call that its child, <b>C</b>; otherwise, choose either leaf as its child, <b>C</b>. </p>
+								<p> If <b>M</b> is a <font color='red'>red</font> node, we simply replace it with its child <b>C</b>,
+									which must be <font color='darkBlue'>black</font> by property 4. (This can only occur when <b>M</b> has
+									two leaf children, because if the <font color='red'>red</font> node <b>M</b> had a
+									<font color='darkBlue'>black</font> non-leaf child on one side but just a leaf child on the other side,
+									then the count of <font color='darkBlue'>black</font> nodes on both sides would be different, thus the
+									tree would violate property 5.) All paths through the deleted node will simply pass through one fewer
+									<font color='red'>red</font> node, and both the deleted node&#39;s parent and child must be
+									<font color='darkBlue'>black</font>, so property 3 (all leaves are <font color='darkBlue'>black</font>)
+									and property 4 (both children of every <font color='red'>red</font> node are
+								<font color='darkBlue'>black</font>) still hold. </p>
+								<p> Another simple case is when <b>M</b> is <font color='darkBlue'>black</font> and <b>C</b> is
+									<font color='red'>red</font>. Simply removing a <font color='darkBlue'>black</font> node could break
+									Properties 4 (“Both children of every <font color='red'>red</font> node are
+									<font color='darkBlue'>black</font>”) and 5 (“All paths from any given node to its leaf nodes contain the
+									same number of <font color='darkBlue'>black</font> nodes”), but if we repaint <b>C</b>
+								<font color='darkBlue'>black</font>, both of these properties are preserved. </p>
+								<p> The complex case is when both <b>M</b> and <b>C</b> are <font color='darkBlue'>black</font>. (This
+									can only occur when deleting a <font color='darkBlue'>black</font> node which has two leaf children,
+									because if the <font color='darkBlue'>black</font> node <b>M</b> had a <font color='darkBlue'>black</font>
+									non-leaf child on one side but just a leaf child on the other side, then the count of
+									<font color='darkBlue'>black</font> nodes on both sides would be different, thus the tree would have been
+									an invalid red-black tree by violation of property 5.) We begin by replacing <b>M</b> with its child
+									<b>C</b>. We will relabel this child <b>C</b> (in its new position) <i><b>N</b></i>, and its sibling (its
+									new parent&#39;s other child) <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>. (<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a> was
+								previously the sibling of <b>M</b>.) </p>
+								<p> In the diagrams below, we will also use <a href="std.base.tree.xtreenode.html#parent"><b>P</b></a> for <i><b>N</b></i>&#39;s new
+									parent (<b>M</b>&#39;s old parent), <b>SL</b> for <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>&#39;s left child, and
+									<b>SR</b> for <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>&#39;s right child (<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a> cannot
+									be a leaf because if <b>M</b> and <b>C</b> were <font color='darkBlue'>black</font>, then
+									<a href="std.base.tree.xtreenode.html#parent"><b>P</b></a>&#39;s one subtree which included <b>M</b> counted two
+									<font color='darkBlue'>black</font>-height and thus <a href="std.base.tree.xtreenode.html#parent"><b>P</b></a>&#39;s other subtree
+									which includes <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a> must also count two
+									<font color='darkBlue'>black</font>-height, which cannot be the case if <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>
+								is a leaf node). </p>
 								<p><h4> Notes </h4></p>
 								<ol>
-									<li> The label N will be used to denote the current node (colored black). In the diagrams N carries a
-										blue contour. At the beginning, this is the replacement node and a leaf, but the entire procedure
-										may also be applied recursively to other nodes (see case 3). In between some cases, the roles and
-										labels of the nodes are exchanged, but in each case, every label continues to represent the same
-									node it represented at the beginning of the case. </li>
-									<li> If a node in the right (target) half of a diagram carries a blue contour it will become the current
+									<li>
+										The label <i><b>N</b></i> will be used to denote the current node (colored
+										<font color='darkBlue'>black</font>). In the diagrams <i><b>N</b></i> carries a blue contour. At the
+										beginning, this is the replacement node and a leaf, but the entire procedure may also be applied
+										recursively to other nodes (see case 3). In between some cases, the roles and labels of the nodes
+										are exchanged, but in each case, every label continues to represent the same node it represented at
+										the beginning of the case.
+									</li>
+									<li>
+										If a node in the right (target) half of a diagram carries a blue contour it will become the current
 										node in the next iteration and there the other nodes will be newly assigned relative to it. Any
 										color shown in the diagram is either assumed in its case or implied by those assumptions.
-										White represents an arbitrary color (either red or black), but the same in both halves of the
-									diagram. </li>
-									<li> A numbered triangle represents a subtree of unspecified depth. A black circle atop a triangle means
-									that black-height of subtree is greater by one compared to subtree without this circle. </li>
+										White represents an arbitrary color (either <font color='red'>red</font> or
+										<font color='darkBlue'>black</font>), but the same in both halves of the diagram.
+									</li>
+									<li>
+										A numbered triangle represents a subtree of unspecified depth. A <font color='darkBlue'>black</font>
+										circle atop a triangle means that <font color='darkBlue'>black</font>-height of subtree is greater
+										by one compared to subtree without this circle.
+									</li>
 								</ol>
-								<p> If both N and its original parent are black, then deleting this original parent causes paths which
-									proceed through N to have one fewer black node than paths that do not. As this violates property 5
-									(all paths from any given node to its leaf nodes contain the same number of black nodes), the tree must
-								be rebalanced. There are several cases to consider: </p>
+								<p> If both <i><b>N</b></i> and its original parent are <font color='darkBlue'>black</font>, then
+									deleting this original parent causes paths which proceed through <i><b>N</b></i> to have one fewer
+									<font color='darkBlue'>black</font> node than paths that do not. As this violates property 5 (all paths
+									from any given node to its leaf nodes contain the same number of <font color='darkBlue'>black</font>
+								nodes), the tree must be rebalanced. There are several cases to consider: </p>
 								<ol>
-									<li> N is the new root. </li>
-									<li> S is red. </li>
-									<li> P, S, and S&#39;s children are black. </li>
-									<li> S and S&#39;s children are black, but P is red. </li>
-									<li> S is black, S&#39;s left child is red, S&#39;s right child is black, and N is the left child of its parent. </li>
-									<li> S is black, S&#39;s right child is red, and N is the left child of its parent P. </li>
+									<li> <i><b>N</b></i> is the new root. </li>
+									<li> <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a> is <font color='red'>red</font>. </li>
+									<li>
+										<a href="std.base.tree.xtreenode.html#parent"><b>P</b></a>, <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>, and
+									<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>&#39;s children are <font color='darkBlue'>black</font>. </li>
+									<li>
+										<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a> and <a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>&#39;s children are
+										<font color='darkBlue'>black</font>, but <a href="std.base.tree.xtreenode.html#parent"><b>P</b></a> is
+										<font color='red'>red</font>.
+									</li>
+									<li>
+										<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a> is <font color='darkBlue'>black</font>,
+										<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>&#39;s left child is <font color='red'>red</font>,
+										<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>&#39;s right child is <font color='darkBlue'>black</font>, and
+										<i><b>N</b></i> is the left child of its parent.
+									</li>
+									<li>
+										<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a> is <font color='darkBlue'>black</font>,
+										<a href="std.base.tree.xtreenode.html#sibling"><b>S</b></a>&#39;s right child is <font color='red'>red</font>, and
+										<i><b>N</b></i> is the left child of its parent <a href="std.base.tree.xtreenode.html#parent"><b>P</b></a>.
+									</li>
 								</ol>
 								<p> Again, the function calls all use tail recursion, so the algorithm is in-place. </p>
 								<p> In the algorithm above, all cases are chained in order, except in delete case 3 where it can recurse
@@ -259,10 +306,10 @@
 								removal cost is constant. </p>
 								<p> Additionally, no tail recursion ever occurs on a child node, so the tail recursion loop can only
 									move from a child back to its successive ancestors. If a rotation occurs in case 2 (which is the only
-									possibility of rotation within the loop of cases 1–3), then the parent of the node N becomes red after
-									the rotation and we will exit the loop. Therefore, at most one rotation will occur within this loop.
-									Since no more than two additional rotations will occur after exiting the loop, at most three rotations
-								occur in total. </p>
+									possibility of rotation within the loop of cases 1–3), then the parent of the node <i><b>N</b></i>
+									becomes <font color='red'>red</font> after the rotation and we will exit the loop. Therefore, at most one
+									rotation will occur within this loop. Since no more than two additional rotations will occur after
+								exiting the loop, at most three rotations occur in total. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -274,6 +321,39 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="fetchmaximum" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> fetch<wbr>Maximum</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">fetch<wbr>Maximum<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#fetchmaximum">fetchMaximum</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L74">base/tree/XTree.ts:74</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Fetch maximum (the rightes?) node from one.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A node to fetch its maximum node.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>The maximum node.</p>
 						</li>
 					</ul>
 				</section>
@@ -340,61 +420,89 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="insert" class="tsd-anchor"></a>
 					<h3>insert</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#insert">insert</a></p>
+								<p>Inherited from <a href="std.base.tree.rbtree.html">RBTree</a>.<a href="std.base.tree.rbtree.html#insert">insert</a></p>
+								<p>Overwrites <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L203">base/tree/XTree.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/RBTree.ts#L194">base/tree/RBTree.ts:194</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Insert an element with a new node. </p>
 								</div>
-								<p> Insertion begins by adding the node as any binary search tree insertion does and by coloring it red.
-									Whereas in the binary search tree, we always add a leaf, in the red–black tree, leaves contain no
-									information, so instead we add a red interior node, with two black leaves, in place of an existing black
-								leaf. </p>
+								<p> Insertion begins by adding the node as any binary search tree insertion does and by coloring it
+									<font color='red'>red</font>. Whereas in the binary search tree, we always add a leaf, in the red-black
+									tree, leaves contain no information, so instead we add a <font color='red'>red</font> interior node, with
+									two <font color='darkBlue'>black</font> leaves, in place of an existing
+								<font color='darkBlue'>black</font> leaf. </p>
 								<p> What happens next depends on the color of other nearby nodes. The term uncle node will be used to
 								refer to the sibling of a node&#39;s parent, as in human family trees. Note that: </p>
 								<ul>
-									<li> property 3 (all leaves are black) always holds. </li>
-									<li> property 4 (both children of every red node are black) is threatened only by adding a red node,
-									repainting a black node red, or a rotation. </li>
-									<li> property 5 (all paths from any given node to its leaf nodes contain the same number of black nodes)
-										is threatened only by adding a black node, repainting a red node black (or vice versa), or a
-									rotation. </li>
+									<li> property 3 (all leaves are <font color='darkBlue'>black</font>) always holds. </li>
+									<li>
+										property 4 (both children of every <font color='red'>red</font> node are
+										<font color='darkBlue'>black</font>) is threatened only by adding a <font color='red'>red</font>
+										node, repainting a <font color='darkBlue'>black</font> node <font color='red'>red</font>, or a
+										rotation.
+									</li>
+									<li>
+										property 5 (all paths from any given node to its leaf nodes contain the same number of
+										<font color='darkBlue'>black</font> nodes) is threatened only by adding a
+										<font color='darkBlue'>black</font> node, repainting a <font color='red'>red</font> node
+										<font color='darkBlue'>black</font> (or vice versa), or a rotation.
+									</li>
 								</ul>
 								<p><h4> Notes </h4></p>
 								<ol>
-									<li> The label N will be used to denote the current node (colored red). In the diagrams N carries a
-										blue contour. At the beginning, this is the new node being inserted, but the entire procedure may
-										also be applied recursively to other nodes (see case 3). P will denote N&#39;s parent node,
-										G will denote N&#39;s grandparent, and U will denote N&#39;s uncle. In between some cases, the roles and
-										labels of the nodes are exchanged, but in each case, every label continues to represent the same
-									node it represented at the beginning of the case. </li>
-									<li> If a node in the right (target) half of a diagram carries a blue contour it will become the current
+									<li>
+										The label <i><b>N</b></i> will be used to denote the current node (colored
+										<font color='red'>red</font>). In the diagrams <i><b>N</b></i> carries a blue contour. At the
+										beginning, this is the new node being inserted, but the entire procedure may also be applied
+										recursively to other nodes (see case 3). <a href="std.base.tree.xtreenode.html#parent"><b>P</b></a> will denote
+										<i><b>N</b></i>&#39;s parent node, <a href="std.base.tree.xtreenode.html#grandparent"><b>G</b></a> will denote <i><b>N</b></i>&#39;s
+										grandparent, and <a href="std.base.tree.xtreenode.html#uncle"><b>U</b></a> will denote <i><b>N</b></i>&#39;s uncle. In between
+										some cases, the roles and labels of the nodes are exchanged, but in each case, every label continues
+										to represent the same node it represented at the beginning of the case.
+									</li>
+									<li>
+										If a node in the right (target) half of a diagram carries a blue contour it will become the current
 										node in the next iteration and there the other nodes will be newly assigned relative to it. Any
-									color shown in the diagram is either assumed in its case or implied by those assumptions. </li>
-									<li> A numbered triangle represents a subtree of unspecified depth. A black circle atop a triangle means
-									that black-height of subtree is greater by one compared to subtree without this circle. </li>
+										color shown in the diagram is either assumed in its case or implied by those assumptions.
+									</li>
+									<li>
+										A numbered triangle represents a subtree of unspecified depth. A <font color='darkBlue'>black</font>
+										circle atop a triangle means that <font color='darkBlue'>black</font>-height of subtree is greater
+									by one compared to subtree without this circle. </li>
 								</ol>
-								<p> There are several cases of red–black tree insertion to handle: </p>
+								<p> There are several cases of red-black tree insertion to handle: </p>
 								<ul>
-									<li> N is the root node, i.e., first node of red–black tree. </li>
-									<li> N&#39;s parent (P) is black. </li>
-									<li> N&#39;s parent (P) and uncle (U) are red. </li>
-									<li> N is added to right of left child of grandparent, or N is added to left of right child of
-									grandparent (P is red and U is black). </li>
-									<li> N is added to left of left child of grandparent, or N is added to right of right child of
-									grandparent (P is red and U is black). </li>
+									<li> <i><b>N</b></i> is the root node, i.e., first node of red-black tree. </li>
+									<li>
+										<i><b>N</b></i>&#39;s parent (<a href="std.base.tree.xtreenode.html#parent"><b>P</b></a>) is <font color='darkBlue'>black</font>.
+									</li>
+									<li>
+										<i><b>N</b></i>&#39;s parent (<a href="std.base.tree.xtreenode.html#parent"><b>P</b></a>) and uncle
+										(<a href="std.base.tree.xtreenode.html#uncle"><b>U</b></a>) are <font color='red'>red</font>.
+									</li>
+									<li>
+										<i><b>N</b></i> is added to right of left child of grandparent, or <i><b>N</b></i> is added to left
+										of right child of grandparent (<a href="std.base.tree.xtreenode.html#parent"><b>P</b></a> is <font color='red'>red</font> and
+										<a href="std.base.tree.xtreenode.html#uncle"><b>U</b></a> is <font color='darkBlue'>black</font>).
+									</li>
+									<li>
+										<i><b>N</b></i> is added to left of left child of grandparent, or <i><b>N</b></i> is added to right
+										of right child of grandparent (<a href="std.base.tree.xtreenode.html#parent"><b>P</b></a> is <font color='red'>red</font> and
+										<a href="std.base.tree.xtreenode.html#uncle"><b>U</b></a> is <font color='darkBlue'>black</font>).
+									</li>
 								</ul>
 								<p><h4> Note </h4></p>
 								<p> Note that inserting is actually in-place, since all the calls above use tail recursion. </p>
@@ -471,6 +579,108 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="replacenode" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> replace<wbr>Node</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">replace<wbr>Node<span class="tsd-signature-symbol">(</span>oldNode<span class="tsd-signature-symbol">: </span><a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, newNode<span class="tsd-signature-symbol">: </span><a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#replacenode">replaceNode</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L155">base/tree/XTree.ts:155</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Replace a node.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>oldNode: <a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Ordinary node to be replaced.</p>
+									</div>
+								</li>
+								<li>
+									<h5>newNode: <a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Target node to replace.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="rotateleft" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> rotate<wbr>Left</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">rotate<wbr>Left<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#rotateleft">rotateLeft</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L118">base/tree/XTree.ts:118</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rotate a node left.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Node to rotate left.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="rotateright" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> rotate<wbr>Right</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">rotate<wbr>Right<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.tree.xtree.html">XTree</a>.<a href="std.base.tree.xtree.html#rotateright">rotateRight</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/tree/XTree.ts#L136">base/tree/XTree.ts:136</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rotate a node to right.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>node: <a href="std.base.tree.xtreenode.html" class="tsd-signature-type">XTreeNode</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A node to rotate right.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -518,8 +728,11 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="std.base.tree.atomictree.html#root" class="tsd-kind-icon">root</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.tree.atomictree.html#erase" class="tsd-kind-icon">erase</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="std.base.tree.atomictree.html#fetchmaximum" class="tsd-kind-icon">fetch<wbr>Maximum</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.base.tree.atomictree.html#find" class="tsd-kind-icon">find</a>
@@ -527,7 +740,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="std.base.tree.atomictree.html#findbyval" class="tsd-kind-icon">find<wbr>ByVal</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.tree.atomictree.html#insert" class="tsd-kind-icon">insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
@@ -535,6 +748,15 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.base.tree.atomictree.html#isless" class="tsd-kind-icon">is<wbr>Less</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="std.base.tree.atomictree.html#replacenode" class="tsd-kind-icon">replace<wbr>Node</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="std.base.tree.atomictree.html#rotateleft" class="tsd-kind-icon">rotate<wbr>Left</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="std.base.tree.atomictree.html#rotateright" class="tsd-kind-icon">rotate<wbr>Right</a>
 							</li>
 						</ul>
 					</li>
@@ -545,6 +767,9 @@
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.tree.pairtree.html" class="tsd-kind-icon">Pair<wbr>Tree</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.tree.rbtree.html" class="tsd-kind-icon">RBTree</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.tree.xtree.html" class="tsd-kind-icon">XTree</a>
