@@ -2,8 +2,8 @@ var searchData=
 [
   ['casegenerator',['CaseGenerator',['../de/ddf/classsamchon_1_1library_1_1CaseGenerator.html',1,'samchon::library']]],
   ['charset',['Charset',['../da/d99/classsamchon_1_1library_1_1Charset.html',1,'samchon::library']]],
-  ['chatclient',['ChatClient',['../d4/dba/classsamchon_1_1example_1_1chat__service_1_1ChatClient.html',1,'samchon::example::chat_service']]],
   ['chatclient',['ChatClient',['../d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient.html',1,'samchon::example::console_chat_server']]],
+  ['chatclient',['ChatClient',['../d4/dba/classsamchon_1_1example_1_1chat__service_1_1ChatClient.html',1,'samchon::example::chat_service']]],
   ['chatmessage',['ChatMessage',['../df/d7b/classsamchon_1_1example_1_1chat__service_1_1ChatMessage.html',1,'samchon::example::chat_service']]],
   ['chatroom',['ChatRoom',['../d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom.html',1,'samchon::example::chat_service']]],
   ['chatroomarray',['ChatRoomArray',['../d2/d9a/classsamchon_1_1example_1_1chat__service_1_1ChatRoomArray.html',1,'samchon::example::chat_service']]],

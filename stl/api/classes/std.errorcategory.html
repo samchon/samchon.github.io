@@ -173,7 +173,7 @@
 									<a href="std.errorcondition.html">ErrorCondition</a>object with:
 									<p> <code>new ErrorCondition(val, *this);</code> </p>
 									<p> As a virtual member function, this behavior can be overriden in derived classes. </p>
-									<p> This function is called by the default definition of member <code>equivalent()</code>, which is
+									<p> This function is called by the default definition of member <a href="std.errorcategory.html#equivalent">equivalent()</a>, which is
 									used to compare <a href="std.errorcondition.html">error conditions</a> with error codes. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -252,13 +252,13 @@
 								<div class="lead">
 									<p> Error message. </p>
 								</div>
-								<p> In derived classes, the function returns a <code>string</code> object with a message describing
+								<p> In derived classes, the function returns a string object with a message describing
 								the error condition denoted by <i>val</i>. </p>
 								<p> In <a href="std.errorcategory.html">ErrorCategory</a>, it is a pure virtual member function. </p>
 								<p> This function is called both by <a href="std.errorcode.html#message">ErrorCode.message()</a> and
 									<a href="std.errorcondition.html#message">ErrorCondition.message()</a>
 									to obtain the corresponding message in the {@link category}. Therefore, numerical values used by
-									custom <code>error codes</code> and <a href="std.errorcondition.html">error conditions</a> should only match for a category
+									custom <i>error codes</i> and <a href="std.errorcondition.html">error conditions</a> should only match for a category
 								if they describe the same error. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -267,13 +267,13 @@
 									<h5>val: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A numerical value identifying an error condition.
-											If the <a href="std.errorcategory.html">ErrorCategory</a> object is the <code>GenericCategory</code>, this argument
-										is equivalent to an <code>errno</code> value.</p>
+											If the <a href="std.errorcategory.html">ErrorCategory</a> object is the {@link GenericCategory}, this argument
+										is equivalent to an {@link errno} value.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>A <code>string</code> object with the message.</p>
+							<p>A string object with the message.</p>
 						</li>
 					</ul>
 				</section>
@@ -294,12 +294,12 @@
 								<div class="lead">
 									<p> Return category name. </p>
 								</div>
-								<p> In derived classes, the function returns a <code>string</code> naming the category. </p>
+								<p> In derived classes, the function returns a string naming the category. </p>
 								<p> In <a href="std.errorcategory.html">ErrorCategory</a>, it is a pure virtual member function. </p>
 								<ul>
-									<li> In the <code>GenericCategory</code> object, it returns <i>&quot;generic&quot;</i>. </li>
-									<li> In the <code>SystemCategory</code> object, it returns <i>&quot;system&quot;</i>. </li>
-									<li> In the <code>IOStreamCategory</code> object, it returns <i>&quot;iostream&quot;</i>. </li>
+									<li> In the {@link GenericCategory} object, it returns <i>&quot;generic&quot;</i>. </li>
+									<li> In the {@link SystemCategory} object, it returns <i>&quot;system&quot;</i>. </li>
+									<li> In the {@link IOStreamCategory} object, it returns <i>&quot;iostream&quot;</i>. </li>
 								</ul>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>

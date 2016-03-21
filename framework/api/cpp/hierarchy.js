@@ -30,6 +30,7 @@ var hierarchy =
         ] ],
         [ "samchon::library::FTFolder", "d2/db1/classsamchon_1_1library_1_1FTFolder.html", null ]
       ] ],
+      [ "samchon::library::GAParameters", "de/de1/classsamchon_1_1library_1_1GAParameters.html", null ],
       [ "samchon::namtree::INTExplore", "d5/d98/classsamchon_1_1namtree_1_1INTExplore.html", [
         [ "samchon::namtree::NTFile", "d2/da2/classsamchon_1_1namtree_1_1NTFile.html", null ],
         [ "samchon::namtree::NTParameter", "db/d29/classsamchon_1_1namtree_1_1NTParameter.html", null ]
@@ -173,9 +174,8 @@ var hierarchy =
       [ "samchon::namtree::NTFactory", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html", null ]
     ] ],
     [ "samchon::example::tsp::GAParameters", "d9/d92/structsamchon_1_1example_1_1tsp_1_1GAParameters.html", null ],
-    [ "samchon::library::GAParameters", "d3/dcb/structsamchon_1_1library_1_1GAParameters.html", null ],
     [ "samchon::library::GAPopulation< GeneArray, Compare >", "d8/dcd/classsamchon_1_1library_1_1GAPopulation.html", null ],
-    [ "samchon::library::GeneticAlgorithm< GeneArray, Compare >", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", null ],
+    [ "samchon::library::GeneticAlgorithm< GeneArray, Compare, Gene >", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", null ],
     [ "samchon::HashMap< Key, T, Hash, Pred, Alloc >", "d0/dee/classsamchon_1_1HashMap.html", null ],
     [ "samchon::HashMap< std::string, std::shared_ptr< XMLList > >", "d0/dee/classsamchon_1_1HashMap.html", [
       [ "samchon::library::XML", "d5/d37/classsamchon_1_1library_1_1XML.html", null ]

@@ -4,7 +4,6 @@ var dir_13b6e06c9dd3dc17107fa5aafb37c75b =
     [ "Base64.hpp", "d0/d79/Base64_8hpp_source.html", null ],
     [ "CaseGenerator.cpp", "d3/de5/CaseGenerator_8cpp_source.html", null ],
     [ "CaseGenerator.hpp", "d2/da3/CaseGenerator_8hpp_source.html", null ],
-    [ "CaseTree.hpp", "db/d62/CaseTree_8hpp_source.html", null ],
     [ "Charset.cpp", "d7/dff/Charset_8cpp_source.html", null ],
     [ "Charset.hpp", "d4/d26/Charset_8hpp_source.html", null ],
     [ "CombinedPermutationGenerator.cpp", "de/d7a/CombinedPermutationGenerator_8cpp_source.html", null ],

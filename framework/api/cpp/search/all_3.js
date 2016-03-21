@@ -12,8 +12,8 @@ var searchData=
   ['casegenerator',['CaseGenerator',['../de/ddf/classsamchon_1_1library_1_1CaseGenerator.html#a6e83ca1044d0b5628b0b2efe1d404cc9',1,'samchon::library::CaseGenerator']]],
   ['category',['category',['../d6/d60/classsamchon_1_1library_1_1FTFactory.html#ab9d85b1eb2652d8d1a203fe540bceb5b',1,'samchon::library::FTFactory']]],
   ['charset',['Charset',['../da/d99/classsamchon_1_1library_1_1Charset.html',1,'samchon::library']]],
-  ['chatclient',['ChatClient',['../d4/dba/classsamchon_1_1example_1_1chat__service_1_1ChatClient.html',1,'samchon::example::chat_service']]],
   ['chatclient',['ChatClient',['../d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient.html',1,'samchon::example::console_chat_server']]],
+  ['chatclient',['ChatClient',['../d4/dba/classsamchon_1_1example_1_1chat__service_1_1ChatClient.html',1,'samchon::example::chat_service']]],
   ['chatclient',['ChatClient',['../d4/dba/classsamchon_1_1example_1_1chat__service_1_1ChatClient.html#ada8dd69b31d724a312112bc1ad99c122',1,'samchon::example::chat_service::ChatClient::ChatClient()'],['../d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient.html#a7f8142f7106d183242d8aac9eff05630',1,'samchon::example::console_chat_server::ChatClient::ChatClient()']]],
   ['chatmessage',['ChatMessage',['../df/d7b/classsamchon_1_1example_1_1chat__service_1_1ChatMessage.html',1,'samchon::example::chat_service']]],
   ['chatmessage',['ChatMessage',['../df/d7b/classsamchon_1_1example_1_1chat__service_1_1ChatMessage.html#a2ed5fc0f5be09e27ca956aca65d405c8',1,'samchon::example::chat_service::ChatMessage']]],
@@ -67,5 +67,5 @@ var searchData=
   ['criticalmap',['CriticalMap',['../d8/dd4/namespacesamchon_1_1library.html#afdee1149b8190ead010a2186d7fac277',1,'samchon::library']]],
   ['criticalset',['CriticalSet',['../d8/dd4/namespacesamchon_1_1library.html#a1cfae910e8439574fee02d85105a7017',1,'samchon::library']]],
   ['criticalvector',['CriticalVector',['../d8/dd4/namespacesamchon_1_1library.html#aa04462c40a7a50412faa12eba7c0aa2a',1,'samchon::library']]],
-  ['crossover',['crossover',['../d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ab791f1bdc1de507aaffe1a9d716905d9',1,'samchon::library::GeneticAlgorithm']]]
+  ['crossover',['crossover',['../d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ab12662f5305b5b38c3f982c4bf3a41ba',1,'samchon::library::GeneticAlgorithm']]]
 ];

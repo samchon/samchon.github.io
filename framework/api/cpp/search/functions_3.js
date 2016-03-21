@@ -40,5 +40,5 @@ var searchData=
   ['createslave',['createSlave',['../dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator.html#a927c7bd89b8d4d5c88ae1f3050beb379',1,'samchon::protocol::master::DistributedSystemArrayMediator']]],
   ['createstatement',['createStatement',['../d9/d2f/classsamchon_1_1library_1_1SQLi.html#aa0c8cfe34d8f2573e249583935dcd563',1,'samchon::library::SQLi::createStatement()'],['../da/dfd/classsamchon_1_1library_1_1TSQLi.html#af9430b3703c5ce4c66299f0f2aeeb0ab',1,'samchon::library::TSQLi::createStatement()']]],
   ['createuser',['createUser',['../da/d56/classsamchon_1_1example_1_1chat__service_1_1ChatServer.html#ab41922fa796c2d9819b2fb48194100c5',1,'samchon::example::chat_service::ChatServer::createUser()'],['../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html#ace22e60ce1371d15a08e7479442a4705',1,'samchon::protocol::service::Server::createUser()']]],
-  ['crossover',['crossover',['../d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ab791f1bdc1de507aaffe1a9d716905d9',1,'samchon::library::GeneticAlgorithm']]]
+  ['crossover',['crossover',['../d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ab12662f5305b5b38c3f982c4bf3a41ba',1,'samchon::library::GeneticAlgorithm']]]
 ];

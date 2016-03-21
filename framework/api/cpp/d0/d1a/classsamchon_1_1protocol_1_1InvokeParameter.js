@@ -10,7 +10,7 @@ var classsamchon_1_1protocol_1_1InvokeParameter =
     [ "getName", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#adfb7f4fef13395b4190751549b77bf1e", null ],
     [ "getType", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a98e491e14ec75b0d3f1f55c1e6988d09", null ],
     [ "getValue", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a4240caea4f2f447071e8354a372c5277", null ],
-    [ "getvalueAsXML", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a1c5c4a761a7f40df57584027accf7e44", null ],
+    [ "getValueAsXML", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#ac652707cdc97974963b8e1b0b4457bc3", null ],
     [ "referValue", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#af4d1f8410d7c3ca73e546b5e73e5dd11", null ],
     [ "moveValue", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a531ec2fff5e4babaa43e802719522a52", null ],
     [ "TAG", "d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a6001a5da567be78d23093839886936da", null ],
