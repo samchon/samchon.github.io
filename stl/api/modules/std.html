@@ -100,6 +100,8 @@
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter"><a href="../classes/std.bind.html" class="tsd-kind-icon">Bind</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter"><a href="../classes/std.deque.html" class="tsd-kind-icon">Deque</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter"><a href="../classes/std.dequeiterator.html" class="tsd-kind-icon">Deque<wbr>Iterator</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/std.domainerror.html" class="tsd-kind-icon">Domain<wbr>Error</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/std.errorcategory.html" class="tsd-kind-icon">Error<wbr>Category</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/std.errorcode.html" class="tsd-kind-icon">Error<wbr>Code</a></li>
@@ -152,6 +154,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#greater" class="tsd-kind-icon">greater</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="std.html#hashcode" class="tsd-kind-icon">hash<wbr>Code</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#less" class="tsd-kind-icon">less</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#sort" class="tsd-kind-icon">sort</a></li>
 							</ul>
 						</section>
 					</div>
@@ -241,7 +244,7 @@
 									<a href="std.html#equals">equals()</a> defined. If an object doesn&#39;t have those methods, then its own uid will be used
 									to compare insteadly. This member function allows the object to be used with the same syntax as a function
 								call. </p>
-								<p> Objects of this class can be used on standard algorithms such as <a href="../classes/std.vector.html#sort">sort()</a>,
+								<p> Objects of this class can be used on standard algorithms such as <a href="std.html#sort">sort()</a>,
 								{@link merge merge()} or <a href="../classes/std.treemap.html#lowerbound">lowerBound()</a>. </p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -313,7 +316,7 @@
 								<p> Generically, function objects are instances of a class with member function <a href="../interfaces/std.icomparable.html#less">less</a>
 									defined. If an object doesn&#39;t have the method, then its own uid will be used to compare insteadly.
 								This member function allows the object to be used with the same syntax as a function call. </p>
-								<p> Objects of this class can be used on standard algorithms such as <a href="../classes/std.vector.html#sort">sort()</a></code>,
+								<p> Objects of this class can be used on standard algorithms such as <a href="std.html#sort">sort()</a></code>,
 								{@link merge merge()} or <a href="../classes/std.treemap.html#lowerbound">lowerBound()</a>. </p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -337,6 +340,62 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p>Whether the first parameter is less than the second.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+					<a name="sort" class="tsd-anchor"></a>
+					<h3>sort</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">sort&lt;T&gt;<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.container.ilineariterator.html" class="tsd-signature-type">ILinearIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.container.ilineariterator.html" class="tsd-signature-type">ILinearIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compare<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Algorithm.ts#L3">Algorithm.ts:3</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>begin: <a href="../interfaces/std.base.container.ilineariterator.html" class="tsd-signature-type">ILinearIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>end: <a href="../interfaces/std.base.container.ilineariterator.html" class="tsd-signature-type">ILinearIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> compare: <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;std.less</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>left: <span class="tsd-signature-type">T</span></h5>
+														</li>
+														<li>
+															<h5>right: <span class="tsd-signature-type">T</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -378,6 +437,12 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../classes/std.bind.html" class="tsd-kind-icon">Bind</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/std.deque.html" class="tsd-kind-icon">Deque</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/std.dequeiterator.html" class="tsd-kind-icon">Deque<wbr>Iterator</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="../classes/std.domainerror.html" class="tsd-kind-icon">Domain<wbr>Error</a>
@@ -489,6 +554,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#less" class="tsd-kind-icon">less</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.html#sort" class="tsd-kind-icon">sort</a>
 					</li>
 				</ul>
 			</nav>
