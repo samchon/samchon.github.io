@@ -9,7 +9,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "samchon::library::Charset", "da/d99/classsamchon_1_1library_1_1Charset.html", null ],
-    [ "samchon::library::CriticalAllocator< _Ty >", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html", null ],
+    [ "samchon::library::CriticalAllocator< T >", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html", null ],
     [ "samchon::library::Date", "da/d6b/classsamchon_1_1library_1_1Date.html", [
       [ "samchon::library::Datetime", "dd/de3/classsamchon_1_1library_1_1Datetime.html", null ]
     ] ],
@@ -37,8 +37,8 @@ var hierarchy =
       ] ],
       [ "samchon::namtree::NTParameterDetermined", "d4/dff/classsamchon_1_1namtree_1_1NTParameterDetermined.html", null ],
       [ "samchon::namtree::NTSide", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html", null ],
-      [ "samchon::protocol::EntityArray< _Ty >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
-      [ "samchon::protocol::EntityGroup< _Container, _ETy, _Ty >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", [
+      [ "samchon::protocol::EntityArray< T >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
+      [ "samchon::protocol::EntityGroup< _Container, _ETy, T >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", [
         [ "samchon::example::packer::Packer", "da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html", null ],
         [ "samchon::example::packer::ProductArray", "d8/de8/classsamchon_1_1example_1_1packer_1_1ProductArray.html", [
           [ "samchon::example::packer::Wrapper", "dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper.html", null ]
@@ -151,7 +151,7 @@ var hierarchy =
           ] ]
         ] ]
       ] ],
-      [ "samchon::protocol::EntityList< _Ty >", "d6/d5a/classsamchon_1_1protocol_1_1EntityList.html", null ],
+      [ "samchon::protocol::EntityList< T >", "d6/d5a/classsamchon_1_1protocol_1_1EntityList.html", null ],
       [ "samchon::protocol::ExternalSystemRole", "d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html", [
         [ "samchon::protocol::master::DistributedSystemRole", "d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html", null ]
       ] ],
@@ -187,13 +187,13 @@ var hierarchy =
     [ "samchon::protocol::IEntityChain", "d3/d66/classsamchon_1_1protocol_1_1IEntityChain.html", null ],
     [ "samchon::protocol::IEntityGroup", "d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html", [
       [ "samchon::example::chat_service::ChatRoomArray", "d2/d9a/classsamchon_1_1example_1_1chat__service_1_1ChatRoomArray.html", null ],
-      [ "samchon::protocol::EntityArray< _Ty >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
-      [ "samchon::protocol::EntityGroup< _Container, _ETy, _Ty >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
-      [ "samchon::protocol::EntityList< _Ty >", "d6/d5a/classsamchon_1_1protocol_1_1EntityList.html", null ]
+      [ "samchon::protocol::EntityArray< T >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
+      [ "samchon::protocol::EntityGroup< _Container, _ETy, T >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
+      [ "samchon::protocol::EntityList< T >", "d6/d5a/classsamchon_1_1protocol_1_1EntityList.html", null ]
     ] ],
     [ "samchon::protocol::IHTMLEntity", "db/dae/classsamchon_1_1protocol_1_1IHTMLEntity.html", null ],
-    [ "samchon::IndexPair< _Ty >", "d2/dc0/classsamchon_1_1IndexPair.html", null ],
-    [ "samchon::library::IOperator< _Ty >", "dd/d2e/classsamchon_1_1library_1_1IOperator.html", null ],
+    [ "samchon::IndexPair< T >", "d2/dc0/classsamchon_1_1IndexPair.html", null ],
+    [ "samchon::library::IOperator< T >", "dd/d2e/classsamchon_1_1library_1_1IOperator.html", null ],
     [ "samchon::library::IOperator< NTIterator >", "dd/d2e/classsamchon_1_1library_1_1IOperator.html", [
       [ "samchon::namtree::NTIterator", "d4/dd2/classsamchon_1_1namtree_1_1NTIterator.html", null ]
     ] ],

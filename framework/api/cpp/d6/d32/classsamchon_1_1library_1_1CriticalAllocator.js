@@ -1,9 +1,9 @@
 var classsamchon_1_1library_1_1CriticalAllocator =
 [
-    [ "getMutex", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a321e25412fb4aad6ad4824a1ba4555cc", null ],
-    [ "construct", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a05e5b0c8e34c5147554f6d9e3c1b5086", null ],
-    [ "destroy", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#abe22860864b977368f7539d2b27238e3", null ],
-    [ "allocate", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#af53bf2e9a22f978a5ca042a3c9b6d1e9", null ],
-    [ "deallocate", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#af6215969f406a9d90731992bb8302f66", null ],
-    [ "mtx", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#aa30b73138e83e3c7b0e07d43f5d9c074", null ]
+    [ "getMutex", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#af5b6095644859ebee2b256c5e01a6d6b", null ],
+    [ "construct", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a86de06d11ef66e3c44c2c7754e21b8ea", null ],
+    [ "destroy", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a19449fc3eaefe15e274f1b7c97f677a2", null ],
+    [ "allocate", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a4caf9461c91f8c4be9e8c21196966c97", null ],
+    [ "deallocate", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a33099e31726dbb004bc0c7335b52cd3e", null ],
+    [ "mtx", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a91599e74f0c9067ed2300f3fe7494f53", null ]
 ];

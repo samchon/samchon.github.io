@@ -1,7 +1,7 @@
 var classsamchon_1_1library_1_1StringUtil =
 [
-    [ "substitute", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a067a310ea10079ed5e47a9e25a1ba1fe", null ],
-    [ "substituteSQL", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a4183c04ba300449ecc98a959310a5deb", null ],
+    [ "substitute", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a11a200c5317e76647a46927adbca004a", null ],
+    [ "substituteSQL", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a81fe3a2a823bedf6fb3ee1da893ccecc", null ],
     [ "isNumeric", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a66e6ba708c0000087f481d7b72aebbbd", null ],
     [ "toNumber", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#abebdf1a72b8736d583cc0a842387c390", null ],
     [ "numberFormat", "d2/d53/classsamchon_1_1library_1_1StringUtil.html#a0d08c3881db7aa435401bf66433a1bc7", null ],

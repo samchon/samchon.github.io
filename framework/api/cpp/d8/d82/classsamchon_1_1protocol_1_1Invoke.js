@@ -2,7 +2,7 @@ var classsamchon_1_1protocol_1_1Invoke =
 [
     [ "Invoke", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a511b10389d14c2e006c1dafcbeb28aae", null ],
     [ "Invoke", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a53741e0a555944bfdd9d9372c15e518e", null ],
-    [ "Invoke", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#aac2ddf534059332e4affaf276825beed", null ],
+    [ "Invoke", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a6915c7a90d07be7dd99ebfc70fdffadc", null ],
     [ "construct", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a6cf4af5c5c6e983f6f04bd89c5a8c32f", null ],
     [ "createChild", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a88131e10e41b5ba8fb2ac4184f9f6149", null ],
     [ "getListener", "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#aea3cf20a041571a2be49cc62837f6e53", null ],

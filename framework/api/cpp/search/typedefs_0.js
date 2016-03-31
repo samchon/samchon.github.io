@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['criticaldictionary',['CriticalDictionary',['../d8/dd4/namespacesamchon_1_1library.html#a6379217a9bdb1ee67296a0670cc6d424',1,'samchon::library']]],
-  ['criticallist',['CriticalList',['../d8/dd4/namespacesamchon_1_1library.html#adc1cf8b482e0569fea4576cfa97eadee',1,'samchon::library']]],
-  ['criticalmap',['CriticalMap',['../d8/dd4/namespacesamchon_1_1library.html#afdee1149b8190ead010a2186d7fac277',1,'samchon::library']]],
-  ['criticalset',['CriticalSet',['../d8/dd4/namespacesamchon_1_1library.html#a1cfae910e8439574fee02d85105a7017',1,'samchon::library']]],
-  ['criticalvector',['CriticalVector',['../d8/dd4/namespacesamchon_1_1library.html#aa04462c40a7a50412faa12eba7c0aa2a',1,'samchon::library']]]
+  ['criticaldictionary',['CriticalDictionary',['../d8/dd4/namespacesamchon_1_1library.html#a63de3678e7a0196103c9846ba009987c',1,'samchon::library']]],
+  ['criticallist',['CriticalList',['../d8/dd4/namespacesamchon_1_1library.html#ae72a1b7c11a389b86705701d2dfee1bd',1,'samchon::library']]],
+  ['criticalmap',['CriticalMap',['../d8/dd4/namespacesamchon_1_1library.html#ae79a028926f382a526b321dc0088c2aa',1,'samchon::library']]],
+  ['criticalset',['CriticalSet',['../d8/dd4/namespacesamchon_1_1library.html#a5ed19d2228f61db51cead1a6a99b9eca',1,'samchon::library']]],
+  ['criticalvector',['CriticalVector',['../d8/dd4/namespacesamchon_1_1library.html#a58986bc6340a40a032f6f9d023a0c081',1,'samchon::library']]]
 ];

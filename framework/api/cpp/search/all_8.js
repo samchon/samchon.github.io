@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['has',['has',['../d0/dee/classsamchon_1_1HashMap.html#ad6c999a39bcd74e808251f4413f88957',1,'samchon::HashMap::has()'],['../d1/d4e/classsamchon_1_1Map.html#a2f75320019585b10ba32638db14b4b17',1,'samchon::Map::has()'],['../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a6e6236224949de6bd0cf9c6ba83a4e77',1,'samchon::protocol::EntityGroup::has()']]],
+  ['has',['has',['../d0/dee/classsamchon_1_1HashMap.html#ad6c999a39bcd74e808251f4413f88957',1,'samchon::HashMap::has()'],['../d1/d4e/classsamchon_1_1Map.html#a2f75320019585b10ba32638db14b4b17',1,'samchon::Map::has()'],['../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a2718a784e85e57a48822d2487b4bef9d',1,'samchon::protocol::EntityGroup::has()']]],
   ['hashmap',['HashMap',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20std_3a_3astring_2c_20std_3a_3ashared_5fptr_3c_20xmllist_20_3e_20_3e',['HashMap&lt; std::string, std::shared_ptr&lt; XMLList &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20std_3a_3astring_2c_20std_3a_3astring_20_3e',['HashMap&lt; std::string, std::string &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
