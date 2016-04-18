@@ -76,11 +76,49 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p> An abstract set. </p>
+					</div>
+					<p> <a href="std.base.container.setcontainer.html">SetContainers</a> are containers that store elements allowing fast retrieval of
+					individual elements based on their value. </p>
+					<p> In an <a href="std.base.container.setcontainer.html">SetContainer</a>, the value of an element is at the same time its <i>key</i>, used to
+						identify it. <i>Keys</i> are immutable, therefore, the elements in an <a href="std.base.container.setcontainer.html">SetContainer</a> cannot be
+					modified once in the container - they can be inserted and removed, though. </p>
+					<p> <a href="std.base.container.setcontainer.html">SetContainer</a> stores elements, keeps sequence and enables indexing by inserting elements into a
+						<a href="std.list.html">List</a> and registering <a href="std.listiterator.html">iterators</a> of the <a href="std.base.container.multiset.html#data_">list container</a> to an index
+					table like {@link RBTree tree} or <a href="std.base.hash.hashbuckets.html">hash-table</a>. </p>
+					<p><h3> Container properties </h3></p>
+					<dl>
+						<dt> Associative </dt>
+						<dd>
+							Elements in associative containers are referenced by their <i>key</i> and not by their absolute
+							position in the container.
+						</dd>
+						<dt> Set </dt>
+						<dd> The value of an element is also the <i>key</i> used to identify it. </dd>
+						<dt> Multiple equivalent keys </dt>
+						<dd> Multiple elements in the container can have equivalent <i>keys</i>. </dd>
+					</dl>
+					<dl class="tsd-comment-tags">
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
 						<h4>T</h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of the elements. Each element in a <a href="std.base.container.setcontainer.html">SetContainer</a> container is also identified
+								by this value (each value is itself also the element&#39;s <i>key</i>).</p>
+							</div>
+						</div>
 					</li>
 				</ul>
 			</section>
@@ -124,7 +162,13 @@
 						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.container.multiset.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.container.multiset.html#data_" class="tsd-kind-icon">data_</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="std.base.container.multiset.html#iterator" class="tsd-kind-icon">iterator</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -133,23 +177,20 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#clear" class="tsd-kind-icon">clear</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.base.container.multiset.html#constructbyarray" class="tsd-kind-icon">construct<wbr>ByArray</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.base.container.multiset.html#constructbycontainer" class="tsd-kind-icon">construct<wbr>ByContainer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.base.container.multiset.html#constructbyrange" class="tsd-kind-icon">construct<wbr>ByRange</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.container.multiset.html#count" class="tsd-kind-icon">count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.container.multiset.html#empty" class="tsd-kind-icon">empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#end" class="tsd-kind-icon">end</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#erase" class="tsd-kind-icon">erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.container.multiset.html#find" class="tsd-kind-icon">find</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.container.multiset.html#handleerase" class="tsd-kind-icon">handle<wbr>Erase</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.container.multiset.html#handleinsert" class="tsd-kind-icon">handle<wbr>Insert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.container.multiset.html#handle_erase" class="tsd-kind-icon">handle_<wbr>erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.container.multiset.html#handle_insert" class="tsd-kind-icon">handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.container.multiset.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.base.container.multiset.html#insert" class="tsd-kind-icon">insert</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.base.container.multiset.html#insertbyrange" class="tsd-kind-icon">insert<wbr>ByRange</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private"><a href="std.base.container.multiset.html#insertbyval" class="tsd-kind-icon">insert<wbr>ByVal</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#push" class="tsd-kind-icon">push</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#rbegin" class="tsd-kind-icon">rbegin</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#rend" class="tsd-kind-icon">rend</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#size" class="tsd-kind-icon">size</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.container.multiset.html#swap" class="tsd-kind-icon">swap</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.container.multiset.html#swap" class="tsd-kind-icon">swap</a></li>
 							</ul>
 						</section>
 					</div>
@@ -168,7 +209,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MultiSet.ts#L7">base/container/MultiSet.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/MultiSet.ts#L41">base/container/MultiSet.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -184,15 +225,50 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="data" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="std.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="data_" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> data_</h3>
+					<div class="tsd-signature tsd-kind-icon">data_<span class="tsd-signature-symbol">:</span> <a href="std.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#data">data</a></p>
+						<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#data_">data_</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L13">base/container/SetContainer.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L52">base/container/SetContainer.ts:52</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p> <a href="std.list.html">List</a> storing elements. </p>
+						</div>
+						<p> Storing elements and keeping those sequence of the <a href="std.base.container.setcontainer.html">SetContainer</a> are implemented by
+							<a href="std.base.container.multiset.html#data_">this list container</a>. Implementing index-table is also related with <a href="std.base.container.multiset.html#data_">this list</a>
+							by storing <a href="std.listiterator.html">iterators</a> (<a href="std.setiterator.html">SetIterator</a> references <a href="std.listiterator.html">ListIterator</a>) who are
+						created from <a href="std.base.container.multiset.html#data_">here</a>. </p>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="iterator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> iterator</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#iterator">iterator</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L42">base/container/SetContainer.ts:42</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Type definition of <a href="std.base.container.setcontainer.html">SetContainer</a>&#39;s <a href="std.setiterator.html">iterator</a>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -210,7 +286,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L95">base/container/SetContainer.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L134">base/container/SetContainer.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -252,20 +328,19 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L136">base/container/SetContainer.ts:136</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L184">base/container/SetContainer.ts:184</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Return iterator to beginning. </p>
 								</div>
-								<p> Returns an iterator referring the first element in the Container. </p>
+								<p> Returns an iterator referring the first element in the container. </p>
 								<p><h4> Note </h4></p>
-								<p> If the container is empty, the returned iterator is same with end(). </p>
+								<p> If the container is <a href="std.base.container.multiset.html#empty">empty</a>, the returned iterator is same with <a href="std.base.container.multiset.html#end">end()</a>. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>An iterator to the first element in the container.
-							The iterator containes the first element&#39;s value.</p>
+							<p>An iterator to the first element in the container. The iterator containes the first element&#39;s value.</p>
 						</li>
 					</ul>
 				</section>
@@ -282,7 +357,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L105">base/container/SetContainer.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L153">base/container/SetContainer.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -291,87 +366,6 @@
 								</div>
 								<p> Removes all elements from the Container, leaving the container with a size of 0. </p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-					<a name="constructbyarray" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> construct<wbr>ByArray</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">construct<wbr>ByArray<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#constructbyarray">constructByArray</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L67">base/container/SetContainer.ts:67</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>items: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-					<a name="constructbycontainer" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> construct<wbr>ByContainer</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">construct<wbr>ByContainer<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#constructbycontainer">constructByContainer</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L76">base/container/SetContainer.ts:76</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>container: <a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-					<a name="constructbyrange" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> construct<wbr>ByRange</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">construct<wbr>ByRange<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#constructbyrange">constructByRange</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L84">base/container/SetContainer.ts:84</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -387,9 +381,15 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MultiSet.ts#L19">base/container/MultiSet.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/MultiSet.ts#L56">base/container/MultiSet.ts:56</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -412,7 +412,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/Container.ts#L139">base/container/Container.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/Container.ts#L149">base/container/Container.ts:149</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -441,23 +441,24 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L144">base/container/SetContainer.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L192">base/container/SetContainer.ts:192</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Return iterator to end. </p>
-									<p> Returns an iterator referring to the past-the-end element in the Container. </p>
+									<p> Returns an iterator referring to the past-the-end element in the container. </p>
 								</div>
-								<p> The past-the-end element is the theoretical element that would follow the last element in
-								the Container. It does not point to any element, and thus shall not be dereferenced. </p>
-								<p> Because the ranges used by functions of the Container do not include the element reference
-									by their closing iterator, this function is often used in combination with Container::begin() to specify
-								a range including all the elements in the container. </p>
+								<p> The past-the-end element is the theoretical element that would follow the last element in the container.
+								It does not point to any element, and thus shall not be dereferenced. </p>
+								<p> Because the ranges used by functions of the Container do not include the element reference by their
+									closing iterator, this function is often used in combination with <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="std.base.container.multiset.html#begin">begin</a> to
+								specify a range including all the elements in the container. </p>
 								<p><h4> Note </h4></p>
-								<p> Returned iterator from Container.end() does not refer any element. Trying to accessing
-								element by the iterator will cause throwing exception (out of range). </p>
-								<p> If the container is empty, this function returns the same as Container::begin(). </p>
+								<p> Returned iterator from <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="std.base.container.multiset.html#end">end</a> does not refer any element. Trying to accessing
+								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>). </p>
+								<p> If the container is <a href="std.base.container.multiset.html#empty">empty</a>, this function returns the same as <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.multiset.html#begin">begin</a>.
+								</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the end element in the container.</p>
@@ -478,7 +479,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L282">base/container/SetContainer.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L363">base/container/SetContainer.ts:363</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -502,7 +503,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L287">base/container/SetContainer.ts:287</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L368">base/container/SetContainer.ts:368</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -524,7 +525,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L298">base/container/SetContainer.ts:298</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L379">base/container/SetContainer.ts:379</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -564,7 +565,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L131">base/container/SetContainer.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L179">base/container/SetContainer.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -589,23 +590,40 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="handleerase" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle<wbr>Erase</h3>
+					<a name="handle_erase" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>erase</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Erase<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">handle_<wbr>erase<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#handleerase">handleErase</a></p>
+								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#handle_erase">handle_erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L362">base/container/SetContainer.ts:362</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L477">base/container/SetContainer.ts:477</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Abstract method handling deletion for indexing. </p>
+								</div>
+								<p> This method, <a href="std.base.container.multiset.html#handle_insert">handle_insert</a> is designed to unregister the <i>item</i> to somewhere storing
+								those <a href="std.setiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
+								<p> When <a href="std.base.container.multiset.html#erase">erase</a> is called with <i>item</i>, an <a href="std.setiterator.html">iterator</a> positioning somewhere
+									place to be deleted, is memorized and shifted to this method <a href="std.base.container.multiset.html#handle_erase">handle_erase</a> after the deletion
+								process is terminated. </p>
+								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <i>item</i> will be
+									unregistered from the <a href="std.treeset.html#tree_">tree</a> as a <a href="std.base.tree.xtreenode.html">tree node item</a>. Else if the
+									derived one is <a href="std.base.hash.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>item</i> will be unregistered
+								from the <a href="std.hashset.html#hash_buckets_">hash bucket</a>. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>item: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Iterator of erased item.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -613,23 +631,40 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="handleinsert" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle<wbr>Insert</h3>
+					<a name="handle_insert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>insert</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Insert<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">handle_<wbr>insert<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#handleinsert">handleInsert</a></p>
+								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#handle_insert">handle_insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L360">base/container/SetContainer.ts:360</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L458">base/container/SetContainer.ts:458</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Abstract method handling insertion for indexing. </p>
+								</div>
+								<p> This method, <a href="std.base.container.multiset.html#handle_insert">handle_insert</a> is designed to register the <i>item</i> to somewhere storing those
+								<a href="std.setiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
+								<p> When <a href="std.base.container.multiset.html#insert">insert</a> is called, a new element will be inserted into the <a href="std.base.container.multiset.html#data_">list container</a>
+									and a new <a href="std.setiterator.html">iterator</a> <i>item</i>, pointing the element, will be created and the newly
+								created iterator <i>item</i> will be shifted into this method <a href="std.base.container.multiset.html#handle_insert">handle_insert</a> after the insertion. </p>
+								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <i>item</i> will be
+									registered into the <a href="std.treeset.html#tree_">tree</a> as a <a href="std.base.tree.xtreenode.html">tree node item</a>. Else if the derived
+									one is <a href="std.base.hash.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>item</i> will be registered into the
+								<a href="std.hashset.html#hash_buckets_">hash bucket</a>. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>item: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Iterator of inserted item.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -647,14 +682,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L160">base/container/SetContainer.ts:160</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L228">base/container/SetContainer.ts:228</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Whether have the item or not. </p>
-									<p> Indicates whether a set has an item having the specified identifier. </p>
 								</div>
+								<p> Indicates whether a set has an item having the specified identifier. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -673,16 +708,23 @@
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>hint<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">insert&lt;U&gt;<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">insert&lt;U&gt;<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MultiSet.ts#L35">base/container/MultiSet.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/MultiSet.ts#L82">base/container/MultiSet.ts:82</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Insert an element. </p>
+								</div>
+								<p> Extends the container by inserting new elements, effectively increasing the container <a href="std.base.container.multiset.html#size">size</a> by
+								the number of elements inserted. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -690,14 +732,21 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the newly inserted element.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MultiSet.ts#L37">base/container/MultiSet.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/MultiSet.ts#L87">base/container/MultiSet.ts:87</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -713,9 +762,15 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/MultiSet.ts#L39">base/container/MultiSet.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/MultiSet.ts#L92">base/container/MultiSet.ts:92</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
@@ -731,62 +786,7 @@
 									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-					<a name="insertbyrange" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> insert<wbr>ByRange</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">insert<wbr>ByRange<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#insertbyrange">insertByRange</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L263">base/container/SetContainer.ts:263</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-					<a name="insertbyval" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> insert<wbr>ByVal</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">insert<wbr>ByVal<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#insertbyval">insertByVal</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L243">base/container/SetContainer.ts:243</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>val: <span class="tsd-signature-type">T</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -803,14 +803,14 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L194">base/container/SetContainer.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L263">base/container/SetContainer.ts:263</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Insert elements. </p>
 								</div>
-								<p> Appends new elements to the container, and returns the new size of the <a href="std.base.container.container.html">Container</a>. </p>
+								<p> Appends new elements to the container, and returns the new size of the container. </p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -830,6 +830,68 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="rbegin" class="tsd-anchor"></a>
+					<h3>rbegin</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">rbegin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setreverseiterator.html" class="tsd-signature-type">SetReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#rbegin">rbegin</a></p>
+								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#rbegin">rbegin</a></p>
+								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#rbegin">rbegin</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L200">base/container/SetContainer.ts:200</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return <a href="std.base.container.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>. </p>
+								</div>
+								<p> Returns a <a href="std.base.container.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
+								its <i>reverse beginning</i>). </p>
+								<p> <a href="std.base.container.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
+								beginning of the container. </p>
+								<p> <a href="std.base.container.multiset.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="std.base.container.multiset.html#end">end</a>.
+								</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="std.setreverseiterator.html" class="tsd-signature-type">SetReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A <a href="std.base.container.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence container.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="rend" class="tsd-anchor"></a>
+					<h3>rend</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">rend<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setreverseiterator.html" class="tsd-signature-type">SetReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.container.icontainer.html#rend">rend</a></p>
+								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#rend">rend</a></p>
+								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#rend">rend</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L211">base/container/SetContainer.ts:211</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return <a href="std.base.container.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>. </p>
+								</div>
+								<p> Returns a <a href="std.base.container.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
+								first element in the container (which is considered its <i>reverse end</i>). </p>
+								<p><p> The range between <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="std.base.container.multiset.html#rbegin">rbegin</a> and <a href="../interfaces/std.base.container.icontainer.html">IContainer</a>.<a href="std.base.container.multiset.html#rend">rend</a> contains all
+									the elements of the container (in reverse order).</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="std.setreverseiterator.html" class="tsd-signature-type">SetReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>A <a href="std.base.container.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence container.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="size" class="tsd-anchor"></a>
 					<h3>size</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
@@ -842,7 +904,7 @@
 								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L178">base/container/SetContainer.ts:178</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/SetContainer.ts#L247">base/container/SetContainer.ts:247</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -855,25 +917,30 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="swap" class="tsd-anchor"></a>
 					<h3>swap</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.base.container.setcontainer.html" class="tsd-signature-type">SetContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.container.setcontainer.html">SetContainer</a>.<a href="std.base.container.setcontainer.html#swap">swap</a></p>
-								<p>Overwrites <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#swap">swap</a></p>
+								<p>Inherited from <a href="std.base.container.container.html">Container</a>.<a href="std.base.container.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/base/container/SetContainer.ts#L367">base/container/SetContainer.ts:367</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/container/Container.ts#L160">base/container/Container.ts:160</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <a href="std.base.container.setcontainer.html" class="tsd-signature-type">SetContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>obj: <a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -937,7 +1004,10 @@
 								<a href="std.base.container.multiset.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.base.container.multiset.html#data" class="tsd-kind-icon">data</a>
+								<a href="std.base.container.multiset.html#data_" class="tsd-kind-icon">data_</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="std.base.container.multiset.html#iterator" class="tsd-kind-icon">iterator</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.container.multiset.html#assign" class="tsd-kind-icon">assign</a>
@@ -947,15 +1017,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.container.multiset.html#clear" class="tsd-kind-icon">clear</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-								<a href="std.base.container.multiset.html#constructbyarray" class="tsd-kind-icon">construct<wbr>ByArray</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-								<a href="std.base.container.multiset.html#constructbycontainer" class="tsd-kind-icon">construct<wbr>ByContainer</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-								<a href="std.base.container.multiset.html#constructbyrange" class="tsd-kind-icon">construct<wbr>ByRange</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.base.container.multiset.html#count" class="tsd-kind-icon">count</a>
@@ -973,10 +1034,10 @@
 								<a href="std.base.container.multiset.html#find" class="tsd-kind-icon">find</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.base.container.multiset.html#handleerase" class="tsd-kind-icon">handle<wbr>Erase</a>
+								<a href="std.base.container.multiset.html#handle_erase" class="tsd-kind-icon">handle_<wbr>erase</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.base.container.multiset.html#handleinsert" class="tsd-kind-icon">handle<wbr>Insert</a>
+								<a href="std.base.container.multiset.html#handle_insert" class="tsd-kind-icon">handle_<wbr>insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.base.container.multiset.html#has" class="tsd-kind-icon">has</a>
@@ -984,25 +1045,28 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 								<a href="std.base.container.multiset.html#insert" class="tsd-kind-icon">insert</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-								<a href="std.base.container.multiset.html#insertbyrange" class="tsd-kind-icon">insert<wbr>ByRange</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-private">
-								<a href="std.base.container.multiset.html#insertbyval" class="tsd-kind-icon">insert<wbr>ByVal</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.container.multiset.html#push" class="tsd-kind-icon">push</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-								<a href="std.base.container.multiset.html#size" class="tsd-kind-icon">size</a>
+								<a href="std.base.container.multiset.html#rbegin" class="tsd-kind-icon">rbegin</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="std.base.container.multiset.html#rend" class="tsd-kind-icon">rend</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+								<a href="std.base.container.multiset.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.base.container.multiset.html#swap" class="tsd-kind-icon">swap</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.container.reverseiterator.html" class="tsd-kind-icon">Reverse<wbr>Iterator</a>
+					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.container.setcontainer.html" class="tsd-kind-icon">Set<wbr>Container</a>
 					</li>
@@ -1016,6 +1080,9 @@
 						<a href="../interfaces/std.base.container.iarray.html" class="tsd-kind-icon">IArray</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/std.base.container.iarrayiterator.html" class="tsd-kind-icon">IArray<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/std.base.container.icontainer.html" class="tsd-kind-icon">IContainer</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
@@ -1023,9 +1090,6 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/std.base.container.ilinearcontainer.html" class="tsd-kind-icon">ILinear<wbr>Container</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.container.ilineariterator.html" class="tsd-kind-icon">ILinear<wbr>Iterator</a>
 					</li>
 				</ul>
 			</nav>

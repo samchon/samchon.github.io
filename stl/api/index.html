@@ -67,143 +67,6 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="stl-for-typescript">STL for TypeScript</h1>
 				<p>STL (Standard Template Library) and Containers for TypeScript</p>
-				<h2 id="programming">Programming</h2>
-				<h5 id="containers">Containers</h5>
-				<ul>
-					<li>Linear containers<ul>
-							<li>Vector</li>
-							<li>List</li>
-							<li>Deque</li>
-							<li>Queue</li>
-							<li>Stack</li>
-						</ul>
-					</li>
-					<li>Tree-structured containers<ul>
-							<li>TreeSet</li>
-							<li>TreeMap</li>
-							<li>TreeMultiSet</li>
-							<li>TreeMultiMap</li>
-						</ul>
-					</li>
-					<li>Hashed containers<ul>
-							<li>HashSet</li>
-							<li>HashMap</li>
-							<li>HashMultiSet</li>
-							<li>HashMultiMap</li>
-						</ul>
-					</li>
-				</ul>
-				<h5 id="usage">Usage</h5>
-				<pre><code class="lang-typescript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testHashMap</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span>
-</span>{
-    <span class="hljs-comment">/////////////////////////////////////</span>
-    <span class="hljs-comment">// CONSTRUCT DATA FROM 1 TO 10</span>
-    <span class="hljs-comment">/////////////////////////////////////</span>
-    <span class="hljs-keyword">let</span> map: std.HashMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt; = <span class="hljs-keyword">new</span> std.HashMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;();
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
-        map.set(i, <span class="hljs-string">"Its key is "</span> + i);
-
-    <span class="hljs-comment">/////////////////////////////////////</span>
-    <span class="hljs-comment">//  ELEMENT I/O</span>
-    <span class="hljs-comment">/////////////////////////////////////</span>
-    <span class="hljs-comment">// ERASE AN ELEMENT</span>
-    <span class="hljs-keyword">let</span> it = map.erase(<span class="hljs-number">3</span>); <span class="hljs-comment">// erase 3. [it] points key 4.</span>
-    <span class="hljs-built_in">console</span>.log(it.first); <span class="hljs-comment">// prints key 4.</span>
-
-    <span class="hljs-comment">// INSERT AN ELEMENT</span>
-    it = map.begin().advance(<span class="hljs-number">2</span>) <span class="hljs-comment">// [it] points key 2 (0 ----&gt; 2)</span>
-    it = map.insert(it, <span class="hljs-keyword">new</span> Pair&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;(-<span class="hljs-number">1</span>, <span class="hljs-string">"Its key is -1"</span>); 
-        <span class="hljs-comment">// [it] points key -1</span>
-        <span class="hljs-comment">// key list: [0, 1, -1, 2, 4, 5, 6, 7, 8, 9]</span>
-    <span class="hljs-built_in">console</span>.log(it.next().first); <span class="hljs-comment">// prints 2, next of [it] (-1 -&gt; 2)</span>
-
-    <span class="hljs-comment">// RANGE ERASER</span>
-    it = map.erase(map.begin().advance(<span class="hljs-number">6</span>), map.begin().advance(<span class="hljs-number">9</span>)); 
-        <span class="hljs-comment">// erase elements from 6th until 9th.</span>
-
-    <span class="hljs-comment">// INSPECT ELEMENTS BY THEIR KEY</span>
-    <span class="hljs-comment">// key list: [0, 1, -1, 2, 4, 5, 9]</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"has 7:"</span>, map.has(<span class="hljs-number">7</span>));
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"count 5:"</span>, map.count(<span class="hljs-number">5</span>));
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"it is end():"</span>, (it == map.end()));
-
-    <span class="hljs-comment">/////////////////////////////////////</span>
-    <span class="hljs-comment">// PRINT ALL ELEMENTS</span>
-    <span class="hljs-comment">/////////////////////////////////////</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"------------------------------"</span>);
-
-    <span class="hljs-comment">// key list: [0, 1, -1, 2, 4, 5, 9]</span>
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = map.begin(); it != map.end(); it = it.next())
-        <span class="hljs-built_in">console</span>.log(it.second);
-
-    <span class="hljs-comment">/* OUTPUT
-    =========================================
-        4
-        2
-        true
-        1
-        false
-        ------------------------------
-        Its key is 0
-        Its key is 1
-        Its key is -1
-        Its key is 2
-        Its key is 4
-        Its key is 5
-        Its key is 9
-    =========================================
-    */</span>
-}
-
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">testSorting</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span>
-</span>{
-    <span class="hljs-keyword">let</span> cubeList: std.List&lt;Cube&gt; = <span class="hljs-keyword">new</span> std.List&lt;Cube&gt;();
-    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
-        cubeList.pushBack(<span class="hljs-keyword">new</span> Cube());
-
-    <span class="hljs-comment">// SORT BY Cube.less()</span>
-    std.sort(cubeList.begin(), cubeList.end());
-
-    <span class="hljs-comment">// SORT BY inline function</span>
-    std.sort(cubeList.begin(), cubeList.end(),
-        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left: Cube, right: Cube</span>): <span class="hljs-title">boolean</span>
-        </span>{
-            <span class="hljs-keyword">if</span> (left.x != right.x)      <span class="hljs-keyword">return</span> left.x &lt; right.x;
-            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (left.y != right.y) <span class="hljs-keyword">return</span> left.y &lt; right.y;
-            <span class="hljs-keyword">else</span>                        <span class="hljs-keyword">return</span> left.z &lt; right.z;
-        }
-    );
-}
-
-<span class="hljs-keyword">class</span> Cube
-{
-    <span class="hljs-keyword">public</span> width: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">public</span> height: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">public</span> length: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">public</span> x: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">public</span> y: <span class="hljs-built_in">number</span>;
-    <span class="hljs-keyword">public</span> z: <span class="hljs-built_in">number</span>;
-
-    <span class="hljs-keyword">public</span> <span class="hljs-constructor"><span class="hljs-keyword">constructor</span>()
-    </span>{
-        <span class="hljs-keyword">this</span>.width = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
-        <span class="hljs-keyword">this</span>.height = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
-        <span class="hljs-keyword">this</span>.length = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
-        <span class="hljs-keyword">this</span>.x = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> - <span class="hljs-number">50</span>;
-        <span class="hljs-keyword">this</span>.y = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> - <span class="hljs-number">50</span>;
-        <span class="hljs-keyword">this</span>.z = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> - <span class="hljs-number">50</span>;
-    }
-    <span class="hljs-keyword">public</span> <span class="hljs-keyword">get</span> volume(): <span class="hljs-built_in">number</span>
-    {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.width * <span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">this</span>.length;
-    }
-
-    <span class="hljs-keyword">public</span> less(obj: Cube): <span class="hljs-built_in">boolean</span>
-    {
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.volume &lt; obj.volume;
-    }
-}
-</code></pre>
 				<h2 id="references">References</h2>
 				<h5 id="homepages">Homepages</h5>
 				<ul>
@@ -216,6 +79,232 @@
 					<li>Packer: <a href="https://github.com/betterwaysystems/packer">https://github.com/betterwaysystems/packer</a></li>
 					<li>Samchon UML: <a href="https://github.com/samchon/uml">https://github.com/samchon/uml</a></li>
 				</ul>
+				<h2 id="programming">Programming</h2>
+				<h5 id="containers">Containers</h5>
+				<ul>
+					<li><a href="http://samchon.github.io/stl/api/interfaces/std.base.container.ilinearcontainer.html">Linear containers</a><ul>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.vector.html">Vector</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.list.html">List</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.deque.html">Deque</a></li>
+						</ul>
+					</li>
+					<li><a href="http://samchon.github.io/stl/api/classes/std.base.tree.rbtree.html">Tree-structured containers</a><ul>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.treeset.html">TreeSet</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.treemap.html">TreeMap</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.treemultiset.html">TreeMultiSet</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.treemultimap.html">TreeMultiMap</a></li>
+						</ul>
+					</li>
+					<li><a href="http://samchon.github.io/stl/api/classes/std.base.hash.hashbuckets.html">Hashed containers</a><ul>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.hashset.html">HashSet</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.hashmap.html">HashMap</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.hashmultiset.html">HashMultiSet</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.hashmultimap.html">HashMultiMap</a></li>
+						</ul>
+					</li>
+					<li>Etc.<ul>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.queue.html">Queue</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.stack.html">Stack</a></li>
+							<li><a href="http://samchon.github.io/stl/api/classes/std.priorityqueue.html">PriorityQueue</a></li>
+						</ul>
+					</li>
+				</ul>
+				<h5 id="usage">Usage</h5>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> std.test
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hash_map</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span>
+    </span>{
+        <span class="hljs-comment">/////////////////////////////////////</span>
+        <span class="hljs-comment">// CONSTRUCT DATA FROM 1 TO 10</span>
+        <span class="hljs-comment">/////////////////////////////////////</span>
+        <span class="hljs-keyword">let</span> map: std.HashMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt; = <span class="hljs-keyword">new</span> std.HashMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
+            map.set(i, <span class="hljs-string">"Its key is "</span> + i);
+
+        <span class="hljs-comment">/////////////////////////////////////</span>
+        <span class="hljs-comment">//  ELEMENT I/O</span>
+        <span class="hljs-comment">/////////////////////////////////////</span>
+        <span class="hljs-comment">// ERASE AN ELEMENT</span>
+        <span class="hljs-keyword">let</span> it = map.find(<span class="hljs-number">3</span>); <span class="hljs-comment">// find 3.</span>
+        it = map.erase(it); <span class="hljs-comment">// erase 3. [it] points key 4.</span>
+        <span class="hljs-built_in">console</span>.log(it.first); <span class="hljs-comment">// prints key 4.</span>
+
+        <span class="hljs-comment">// INSERT AN ELEMENT</span>
+        it = map.begin().advance(<span class="hljs-number">2</span>) <span class="hljs-comment">// [it] points key 2 (0 ----&gt; 2)</span>
+        it = map.insert(it, <span class="hljs-keyword">new</span> std.Pair&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;(-<span class="hljs-number">1</span>, <span class="hljs-string">"Its key is -1"</span>));
+        <span class="hljs-comment">// [it] points key -1=</span>
+        <span class="hljs-comment">// key list: [0, 1, -1, 2, 4, 5, 6, 7, 8, 9]</span>
+        <span class="hljs-built_in">console</span>.log(it.next().first); <span class="hljs-comment">// prints 2, next of [it] (-1 -&gt; 2)</span>
+
+        <span class="hljs-comment">// RANGE ERASER</span>
+        it = map.erase(map.begin().advance(<span class="hljs-number">6</span>), map.begin().advance(<span class="hljs-number">9</span>));
+        <span class="hljs-comment">// erase elements from 6th until 9th.</span>
+
+        <span class="hljs-comment">// INSPECT ELEMENTS BY THEIR KEY</span>
+        <span class="hljs-comment">// key list: [0, 1, -1, 2, 4, 5, 9]</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"has 7:"</span>, map.has(<span class="hljs-number">7</span>));
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"count 5:"</span>, map.count(<span class="hljs-number">5</span>));
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"it is end():"</span>, it.equals(map.end()));
+
+        <span class="hljs-comment">/////////////////////////////////////</span>
+        <span class="hljs-comment">// PRINT ALL ELEMENTS</span>
+        <span class="hljs-comment">/////////////////////////////////////</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"------------------------------"</span>);
+
+        <span class="hljs-comment">// key list: [0, 1, -1, 2, 4, 5, 9]</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = map.begin(); !it.equals(map.end()); it = it.next())
+            <span class="hljs-built_in">console</span>.log(it.second);
+
+        <span class="hljs-comment">/* OUTPUT
+        =========================================
+            4
+            2
+            has 7: true
+            count 5: 1
+            it is end(): false
+            ------------------------------
+            Its key is 0
+            Its key is 1
+            Its key is -1
+            Its key is 2
+            Its key is 4
+            Its key is 5
+            Its key is 9
+        =========================================
+        */</span>
+    }
+}
+</code></pre>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> std.test
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sorting</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span>
+    </span>{
+        <span class="hljs-keyword">let</span> cubeList: std.List&lt;Cube&gt; = <span class="hljs-keyword">new</span> std.List&lt;Cube&gt;();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++)
+            cubeList.pushBack(<span class="hljs-keyword">new</span> Cube());
+
+        <span class="hljs-comment">///////////////////////////////</span>
+        <span class="hljs-comment">// SORT BY Cube.less()</span>
+        <span class="hljs-comment">///////////////////////////////</span>
+        std.sort(cubeList.begin(), cubeList.end());
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = cubeList.begin(); !it.equals(cubeList.end()); it = it.next())
+            it.value.debug_size();
+
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"------------------------------"</span>);
+
+        <span class="hljs-comment">///////////////////////////////</span>
+        <span class="hljs-comment">// SORT BY inline function</span>
+        <span class="hljs-comment">///////////////////////////////</span>
+        std.sort(cubeList.begin(), cubeList.end(),
+            <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">left: Cube, right: Cube</span>): <span class="hljs-title">boolean</span>
+            </span>{
+                <span class="hljs-keyword">if</span> (left.x != right.x) <span class="hljs-keyword">return</span> left.x &lt; right.x;
+                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (left.y != right.y) <span class="hljs-keyword">return</span> left.y &lt; right.y;
+                <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> left.z &lt; right.z;
+            }
+        );
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = cubeList.begin(); !it.equals(cubeList.end()); it = it.next())
+            it.value.debug_position();
+    }
+
+    <span class="hljs-keyword">class</span> Cube
+    {
+        <span class="hljs-keyword">public</span> width: <span class="hljs-built_in">number</span>;
+        <span class="hljs-keyword">public</span> height: <span class="hljs-built_in">number</span>;
+        <span class="hljs-keyword">public</span> length: <span class="hljs-built_in">number</span>;
+        <span class="hljs-keyword">public</span> x: <span class="hljs-built_in">number</span>;
+        <span class="hljs-keyword">public</span> y: <span class="hljs-built_in">number</span>;
+        <span class="hljs-keyword">public</span> z: <span class="hljs-built_in">number</span>;
+
+        <span class="hljs-keyword">public</span> <span class="hljs-constructor"><span class="hljs-keyword">constructor</span>()
+        </span>{
+            <span class="hljs-keyword">this</span>.width = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">this</span>.height = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">this</span>.length = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">this</span>.x = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> - <span class="hljs-number">50</span>;
+            <span class="hljs-keyword">this</span>.y = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> - <span class="hljs-number">50</span>;
+            <span class="hljs-keyword">this</span>.z = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">100</span> - <span class="hljs-number">50</span>;
+        }
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">get</span> volume(): <span class="hljs-built_in">number</span>
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.width * <span class="hljs-keyword">this</span>.height * <span class="hljs-keyword">this</span>.length;
+        }
+
+        <span class="hljs-keyword">public</span> less(obj: Cube): <span class="hljs-built_in">boolean</span>
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.volume &lt; obj.volume;
+        }
+
+        <span class="hljs-keyword">public</span> debug_size(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.width, <span class="hljs-keyword">this</span>.height, <span class="hljs-keyword">this</span>.length + <span class="hljs-string">" =&gt; "</span> + <span class="hljs-keyword">this</span>.volume);
+        }
+        <span class="hljs-keyword">public</span> debug_position(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.x, <span class="hljs-keyword">this</span>.y, <span class="hljs-keyword">this</span>.z);
+        }
+    }
+}
+</code></pre>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> std.test
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tree_set</span>(<span class="hljs-params"></span>): <span class="hljs-title">void</span>
+    </span>{
+        <span class="hljs-keyword">let</span> intSet: std.TreeMultiSet&lt;<span class="hljs-built_in">number</span>&gt; = <span class="hljs-keyword">new</span> std.TreeMultiSet&lt;<span class="hljs-built_in">number</span>&gt;();
+
+        <span class="hljs-comment">// INSERTS EVEN NUMBERS</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt;= <span class="hljs-number">10</span>; i += <span class="hljs-number">2</span>)
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">3</span>; j++)
+                intSet.insert(i);
+
+        <span class="hljs-comment">// FIND 4 -&gt; HAS</span>
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Matched node: 4"</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"    lower bound: "</span> + intSet.lowerBound(<span class="hljs-number">4</span>).value);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"    upper bound: "</span> + intSet.upperBound(<span class="hljs-number">4</span>).value);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">" "</span>);
+
+        <span class="hljs-comment">// FIND ODD NUMBERS -&gt; NOT EXIST</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">10</span>; i += <span class="hljs-number">2</span>)
+        {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Mis-matched node: "</span> + i);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"    lower bound: "</span> + intSet.lowerBound(i).value);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"    upper bound: "</span> + intSet.upperBound(i).value);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">" "</span>);
+        }
+    }
+}
+</code></pre>
+				<h2 id="license">License</h2>
+				<h5 id="bsd-v3-license">BSD v3 License</h5>
+				<p>Copyright (c) 2016, Jeongho Nam
+				All rights reserved.</p>
+				<p>Redistribution and use in source and binary forms, with or without
+				modification, are permitted provided that the following conditions are met:</p>
+				<ul>
+					<li><p>Redistributions of source code must retain the above copyright notice, this
+						list of conditions and the following disclaimer.</p>
+					</li>
+					<li><p>Redistributions in binary form must reproduce the above copyright notice,
+							this list of conditions and the following disclaimer in the documentation
+						and/or other materials provided with the distribution.</p>
+					</li>
+					<li><p>Neither the name of stl nor the names of its
+							contributors may be used to endorse or promote products derived from
+						this software without specific prior written permission.</p>
+					</li>
+				</ul>
+				<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;
+					AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+					IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+					DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+					FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+					DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+					SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+					CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+					OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+				OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">

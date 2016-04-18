@@ -9,7 +9,7 @@ var searchData=
   ['minimum',['minimum',['../de/d8f/classsamchon_1_1library_1_1Math.html#a9fad28d4e7234a230331492be529f0c0',1,'samchon::library::Math']]],
   ['mode',['mode',['../de/d8f/classsamchon_1_1library_1_1Math.html#a83a43a4dafcfdbafcea869e218af6144',1,'samchon::library::Math']]],
   ['movevalue',['moveValue',['../d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a8ef67c953a18adf310903bfcfa6cf046',1,'samchon::protocol::InvokeParameter']]],
-  ['mutate',['mutate',['../d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ac5c1dcb9ca7ecd8980dca7aac2316ff0',1,'samchon::library::GeneticAlgorithm']]],
+  ['mutate',['mutate',['../d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#a371720d791dc97bd0047c4ccf2fb74da',1,'samchon::library::GeneticAlgorithm']]],
   ['my_5fip',['MY_IP',['../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a8824332c81062d1c4fda064f1ea0931d',1,'samchon::protocol::ExternalClientArray::MY_IP()'],['../d4/de8/classsamchon_1_1protocol_1_1IServer.html#aef2532b3dd604bafbd58fc09a35ff3ac',1,'samchon::protocol::IServer::MY_IP()']]],
   ['mysqli',['MySQLi',['../d6/dcc/classsamchon_1_1library_1_1MySQLi.html#abe14cf4f30b6b4826ab99e45af6552c2',1,'samchon::library::MySQLi']]]
 ];

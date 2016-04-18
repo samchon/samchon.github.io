@@ -75,27 +75,27 @@
 					<div class="lead">
 						<p> FIFO queue. </p>
 					</div>
-					<p> <a href="std.queue.html">Queue</a>s are a type of container adaptor, specifically designed to operate in a FIFO
-						context (first-in first-out), where elements are inserted into one end of the container and extracted
-					from the other. </p>
-					<p> <a href="std.queue.html">Queue</a>s are implemented as containers adaptors, which are classes that use an encapsulated
-						object of a specific container class as its underlying container, providing a specific set of member
-						functions to access its elements. Elements are pushed into the <a href="../interfaces/std.base.container.ideque.html#back">back()</a> of the specific
-					container and popped from its <a href="../interfaces/std.base.container.ideque.html#front">front()</a>. </p>
-					<p> <a href="std.queue.html#data">The underlying container</a> may be one of the standard container class template or some other
-						specifically designed container class. This underlying container shall support at least the following
+					<p> <a href="std.queue.html">Queue</a>s are a type of container adaptor, specifically designed to operate in a FIFO context
+						(first-in first-out), where elements are inserted into one end of the container and extracted from the other.
+					</p>
+					<p> <a href="std.queue.html">Queue</a>s are implemented as containers adaptors, which are classes that use an encapsulated object of
+						a specific container class as its underlying container, providing a specific set of member functions to access
+						its elements. Elements are pushed into the <a href="../interfaces/std.base.container.ideque.html#back">back()</a> of the specific container and popped from
+					its <a href="../interfaces/std.base.container.ideque.html#front">front()</a>. </p>
+					<p> <a href="std.queue.html#container_">The underlying container</a> may be one of the standard container class template or some
+						other specifically designed container class. This underlying container shall support at least the following
 					operations: </p>
 					<ul>
 						<li> empty </li>
 						<li> size </li>
 						<li> front </li>
 						<li> back </li>
-						<li> pushBack </li>
-						<li> popFront </li>
+						<li> push_back </li>
+						<li> pop_front </li>
 					</ul>
 					<p> The standard container classes <a href="std.deque.html">Deque</a> and <a href="std.list.html">List</a> fulfill these requirements.
-						By default, if no container class is specified for a particular <a href="std.queue.html">Queue</a> class instantiation,
-					the standard container <a href="std.list.html">List</a> is used. </p>
+						By default, if no container class is specified for a particular <a href="std.queue.html">Queue</a> class instantiation, the standard
+					container <a href="std.list.html">List</a> is used. </p>
 					<ul>
 						<li> Reference: <a href="http://www.cplusplus.com/reference/queue/queue/">http://www.cplusplus.com/reference/queue/queue/</a> </li>
 					</ul>
@@ -140,7 +140,7 @@
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.queue.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.queue.html#container_" class="tsd-kind-icon">container_</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -152,6 +152,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.queue.html#pop" class="tsd-kind-icon">pop</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.queue.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.queue.html#size" class="tsd-kind-icon">size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.queue.html#swap" class="tsd-kind-icon">swap</a></li>
 							</ul>
 						</section>
 					</div>
@@ -170,7 +171,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L45">Queue.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L45">Queue.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -183,7 +184,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L53">Queue.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L53">Queue.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -205,12 +206,12 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="data" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="../interfaces/std.base.container.ideque.html" class="tsd-signature-type">IDeque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="container_" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> container_</h3>
+					<div class="tsd-signature tsd-kind-icon">container_<span class="tsd-signature-symbol">:</span> <a href="../interfaces/std.base.container.ideque.html" class="tsd-signature-type">IDeque</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L45">Queue.ts:45</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L45">Queue.ts:45</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -232,17 +233,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L128">Queue.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L128">Queue.ts:128</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Access last element. </p>
 								</div>
-								<p> Returns a vaue of the last element in the queue. This is the &quot;newest&quot; element in the queue
-								(i.e. the last element pushed into the queue). </p>
+								<p> Returns a vaue of the last element in the queue. This is the &quot;newest&quot; element in the queue (i.e. the
+								last element pushed into the queue). </p>
 								<p> This member function effectively calls the member function <a href="../interfaces/std.base.container.ideque.html#back">back()</a> of the
-								<a href="std.queue.html#data">underlying container</a> object. </p>
+								<a href="std.queue.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 							<p>A value of the last element in the <a href="std.queue.html">Queue</a>.</p>
@@ -259,7 +260,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L95">Queue.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L95">Queue.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -268,10 +269,10 @@
 									<p> returns whether the <a href="std.queue.html">Queue</a> is empty: i.e. whether its <i>size</i> is zero. </p>
 								</div>
 								<p> This member function efeectively calls member <a href="../interfaces/std.base.container.ideque.html#empty">empty()</a> of the
-								<a href="std.queue.html#data">underlying container</a> object. </p>
+								<a href="std.queue.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p><code>true</code> if the <a href="std.queue.html#data">underlying container</a>&#39;s size is 0,
+							<p><code>true</code> if the <a href="std.queue.html#container_">underlying container</a>&#39;s size is 0,
 							<code>false</code> otherwise. </p></p>
 						</li>
 					</ul>
@@ -286,7 +287,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L112">Queue.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L112">Queue.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -294,10 +295,10 @@
 									<p> Access next element. </p>
 									<p> Returns a value of the next element in the <a href="std.queue.html">Queue</a>. </p>
 								</div>
-								<p> The next element is the &quot;oldest&quot; element in the <a href="std.queue.html">Queue</a> and the same element that is
-								popped out from the queue when <a href="std.queue.html#pop">Queue.pop()</a> is called. </p>
+								<p> The next element is the &quot;oldest&quot; element in the <a href="std.queue.html">Queue</a> and the same element that is popped out
+								from the queue when <a href="std.queue.html#pop">Queue.pop()</a> is called. </p>
 								<p> This member function effectively calls member <a href="../interfaces/std.base.container.ideque.html#front">front()</a> of the
-								<a href="std.queue.html#data">underlying container</a> object. </p>
+								<a href="std.queue.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 							<p>A value of the next element in the <a href="std.queue.html">Queue</a>.</p>
@@ -314,7 +315,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L163">Queue.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L163">Queue.ts:163</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -322,10 +323,10 @@
 									<p> Remove next element. </p>
 								</div>
 								<p> Removes the next element in the <a href="std.queue.html">Queue</a>, effectively reducing its size by one. </p>
-								<p> The element removed is the &quot;oldest&quot; element in the <a href="std.queue.html">Queue</a> whose value can be retrieved
-								by calling member <a href="std.queue.html#front">Queue.front()</a> </p>.
-								<p> This member function effectively calls the member function <a href="../interfaces/std.base.container.ideque.html#popfront">popFront()</a> of
-								the <a href="std.queue.html#data">underlying container</a> object. </p>
+								<p> The element removed is the &quot;oldest&quot; element in the <a href="std.queue.html">Queue</a> whose value can be retrieved by calling
+								member <a href="std.queue.html#front">Queue.front()</a> </p>.
+								<p> This member function effectively calls the member function <a href="../interfaces/std.base.container.ideque.html#pop_front">pop<em>front()</a> of the
+								&lt;a href=&quot;std.queue.html#container</em>&quot;&gt;underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -341,7 +342,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L147">Queue.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L147">Queue.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -349,9 +350,9 @@
 									<p> Insert element. </p>
 								</div>
 								<p> Inserts a new element at the end of the <a href="std.queue.html">Queue</a>, after its current last element.
-								The content of this new element is initialized to val. </p>
-								<p> This member function effectively calls the member function <a href="../interfaces/std.base.container.ideque.html#pushback">pushBack()</a> of
-								the <a href="std.queue.html#data">underlying container</a> object. </p>
+								The content of this new element is initialized to <i>val</i>. </p>
+								<p> This member function effectively calls the member function <a href="../interfaces/std.base.container.ideque.html#push_back">push<em>back()</a> of the
+								&lt;a href=&quot;std.queue.html#container</em>&quot;&gt;underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -376,7 +377,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/std/Queue.ts#L80">Queue.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L80">Queue.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,10 +386,45 @@
 									<p> Returns the number of elements in the <a href="std.queue.html">Queue</a>. </p>
 								</div>
 								<p> This member function effectively calls member <a href="../interfaces/std.base.container.ideque.html#size">size()</a> of the
-								<a href="std.queue.html#data">underlying container</a> object. </p>
+								<a href="std.queue.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The number of elements in the <a href="std.queue.html#data">underlying container</a>.</p>
+							<p>The number of elements in the <a href="std.queue.html#container_">underlying container</a>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="swap" class="tsd-anchor"></a>
+					<h3>swap</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.queue.html" class="tsd-signature-type">Queue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Queue.ts#L179">Queue.ts:179</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Swap contents. </p>
+								</div>
+								<p> Exchanges the contents of the container adaptor (<i>this</i>) by those of <i>obj</i>. </p>
+								<p> This member function calls the non-member function <a href="../interfaces/std.base.container.icontainer.html#swap">swap</a> (unqualified) to swap
+								the <a href="std.queue.html#container_">underlying containers</a>. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <a href="std.queue.html" class="tsd-signature-type">Queue</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Another <a href="std.queue.html">Queue</a> container adaptor of the same type (i.e., instantiated with the same
+										template parameter, <b>T</b>). Sizes may differ. </p></p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -437,7 +473,7 @@
 								<a href="std.queue.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="std.queue.html#data" class="tsd-kind-icon">data</a>
+								<a href="std.queue.html#container_" class="tsd-kind-icon">container_</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.queue.html#back" class="tsd-kind-icon">back</a>
@@ -456,6 +492,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.queue.html#size" class="tsd-kind-icon">size</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.queue.html#swap" class="tsd-kind-icon">swap</a>
 							</li>
 						</ul>
 					</li>

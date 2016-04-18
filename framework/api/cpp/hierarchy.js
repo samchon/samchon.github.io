@@ -38,7 +38,7 @@ var hierarchy =
       [ "samchon::namtree::NTParameterDetermined", "d4/dff/classsamchon_1_1namtree_1_1NTParameterDetermined.html", null ],
       [ "samchon::namtree::NTSide", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html", null ],
       [ "samchon::protocol::EntityArray< T >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
-      [ "samchon::protocol::EntityGroup< _Container, _ETy, T >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", [
+      [ "samchon::protocol::EntityGroup< Container, T >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", [
         [ "samchon::example::packer::Packer", "da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html", null ],
         [ "samchon::example::packer::ProductArray", "d8/de8/classsamchon_1_1example_1_1packer_1_1ProductArray.html", [
           [ "samchon::example::packer::Wrapper", "dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper.html", null ]
@@ -175,7 +175,7 @@ var hierarchy =
     ] ],
     [ "samchon::example::tsp::GAParameters", "d9/d92/structsamchon_1_1example_1_1tsp_1_1GAParameters.html", null ],
     [ "samchon::library::GAPopulation< GeneArray, Compare >", "d8/dcd/classsamchon_1_1library_1_1GAPopulation.html", null ],
-    [ "samchon::library::GeneticAlgorithm< GeneArray, Compare, Gene >", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", null ],
+    [ "samchon::library::GeneticAlgorithm< GeneArray, Compare >", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", null ],
     [ "samchon::HashMap< Key, T, Hash, Pred, Alloc >", "d0/dee/classsamchon_1_1HashMap.html", null ],
     [ "samchon::HashMap< std::string, std::shared_ptr< XMLList > >", "d0/dee/classsamchon_1_1HashMap.html", [
       [ "samchon::library::XML", "d5/d37/classsamchon_1_1library_1_1XML.html", null ]
@@ -188,7 +188,7 @@ var hierarchy =
     [ "samchon::protocol::IEntityGroup", "d9/d4c/classsamchon_1_1protocol_1_1IEntityGroup.html", [
       [ "samchon::example::chat_service::ChatRoomArray", "d2/d9a/classsamchon_1_1example_1_1chat__service_1_1ChatRoomArray.html", null ],
       [ "samchon::protocol::EntityArray< T >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
-      [ "samchon::protocol::EntityGroup< _Container, _ETy, T >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
+      [ "samchon::protocol::EntityGroup< Container, T >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", null ],
       [ "samchon::protocol::EntityList< T >", "d6/d5a/classsamchon_1_1protocol_1_1EntityList.html", null ]
     ] ],
     [ "samchon::protocol::IHTMLEntity", "db/dae/classsamchon_1_1protocol_1_1IHTMLEntity.html", null ],

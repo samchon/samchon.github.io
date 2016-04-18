@@ -1,8 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"da/d6b/classsamchon_1_1library_1_1Date.html#a207d7179ef0a879ca534457fdc70dc6c":[4,0,0,1,5,24],
-"da/d6b/classsamchon_1_1library_1_1Date.html#a2936df3521fb260cf2fbc02487dd1d48":[4,0,0,1,5,8],
-"da/d6b/classsamchon_1_1library_1_1Date.html#a2d823b0e379f0eee3e6deb09c044597b":[4,0,0,1,5,5],
 "da/d6b/classsamchon_1_1library_1_1Date.html#a3ca8bebd41bbbd7a1fcd3f8180adc7c7":[4,0,0,1,5,23],
 "da/d6b/classsamchon_1_1library_1_1Date.html#a4e59ed4ba66eec61c27460c5d09fa1bd":[4,0,0,1,5,0],
 "da/d6b/classsamchon_1_1library_1_1Date.html#a542b6ad3f13a2cab0d3a9a497fb30b33":[4,0,0,1,5,22],
@@ -113,8 +110,8 @@ var NAVTREEINDEX4 =
 "db/d55/IEntityGroup_8hpp_source.html":[5,0,0,0,4,30],
 "db/d5d/classsamchon_1_1protocol_1_1slave_1_1SlaveClient.html":[4,0,0,3,2,3],
 "db/d5d/classsamchon_1_1protocol_1_1slave_1_1SlaveClient.html#ad0f28ef84d6f7754194c392dadf93ab2":[4,0,0,3,2,3,0],
-"db/d64/namespacesamchon_1_1protocol.html":[4,0,0,3],
 "db/d64/namespacesamchon_1_1protocol.html":[3,0,0,3],
+"db/d64/namespacesamchon_1_1protocol.html":[4,0,0,3],
 "db/d72/classsamchon_1_1protocol_1_1ServerConnector.html":[4,0,0,3,28],
 "db/d72/classsamchon_1_1protocol_1_1ServerConnector.html#a04cc1e256a218c337afd9f3e0bcad38f":[4,0,0,3,28,0],
 "db/d72/classsamchon_1_1protocol_1_1ServerConnector.html#a1576ae08967035ba65c69521988a3326":[4,0,0,3,28,1],
@@ -249,5 +246,8 @@ var NAVTREEINDEX4 =
 "dd/d2e/classsamchon_1_1library_1_1IOperator.html":[4,0,0,1,21],
 "dd/d2e/classsamchon_1_1library_1_1IOperator.html#a13717898c7066381f9778a81b7fd6b7b":[4,0,0,1,21,2],
 "dd/d2e/classsamchon_1_1library_1_1IOperator.html#a211eba4610dede1d6b815169a7deb87f":[4,0,0,1,21,1],
-"dd/d2e/classsamchon_1_1library_1_1IOperator.html#ade815824b9db90191b62da65f7a2cdc2":[4,0,0,1,21,0]
+"dd/d2e/classsamchon_1_1library_1_1IOperator.html#ade815824b9db90191b62da65f7a2cdc2":[4,0,0,1,21,0],
+"dd/d37/XMLList_8hpp_source.html":[5,0,0,0,2,79],
+"dd/d3e/namespacesamchon_1_1example_1_1invoke.html":[3,0,0,0,5],
+"dd/d4f/IEntityGroup_8cpp_source.html":[5,0,0,0,4,29]
 };
