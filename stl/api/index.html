@@ -131,7 +131,7 @@
 
         <span class="hljs-comment">// INSERT AN ELEMENT</span>
         it = map.begin().advance(<span class="hljs-number">2</span>) <span class="hljs-comment">// [it] points key 2 (0 ----&gt; 2)</span>
-        it = map.insert(it, <span class="hljs-keyword">new</span> std.Pair&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;(-<span class="hljs-number">1</span>, <span class="hljs-string">"Its key is -1"</span>));
+        it = map.insert(it, <span class="hljs-keyword">new</span> std.Pair&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;(<span class="hljs-number">-1</span>, <span class="hljs-string">"Its key is -1"</span>));
         <span class="hljs-comment">// [it] points key -1=</span>
         <span class="hljs-comment">// key list: [0, 1, -1, 2, 4, 5, 6, 7, 8, 9]</span>
         <span class="hljs-built_in">console</span>.log(it.next().first); <span class="hljs-comment">// prints 2, next of [it] (-1 -&gt; 2)</span>
@@ -218,8 +218,8 @@
         <span class="hljs-keyword">public</span> y: <span class="hljs-built_in">number</span>;
         <span class="hljs-keyword">public</span> z: <span class="hljs-built_in">number</span>;
 
-        <span class="hljs-keyword">public</span> <span class="hljs-constructor"><span class="hljs-keyword">constructor</span>()
-        </span>{
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">constructor</span>()
+        {
             <span class="hljs-keyword">this</span>.width = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
             <span class="hljs-keyword">this</span>.height = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
             <span class="hljs-keyword">this</span>.length = <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>;
