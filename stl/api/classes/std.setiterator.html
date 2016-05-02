@@ -139,7 +139,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.setiterator.html#equals" class="tsd-kind-icon">equals</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.setiterator.html#get_list_iterator" class="tsd-kind-icon">get_<wbr>list_<wbr>iterator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.setiterator.html#get_source" class="tsd-kind-icon">get_<wbr>source</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.setiterator.html#hash" class="tsd-kind-icon">hash</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.setiterator.html#hash_code" class="tsd-kind-icon">hash_<wbr>code</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="std.setiterator.html#less" class="tsd-kind-icon">less</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.setiterator.html#next" class="tsd-kind-icon">next</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.setiterator.html#prev" class="tsd-kind-icon">prev</a></li>
@@ -352,26 +352,39 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="hash" class="tsd-anchor"></a>
-					<h3>hash</h3>
+					<a name="hash_code" class="tsd-anchor"></a>
+					<h3>hash_<wbr>code</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">hash<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">hash_<wbr>code<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.icomparable.html">IComparable</a>.<a href="../interfaces/std.icomparable.html#hash">hash</a></p>
+								<p>Implementation of <a href="../interfaces/std.icomparable.html">IComparable</a>.<a href="../interfaces/std.icomparable.html#hash_code">hash_code</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/SetIterator.ts#L106">SetIterator.ts:106</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Issue a hash code. </p>
+								</div>
+								<p> Returns a hash code value for the object. This method is supported for the benefit of hash tables such
+									as those provided by hash containers; <a href="std.hashset.html">HashSet</a>, <a href="std.hashmap.html">HashMap</a>, {@link MultiHashSet} and
+								{@link MultiHashMap}. </p>
+								<p> As much as is reasonably practical, the <a href="std.setiterator.html#hash_code">hash_code</a> method defined by interface
+									<a href="../interfaces/std.icomparable.html">IComparable</a> does return distinct integers for distinct objects. (This is typically implemented by
+									converting the internal address of the object into an integer, but this implementation technique is not
+								required by the JavaScript programming language.) </p>
+								<ul>
+									<li>
+										<a href="../interfaces/std.icomparable.html#hash_code">IComparable.hash_code</a> is called by {@link std.hash_code}. If you want to keep basically
+										provided hash function, then returns {@link std.Hash.code}; <code>return std.Hash.code(this);</code>
+									</li>
+								</ul>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>An hash code who represents the object.</p>
 						</li>
 					</ul>
 				</section>
@@ -554,7 +567,7 @@
 								<a href="std.setiterator.html#get_source" class="tsd-kind-icon">get_<wbr>source</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="std.setiterator.html#hash" class="tsd-kind-icon">hash</a>
+								<a href="std.setiterator.html#hash_code" class="tsd-kind-icon">hash_<wbr>code</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
 								<a href="std.setiterator.html#less" class="tsd-kind-icon">less</a>
