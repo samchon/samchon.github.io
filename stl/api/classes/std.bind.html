@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Exception | </title>
+	<title>Bind | </title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -60,10 +60,10 @@
 					<a href="../modules/std.html">std</a>
 				</li>
 				<li>
-					<a href="std.exception.html">Exception</a>
+					<a href="std.bind.html">Bind</a>
 				</li>
 			</ul>
-			<h1>Class Exception</h1>
+			<h1>Class Bind&lt;Fn&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -73,34 +73,37 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> Standard exception class. </p>
+						<p> Bind function arguments. </p>
 					</div>
-					<p> Base class for standard exceptions. </p>
-					<p> All objects thrown by components of the standard library are derived from this class.
-					Therefore, all standard exceptions can be caught by catching this type by reference. </p>
+					<p> Applies a function object based on listener, but with its arguments bound to <i>args</i>. </p>
+					<p><p> Each argument may either be bound to a value or be a placeholder: </p></p>
 					<ul>
-						<li> Reference: <a href="http://www.cplusplus.com/reference/exception/exception/">http://www.cplusplus.com/reference/exception/exception/</a>
+						<li> If bound to a value, calling the returned function object will always use that value as argument. </li>
+						<li> If a placeholder, calling the returned function object forwards an argument passed to the call (the one whose order number is specified by the placeholder). </li>
 					</ul>
 					<dl class="tsd-comment-tags">
+						<dt>reference</dt>
+						<dd><p><a href="http://www.cplusplus.com/reference/functional/bind/">http://www.cplusplus.com/reference/functional/bind/</a></p>
+						</dd>
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
 						</dd>
 					</dl>
 				</div>
 			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>Fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Function</span></h4>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Exception</span>
-						<ul class="tsd-hierarchy">
-							<li>
-								<a href="std.logicerror.html" class="tsd-signature-type">LogicError</a>
-							</li>
-							<li>
-								<a href="std.runtimeerror.html" class="tsd-signature-type">RuntimeError</a>
-							</li>
-						</ul>
+						<span class="target">Bind</span>
 					</li>
 				</ul>
 			</section>
@@ -111,19 +114,21 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="std.exception.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="std.bind.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="std.exception.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.bind.html#arguments_" class="tsd-kind-icon">arguments_</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.bind.html#fn_" class="tsd-kind-icon">fn_</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.bind.html#this_arg_" class="tsd-kind-icon">this_<wbr>arg_</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.exception.html#what" class="tsd-kind-icon">what</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.bind.html#apply" class="tsd-kind-icon">apply</a></li>
 							</ul>
 						</section>
 					</div>
@@ -135,59 +140,124 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Exception<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.exception.html" class="tsd-signature-type">Exception</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Exception<span class="tsd-signature-symbol">(</span>what<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.exception.html" class="tsd-signature-type">Exception</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Bind<span class="tsd-signature-symbol">(</span>fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Fn</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.bind.html" class="tsd-signature-type">Bind</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Bind<span class="tsd-signature-symbol">(</span>fn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Fn</span>, thisArgs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, <span class="tsd-signature-symbol">...</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.bind.html" class="tsd-signature-type">Bind</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Exception.ts#L35">Exception.ts:35</a></li>
+									<li>Defined in Bind.ts:32</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Default Constructor.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="std.exception.html" class="tsd-signature-type">Exception</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Exception.ts#L40">Exception.ts:40</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Construct from a message. </p>
+									<p>Construct from a listener with parameters.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>what: <span class="tsd-signature-type">string</span></h5>
+									<h5>fn: <span class="tsd-signature-type">Fn</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A function object, pointer to function or pointer to member.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>List of arguments to bind: either values, or placeholders.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.exception.html" class="tsd-signature-type">Exception</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="std.bind.html" class="tsd-signature-type">Bind</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in Bind.ts:43</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Construct from a listener with parameters.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fn: <span class="tsd-signature-type">Fn</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A function object, pointer to function or pointer to member.</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>thisArgs: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>args: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>List of arguments to bind: either values, or placeholders.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.bind.html" class="tsd-signature-type">Bind</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="message" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> message</h3>
-					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="arguments_" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> arguments_</h3>
+					<div class="tsd-signature tsd-kind-icon">arguments_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Exception.ts#L35">Exception.ts:35</a></li>
+							<li>Defined in Bind.ts:32</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A message representing specification about the Exception.</p>
+							<p>List of arguments to bind: either values, or placeholders.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="fn_" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> fn_</h3>
+					<div class="tsd-signature tsd-kind-icon">fn_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Fn</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Bind.ts:22</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A function object, pointer to function or pointer to member.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="this_arg_" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> this_<wbr>arg_</h3>
+					<div class="tsd-signature tsd-kind-icon">this_<wbr>arg_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in Bind.ts:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Ownere class of the {@link listener_ listener}.</p>
 						</div>
 					</div>
 				</section>
@@ -195,28 +265,33 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="what" class="tsd-anchor"></a>
-					<h3>what</h3>
+					<a name="apply" class="tsd-anchor"></a>
+					<h3>apply</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">what<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">apply<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">...</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Exception.ts#L62">Exception.ts:62</a></li>
+									<li>Defined in Bind.ts:95</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get string identifying exception. </p>
-									<p> Returns a string that may be used to identify the exception. </p>
+									<p> Apply function. </p>
 								</div>
-								<p> The particular representation pointed by the returned value is implementation-defined.
-									As a virtual function, derived classes may redefine this function so that specify value are
-								returned. </p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>items: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>List of items to be parameters for <i>fn</i>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -261,17 +336,23 @@
 				<ul class="before-current">
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="std.exception.html" class="tsd-kind-icon">Exception</a>
+					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.bind.html" class="tsd-kind-icon">Bind</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="std.exception.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="std.bind.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="std.exception.html#message" class="tsd-kind-icon">message</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="std.bind.html#arguments_" class="tsd-kind-icon">arguments_</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="std.bind.html#fn_" class="tsd-kind-icon">fn_</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="std.bind.html#this_arg_" class="tsd-kind-icon">this_<wbr>arg_</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="std.exception.html#what" class="tsd-kind-icon">what</a>
+								<a href="std.bind.html#apply" class="tsd-kind-icon">apply</a>
 							</li>
 						</ul>
 					</li>
