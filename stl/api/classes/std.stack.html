@@ -76,11 +76,11 @@
 						<p> LIFO stack. </p>
 					</div>
 					<p> <a href="std.stack.html">Stack</a>s are a type of container adaptor, specifically designed to operate in a LIFO context
-					(last-in first-out), where elements are inserted and extracted only from one end of the container. </p>
+					(last-in first-out), where elements are inserted and extracted only from one end of the  </p>
 					<p> <a href="std.stack.html">Stack</a>s are implemented as containers adaptors, which are classes that use an encapsulated object of
 						a specific container class as its <i>underlying container</i>, providing a specific set of member functions to
-						access its elements. Elements are pushed/popped from the <a href="../interfaces/std.base.container.ilinearcontainer.html#back">back()</a> of the
-					<a href="../interfaces/std.base.container.ilinearcontainer.html">specific container</a>, which is known as the top of the <a href="std.stack.html">Stack</a>. </p>
+						access its elements. Elements are pushed/popped from the <a href="../interfaces/std.base.ilinearcontainer.html#back">back()</a> of the
+					<a href="../interfaces/std.base.ilinearcontainer.html">specific container</a>, which is known as the top of the <a href="std.stack.html">Stack</a>. </p>
 					<p> <a href="std.stack.html#container_">The underlying container</a> may be any of the standard container class templates or some
 					other specifically designed container class. The container shall support the following operations: </p>
 					<ul>
@@ -205,7 +205,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="container_" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> container_</h3>
-					<div class="tsd-signature tsd-kind-icon">container_<span class="tsd-signature-symbol">:</span> <a href="../interfaces/std.base.container.ilinearcontainer.html" class="tsd-signature-type">ILinearContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">container_<span class="tsd-signature-symbol">:</span> <a href="../interfaces/std.base.ilinearcontainer.html" class="tsd-signature-type">ILinearContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Stack.ts#L43">Stack.ts:43</a></li>
@@ -213,7 +213,7 @@
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The <i>underlying object</i> for implementing the <i>LIFO</i> container.</p>
+							<p>The <i>underlying object</i> for implementing the <i>LIFO</i></p>
 						</div>
 					</div>
 				</section>
@@ -238,7 +238,7 @@
 									<p> Test whether container is empty. </p>
 								</div>
 								<p> returns whether the <a href="std.stack.html">Stack</a> is empty: i.e. whether its <i>size</i> is zero. </p>
-								<p> This member function effectively calls member <a href="../interfaces/std.base.container.ilinearcontainer.html#empty">empty()</a> of the
+								<p> This member function effectively calls member <a href="../interfaces/std.base.ilinearcontainer.html#empty">empty()</a> of the
 								<a href="std.stack.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -267,7 +267,7 @@
 								<p> Removes the element on top of the <a href="std.stack.html">Stack</a>, effectively reducing its size by one. </p>
 								<p> The element removed is the latest element inserted into the <a href="std.stack.html">Stack</a>, whose value can be retrieved
 								by calling member <a href="std.stack.html#top">Stack.top()</a> </p>.
-								<p> This member function effectively calls the member function <a href="../interfaces/std.base.container.ilinearcontainer.html#pop_back">pop<em>back()</a>
+								<p> This member function effectively calls the member function <a href="../interfaces/std.base.ilinearcontainer.html#pop_back">pop<em>back()</a>
 								of the &lt;a href=&quot;std.stack.html#container</em>&quot;&gt;underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -293,7 +293,7 @@
 								</div>
 								<p> Inserts a new element at the top of the <a href="std.stack.html">Stack</a>, above its current top element. </p>
 								<p> This member function effectively calls the member function
-								<a href="../interfaces/std.base.container.ilinearcontainer.html#push_back">push<em>back()</a> of the &lt;a href=&quot;std.stack.html#container</em>&quot;&gt;underlying container</a> object. </p>
+								<a href="../interfaces/std.base.ilinearcontainer.html#push_back">push<em>back()</a> of the &lt;a href=&quot;std.stack.html#container</em>&quot;&gt;underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -326,7 +326,7 @@
 									<p> Return size. </p>
 								</div>
 								<p> Returns the number of elements in the <a href="std.stack.html">Stack</a>. </p>
-								<p> This member function effectively calls member <a href="../interfaces/std.base.container.ilinearcontainer.html#size">size()</a> of the
+								<p> This member function effectively calls member <a href="../interfaces/std.base.ilinearcontainer.html#size">size()</a> of the
 								<a href="std.stack.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -352,7 +352,7 @@
 									<p> Swap contents. </p>
 								</div>
 								<p> Exchanges the contents of the container adaptor (<i>this</i>) by those of <i>obj</i>. </p>
-								<p> This member function calls the non-member function <a href="../interfaces/std.base.container.icontainer.html#swap">swap</a> (unqualified) to swap
+								<p> This member function calls the non-member function <a href="../interfaces/std.base.icontainer.html#swap">swap</a> (unqualified) to swap
 								the <a href="std.stack.html#container_">underlying containers</a>. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -389,7 +389,7 @@
 								<p> Returns a value of the top element in the <a href="std.stack.html">Stack</a> </p>.
 								<p> Since <a href="std.stack.html">Stack</a>s are last-in first-out containers, the top element is the last element inserted into
 								the <a href="std.stack.html">Stack</a>. </p>
-								<p> This member function effectively calls member <a href="../interfaces/std.base.container.ilinearcontainer.html#back">back()</a> of the
+								<p> This member function effectively calls member <a href="../interfaces/std.base.ilinearcontainer.html#back">back()</a> of the
 								<a href="std.stack.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
@@ -412,21 +412,9 @@
 						<a href="../modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.container.html">std.base.container</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.hash.html">std.base.hash</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.system.html">std.base.system</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.tree.html">std.base.tree</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.example.html">std.example</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
+					<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../modules/std.placeholders.html">std.placeholders</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">

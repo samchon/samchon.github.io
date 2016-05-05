@@ -86,7 +86,7 @@
 					of the specific container, which is known as the <i>top</i> of the <a href="std.priorityqueue.html">Priority queue</a>. </p>
 					<p> The <a href="std.priorityqueue.html#container_">underlying container</a> may be any of the standard container class templates or some
 						other specifically designed container class. The container shall be accessible through
-					<a href="../interfaces/std.base.container.iarrayiterator.html">random access iterators</a> and support the following operations: </p>
+					<a href="../interfaces/std.base.iarrayiterator.html">random access iterators</a> and support the following operations: </p>
 					<ul>
 						<li> empty() </li>
 						<li> size() </li>
@@ -97,7 +97,7 @@
 					<p> The standard container classes <a href="std.vector.html">Vector</a> and <a href="std.deque.html">Deque</a> fulfill these requirements. By default, if
 						no container class is specified for a particular <a href="std.priorityqueue.html">PriorityQueue</a> class instantiation, the standard
 					container <a href="std.vector.html">Vector</a> is used. </p>
-					<p> Support of <a href="../interfaces/std.base.container.iarrayiterator.html">random access iterators</a> is required to keep a heap structure internally
+					<p> Support of <a href="../interfaces/std.base.iarrayiterator.html">random access iterators</a> is required to keep a heap structure internally
 						at all times. This is done automatically by the container adaptor by automatically calling the algorithm
 					functions <i>make_heap</i>, <i>push_heap</i> and <i>pop_heap</i> when needed. </p>
 					<dl class="tsd-comment-tags">
@@ -171,10 +171,10 @@
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Priority<wbr>Queue<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.priorityqueue.html" class="tsd-signature-type">PriorityQueue</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -326,7 +326,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>container: <a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>container: <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>A container to be copied.</p>
@@ -350,7 +350,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>container: <a href="std.base.container.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>container: <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>A container to be copied.</p>
@@ -403,7 +403,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>begin: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Input interator of the initial position in a sequence.</p>
@@ -411,7 +411,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>end: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Input interator of the final position in a sequence.</p>
@@ -435,7 +435,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>begin: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>begin: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Input interator of the initial position in a sequence.</p>
@@ -443,7 +443,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>end: <a href="std.base.container.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>end: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Input interator of the final position in a sequence.</p>
@@ -562,7 +562,7 @@
 								<p> The value of this element can be retrieved before being popped by calling member
 								<a href="std.priorityqueue.html#top">PriorityQueue.top</a>. </p>
 								<p> This member function effectively calls the <i>pop_heap</i> algorithm to keep the heap property of
-									<a href="std.priorityqueue.html">PriorityQueues</a> and then calls the member function <a href="../interfaces/std.base.container.iarray.html#pop_back">pop<em>back</a> of
+									<a href="std.priorityqueue.html">PriorityQueues</a> and then calls the member function <a href="../interfaces/std.base.iarray.html#pop_back">pop<em>back</a> of
 								the &lt;a href=&quot;std.priorityqueue.html#container</em>&quot;&gt;underlying container</a> object to remove the element. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -588,9 +588,9 @@
 								</div>
 								<p> Inserts a new element in the <a href="std.priorityqueue.html">PriorityQueue</a>. The content of this new element is initialized to
 									<i>val</i>.
-									<p> This member function effectively calls the member function <a href="../interfaces/std.base.container.iarray.html#push_back">push<em>back</a> of the
+									<p> This member function effectively calls the member function <a href="../interfaces/std.base.iarray.html#push_back">push<em>back</a> of the
 										&lt;a href=&quot;std.priorityqueue.html#container</em>&quot;&gt;underlying container</a> object, and then reorders it to its location in the heap by calling
-									the <i>push_heap</i> algorithm on the range that includes all the elements of the container. </p>
+									the <i>push_heap</i> algorithm on the range that includes all the elements of the  </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -623,11 +623,11 @@
 									<p> Return size. </p>
 								</div>
 								<p> Returns the number of elements in the <a href="std.priorityqueue.html">PriorityQueue</a>. </p>
-								<p> This member function effectively calls member <a href="../interfaces/std.base.container.iarray.html#size">size</a> of the
+								<p> This member function effectively calls member <a href="../interfaces/std.base.iarray.html#size">size</a> of the
 								<a href="std.priorityqueue.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The number of elements in the underlying container.</p>
+							<p>The number of elements in the underlying</p>
 						</li>
 					</ul>
 				</section>
@@ -652,7 +652,7 @@
 									<a href="std.priorityqueue.html#container_">underlying container</a> value and their comparison function using the corresponding
 								<a href="../modules/std.html#swap">swap</a> non-member functions (unqualified). </p>
 								<p> This member function has a <i>noexcept</i> specifier that matches the combined <i>noexcept</i> of the
-									<a href="../interfaces/std.base.container.iarray.html#swap">swap</a> operations on the <a href="std.priorityqueue.html#container_">underlying container</a> and the comparison
+									<a href="../interfaces/std.base.iarray.html#swap">swap</a> operations on the <a href="std.priorityqueue.html#container_">underlying container</a> and the comparison
 								functions. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -689,7 +689,7 @@
 								<p> Returns a constant reference to the top element in the <a href="std.priorityqueue.html">PriorityQueue</a>. </p>
 								<p> The top element is the element that compares higher in the <a href="std.priorityqueue.html">PriorityQueue</a>, and the next that is
 								removed from the container when <a href="std.priorityqueue.html#pop">PriorityQueue.pop</a> is called. </p>
-								<p> This member function effectively calls member <a href="../interfaces/std.base.container.iarray.html#front">front</a> of the
+								<p> This member function effectively calls member <a href="../interfaces/std.base.iarray.html#front">front</a> of the
 								<a href="std.priorityqueue.html#container_">underlying container</a> object. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
@@ -712,21 +712,9 @@
 						<a href="../modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.container.html">std.base.container</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.hash.html">std.base.hash</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.system.html">std.base.system</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.base.tree.html">std.base.tree</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.example.html">std.example</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
+					<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
 						<a href="../modules/std.placeholders.html">std.placeholders</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
