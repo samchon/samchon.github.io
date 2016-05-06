@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"da/d6b/classsamchon_1_1library_1_1Date.html#a2d823b0e379f0eee3e6deb09c044597b":[4,0,0,1,5,5],
 "da/d6b/classsamchon_1_1library_1_1Date.html#a3ca8bebd41bbbd7a1fcd3f8180adc7c7":[4,0,0,1,5,23],
 "da/d6b/classsamchon_1_1library_1_1Date.html#a4e59ed4ba66eec61c27460c5d09fa1bd":[4,0,0,1,5,0],
 "da/d6b/classsamchon_1_1library_1_1Date.html#a542b6ad3f13a2cab0d3a9a497fb30b33":[4,0,0,1,5,22],
@@ -215,9 +216,12 @@ var NAVTREEINDEX4 =
 "dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator.html#a927c7bd89b8d4d5c88ae1f3050beb379":[4,0,0,3,0,11,2],
 "dc/d8b/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArrayMediator.html#afa597f33c09173273f4c1f7d51088830":[4,0,0,3,0,11,3],
 "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html":[4,0,0,3,4],
-"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a14e67036fd4e68c92bb1e29225b38deb":[4,0,0,3,4,0],
-"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a2517bb0b2948ff6558d280c369c196da":[4,0,0,3,4,2],
-"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a394cbf6ca3883d1017d5a050f5ee3962":[4,0,0,3,4,1],
+"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a18c94f7eaec306070a2bf24b5fb8e25b":[4,0,0,3,4,3],
+"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a2517bb0b2948ff6558d280c369c196da":[4,0,0,3,4,5],
+"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a394cbf6ca3883d1017d5a050f5ee3962":[4,0,0,3,4,0],
+"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a5acd1031b4a675df05364d807a432508":[4,0,0,3,4,1],
+"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a9c7b3c60e4753bb7a6c76977dedc3ace":[4,0,0,3,4,2],
+"dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#ac99c042b7056b252ce0d754c444b6f62":[4,0,0,3,4,4],
 "dc/d96/IClient_8cpp_source.html":[5,0,0,0,4,25],
 "dc/d97/documentation_2protocol_8hpp_source.html":[5,0,0,0,0,10],
 "dc/d9b/console__chat__server_2ChatClient_8hpp_source.html":[5,0,0,0,1,1,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX4 =
 "dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup.html#af7e21cb0ca76fa9273a1baf2372f0da7":[4,0,0,2,2,2],
 "dd/d2e/classsamchon_1_1library_1_1IOperator.html":[4,0,0,1,21],
 "dd/d2e/classsamchon_1_1library_1_1IOperator.html#a13717898c7066381f9778a81b7fd6b7b":[4,0,0,1,21,2],
-"dd/d2e/classsamchon_1_1library_1_1IOperator.html#a211eba4610dede1d6b815169a7deb87f":[4,0,0,1,21,1],
-"dd/d2e/classsamchon_1_1library_1_1IOperator.html#ade815824b9db90191b62da65f7a2cdc2":[4,0,0,1,21,0],
-"dd/d37/XMLList_8hpp_source.html":[5,0,0,0,2,79],
-"dd/d3e/namespacesamchon_1_1example_1_1invoke.html":[3,0,0,0,5],
-"dd/d4f/IEntityGroup_8cpp_source.html":[5,0,0,0,4,29]
+"dd/d2e/classsamchon_1_1library_1_1IOperator.html#a211eba4610dede1d6b815169a7deb87f":[4,0,0,1,21,1]
 };

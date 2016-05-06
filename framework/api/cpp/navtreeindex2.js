@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ac1837decacb330d4c95a7bf728c0ee6f":[4,0,0,1,19,6],
 "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ac2d0f402a252742ea25c9a57ae95d6b8":[4,0,0,1,19,7],
 "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ac74b64ef0d4836264b3a417f4e168168":[4,0,0,1,19,3],
 "d5/d30/SlaveClient_8hpp_source.html":[5,0,0,0,4,2,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a6915c7a90d07be7dd99ebfc70fdffadc":[4,0,0,3,19,2],
 "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a6cf4af5c5c6e983f6f04bd89c5a8c32f":[4,0,0,3,19,3],
 "d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a7b82a8d429285781ce4563e2191f8442":[4,0,0,3,19,6],
-"d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a88131e10e41b5ba8fb2ac4184f9f6149":[4,0,0,3,19,4],
-"d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a8c39d4f90354b04ce9adddc3896f8f06":[4,0,0,3,19,10]
+"d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a88131e10e41b5ba8fb2ac4184f9f6149":[4,0,0,3,19,4]
 };

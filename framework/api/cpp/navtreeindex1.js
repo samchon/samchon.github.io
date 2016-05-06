@@ -205,11 +205,12 @@ var NAVTREEINDEX1 =
 "d4/de8/classsamchon_1_1protocol_1_1IServer.html#aef2532b3dd604bafbd58fc09a35ff3ac":[4,0,0,3,24,1],
 "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html":[4,0,0,3,5],
 "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a03769b5d1708bf56690a1163f9c47abd":[4,0,0,3,5,2],
-"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a81d8773007fb3fae7f775f77b3cda3c4":[4,0,0,3,5,1],
+"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a6268c51473b04f83d321220089038532":[4,0,0,3,5,1],
 "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a83d34d16593b235cacf557be4d153201":[4,0,0,3,5,0],
-"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a94ec4bf7b2cf9218c83d7d0e2a99f4ec":[4,0,0,3,5,4],
-"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a9cb1edd53f40d3d15a2f2d2432dfd397":[4,0,0,3,5,3],
-"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#abfe4f3f30c08fdafdc3c1d13dcf3d319":[4,0,0,3,5,5],
+"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#aaf88b61b15b3899c6cfdfbfb0e1d2ca2":[4,0,0,3,5,3],
+"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#abfe4f3f30c08fdafdc3c1d13dcf3d319":[4,0,0,3,5,6],
+"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#ae0c32e16670ce7293ce0abf39915a6a8":[4,0,0,3,5,4],
+"d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#affd0b4ada9ecdc5471ee2d3332892396":[4,0,0,3,5,5],
 "d4/df0/classsamchon_1_1namtree_1_1NTSide.html":[4,0,0,2,9],
 "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#a98efcffd45bd7bf3a74709fec3cf47cc":[4,0,0,2,9,0],
 "d4/df0/classsamchon_1_1namtree_1_1NTSide.html#aee1f42f1191f6e4d0ba3cc8e5ac30839":[4,0,0,2,9,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#a371720d791dc97bd0047c4ccf2fb74da":[4,0,0,1,19,5],
 "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#a6001aa68e62139f1625a38c01d701264":[4,0,0,1,19,1],
 "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#aa5d17788ee32e38bd186386af5050163":[4,0,0,1,19,8],
-"d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ab791f1bdc1de507aaffe1a9d716905d9":[4,0,0,1,19,4],
-"d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ac1837decacb330d4c95a7bf728c0ee6f":[4,0,0,1,19,6]
+"d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ab791f1bdc1de507aaffe1a9d716905d9":[4,0,0,1,19,4]
 };
