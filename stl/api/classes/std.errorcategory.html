@@ -77,12 +77,11 @@
 					</div>
 					<p> This type serves as a base class for specific category types. </p>
 					<p> Category types are used to identify the source of an error. They also define the relation between
-						<a href="std.errorcode.html">ErrorCode</a> and <a href="std.errorcondition.html">ErrorCondition</a>objects of its category, as well as the message
-						set for <a href="std.errorcode.html">ErrorCode</a> objects.
-						<p> Objects of these types have no distinct values and are not-copyable and not-assignable, and thus can
-							only be passed by reference. As such, only one object of each of these types shall exist, each uniquely
-							identifying its own category: all error codes and conditions of a same category shall return a reference
-						to same object. </p>
+						<a href="std.errorcode.html">ErrorCode</a> and <a href="std.errorcondition.html">ErrorCondition</a>objects of its category, as well as the message set for <a href="std.errorcode.html">ErrorCode</a>
+						objects.
+						<p> Objects of these types have no distinct values and are not-copyable and not-assignable, and thus can only be
+							passed by reference. As such, only one object of each of these types shall exist, each uniquely identifying its own
+						category: all error codes and conditions of a same category shall return a reference to same object. </p>
 						<ul>
 							<li> Reference: <a href="http://www.cplusplus.com/reference/system_error/error_category/">http://www.cplusplus.com/reference/system_error/error_category/</a> </li>
 						</ul>
@@ -135,7 +134,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/ErrorCategory.ts#L24">ErrorCategory.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/SystemError.ts#L109">SystemError.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -160,21 +159,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/ErrorCategory.ts#L101">ErrorCategory.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/SystemError.ts#L184">SystemError.ts:184</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Default error condition. </p>
 								</div>
-								<p> Returns the default <a href="std.errorcondition.html">ErrorCondition</a>object of this category that is associated with
-								the <a href="std.errorcode.html">ErrorCode</a> identified by a value of <i>val</i>. </p>
+								<p> Returns the default <a href="std.errorcondition.html">ErrorCondition</a>object of this category that is associated with the
+								<a href="std.errorcode.html">ErrorCode</a> identified by a value of <i>val</i>. </p>
 								<p> Its definition in the base class <a href="std.errorcategory.html">ErrorCategory</a> returns the same as constructing an
-									<a href="std.errorcondition.html">ErrorCondition</a>object with:
+									<a href="std.errorcondition.html">ErrorCondition</a> object with:
 									<p> <code>new ErrorCondition(val, *this);</code> </p>
 									<p> As a virtual member function, this behavior can be overriden in derived classes. </p>
-									<p> This function is called by the default definition of member <a href="std.errorcategory.html#equivalent">equivalent()</a>, which is
-									used to compare <a href="std.errorcondition.html">error conditions</a> with error codes. </p>
+									<p> This function is called by the default definition of member <a href="std.errorcategory.html#equivalent">equivalent()</a>, which is used to
+									compare <a href="std.errorcondition.html">error conditions</a> with error codes. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -186,8 +185,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.errorcondition.html" class="tsd-signature-type">ErrorCondition</a></h4>
-							<p>The default <a href="std.errorcondition.html">ErrorCondition</a>object associated with condition value <i>val</i>
-							for this category.</p>
+							<p>The default <a href="std.errorcondition.html">ErrorCondition</a>object associated with condition value <i>val</i> for this category.</p>
 						</li>
 					</ul>
 				</section>
@@ -196,42 +194,80 @@
 					<h3>equivalent</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">equivalent<span class="tsd-signature-symbol">(</span>val_code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, cond<span class="tsd-signature-symbol">: </span><a href="std.errorcondition.html" class="tsd-signature-type">ErrorCondition</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-						<li class="tsd-signature tsd-kind-icon">equivalent<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><a href="std.errorcode.html" class="tsd-signature-type">ErrorCode</a>, valCond<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">equivalent<span class="tsd-signature-symbol">(</span>code<span class="tsd-signature-symbol">: </span><a href="std.errorcode.html" class="tsd-signature-type">ErrorCode</a>, val_cond<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/ErrorCategory.ts#L106">ErrorCategory.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/SystemError.ts#L208">SystemError.ts:208</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Check error code equivalence. </p>
+								</div>
+								<p> Checks whether, for the category, an <a href="std.errorcode.html">error code</a> is equivalent to an
+									<a href="std.errorcondition.html">error condition. </p> <p> This function is called by the overloads of comparison operators when an {@link ErrorCondition</a> object is
+									compared to an <a href="std.errorcode.html">ErrorCode</a> object to check for equality or inequality. If either one of those objects&#39;
+									<a href="std.errorcategory.html">categories</a> considers the other equivalent using this function, they are considered
+								equivalent by the operator. </p>
+								<p> As a virtual member function, this behavior can be overridden in derived classes to define a different
+								correspondence mechanism for each <a href="std.errorcategory.html">ErrorCategory</a> type. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val_code: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A numerical value identifying an error code.</p>
+									</div>
 								</li>
 								<li>
 									<h5>cond: <a href="std.errorcondition.html" class="tsd-signature-type">ErrorCondition</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An object of an <a href="std.errorcondition.html">ErrorCondition</a> type.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if the arguments are considered equivalent. <code>false</code> otherwise.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/ErrorCategory.ts#L108">ErrorCategory.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/SystemError.ts#L229">SystemError.ts:229</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Check error code equivalence. </p>
+								</div>
+								<p> Checks whether, for the category, an <a href="std.errorcode.html">error code</a> is equivalent to an
+									<a href="std.errorcondition.html">error condition. </p> <p> This function is called by the overloads of comparison operators when an {@link ErrorCondition</a> object is
+									compared to an <a href="std.errorcode.html">ErrorCode</a> object to check for equality or inequality. If either one of those objects&#39;
+									<a href="std.errorcategory.html">categories</a> considers the other equivalent using this function, they are considered
+								equivalent by the operator. </p>
+								<p> As a virtual member function, this behavior can be overridden in derived classes to define a different
+								correspondence mechanism for each <a href="std.errorcategory.html">ErrorCategory</a> type. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>code: <a href="std.errorcode.html" class="tsd-signature-type">ErrorCode</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An object of an <a href="std.errorcode.html">ErrorCode</a> type.</p>
+									</div>
 								</li>
 								<li>
-									<h5>valCond: <span class="tsd-signature-type">number</span></h5>
+									<h5>val_cond: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A numerical value identifying an error code.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if the arguments are considered equivalent. <code>false</code> otherwise.</p>
 						</li>
 					</ul>
 				</section>
@@ -245,21 +281,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/ErrorCategory.ts#L75">ErrorCategory.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/SystemError.ts#L159">SystemError.ts:159</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Error message. </p>
 								</div>
-								<p> In derived classes, the function returns a string object with a message describing
-								the error condition denoted by <i>val</i>. </p>
+								<p> In derived classes, the function returns a string object with a message describing the error condition
+								denoted by <i>val</i>. </p>
 								<p> In <a href="std.errorcategory.html">ErrorCategory</a>, it is a pure virtual member function. </p>
 								<p> This function is called both by <a href="std.errorcode.html#message">ErrorCode.message()</a> and
-									<a href="std.errorcondition.html#message">ErrorCondition.message()</a>
-									to obtain the corresponding message in the {@link category}. Therefore, numerical values used by
-									custom <i>error codes</i> and <a href="std.errorcondition.html">error conditions</a> should only match for a category
-								if they describe the same error. </p>
+									<a href="std.errorcondition.html#message">ErrorCondition.message()</a> to obtain the corresponding message in the
+									{@link category}. Therefore, numerical values used by custom <i>error codes</i> and
+								<a href="std.errorcondition.html">error conditions</a> should only match for a category if they describe the same error. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -267,8 +302,8 @@
 									<h5>val: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>A numerical value identifying an error condition.
-											If the <a href="std.errorcategory.html">ErrorCategory</a> object is the {@link GenericCategory}, this argument
-										is equivalent to an {@link errno} value.</p>
+											If the <a href="std.errorcategory.html">ErrorCategory</a> object is the {@link GenericCategory}, this argument is equivalent to an
+										{@link errno} value.</p>
 									</div>
 								</li>
 							</ul>
@@ -287,7 +322,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/ErrorCategory.ts#L53">ErrorCategory.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/SystemError.ts#L138">SystemError.ts:138</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -324,11 +359,8 @@
 					<li class=" tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.example.html">std.example</a>
 					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/std.placeholders.html">std.placeholders</a>
-					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.system.html">std.system</a>
+						<a href="../modules/std.placeholders.html">std.placeholders</a>
 					</li>
 				</ul>
 			</nav>
