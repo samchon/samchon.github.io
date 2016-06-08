@@ -25,18 +25,11 @@ var hierarchy =
       [ "samchon::library::FTInstance", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html", [
         [ "samchon::library::FTFile", "d2/d27/classsamchon_1_1library_1_1FTFile.html", [
           [ "samchon::library::FTByteFile", "dd/d68/classsamchon_1_1library_1_1FTByteFile.html", null ],
-          [ "samchon::library::FTTextFile", "d7/d24/classsamchon_1_1library_1_1FTTextFile.html", null ],
-          [ "samchon::namtree::NTFile", "d2/da2/classsamchon_1_1namtree_1_1NTFile.html", null ]
+          [ "samchon::library::FTTextFile", "d7/d24/classsamchon_1_1library_1_1FTTextFile.html", null ]
         ] ],
         [ "samchon::library::FTFolder", "d2/db1/classsamchon_1_1library_1_1FTFolder.html", null ]
       ] ],
       [ "samchon::library::GAParameters", "de/de1/classsamchon_1_1library_1_1GAParameters.html", null ],
-      [ "samchon::namtree::INTExplore", "d5/d98/classsamchon_1_1namtree_1_1INTExplore.html", [
-        [ "samchon::namtree::NTFile", "d2/da2/classsamchon_1_1namtree_1_1NTFile.html", null ],
-        [ "samchon::namtree::NTParameter", "db/d29/classsamchon_1_1namtree_1_1NTParameter.html", null ]
-      ] ],
-      [ "samchon::namtree::NTParameterDetermined", "d4/dff/classsamchon_1_1namtree_1_1NTParameterDetermined.html", null ],
-      [ "samchon::namtree::NTSide", "d4/df0/classsamchon_1_1namtree_1_1NTSide.html", null ],
       [ "samchon::protocol::EntityArray< T >", "dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html", null ],
       [ "samchon::protocol::EntityGroup< Container, T >", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html", [
         [ "samchon::example::packer::Packer", "da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html", null ],
@@ -46,9 +39,6 @@ var hierarchy =
         [ "samchon::example::packer::WrapperArray", "d4/dfe/classsamchon_1_1example_1_1packer_1_1WrapperArray.html", null ],
         [ "samchon::example::tsp::Travel", "db/dd4/classsamchon_1_1example_1_1tsp_1_1Travel.html", null ],
         [ "samchon::library::FTFolder", "d2/db1/classsamchon_1_1library_1_1FTFolder.html", null ],
-        [ "samchon::namtree::NTCriteria", "de/dfd/classsamchon_1_1namtree_1_1NTCriteria.html", null ],
-        [ "samchon::namtree::NTParameter", "db/d29/classsamchon_1_1namtree_1_1NTParameter.html", null ],
-        [ "samchon::namtree::NTParameterArray", "de/d08/classsamchon_1_1namtree_1_1NTParameterArray.html", null ],
         [ "samchon::protocol::ExternalSystem", "df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html", [
           [ "samchon::protocol::ExternalClient", "dc/dfd/classsamchon_1_1protocol_1_1ExternalClient.html", [
             [ "samchon::protocol::master::DistributedClient", "d2/d26/classsamchon_1_1protocol_1_1master_1_1DistributedClient.html", null ],
@@ -170,9 +160,7 @@ var hierarchy =
     ] ],
     [ "samchon::library::EventDispatcher", "d3/d9b/classsamchon_1_1library_1_1EventDispatcher.html", null ],
     [ "samchon::protocol::FlashPolicyServer", "d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer.html", null ],
-    [ "samchon::library::FTFactory", "d6/d60/classsamchon_1_1library_1_1FTFactory.html", [
-      [ "samchon::namtree::NTFactory", "d0/d7b/classsamchon_1_1namtree_1_1NTFactory.html", null ]
-    ] ],
+    [ "samchon::library::FTFactory", "d6/d60/classsamchon_1_1library_1_1FTFactory.html", null ],
     [ "samchon::example::tsp::GAParameters", "d9/d92/structsamchon_1_1example_1_1tsp_1_1GAParameters.html", null ],
     [ "samchon::library::GAPopulation< GeneArray, Compare >", "d8/dcd/classsamchon_1_1library_1_1GAPopulation.html", null ],
     [ "samchon::library::GeneticAlgorithm< GeneArray, Compare >", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", null ],
@@ -194,9 +182,6 @@ var hierarchy =
     [ "samchon::protocol::IHTMLEntity", "db/dae/classsamchon_1_1protocol_1_1IHTMLEntity.html", null ],
     [ "samchon::IndexPair< T >", "d2/dc0/classsamchon_1_1IndexPair.html", null ],
     [ "samchon::library::IOperator< T >", "dd/d2e/classsamchon_1_1library_1_1IOperator.html", null ],
-    [ "samchon::library::IOperator< NTIterator >", "dd/d2e/classsamchon_1_1library_1_1IOperator.html", [
-      [ "samchon::namtree::NTIterator", "d4/dd2/classsamchon_1_1namtree_1_1NTIterator.html", null ]
-    ] ],
     [ "samchon::protocol::IProtocol", "d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html", [
       [ "samchon::example::chat_service::ChatRoom", "d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom.html", null ],
       [ "samchon::example::console_chat_server::ChatServer", "dd/dc0/classsamchon_1_1example_1_1console__chat__server_1_1ChatServer.html", null ],
@@ -208,7 +193,9 @@ var hierarchy =
           [ "samchon::example::interaction::Reporter", "d1/d4a/classsamchon_1_1example_1_1interaction_1_1Reporter.html", null ]
         ] ],
         [ "samchon::protocol::ExternalSystem", "df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html", null ],
-        [ "samchon::protocol::IWebClientBase", "d0/d4f/classsamchon_1_1protocol_1_1IWebClientBase.html", null ],
+        [ "samchon::protocol::IWebClient", "d7/d51/classsamchon_1_1protocol_1_1IWebClient.html", [
+          [ "samchon::protocol::WebServerConnector", "d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html", null ]
+        ] ],
         [ "samchon::protocol::ServerConnector", "db/d72/classsamchon_1_1protocol_1_1ServerConnector.html", [
           [ "samchon::protocol::ExternalServer", "df/d4a/classsamchon_1_1protocol_1_1ExternalServer.html", null ],
           [ "samchon::protocol::WebServerConnector", "d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html", null ]
@@ -237,19 +224,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "samchon::protocol::ISQLEntity", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html", null ],
-    [ "samchon::Map< _Kty, _Ty, _Pr, _Alloc >", "d1/d4e/classsamchon_1_1Map.html", [
-      [ "samchon::protocol::service::Server", "d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html", null ]
-    ] ],
-    [ "samchon::Map< int, samchon::library::FTInstance * >", "d1/d4e/classsamchon_1_1Map.html", null ],
-    [ "samchon::Map< SideFunction >", "d1/d4e/classsamchon_1_1Map.html", null ],
-    [ "samchon::Map< size_t, SmartPointer< Client > >", "d1/d4e/classsamchon_1_1Map.html", [
-      [ "samchon::protocol::service::User", "df/d87/classsamchon_1_1protocol_1_1service_1_1User.html", null ]
-    ] ],
-    [ "samchon::Map< size_t, SQL_SIZE_T >", "d1/d4e/classsamchon_1_1Map.html", null ],
-    [ "samchon::Map< std::shared_ptr< samchon::protocol::master::DistributedSystemRole > >", "d1/d4e/classsamchon_1_1Map.html", null ],
-    [ "samchon::Map< std::shared_ptr< samchon::protocol::service::IPUserPair > >", "d1/d4e/classsamchon_1_1Map.html", null ],
     [ "samchon::library::Math", "de/d8f/classsamchon_1_1library_1_1Math.html", null ],
-    [ "samchon::namtree::NTEntityGroup", "dd/d26/classsamchon_1_1namtree_1_1NTEntityGroup.html", null ],
     [ "samchon::library::RWMutex", "df/d85/classsamchon_1_1library_1_1RWMutex.html", null ],
     [ "samchon::library::Semaphore", "d9/d88/classsamchon_1_1library_1_1Semaphore.html", null ],
     [ "samchon::protocol::service::ServiceKeeper", "d0/d04/classsamchon_1_1protocol_1_1service_1_1ServiceKeeper.html", null ],
@@ -267,6 +242,16 @@ var hierarchy =
       [ "samchon::library::TSQLStatement", "d3/d69/classsamchon_1_1library_1_1TSQLStatement.html", null ]
     ] ],
     [ "samchon::library::StringUtil", "d2/d53/classsamchon_1_1library_1_1StringUtil.html", null ],
+    [ "samchon::TreeMap< _Kty, _Ty, _Pr, _Alloc >", "d1/d6c/classsamchon_1_1TreeMap.html", [
+      [ "samchon::protocol::service::Server", "d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html", null ]
+    ] ],
+    [ "samchon::TreeMap< int, samchon::library::FTInstance * >", "d1/d6c/classsamchon_1_1TreeMap.html", null ],
+    [ "samchon::TreeMap< size_t, SmartPointer< Client > >", "d1/d6c/classsamchon_1_1TreeMap.html", [
+      [ "samchon::protocol::service::User", "df/d87/classsamchon_1_1protocol_1_1service_1_1User.html", null ]
+    ] ],
+    [ "samchon::TreeMap< size_t, SQL_SIZE_T >", "d1/d6c/classsamchon_1_1TreeMap.html", null ],
+    [ "samchon::TreeMap< std::shared_ptr< samchon::protocol::master::DistributedSystemRole > >", "d1/d6c/classsamchon_1_1TreeMap.html", null ],
+    [ "samchon::TreeMap< std::shared_ptr< samchon::protocol::service::IPUserPair > >", "d1/d6c/classsamchon_1_1TreeMap.html", null ],
     [ "samchon::library::UniqueAcquire", "d1/df7/classsamchon_1_1library_1_1UniqueAcquire.html", null ],
     [ "samchon::library::UniqueReadLock", "de/d6f/classsamchon_1_1library_1_1UniqueReadLock.html", null ],
     [ "samchon::library::UniqueWriteLock", "d1/dc0/classsamchon_1_1library_1_1UniqueWriteLock.html", null ],

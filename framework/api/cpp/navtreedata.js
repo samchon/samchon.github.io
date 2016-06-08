@@ -18,7 +18,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ]
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
@@ -30,12 +30,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d2/db1/classsamchon_1_1library_1_1FTFolder.html",
-"d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#ac1837decacb330d4c95a7bf728c0ee6f",
-"d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a8c39d4f90354b04ce9adddc3896f8f06",
-"da/d6b/classsamchon_1_1library_1_1Date.html#a2d823b0e379f0eee3e6deb09c044597b",
-"dd/d2e/classsamchon_1_1library_1_1IOperator.html#ade815824b9db90191b62da65f7a2cdc2",
-"df/d66/ExternalClientArray_8cpp_source.html"
+"d3/d18/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArrayMediator.html",
+"d5/de8/classsamchon_1_1protocol_1_1SystemRole.html#ad99a65c1c4669d594415a5bad27de28f",
+"d9/d10/PackerMaster_8hpp_source.html",
+"db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#ab55701180d96b33cd2a0eebeb0b2b050",
+"de/d8f/classsamchon_1_1library_1_1Math.html#aa1d85b3b4dcc2be068fea81178d42190",
+"functions_func_l.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

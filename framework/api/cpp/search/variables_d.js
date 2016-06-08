@@ -1,20 +1,17 @@
 var searchData=
 [
   ['packer',['packer',['../d9/db5/classsamchon_1_1example_1_1interaction_1_1PackerMaster.html#a9fb1162d5c5fdeb8fdd7ab955f03449c',1,'samchon::example::interaction::PackerMaster::packer()'],['../d7/d0a/classsamchon_1_1example_1_1interaction_1_1PackerMediator.html#af3b0443f2773bcce61da862e1c24f8c3',1,'samchon::example::interaction::PackerMediator::packer()']]],
-  ['parameterarray',['parameterArray',['../d2/da2/classsamchon_1_1namtree_1_1NTFile.html#aa61a2e3eacf667bbd2222facf060494a',1,'samchon::namtree::NTFile']]],
   ['parent',['parent',['../d7/d0a/classsamchon_1_1library_1_1FTInstance.html#aef1070160f87c373466faaace185887d',1,'samchon::library::FTInstance']]],
   ['participants',['participants',['../d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom.html#ab94e5022f011a27dc32e12ae83c6d0a1',1,'samchon::example::chat_service::ChatRoom']]],
   ['performance',['performance',['../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#a7694d110dbb9300a3ee003e95a345a12',1,'samchon::protocol::master::DistributedSystem::performance()'],['../d1/d16/classsamchon_1_1protocol_1_1master_1_1DistributedSystemRole.html#aa2077efeea63b5386dd64ac50b1a870c',1,'samchon::protocol::master::DistributedSystemRole::performance()'],['../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#ad02a6b0adc9716e170d5f65010927bcb',1,'samchon::protocol::master::ParallelSystem::performance()']]],
-  ['pi',['PI',['../de/d8f/classsamchon_1_1library_1_1Math.html#ab940eb2360ac3c29182d1fe5b841c645',1,'samchon::library::Math']]],
-  ['policy',['policy',['../d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer.html#a7cc5045fc55d8bd6418b552ff51e4909',1,'samchon::protocol::FlashPolicyServer']]],
+  ['policy_5f',['policy_',['../d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer.html#a60ede4e0606bbe3eb20357e88704985b',1,'samchon::protocol::FlashPolicyServer']]],
   ['population',['population',['../de/de1/classsamchon_1_1library_1_1GAParameters.html#a1befe3979a7049f0e9b8e71320d92ee5',1,'samchon::library::GAParameters']]],
   ['port',['port',['../d4/dde/classsamchon_1_1example_1_1interaction_1_1ChiefDriver.html#ab549f95015e3f9bde9dc1af73b87dd13',1,'samchon::example::interaction::ChiefDriver::port()'],['../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a8a25823f7ae24aa647de9e6773542e3f',1,'samchon::library::SQLi::port()'],['../d8/d47/classsamchon_1_1protocol_1_1ExternalClientArray.html#a83641084751f9b79b83a9d367d4d3ebe',1,'samchon::protocol::ExternalClientArray::port()'],['../df/d42/classsamchon_1_1protocol_1_1ExternalSystem.html#a8361efde92acf9f0725bfdc938bcbba9',1,'samchon::protocol::ExternalSystem::port()']]],
   ['position',['position',['../dc/d37/classsamchon_1_1ByteArray.html#ac5892668eaa194254489738d378e52ff',1,'samchon::ByteArray']]],
-  ['precision',['precision',['../d5/d98/classsamchon_1_1namtree_1_1INTExplore.html#af1e7bb18a7d00f179103b2091a6baccf',1,'samchon::namtree::INTExplore']]],
   ['price',['price',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#ab035bfc085d9fed7091b9487d574ef60',1,'samchon::example::packer::Instance']]],
   ['processed',['processed',['../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#ac11c7166e6f09977ddd34a0ea6dbd5fc',1,'samchon::protocol::master::DistributedSystem']]],
   ['productarray',['productArray',['../da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html#a5cbae3a92436af7b53048934b2b2412e',1,'samchon::example::packer::Packer']]],
   ['progressarray',['progressArray',['../d9/d6b/classsamchon_1_1protocol_1_1master_1_1ParallelSystem.html#a80ae82769aad1893e5c3274898b91eb7',1,'samchon::protocol::master::ParallelSystem::progressArray()'],['../d8/d9c/classsamchon_1_1protocol_1_1master_1_1ParallelSystemArray.html#aaf85318c1117a92e925426d1d85b7143',1,'samchon::protocol::master::ParallelSystemArray::progressArray()']]],
-  ['propertymap',['propertyMap',['../d5/d37/classsamchon_1_1library_1_1XML.html#a5a5787dea58ec7992c29cbdc69824c17',1,'samchon::library::XML']]],
+  ['properties',['properties',['../d5/d37/classsamchon_1_1library_1_1XML.html#a3ed840d45781bc9c44bd9a16c5076f21',1,'samchon::library::XML']]],
   ['ptr',['ptr',['../d9/d2d/classsamchon_1_1SmartPointer.html#a26e99ae7092b02bd6db742b58a80e3e7',1,'samchon::SmartPointer']]]
 ];

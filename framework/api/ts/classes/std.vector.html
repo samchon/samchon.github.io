@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Vector | </title>
+	<title>Vector | samchon-framework</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title"></a>
+					<a href="../index.html" class="title">samchon-framework</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -97,6 +97,7 @@
 						elements from its end. For operations that involve inserting or removing elements at positions other than the
 						end, they perform worse than the others, and have less consistent iterators and references than <a href="std.list.html">List</a>s.
 					</p>
+					<p> <img src="../assets/images/design/linear_containers.png" width="100%" /> </p>
 					<p><h3> Container properties </h3></p>
 					<dl>
 						<dt> Sequence </dt>
@@ -110,10 +111,10 @@
 							relatively fast addition/removal of elements at the end of the sequence.
 						</dd>
 					</dl>
-					<ul>
-						<li> Reference: <a href="http://www.cplusplus.com/reference/vector/vector/">http://www.cplusplus.com/reference/vector/vector/</a>
-					</ul>
 					<dl class="tsd-comment-tags">
+						<dt>reference</dt>
+						<dd><p><a href="http://www.cplusplus.com/reference/vector/vector">http://www.cplusplus.com/reference/vector/vector</a></p>
+						</dd>
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
 						</dd>
@@ -143,10 +144,13 @@
 								<span class="target">Vector</span>
 								<ul class="tsd-hierarchy">
 									<li>
-										<a href="samchon.protocol.entityarray.html" class="tsd-signature-type">EntityArray</a>
+										<a href="samchon.library.xmllist.html" class="tsd-signature-type">XMLList</a>
 									</li>
 									<li>
-										<a href="samchon.library.xmllist.html" class="tsd-signature-type">XMLList</a>
+										<a href="samchon.collection.arraycollection.html" class="tsd-signature-type">ArrayCollection</a>
+									</li>
+									<li>
+										<a href="samchon.protocol.entityarray.html" class="tsd-signature-type">EntityArray</a>
 									</li>
 								</ul>
 							</li>
@@ -157,7 +161,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/std.base.iarray.html" class="tsd-signature-type">IArray</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/std.base.iarraycontainer.html" class="tsd-signature-type">IArrayContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
@@ -189,6 +193,7 @@
 						elements from its end. For operations that involve inserting or removing elements at positions other than the
 						end, they perform worse than the others, and have less consistent iterators and references than <a href="std.list.html">List</a>s.
 					</p>
+					<p> <img src="../assets/images/design/linear_containers.png" width="100%" /> </p>
 					<p><h3> Container properties </h3></p>
 					<dl>
 						<dt> Sequence </dt>
@@ -202,9 +207,6 @@
 							relatively fast addition/removal of elements at the end of the sequence.
 						</dd>
 					</dl>
-					<ul>
-						<li> Reference: <a href="http://www.cplusplus.com/reference/vector/vector/">http://www.cplusplus.com/reference/vector/vector/</a>
-					</ul>
 				</div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -237,6 +239,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.vector.html#empty" class="tsd-kind-icon">empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.vector.html#end" class="tsd-kind-icon">end</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.vector.html#erase" class="tsd-kind-icon">erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-not-exported"><a href="std.vector.html#erase_by_range" class="tsd-kind-icon">erase_<wbr>by_<wbr>range</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.vector.html#front" class="tsd-kind-icon">front</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-not-exported"><a href="std.vector.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.vector.html#pop_back" class="tsd-kind-icon">pop_<wbr>back</a></li>
@@ -284,13 +287,13 @@
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Vector<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vector.html" class="tsd-signature-type">Vector</a></li>
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Vector<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vector.html" class="tsd-signature-type">Vector</a></li>
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Vector<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vector.html" class="tsd-signature-type">Vector</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Vector<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vector.html" class="tsd-signature-type">Vector</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Vector<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vector.html" class="tsd-signature-type">Vector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9025">std/std.d.ts:9025</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:395</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -304,7 +307,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9031">std/std.d.ts:9031</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:401</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -342,7 +345,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9035">std/std.d.ts:9035</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:405</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -367,7 +370,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9043">std/std.d.ts:9043</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:413</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -401,7 +404,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9053">std/std.d.ts:9053</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:423</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -427,7 +430,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9062">std/std.d.ts:9062</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:432</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -440,7 +443,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>begin: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>begin: <a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Input interator of the initial position in a sequence.</p>
@@ -448,7 +451,7 @@
 									</div>
 								</li>
 								<li>
-									<h5>end: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>end: <a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>Input interator of the final position in a sequence.</p>
@@ -469,7 +472,7 @@
 					<div class="tsd-signature tsd-kind-icon">Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ArrayConstructor</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1171</li>
+							<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1171</li>
 						</ul>
 					</aside>
 				</section>
@@ -479,7 +482,7 @@
 					<div class="tsd-signature tsd-kind-icon">iterator<span class="tsd-signature-symbol">:</span> <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9025">std/std.d.ts:9025</a></li>
+							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:395</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -495,7 +498,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from Array.length</p>
 						<ul>
-							<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1011</li>
+							<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1011</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -517,9 +520,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#assign">assign</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9076">std/std.d.ts:9076</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:446</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -534,7 +537,7 @@
 									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h4>
 								</li>
 								<li>
-									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -550,9 +553,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#assign">assign</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9080">std/std.d.ts:9080</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:450</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -584,18 +587,18 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#at">at</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#at">at</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9120">std/std.d.ts:9120</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:490</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Access element. </p>
-									<p> Returns a value to the element at position <i>index</i> in the <a href="../interfaces/std.base.iarray.html">container</a>.</p>
+									<p> Returns a value to the element at position <i>index</i> in the {@link IArray container}.</p>
 								</div>
 								<p> The function automatically checks whether <i>index</i> is within the bounds of valid elements
-									in the <a href="../interfaces/std.base.iarray.html">container</a>, throwing an <a href="std.outofrange.html">OutOfRange</a> exception if it is not (i.e.,
+									in the {@link IArray container}, throwing an <a href="std.outofrange.html">OutOfRange</a> exception if it is not (i.e.,
 								if <i>index</i> is greater or equal than its <a href="std.vector.html#size">size</a>). </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -618,9 +621,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#back">back</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#back">back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9132">std/std.d.ts:9132</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:502</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -646,9 +649,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#begin">begin</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9092">std/std.d.ts:9092</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:462</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -673,30 +676,30 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#capacity">capacity</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#capacity">capacity</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9112">std/std.d.ts:9112</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:482</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Return size of allocated storage capacity. </p>
 								</div>
-								<p> Returns the size of the storage space currently allocated for the <a href="../interfaces/std.base.iarray.html">container</a>,
+								<p> Returns the size of the storage space currently allocated for the {@link IArray container},
 								expressed in terms of elements. </p>
-								<p> This <a href="std.vector.html#capacity">capacity</a> is not necessarily equal to the <a href="../interfaces/std.base.iarray.html">container</a> <a href="std.vector.html#size">size</a>.
+								<p> This <a href="std.vector.html#capacity">capacity</a> is not necessarily equal to the {@link IArray container} <a href="std.vector.html#size">size</a>.
 									It can be equal or greater, with the extra space allowing to accommodate for growth without the
 								need to reallocate on each insertion. </p>
 								<p> Notice that this <a href="std.vector.html#capacity">capacity</a> does not suppose a limit on the <a href="std.vector.html#size">size</a> of the
-									<a href="../interfaces/std.base.iarray.html">container</a>. When this <a href="std.vector.html#capacity">capacity</a> is exhausted and more is needed, it is
-									automatically expanded by the <a href="../interfaces/std.base.iarray.html">container</a> (reallocating it storage space).
-									The theoretical limit on the <a href="std.vector.html#size">size</a> of a <a href="../interfaces/std.base.iarray.html">container</a> is given by member
+									{@link IArray container}. When this <a href="std.vector.html#capacity">capacity</a> is exhausted and more is needed, it is
+									automatically expanded by the {@link IArray container} (reallocating it storage space).
+									The theoretical limit on the <a href="std.vector.html#size">size</a> of a {@link IArray container} is given by member
 								{@link max_size}. </p>
-								<p> The <a href="std.vector.html#capacity">capacity</a> of a <a href="../interfaces/std.base.iarray.html">container</a> can be explicitly altered by calling member
-								<a href="../interfaces/std.base.iarray.html#reserve">IArray.reserve</a>. </p>
+								<p> The <a href="std.vector.html#capacity">capacity</a> of a {@link IArray container} can be explicitly altered by calling member
+								{@link IArray.reserve}. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The size of the currently allocated storage capacity in the <a href="../interfaces/std.base.iarray.html">container</a>,
+							<p>The size of the currently allocated storage capacity in the {@link IArray container},
 							measured in terms of the number elements it can hold.</p>
 						</li>
 					</ul>
@@ -710,9 +713,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#clear">clear</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9088">std/std.d.ts:9088</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:458</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -734,9 +737,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#empty">empty</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9116">std/std.d.ts:9116</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:486</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -761,9 +764,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#end">end</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9096">std/std.d.ts:9096</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:466</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -792,13 +795,16 @@
 					<h3>erase</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9228">std/std.d.ts:9228</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:679</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -828,8 +834,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9248">std/std.d.ts:9248</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:699</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -846,22 +853,112 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>begin: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An iterator specifying a range of beginning to erase.</p>
-									</div>
+									<h5>first: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
-									<h5>end: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An iterator specifying a range of end to erase.</p>
-									</div>
+									<h5>last: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator pointing to the new location of the element that followed the last element erased by
+								the function call. This is the <a href="std.vector.html#rend">rend()</a> if the operation erased the last element in the
+							sequence.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#erase">erase</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:718</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Erase element. </p>
+								</div>
+								<p> Removes from the <a href="std.vector.html">Vector</a> either a single element; <i>position</i>. </p>
+								<p> This effectively reduces the container size by the number of element removed. </p>
+								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing an element in
+									position other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements after the
+									segment erased to their new positions. This is generally an inefficient operation compared to the one
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Iterator pointing to a single element to be removed from the <a href="std.vector.html">Vector</a>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator pointing to the new location of the element that followed the last element erased by
+								the function call. This is the <a href="std.vector.html#rend">rend()</a> if the operation erased the last element in the
+							sequence.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#erase">erase</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:738</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Erase element. </p>
+								</div>
+								<p> Removes from the <ode>Vector</code> either a single element; <i>position</i>. </p>
+								<p> This effectively reduces the container size by the number of elements removed. </p>
+								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing elements in
+									position other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements after the
+									segment erased to their new positions. This is generally an inefficient operation compared to the one
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>last: <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator pointing to the new location of the element that followed the last element erased by
 								the function call. This is the <a href="std.vector.html#end">end()</a> if the operation erased the last element in the
 							sequence.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-not-exported">
+					<a name="erase_by_range" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> erase_<wbr>by_<wbr>range</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">erase_<wbr>by_<wbr>range<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:742</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>hiddde</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>last: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -874,9 +971,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#front">front</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#front">front</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9128">std/std.d.ts:9128</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:498</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -900,12 +997,16 @@
 						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">insert&lt;U, InputIterator&gt;<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, begin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InputIterator</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InputIterator</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">insert&lt;U, InputIterator&gt;<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, begin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InputIterator</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InputIterator</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9162">std/std.d.ts:9162</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:528</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -943,8 +1044,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9185">std/std.d.ts:9185</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:551</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -988,8 +1090,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9209">std/std.d.ts:9209</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:575</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1012,7 +1115,7 @@
 									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h4>
 								</li>
 								<li>
-									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1041,6 +1144,148 @@
 							<h4 class="tsd-returns-title">Returns <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator that points to the first of the newly inserted elements.</p>
 						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#insert">insert</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:597</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Insert an element. </p>
+								</div>
+								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new element before the element at the specified
+								<i>position</i>, effectively increasing the container size by one. </p>
+								<p> This causes an automatic reallocation of the allocated storage space if -and only if- the new
+								<a href="std.vector.html#size">size</a> surpasses the current <a href="std.vector.html#capacity">capacity</a>. </p>
+								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting element in
+									positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
+									after <i>position</i> to its new position. This is generally an inefficient operation compared to the one
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Position in the <a href="std.vector.html">Vector</a> where the new element is inserted.
+											<a href="std.vector.html#iterator">iterator</a> is a member type, defined as a
+										<a href="std.vectoriterator.html">random access iterator</a> type that points to elements.</p>
+									</div>
+								</li>
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to be copied to the inserted element.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator that points to the newly inserted element.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#insert">insert</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:620</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Insert elements by repeated filling. </p>
+								</div>
+								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
+								<i>position</i>, effectively increasing the container size by the number of elements inserted. </p>
+								<p> This causes an automatic reallocation of the allocated storage space if -and only if- the new
+								<a href="std.vector.html#size">size</a> surpasses the current <a href="std.vector.html#capacity">capacity</a>. </p>
+								<p><p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
+										positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
+										after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
+									one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Position in the <a href="std.vector.html">Vector</a> where the new elements are inserted.
+											<a href="std.vector.html#iterator">iterator</a> is a member type, defined as a
+										<a href="std.vectoriterator.html">random access iterator</a> type that points to elements.</p>
+									</div>
+								</li>
+								<li>
+									<h5>n: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Number of elements to insert. Each element is initialized to a copy of <i>val</i>.</p>
+									</div>
+								</li>
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Value to be copied (or moved) to the inserted elements.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator that points to the first of the newly inserted elements.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#insert">insert</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:644</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Insert elements by range iterators. </p>
+								</div>
+								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
+									<i>position</i>, effectively increasing the container size by the number of elements inserted by range
+								iterators. </p>
+								<p> This causes an automatic reallocation of the allocated storage space if -and only if- the new
+								<a href="std.vector.html#size">size</a> surpasses the current <a href="std.vector.html#capacity">capacity</a>. </p>
+								<p><p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
+										positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
+										after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
+									one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h4>
+								</li>
+								<li>
+									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Position in the <a href="std.vector.html">Vector</a> where the new elements are inserted.
+											<a href="std.vector.html#iterator">iterator</a> is a member type, defined as a
+										<a href="std.vectoriterator.html">random access iterator</a> type that points to elements.</p>
+									</div>
+								</li>
+								<li>
+									<h5>begin: <span class="tsd-signature-type">InputIterator</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Input interator of the initial position in a sequence.</p>
+									</div>
+								</li>
+								<li>
+									<h5>end: <span class="tsd-signature-type">InputIterator</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Input interator of the final position in a sequence.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator that points to the first of the newly inserted elements.</p>
+						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -1052,9 +1297,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#pop_back">pop_back</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#pop_back">pop_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9140">std/std.d.ts:9140</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:660</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1077,9 +1322,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#push_back">push_back</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#push_back">push_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9136">std/std.d.ts:9136</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:506</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1108,24 +1353,24 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#rbegin">rbegin</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9100">std/std.d.ts:9100</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:470</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.base.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>. </p>
+									<p> Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>. </p>
 								</div>
-								<p> Returns a <a href="std.base.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
+								<p> Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
 								its <i>reverse beginning</i>). </p>
-								<p> <a href="std.base.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
+								<p> <a href="std.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
 								beginning of the  </p>
 								<p> <a href="std.vector.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="std.vector.html#end">end</a>.
 								</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <a href="std.base.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
+							<p>A <a href="std.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
 						</li>
 					</ul>
 				</section>
@@ -1138,22 +1383,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#rend">rend</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9104">std/std.d.ts:9104</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:474</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.base.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>. </p>
+									<p> Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>. </p>
 								</div>
-								<p> Returns a <a href="std.base.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
+								<p> Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
 								first element in the container (which is considered its <i>reverse end</i>). </p>
 								<p><p> The range between <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="std.vector.html#rbegin">rbegin</a> and <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="std.vector.html#rend">rend</a> contains all
 									the elements of the container (in reverse order).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <a href="std.base.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
+							<p>A <a href="std.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
 						</li>
 					</ul>
 				</section>
@@ -1166,23 +1411,23 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#reserve">reserve</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#reserve">reserve</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9084">std/std.d.ts:9084</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:454</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Request a change in capacity. </p>
 								</div>
-								<p> Requests that the <a href="../interfaces/std.base.iarray.html">container</a> <a href="std.vector.html#capacity">capacity</a> be at least enough to contain
+								<p> Requests that the {@link IArray container} <a href="std.vector.html#capacity">capacity</a> be at least enough to contain
 								<i>n</i> elements. </p>
-								<p> If <i>n</i> is greater than the current <a href="../interfaces/std.base.iarray.html">container</a> <a href="std.vector.html#capacity">capacity</a>, the
-									function causes the <a href="../interfaces/std.base.iarray.html">container</a> to reallocate its storage increasing its
+								<p> If <i>n</i> is greater than the current {@link IArray container} <a href="std.vector.html#capacity">capacity</a>, the
+									function causes the {@link IArray container} to reallocate its storage increasing its
 								<a href="std.vector.html#capacity">capacity</a> to <i>n</i> (or greater). </p>
 								<p> In all other cases, the function call does not cause a reallocation and the
-								<a href="../interfaces/std.base.iarray.html">container</a> <a href="std.vector.html#capacity">capacity</a> is not affected. </p>
-								<p> This function has no effect on the <a href="../interfaces/std.base.iarray.html">container</a> <a href="std.vector.html#size">size</a> and cannot alter
+								{@link IArray container} <a href="std.vector.html#capacity">capacity</a> is not affected. </p>
+								<p> This function has no effect on the {@link IArray container} <a href="std.vector.html#size">size</a> and cannot alter
 								its elements. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1204,19 +1449,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#set">set</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#set">set</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9124">std/std.d.ts:9124</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:494</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Modify element. </p>
-									<p> Replaces an element at the specified position (<i>index</i>) in this <a href="../interfaces/std.base.iarray.html">container</a>
+									<p> Replaces an element at the specified position (<i>index</i>) in this {@link IArray container}
 									with the specified element (<i>val</i>). </p>
 								</div>
 								<p> The function automatically checks whether <i>index</i> is within the bounds of valid elements
-									in the <a href="../interfaces/std.base.iarray.html">container</a>, throwing an <a href="std.outofrange.html">OutOfRange</a> exception if it is not (i.e., if
+									in the {@link IArray container}, throwing an <a href="std.outofrange.html">OutOfRange</a> exception if it is not (i.e., if
 								<i>index</i> is greater or equal than its <a href="std.vector.html#size">size</a>). </p>
 								<p>@.param index A specified position of the value to replace.</p>
 							</div>
@@ -1243,9 +1488,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#size">size</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9108">std/std.d.ts:9108</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:478</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1267,9 +1512,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.iarray.html">IArray</a>.<a href="../interfaces/std.base.iarray.html#swap">swap</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/std/std.d.ts#L9252">std/std.d.ts:9252</a></li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:746</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1306,7 +1551,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.concat</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1030</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1030</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1335,7 +1580,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.concat</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1035</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1035</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1367,7 +1612,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.every</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1101</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1101</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1429,7 +1674,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.filter</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1129</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1129</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1491,7 +1736,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.forEach</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1115</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1115</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1553,7 +1798,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.indexOf</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1087</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1087</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1591,7 +1836,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.join</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1040</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1040</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1623,7 +1868,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.lastIndexOf</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1094</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1094</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1661,7 +1906,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.map</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1122</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1122</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1729,7 +1974,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.pop</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1025</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1025</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1752,7 +1997,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.push</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1021</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1021</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1785,7 +2030,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.reduce</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1136</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1136</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1841,7 +2086,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.reduce</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1142</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1142</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1913,7 +2158,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.reduceRight</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1149</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1149</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1969,7 +2214,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.reduceRight</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1155</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1155</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2040,7 +2285,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.reverse</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1044</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1044</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2063,7 +2308,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.shift</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1048</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1048</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2086,7 +2331,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.slice</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1054</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1054</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2124,7 +2369,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.some</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1108</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1108</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2186,7 +2431,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.sort</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1060</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1060</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2240,7 +2485,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.splice</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1066</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1066</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2263,7 +2508,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.splice</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1074</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1074</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2307,7 +2552,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.toLocaleString</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1016</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1016</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -2325,7 +2570,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.toString</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1015</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1015</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2348,7 +2593,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from Array.unshift</p>
 								<ul>
-									<li>Defined in C:/Users/Jeongho Nam/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1080</li>
+									<li>Defined in C:/Users/samch/AppData/Roaming/npm/node_modules/typedoc/node_modules/typescript/lib/lib.d.ts:1080</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2441,6 +2686,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="std.vector.html#erase" class="tsd-kind-icon">erase</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected tsd-is-not-exported">
+								<a href="std.vector.html#erase_by_range" class="tsd-kind-icon">erase_<wbr>by_<wbr>range</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="std.vector.html#front" class="tsd-kind-icon">front</a>

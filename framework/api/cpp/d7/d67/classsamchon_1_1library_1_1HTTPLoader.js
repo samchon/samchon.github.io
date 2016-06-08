@@ -9,5 +9,5 @@ var classsamchon_1_1library_1_1HTTPLoader =
     [ "getCookie", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html#ac201771597d0d177c2e62fe11e88ecab", null ],
     [ "load", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html#a64939fa137cf75e154faf59d164bd2bb", null ],
     [ "method", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html#abbddabed7ed45173a59bd5c5e71688ee", null ],
-    [ "cookieMap", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html#a5c8376d40ae95fae1022be475e4755ec", null ]
+    [ "cookie_map", "d7/d67/classsamchon_1_1library_1_1HTTPLoader.html#a912d34cac85251193e9b0dafb3d93cec", null ]
 ];

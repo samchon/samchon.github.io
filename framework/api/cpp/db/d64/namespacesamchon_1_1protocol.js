@@ -26,7 +26,7 @@ var namespacesamchon_1_1protocol =
     [ "IProtocol", "d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html", "d4/dcf/classsamchon_1_1protocol_1_1IProtocol" ],
     [ "IServer", "d4/de8/classsamchon_1_1protocol_1_1IServer.html", "d4/de8/classsamchon_1_1protocol_1_1IServer" ],
     [ "ISQLEntity", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity.html", "d7/d56/classsamchon_1_1protocol_1_1ISQLEntity" ],
-    [ "IWebClientBase", "d0/d4f/classsamchon_1_1protocol_1_1IWebClientBase.html", "d0/d4f/classsamchon_1_1protocol_1_1IWebClientBase" ],
+    [ "IWebClient", "d7/d51/classsamchon_1_1protocol_1_1IWebClient.html", "d7/d51/classsamchon_1_1protocol_1_1IWebClient" ],
     [ "IWebServer", "d5/d23/classsamchon_1_1protocol_1_1IWebServer.html", "d5/d23/classsamchon_1_1protocol_1_1IWebServer" ],
     [ "ServerConnector", "db/d72/classsamchon_1_1protocol_1_1ServerConnector.html", "db/d72/classsamchon_1_1protocol_1_1ServerConnector" ],
     [ "SystemRole", "d5/de8/classsamchon_1_1protocol_1_1SystemRole.html", "d5/de8/classsamchon_1_1protocol_1_1SystemRole" ],

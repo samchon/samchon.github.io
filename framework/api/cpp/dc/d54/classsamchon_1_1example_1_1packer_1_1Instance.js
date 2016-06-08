@@ -2,7 +2,7 @@ var classsamchon_1_1example_1_1packer_1_1Instance =
 [
     [ "Instance", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a16fb46031efa57dc119e4fd20dfc114f", null ],
     [ "Instance", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#aaf7a6a79ec4398968ba123957ef598cc", null ],
-    [ "getName", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a5e37bc9b5e517d3f525ab8d030ac91a3", null ],
+    [ "get_name", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a05982a56ec03c57efd23c4cb6939799e", null ],
     [ "getPrice", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a8446136520f77c4169a00d4313363292", null ],
     [ "getVolume", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#ac0366b05bebedcdab417c4cfe561fcc7", null ],
     [ "getWeight", "dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#aa03b4b3a275625e1e6f2e1ea2ee11c2a", null ],

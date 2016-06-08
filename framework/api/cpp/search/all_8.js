@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['has',['has',['../d0/dee/classsamchon_1_1HashMap.html#ad6c999a39bcd74e808251f4413f88957',1,'samchon::HashMap::has()'],['../d1/d4e/classsamchon_1_1Map.html#a2f75320019585b10ba32638db14b4b17',1,'samchon::Map::has()'],['../dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a5acd1031b4a675df05364d807a432508',1,'samchon::protocol::EntityArray::has()'],['../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a03769b5d1708bf56690a1163f9c47abd',1,'samchon::protocol::EntityGroup::has()']]],
+  ['has',['has',['../d0/dee/classsamchon_1_1HashMap.html#ad6c999a39bcd74e808251f4413f88957',1,'samchon::HashMap::has()'],['../dc/d8d/classsamchon_1_1protocol_1_1EntityArray.html#a5acd1031b4a675df05364d807a432508',1,'samchon::protocol::EntityArray::has()'],['../d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a03769b5d1708bf56690a1163f9c47abd',1,'samchon::protocol::EntityGroup::has()'],['../d1/d6c/classsamchon_1_1TreeMap.html#af0ad0f8a83a8077ec49f5cee439d8b74',1,'samchon::TreeMap::has()']]],
   ['hashmap',['HashMap',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20std_3a_3astring_2c_20std_3a_3ashared_5fptr_3c_20xmllist_20_3e_20_3e',['HashMap&lt; std::string, std::shared_ptr&lt; XMLList &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20std_3a_3astring_2c_20std_3a_3astring_20_3e',['HashMap&lt; std::string, std::string &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['haslistener',['hasListener',['../d5/de8/classsamchon_1_1protocol_1_1SystemRole.html#a068dd076d6cafc1df85df59b62c2f6d1',1,'samchon::protocol::SystemRole']]],
-  ['hasproperty',['hasProperty',['../d5/d37/classsamchon_1_1library_1_1XML.html#a60ddbf297579c3c04a8271de231d2286',1,'samchon::library::XML']]],
+  ['hasproperty',['hasProperty',['../d5/d37/classsamchon_1_1library_1_1XML.html#ad7a383c2bca6803643cc58a2ad127f8b',1,'samchon::library::XML']]],
   ['hasreplylistener',['hasReplyListener',['../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html#a30b95d488046d4f2f6f32e4a172520be',1,'samchon::protocol::ExternalSystemRole']]],
   ['hasrole',['hasRole',['../d9/dc6/classsamchon_1_1protocol_1_1ExternalSystemArray.html#a78906afabc97b32c633a79f80ba75732',1,'samchon::protocol::ExternalSystemArray::hasRole()'],['../d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a21b3da820d19093322b9532ed6cb38b1',1,'samchon::protocol::master::DistributedSystemArray::hasRole()']]],
   ['hassendlistener',['hasSendListener',['../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html#aac8efbf32aa7819161412997b1365608',1,'samchon::protocol::ExternalSystemRole']]],

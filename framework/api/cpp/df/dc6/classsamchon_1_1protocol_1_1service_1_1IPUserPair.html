@@ -126,14 +126,14 @@ Collaboration diagram for samchon::protocol::service::IPUserPair:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/da6/classsamchon_1_1protocol_1_1service_1_1IPUserPair__coll__graph.png" border="0" usemap="#samchon_1_1protocol_1_1service_1_1IPUserPair_coll__map" alt="Collaboration graph"/></div>
 <map name="samchon_1_1protocol_1_1service_1_1IPUserPair_coll__map" id="samchon_1_1protocol_1_1service_1_1IPUserPair_coll__map">
-<area shape="rect" id="node2" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html" title="A server for (cloud) service. " alt="" coords="432,129,569,171"/>
-<area shape="rect" id="node3" href="../../d1/d4e/classsamchon_1_1Map.html" title="Customized std::map. " alt="" coords="13,5,181,47"/>
-<area shape="rect" id="node4" href="../../d4/de8/classsamchon_1_1protocol_1_1IServer.html" title="An interface of a physical server. " alt="" coords="29,71,166,112"/>
-<area shape="rect" id="node5" href="../../df/d85/classsamchon_1_1library_1_1RWMutex.html" title="rw_mutex " alt="" coords="5,137,189,163"/>
-<area shape="rect" id="node6" href="../../d1/d4e/classsamchon_1_1Map.html" title="samchon::Map\&lt; std::\lshared_ptr\&lt; samchon\l::protocol::service::\lIPUserPair \&gt; \&gt;" alt="" coords="23,188,171,259"/>
-<area shape="rect" id="node7" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. " alt="" coords="20,291,175,318"/>
-<area shape="rect" id="node8" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. " alt="" coords="395,337,607,363"/>
-<area shape="rect" id="node9" href="../../d1/d4e/classsamchon_1_1Map.html" title="samchon::Map\&lt; size\l_t, SQL_SIZE_T \&gt;" alt="" coords="25,375,169,416"/>
+<area shape="rect" id="node2" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html" title="A server for (cloud) service. " alt="" coords="467,129,604,171"/>
+<area shape="rect" id="node3" href="../../d1/d6c/classsamchon_1_1TreeMap.html" title="Customized std::map. " alt="" coords="31,5,199,47"/>
+<area shape="rect" id="node4" href="../../d4/de8/classsamchon_1_1protocol_1_1IServer.html" title="An interface of a physical server. " alt="" coords="46,71,183,112"/>
+<area shape="rect" id="node5" href="../../df/d85/classsamchon_1_1library_1_1RWMutex.html" title="rw_mutex " alt="" coords="23,137,207,163"/>
+<area shape="rect" id="node6" href="../../d1/d6c/classsamchon_1_1TreeMap.html" title="samchon::TreeMap\&lt; std\l::shared_ptr\&lt; samchon\l::protocol::service::IPUserPair \&gt; \&gt;" alt="" coords="5,187,224,243"/>
+<area shape="rect" id="node7" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. " alt="" coords="37,282,192,309"/>
+<area shape="rect" id="node8" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. " alt="" coords="429,327,641,354"/>
+<area shape="rect" id="node9" href="../../d1/d6c/classsamchon_1_1TreeMap.html" title="samchon::TreeMap\&lt; size\l_t, SQL_SIZE_T \&gt;" alt="" coords="30,365,199,407"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -171,7 +171,7 @@ Private Attributes</h2></td></tr>
  <dl class="section note"><dt>Note</dt><dd></dd></dl>
 <p>Samchon Framework is for Cloud <a class="el" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html" title="A server for (cloud) service. ">Server</a> basically, so I've adopted Session ID to discriminate unique <a class="el" href="../../df/d87/classsamchon_1_1protocol_1_1service_1_1User.html" title="User containing Client(s) with session-id. ">User</a> to follow standard. But I think there can be another good strategies something like a using MAC address instead of publishing Session-ID to discriminate uniqueness of <a class="el" href="../../df/d87/classsamchon_1_1protocol_1_1service_1_1User.html" title="User containing Client(s) with session-id. ">User</a>. It's okay to adapt those strategies and rebuild my framework's source to be suitable for those. </p>
 <dl class="section warning"><dt>Warning</dt><dd></dd></dl>
-<p>When changing the strategy, you've to careful about policy of each system or libraries. </p>
+<p>When changing the strategy, you've to careful about policy_ of each system or libraries. </p>
 <p>Followings are something to consider when adjusting MAC address for uniqueness. </p>
 <ul>
 <li>In server side and view of socket, boost::asio or candidate network i/o libary of stl does not allow accessing otherside system's MAC address. But basic socket of window or linux are allowed. </li>
@@ -296,7 +296,7 @@ Private Attributes</h2></td></tr>
 <li>
 $name: Name of the <a class="el" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html" title="A server for (cloud) service. ">Server</a>; <a class="el" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html#a1fae8c1f6ddb391325969ee717911f75" title="A name can be an identifier of a cloud server. ">Server::NAME()</a>  </li>
 <li>
-$port: Port number of the <a class="el" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html" title="A server for (cloud) service. ">Server</a>; <a class="el" href="../../d4/de8/classsamchon_1_1protocol_1_1IServer.html#a1bee88a3b4508af65b7e9796157562db" title="Port number of the server. ">Server::PORT()</a>  </li>
+$port: Port number of the <a class="el" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html" title="A server for (cloud) service. ">Server</a>; <a class="el" href="../../d4/de8/classsamchon_1_1protocol_1_1IServer.html#a8af94b7efcccc65a1b66a06d4742890a" title="Port number of the server. ">Server::PORT()</a>  </li>
 <li>
 $sequence: Sequence number of creation of <a class="el" href="../../df/d87/classsamchon_1_1protocol_1_1service_1_1User.html" title="User containing Client(s) with session-id. ">User</a> in <a class="el" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html" title="A server for (cloud) service. ">Server</a>  </li>
 <li>
@@ -311,14 +311,14 @@ $sequence: Sequence number of creation of <a class="el" href="../../df/d87/class
 
 <p>Definition at line <a class="el" href="../../d8/dc3/IPUserPair_8cpp_source.html#l00081">81</a> of file <a class="el" href="../../d8/dc3/IPUserPair_8cpp_source.html">IPUserPair.cpp</a>.</p>
 
-<p>References <a class="el" href="../../d9/d5c/Date_8cpp_source.html#l00214">samchon::library::Date::toLinuxTime()</a>.</p>
+<p>References <a class="el" href="../../d1/dcc/Date_8hpp_source.html#l00581">samchon::library::Date::toLinuxTime()</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair_a82f940b471818a076ededaa38a8bf445_cgraph.png" border="0" usemap="#df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair_a82f940b471818a076ededaa38a8bf445_cgraph" alt=""/></div>
 <map name="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair_a82f940b471818a076ededaa38a8bf445_cgraph" id="df/dc6/classsamchon_1_1protocol_1_1service_1_1IPUserPair_a82f940b471818a076ededaa38a8bf445_cgraph">
-<area shape="rect" id="node2" href="../../da/d6b/classsamchon_1_1library_1_1Date.html#aa6aa15da65d74b061b7368ac9832ae53" title="Converts the Date to linux_time. " alt="" coords="191,13,344,54"/>
+<area shape="rect" id="node2" href="../../da/d6b/classsamchon_1_1library_1_1Date.html#a8b4998ef9ebe29bdc1e401ce36b0b328" title="Converts the Date to linux_time. " alt="" coords="191,13,344,54"/>
 </map>
 </div>
 </p>

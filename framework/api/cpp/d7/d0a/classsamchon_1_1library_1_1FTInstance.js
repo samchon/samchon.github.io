@@ -5,7 +5,7 @@ var classsamchon_1_1library_1_1FTInstance =
     [ "key", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#af93c6b7ed415f2f6469d691121ae9015", null ],
     [ "getUID", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#a34ad376e11e84ed49182f00e6b5d268b", null ],
     [ "getParent", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#acc86b21a931cabed47dc621bc90bed47", null ],
-    [ "getName", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#a2246ad6e63375461b4c433d388574d8b", null ],
+    [ "get_name", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#a6591f024942fe9d9767585f88c4c7645", null ],
     [ "getComment", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#a27d56aa7acde46e1f11cb489b2d1f4c2", null ],
     [ "toXML", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#aed14b0a180aa13f4abb0948ad17372eb", null ],
     [ "parent", "d7/d0a/classsamchon_1_1library_1_1FTInstance.html#aef1070160f87c373466faaace185887d", null ],

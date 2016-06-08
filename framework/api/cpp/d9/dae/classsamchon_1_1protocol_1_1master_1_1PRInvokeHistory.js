@@ -4,7 +4,7 @@ var classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory =
     [ "PRInvokeHistory", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#ac0906aa635a172e1be0353c53acd7586", null ],
     [ "construct", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#a830b3c0848a4455894fc5aa5f5f838b4", null ],
     [ "notifyEnd", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#a70e52da1a8d664b60a8ceac6a947950a", null ],
-    [ "getIndex", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#a4a2fc0234487f9778cf60f783d381ff4", null ],
+    [ "get_index", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#ae7cf3a9a567588afe0ae59f871b05396", null ],
     [ "getSize", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#af382c404ad2cae5998f2c46eabf7051b", null ],
     [ "calcAverageElapsedTime", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#a2763eecaaa3fa00a205f66b583b4c1c4", null ],
     [ "toXML", "d9/dae/classsamchon_1_1protocol_1_1master_1_1PRInvokeHistory.html#ace6f222c75767b3f53efcd1f173f1ac0", null ],

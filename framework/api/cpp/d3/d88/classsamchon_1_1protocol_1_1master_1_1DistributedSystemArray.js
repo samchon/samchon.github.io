@@ -9,5 +9,5 @@ var classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray =
     [ "getRole", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a076278abec211fb27dfb3a6abffeac27", null ],
     [ "toXML", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a70f6678d5e4e2e762e9ee6799b29db65", null ],
     [ "roleDictionary", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ad941197cb772b0d2fb9e3a0ae0300456", null ],
-    [ "gaParameters", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a842ed640022fa5f511b164bf25aead4b", null ]
+    [ "gaParameters", "d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#a00d2673bcd6e04e506c72e473b1fd64f", null ]
 ];
