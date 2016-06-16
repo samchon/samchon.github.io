@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>std | ts-stl</title>
+	<title>std | typescript-stl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -23,7 +23,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">ts-stl</a>
+					<a href="../index.html" class="title">typescript-stl</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -70,8 +70,127 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>STL (Standard Template Library) Containers for TypeScript.</p>
+						<p><h1> TypeScript-STL </h1></p>
+						<p> <a href="https://nodei.co/npm/typescript-stl">
+						<img src="https://nodei.co/npm/typescript-stl.png?downloads=true&downloadRank=true&stars=true"> </a> </p>
 					</div>
+					<p> GitHub Repository: <a href="https://github.com/samchon/stl">https://github.com/samchon/stl</a> </p>
+					<p><h2> Introduction </h2></p>
+					<p> STL (Standard Template Library) Containers and Algorithms for TypeScript. </p>
+					<p> TypeScript-STL is a TypeScript&#39;s <b>Standard Template Library</b> who is migrated from C++ STL. Most of classes
+					and functions of STL have implemented. Just enjoy it. </p>
+					<p> <img src="http://samchon.github.io/stl/api/assets/images/design/abstract_containers.png"
+						alt="Abstract Containers"
+					style="max-width: 100%" /> </p>
+					<p><h4> Containers </h4></p>
+					<ul>
+						<li> Linear Containers </li>
+						<ul>
+							<li> <a href="http://samchon.github.io/stl/api/classes/std.vector.html">Vector</a> </li>
+							<li> <a href="http://samchon.github.io/stl/api/classes/std.list.html">List</a> </li>
+							<li> <a href="http://samchon.github.io/stl/api/classes/std.deque.html">Deque</a> </li>
+							<li> Miscellaneous </li>
+							<ul>
+								<li> <a href="http://samchon.github.io/stl/api/classes/std.queue.html">Queue</a> </li>
+								<li> <a href="http://samchon.github.io/stl/api/classes/std.stack.html">Stack</a> </li>
+								<li> <a href="http://samchon.github.io/stl/api/classes/std.priorityqueue.html">PriorityQueue</a> </li>
+							</ul>
+						</ul>
+						<li> <a href="http://samchon.github.io/stl/api/classes/std.base.tree.rbtree.html">Tree-structured Containers</a> </li>
+						<ul>
+							<li>
+								<a href="http://samchon.github.io/stl/api/classes/std.treeset.html">TreeSet</a>,
+								<a href="http://samchon.github.io/stl/api/classes/std.treemultiset.html">TreeMultiSet</a>
+							</li>
+							<li>
+								<a href="http://samchon.github.io/stl/api/classes/std.treemap.html">TreeMap</a>,
+								<a href="http://samchon.github.io/stl/api/classes/std.treemultimap.html">TreeMultiMap</a>
+							</li>
+						</ul>
+						<li> <a href="http://samchon.github.io/stl/api/classes/std.base.hash.hashbuckets.html">Hashed Containers</a> </li>
+						<ul>
+							<li>
+								<a href="http://samchon.github.io/stl/api/classes/std.hashset.html">HashSet</a>,
+								<a href="http://samchon.github.io/stl/api/classes/std.hashmultiset.html">TreeMultiset</a>
+							</li>
+							<li>
+								<a href="http://samchon.github.io/stl/api/classes/std.hashmap.html">HashMap</a>,
+								<a href="http://samchon.github.io/stl/api/classes/std.HashMultiMap.html">HashMultiMap</a>
+							</li>
+						</ul>
+					</ul>
+					<p><h4> Global Functions </h4></p>
+					<ul>
+						<li> <a href="http://www.cplusplus.com/reference/algorithm">&lt;algorithm&gt;</a> </li>
+						<li> <a href="http://www.cplusplus.com/reference/exception">&lt;exceptional&gt;</a> </li>
+						<li> <a href="http://www.cplusplus.com/reference/functional">&lt;functional&gt;</a> </li>
+						<ul>
+							<li> <a href="http://samchon.github.io/stl/api/classes/std.bind.html">std.bind</a> </li>
+						</ul>
+						<li> &lt;utility&gt; </li>
+						<ul>
+							<li> <a href="http://samchon.github.io/stl/api/classes/std.pair.html">std.Pair</a> </li>
+						</ul>
+					</ul>
+					<p><h2> References </h2></p>
+					<p><p> You can learn and explore about TypeScript-STL more deeply with such below: </p></p>
+					<ul>
+						<li> <a href="https://github.com/samchon/stl">GitHub Repository</a> </li>
+						<li> <a href="https://github.com/samchon/stl/wiki">Guidebook (wiki)</a> </li>
+						<li> <a href="http://samchon.github.io/stl/api">API Documents</a> </li>
+						<li> <a href="https://samchon.github.io/stl/design/class_diagram.pdf">Class Diagram</a> </li>
+					</ul>
+					<p><h2> Installation </h2></p>
+					<p><h4> Node </h4>
+					<code> npm install -g typescript-stl </code></p>
+					<h5> TypeScript </h5>
+					<code>
+// SOMEWHERE PLACE NODE AND STL HEADERS EXIST
+/// <reference path="node.d.ts" />
+/// <reference path="typescript-stl.d.ts" />
+
+global[&quot;std&quot;] = require(&quot;typescript-stl&quot;);
+let list: std.List<string> = new std.List<string>();
+</code>
+					<h5> Pure JavaScript </h5>
+					<code>
+var std = require(&quot;typescript-stl&quot;);
+var list = new std.List();
+</code>
+					<h4> Browser </h4>
+					<h5> In HTML Document </h5>
+					<p><h5> TypeScript, reference difinitions (header) </h5>
+						<code>
+/// <reference path="typescript-stl.d.ts" />
+</code></p>
+					<p><h2> Index of Guidance, Wiki </h2></p>
+					<ul>
+						<li> <a href="https://github.com/samchon/stl/wiki/Home"><b>Outline</b></a> </li>
+						<ul>
+							<li> <a href="https://github.com/samchon/stl/wiki/Home#introduction">Introduction</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Home#references">References</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Home#installation">Installation</a> </li>
+						</ul>
+						<li> <a href="https://github.com/samchon/stl/wiki/Differences"><b>Differences between C++</b></a> </li>
+						<ul>
+							<li> <a href="https://github.com/samchon/stl/wiki/Differences#naming-convention">Naming Convention</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Differences#operator-overriding">Operator Overring</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Differences#iterator">Iterator</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Differences#tree-container">Tree Container</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Differences#hash-container">Hash Container</a> </li>
+						</ul>
+						<li> <a href="https://github.com/samchon/stl/wiki/Tutorial"><b>Tutorial</b></a> </li>
+						<ul>
+							<li> <a href="https://github.com/samchon/stl/wiki/Tutorial#linear-container">Linear Container</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Tutorial#tree-container">Tree Container</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Tutorial#hash-container">Hash Container</a> </li>
+							<li> <a href="https://github.com/samchon/stl/wiki/Tutorial-Miscellaneous">Miscellaneous</a> </li>
+							<ul>
+								<li> <a href="https://github.com/samchon/stl/wiki/Tutorial-Miscellaneous#algorithm">Algorithm</a> </li>
+								<li> <a href="https://github.com/samchon/stl/wiki/Tutorial-Miscellaneous#functional">Functional</a> </li>
+							</ul>
+						</ul>
+					</ul>
 					<dl class="tsd-comment-tags">
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
@@ -183,11 +302,13 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#for_each" class="tsd-kind-icon">for_<wbr>each</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#generate" class="tsd-kind-icon">generate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#generate_n" class="tsd-kind-icon">generate_<wbr>n</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="std.html#get_terminate" class="tsd-kind-icon">get_<wbr>terminate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#greater" class="tsd-kind-icon">greater</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#greater_equal" class="tsd-kind-icon">greater_<wbr>equal</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="std.html#hash" class="tsd-kind-icon">hash</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#includes" class="tsd-kind-icon">includes</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#inplace_merge" class="tsd-kind-icon">inplace_<wbr>merge</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="std.html#is_node" class="tsd-kind-icon">is_<wbr>node</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#is_partitioned" class="tsd-kind-icon">is_<wbr>partitioned</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#is_permutation" class="tsd-kind-icon">is_<wbr>permutation</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#is_sorted" class="tsd-kind-icon">is_<wbr>sorted</a></li>
@@ -236,12 +357,14 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#set_difference" class="tsd-kind-icon">set_<wbr>difference</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#set_intersection" class="tsd-kind-icon">set_<wbr>intersection</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#set_symmetric_difference" class="tsd-kind-icon">set_<wbr>symmetric_<wbr>difference</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="std.html#set_terminate" class="tsd-kind-icon">set_<wbr>terminate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#set_union" class="tsd-kind-icon">set_<wbr>union</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#shuffle" class="tsd-kind-icon">shuffle</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#sort" class="tsd-kind-icon">sort</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#stable_partition" class="tsd-kind-icon">stable_<wbr>partition</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#swap" class="tsd-kind-icon">swap</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#swap_ranges" class="tsd-kind-icon">swap_<wbr>ranges</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="std.html#terminate" class="tsd-kind-icon">terminate</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#transform" class="tsd-kind-icon">transform</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#unique" class="tsd-kind-icon">unique</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter"><a href="std.html#unique_copy" class="tsd-kind-icon">unique_<wbr>copy</a></li>
@@ -259,7 +382,7 @@
 					<div class="tsd-signature tsd-kind-icon">___s_<wbr>iUID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L368">Functional.ts:368</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L371">std/Functional.ts:371</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -282,7 +405,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L632">Algorithm.ts:632</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L632">std/Algorithm.ts:632</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -326,7 +449,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L654">Algorithm.ts:654</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L654">std/Algorithm.ts:654</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -408,7 +531,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L306">Iterator.ts:306</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L306">std/Iterator.ts:306</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -456,7 +579,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L69">Algorithm.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L69">std/Algorithm.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -535,7 +658,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L100">Algorithm.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L100">std/Algorithm.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -620,7 +743,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L358">Iterator.ts:358</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L358">std/Iterator.ts:358</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -651,7 +774,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L371">Iterator.ts:371</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L371">std/Iterator.ts:371</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -682,7 +805,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L384">Iterator.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L384">std/Iterator.ts:384</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -713,7 +836,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L397">Iterator.ts:397</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L397">std/Iterator.ts:397</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -744,7 +867,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L410">Iterator.ts:410</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L410">std/Iterator.ts:410</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -788,7 +911,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2729">Algorithm.ts:2729</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2729">std/Algorithm.ts:2729</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -846,7 +969,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2762">Algorithm.ts:2762</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2762">std/Algorithm.ts:2762</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -943,7 +1066,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L524">Functional.ts:524</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L533">std/Functional.ts:533</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1026,7 +1149,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L551">Functional.ts:551</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L560">std/Functional.ts:560</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1127,7 +1250,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L215">Functional.ts:215</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L215">std/Functional.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1167,7 +1290,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L231">Functional.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L231">std/Functional.ts:231</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1207,7 +1330,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L247">Functional.ts:247</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L247">std/Functional.ts:247</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1247,7 +1370,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1004">Algorithm.ts:1004</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1004">std/Algorithm.ts:1004</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1311,7 +1434,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1112">Algorithm.ts:1112</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1112">std/Algorithm.ts:1112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1379,7 +1502,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1071">Algorithm.ts:1071</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1071">std/Algorithm.ts:1071</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1466,7 +1589,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1039">Algorithm.ts:1039</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1039">std/Algorithm.ts:1039</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1532,7 +1655,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L936">Algorithm.ts:936</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L936">std/Algorithm.ts:936</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1589,7 +1712,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L963">Algorithm.ts:963</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L963">std/Algorithm.ts:963</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1666,7 +1789,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L279">Iterator.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L279">std/Iterator.ts:279</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1720,7 +1843,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L434">Iterator.ts:434</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L434">std/Iterator.ts:434</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1751,7 +1874,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L447">Iterator.ts:447</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L447">std/Iterator.ts:447</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1782,7 +1905,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L460">Iterator.ts:460</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L460">std/Iterator.ts:460</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1813,7 +1936,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L473">Iterator.ts:473</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L473">std/Iterator.ts:473</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1844,7 +1967,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L486">Iterator.ts:486</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L486">std/Iterator.ts:486</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1888,7 +2011,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L151">Algorithm.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L151">std/Algorithm.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1938,7 +2061,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L173">Algorithm.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L173">std/Algorithm.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2027,7 +2150,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2650">Algorithm.ts:2650</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2650">std/Algorithm.ts:2650</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2087,7 +2210,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2685">Algorithm.ts:2685</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2685">std/Algorithm.ts:2685</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2185,7 +2308,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L27">Functional.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L27">std/Functional.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2233,7 +2356,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1139">Algorithm.ts:1139</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1139">std/Algorithm.ts:1139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2290,7 +2413,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1158">Algorithm.ts:1158</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1158">std/Algorithm.ts:1158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2345,7 +2468,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L379">Algorithm.ts:379</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L379">std/Algorithm.ts:379</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2405,7 +2528,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L473">Algorithm.ts:473</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L473">std/Algorithm.ts:473</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2471,7 +2594,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L506">Algorithm.ts:506</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L506">std/Algorithm.ts:506</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2576,7 +2699,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L567">Algorithm.ts:567</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L567">std/Algorithm.ts:567</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2637,7 +2760,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L594">Algorithm.ts:594</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L594">std/Algorithm.ts:594</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2736,7 +2859,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L407">Algorithm.ts:407</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L407">std/Algorithm.ts:407</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2815,7 +2938,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L434">Algorithm.ts:434</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L434">std/Algorithm.ts:434</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2893,7 +3016,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L39">Algorithm.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L39">std/Algorithm.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2953,7 +3076,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1277">Algorithm.ts:1277</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1277">std/Algorithm.ts:1277</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3022,7 +3145,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1298">Algorithm.ts:1298</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1298">std/Algorithm.ts:1298</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3081,6 +3204,47 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="get_terminate" class="tsd-anchor"></a>
+					<h3>get_<wbr>terminate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">get_<wbr>terminate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Exception.ts#L87">std/Exception.ts:87</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Get <i>terminate handler</i> function. </p>
+								</div>
+								<p> The <i>terminate handler</i> function is automatically called when no <code>catch</code> handler can be found
+									for a thrown exception, or for some other exceptional circumstance that makes impossible to continue the exception
+								handling process. </p>
+								<p> If no such function has been set by a previous call to <a href="std.html#set_terminate">set_terminate</a>, the function returns a
+								<i>null-pointer</i>. </p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<p>If <a href="std.html#set_terminate">set_terminate</a> has previously been called by the program, the function returns the current
+							<i>terminate handler</i> function. Otherwise, it returns a <i>null-pointer</i>.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="greater" class="tsd-anchor"></a>
 					<h3>greater</h3>
@@ -3091,7 +3255,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L123">Functional.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L123">std/Functional.ts:123</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3140,7 +3304,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L143">Functional.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L143">std/Functional.ts:143</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3189,7 +3353,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L360">Functional.ts:360</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L360">std/Functional.ts:360</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3220,7 +3384,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3178">Algorithm.ts:3178</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3178">std/Algorithm.ts:3178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3284,7 +3448,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3209">Algorithm.ts:3209</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3209">std/Algorithm.ts:3209</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3388,7 +3552,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3105">Algorithm.ts:3105</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3105">std/Algorithm.ts:3105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3442,7 +3606,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3133">Algorithm.ts:3133</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3133">std/Algorithm.ts:3133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3525,6 +3689,34 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="is_node" class="tsd-anchor"></a>
+					<h3>is_<wbr>node</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">is_<wbr>node<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Utility.ts#L12">std/Utility.ts:12</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Running on Node. </p>
+								</div>
+								<p> Test whether the JavaScript is running on Node. </p>
+								<dl class="tsd-comment-tags">
+									<dt>references</dt>
+									<dd><p><a href="http://stackoverflow.com/questions/17575790/environment-detection-node-js-or-browser">http://stackoverflow.com/questions/17575790/environment-detection-node-js-or-browser</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="is_partitioned" class="tsd-anchor"></a>
 					<h3>is_<wbr>partitioned</h3>
@@ -3535,7 +3727,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2803">Algorithm.ts:2803</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2803">std/Algorithm.ts:2803</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3617,7 +3809,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L213">Algorithm.ts:213</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L213">std/Algorithm.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3671,7 +3863,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L237">Algorithm.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L237">std/Algorithm.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3764,7 +3956,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2176">Algorithm.ts:2176</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2176">std/Algorithm.ts:2176</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3808,7 +4000,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2199">Algorithm.ts:2199</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2199">std/Algorithm.ts:2199</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3892,7 +4084,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2242">Algorithm.ts:2242</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2242">std/Algorithm.ts:2242</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3938,7 +4130,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2269">Algorithm.ts:2269</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2269">std/Algorithm.ts:2269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4023,7 +4215,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1749">Algorithm.ts:1749</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1749">std/Algorithm.ts:1749</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4068,7 +4260,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L74">Functional.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L74">std/Functional.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4122,7 +4314,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L100">Functional.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L100">std/Functional.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4172,7 +4364,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L296">Algorithm.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L296">std/Algorithm.ts:296</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4243,7 +4435,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L329">Algorithm.ts:329</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L329">std/Algorithm.ts:329</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4352,7 +4544,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L162">Functional.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L162">std/Functional.ts:162</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4400,7 +4592,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L199">Functional.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L199">std/Functional.ts:199</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4442,7 +4634,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L181">Functional.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L181">std/Functional.ts:181</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4491,7 +4683,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2465">Algorithm.ts:2465</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2465">std/Algorithm.ts:2465</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4550,7 +4742,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2499">Algorithm.ts:2499</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2499">std/Algorithm.ts:2499</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4647,7 +4839,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Utility.ts#L90">Utility.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Utility.ts#L107">std/Utility.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4700,7 +4892,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3733">Algorithm.ts:3733</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3733">std/Algorithm.ts:3733</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4740,7 +4932,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3846">Algorithm.ts:3846</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3846">std/Algorithm.ts:3846</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4785,7 +4977,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3869">Algorithm.ts:3869</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3869">std/Algorithm.ts:3869</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4869,7 +5061,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3013">Algorithm.ts:3013</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3013">std/Algorithm.ts:3013</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -4939,7 +5131,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3046">Algorithm.ts:3046</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3046">std/Algorithm.ts:3046</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5048,7 +5240,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3713">Algorithm.ts:3713</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3713">std/Algorithm.ts:3713</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5088,7 +5280,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3790">Algorithm.ts:3790</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3790">std/Algorithm.ts:3790</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5133,7 +5325,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3813">Algorithm.ts:3813</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3813">std/Algorithm.ts:3813</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5216,7 +5408,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3754">Algorithm.ts:3754</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3754">std/Algorithm.ts:3754</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5257,7 +5449,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3910">Algorithm.ts:3910</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3910">std/Algorithm.ts:3910</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5305,7 +5497,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3938">Algorithm.ts:3938</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3938">std/Algorithm.ts:3938</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5392,7 +5584,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L866">Algorithm.ts:866</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L866">std/Algorithm.ts:866</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5450,7 +5642,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L895">Algorithm.ts:895</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L895">std/Algorithm.ts:895</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5541,7 +5733,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L338">Iterator.ts:338</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L338">std/Iterator.ts:338</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5589,7 +5781,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L129">Algorithm.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L129">std/Algorithm.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5669,7 +5861,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L49">Functional.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L49">std/Functional.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5718,7 +5910,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2027">Algorithm.ts:2027</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2027">std/Algorithm.ts:2027</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5767,7 +5959,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2050">Algorithm.ts:2050</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2050">std/Algorithm.ts:2050</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5856,7 +6048,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2093">Algorithm.ts:2093</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2093">std/Algorithm.ts:2093</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -5920,7 +6112,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2127">Algorithm.ts:2127</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2127">std/Algorithm.ts:2127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6023,7 +6215,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2838">Algorithm.ts:2838</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2838">std/Algorithm.ts:2838</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6105,7 +6297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2916">Algorithm.ts:2916</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2916">std/Algorithm.ts:2916</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6207,7 +6399,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2963">Algorithm.ts:2963</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2963">std/Algorithm.ts:2963</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6290,7 +6482,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L322">Iterator.ts:322</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Iterator.ts#L322">std/Iterator.ts:322</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6338,7 +6530,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1914">Algorithm.ts:1914</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1914">std/Algorithm.ts:1914</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6391,7 +6583,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1481">Algorithm.ts:1481</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1481">std/Algorithm.ts:1481</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6453,7 +6645,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1562">Algorithm.ts:1562</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1562">std/Algorithm.ts:1562</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6525,7 +6717,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1600">Algorithm.ts:1600</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1600">std/Algorithm.ts:1600</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6616,7 +6808,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1521">Algorithm.ts:1521</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1521">std/Algorithm.ts:1521</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6698,7 +6890,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1633">Algorithm.ts:1633</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1633">std/Algorithm.ts:1633</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6761,7 +6953,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1687">Algorithm.ts:1687</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1687">std/Algorithm.ts:1687</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6838,7 +7030,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1723">Algorithm.ts:1723</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1723">std/Algorithm.ts:1723</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -6932,7 +7124,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1656">Algorithm.ts:1656</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1656">std/Algorithm.ts:1656</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7014,7 +7206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1797">Algorithm.ts:1797</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1797">std/Algorithm.ts:1797</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7064,7 +7256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1825">Algorithm.ts:1825</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1825">std/Algorithm.ts:1825</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7127,7 +7319,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1853">Algorithm.ts:1853</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1853">std/Algorithm.ts:1853</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7185,7 +7377,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1891">Algorithm.ts:1891</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1891">std/Algorithm.ts:1891</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7256,7 +7448,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L702">Algorithm.ts:702</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L702">std/Algorithm.ts:702</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7322,7 +7514,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L735">Algorithm.ts:735</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L735">std/Algorithm.ts:735</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7428,7 +7620,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L788">Algorithm.ts:788</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L788">std/Algorithm.ts:788</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7485,7 +7677,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L814">Algorithm.ts:814</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L814">std/Algorithm.ts:814</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7582,7 +7774,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3492">Algorithm.ts:3492</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3492">std/Algorithm.ts:3492</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7660,7 +7852,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3538">Algorithm.ts:3538</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3538">std/Algorithm.ts:3538</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7778,7 +7970,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3379">Algorithm.ts:3379</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3379">std/Algorithm.ts:3379</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7852,7 +8044,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3419">Algorithm.ts:3419</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3419">std/Algorithm.ts:3419</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -7966,7 +8158,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3608">Algorithm.ts:3608</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3608">std/Algorithm.ts:3608</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8042,7 +8234,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3650">Algorithm.ts:3650</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3650">std/Algorithm.ts:3650</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8147,6 +8339,54 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="set_terminate" class="tsd-anchor"></a>
+					<h3>set_<wbr>terminate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">set_<wbr>terminate<span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Exception.ts#L55">std/Exception.ts:55</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Set <i>terminate handler</i> function. </p>
+								</div>
+								<p> A <i>terminate handler</i> function is a function automatically called when the exception handling process has
+									to be abandoned for some reason. This happens when no catch handler can be found for a thrown exception, or for
+								some other exceptional circumstance that makes impossible to continue the exception handling process. </p>
+								<p> Before this function is called by the program for the first time, the default behavior is to call abort. </p>
+								<p> A program may explicitly call the current terminate handler function by calling <a href="std.html#terminate">terminate</a>. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>f: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Function that takes no parameters and returns no value (<i>void</i>).</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="set_union" class="tsd-anchor"></a>
 					<h3>set_<wbr>union</h3>
@@ -8158,7 +8398,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3262">Algorithm.ts:3262</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3262">std/Algorithm.ts:3262</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8233,7 +8473,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3303">Algorithm.ts:3303</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L3303">std/Algorithm.ts:3303</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8347,7 +8587,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1939">Algorithm.ts:1939</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1939">std/Algorithm.ts:1939</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8403,7 +8643,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1975">Algorithm.ts:1975</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1975">std/Algorithm.ts:1975</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8450,7 +8690,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2002">Algorithm.ts:2002</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2002">std/Algorithm.ts:2002</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8537,7 +8777,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2885">Algorithm.ts:2885</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2885">std/Algorithm.ts:2885</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8623,7 +8863,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L418">Functional.ts:418</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L427">std/Functional.ts:427</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8666,7 +8906,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L429">Functional.ts:429</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L438">std/Functional.ts:438</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8701,7 +8941,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L440">Functional.ts:440</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L449">std/Functional.ts:449</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8736,7 +8976,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L451">Functional.ts:451</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L460">std/Functional.ts:460</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8771,7 +9011,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L472">Functional.ts:472</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L481">std/Functional.ts:481</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8817,7 +9057,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L493">Functional.ts:493</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Functional.ts#L502">std/Functional.ts:502</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8872,7 +9112,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1771">Algorithm.ts:1771</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1771">std/Algorithm.ts:1771</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -8924,6 +9164,36 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="terminate" class="tsd-anchor"></a>
+					<h3>terminate</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">terminate<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Exception.ts#L28">std/Exception.ts:28</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Function handling termination on exception </p>
+								</div>
+								<p> Calls the current terminate handler. </p>
+								<p> By default, the terminate handler calls abort. But this behavior can be redefined by calling
+								<a href="std.html#set_terminate">set_terminate</a>. </p>
+								<p> This function is automatically called when no <code>catch</code> handler can be found for a thrown exception,
+								or for some other exceptional circumstance that makes impossible to continue the exception handling process. </p>
+								<p> This function is provided so that the terminate handler can be explicitly called by a program that needs to
+									abnormally terminate, and works even if <a href="std.html#set_terminate">set_terminate</a> has not been used to set a custom terminate handler
+								(calling abort in this case). </p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 					<a name="transform" class="tsd-anchor"></a>
 					<h3>transform</h3>
@@ -8935,7 +9205,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1186">Algorithm.ts:1186</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1186">std/Algorithm.ts:1186</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9012,7 +9282,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1209">Algorithm.ts:1209</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1209">std/Algorithm.ts:1209</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9113,7 +9383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1334">Algorithm.ts:1334</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1334">std/Algorithm.ts:1334</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9162,7 +9432,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1363">Algorithm.ts:1363</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1363">std/Algorithm.ts:1363</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9251,7 +9521,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1405">Algorithm.ts:1405</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1405">std/Algorithm.ts:1405</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9307,7 +9577,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1433">Algorithm.ts:1433</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L1433">std/Algorithm.ts:1433</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9403,7 +9673,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2557">Algorithm.ts:2557</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2557">std/Algorithm.ts:2557</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9462,7 +9732,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2591">Algorithm.ts:2591</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/Algorithm.ts#L2591">std/Algorithm.ts:2591</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -9795,6 +10065,9 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#generate_n" class="tsd-kind-icon">generate_<wbr>n</a>
 					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="std.html#get_terminate" class="tsd-kind-icon">get_<wbr>terminate</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#greater" class="tsd-kind-icon">greater</a>
 					</li>
@@ -9809,6 +10082,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#inplace_merge" class="tsd-kind-icon">inplace_<wbr>merge</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="std.html#is_node" class="tsd-kind-icon">is_<wbr>node</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#is_partitioned" class="tsd-kind-icon">is_<wbr>partitioned</a>
@@ -9954,6 +10230,9 @@
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#set_symmetric_difference" class="tsd-kind-icon">set_<wbr>symmetric_<wbr>difference</a>
 					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="std.html#set_terminate" class="tsd-kind-icon">set_<wbr>terminate</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#set_union" class="tsd-kind-icon">set_<wbr>union</a>
 					</li>
@@ -9971,6 +10250,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#swap_ranges" class="tsd-kind-icon">swap_<wbr>ranges</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="std.html#terminate" class="tsd-kind-icon">terminate</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.html#transform" class="tsd-kind-icon">transform</a>
