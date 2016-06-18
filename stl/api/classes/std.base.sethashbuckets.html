@@ -39,8 +39,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -127,13 +125,14 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#at" class="tsd-kind-icon">at</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#capacity" class="tsd-kind-icon">capacity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#clear" class="tsd-kind-icon">clear</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#erase" class="tsd-kind-icon">erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.sethashbuckets.html#find" class="tsd-kind-icon">find</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#hash_index" class="tsd-kind-icon">hash_<wbr>index</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#item_size" class="tsd-kind-icon">item_<wbr>size</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#reserve" class="tsd-kind-icon">reserve</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#rehash" class="tsd-kind-icon">rehash</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.sethashbuckets.html#size" class="tsd-kind-icon">size</a></li>
 							</ul>
 						</section>
@@ -153,7 +152,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/SetHashBuckets.ts#L17">std/base/SetHashBuckets.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/SetHashBuckets.ts#L17">base/SetHashBuckets.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,7 +174,7 @@
 					<div class="tsd-signature tsd-kind-icon">set<span class="tsd-signature-symbol">:</span> <a href="std.base.setcontainer.html" class="tsd-signature-type">SetContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/SetHashBuckets.ts#L17">std/base/SetHashBuckets.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/SetHashBuckets.ts#L17">base/SetHashBuckets.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -193,7 +192,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#at">at</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L77">std/base/HashBuckets.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L95">base/HashBuckets.ts:95</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -203,6 +202,24 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.vector.html" class="tsd-signature-type">Vector</a><span class="tsd-signature-symbol">&lt;</span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="capacity" class="tsd-anchor"></a>
+					<h3>capacity</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">capacity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#capacity">capacity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L89">base/HashBuckets.ts:89</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -217,7 +234,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L54">std/base/HashBuckets.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L67">base/HashBuckets.ts:67</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -235,7 +252,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L98">std/base/HashBuckets.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L116">base/HashBuckets.ts:116</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -258,7 +275,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/SetHashBuckets.ts#L26">std/base/SetHashBuckets.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/SetHashBuckets.ts#L26">base/SetHashBuckets.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -282,7 +299,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#hash_index">hash_index</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L82">std/base/HashBuckets.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L100">base/HashBuckets.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -306,7 +323,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L90">std/base/HashBuckets.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L108">base/HashBuckets.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -330,7 +347,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#item_size">item_size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L71">std/base/HashBuckets.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L84">base/HashBuckets.ts:84</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -338,30 +355,34 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="reserve" class="tsd-anchor"></a>
-					<h3>reserve</h3>
+					<a name="rehash" class="tsd-anchor"></a>
+					<h3>rehash</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">reserve<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">rehash<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#reserve">reserve</a></p>
+								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#rehash">rehash</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L32">std/base/HashBuckets.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L45">base/HashBuckets.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Reserve the bucket size.</p>
+									<p> Reconstruction of hash table. </p>
 								</div>
+								<p> All the elements in the hash buckets are rearranged according to their hash value into the new set of
+								buckets. This may alter the order of iteration of elements within the container. </p>
+								<p> Notice that <a href="std.base.sethashbuckets.html#rehash">rehashes</a> are automatically performed whenever its number of elements is going
+								to greater than its own <a href="std.base.sethashbuckets.html#capacity">capacity</a>. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>size: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Number of bucket size to reserve.</p>
+										<p>Number of bucket size to rehash.</p>
 									</div>
 								</li>
 							</ul>
@@ -380,7 +401,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.hashbuckets.html">HashBuckets</a>.<a href="std.base.hashbuckets.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/master/ts/src/std/base/HashBuckets.ts#L66">std/base/HashBuckets.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/samchon/stl/blob/0dfa49d/ts/src/std/base/HashBuckets.ts#L79">base/HashBuckets.ts:79</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -413,6 +434,9 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
 						<a href="../enums/std.base.color.html" class="tsd-kind-icon">Color</a>
+					</li>
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/std.base.hash.html" class="tsd-kind-icon">Hash</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.atomictree.html" class="tsd-kind-icon">Atomic<wbr>Tree</a>
@@ -459,6 +483,9 @@
 								<a href="std.base.sethashbuckets.html#at" class="tsd-kind-icon">at</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="std.base.sethashbuckets.html#capacity" class="tsd-kind-icon">capacity</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.base.sethashbuckets.html#clear" class="tsd-kind-icon">clear</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -477,7 +504,7 @@
 								<a href="std.base.sethashbuckets.html#item_size" class="tsd-kind-icon">item_<wbr>size</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="std.base.sethashbuckets.html#reserve" class="tsd-kind-icon">reserve</a>
+								<a href="std.base.sethashbuckets.html#rehash" class="tsd-kind-icon">rehash</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.base.sethashbuckets.html#size" class="tsd-kind-icon">size</a>
@@ -511,22 +538,22 @@
 						<a href="../interfaces/std.base.idequecontainer.html" class="tsd-kind-icon">IDeque<wbr>Container</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/std.base.ihashmap.html" class="tsd-kind-icon">IHash<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/std.base.ihashset.html" class="tsd-kind-icon">IHash<wbr>Set</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/std.base.ilinearcontainer.html" class="tsd-kind-icon">ILinear<wbr>Container</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/std.base.ireverseiterator.html" class="tsd-kind-icon">IReverse<wbr>Iterator</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/std.base.html#max_ratio" class="tsd-kind-icon">MAX_<wbr>RATIO</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/std.base.itreemap.html" class="tsd-kind-icon">ITree<wbr>Map</a>
 					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/std.base.html#min_size" class="tsd-kind-icon">MIN_<wbr>SIZE</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/std.base.html#ratio" class="tsd-kind-icon">RATIO</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/std.base.html#code" class="tsd-kind-icon">code</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../interfaces/std.base.itreeset.html" class="tsd-kind-icon">ITree<wbr>Set</a>
 					</li>
 				</ul>
 			</nav>
