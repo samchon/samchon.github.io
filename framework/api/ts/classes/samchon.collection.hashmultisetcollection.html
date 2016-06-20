@@ -98,6 +98,7 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/std.base.itreeset.html" class="tsd-signature-type">ITreeSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					<li><a href="../interfaces/samchon.collection.icollection.html" class="tsd-signature-type">ICollection</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
@@ -138,6 +139,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.collection.hashmultisetcollection.html#haseventlistener" class="tsd-kind-icon">has<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#insert" class="tsd-kind-icon">insert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#key_comp" class="tsd-kind-icon">key_<wbr>comp</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#lower_bound" class="tsd-kind-icon">lower_<wbr>bound</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#rbegin" class="tsd-kind-icon">rbegin</a></li>
@@ -146,6 +148,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#size" class="tsd-kind-icon">size</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#swap" class="tsd-kind-icon">swap</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#upper_bound" class="tsd-kind-icon">upper_<wbr>bound</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.collection.hashmultisetcollection.html#value_comp" class="tsd-kind-icon">value_<wbr>comp</a></li>
 							</ul>
 						</section>
 					</div>
@@ -172,7 +175,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4543</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8284</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -187,7 +190,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4547</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8288</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -207,17 +210,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">T</span></h5>
+															<h5>x: <span class="tsd-signature-type">T</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">T</span></h5>
+															<h5>y: <span class="tsd-signature-type">T</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -234,7 +237,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4553</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8294</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -260,7 +263,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4559</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8300</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -288,17 +291,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">T</span></h5>
+															<h5>x: <span class="tsd-signature-type">T</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">T</span></h5>
+															<h5>y: <span class="tsd-signature-type">T</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -315,7 +318,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4566</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8307</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -341,7 +344,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4570</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8311</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -369,17 +372,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">T</span></h5>
+															<h5>x: <span class="tsd-signature-type">T</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">T</span></h5>
+															<h5>y: <span class="tsd-signature-type">T</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -396,7 +399,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4577</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8318</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -430,7 +433,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4584</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8325</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,17 +469,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">T</span></h5>
+															<h5>x: <span class="tsd-signature-type">T</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">T</span></h5>
+															<h5>y: <span class="tsd-signature-type">T</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -500,7 +503,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#data_">data_</a></p>
 						<ul>
-							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2666</li>
+							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5444</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -516,10 +519,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="event_dispatcher_" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> event_<wbr>dispatcher_</h3>
-					<div class="tsd-signature tsd-kind-icon">event_<wbr>dispatcher_<span class="tsd-signature-symbol">:</span> <a href="samchon.library.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></div>
+					<div class="tsd-signature tsd-kind-icon">event_<wbr>dispatcher_<span class="tsd-signature-symbol">:</span> <a href="samchon.library.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a><span class="tsd-signature-symbol"> =&nbsp;new library.EventDispatcher(this)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L140">samchon/collection/HashSetCollection.ts:140</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L140">samchon/collection/HashSetCollection.ts:140</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -535,7 +538,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#iterator">iterator</a></p>
 						<ul>
-							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2657</li>
+							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5435</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -561,7 +564,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L177">samchon/collection/HashSetCollection.ts:177</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L177">samchon/collection/HashSetCollection.ts:177</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -585,7 +588,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L182">samchon/collection/HashSetCollection.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L182">samchon/collection/HashSetCollection.ts:182</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -612,7 +615,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L187">samchon/collection/HashSetCollection.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L187">samchon/collection/HashSetCollection.ts:187</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -663,7 +666,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L192">samchon/collection/HashSetCollection.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L192">samchon/collection/HashSetCollection.ts:192</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -727,7 +730,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2702</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5480</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -771,7 +774,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2725</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5503</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -800,7 +803,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4596</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8337</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -825,7 +828,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#count">count</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4604</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8345</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -855,7 +858,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#dispatchevent">dispatchEvent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L166">samchon/collection/HashSetCollection.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L166">samchon/collection/HashSetCollection.ts:166</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -886,7 +889,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:1069</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2761</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -915,7 +918,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2729</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5507</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -948,9 +951,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreeset.html">ITreeSet</a>.<a href="../interfaces/std.base.itreeset.html#equal_range">equal_range</a></p>
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#equal_range">equal_range</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4670</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8365</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -994,7 +998,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2824</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5602</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1019,7 +1023,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2828</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5606</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1046,7 +1050,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2838</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5616</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1079,7 +1083,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2842</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5620</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1106,7 +1110,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2852</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5630</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1147,7 +1151,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#find">find</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4600</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8341</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1178,7 +1182,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#handle_erase">handle_erase</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#handle_erase">handle_erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4690</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8385</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1212,7 +1216,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#handle_insert">handle_insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#handle_insert">handle_insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4686</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8381</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1245,7 +1249,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2747</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5525</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1276,7 +1280,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#haseventlistener">hasEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L158">samchon/collection/HashSetCollection.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L158">samchon/collection/HashSetCollection.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1315,7 +1319,7 @@
 								<p>Inherited from <a href="std.base.multiset.html">MultiSet</a>.<a href="std.base.multiset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3114</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5892</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1340,7 +1344,7 @@
 								<p>Inherited from <a href="std.base.multiset.html">MultiSet</a>.<a href="std.base.multiset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3118</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5896</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1369,7 +1373,7 @@
 								<p>Inherited from <a href="std.base.multiset.html">MultiSet</a>.<a href="std.base.multiset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3122</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5900</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1397,7 +1401,7 @@
 								<p>Inherited from <a href="std.base.multiset.html">MultiSet</a>.<a href="std.base.multiset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3126</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5904</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1429,6 +1433,62 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="key_comp" class="tsd-anchor"></a>
+					<h3>key_<wbr>comp</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">key_<wbr>comp<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreeset.html">ITreeSet</a>.<a href="../interfaces/std.base.itreeset.html#key_comp">key_comp</a></p>
+								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#key_comp">key_comp</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8349</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return comparison function. </p>
+								</div>
+								<p> Returns a copy of the comparison function used by the container. </p>
+								<p> By default, this is a <a href="../interfaces/std.icomparable.html#less">less</a> object, which returns the same as <i>operator&lt;</i>. </p>
+								<p> This object determines the order of the elements in the container: it is a function pointer or a function
+									object that takes two arguments of the same type as the container elements, and returns <code>true</code> if
+									the <i>first argument</i> is considered to go before the <i>second</i> in the <i>strict weak ordering</i> it
+								defines, and <code>false</code> otherwise. </p>
+								<p> Two elements of a <a href="../interfaces/std.base.itreeset.html">ITreeSet</a> are considered equivalent if <a href="samchon.collection.hashmultisetcollection.html#key_comp">key_comp</a> returns <code>false</code>
+								reflexively (i.e., no matter the order in which the elements are passed as arguments). </p>
+								<p> In <a href="../interfaces/std.base.itreeset.html">ITreeSet</a> containers, the <i>keys</i> to sort the elements are the values (<i>T</i>) themselves,
+								therefore <a href="samchon.collection.hashmultisetcollection.html#key_comp">key_comp</a> and its sibling member function <a href="samchon.collection.hashmultisetcollection.html#value_comp">value_comp</a> are equivalent. </p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<p>The comparison function.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>x: <span class="tsd-signature-type">T</span></h5>
+												</li>
+												<li>
+													<h5>y: <span class="tsd-signature-type">T</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="lower_bound" class="tsd-anchor"></a>
 					<h3>lower_<wbr>bound</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -1437,9 +1497,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreeset.html">ITreeSet</a>.<a href="../interfaces/std.base.itreeset.html#lower_bound">lower_bound</a></p>
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#lower_bound">lower_bound</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4627</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8357</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1450,10 +1511,10 @@
 								go before <i>val</i> (i.e., either it is equivalent or goes after). </p>
 								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
 								iterator to the first element for which key_comp(element,val) would return false. </p>
-								<p> If the <a href="std.treemultiset.html">TreeMultiSet</a> class is instantiated with the default comparison type (<a href="std.setiterator.html#less">less</a>),
+								<p> If the <a href="../interfaces/std.base.itreeset.html">ITreeSet</a> class is instantiated with the default comparison type (<a href="../interfaces/std.icomparable.html#less">less</a>),
 								the function returns an iterator to the first element that is not less than <i>val</i>. </p>
 								<p> A similar member function, <a href="samchon.collection.hashmultisetcollection.html#upper_bound">upper_bound</a>, has the same behavior as <a href="samchon.collection.hashmultisetcollection.html#lower_bound">lower_bound</a>, except
-									in the case that the <a href="std.treemultiset.html">TreeMultiSet</a> contains elements equivalent to <i>val</i>: In this case
+									in the case that the <a href="../interfaces/std.base.itreeset.html">ITreeSet</a> contains elements equivalent to <i>val</i>: In this case
 									<a href="samchon.collection.hashmultisetcollection.html#lower_bound">lower_bound</a> returns an iterator pointing to the first of such elements, whereas
 								<a href="samchon.collection.hashmultisetcollection.html#upper_bound">upper_bound</a> returns an iterator pointing to the element following the last. </p>
 							</div>
@@ -1461,14 +1522,11 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Value to compare.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the the first element in the container which is not considered to go before
-							<i>val</i>, or <a href="std.treemultiset.html#end">TreeMultiSet.end</a> if all elements are considered to go before <i>val</i>.</p>
+							<i>val</i>, or {@link ITreeSet.end} if all elements are considered to go before <i>val</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -1485,7 +1543,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2765</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5543</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1524,7 +1582,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#rbegin">rbegin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2733</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5511</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1557,7 +1615,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L205">samchon/collection/HashSetCollection.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L205">samchon/collection/HashSetCollection.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1581,7 +1639,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L210">samchon/collection/HashSetCollection.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L210">samchon/collection/HashSetCollection.ts:210</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1608,7 +1666,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L215">samchon/collection/HashSetCollection.ts:215</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L215">samchon/collection/HashSetCollection.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1632,7 +1690,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.collection.icollection.html">ICollection</a>.<a href="../interfaces/samchon.collection.icollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/collection/HashSetCollection.ts#L220">samchon/collection/HashSetCollection.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/b38b54d/ts/src/samchon/collection/HashSetCollection.ts#L220">samchon/collection/HashSetCollection.ts:220</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1670,7 +1728,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#rend">rend</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2737</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5515</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1700,7 +1758,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2761</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:5539</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1726,7 +1784,7 @@
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#swap">swap</a></p>
 								<p>Overwrites <a href="std.base.multiset.html">MultiSet</a>.<a href="std.base.multiset.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4694</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8389</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1760,9 +1818,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreeset.html">ITreeSet</a>.<a href="../interfaces/std.base.itreeset.html#upper_bound">upper_bound</a></p>
 								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#upper_bound">upper_bound</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4650</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8361</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1773,10 +1832,10 @@
 								<i>val</i>. </p>
 								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
 								iterator to the first element for which key_comp(val,element) would return true. </p>
-								<p> If the {@code TreeMultiSet} class is instantiated with the default comparison type (less), the
+								<p> If the {@code ITreeSet} class is instantiated with the default comparison type (less), the
 								function returns an iterator to the first element that is greater than <i>val</i>. </p>
 								<p> A similar member function, <a href="samchon.collection.hashmultisetcollection.html#lower_bound">lower_bound</a>, has the same behavior as <a href="samchon.collection.hashmultisetcollection.html#upper_bound">upper_bound</a>, except
-									in the case that the {@TreeMultiSet} contains elements equivalent to <i>val</i>: In this case
+									in the case that the {@ITreeSet} contains elements equivalent to <i>val</i>: In this case
 									<a href="samchon.collection.hashmultisetcollection.html#lower_bound">lower_bound</a> returns an iterator pointing to the first of such elements, whereas
 								<a href="samchon.collection.hashmultisetcollection.html#upper_bound">upper_bound</a> returns an iterator pointing to the element following the last. </p>
 							</div>
@@ -1784,14 +1843,67 @@
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Value to compare.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the the first element in the container which is considered to go after
-							<i>val</i>, or <a href="std.treemultiset.html#end">TreeMultiSet.end</a> if no elements are considered to go after <i>val</i>.</p>
+							<i>val</i>, or <a href="std.treeset.html#end">end</a> if no elements are considered to go after <i>val</i>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="value_comp" class="tsd-anchor"></a>
+					<h3>value_<wbr>comp</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">value_<wbr>comp<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreeset.html">ITreeSet</a>.<a href="../interfaces/std.base.itreeset.html#value_comp">value_comp</a></p>
+								<p>Inherited from <a href="std.treemultiset.html">TreeMultiSet</a>.<a href="std.treemultiset.html#value_comp">value_comp</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:8353</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return comparison function. </p>
+								</div>
+								<p> Returns a copy of the comparison function used by the container. </p>
+								<p> By default, this is a <a href="../interfaces/std.icomparable.html#less">less</a> object, which returns the same as <i>operator&lt;</i>. </p>
+								<p> This object determines the order of the elements in the container: it is a function pointer or a function
+									object that takes two arguments of the same type as the container elements, and returns <code>true</code> if
+									the <i>first argument</i> is considered to go before the <i>second</i> in the <i>strict weak ordering</i> it
+								defines, and <code>false</code> otherwise. </p>
+								<p> Two elements of a <a href="../interfaces/std.base.itreeset.html">ITreeSet</a> are considered equivalent if <a href="samchon.collection.hashmultisetcollection.html#key_comp">key_comp</a> returns <code>false</code>
+								reflexively (i.e., no matter the order in which the elements are passed as arguments). </p>
+								<p> In <a href="../interfaces/std.base.itreeset.html">ITreeSet</a> containers, the <i>keys</i> to sort the elements are the values (<i>T</i>) themselves,
+								therefore <a href="samchon.collection.hashmultisetcollection.html#key_comp">key_comp</a> and its sibling member function <a href="samchon.collection.hashmultisetcollection.html#value_comp">value_comp</a> are equivalent. </p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<p>The comparison function.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>x: <span class="tsd-signature-type">T</span></h5>
+												</li>
+												<li>
+													<h5>y: <span class="tsd-signature-type">T</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -1908,6 +2020,9 @@
 								<a href="samchon.collection.hashmultisetcollection.html#insert" class="tsd-kind-icon">insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="samchon.collection.hashmultisetcollection.html#key_comp" class="tsd-kind-icon">key_<wbr>comp</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.collection.hashmultisetcollection.html#lower_bound" class="tsd-kind-icon">lower_<wbr>bound</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
@@ -1930,6 +2045,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.collection.hashmultisetcollection.html#upper_bound" class="tsd-kind-icon">upper_<wbr>bound</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="samchon.collection.hashmultisetcollection.html#value_comp" class="tsd-kind-icon">value_<wbr>comp</a>
 							</li>
 						</ul>
 					</li>

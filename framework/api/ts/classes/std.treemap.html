@@ -150,6 +150,7 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/std.base.itreemap.html" class="tsd-signature-type">ITreeMap</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -187,6 +188,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected tsd-is-not-exported"><a href="std.treemap.html#handle_insert" class="tsd-kind-icon">handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported"><a href="std.treemap.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="std.treemap.html#insert" class="tsd-kind-icon">insert</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.treemap.html#key_comp" class="tsd-kind-icon">key_<wbr>comp</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.treemap.html#lower_bound" class="tsd-kind-icon">lower_<wbr>bound</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="std.treemap.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="std.treemap.html#rbegin" class="tsd-kind-icon">rbegin</a></li>
@@ -195,6 +197,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="std.treemap.html#size" class="tsd-kind-icon">size</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-not-exported"><a href="std.treemap.html#swap" class="tsd-kind-icon">swap</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.treemap.html#upper_bound" class="tsd-kind-icon">upper_<wbr>bound</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="std.treemap.html#value_comp" class="tsd-kind-icon">value_<wbr>comp</a></li>
 							</ul>
 						</section>
 					</div>
@@ -222,7 +225,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4753</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7765</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -236,7 +239,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4757</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7769</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,17 +259,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">Key</span></h5>
+															<h5>x: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">Key</span></h5>
+															<h5>y: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -282,7 +285,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4763</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7775</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -307,7 +310,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4769</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7781</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -335,17 +338,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">Key</span></h5>
+															<h5>x: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">Key</span></h5>
+															<h5>y: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -361,7 +364,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4776</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7788</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -386,7 +389,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4782</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7794</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -414,17 +417,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">Key</span></h5>
+															<h5>x: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">Key</span></h5>
+															<h5>y: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -440,7 +443,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4789</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7801</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -465,7 +468,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4795</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7807</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -493,17 +496,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">Key</span></h5>
+															<h5>x: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">Key</span></h5>
+															<h5>y: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -519,7 +522,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4802</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7814</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -552,7 +555,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4809</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7821</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -588,17 +591,17 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">Key</span></h5>
+															<h5>x: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">Key</span></h5>
+															<h5>y: <span class="tsd-signature-type">Key</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -622,7 +625,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#data_">data_</a></p>
 						<ul>
-							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3373</li>
+							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4362</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -641,7 +644,7 @@
 					<div class="tsd-signature tsd-kind-icon">tree_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4753</li>
+							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7765</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -657,7 +660,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#iterator">iterator</a></p>
 						<ul>
-							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3364</li>
+							<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4353</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -682,7 +685,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3415</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4404</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -730,7 +733,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3447</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4436</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -758,7 +761,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4821</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7833</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -783,7 +786,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#count">count</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3877</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4866</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -814,7 +817,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:1069</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:2761</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -843,7 +846,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3467</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4456</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -875,8 +878,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#equal_range">equal_range</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4894</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7857</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -885,8 +889,6 @@
 								</div>
 								<p> Returns the bounds of a range that includes all the elements in the container which have a key
 								equivalent to <i>k</i> </p>.
-								<p> Because the elements in a <a href="std.treemap.html">TreeMap</a> container have unique keys, the range returned will
-								contain a single element at most. </p>
 								<p> If no matches are found, the range returned has a length of zero, with both iterators pointing to
 									the first element that has a key considered to go after <i>k</i> according to the container&#39;s internal
 								comparison object (key_comp). </p>
@@ -922,7 +924,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3623</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4612</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -950,7 +952,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3634</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4623</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -978,7 +980,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3650</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4639</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1016,7 +1018,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3661</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4650</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1044,7 +1046,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3677</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4666</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1089,7 +1091,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4825</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7837</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1119,7 +1121,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#get">get</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3889</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4878</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1158,7 +1160,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#handle_erase">handle_erase</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4914</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7877</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1191,7 +1193,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#handle_insert">handle_insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4910</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7873</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1224,7 +1226,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3506</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4495</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1265,7 +1267,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3920</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4909</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1300,7 +1302,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3941</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4930</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1344,7 +1346,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3945</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4934</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1369,7 +1371,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3949</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4938</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1394,7 +1396,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3953</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4942</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1428,7 +1430,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3957</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4946</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1462,7 +1464,7 @@
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3961</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4950</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1497,6 +1499,62 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="key_comp" class="tsd-anchor"></a>
+					<h3>key_<wbr>comp</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">key_<wbr>comp<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#key_comp">key_comp</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7841</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return key comparison function. </p>
+								</div>
+								<p> Returns a references of the comparison function used by the container to compare <i>keys</i>. </p>
+								<p> The <i>comparison object</i> of a <a href="../interfaces/std.base.itreemap.html">tree-map object</a> is set on
+									<a href="std.treemap.html#constructor">construction</a>. Its type (<i>Key</i>) is the last parameter of the
+									{@link ITreeMap.constructor constructors}. By default, this is a <a href="../modules/std.html#less">less</a> function, which returns the same
+								as <i>operator&lt;</i>. </p>
+								<p> This function determines the order of the elements in the container: it is a function pointer that takes
+									two arguments of the same type as the element <i>keys</i>, and returns <code>true</code> if the first argument
+									is considered to go before the second in the strict weak ordering it defines, and <code>false</code> otherwise.
+								</p>
+								<p> Two keys are considered equivalent if <a href="std.treemap.html#key_comp">key_comp</a> returns <code>false</code> reflexively (i.e., no
+								matter the order in which the keys are passed as arguments). </p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<p>The comparison function.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>x: <span class="tsd-signature-type">Key</span></h5>
+												</li>
+												<li>
+													<h5>y: <span class="tsd-signature-type">Key</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="lower_bound" class="tsd-anchor"></a>
 					<h3>lower_<wbr>bound</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
@@ -1505,8 +1563,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#lower_bound">lower_bound</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4848</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7849</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1517,10 +1576,10 @@
 								go before <i>k</i> (i.e., either it is equivalent or goes after). </p>
 								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
 								iterator to the first element for which key_comp(<i>k</i>, element_key) would return false. </p>
-								<p> If the <a href="std.treemap.html">TreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
+								<p> If the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
 								the function returns an iterator to the first element whose key is not less than <i>k</i> </p>.
 								<p> A similar member function, <a href="std.treemap.html#upper_bound">upper_bound</a>, has the same behavior as <a href="std.treemap.html#lower_bound">lower_bound</a>, except
-									in the case that the <a href="std.treemap.html">TreeMap</a> contains an element with a key equivalent to <i>k</i>: In this
+									in the case that the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> contains an element with a key equivalent to <i>k</i>: In this
 									case, <a href="std.treemap.html#lower_bound">lower_bound</a> returns an iterator pointing to that element, whereas <a href="std.treemap.html#upper_bound">upper_bound</a>
 								returns an iterator pointing to the next element. </p>
 							</div>
@@ -1532,7 +1591,7 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the the first element in the container whose key is not considered to go before
-							<i>k</i>, or <a href="std.treemap.html#end">TreeMap.end</a> if all keys are considered to go before <i>k</i>.</p>
+							<i>k</i>, or {@link ITreeMap.end} if all keys are considered to go before <i>k</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -1549,7 +1608,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3524</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4513</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1580,7 +1639,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3528</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4517</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1621,7 +1680,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3483</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4472</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1653,7 +1712,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3496</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4485</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1682,7 +1741,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#set">set</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3899</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4888</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1724,7 +1783,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:3520</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4509</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1748,7 +1807,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#swap">swap</a></p>
 								<p>Overwrites <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4918</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7881</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1782,8 +1841,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#upper_bound">upper_bound</a></p>
 								<ul>
-									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:4871</li>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7853</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1794,7 +1854,7 @@
 								go after <i>k</i> </p>.
 								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
 								iterator to the first element for which key_comp(<i>k</i>, element_key) would return true. </p>
-								<p> If the <a href="std.treemap.html">TreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
+								<p> If the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
 								the function returns an iterator to the first element whose key is greater than <i>k</i> </p>.
 								<p> A similar member function, <a href="std.treemap.html#lower_bound">lower_bound</a>, has the same behavior as <a href="std.treemap.html#upper_bound">upper_bound</a>, except
 									in the case that the map contains an element with a key equivalent to <i>k</i>: In this case
@@ -1809,7 +1869,60 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the the first element in the container whose key is considered to go after
-							<i>k</i>, or <a href="std.treemap.html#end">TreeMap.end</a> if no keys are considered to go after <i>k</i>.</p>
+							<i>k</i>, or <a href="std.treemap.html#end">end</a> if no keys are considered to go after <i>k</i>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="value_comp" class="tsd-anchor"></a>
+					<h3>value_<wbr>comp</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">value_<wbr>comp<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#value_comp">value_comp</a></p>
+								<ul>
+									<li>Defined in typings/typescript-stl/typescript-stl.d.ts:7845</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Return value comparison function. </p>
+								</div>
+								<p> Returns a comparison function that can be used to compare two elements to get whether the key of the first
+								one goes before the second. </p>
+								<p> The arguments taken by this function object are of member type <code>std.Pair<Key, T></code> (defined in
+									<a href="../interfaces/std.base.itreemap.html">ITreeMap</a>), but the mapped type (<i>T</i>) part of the value is not taken into consideration in this
+								comparison. </p>
+								<p> This comparison class returns <code>true</code> if the <a href="std.pair.html#first">key</a> of the <i>first argument</i>
+									is considered to go before that of the <i>second</i> (according to the strict weak ordering specified by the
+								container&#39;s comparison function, <a href="std.treemap.html#key_comp">key_comp</a>), and <code>false</code> otherwise. </p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<p>The comparison function for element values.</p>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, y<span class="tsd-signature-symbol">: </span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>x: <a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+												<li>
+													<h5>y: <a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -1833,7 +1946,7 @@
 							<li class=" tsd-kind-module tsd-parent-kind-module">
 								<a href="../modules/std.example.html">example</a>
 							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module tsd-is-not-exported">
+							<li class=" tsd-kind-module tsd-parent-kind-module">
 								<a href="../modules/std.placeholders.html">placeholders</a>
 							</li>
 						</ul>
@@ -1902,6 +2015,9 @@
 								<a href="std.treemap.html#insert" class="tsd-kind-icon">insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="std.treemap.html#key_comp" class="tsd-kind-icon">key_<wbr>comp</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="std.treemap.html#lower_bound" class="tsd-kind-icon">lower_<wbr>bound</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
@@ -1924,6 +2040,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="std.treemap.html#upper_bound" class="tsd-kind-icon">upper_<wbr>bound</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="std.treemap.html#value_comp" class="tsd-kind-icon">value_<wbr>comp</a>
 							</li>
 						</ul>
 					</li>
