@@ -74,16 +74,13 @@
 				<p><img src="http://samchon.github.io/typescript-stl/api/assets/images/design/abstract_containers.png" alt="Abstract Containers"></p>
 				<h5 id="containers">Containers</h5>
 				<ul>
-					<li><p><a href="http://samchon.github.io/typescript-stl/api/interfaces/std.base.container.ilinearcontainer.html"><strong>Linear containers</strong></a></p>
-						<ul>
+					<li><a href="http://samchon.github.io/typescript-stl/api/interfaces/std.base.container.ilinearcontainer.html"><strong>Linear containers</strong></a><ul>
 							<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.vector.html">Vector</a></li>
 							<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.list.html">List</a></li>
 							<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.deque.html">Deque</a></li>
-							<li>Miscellaneous</li>
 						</ul>
 					</li>
-					<li><p><strong>Associative Containers</strong></p>
-						<ul>
+					<li><strong>Associative Containers</strong><ul>
 							<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.base.tree.rbtree.html"><strong>Tree-structured Containers</strong></a><ul>
 									<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.treeset.html">TreeSet</a></li>
 									<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.treemap.html">TreeMap</a></li>
@@ -125,25 +122,26 @@
 				<ul>
 					<li><a href="https://github.com/samchon/typescript-stl/wiki">Guidebook (wiki)</a></li>
 					<li><a href="http://samchon.github.io/typescript-stl/api">API Documents</a></li>
-					<li><a href="https://samchon.github.io/stl/design/class_diagram.pdf">Class Diagram</a></li>
+					<li><a href="https://samchon.github.io/typescript-stl/design/class_diagram.pdf">Class Diagram</a></li>
 				</ul>
 				<h2 id="installation">Installation</h2>
 				<p>Installing <em>TypeScript-STL</em> in <strong>node</strong> is very easy. Just install with <strong>npm</strong>.</p>
 				<h4 id="node">Node</h4>
 				<p><code>npm install -g typescript-stl</code></p>
-				<h6 id="typescript">TypeScript</h6>
-				<p>Don&#39;t forget to referencing header files, <code>typescript-stl.d.ts</code> and <code>node.d.ts</code></p>
-				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="node.d.ts" /&gt;</span>
-<span class="hljs-comment">/// &lt;reference path="typescript-stl.d.ts" /&gt;</span>
+				<h4 id="typescript">TypeScript</h4>
+				<p>Don&#39;t forget to referencing header files, <code>typescript-stl.d.ts</code>.</p>
+				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typescript-stl.d.ts" /&gt;</span>
 
 <span class="hljs-keyword">import</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"typescript-stl"</span>);
-<span class="hljs-keyword">let</span> list: std.List&lt;<span class="hljs-built_in">string</span>&gt; = <span class="hljs-keyword">new</span> std.List&lt;<span class="hljs-built_in">string</span>&gt;();
-</code></pre>
-				<h6 id="pure-javascript">Pure JavaScript</h6>
-				<p>If you want to use <em>TypeScript-STL</em> in pure JavaScript, importing is much easier.</p>
-				<p>However, it is not recommended because without TypeScript, you can&#39;t take advantage of enforcement of using type and template inspection. Note that, full name of <strong>STL</strong> is <em>Standard <strong>Template</strong> Library</em>.</p>
-				<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"typescript-stl"</span>);
-<span class="hljs-keyword">var</span> list = <span class="hljs-keyword">new</span> std.List();
+<span class="hljs-keyword">let</span> map: std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt; = <span class="hljs-keyword">new</span> std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt;();
+
+map.insert(std.make_pair(<span class="hljs-string">"First"</span>, <span class="hljs-number">1</span>));
+map.insert([<span class="hljs-string">"Second"</span>, <span class="hljs-number">2</span>]);
+map.insert_or_assign(<span class="hljs-string">"Third"</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// C++17 Feature.</span>
+map.set(<span class="hljs-string">"Fourth"</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// Non-standard Feature.</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = map.begin(); !it.equal_to(map.end()); it = it.next())
+    <span class="hljs-built_in">console</span>.log(it.first, it.second); <span class="hljs-comment">// key =&gt; string, value =&gt; number</span>
 </code></pre>
 				<h4 id="browser">Browser</h4>
 				<p><em>TypeScript-STL</em> follows <em>CommonJS</em> module. You can&#39;t use <code>require</code> statement of <em>RequireJS</em>, which is following <em>AMD</em> module. Just include <em>TypeScript-STL</em>&#39;s <em>js file</em> with <code>&lt;script&gt;</code> tag.</p>
