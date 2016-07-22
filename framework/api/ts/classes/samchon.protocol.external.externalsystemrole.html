@@ -74,6 +74,42 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p> A role of an external system. </p>
+					</div>
+					<p> The <a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> class represents a role, <i>what to do</i> in an <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.
+					Extends this class and writes some methods related to the role. </p>
+					<p> <a href="http://samchon.github.io/framework/api/images/ts/protocol_external_system.png" target="_blank">
+							<img src="http://samchon.github.io/framework/api/images/ts/protocol_external_system.png" style="max-width: 100%" />
+					</a> </p>
+					<p><h4> Proxy Pattern </h4></p>
+					<p> The <a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> class can be an <i>logical proxy</i>. In framework within user, which
+						<a href="samchon.protocol.external.externalsystem.html">external system</a> is connected with <a href="samchon.protocol.external.externalsystemarray.html">this system</a>, it&#39;s not
+					important. Only interested in user&#39;s perspective is <i>which can be done</i>. </p>
+					<p> By using the <i>logical proxy</i>, user dont&#39;t need to know which <a href="samchon.protocol.external.externalsystemrole.html">role</a> is belonged
+						to which <a href="samchon.protocol.external.externalsystem.html">system</a>. Just access to a role directly from <a href="samchon.protocol.external.externalsystemarray.html#getrole">ExternalSystemArray.getRole</a>.
+					Sends and receives <a href="samchon.protocol.invoke.html">Invoke</a> message via the <a href="samchon.protocol.external.externalsystemrole.html">role</a>. </p>
+					<ul>
+						<li>
+							<a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> can be accessed from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a> directly, without inteferring
+							from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>, with <a href="samchon.protocol.external.externalsystemarray.html#getrole">ExternalSystemArray.getRole</a>.
+						</li>
+						<li>
+							When you want to send an <a href="samchon.protocol.invoke.html">Invoke</a> message to the belonged <a href="samchon.protocol.external.externalsystem.html">system</a>, just call
+							<a href="samchon.protocol.external.externalsystemrole.html#senddata">ExternalSystemRole.sendData()</a>. Then, the message will be sent to the
+							external system.
+						</li>
+						<li> Those strategy is called <i>Proxy Pattern</i>. </li>
+					</ul>
+					<dl class="tsd-comment-tags">
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -82,11 +118,6 @@
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">ExternalSystemRole</span>
-								<ul class="tsd-hierarchy">
-									<li>
-										<a href="samchon.protocol.master.distributedsystemrole.html" class="tsd-signature-type">DistributedSystemRole</a>
-									</li>
-								</ul>
 							</li>
 						</ul>
 					</li>
@@ -145,13 +176,23 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L12">samchon/protocol/external/ExternalSystemRole.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L57">samchon/protocol/external/ExternalSystemRole.ts:57</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructor from a system.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>system: <a href="samchon.protocol.external.externalsystem.html" class="tsd-signature-type">ExternalSystem</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>An external system containing this role.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.external.externalsystemrole.html" class="tsd-signature-type">ExternalSystemRole</a></h4>
@@ -167,9 +208,17 @@
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L12">samchon/protocol/external/ExternalSystemRole.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L57">samchon/protocol/external/ExternalSystemRole.ts:57</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p> A name, represents and identifies this <a href="samchon.protocol.external.externalsystemrole.html">role</a>. </p>
+						</div>
+						<p><p> This <a href="samchon.protocol.external.externalsystemrole.html#name">name</a> is an identifier represents this <a href="samchon.protocol.external.externalsystemrole.html">role</a>. This <a href="samchon.protocol.external.externalsystemrole.html#name">name</a> is
+								used in <a href="samchon.protocol.external.externalsystemarray.html#getrole">ExternalSystemArray.getRole</a> and <a href="samchon.protocol.external.externalsystem.html#get">ExternalSystem.get</a>, as a key elements. Thus, this
+							<a href="samchon.protocol.external.externalsystemrole.html#name">name</a> should be unique in an <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a>.</p>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="system" class="tsd-anchor"></a>
@@ -177,9 +226,14 @@
 					<div class="tsd-signature tsd-kind-icon">system<span class="tsd-signature-symbol">:</span> <a href="samchon.protocol.external.externalsystem.html" class="tsd-signature-type">ExternalSystem</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L11">samchon/protocol/external/ExternalSystemRole.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L48">samchon/protocol/external/ExternalSystemRole.ts:48</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An <a href="samchon.protocol.external.externalsystem.html">external system</a> containing this <a href="samchon.protocol.external.externalsystemrole.html">role</a>.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -196,10 +250,16 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientity.html">IEntity</a>.<a href="../interfaces/samchon.protocol.ientity.html#tag">TAG</a></p>
 								<p>Overwrites <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#tag">TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L55">samchon/protocol/external/ExternalSystemRole.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L134">samchon/protocol/external/ExternalSystemRole.ts:134</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tag name of the {@link ExternalSytemRole} in <a href="samchon.library.xml.html">XML</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p><i>role</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -215,7 +275,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientity.html">IEntity</a>.<a href="../interfaces/samchon.protocol.ientity.html#construct">construct</a></p>
 								<p>Inherited from <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#construct">construct</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/Entity.ts#L134">samchon/protocol/Entity.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Entity.ts#L145">samchon/protocol/Entity.ts:145</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -238,9 +298,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L35">samchon/protocol/external/ExternalSystemRole.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L95">samchon/protocol/external/ExternalSystemRole.ts:95</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get name, who represents and identifies this role.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
@@ -255,9 +320,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L31">samchon/protocol/external/ExternalSystemRole.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L87">samchon/protocol/external/ExternalSystemRole.ts:87</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get external system, this role is belonged to.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.external.externalsystem.html" class="tsd-signature-type">ExternalSystem</a></h4>
 						</li>
 					</ul>
@@ -274,9 +344,14 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientity.html">IEntity</a>.<a href="../interfaces/samchon.protocol.ientity.html#key">key</a></p>
 								<p>Overwrites <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#key">key</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L26">samchon/protocol/external/ExternalSystemRole.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L79">samchon/protocol/external/ExternalSystemRole.ts:79</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Identifier of <a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> is its <a href="samchon.protocol.external.externalsystemrole.html#name">name</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
@@ -292,13 +367,23 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iprotocol.html">IProtocol</a>.<a href="../interfaces/samchon.protocol.iprotocol.html#replydata">replyData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L47">samchon/protocol/external/ExternalSystemRole.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L121">samchon/protocol/external/ExternalSystemRole.ts:121</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Handle replied <a href="samchon.protocol.invoke.html">message</a> from the <a href="samchon.protocol.external.externalsystemrole.html#system">external system</a> belonged to. </p>
+								</div>
+								<p> This <a href="samchon.protocol.external.externalsystemrole.html#replydata">replyData()</a> will call a member method named following <a href="samchon.protocol.invoke.html#listener">Invoke.listener</a>.
+								in the <i>invoke</i>. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message received from the <a href="samchon.protocol.external.externalsystemrole.html#system">external system</a>.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -316,13 +401,21 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iprotocol.html">IProtocol</a>.<a href="../interfaces/samchon.protocol.iprotocol.html#senddata">sendData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L43">samchon/protocol/external/ExternalSystemRole.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/external/ExternalSystemRole.ts#L108">samchon/protocol/external/ExternalSystemRole.ts:108</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Send an <a href="samchon.protocol.invoke.html">Invoke</a> message to the external system via <a href="samchon.protocol.external.externalsystemrole.html#system">system</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message to send to the external system.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -341,7 +434,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientity.html">IEntity</a>.<a href="../interfaces/samchon.protocol.ientity.html#toxml">toXML</a></p>
 								<p>Inherited from <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#toxml">toXML</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/Entity.ts#L162">samchon/protocol/Entity.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Entity.ts#L173">samchon/protocol/Entity.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -402,9 +495,6 @@
 								<a href="../modules/samchon.collection.html">collection</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="../modules/samchon.example.html">example</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
 								<a href="../modules/samchon.library.html">library</a>
 							</li>
 							<li class="current tsd-kind-module tsd-parent-kind-module">
@@ -440,16 +530,16 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.external.extnormalserverbase.html" class="tsd-kind-icon">Ext<wbr>Normal<wbr>Server<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.external.extsharedworkerserverbase.html" class="tsd-kind-icon">Ext<wbr>Shared<wbr>Worker<wbr>Server<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.external.extwebserverbase.html" class="tsd-kind-icon">Ext<wbr>Web<wbr>Server<wbr>Base</a>
+						<a href="samchon.protocol.external.externalclientarray.html" class="tsd-kind-icon">External<wbr>Client<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="samchon.protocol.external.externalserver.html" class="tsd-kind-icon">External<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="samchon.protocol.external.externalserverarray.html" class="tsd-kind-icon">External<wbr>Server<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="samchon.protocol.external.externalserverclientarray.html" class="tsd-kind-icon">External<wbr>Server<wbr>Client<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="samchon.protocol.external.externalsystem.html" class="tsd-kind-icon">External<wbr>System</a>
@@ -500,10 +590,16 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/samchon.protocol.external.iextserver.html" class="tsd-kind-icon">IExt<wbr>Server</a>
+						<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html" class="tsd-kind-icon">IExternal<wbr>Client<wbr>Array</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/samchon.protocol.external.iexternalserver.html" class="tsd-kind-icon">IExternal<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/samchon.protocol.external.iexternalserverarray.html" class="tsd-kind-icon">IExternal<wbr>Server<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/samchon.protocol.external.iexternalserverclientarray.html" class="tsd-kind-icon">IExternal<wbr>Server<wbr>Client<wbr>Array</a>
 					</li>
 				</ul>
 			</nav>

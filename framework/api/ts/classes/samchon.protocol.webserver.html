@@ -75,24 +75,22 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="samchon.protocol.server.html" class="tsd-signature-type">Server</a>
+						<span class="target">WebServer</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">WebServer</span>
-								<ul class="tsd-hierarchy">
-									<li>
-										<a href="samchon.protocol.external.extwebserverbase.html" class="tsd-signature-type">ExtWebServerBase</a>
-									</li>
-									<li>
-										<a href="samchon.protocol.slave.slavewebserverbase.html" class="tsd-signature-type">SlaveWebServerBase</a>
-									</li>
-									<li>
-										<a href="samchon.protocol.service.server.html" class="tsd-signature-type">Server</a>
-									</li>
-								</ul>
+								<a href="samchon.protocol.webserverbase.html" class="tsd-signature-type">WebServerBase</a>
+							</li>
+							<li>
+								<a href="samchon.protocol.service.server.html" class="tsd-signature-type">Server</a>
 							</li>
 						</ul>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/samchon.protocol.iserver.html" class="tsd-signature-type">IServer</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -115,11 +113,12 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="samchon.protocol.webserver.html#addclient" class="tsd-kind-icon">add<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.webserver.html#addclient" class="tsd-kind-icon">add<wbr>Client</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.webserver.html#close" class="tsd-kind-icon">close</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.webserver.html#get_session_id" class="tsd-kind-icon">get_<wbr>session_<wbr>id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.webserver.html#handle_request" class="tsd-kind-icon">handle_<wbr>request</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.webserver.html#issue_session_id" class="tsd-kind-icon">issue_<wbr>session_<wbr>id</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.webserver.html#open" class="tsd-kind-icon">open</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.webserver.html#open" class="tsd-kind-icon">open</a></li>
 							</ul>
 						</section>
 					</div>
@@ -137,9 +136,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L59">samchon/protocol/WebCommunicator.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L73">samchon/protocol/Server.ts:73</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Default Constructor.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.webserver.html" class="tsd-signature-type">WebServer</a></h4>
 						</li>
 					</ul>
@@ -153,9 +157,14 @@
 					<div class="tsd-signature tsd-kind-icon">http_<wbr>server<span class="tsd-signature-symbol">:</span> <a href="../modules/samchon.protocol.socket.html#http_server" class="tsd-signature-type">http_server</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L57">samchon/protocol/WebCommunicator.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L63">samchon/protocol/Server.ts:63</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A server handler.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="sequence" class="tsd-anchor"></a>
@@ -163,33 +172,67 @@
 					<div class="tsd-signature tsd-kind-icon">sequence<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L59">samchon/protocol/WebCommunicator.ts:59</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L68">samchon/protocol/Server.ts:68</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Sequence number for issuing session id.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="addclient" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> add<wbr>Client</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<h3>add<wbr>Client</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">add<wbr>Client<span class="tsd-signature-symbol">(</span>driver<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.webclientdriver.html" class="tsd-signature-type">WebClientDriver</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="samchon.protocol.server.html">Server</a>.<a href="samchon.protocol.server.html#addclient">addClient</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L77">samchon/protocol/WebCommunicator.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L108">samchon/protocol/Server.ts:108</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>driver: <a href="samchon.protocol.webclientdriver.html" class="tsd-signature-type">WebClientDriver</a></h5>
 								</li>
 							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="close" class="tsd-anchor"></a>
+					<h3>close</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.iserver.html">IServer</a>.<a href="../interfaces/samchon.protocol.iserver.html#close">close</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L100">samchon/protocol/Server.ts:100</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -204,13 +247,23 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L94">samchon/protocol/WebCommunicator.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L142">samchon/protocol/Server.ts:142</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Get session id from a newly connected. </p>
+								</div>
+								<p> Queries ordinary session id from cookies of a newly connected client. If the client has not, a new
+								session id will be issued. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>cookies: <a href="../modules/samchon.protocol.websocket.html#icookie" class="tsd-signature-type">ICookie</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Cookies from the remote client.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -227,13 +280,24 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L79">samchon/protocol/WebCommunicator.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L119">samchon/protocol/Server.ts:119</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Handle request from a client system. </p>
+								</div>
+								<p> This method <a href="samchon.protocol.webserver.html#handle_request">handle_request</a> will be called when a client is connected. It will call an abstract
+									method method <a href="samchon.protocol.webserver.html#addclient">addClient()</a> who handles an accepted client. If the newly connected client
+								doesn&#39;t have its own session id, then a new session id will be issued. </p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>request: <a href="../modules/samchon.protocol.websocket.html#request" class="tsd-signature-type">request</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Requested header.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -250,27 +314,38 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L103">samchon/protocol/WebCommunicator.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L154">samchon/protocol/Server.ts:154</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Issue a new session id.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="open" class="tsd-anchor"></a>
 					<h3>open</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">(</span>port<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="samchon.protocol.server.html">Server</a>.<a href="samchon.protocol.server.html#open">open</a></p>
+								<p>Implementation of <a href="../interfaces/samchon.protocol.iserver.html">IServer</a>.<a href="../interfaces/samchon.protocol.iserver.html#open">open</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/WebCommunicator.ts#L68">samchon/protocol/WebCommunicator.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Server.ts#L86">samchon/protocol/Server.ts:86</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -300,9 +375,6 @@
 						<ul>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
 								<a href="../modules/samchon.collection.html">collection</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="../modules/samchon.example.html">example</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
 								<a href="../modules/samchon.library.html">library</a>
@@ -339,84 +411,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.clientdriver.html" class="tsd-kind-icon">Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.communicator.html" class="tsd-kind-icon">Communicator</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworker.html" class="tsd-kind-icon">Dedicated<wbr>Worker</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworkerclientdriver.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworkerconnector.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.entity.html" class="tsd-kind-icon">Entity</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entityarray.html" class="tsd-kind-icon">Entity<wbr>Array</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entityarraycollection.html" class="tsd-kind-icon">Entity<wbr>Array<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitydeque.html" class="tsd-kind-icon">Entity<wbr>Deque</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitydequecollection.html" class="tsd-kind-icon">Entity<wbr>Deque<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitylist.html" class="tsd-kind-icon">Entity<wbr>List</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitylistcollection.html" class="tsd-kind-icon">Entity<wbr>List<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.invoke.html" class="tsd-kind-icon">Invoke</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.invokehistory.html" class="tsd-kind-icon">Invoke<wbr>History</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.invokeparameter.html" class="tsd-kind-icon">Invoke<wbr>Parameter</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalclientdriver.html" class="tsd-kind-icon">Normal<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalcommunicatorbase.html" class="tsd-kind-icon">Normal<wbr>Communicator<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalserver.html" class="tsd-kind-icon">Normal<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalserverconnector.html" class="tsd-kind-icon">Normal<wbr>Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.server.html" class="tsd-kind-icon">Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.serverconnector.html" class="tsd-kind-icon">Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.sharedworkerclientdriver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.sharedworkerconnector.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.sharedworkerserver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.webclientdriver.html" class="tsd-kind-icon">Web<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.webcommunicatorbase.html" class="tsd-kind-icon">Web<wbr>Communicator<wbr>Base</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
@@ -431,8 +425,11 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="samchon.protocol.webserver.html#sequence" class="tsd-kind-icon">sequence</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="samchon.protocol.webserver.html#addclient" class="tsd-kind-icon">add<wbr>Client</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="samchon.protocol.webserver.html#close" class="tsd-kind-icon">close</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="samchon.protocol.webserver.html#get_session_id" class="tsd-kind-icon">get_<wbr>session_<wbr>id</a>
@@ -443,34 +440,13 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="samchon.protocol.webserver.html#issue_session_id" class="tsd-kind-icon">issue_<wbr>session_<wbr>id</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="samchon.protocol.webserver.html#open" class="tsd-kind-icon">open</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.webserverconnector.html" class="tsd-kind-icon">Web<wbr>Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/samchon.protocol.ientity.html" class="tsd-kind-icon">IEntity</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/samchon.protocol.ientitycollection.html" class="tsd-kind-icon">IEntity<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/samchon.protocol.ientitygroup.html" class="tsd-kind-icon">IEntity<wbr>Group</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/samchon.protocol.iprotocol.html" class="tsd-kind-icon">IProtocol</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/samchon.protocol.html#http" class="tsd-kind-icon">http</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/samchon.protocol.html#net" class="tsd-kind-icon">net</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

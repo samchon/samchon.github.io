@@ -114,13 +114,11 @@
 			<section class="tsd-panel">
 				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../classes/samchon.protocol.master.distributedsystemrole.html" class="tsd-signature-type">DistributedSystemRole</a></li>
 					<li><a href="../classes/samchon.protocol.entity.html" class="tsd-signature-type">Entity</a></li>
 					<li><a href="../classes/samchon.protocol.external.externalsystemrole.html" class="tsd-signature-type">ExternalSystemRole</a></li>
 					<li><a href="../classes/samchon.protocol.invokehistory.html" class="tsd-signature-type">InvokeHistory</a></li>
 					<li><a href="../classes/samchon.protocol.invokeparameter.html" class="tsd-signature-type">InvokeParameter</a></li>
 					<li><a href="../classes/samchon.protocol.master.prinvokehistory.html" class="tsd-signature-type">PRInvokeHistory</a></li>
-					<li><a href="../classes/samchon.example.testentity.html" class="tsd-signature-type">TestEntity</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -151,16 +149,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/Entity.ts#L58">samchon/protocol/Entity.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Entity.ts#L69">samchon/protocol/Entity.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> A tag name when represented by XML. </p>
 								</div>
-								<ul>
-									<li> <TAG {...properties} /> </li>
-								</ul>
+								<p><code> <TAG {...properties} /> </code></p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
@@ -176,7 +172,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/Entity.ts#L41">samchon/protocol/Entity.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Entity.ts#L41">samchon/protocol/Entity.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,15 +206,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/Entity.ts#L49">samchon/protocol/Entity.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Entity.ts#L62">samchon/protocol/Entity.ts:62</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Get a key that can identify the Entity uniquely. </p>
 								</div>
-								<p> If identifier of the Entity is not atomic value, returns a string or paired object
+								<p> If identifier of the Entity is not atomic value, returns a paired or tuple object
 								that can represents the composite identifier. </p>
+								<p><code>
+class Point extends Entity
+{
+    private x: number;
+    private y: number;</p>
+<pre><code><span class="hljs-keyword">public</span> key(): std.Pair&lt;number, number&gt;
+{
+    <span class="hljs-keyword">return</span> std.make_pair(<span class="hljs-keyword">this</span>.x, <span class="hljs-keyword">this</span>.y);
+}
+</code></pre><p>}
+									</code></p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
@@ -234,7 +241,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/Entity.ts#L96">samchon/protocol/Entity.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/Entity.ts#L107">samchon/protocol/Entity.ts:107</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -295,9 +302,6 @@
 								<a href="../modules/samchon.collection.html">collection</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="../modules/samchon.example.html">example</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
 								<a href="../modules/samchon.library.html">library</a>
 							</li>
 							<li class="current tsd-kind-module tsd-parent-kind-module">
@@ -332,90 +336,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.clientdriver.html" class="tsd-kind-icon">Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.communicator.html" class="tsd-kind-icon">Communicator</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.dedicatedworker.html" class="tsd-kind-icon">Dedicated<wbr>Worker</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.dedicatedworkerclientdriver.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.dedicatedworkerconnector.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.entity.html" class="tsd-kind-icon">Entity</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/samchon.protocol.entityarray.html" class="tsd-kind-icon">Entity<wbr>Array</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/samchon.protocol.entityarraycollection.html" class="tsd-kind-icon">Entity<wbr>Array<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/samchon.protocol.entitydeque.html" class="tsd-kind-icon">Entity<wbr>Deque</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/samchon.protocol.entitydequecollection.html" class="tsd-kind-icon">Entity<wbr>Deque<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/samchon.protocol.entitylist.html" class="tsd-kind-icon">Entity<wbr>List</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../classes/samchon.protocol.entitylistcollection.html" class="tsd-kind-icon">Entity<wbr>List<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.invoke.html" class="tsd-kind-icon">Invoke</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.invokehistory.html" class="tsd-kind-icon">Invoke<wbr>History</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.invokeparameter.html" class="tsd-kind-icon">Invoke<wbr>Parameter</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.normalclientdriver.html" class="tsd-kind-icon">Normal<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.normalcommunicatorbase.html" class="tsd-kind-icon">Normal<wbr>Communicator<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.normalserver.html" class="tsd-kind-icon">Normal<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.normalserverconnector.html" class="tsd-kind-icon">Normal<wbr>Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.server.html" class="tsd-kind-icon">Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.serverconnector.html" class="tsd-kind-icon">Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.sharedworkerclientdriver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.sharedworkerconnector.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.sharedworkerserver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.webclientdriver.html" class="tsd-kind-icon">Web<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.webcommunicatorbase.html" class="tsd-kind-icon">Web<wbr>Communicator<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.webserver.html" class="tsd-kind-icon">Web<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="../classes/samchon.protocol.webserverconnector.html" class="tsd-kind-icon">Web<wbr>Server<wbr>Connector</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
@@ -437,21 +357,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.ientitycollection.html" class="tsd-kind-icon">IEntity<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.ientitygroup.html" class="tsd-kind-icon">IEntity<wbr>Group</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="samchon.protocol.iprotocol.html" class="tsd-kind-icon">IProtocol</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/samchon.protocol.html#http" class="tsd-kind-icon">http</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/samchon.protocol.html#net" class="tsd-kind-icon">net</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

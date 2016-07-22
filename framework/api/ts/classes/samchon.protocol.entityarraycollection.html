@@ -95,14 +95,6 @@
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">EntityArrayCollection</span>
-								<ul class="tsd-hierarchy">
-									<li>
-										<a href="samchon.protocol.external.externalsystem.html" class="tsd-signature-type">ExternalSystem</a>
-									</li>
-									<li>
-										<a href="samchon.protocol.external.externalsystemarray.html" class="tsd-signature-type">ExternalSystemArray</a>
-									</li>
-								</ul>
 							</li>
 						</ul>
 					</li>
@@ -133,7 +125,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.entityarraycollection.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.entityarraycollection.html#construct" class="tsd-kind-icon">construct</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.entityarraycollection.html#count" class="tsd-kind-icon">count</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.entityarraycollection.html#createchild" class="tsd-kind-icon">create<wbr>Child</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="samchon.protocol.entityarraycollection.html#createchild" class="tsd-kind-icon">create<wbr>Child</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.entityarraycollection.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.entityarraycollection.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.entityarraycollection.html#has" class="tsd-kind-icon">has</a></li>
@@ -166,7 +158,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#child_tag">CHILD_TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L142">samchon/protocol/EntityCollection.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L155">samchon/protocol/EntityCollection.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -189,16 +181,14 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#tag">TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L137">samchon/protocol/EntityCollection.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L150">samchon/protocol/EntityCollection.ts:150</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> A tag name when represented by XML. </p>
 								</div>
-								<ul>
-									<li> <TAG {...properties} /> </li>
-								</ul>
+								<p><code> <TAG {...properties} /> </code></p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
@@ -209,7 +199,13 @@
 					<h3>add<wbr>Event<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventListener</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -217,41 +213,14 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L164">samchon/collection/ArrayCollection.ts:164</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L217">samchon/collection/ArrayCollection.ts:217</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p><p> Registers an event listener object with an EventDispatcher object so that the listener
-											receives notification of an event. You can register event listeners on all nodes in the display
-										list for a specific type of event, phase, and priority.</p>
-								</div>
-								<p> After you successfully register an event listener, you cannot change its priority through
-									additional calls to addEventListener(). To change a listener&#39;s priority, you must first call
-								removeEventListener(). Then you can register the listener again with the new priority level. </p>
-								<p> Keep in mind that after the listener is registered, subsequent calls to addEventListener()
-									with a different type or useCapture value result in the creation of a separate listener
-									registration. For example, if you first register a listener with useCapture set to true,
-									it listens only during the capture phase. If you call addEventListener() again using the same
-									listener object, but with useCapture set to false, you have two separate listeners: one that
-								listens during the capture phase and another that listens during the target and bubbling phases. </p>
-								<p> You cannot register an event listener for only the target phase or the bubbling phase.
-									Those phases are coupled during registration because bubbling applies only to the ancestors of
-								the target node. </p>
-								<p> If you no longer need an event listener, remove it by calling removeEventListener(), or
-									memory problems could result. Event listeners are not automatically removed from memory because
-									the garbage collector does not remove the listener as long as the dispatching object exists
-								(unless the useWeakReference parameter is set to true). </p>
-								<p> Copying an EventDispatcher instance does not copy the event listeners attached to it. (If
-									your newly created node needs an event listener, you must attach the listener after creating
-									the node.) However, if you move an EventDispatcher instance, the event listeners attached to
-								it move along with it. </p>
-								<p> If the event listener is being registered on a node while an event is also being processed
-									on this node, the event listener is not triggered during the current phase but may be triggered
-								during a later phase in the event flow, such as the bubbling phase. </p>
-								<p> If an event listener is removed from a node while an event is being processed on the node,
-									it is still triggered by the current actions. After it is removed, the event listener is never
-								invoked again (unless it is registered again for future processing). </p>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -269,41 +238,71 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L169">samchon/collection/ArrayCollection.ts:169</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L218">samchon/collection/ArrayCollection.ts:218</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L219">samchon/collection/ArrayCollection.ts:219</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L220">samchon/collection/ArrayCollection.ts:220</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L225">samchon/collection/ArrayCollection.ts:225</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p><p> Registers an event listener object with an EventDispatcher object so that the listener
-											receives notification of an event. You can register event listeners on all nodes in the display
-										list for a specific type of event, phase, and priority.</p>
-								</div>
-								<p> After you successfully register an event listener, you cannot change its priority through
-									additional calls to addEventListener(). To change a listener&#39;s priority, you must first call
-								removeEventListener(). Then you can register the listener again with the new priority level. </p>
-								<p> Keep in mind that after the listener is registered, subsequent calls to addEventListener()
-									with a different type or useCapture value result in the creation of a separate listener
-									registration. For example, if you first register a listener with useCapture set to true,
-									it listens only during the capture phase. If you call addEventListener() again using the same
-									listener object, but with useCapture set to false, you have two separate listeners: one that
-								listens during the capture phase and another that listens during the target and bubbling phases. </p>
-								<p> You cannot register an event listener for only the target phase or the bubbling phase.
-									Those phases are coupled during registration because bubbling applies only to the ancestors of
-								the target node. </p>
-								<p> If you no longer need an event listener, remove it by calling removeEventListener(), or
-									memory problems could result. Event listeners are not automatically removed from memory because
-									the garbage collector does not remove the listener as long as the dispatching object exists
-								(unless the useWeakReference parameter is set to true). </p>
-								<p> Copying an EventDispatcher instance does not copy the event listeners attached to it. (If
-									your newly created node needs an event listener, you must attach the listener after creating
-									the node.) However, if you move an EventDispatcher instance, the event listeners attached to
-								it move along with it. </p>
-								<p> If the event listener is being registered on a node while an event is also being processed
-									on this node, the event listener is not triggered during the current phase but may be triggered
-								during a later phase in the event flow, such as the bubbling phase. </p>
-								<p> If an event listener is removed from a node while an event is being processed on the node,
-									it is still triggered by the current actions. After it is removed, the event listener is never
-								invoked again (unless it is registered again for future processing). </p>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -312,6 +311,72 @@
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-type">EventListener</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L226">samchon/collection/ArrayCollection.ts:226</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L227">samchon/collection/ArrayCollection.ts:227</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#addeventlistener">addEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L228">samchon/collection/ArrayCollection.ts:228</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -332,7 +397,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#construct">construct</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L32">samchon/protocol/EntityCollection.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L32">samchon/protocol/EntityCollection.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -366,7 +431,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L109">samchon/protocol/EntityCollection.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L122">samchon/protocol/EntityCollection.ts:122</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -386,18 +451,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="createchild" class="tsd-anchor"></a>
-					<h3>create<wbr>Child</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> create<wbr>Child</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">create<wbr>Child<span class="tsd-signature-symbol">(</span>xml<span class="tsd-signature-symbol">: </span><a href="samchon.library.xml.html" class="tsd-signature-type">XML</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#createchild">createChild</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L67">samchon/protocol/EntityCollection.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L80">samchon/protocol/EntityCollection.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -430,7 +494,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#dispatchevent">dispatchEvent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L145">samchon/collection/ArrayCollection.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L167">samchon/collection/ArrayCollection.ts:167</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -460,7 +524,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#get">get</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L122">samchon/protocol/EntityCollection.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L135">samchon/protocol/EntityCollection.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -496,7 +560,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L96">samchon/protocol/EntityCollection.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L109">samchon/protocol/EntityCollection.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -528,7 +592,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#haseventlistener">hasEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#haseventlistener">hasEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L137">samchon/collection/ArrayCollection.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L159">samchon/collection/ArrayCollection.ts:159</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -563,15 +627,26 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#key">key</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L75">samchon/protocol/EntityCollection.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L88">samchon/protocol/EntityCollection.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p> Get a key that can identify the Entity uniquely. </p>
 								</div>
-								<p> If identifier of the Entity is not atomic value, returns a string or paired object
+								<p> If identifier of the Entity is not atomic value, returns a paired or tuple object
 								that can represents the composite identifier. </p>
+								<p><code>
+class Point extends Entity
+{
+    private x: number;
+    private y: number;</p>
+<pre><code><span class="hljs-keyword">public</span> key(): std.Pair&lt;number, number&gt;
+{
+    <span class="hljs-keyword">return</span> std.make_pair(<span class="hljs-keyword">this</span>.x, <span class="hljs-keyword">this</span>.y);
+}
+</code></pre><p>}
+									</code></p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
@@ -588,7 +663,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#pop">pop</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L219">samchon/collection/ArrayCollection.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L284">samchon/collection/ArrayCollection.ts:284</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -612,7 +687,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#pop_back">pop_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L88">samchon/collection/ArrayCollection.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L110">samchon/collection/ArrayCollection.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -637,7 +712,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#push">push</a></p>
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L35">samchon/collection/ArrayCollection.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L57">samchon/collection/ArrayCollection.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -674,7 +749,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#push_back">push_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L47">samchon/collection/ArrayCollection.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L69">samchon/collection/ArrayCollection.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -698,6 +773,8 @@
 					<h3>refresh</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span>it<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -705,7 +782,30 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#refresh">refresh</a></p>
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#refresh">refresh</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L153">samchon/collection/ArrayCollection.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L175">samchon/collection/ArrayCollection.ts:175</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Dispatch a <a href="samchon.collection.collectionevent.html">CollectionEvent</a> with <i>refresh</i> typed. </p>
+								</div>
+								<p> <a href="../interfaces/samchon.collection.icollection.html">ICollection</a> dispatches <a href="samchon.collection.collectionevent.html">CollectionEvent</a> typed <i>insert</i> or <i>erase</i> whenever
+									elements I/O has occured. However, unlike those elements I/O events, content change in element level can&#39;t be
+								detected. There&#39;s no way to detect those events automatically by <a href="../interfaces/std.base.icontainer.html">IContainer</a>. </p>
+								<p> If you want to dispatch those typed events (notifying change on contents in element level), you&#39;ve to
+									dispatch <i>refresh</i> typed event manually, by yourself. Call <a href="samchon.protocol.entityarraycollection.html#refresh">refresh()</a> with specified
+									iterators who&#39;re pointing the elements whose content have changed. Then a <a href="samchon.collection.collectionevent.html">CollectionEvent</a> with
+								<i>refresh</i> typed will be dispatched. </p>
+								<p> If you don&#39;t specify any iterator, then the range of the <i>refresh<i> event will be all elements in this
+								<a href="../interfaces/samchon.collection.icollection.html">collection</a>; {@link begin begin()} to {@link end end()}. </p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#refresh">refresh</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L180">samchon/collection/ArrayCollection.ts:180</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -714,6 +814,36 @@
 									<dd></dd>
 								</dl>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>it: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#refresh">refresh</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L185">samchon/collection/ArrayCollection.ts:185</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>last: <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -723,7 +853,13 @@
 					<h3>remove<wbr>Event<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventListener</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">EventListener</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -731,14 +867,14 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L182">samchon/collection/ArrayCollection.ts:182</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L241">samchon/collection/ArrayCollection.ts:241</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Removes a listener from the EventDispatcher object. If there is no matching listener registered
-									with the EventDispatcher object, a call to this method has no effect.</p>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -756,14 +892,71 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L187">samchon/collection/ArrayCollection.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L242">samchon/collection/ArrayCollection.ts:242</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L243">samchon/collection/ArrayCollection.ts:243</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L244">samchon/collection/ArrayCollection.ts:244</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L249">samchon/collection/ArrayCollection.ts:249</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Removes a listener from the EventDispatcher object. If there is no matching listener registered
-									with the EventDispatcher object, a call to this method has no effect.</p>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -772,6 +965,72 @@
 								</li>
 								<li>
 									<h5>listener: <span class="tsd-signature-type">EventListener</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L250">samchon/collection/ArrayCollection.ts:250</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L251">samchon/collection/ArrayCollection.ts:251</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
+								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#removeeventlistener">removeEventListener</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L252">samchon/collection/ArrayCollection.ts:252</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/samchon.collection.collectioneventlistener.html" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -793,7 +1052,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#splice">splice</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L229">samchon/collection/ArrayCollection.ts:229</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L294">samchon/collection/ArrayCollection.ts:294</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -814,7 +1073,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#splice">splice</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L234">samchon/collection/ArrayCollection.ts:234</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L299">samchon/collection/ArrayCollection.ts:299</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -850,7 +1109,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#toxml">toXML</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/protocol/EntityCollection.ts#L147">samchon/protocol/EntityCollection.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/protocol/EntityCollection.ts#L160">samchon/protocol/EntityCollection.ts:160</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -879,7 +1138,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.arraycollection.html">ArrayCollection</a>.<a href="samchon.collection.arraycollection.html#unshift">unshift</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/0b05175/ts/src/samchon/collection/ArrayCollection.ts#L204">samchon/collection/ArrayCollection.ts:204</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/bcf6328/ts/src/samchon/collection/ArrayCollection.ts#L269">samchon/collection/ArrayCollection.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -925,9 +1184,6 @@
 								<a href="../modules/samchon.collection.html">collection</a>
 							</li>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
-								<a href="../modules/samchon.example.html">example</a>
-							</li>
-							<li class=" tsd-kind-module tsd-parent-kind-module">
 								<a href="../modules/samchon.library.html">library</a>
 							</li>
 							<li class="current tsd-kind-module tsd-parent-kind-module">
@@ -962,27 +1218,6 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.clientdriver.html" class="tsd-kind-icon">Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.communicator.html" class="tsd-kind-icon">Communicator</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworker.html" class="tsd-kind-icon">Dedicated<wbr>Worker</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworkerclientdriver.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworkerconnector.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.entity.html" class="tsd-kind-icon">Entity</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entityarray.html" class="tsd-kind-icon">Entity<wbr>Array</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
@@ -1003,7 +1238,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="samchon.protocol.entityarraycollection.html#count" class="tsd-kind-icon">count</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="samchon.protocol.entityarraycollection.html#createchild" class="tsd-kind-icon">create<wbr>Child</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -1052,84 +1287,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitydeque.html" class="tsd-kind-icon">Entity<wbr>Deque</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitydequecollection.html" class="tsd-kind-icon">Entity<wbr>Deque<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitylist.html" class="tsd-kind-icon">Entity<wbr>List</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="samchon.protocol.entitylistcollection.html" class="tsd-kind-icon">Entity<wbr>List<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.invoke.html" class="tsd-kind-icon">Invoke</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.invokehistory.html" class="tsd-kind-icon">Invoke<wbr>History</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.invokeparameter.html" class="tsd-kind-icon">Invoke<wbr>Parameter</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalclientdriver.html" class="tsd-kind-icon">Normal<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalcommunicatorbase.html" class="tsd-kind-icon">Normal<wbr>Communicator<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalserver.html" class="tsd-kind-icon">Normal<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.normalserverconnector.html" class="tsd-kind-icon">Normal<wbr>Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.server.html" class="tsd-kind-icon">Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.serverconnector.html" class="tsd-kind-icon">Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.sharedworkerclientdriver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.sharedworkerconnector.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.sharedworkerserver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.webclientdriver.html" class="tsd-kind-icon">Web<wbr>Client<wbr>Driver</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.webcommunicatorbase.html" class="tsd-kind-icon">Web<wbr>Communicator<wbr>Base</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.webserver.html" class="tsd-kind-icon">Web<wbr>Server</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.webserverconnector.html" class="tsd-kind-icon">Web<wbr>Server<wbr>Connector</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/samchon.protocol.ientity.html" class="tsd-kind-icon">IEntity</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/samchon.protocol.ientitycollection.html" class="tsd-kind-icon">IEntity<wbr>Collection</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/samchon.protocol.ientitygroup.html" class="tsd-kind-icon">IEntity<wbr>Group</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
-						<a href="../interfaces/samchon.protocol.iprotocol.html" class="tsd-kind-icon">IProtocol</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/samchon.protocol.html#http" class="tsd-kind-icon">http</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-module">
-						<a href="../modules/samchon.protocol.html#net" class="tsd-kind-icon">net</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
