@@ -75,13 +75,19 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DedicatedWorkerConnector</span>
+						<a href="samchon.protocol.communicatorbase.html" class="tsd-signature-type">CommunicatorBase</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">DedicatedWorkerConnector</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/samchon.protocol.icommunicator.html" class="tsd-signature-type">ICommunicator</a></li>
 					<li><a href="../interfaces/samchon.protocol.iserverconnector.html" class="tsd-signature-type">IServerConnector</a></li>
 				</ul>
 			</section>
@@ -92,15 +98,13 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="samchon.protocol.dedicatedworkerconnector.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.dedicatedworkerconnector.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.dedicatedworkerconnector.html#communicator_base" class="tsd-kind-icon">communicator_<wbr>base</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.dedicatedworkerconnector.html#listener" class="tsd-kind-icon">listener</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="samchon.protocol.dedicatedworkerconnector.html#onclose" class="tsd-kind-icon">on<wbr>Close</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.dedicatedworkerconnector.html#onclose" class="tsd-kind-icon">on<wbr>Close</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="samchon.protocol.dedicatedworkerconnector.html#onconnect" class="tsd-kind-icon">on<wbr>Connect</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.dedicatedworkerconnector.html#worker" class="tsd-kind-icon">worker</a></li>
 							</ul>
@@ -108,11 +112,14 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.dedicatedworkerconnector.html#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.dedicatedworkerconnector.html#close" class="tsd-kind-icon">close</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.dedicatedworkerconnector.html#connect" class="tsd-kind-icon">connect</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.dedicatedworkerconnector.html#handle_binary" class="tsd-kind-icon">handle_<wbr>binary</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.dedicatedworkerconnector.html#handle_message" class="tsd-kind-icon">handle_<wbr>message</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.dedicatedworkerconnector.html#replydata" class="tsd-kind-icon">reply<wbr>Data</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.dedicatedworkerconnector.html#senddata" class="tsd-kind-icon">send<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.dedicatedworkerconnector.html#handle_string" class="tsd-kind-icon">handle_<wbr>string</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.dedicatedworkerconnector.html#is_binary_invoke" class="tsd-kind-icon">is_<wbr>binary_<wbr>invoke</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.dedicatedworkerconnector.html#replydata" class="tsd-kind-icon">reply<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.dedicatedworkerconnector.html#senddata" class="tsd-kind-icon">send<wbr>Data</a></li>
 							</ul>
 						</section>
 					</div>
@@ -120,17 +127,18 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Dedicated<wbr>Worker<wbr>Connector<span class="tsd-signature-symbol">(</span>listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.protocol.iprotocol.html" class="tsd-signature-type">IProtocol</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.protocol.dedicatedworkerconnector.html" class="tsd-signature-type">DedicatedWorkerConnector</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overwrites <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L59">samchon/protocol/DedicatedWorker.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L87">samchon/protocol/DedicatedWorker.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -146,34 +154,15 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="communicator_base" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> communicator_<wbr>base</h3>
-					<div class="tsd-signature tsd-kind-icon">communicator_<wbr>base<span class="tsd-signature-symbol">:</span> <a href="samchon.protocol.communicatorbase.html" class="tsd-signature-type">CommunicatorBase</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L49">samchon/protocol/DedicatedWorker.ts:49</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="listener" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> listener</h3>
-					<div class="tsd-signature tsd-kind-icon">listener<span class="tsd-signature-symbol">:</span> <a href="../interfaces/samchon.protocol.iprotocol.html" class="tsd-signature-type">IProtocol</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L46">samchon/protocol/DedicatedWorker.ts:46</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 					<a name="onclose" class="tsd-anchor"></a>
 					<h3>on<wbr>Close</h3>
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Close<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/samchon.protocol.iserverconnector.html">IServerConnector</a>.<a href="../interfaces/samchon.protocol.iserverconnector.html#onclose">onClose</a></p>
+						<p>Overwrites <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#onclose">onClose</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L59">samchon/protocol/DedicatedWorker.ts:59</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L87">samchon/protocol/DedicatedWorker.ts:87</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -189,7 +178,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/samchon.protocol.iserverconnector.html">IServerConnector</a>.<a href="../interfaces/samchon.protocol.iserverconnector.html#onconnect">onConnect</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L54">samchon/protocol/DedicatedWorker.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L82">samchon/protocol/DedicatedWorker.ts:82</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -204,25 +193,26 @@
 					<div class="tsd-signature tsd-kind-icon">worker<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Worker</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L48">samchon/protocol/DedicatedWorker.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L77">samchon/protocol/DedicatedWorker.ts:77</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="close" class="tsd-anchor"></a>
 					<h3>close</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverconnector.html">IServerConnector</a>.<a href="../interfaces/samchon.protocol.iserverconnector.html#close">close</a></p>
+								<p>Overwrites <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L100">samchon/protocol/DedicatedWorker.ts:100</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L113">samchon/protocol/DedicatedWorker.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -244,31 +234,43 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L88">samchon/protocol/DedicatedWorker.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L101">samchon/protocol/DedicatedWorker.ts:101</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Connect to dedicated worker. </p>
-								</div>
-								<p> Creates a dedictaed worker with specified <i>jsFile (JavaScript file name)</i> and connect to it. After
-									the creation and connection, callback function <a href="samchon.protocol.dedicatedworkerconnector.html#onconnect">onConnect</a> is called. Listening data from the connected
-									dedicated worker also begins. Replied messages from the dedicated worker will be converted to <a href="samchon.protocol.invoke.html">Invoke</a>
-									classes and will be shifted to the <a href="samchon.protocol.dedicatedworkerconnector.html#listener">listener</a>&#39;s <a href="../interfaces/samchon.protocol.iprotocol.html#replydata">replyData()</a> method.
-								</p>
-								<p> If the connection fails immediately, either an event is dispatched or an exception is thrown: an error
-									event is dispatched if a host was specified, and an exception is thrown if no host was specified. Otherwise,
-									the status of the connection is reported by an event. If the socket is already connected, the existing
-								connection is closed first. </p>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>jsFile: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>File name of JavaScript. The JavaScript file must have <a href="samchon.protocol.dedicatedworker.html">DedicatedWorker</a> and constructs
-										the class immediately on execution.</p>
-									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="handle_binary" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>binary</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">handle_<wbr>binary<span class="tsd-signature-symbol">(</span>binary<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#handle_binary">handle_binary</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L276">samchon/protocol/Communicator.ts:276</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>binary: <span class="tsd-signature-type">Uint8Array</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -285,7 +287,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L110">samchon/protocol/DedicatedWorker.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L141">samchon/protocol/DedicatedWorker.ts:141</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -298,26 +300,63 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="handle_string" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>string</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">handle_<wbr>string<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#handle_string">handle_string</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L254">samchon/protocol/Communicator.ts:254</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="is_binary_invoke" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> is_<wbr>binary_<wbr>invoke</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">is_<wbr>binary_<wbr>invoke<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#is_binary_invoke">is_binary_invoke</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L212">samchon/protocol/Communicator.ts:212</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="replydata" class="tsd-anchor"></a>
 					<h3>reply<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">reply<wbr>Data<span class="tsd-signature-symbol">(</span>invoke<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverconnector.html">IServerConnector</a>.<a href="../interfaces/samchon.protocol.iserverconnector.html#replydata">replyData</a></p>
+								<p>Overwrites <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#replydata">replyData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L118">samchon/protocol/DedicatedWorker.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L136">samchon/protocol/DedicatedWorker.ts:136</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -328,26 +367,21 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="senddata" class="tsd-anchor"></a>
 					<h3>send<wbr>Data</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">send<wbr>Data<span class="tsd-signature-symbol">(</span>invoke<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverconnector.html">IServerConnector</a>.<a href="../interfaces/samchon.protocol.iserverconnector.html#senddata">sendData</a></p>
+								<p>Overwrites <a href="samchon.protocol.communicatorbase.html">CommunicatorBase</a>.<a href="samchon.protocol.communicatorbase.html#senddata">sendData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/DedicatedWorker.ts#L126">samchon/protocol/DedicatedWorker.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/DedicatedWorker.ts#L127">samchon/protocol/DedicatedWorker.ts:127</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -388,7 +422,7 @@
 										<a href="../modules/samchon.protocol.external.html">external</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.master.html">master</a>
+										<a href="../modules/samchon.protocol.parallel.html">parallel</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.service.html">service</a>
@@ -398,9 +432,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.socket.html">socket</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.websocket.html">websocket</a>
 									</li>
 								</ul>
 							</li>
@@ -418,16 +449,10 @@
 					<li class="current tsd-kind-class tsd-parent-kind-module">
 						<a href="samchon.protocol.dedicatedworkerconnector.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Connector</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.dedicatedworkerconnector.html#communicator_base" class="tsd-kind-icon">communicator_<wbr>base</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.dedicatedworkerconnector.html#listener" class="tsd-kind-icon">listener</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#onclose" class="tsd-kind-icon">on<wbr>Close</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
@@ -436,19 +461,28 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#worker" class="tsd-kind-icon">worker</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#close" class="tsd-kind-icon">close</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#connect" class="tsd-kind-icon">connect</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="samchon.protocol.dedicatedworkerconnector.html#handle_binary" class="tsd-kind-icon">handle_<wbr>binary</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#handle_message" class="tsd-kind-icon">handle_<wbr>message</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="samchon.protocol.dedicatedworkerconnector.html#handle_string" class="tsd-kind-icon">handle_<wbr>string</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="samchon.protocol.dedicatedworkerconnector.html#is_binary_invoke" class="tsd-kind-icon">is_<wbr>binary_<wbr>invoke</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#replydata" class="tsd-kind-icon">reply<wbr>Data</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.dedicatedworkerconnector.html#senddata" class="tsd-kind-icon">send<wbr>Data</a>
 							</li>
 						</ul>

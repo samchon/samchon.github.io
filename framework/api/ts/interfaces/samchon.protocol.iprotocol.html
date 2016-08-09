@@ -76,16 +76,211 @@
 					<div class="lead">
 						<p> An interface for <a href="../classes/samchon.protocol.invoke.html">Invoke</a> message chain. </p>
 					</div>
-					<p> IProtocol is an interface for Invoke message, which is standard message of network I/O
-						in Samchon Framework, chain. The IProtocol interface is used to network drivers and some
-					classes which are in a relationship of chain of responsibility with those network drivers. </p>
-					<p> In Samchon Framework, server side, IProtocol is one of the basic 3 + 1 components that
-						can make any type of network system in Samchon Framework with IServer and IClient. Following
-						the &quot;chain of responsibility&quot; pa1ttern, looking around classes in Samchon Framework, you
-					can see all related classes with network I/O are implemented from the IProtocol. </p>
+					<p> <a href="samchon.protocol.iprotocol.html">IProtocol</a> is an interface for <a href="../classes/samchon.protocol.invoke.html">Invoke</a> message, which is standard message of network I/O in
+						<i>Samchon Framework</i>, chain. The <a href="samchon.protocol.iprotocol.html">IProtocol</a> interface is used to network drivers and some classes
+					which are in a relationship of <i>Chain of Responsibility Pattern</i> with those network drivers. </p>
+					<p> Implements <a href="samchon.protocol.iprotocol.html">IProtocol</a> if the class sends and handles <a href="../classes/samchon.protocol.invoke.html">Invoke</a> message. Looking around source
+						codes of <i>Samchon Framework</i>, especially <i>System Templates</i>, you can find out that all the classes and
+						modules handling <a href="../classes/samchon.protocol.invoke.html">Invoke</a> messages are always implementing this <a href="samchon.protocol.iprotocol.html">IProtocol</a> . Yes, <a href="samchon.protocol.iprotocol.html">IProtocol</a>,
+					this is the main role you&#39;ve to follow in this <i>Samchon Framework</i>. </p>
+					<p> <a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_basic_components.png"
+						target="_blank">
+						<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_basic_components.png"
+						style="max-width: 100%" />
+					</a> </p>
+					<p><h2> Utilization Case </h2></p>
+					<p> Below pseudo code and class diagram represents <a href="../modules/samchon.protocol.service.html">Service Module</a>, who can build a cloud server.
+						All the classes in the pseudo code are implementing the <a href="samchon.protocol.iprotocol.html">IProtocol</a> because all of them are handling
+					<a href="../classes/samchon.protocol.invoke.html">Invoke</a> message. </p>
+					<ul>
+						<li> Server: Represents a server literally </li>
+						<li> User: Represents an user being identified by its session id. User contains multiple Client objects. </li>
+						<ul>
+							<li> In browser, an user can open multiple windows.
+								<ul>
+									<li> User: A browser (like IE, Chrome and Safari).
+										<li> Client: An internet browser window
+								</ul>
+							</li>
+						</ul>
+						<li> Client: Represents a browser window and it takes role of network communication with it. </li>
+						<li> Service: Represents a service, domain logic. </li>
+					</ul>
+					<p> <a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_service.png"
+						target="_blank">
+						<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_service.png"
+						style="max-width: 100%" />
+					</a> </p>
+					<p><code>
+/// <reference path="../typings/typescript-stl/typescript-stl.d.ts" />
+/// <reference path="../typings/samchon-framework/samchon-framework.d.ts" /></p>
+<p>// IMPORTS
+import std = require(&quot;typescript-stl&quot;);
+import samchon = require(&quot;samchon-framework&quot;);</p>
+<p>// SHORTCUTS
+import library = samchon.library;
+import collection = samchon.collection;
+import protocol = samchon.protocol;</p>
+<p>namespace service
+{
+export class Server extends protocol.WebServer implements IProtocol
+{
+// SERVER HAS MULTIPLE USER OBJECTS
+private session_map: std.HashMap<string, User>;</p>
+<p>//------------------------
+// MESSAGE CHAIN
+//------------------------
+public sendData(invoke: protocol.Invoke): void
+{
+// SEND INVOKE MESSAGE TO ALL USER OBJECTS
+for (let it = this.session_map.begin(); !it.equal_to(this.session_map.end()); it = it.next())
+it.second.sendData(invoke);
+}
+public replyData(invoke: protocol.Invoke): void
+{
+invoke.apply(this); // HANDLE INVOKE MESSAGE BY ITSELF
+}
+}</p>
+<p>export class User extends
+collection.HashMapCollection<number, Client> // USER HAS MULTIPLE CLIENT OBJECTS
+implements IProtocol
+{
+private server: Server; // USER REFRES SERVER</p>
+<p>//------------------------
+// MESSAGE CHAIN
+//------------------------
+public sendData(invoke: protocol.Invoke): void
+{
+// SEND INVOKE MESSAGE TO ALL CLIENT OBJECTS
+for (let it = this.begin(); !it.equal_to(this.end()); it = it.next())
+it.second.sendData(invoke);
+}
+public replyData(invoke: protocol.Invoke): void
+{
+invoke.apply(this); // HANDLE INOVKE MESSAGE BY ITSELF
+this.server.replyData(invoke); // OR VIA SERVER
+}
+}</p>
+<p>export class Client implements IProtocol
+{
+private user: User; // CLIENT REFERS USER
+private service: Service; // CLIENT HAS A SERVICE OBJECT</p>
+<p>private driver: WebClientDriver;</p>
+<p>//------------------------
+// MESSAGE CHAIN
+//------------------------
+public sendData(invoke: protocol.Invoke): void
+{
+// SEND INVOKE MESSAGE VIA driver: WebClientDriver
+this.driver.sendData(invoke);
+}
+public replyData(invoke: protocol.Invoke): void
+{
+invoke.apply(this); // HANDLE INOVKE MEESAGE BY ITSELF
+this.user.replyData(invoke); // OR VIA USER</p>
+<p>if (this.service != null) // OR VIA SERVICE
+this.service.replyData(invoke);
+}
+}</p>
+<p>export class Service implements IProtocol
+{
+private client: Client; // SERVICE REFRES CLIENT</p>
+<p>//------------------------
+// MESSAGE CHAIN
+//------------------------
+public sendData(invoke: protocol.Invoke): void
+{
+// SEND INVOKE MESSAGE VIA CLIENT
+return this.client.sendData(invoke);
+}
+public replyData(invoke: protocol.Invoke): void
+{
+invoke.apply(this); // HANDLE INVOKE MESSAGE BY ITSELF
+}
+}
+}
+</code></p>
+					<p><h2> Basic Components </h2></p>
+					<p><h4> What Basic Components are </h4></p>
+					<p> <b>Basic Components</b> are the smallest unit of network communication in this <i>Samchon Framework</i>. With
+						<b>Basic Components</b>, you can construct any type of network system, even how the network system is enormously
+					scaled and complicated, by just combinating the <b>Basic Components</b>. </p>
+					<p> All the system templates in this framework are also being implemented by utilization of the
+					<b>Basic Compoonents</b>. </p>
+					<ul>
+						<li> <a href="../modules/samchon.protocol.service.html">Service</a> </il>
+							<li> <a href="../modules/samchon.protocol.external.html">External System</a> </il>
+								<li> <a href="../modules/samchon.protocol.parallel.html">Parallel System</a> </il>
+									<li> {@link distributed Distributed System} </il>
+					</ul>
+					<p> Note that, whatever the network system what you&#39;ve to construct is, just concentrate on role of each system
+						and attach matched <b>Basic Components</b> to the role, within framework of the <b>Object-Oriented Design</b>.
+					Then construction of the network system will be much easier. </p>
+					<ul>
+						<li> A system is a server, then use <a href="samchon.protocol.iserver.html">IServer</a> or <a href="samchon.protocol.iserverbase.html">IServerBase</a>. </li>
+						<li> A server wants to handle a client has connected, then use <a href="samchon.protocol.iclientdriver.html">IClientDriver</a>. </li>
+						<li> A system is a client connecting to an external server, then use <a href="samchon.protocol.iserverconnector.html">IServerConnector</a>. </li>
+						<li> </li>
+					</ul>
+					<p><h4> Example - System Templates </h4></p>
+					<p> Learning and understanding <i>Basic Components</i> of Samchon Framework, reading source codes and design of
+					<b>System Templates</b>&#39; modules will be very helpful. </p>
+					<table>
+						<tr>
+							<th> Name </th>
+							<th> Source </th>
+							<th> API Documents </th>
+						</tr>
+						<tr>
+							<td> Cloud Service </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/service"
+							target="_blank"> protocol/service </a> </td>
+							<td> <a href="../modules/samchon.protocol.service.html">protocol.service</a> </td>
+						</tr>
+						<tr>
+							<td> External System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/external"
+							target="_blank"> protocol/external </a> </td>
+							<td> <a href="../modules/samchon.protocol.external.html">protocol.external</a> </td>
+						</tr>
+						<tr>
+							<td> Parallel System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/parallel"
+							target="_blank"> protocol/parallel </a> </td>
+							<td> <a href="../modules/samchon.protocol.parallel.html">protocol.parallel</a> </td>
+						</tr>
+						<tr>
+							<td> Distributed System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/distributed"
+							target="_blank"> protocol/distributed </a> </td>
+							<td> {@link protocol.distributed} </td>
+						</tr>
+						<tr>
+							<td> Slave System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/slave"
+							target="_blank"> protocol/slave </a> </td>
+							<td> <a href="../modules/samchon.protocol.slave.html">protocol.slave</a> </td>
+						</tr>
+					</table>
+					<p><h4> Example - Projects </h4></p>
+					<ul>
+						<li>
+							<a href="https://github.com/samchon/framework/wiki/Examples-Calculator" target="_blank"> Calculator </a>
+						</li>
+						<li>
+							<a href="https://github.com/samchon/framework/wiki/Examples-Chatting" target="_blank"> Chatting </a>
+						</li>
+						<li>
+							<a href="https://github.com/samchon/framework/wiki/Examples-Interaction" target="_blank"> Interaction </a>
+						</li>
+					</ul>
 					<dl class="tsd-comment-tags">
 						<dt>see</dt>
-						<dd><p>Invoke</p>
+						<dd><p><a href="../classes/samchon.protocol.invoke.html">Invoke</a></p>
+						</dd>
+						<dt>handbook</dt>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Basic_Components#iprotocol"
+							target="_blank"> Basic Components - IProtocol </a></p>
 						</dd>
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
@@ -123,25 +318,24 @@
 					<li><a href="samchon.protocol.external.iexternalserverarray.html" class="tsd-signature-type">IExternalServerArray</a></li>
 					<li><a href="samchon.protocol.external.iexternalserverclientarray.html" class="tsd-signature-type">IExternalServerClientArray</a></li>
 					<li><a href="samchon.protocol.external.iexternalserverclientarray.html" class="tsd-signature-type">IExternalServerClientArray</a></li>
-					<li><a href="samchon.protocol.master.iparallelserver.html" class="tsd-signature-type">IParallelServer</a></li>
-					<li><a href="samchon.protocol.master.iparallelserver.html" class="tsd-signature-type">IParallelServer</a></li>
-					<li><a href="../classes/samchon.protocol.master.mediatorclient.html" class="tsd-signature-type">MediatorClient</a></li>
-					<li><a href="../classes/samchon.protocol.master.mediatorserver.html" class="tsd-signature-type">MediatorServer</a></li>
-					<li><a href="../classes/samchon.protocol.master.mediatorsharedworkerclient.html" class="tsd-signature-type">MediatorSharedWorkerClient</a></li>
-					<li><a href="../classes/samchon.protocol.master.mediatorsharedworkerserver.html" class="tsd-signature-type">MediatorSharedWorkerServer</a></li>
-					<li><a href="../classes/samchon.protocol.master.mediatorsystem.html" class="tsd-signature-type">MediatorSystem</a></li>
-					<li><a href="../classes/samchon.protocol.master.mediatorwebclient.html" class="tsd-signature-type">MediatorWebClient</a></li>
-					<li><a href="../classes/samchon.protocol.master.mediatorwebserver.html" class="tsd-signature-type">MediatorWebServer</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelclientarray.html" class="tsd-signature-type">ParallelClientArray</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelclientarraymediator.html" class="tsd-signature-type">ParallelClientArrayMediator</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelserver.html" class="tsd-signature-type">ParallelServer</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelserverarray.html" class="tsd-signature-type">ParallelServerArray</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelserverarraymediator.html" class="tsd-signature-type">ParallelServerArrayMediator</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelserverclientarray.html" class="tsd-signature-type">ParallelServerClientArray</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelserverclientarraymediator.html" class="tsd-signature-type">ParallelServerClientArrayMediator</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelsystem.html" class="tsd-signature-type">ParallelSystem</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelsystemarray.html" class="tsd-signature-type">ParallelSystemArray</a></li>
-					<li><a href="../classes/samchon.protocol.master.parallelsystemarraymediator.html" class="tsd-signature-type">ParallelSystemArrayMediator</a></li>
+					<li><a href="samchon.protocol.parallel.iparallelserver.html" class="tsd-signature-type">IParallelServer</a></li>
+					<li><a href="samchon.protocol.parallel.iparallelserver.html" class="tsd-signature-type">IParallelServer</a></li>
+					<li><a href="../classes/samchon.protocol.external.mediatorclient.html" class="tsd-signature-type">MediatorClient</a></li>
+					<li><a href="../classes/samchon.protocol.external.mediatorserver.html" class="tsd-signature-type">MediatorServer</a></li>
+					<li><a href="../classes/samchon.protocol.external.mediatorsharedworkerserver.html" class="tsd-signature-type">MediatorSharedWorkerServer</a></li>
+					<li><a href="../classes/samchon.protocol.external.mediatorsystem.html" class="tsd-signature-type">MediatorSystem</a></li>
+					<li><a href="../classes/samchon.protocol.external.mediatorwebclient.html" class="tsd-signature-type">MediatorWebClient</a></li>
+					<li><a href="../classes/samchon.protocol.external.mediatorwebserver.html" class="tsd-signature-type">MediatorWebServer</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelclientarray.html" class="tsd-signature-type">ParallelClientArray</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelclientarraymediator.html" class="tsd-signature-type">ParallelClientArrayMediator</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelserver.html" class="tsd-signature-type">ParallelServer</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelserverarray.html" class="tsd-signature-type">ParallelServerArray</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelserverarraymediator.html" class="tsd-signature-type">ParallelServerArrayMediator</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelserverclientarray.html" class="tsd-signature-type">ParallelServerClientArray</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelserverclientarraymediator.html" class="tsd-signature-type">ParallelServerClientArrayMediator</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelsystem.html" class="tsd-signature-type">ParallelSystem</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelsystemarray.html" class="tsd-signature-type">ParallelSystemArray</a></li>
+					<li><a href="../classes/samchon.protocol.parallel.parallelsystemarraymediator.html" class="tsd-signature-type">ParallelSystemArrayMediator</a></li>
 					<li><a href="../classes/samchon.protocol.service.server.html" class="tsd-signature-type">Server</a></li>
 					<li><a href="../classes/samchon.protocol.service.service.html" class="tsd-signature-type">Service</a></li>
 					<li><a href="../classes/samchon.protocol.slave.slaveclient.html" class="tsd-signature-type">SlaveClient</a></li>
@@ -176,7 +370,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/IProtocol.ts#L28">samchon/protocol/IProtocol.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/IProtocol.ts#L248">samchon/protocol/IProtocol.ts:248</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -208,7 +402,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/IProtocol.ts#L36">samchon/protocol/IProtocol.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/IProtocol.ts#L256">samchon/protocol/IProtocol.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -222,7 +416,7 @@
 								<li>
 									<h5>invoke: <a href="../classes/samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>An <a href="../classes/samchon.protocol.invoke.html">Invoke</a> message have received.</p>
+										<p>An <a href="../classes/samchon.protocol.invoke.html">Invoke</a> message has received.</p>
 									</div>
 								</li>
 							</ul>
@@ -260,7 +454,7 @@
 										<a href="../modules/samchon.protocol.external.html">external</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.master.html">master</a>
+										<a href="../modules/samchon.protocol.parallel.html">parallel</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.service.html">service</a>
@@ -270,9 +464,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.socket.html">socket</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.websocket.html">websocket</a>
 									</li>
 								</ul>
 							</li>

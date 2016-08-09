@@ -73,7 +73,178 @@
 		<div class="col-8 col-content">
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p> An interface for connected client. </p>
+					</div>
+					<p> <a href="samchon.protocol.iclientdriver.html">IClientDriver</a> is a type of <a href="samchon.protocol.icommunicator.html">ICommunicator</a>, specified for communication with connected client
+					in a server. It takes full charge of network communication with the connected client. </p>
+					<p> <a href="samchon.protocol.iclientdriver.html">IClientDriver</a> is created in <a href="samchon.protocol.iserver.html">IServer</a> and delivered via
+						<a href="samchon.protocol.iserver.html#addclient">IServer.addClient()</a>. Those are derived types from this <a href="samchon.protocol.iclientdriver.html">IClientDriver</a>, being
+					created by matched <a href="samchon.protocol.iserver.html">IServer</a> object. </p>
+					<table>
+						<tr>
+							<th> Derived Type </th>
+							<th> Created By </th>
+						</tr>
+						<tr>
+							<td> {@link ClientDrvier} </td>
+							<td> <a href="../classes/samchon.protocol.server.html">Server</a> </td>
+						</tr>
+						<tr>
+							<td> {@link WebClientDrvier} </td>
+							<td> <a href="../classes/samchon.protocol.webserver.html">WebServer</a> </td>
+						</tr>
+						<tr>
+							<td> {@link SharedWorkerClientDrvier} </td>
+							<td> <a href="../classes/samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a> </td>
+						</tr>
+					</table>
+					<p> <a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_basic_components.png"
+						target="_blank">
+						<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_basic_components.png"
+						style="max-width: 100%" />
+					</a> </p>
+					<p> When you&#39;ve got an <a href="samchon.protocol.iclientdriver.html">IClientDriver</a> object from the <a href="samchon.protocol.iserver.html#addclient">IServer.addClient()</a>, then
+						specify {@link CommunicatorBase.listener listener} with {@link IClient.listen IClient.listen()}. Below codes are
+					an example specifying and managing the {@link CommunicatorBase.listener listener} objects. </p>
+					<p><code>
+/// <reference path="../typings/typescript-stl/typescript-stl.d.ts" />
+/// <reference path="../typings/samchon-framework/samchon-framework.d.ts" /></p>
+<p>// IMPORTS
+import std = require(&quot;typescript-stl&quot;);
+import samchon = require(&quot;samchon-framework&quot;);</p>
+<p>// SHORTCUTS
+import library = samchon.library;
+import protocol = samchon.protocol;</p>
+<p>class CalculatorServer extends protocol.Server
+{
+private clients: std.HashSet<CalculatorClient>;</p>
+<p>// WHEN A CLIENT HAS CONNECTED
+public addClient(driver: IClientDriver): void
+{
+let client: CalculatorClient = new CalculatorClient(this, driver);
+this.clients.insert(client);
+}
+}</p>
+<p>class CalculatorClient extends protocol.IProtocol
+{
+// PARENT SERVER INSTANCE
+private server: CalculatorServer;</p>
+<p>// COMMUNICATOR, SENDS AND RECEIVES NETWORK MESSAGE WITH CONNECTED CLIENT
+private driver: protocol.IClientDriver;</p>
+<p>/////
+// CONSTRUCTORS
+/////
+public constructor(server: CalculatorServer, driver: protocol.IClientDriver)
+{
+this.server = server;
+this.driver = driver;</p>
+<p>// START LISTENING AND RESPOND CLOSING EVENT
+this.driver.listen(this); // INVOKE MESSAGE WILL COME TO HERE
+this.driver.onClose = this.destructor.bind(this); // DISCONNECTED HANDLER
+}
+public destructor(): void
+{
+// WHEN DISCONNECTED, THEN ERASE THIS OBJECT FROM CalculatorServer.clients.
+this.server[&quot;clients&quot;].erase(this);
+}</p>
+<p>/////
+// INVOKE MESSAGE CHAIN
+/////
+public sendData(invoke: protocol.Invoke): void
+{
+// CALL ICommunicator.sendData(), WHO PHYSICALLY SEND NETWORK MESSAGE
+this.driver.sendData(invoke);
+}
+public replyData(invoke: protocol.Invoke): void
+{
+// FIND MATCHED MEMBER FUNCTION NAMED EQUAL TO THE invoke.getListener()
+invoke.apply(this);
+}
+}
+</code></p>
+					<p><h2> Basic Components </h2></p>
+					<p><h4> What Basic Components are </h4></p>
+					<p> <b>Basic Components</b> are the smallest unit of network communication in this <i>Samchon Framework</i>. With
+						<b>Basic Components</b>, you can construct any type of network system, even how the network system is enormously
+					scaled and complicated, by just combinating the <b>Basic Components</b>. </p>
+					<p> All the system templates in this framework are also being implemented by utilization of the
+					<b>Basic Compoonents</b>. </p>
+					<ul>
+						<li> <a href="../modules/samchon.protocol.service.html">Service</a> </il>
+							<li> <a href="../modules/samchon.protocol.external.html">External System</a> </il>
+								<li> <a href="../modules/samchon.protocol.parallel.html">Parallel System</a> </il>
+									<li> {@link distributed Distributed System} </il>
+					</ul>
+					<p> Note that, whatever the network system what you&#39;ve to construct is, just concentrate on role of each system
+						and attach matched <b>Basic Components</b> to the role, within framework of the <b>Object-Oriented Design</b>.
+					Then construction of the network system will be much easier. </p>
+					<ul>
+						<li> A system is a server, then use <a href="samchon.protocol.iserver.html">IServer</a> or <a href="samchon.protocol.iserverbase.html">IServerBase</a>. </li>
+						<li> A server wants to handle a client has connected, then use <a href="samchon.protocol.iclientdriver.html">IClientDriver</a>. </li>
+						<li> A system is a client connecting to an external server, then use <a href="samchon.protocol.iserverconnector.html">IServerConnector</a>. </li>
+						<li> </li>
+					</ul>
+					<p><h4> Example - System Templates </h4></p>
+					<p> Learning and understanding <i>Basic Components</i> of Samchon Framework, reading source codes and design of
+					<b>System Templates</b>&#39; modules will be very helpful. </p>
+					<table>
+						<tr>
+							<th> Name </th>
+							<th> Source </th>
+							<th> API Documents </th>
+						</tr>
+						<tr>
+							<td> Cloud Service </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/service"
+							target="_blank"> protocol/service </a> </td>
+							<td> <a href="../modules/samchon.protocol.service.html">protocol.service</a> </td>
+						</tr>
+						<tr>
+							<td> External System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/external"
+							target="_blank"> protocol/external </a> </td>
+							<td> <a href="../modules/samchon.protocol.external.html">protocol.external</a> </td>
+						</tr>
+						<tr>
+							<td> Parallel System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/parallel"
+							target="_blank"> protocol/parallel </a> </td>
+							<td> <a href="../modules/samchon.protocol.parallel.html">protocol.parallel</a> </td>
+						</tr>
+						<tr>
+							<td> Distributed System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/distributed"
+							target="_blank"> protocol/distributed </a> </td>
+							<td> {@link protocol.distributed} </td>
+						</tr>
+						<tr>
+							<td> Slave System </td>
+							<td> <a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/slave"
+							target="_blank"> protocol/slave </a> </td>
+							<td> <a href="../modules/samchon.protocol.slave.html">protocol.slave</a> </td>
+						</tr>
+					</table>
+					<p><h4> Example - Projects </h4></p>
+					<ul>
+						<li>
+							<a href="https://github.com/samchon/framework/wiki/Examples-Calculator" target="_blank"> Calculator </a>
+						</li>
+						<li>
+							<a href="https://github.com/samchon/framework/wiki/Examples-Chatting" target="_blank"> Chatting </a>
+						</li>
+						<li>
+							<a href="https://github.com/samchon/framework/wiki/Examples-Interaction" target="_blank"> Interaction </a>
+						</li>
+					</ul>
 					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="samchon.protocol.iserver.html">IServer</a></p>
+						</dd>
+						<dt>handbook</dt>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Basic_Components#iclientdriver"
+							target="_blank"> Basic Components - IClientDriver </a></p>
+						</dd>
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
 						</dd>
@@ -132,7 +303,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#onclose">onClose</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L24">samchon/protocol/Communicator.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L137">samchon/protocol/Communicator.ts:137</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -155,7 +326,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L29">samchon/protocol/Communicator.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L142">samchon/protocol/Communicator.ts:142</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -177,7 +348,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/ClientDriver.ts#L24">samchon/protocol/ClientDriver.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/ClientDriver.ts#L212">samchon/protocol/ClientDriver.ts:212</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -214,7 +385,7 @@
 								<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#replydata">replyData</a></p>
 								<p>Overwrites <a href="samchon.protocol.iprotocol.html">IProtocol</a>.<a href="samchon.protocol.iprotocol.html#replydata">replyData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L33">samchon/protocol/Communicator.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L146">samchon/protocol/Communicator.ts:146</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -239,7 +410,7 @@
 								<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#senddata">sendData</a></p>
 								<p>Overwrites <a href="samchon.protocol.iprotocol.html">IProtocol</a>.<a href="samchon.protocol.iprotocol.html#senddata">sendData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L31">samchon/protocol/Communicator.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L144">samchon/protocol/Communicator.ts:144</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -282,7 +453,7 @@
 										<a href="../modules/samchon.protocol.external.html">external</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.master.html">master</a>
+										<a href="../modules/samchon.protocol.parallel.html">parallel</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.service.html">service</a>
@@ -292,9 +463,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.socket.html">socket</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.websocket.html">websocket</a>
 									</li>
 								</ul>
 							</li>

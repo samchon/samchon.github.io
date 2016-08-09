@@ -79,9 +79,13 @@
 					<p> <a href="samchon.protocol.iserverconnector.html">IServerConnector</a> is an interface for server connector classes who ca connect to an external server
 					as a client. </p>
 					<p> Of course, <a href="samchon.protocol.iserverconnector.html">IServerConnector</a> is extended from the <a href="samchon.protocol.icommunicator.html">ICommunicator</a>, thus, it also takes full
-						charge of network communication and delivers replied message to <a href="../classes/samchon.protocol.webcommunicator.html#listener">listener</a>&#39;s
+						charge of network communication and delivers replied message to {@link WebCommunicator.listener listener}&#39;s
 					<a href="samchon.protocol.iprotocol.html#replydata">replyData()</a> method. </p>
 					<dl class="tsd-comment-tags">
+						<dt>handbook</dt>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Basic_Components#iserverconnector"
+							target="_blank"> Basic Components - IServerConnector </a></p>
+						</dd>
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
 						</dd>
@@ -142,7 +146,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#onclose">onClose</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L24">samchon/protocol/Communicator.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L137">samchon/protocol/Communicator.ts:137</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -157,7 +161,7 @@
 					<div class="tsd-signature tsd-kind-icon">on<wbr>Connect<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/ServerConnector.ts#L25">samchon/protocol/ServerConnector.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/ServerConnector.ts#L27">samchon/protocol/ServerConnector.ts:27</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -180,7 +184,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L29">samchon/protocol/Communicator.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L142">samchon/protocol/Communicator.ts:142</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -202,7 +206,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/ServerConnector.ts#L48">samchon/protocol/ServerConnector.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/ServerConnector.ts#L50">samchon/protocol/ServerConnector.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -212,7 +216,7 @@
 								<p> Connects to a server with specified <i>host</i> address and <i>port</i> number. After the connection has
 									succeeded, callback function <a href="samchon.protocol.iserverconnector.html#onconnect">onConnect</a> is called. Listening data from the connected server also begins.
 									Replied messages from the connected server will be converted to <a href="../classes/samchon.protocol.invoke.html">Invoke</a> classes and will be shifted to
-								the <a href="../classes/samchon.protocol.webcommunicator.html#listener">listener</a>&#39;s <a href="samchon.protocol.iprotocol.html#replydata">replyData()</a> method. </p>
+								the {@link WebCommunicator.listener listener}&#39;s <a href="samchon.protocol.iprotocol.html#replydata">replyData()</a> method. </p>
 								<p> If the connection fails immediately, either an event is dispatched or an exception is thrown: an error
 									event is dispatched if a host was specified, and an exception is thrown if no host was specified. Otherwise,
 									the status of the connection is reported by an event. If the socket is already connected, the existing
@@ -252,7 +256,7 @@
 								<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#replydata">replyData</a></p>
 								<p>Overwrites <a href="samchon.protocol.iprotocol.html">IProtocol</a>.<a href="samchon.protocol.iprotocol.html#replydata">replyData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L33">samchon/protocol/Communicator.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L146">samchon/protocol/Communicator.ts:146</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -277,7 +281,7 @@
 								<p>Inherited from <a href="samchon.protocol.icommunicator.html">ICommunicator</a>.<a href="samchon.protocol.icommunicator.html#senddata">sendData</a></p>
 								<p>Overwrites <a href="samchon.protocol.iprotocol.html">IProtocol</a>.<a href="samchon.protocol.iprotocol.html#senddata">sendData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/d5c2133/ts/src/samchon/protocol/Communicator.ts#L31">samchon/protocol/Communicator.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/63d7c94/ts/src/samchon/protocol/Communicator.ts#L144">samchon/protocol/Communicator.ts:144</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -320,7 +324,7 @@
 										<a href="../modules/samchon.protocol.external.html">external</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.master.html">master</a>
+										<a href="../modules/samchon.protocol.parallel.html">parallel</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.service.html">service</a>
@@ -330,9 +334,6 @@
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.socket.html">socket</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.websocket.html">websocket</a>
 									</li>
 								</ul>
 							</li>
