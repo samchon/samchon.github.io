@@ -111,7 +111,7 @@
 						</ul>
 					</li>
 					<li><a href="http://www.cplusplus.com/reference/utility">&lt;utility&gt;</a><ul>
-							<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.pair.html">std.Pair</a> </li>
+							<li><a href="http://samchon.github.io/typescript-stl/api/classes/std.pair.html">std.Pair</a></li>
 						</ul>
 					</li>
 				</ul>
@@ -123,12 +123,18 @@
 					<li><a href="https://samchon.github.io/typescript-stl/design/class_diagram.pdf">Class Diagram</a></li>
 				</ul>
 				<h2 id="installation">Installation</h2>
-				<p>Installing <em>TypeScript-STL</em> in <strong>node</strong> is very easy. Just install with <strong>npm</strong>.</p>
+				<p>Installing <em>TypeScript-STL</em> in <strong>node</strong> is very easy. Just install with <strong>npm</strong> and <strong>tsd</strong>.</p>
 				<h4 id="node">Node</h4>
-				<p><code>npm install -g typescript-stl</code></p>
+				<pre><code class="lang-bash"><span class="hljs-comment"># Install TypeScript-STL from NPM modules</span>
+npm install -g typescript-stl 
+
+<span class="hljs-comment"># Fetch definition (header) file from TSD</span>
+<span class="hljs-comment"># If TSD is not installed, then type "npm install -g tsd"</span>
+tsd install typescript-stl
+</code></pre>
 				<h4 id="typescript">TypeScript</h4>
 				<p>Don&#39;t forget to referencing header files, <code>typescript-stl.d.ts</code>.</p>
-				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typescript-stl.d.ts" /&gt;</span>
+				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/typescript-stl/typescript-stl.d.ts" /&gt;</span>
 
 <span class="hljs-keyword">import</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"typescript-stl"</span>);
 <span class="hljs-keyword">let</span> map: std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt; = <span class="hljs-keyword">new</span> std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt;();
