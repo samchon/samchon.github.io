@@ -85,10 +85,10 @@
 					<a href="std.pair.html">Pair</a> type combining both: </p>
 					<p> <code>typedef pair<const Key, T> value_type;</code> </p>
 					<p> <a href="std.base.uniquemap.html">UniqueMap</a> stores elements, keeps sequence and enables indexing by inserting elements into a
-						<a href="std.list.html">List</a> and registering <a href="std.listiterator.html">iterators</a> of the <a href="std.base.uniquemap.html#data_">list container</a> to an index
+						<a href="std.list.html">List</a> and registering <a href="std.listiterator.html">iterators</a> of the <a href="std.base.mapcontainer.html#data_">list container</a> to an index
 					table like {@link RBTree tree} or <a href="std.base.hashbuckets.html">hash-table</a>. </p>
-					<p> <a href="http://samchon.github.io/typescript-stl/images/class_diagram/map_containers.png" target="_blank">
-					<img src="http://samchon.github.io/typescript-stl/images/class_diagram/map_containers.png" style="max-width: 100%" /></a> </p>
+					<p> <a href="http://samchon.github.io/typescript-stl/images/design/class_diagram" target="_blank">
+					<img src="http://samchon.github.io/typescript-stl/images/design/class_diagram" style="max-width: 100%" /></a> </p>
 					<p><h3> Container properties </h3></p>
 					<dl>
 						<dt> Associative </dt>
@@ -169,15 +169,12 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.uniquemap.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.uniquemap.html#data_" class="tsd-kind-icon">data_</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.uniquemap.html#_get_data" class="tsd-kind-icon">_<wbr>Get_<wbr>data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.uniquemap.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.uniquemap.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.base.uniquemap.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.uniquemap.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.uniquemap.html#clear" class="tsd-kind-icon">clear</a></li>
@@ -188,8 +185,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.uniquemap.html#extract" class="tsd-kind-icon">extract</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.uniquemap.html#find" class="tsd-kind-icon">find</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.uniquemap.html#get" class="tsd-kind-icon">get</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.uniquemap.html#handle_erase" class="tsd-kind-icon">handle_<wbr>erase</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.base.uniquemap.html#handle_insert" class="tsd-kind-icon">handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.uniquemap.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.base.uniquemap.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.uniquemap.html#insert_or_assign" class="tsd-kind-icon">insert_<wbr>or_<wbr>assign</a></li>
@@ -198,7 +193,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.uniquemap.html#rend" class="tsd-kind-icon">rend</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.uniquemap.html#set" class="tsd-kind-icon">set</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.base.uniquemap.html#size" class="tsd-kind-icon">size</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.uniquemap.html#swap" class="tsd-kind-icon">swap</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.base.uniquemap.html#swap" class="tsd-kind-icon">swap</a></li>
 							</ul>
 						</section>
 					</div>
@@ -211,10 +206,6 @@
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Unique<wbr>Map<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Unique<wbr>Map<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Unique<wbr>Map<span class="tsd-signature-symbol">(</span>array<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Unique<wbr>Map<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Unique<wbr>Map<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -222,7 +213,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L60">base/MapContainer.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L60">base/MapContainer.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -232,126 +223,128 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></h4>
 						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L72">base/MapContainer.ts:72</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Construct from elements.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>items: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L77">base/MapContainer.ts:77</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Contruct from tuples.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>array: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">]</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Tuples to be contained.</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L84">base/MapContainer.ts:84</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Copy Constructor.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>container: <a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L89">base/MapContainer.ts:89</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Construct from range iterators.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>begin: <a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>end: <a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a></h4>
-						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="data_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> data_</h3>
-					<div class="tsd-signature tsd-kind-icon">data_<span class="tsd-signature-symbol">:</span> <a href="std.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#data_">data_</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L60">base/MapContainer.ts:60</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p> <a href="std.list.html">List</a> storing elements. </p>
-						</div>
-						<p> Storing elements and keeping those sequence of the <a href="std.base.mapcontainer.html">MapContainer</a> are implemented by
-							<a href="std.base.uniquemap.html#data_">this list container</a>. Implementing index-table is also related with <a href="std.base.uniquemap.html#data_">this list</a>
-							by storing <a href="std.listiterator.html">iterators</a> (<a href="std.mapiterator.html">MapIterator</a> references <a href="std.listiterator.html">ListIterator</a>) who are
-						created from <a href="std.base.uniquemap.html#data_">here</a>. </p>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_get_data" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Get_<wbr>data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_<wbr>Get_<wbr>data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_get_data">_Get_data</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L232">base/MapContainer.ts:232</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="std.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_handle_erase" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>erase</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_erase">_Handle_erase</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L599">base/MapContainer.ts:599</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Abstract method handling deletions for indexing. </p>
+								</div>
+								<p> This method, {@link handle_insert} is designed to unregister the <i>first to last</i> to somewhere storing
+								those <a href="std.mapiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
+								<p> When <a href="std.base.uniquemap.html#erase">erase</a> is called with <i>first to last</i>, <a href="std.mapiterator.html">iterators</a> positioning somewhere
+									place to be deleted, is memorized and shifted to this method {@link handle_erase} after the deletion process is
+								terminated. </p>
+								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <a href="std.mapiterator.html">iterators</a>
+									will be unregistered from the {@link TreeSet.tree_ tree} as a <a href="std.base.xtreenode.html">tree node item</a>. Else if the
+									derived one is <a href="std.base.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>first to last</i> will be
+								unregistered from the {@link HashSet.hash<em>buckets</em> hash bucket}. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="std.mapiterator.html">MapIterator</a> to the initial position in a sequence.</p>
+									</div>
+								</li>
+								<li>
+									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="std.mapiterator.html">MapIterator</a> to the final position in a sequence. The range used is
+											[<i>first</i>, <i>last</i>), which contains all the elements between <i>first</i> and <i>last</i>,
+										including the element pointed by <i>first</i> but not the element pointed by <i>last</i>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_handle_insert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>insert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>insert<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_insert">_Handle_insert</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L577">base/MapContainer.ts:577</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Abstract method handling insertions for indexing. </p>
+								</div>
+								<p> This method, {@link handle_insert} is designed to register the <i>first to last</i> to somewhere storing
+								those <a href="std.mapiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
+								<p> When <a href="std.base.uniquemap.html#insert">insert</a> is called, new elements will be inserted into the <a href="std.base.mapcontainer.html#data_">list container</a> and new
+									<a href="std.mapiterator.html">iterators</a> <i>first to last</i>, pointing the inserted elements, will be created and the
+									newly created iterators <i>first to last</i> will be shifted into this method {@link handle_insert} after the
+								insertions. </p>
+								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <a href="std.mapiterator.html">iterators</a>
+									will be registered into the {@link TreeSet.tree_ tree} as a <a href="std.base.xtreenode.html">tree node item</a>. Else if the
+									derived one is <a href="std.base.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>first</i> to <i>last</i> will be
+								registered into the {@link HashSet.hash<em>buckets</em> hash bucket}. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="std.mapiterator.html">MapIterator</a> to the initial position in a sequence.</p>
+									</div>
+								</li>
+								<li>
+									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="std.mapiterator.html">MapIterator</a> to the final position in a sequence. The range used is
+											[<i>first</i>, <i>last</i>), which contains all the elements between <i>first</i> and <i>last</i>,
+										including the element pointed by <i>first</i> but not the element pointed by <i>last</i>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 					<a name="assign" class="tsd-anchor"></a>
 					<h3>assign</h3>
@@ -365,7 +358,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L162">base/MapContainer.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L78">base/MapContainer.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -413,7 +406,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L214">base/MapContainer.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L130">base/MapContainer.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -442,7 +435,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L173">base/MapContainer.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L89">base/MapContainer.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,7 +459,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L60">base/UniqueMap.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L60">base/UniqueMap.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -497,7 +490,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/Container.ts#L129">base/Container.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/Container.ts#L129">base/Container.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -526,7 +519,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L238">base/MapContainer.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L154">base/MapContainer.ts:154</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -565,7 +558,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L503">base/MapContainer.ts:503</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L425">base/MapContainer.ts:425</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -592,7 +585,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L515">base/MapContainer.ts:515</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L437">base/MapContainer.ts:437</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -619,7 +612,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L532">base/MapContainer.ts:532</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L454">base/MapContainer.ts:454</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -656,7 +649,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L544">base/MapContainer.ts:544</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L466">base/MapContainer.ts:466</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -683,7 +676,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L561">base/MapContainer.ts:561</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L483">base/MapContainer.ts:483</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -729,7 +722,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L108">base/UniqueMap.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L108">base/UniqueMap.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -753,7 +746,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L120">base/UniqueMap.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L120">base/UniqueMap.ts:120</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -778,7 +771,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L132">base/UniqueMap.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L132">base/UniqueMap.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -813,7 +806,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L202">base/MapContainer.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L118">base/MapContainer.ts:118</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -852,7 +845,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L76">base/UniqueMap.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L76">base/UniqueMap.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -880,105 +873,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="handle_erase" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>erase</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">handle_<wbr>erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#handle_erase">handle_erase</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L677">base/MapContainer.ts:677</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Abstract method handling deletions for indexing. </p>
-								</div>
-								<p> This method, <a href="std.base.uniquemap.html#handle_insert">handle_insert</a> is designed to unregister the <i>first to last</i> to somewhere storing
-								those <a href="std.mapiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
-								<p> When <a href="std.base.uniquemap.html#erase">erase</a> is called with <i>first to last</i>, <a href="std.mapiterator.html">iterators</a> positioning somewhere
-									place to be deleted, is memorized and shifted to this method <a href="std.base.uniquemap.html#handle_erase">handle_erase</a> after the deletion process is
-								terminated. </p>
-								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <a href="std.mapiterator.html">iterators</a>
-									will be unregistered from the {@link TreeSet.tree_ tree} as a <a href="std.base.xtreenode.html">tree node item</a>. Else if the
-									derived one is <a href="std.base.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>first to last</i> will be
-								unregistered from the {@link HashSet.hash<em>buckets</em> hash bucket}. </p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the initial position in a sequence.</p>
-									</div>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the final position in a sequence. The range used is
-											[<i>first</i>, <i>last</i>), which contains all the elements between <i>first</i> and <i>last</i>,
-										including the element pointed by <i>first</i> but not the element pointed by <i>last</i>.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="handle_insert" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>insert</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">handle_<wbr>insert<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#handle_insert">handle_insert</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L655">base/MapContainer.ts:655</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Abstract method handling insertions for indexing. </p>
-								</div>
-								<p> This method, <a href="std.base.uniquemap.html#handle_insert">handle_insert</a> is designed to register the <i>first to last</i> to somewhere storing
-								those <a href="std.mapiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
-								<p> When <a href="std.base.uniquemap.html#insert">insert</a> is called, new elements will be inserted into the <a href="std.base.uniquemap.html#data_">list container</a> and new
-									<a href="std.mapiterator.html">iterators</a> <i>first to last</i>, pointing the inserted elements, will be created and the
-									newly created iterators <i>first to last</i> will be shifted into this method <a href="std.base.uniquemap.html#handle_insert">handle_insert</a> after the
-								insertions. </p>
-								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <a href="std.mapiterator.html">iterators</a>
-									will be registered into the {@link TreeSet.tree_ tree} as a <a href="std.base.xtreenode.html">tree node item</a>. Else if the
-									derived one is <a href="std.base.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>first</i> to <i>last</i> will be
-								registered into the {@link HashSet.hash<em>buckets</em> hash bucket}. </p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the initial position in a sequence.</p>
-									</div>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the final position in a sequence. The range used is
-											[<i>first</i>, <i>last</i>), which contains all the elements between <i>first</i> and <i>last</i>,
-										including the element pointed by <i>first</i> but not the element pointed by <i>last</i>.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="has" class="tsd-anchor"></a>
 					<h3>has</h3>
@@ -990,7 +884,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L292">base/MapContainer.ts:292</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L208">base/MapContainer.ts:208</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1030,7 +924,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L200">base/UniqueMap.ts:200</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L200">base/UniqueMap.ts:200</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1064,7 +958,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L222">base/UniqueMap.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L222">base/UniqueMap.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1107,7 +1001,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L228">base/UniqueMap.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L228">base/UniqueMap.ts:228</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1131,7 +1025,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L233">base/UniqueMap.ts:233</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L233">base/UniqueMap.ts:233</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1155,7 +1049,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L238">base/UniqueMap.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L238">base/UniqueMap.ts:238</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1188,7 +1082,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L244">base/UniqueMap.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L244">base/UniqueMap.ts:244</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1221,7 +1115,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L250">base/UniqueMap.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L250">base/UniqueMap.ts:250</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1267,7 +1161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L278">base/UniqueMap.ts:278</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L278">base/UniqueMap.ts:278</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1305,7 +1199,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L299">base/UniqueMap.ts:299</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L299">base/UniqueMap.ts:299</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1347,7 +1241,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L320">base/UniqueMap.ts:320</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L320">base/UniqueMap.ts:320</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1401,7 +1295,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L327">base/MapContainer.ts:327</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L249">base/MapContainer.ts:249</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1432,7 +1326,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L332">base/MapContainer.ts:332</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L254">base/MapContainer.ts:254</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1473,7 +1367,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L258">base/MapContainer.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L174">base/MapContainer.ts:174</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1505,7 +1399,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L275">base/MapContainer.ts:275</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L191">base/MapContainer.ts:191</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1533,7 +1427,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L94">base/UniqueMap.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueMap.ts#L94">base/UniqueMap.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1575,7 +1469,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/MapContainer.ts#L311">base/MapContainer.ts:311</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/MapContainer.ts#L227">base/MapContainer.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1587,18 +1481,19 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="swap" class="tsd-anchor"></a>
 					<h3>swap</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#swap">swap</a></p>
+								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueMap.ts#L395">base/UniqueMap.ts:395</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/Container.ts#L170">base/Container.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1606,22 +1501,17 @@
 									<p> Swap content. </p>
 								</div>
 								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								<a href="std.base.uniquemap.html">map</a> of the same type. Sizes abd container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were
-									in <i>obj</i> before the call, and the elements of <i>obj</i> are those which were in this. All
-								iterators, references and pointers remain valid for the swapped objects. </p>
+								<a href="../interfaces/std.base.icontainer.html">container</a> object with same type of elements. Sizes and container type may differ. </p>
+								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
+									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
+								pointers remain valid for the swapped objects. </p>
 								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
 								algorithm with an optimization that behaves like this member function. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <a href="std.base.uniquemap.html" class="tsd-signature-type">UniqueMap</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Another <a href="std.base.uniquemap.html">map container</a> of the same type of elements as this (i.e.,
-											with the same template parameters, <b>Key</b> and <b>T</b>) whose content is swapped
-										with that of this <a href="std.base.uniquemap.html">container</a>.</p>
-									</div>
+									<h5>obj: <a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1696,8 +1586,14 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.uniquemap.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.base.uniquemap.html#data_" class="tsd-kind-icon">data_</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="std.base.uniquemap.html#_get_data" class="tsd-kind-icon">_<wbr>Get_<wbr>data</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="std.base.uniquemap.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="std.base.uniquemap.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.uniquemap.html#assign" class="tsd-kind-icon">assign</a>
@@ -1729,12 +1625,6 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.uniquemap.html#get" class="tsd-kind-icon">get</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.base.uniquemap.html#handle_erase" class="tsd-kind-icon">handle_<wbr>erase</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.base.uniquemap.html#handle_insert" class="tsd-kind-icon">handle_<wbr>insert</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.base.uniquemap.html#has" class="tsd-kind-icon">has</a>
 							</li>
@@ -1759,7 +1649,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.base.uniquemap.html#size" class="tsd-kind-icon">size</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.base.uniquemap.html#swap" class="tsd-kind-icon">swap</a>
 							</li>
 						</ul>

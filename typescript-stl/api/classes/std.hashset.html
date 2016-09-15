@@ -140,6 +140,7 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/std.base.ihashset.html" class="tsd-signature-type">IHashSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -153,21 +154,17 @@
 								<li class="tsd-kind-type-alias tsd-parent-kind-class"><a href="std.hashset.html#reverse_iterator" class="tsd-kind-icon">reverse_<wbr>iterator</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.hashset.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.hashset.html#data_" class="tsd-kind-icon">data_</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="std.hashset.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.hashset.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.hashset.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.hashset.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.hashset.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.hashset.html#bucket" class="tsd-kind-icon">bucket</a></li>
@@ -180,8 +177,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.hashset.html#erase" class="tsd-kind-icon">erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.hashset.html#extract" class="tsd-kind-icon">extract</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.hashset.html#find" class="tsd-kind-icon">find</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.hashset.html#handle_erase" class="tsd-kind-icon">handle_<wbr>erase</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.hashset.html#handle_insert" class="tsd-kind-icon">handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.hashset.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.hashset.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.hashset.html#max_load_factor" class="tsd-kind-icon">max_<wbr>load_<wbr>factor</a></li>
@@ -205,7 +200,7 @@
 					<div class="tsd-signature tsd-kind-icon">iterator<span class="tsd-signature-symbol">:</span> <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L7">HashSet.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L7">HashSet.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -215,29 +210,28 @@
 					<div class="tsd-signature tsd-kind-icon">reverse_<wbr>iterator<span class="tsd-signature-symbol">:</span> <a href="std.setreverseiterator.html" class="tsd-signature-type">SetReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L8">HashSet.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L8">HashSet.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Hash<wbr>Set<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Hash<wbr>Set<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Hash<wbr>Set<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Hash<wbr>Set<span class="tsd-signature-symbol">(</span>items<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Hash<wbr>Set<span class="tsd-signature-symbol">(</span>container<span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a></li>
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Hash<wbr>Set<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L53">base/SetContainer.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L64">HashSet.ts:64</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -249,10 +243,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L65">base/SetContainer.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L76">HashSet.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -263,17 +256,16 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>items: <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>items: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.hashset.html" class="tsd-signature-type">HashSet</a></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L70">base/SetContainer.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L81">HashSet.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -284,17 +276,16 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>container: <a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>container: <a href="std.hashset.html" class="tsd-signature-type">HashSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.hashset.html" class="tsd-signature-type">HashSet</a></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L75">base/SetContainer.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L86">HashSet.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -316,31 +307,74 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="data_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> data_</h3>
-					<div class="tsd-signature tsd-kind-icon">data_<span class="tsd-signature-symbol">:</span> <a href="std.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#data_">data_</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L53">base/SetContainer.ts:53</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p> <a href="std.list.html">List</a> storing elements. </p>
-						</div>
-						<p> Storing elements and keeping those sequence of the <a href="std.base.setcontainer.html">SetContainer</a> are implemented by
-							<a href="std.hashset.html#data_">this list container</a>. Implementing index-table is also related with <a href="std.hashset.html#data_">this list</a>
-							by storing <a href="std.listiterator.html">iterators</a> (<a href="std.setiterator.html">SetIterator</a> references <a href="std.listiterator.html">ListIterator</a>) who are
-						created from <a href="std.hashset.html#data_">here</a>. </p>
-					</div>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="_handle_erase" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>erase</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#_handle_erase">_Handle_erase</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L384">HashSet.ts:384</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>last: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="_handle_insert" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>insert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>insert<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#_handle_insert">_Handle_insert</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L375">HashSet.ts:375</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>first: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>last: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 					<a name="assign" class="tsd-anchor"></a>
 					<h3>assign</h3>
@@ -353,7 +387,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L145">base/SetContainer.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L71">base/SetContainer.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -394,10 +428,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#begin">begin</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L127">HashSet.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L160">HashSet.ts:160</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -413,16 +447,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L132">HashSet.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L165">HashSet.ts:165</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Return iterator to beginning. </p>
+								</div>
+								<p> Returns an iterator pointing to the first element in one of buckets in the <a href="../interfaces/std.base.ihashset.html">IHashSet</a>. </p>
+								<p> Notice that an <a href="../interfaces/std.base.ihashset.html">IHashSet</a> object makes no guarantees on which specific element is considered its
+									first element. But, in any case, the range that goes from its begin to its end covers all the elements in the
+								bucket, until invalidated. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -431,6 +469,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the first element in the bucket.</p>
 						</li>
 					</ul>
 				</section>
@@ -443,15 +482,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#bucket">bucket</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L236">HashSet.ts:236</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L269">HashSet.ts:269</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Locate element&#39;s bucket. </p>
+								</div>
+								<p> Returns the bucket number where the element with <i>key</i> is located. </p>
+								<p> A bucket is a slot in the container&#39;s internal hash table to which elements are assigned based on the
+								hash value of their <i>key</i>. Buckets are numbered from 0 to (<a href="std.hashset.html#bucket_count">bucket_count</a> - 1). </p>
+								<p> Individual elements in a bucket can be accessed by means of the range iterators returned by
+								<a href="std.hashset.html#begin">begin</a> and <a href="std.hashset.html#end">end</a>. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -472,17 +516,25 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#bucket_count">bucket_count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L202">HashSet.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L235">HashSet.ts:235</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Return number of buckets. </p>
+								</div>
+								<p> Returns the number of buckets in the <a href="../interfaces/std.base.ihashset.html">IHashSet</a> container. </p>
+								<p> A bucket is a slot in the container&#39;s internal hash table to which elements are assigned based on the
+								hash value of their key. </p>
+								<p> The number of buckets influences directly the {@link load_factor load factor} of the container&#39;s hash
+									table (and thus the probability of collision). The container automatically increases the number of buckets to
+									keep the load factor below a specific threshold (its <a href="std.hashset.html#max_load_factor">max_load_factor</a>), causing a <a href="std.hashset.html#rehash">rehash</a> each
+								time the number of buckets needs to be increased. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The current amount of buckets.</p>
 						</li>
 					</ul>
 				</section>
@@ -495,15 +547,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#bucket_size">bucket_size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L210">HashSet.ts:210</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L243">HashSet.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Return bucket size. </p>
+								</div>
+								<p> Returns the number of elements in bucket <i>n</i>. </p>
+								<p> A bucket is a slot in the container&#39;s internal hash table to which elements are assigned based on the hash
+								value of their key. </p>
+								<p> The number of elements in a bucket influences the time it takes to access a particular element in the
+									bucket. The container automatically increases the number of buckets to keep the {@link load_cator load factor}
+								(which is the average bucket size) below its <a href="std.hashset.html#max_load_factor">max_load_factor</a>. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -512,6 +570,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The number of elements in bucket <i>n</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -527,7 +586,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L102">HashSet.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L135">HashSet.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -552,7 +611,7 @@
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#count">count</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L53">base/UniqueSet.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L53">base/UniqueSet.ts:53</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -583,7 +642,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/Container.ts#L129">base/Container.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/Container.ts#L129">base/Container.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -609,10 +668,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#end">end</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L145">HashSet.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L178">HashSet.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -636,16 +695,24 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L150">HashSet.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L183">HashSet.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Return iterator to end. </p>
+								</div>
+								<p> Returns an iterator pointing to the past-the-end element in the {@link HaspMap} container. </p>
+								<p> The iterator returned by end does not point to any element, but to the position that follows the last
+									element in the {@link HaspMap} container (its <i>past-the-end</i> position). Thus, the value returned shall
+									not be dereferenced - it is generally used to describe the open-end of a range, such as
+								[<i>begin</i>, <i>end</i>). </p>
+								<p> Notice that an <a href="../interfaces/std.base.ihashset.html">IHashSet</a> object makes no guarantees on which order its elements follow. But, in any
+									case, the range that goes from its begin to its end covers all the elements in the container (or the bucket),
+								until invalidated. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -654,6 +721,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the element past the end of the bucket.</p>
 						</li>
 					</ul>
 				</section>
@@ -673,7 +741,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L378">base/SetContainer.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L313">base/SetContainer.ts:313</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -697,7 +765,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L383">base/SetContainer.ts:383</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L318">base/SetContainer.ts:318</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -719,7 +787,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L394">base/SetContainer.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L329">base/SetContainer.ts:329</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -751,7 +819,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L399">base/SetContainer.ts:399</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L334">base/SetContainer.ts:334</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -773,7 +841,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L410">base/SetContainer.ts:410</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L345">base/SetContainer.ts:345</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -815,7 +883,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#extract">extract</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L67">base/UniqueSet.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L67">base/UniqueSet.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -840,7 +908,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#extract">extract</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L79">base/UniqueSet.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L79">base/UniqueSet.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -866,7 +934,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#extract">extract</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L91">base/UniqueSet.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L91">base/UniqueSet.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -901,7 +969,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L119">HashSet.ts:119</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L152">HashSet.ts:152</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -920,72 +988,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-					<a name="handle_erase" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>erase</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">handle_<wbr>erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#handle_erase">handle_erase</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L350">HashSet.ts:350</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>last: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-					<a name="handle_insert" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> handle_<wbr>insert</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">handle_<wbr>insert<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#handle_insert">handle_insert</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L341">HashSet.ts:341</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>last: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="has" class="tsd-anchor"></a>
 					<h3>has</h3>
@@ -997,7 +999,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L229">base/SetContainer.ts:229</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L155">base/SetContainer.ts:155</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1032,7 +1034,7 @@
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L158">base/UniqueSet.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L158">base/UniqueSet.ts:158</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1063,7 +1065,7 @@
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L163">base/UniqueSet.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L163">base/UniqueSet.ts:163</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1088,7 +1090,7 @@
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L168">base/UniqueSet.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L168">base/UniqueSet.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1113,7 +1115,7 @@
 								<p>Inherited from <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#insert">insert</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/UniqueSet.ts#L173">base/UniqueSet.ts:173</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/UniqueSet.ts#L173">base/UniqueSet.ts:173</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1154,29 +1156,48 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#max_load_factor">max_load_factor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L218">HashSet.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L251">HashSet.ts:251</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Get maximum load factor. </p>
+								</div>
+								<p> Returns the current maximum load factor for the <a href="std.hashmultimap.html">HashMultiMap</a> container. </p>
+								<p> The load factor is the ratio between the number of elements in the container (its <a href="std.hashset.html#size">size</a>) and the
+								number of buckets (<a href="std.hashset.html#bucket_count">bucket_count</a>). </p>
+								<p> By default, <a href="std.hashmultimap.html">HashMultiMap</a> containers have a <a href="std.hashset.html#max_load_factor">max_load_factor</a> of 1.0. </p>
+								<p> The load factor influences the probability of collision in the hash table (i.e., the probability of two
+									elements being located in the same bucket). The container uses the value of max_load_factor as the threshold
+								that forces an increase in the number of buckets (and thus causing a <a href="std.hashset.html#rehash">rehash</a>). </p>
+								<p> Note though, that implementations may impose an upper limit on the number of buckets (see
+								{@link max_bucket_count}), which may force the container to ignore the <a href="std.hashset.html#max_load_factor">max_load_factor</a>. </p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The current load factor.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#max_load_factor">max_load_factor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L223">HashSet.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L256">HashSet.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Set maximum load factor. </p>
+								</div>
+								<p> Sets <i>z</i> as the cnew maximum load factor for the <a href="std.hashmultimap.html">HashMultiMap</a> container. </p>
+								<p> The load factor is the ratio between the number of elements in the container (its <a href="std.hashset.html#size">size</a>) and the
+								number of buckets (<a href="std.hashset.html#bucket_count">bucket_count</a>). </p>
+								<p> By default, <a href="std.hashmultimap.html">HashMultiMap</a> containers have a <a href="std.hashset.html#max_load_factor">max_load_factor</a> of 1.0. </p>
+								<p> The load factor influences the probability of collision in the hash table (i.e., the probability of two
+									elements being located in the same bucket). The container uses the value of max_load_factor as the threshold
+								that forces an increase in the number of buckets (and thus causing a <a href="std.hashset.html#rehash">rehash</a>). </p>
+								<p> Note though, that implementations may impose an upper limit on the number of buckets (see
+								{@link max_bucket_count}), which may force the container to ignore the <a href="std.hashset.html#max_load_factor">max_load_factor</a>. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1201,7 +1222,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L264">base/SetContainer.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L199">base/SetContainer.ts:199</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1237,10 +1258,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#rbegin">rbegin</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#rbegin">rbegin</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L163">HashSet.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L196">HashSet.ts:196</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1259,9 +1280,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#rbegin">rbegin</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L168">HashSet.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L201">HashSet.ts:201</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1289,15 +1311,29 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#rehash">rehash</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L252">HashSet.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L285">HashSet.ts:285</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Set number of buckets. </p>
+								</div>
+								<p> Sets the number of buckets in the container to <i>n</i> or more. </p>
+								<p> If <i>n</i> is greater than the current number of buckets in the container (<a href="std.hashset.html#bucket_count">bucket_count</a>), a
+									<a href="std.base.hashbuckets.html#rehash">rehash</a> is forced. The new <a href="std.hashset.html#bucket_count">bucket count</a> can either be equal or
+								greater than <i>n</i>. </p>
+								<p> If <i>n</i> is lower than the current number of buckets in the container (<a href="std.hashset.html#bucket_count">bucket_count</a>), the
+									function may have no effect on the <a href="std.hashset.html#bucket_count">bucket count</a> and may not force a
+								<a href="std.base.hashbuckets.html#rehash">rehash</a>. </p>
+								<p> A <a href="std.base.hashbuckets.html#rehash">rehash</a> is the reconstruction of the hash table: All the elements in the
+									container are rearranged according to their hash value into the new set of buckets. This may alter the order
+								of iteration of elements within the container. </p>
+								<p> <a href="std.base.hashbuckets.html#rehash">Rehashes</a> are automatically performed by the container whenever its
+								{@link load_factor load factor} is going to surpass its <a href="std.hashset.html#max_load_factor">max_load_factor</a> in an operation. </p>
+								<p> Notice that this function expects the number of buckets as argument. A similar function exists,
+								<a href="std.hashset.html#reserve">reserve</a>, that expects the number of elements in the container as argument. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1319,10 +1355,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#rend">rend</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#rend">rend</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L181">HashSet.ts:181</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L214">HashSet.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1339,9 +1375,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#rend">rend</a></p>
 								<p>Overwrites <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L186">HashSet.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L219">HashSet.ts:219</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1369,15 +1406,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.ihashset.html">IHashSet</a>.<a href="../interfaces/std.base.ihashset.html#reserve">reserve</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L244">HashSet.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L277">HashSet.ts:277</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Request a capacity change. </p>
+								</div>
+								<p> Sets the number of buckets in the container (<a href="std.hashset.html#bucket_count">bucket_count</a>) to the most appropriate to contain at
+								least <i>n</i> elements. </p>
+								<p> If <i>n</i> is greater than the current <a href="std.hashset.html#bucket_count">bucket_count</a> multiplied by the <a href="std.hashset.html#max_load_factor">max_load_factor</a>,
+								the container&#39;s <a href="std.hashset.html#bucket_count">bucket_count</a> is increased and a <a href="std.hashset.html#rehash">rehash</a> is forced. </p>
+								<p> If <i>n</i> is lower than that, the function may have no effect. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1402,7 +1444,7 @@
 								<p>Inherited from <a href="std.base.setcontainer.html">SetContainer</a>.<a href="std.base.setcontainer.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/base/SetContainer.ts#L248">base/SetContainer.ts:248</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/base/SetContainer.ts#L174">base/SetContainer.ts:174</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1419,26 +1461,66 @@
 					<a name="swap" class="tsd-anchor"></a>
 					<h3>swap</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.base.uniqueset.html" class="tsd-signature-type">UniqueSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.hashset.html" class="tsd-signature-type">HashSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.uniqueset.html">UniqueSet</a>.<a href="std.base.uniqueset.html#swap">swap</a></p>
+								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/stl/blob/c54f7fc/ts/src/std/HashSet.ts#L362">HashSet.ts:362</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L410">HashSet.ts:410</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p> Swap content. </p>
+								</div>
+								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.hashset.html">set</a> of the same type. Sizes abd container type may differ. </p>
+								<p> After the call to this member function, the elements in this container are those which were
+									in <i>obj</i> before the call, and the elements of <i>obj</i> are those which were in this. All
+								iterators, references and pointers remain valid for the swapped objects. </p>
+								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function. </p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <a href="std.base.uniqueset.html" class="tsd-signature-type">UniqueSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>obj: <a href="std.hashset.html" class="tsd-signature-type">HashSet</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Another <a href="std.hashset.html">set container</a> of the same type of elements as this (i.e.,
+											with the same template parameters, <b>Key</b> and <b>T</b>) whose content is swapped
+										with that of this <a href="std.hashset.html">container</a>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#swap">swap</a></p>
+								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/70b82ec/ts/src/std/HashSet.ts#L415">HashSet.ts:415</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p> Swap content. </p>
+								</div>
+								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="../interfaces/std.base.icontainer.html">container</a> object with same type of elements. Sizes and container type may differ. </p>
+								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
+									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
+								pointers remain valid for the swapped objects. </p>
+								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function. </p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1477,11 +1559,14 @@
 							<li class=" tsd-kind-type-alias tsd-parent-kind-class">
 								<a href="std.hashset.html#reverse_iterator" class="tsd-kind-icon">reverse_<wbr>iterator</a>
 							</li>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.hashset.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.hashset.html#data_" class="tsd-kind-icon">data_</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="std.hashset.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="std.hashset.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 								<a href="std.hashset.html#assign" class="tsd-kind-icon">assign</a>
@@ -1518,12 +1603,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.hashset.html#find" class="tsd-kind-icon">find</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="std.hashset.html#handle_erase" class="tsd-kind-icon">handle_<wbr>erase</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="std.hashset.html#handle_insert" class="tsd-kind-icon">handle_<wbr>insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.hashset.html#has" class="tsd-kind-icon">has</a>
