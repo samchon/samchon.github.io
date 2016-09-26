@@ -74,48 +74,71 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> An interface for substitute server classes. </p>
+						<p>An interface for substitute server classes.</p>
 					</div>
-					<p> <a href="samchon.protocol.iserverbase.html">IServerBase</a> is an interface for substitue server classes who subrogate server&#39;s role. </p>
-					<p> The easiest way to defining a server class is to extending one of them, who are derived from the
-					<a href="samchon.protocol.iserver.html">IServer</a>. </p>
-					<ul>
-						<li> <a href="../classes/samchon.protocol.server.html">Server</a> </li>
-						<li> <a href="../classes/samchon.protocol.webserver.html">WebServer</a> </li>
-						<li> <a href="../classes/samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a> </li>
-					</ul>
-					<p> However, it is impossible (that is, if the class is already extending another class), you can instead implement
-						the <a href="samchon.protocol.iserver.html">IServer</a> interface, create an <a href="samchon.protocol.iserverbase.html">IServerBase</a> member, and write simple hooks to route calls into the
-					aggregated <a href="samchon.protocol.iserverbase.html">IServerBase</a>. </p>
-					<p><p> <a href="../classes/samchon.protocol.external.externalclientarray.html">ExternalClientArray</a> can be a good example using this <a href="samchon.protocol.iserverbase.html">IServerBase</a>. </p></p>
-					<ul>
-						<li> <a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalClientArray.ts">https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalClientArray.ts</a> </li>
-					</ul>
-					<p><code>
-class MyServer extends Something implements IServer
+					<p><a href="samchon.protocol.iserverbase.html">IServerBase</a> is an interface for substitue server classes who subrogate server&#39;s role.</p>
+					<p>The easiest way to defining a server class is to extending one of them below, who implemented the <a href="samchon.protocol.iserver.html">IServer</a>.
+						However, it is impossible (that is, if the class is already extending another class), you can instead implement
+						the <a href="samchon.protocol.iserver.html">IServer</a> interface, create an <a href="samchon.protocol.iserverbase.html">IServerBase</a> member, and write simple hooks to route calls into
+					the aggregated <a href="samchon.protocol.iserverbase.html">IServerBase</a>.</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Protocol</th>
+								<th><a href="samchon.protocol.iserver.html">IServer</a></th>
+								<th><a href="samchon.protocol.iserverbase.html">IServerBase</a></th>
+								<th><a href="samchon.protocol.iclientdriver.html">IClientDriver</a></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Samchon Framework&#39;s own</td>
+								<td><a href="../classes/samchon.protocol.server.html">Server</a></td>
+								<td><a href="../classes/samchon.protocol.serverbase.html">ServerBase</a></td>
+								<td><a href="../classes/samchon.protocol.clientdriver.html">ClientDriver</a></td>
+							</tr>
+							<tr>
+								<td>Web-socket protocol</td>
+								<td><a href="../classes/samchon.protocol.webserver.html">WebServer</a></td>
+								<td><a href="../classes/samchon.protocol.webserverbase.html">WebServerBase</a></td>
+								<td><a href="../classes/samchon.protocol.webclientdriver.html">WebClientDriver</a></td>
+							</tr>
+							<tr>
+								<td>SharedWorker</td>
+								<td><a href="../classes/samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a></td>
+								<td><a href="../classes/samchon.protocol.sharedworkerserverbase.html">SharedWorkerServerBase</a></td>
+								<td><a href="../classes/samchon.protocol.sharedworkerclientdriver.html">SharedWorkerClientDriver</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<p>After the hooking to aggregated <a href="samchon.protocol.iserverbase.html">IServerBase</a> object, overrides <a href="samchon.protocol.iserverbase.html#addclient">addClient()</a> method who
+						accepts a newly connected client as an <a href="samchon.protocol.iclientdriver.html">IClientDriver</a> object. At last, call <a href="samchon.protocol.iserverbase.html#open">open()</a> method with
+					specified port number.</p>
+					<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> MyServer extends Something <span class="hljs-keyword">implements</span> IServer
 {
-private server_base: IServerBase = new WebServerBase(this);</p>
-<p>public addClient(driver: IClientDriver): void
-{
-// WHAT TO DO WHEN A CLIENT HAS CONNECTED
-}</p>
-<p>public open(port: number): void
-{
-this.server_base.open();
+    <span class="hljs-keyword">private</span> server_base_: IServerBase = <span class="hljs-keyword">new</span> WebServerBase(<span class="hljs-keyword">this</span>);
+
+    <span class="hljs-keyword">public</span> addClient(driver: IClientDriver): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-comment">// WHAT TO DO WHEN A CLIENT HAS CONNECTED</span>
+    }
+
+    <span class="hljs-keyword">public</span> open(port: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">this</span>.server_base_.open();
+    }
+    <span class="hljs-keyword">public</span> close(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-keyword">this</span>.server_base_.close();
+    }
 }
-public close(): void
-{
-this.server_base.close();
-}
-}
-</code></p>
+</code></pre>
 					<dl class="tsd-comment-tags">
 						<dt>see</dt>
-						<dd><p><a href="samchon.protocol.iserver.html">IServer</a></p>
+						<dd><p><a href="samchon.protocol.iserver.html">IServer</a>, <a href="samchon.protocol.iclientdriver.html">IClientDriver</a></p>
 						</dd>
 						<dt>handbook</dt>
-						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Basic_Components#iserverbase"
-							target="_blank"> Basic Components - IServerBase </a></p>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Basic_Components#iserverbase">Protocol - Basic Components</a></p>
 						</dd>
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
@@ -165,20 +188,37 @@ this.server_base.close();
 					<a name="addclient" class="tsd-anchor"></a>
 					<h3>add<wbr>Client</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Client<span class="tsd-signature-symbol">(</span>clientDriver<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Client<span class="tsd-signature-symbol">(</span>driver<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.iserver.html">IServer</a>.<a href="samchon.protocol.iserver.html#addclient">addClient</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/2125e98/ts/src/samchon/protocol/Server.ts#L118">samchon/protocol/Server.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/Server.ts#L71">samchon/protocol/Server.ts:71</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a newly connected remote client.</p>
+								</div>
+								<p>Overrides this method and defines what to do with the <em>driver</em>, a newly connected remote client. Below methods
+								and example codes may be good for comprehending how to utilize this <a href="samchon.protocol.iserverbase.html#addclient">addClient()</a> method.</p>
+								<ul>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/examples/calculator/calculator-server.ts">https://github.com/samchon/framework/blob/master/ts/examples/calculator/calculator-server.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/examples/chat-server/server.ts">https://github.com/samchon/framework/blob/master/ts/examples/chat-server/server.ts</a></li>
+									<li><a href="../classes/samchon.protocol.service.server.html#addclient">service.Server.addClient</a></li>
+									<li><a href="../classes/samchon.protocol.external.externalclientarray.html#addclient">external.ExternalClientArray.addClient</a></li>
+									<li><a href="../classes/samchon.protocol.slave.slaveserver.html#addclient">slave.SlaveServer.addClient</a></li>
+								</ul>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>clientDriver: <a href="samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a></h5>
+									<h5>driver: <a href="samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A <a href="samchon.protocol.icommunicator.html">communicator</a> with (newly connected) remote client.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -196,9 +236,16 @@ this.server_base.close();
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.iserver.html">IServer</a>.<a href="samchon.protocol.iserver.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/2125e98/ts/src/samchon/protocol/Server.ts#L116">samchon/protocol/Server.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/Server.ts#L55">samchon/protocol/Server.ts:55</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Close server.</p>
+								</div>
+								<p>Close opened server. All remote clients, have connected with this server, are also closed and their call back
+								functions, for closed connection, <a href="samchon.protocol.iclientdriver.html#onclose">IClientDriver.onClose</a> are also called.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -214,13 +261,21 @@ this.server_base.close();
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.iserver.html">IServer</a>.<a href="samchon.protocol.iserver.html#open">open</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/2125e98/ts/src/samchon/protocol/Server.ts#L114">samchon/protocol/Server.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/Server.ts#L47">samchon/protocol/Server.ts:47</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Open server.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>port: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Port number to open.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -254,6 +309,9 @@ this.server_base.close();
 								<a href="../modules/samchon.protocol.html">protocol</a>
 								<ul>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
+										<a href="../modules/samchon.protocol.distributed.html">distributed</a>
+									</li>
+									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.external.html">external</a>
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
@@ -264,9 +322,6 @@ this.server_base.close();
 									</li>
 									<li class=" tsd-kind-module tsd-parent-kind-module">
 										<a href="../modules/samchon.protocol.slave.html">slave</a>
-									</li>
-									<li class=" tsd-kind-module tsd-parent-kind-module">
-										<a href="../modules/samchon.protocol.socket.html">socket</a>
 									</li>
 								</ul>
 							</li>
@@ -279,6 +334,105 @@ this.server_base.close();
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.clientdriver.html" class="tsd-kind-icon">Client<wbr>Driver</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.communicator.html" class="tsd-kind-icon">Communicator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.communicatorbase.html" class="tsd-kind-icon">Communicator<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.dedicatedworker.html" class="tsd-kind-icon">Dedicated<wbr>Worker</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.dedicatedworkerconnector.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Connector</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.entity.html" class="tsd-kind-icon">Entity</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/samchon.protocol.entityarray.html" class="tsd-kind-icon">Entity<wbr>Array</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/samchon.protocol.entityarraycollection.html" class="tsd-kind-icon">Entity<wbr>Array<wbr>Collection</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/samchon.protocol.entitydeque.html" class="tsd-kind-icon">Entity<wbr>Deque</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/samchon.protocol.entitydequecollection.html" class="tsd-kind-icon">Entity<wbr>Deque<wbr>Collection</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/samchon.protocol.entitylist.html" class="tsd-kind-icon">Entity<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/samchon.protocol.entitylistcollection.html" class="tsd-kind-icon">Entity<wbr>List<wbr>Collection</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.invoke.html" class="tsd-kind-icon">Invoke</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.invokehistory.html" class="tsd-kind-icon">Invoke<wbr>History</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.invokeparameter.html" class="tsd-kind-icon">Invoke<wbr>Parameter</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.server.html" class="tsd-kind-icon">Server</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.serverbase.html" class="tsd-kind-icon">Server<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.serverconnector.html" class="tsd-kind-icon">Server<wbr>Connector</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.sharedworkerclientdriver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Client<wbr>Driver</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.sharedworkercommunicator.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Communicator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.sharedworkerserver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.sharedworkerserverbase.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.sharedworkerserverconnector.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server<wbr>Connector</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.webclientdriver.html" class="tsd-kind-icon">Web<wbr>Client<wbr>Driver</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.webcommunicator.html" class="tsd-kind-icon">Web<wbr>Communicator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.webserver.html" class="tsd-kind-icon">Web<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.webserverbase.html" class="tsd-kind-icon">Web<wbr>Server<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="../classes/samchon.protocol.webserverconnector.html" class="tsd-kind-icon">Web<wbr>Server<wbr>Connector</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="samchon.protocol.iclientdriver.html" class="tsd-kind-icon">IClient<wbr>Driver</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="samchon.protocol.icommunicator.html" class="tsd-kind-icon">ICommunicator</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="samchon.protocol.ientitycollection.html" class="tsd-kind-icon">IEntity<wbr>Collection</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="samchon.protocol.iprotocol.html" class="tsd-kind-icon">IProtocol</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="samchon.protocol.iserver.html" class="tsd-kind-icon">IServer</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
@@ -297,6 +451,9 @@ this.server_base.close();
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="samchon.protocol.iserverconnector.html" class="tsd-kind-icon">IServer<wbr>Connector</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
