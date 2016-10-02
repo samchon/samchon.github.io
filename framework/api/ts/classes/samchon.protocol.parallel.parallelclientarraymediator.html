@@ -74,6 +74,88 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Mediator of Parallel Processing System, a server accepting slave clients.</p>
+					</div>
+					<p>The <a href="samchon.protocol.parallel.parallelclientarraymediator.html">ParallelClientArrayMediator</a> is an abstract class, derived from the <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>
+					class, opening a server accepting <a href="samchon.protocol.parallel.parallelsystem.html">parallel clients</a> as a <strong>master</strong>.</p>
+					<p>Extends this <a href="samchon.protocol.parallel.parallelclientarraymediator.html">ParallelClientArrayMediator</a>, overrides <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createserverbase">createServerBase()</a> to
+						determine which protocol to follow and <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createexternalclient">createExternalClient()</a> creating child
+						<a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object. After the extending and overridings, open this server using the
+					{@lionk open open()} method.</p>
+					<h4 id="-inherited-a-href-samchon-protocol-parallel-parallelsystemarraymediator-html-parallelsystemarraymediator-a-">[Inherited] <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a></h4>
+					<p>The <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a> class be a <strong>master</strong> for its slave systems, and be a <strong>slave</strong> to its
+						master system at the same time. This <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a> be a <strong>master </strong>system, containing and
+						managing <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects, which represent parallel slave systems, by extending
+						<a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> class. Also, be a <strong>slave</strong> system through <a href="samchon.protocol.parallel.parallelclientarraymediator.html#getmediator">mediator</a> object, which is
+					derived from the {@link SlavSystem} class.</p>
+					<p>As a <strong>slave</strong>, you can specify this <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a> to be <i>a client slave connecting to
+						master server</i> or <i>a server slave accepting master client</i> by overriding the <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createmediator">createMediator</a> method.
+					Overrides the <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createmediator">createMediator()</a> method and return one of them:</p>
+					<ul>
+						<li>A client slave connecting to master server:<ul>
+								<li><a href="samchon.protocol.parallel.mediatorclient.html">MediatorClient</a></li>
+								<li><a href="samchon.protocol.parallel.mediatorwebclient.html">MediatorWebClient</a></li>
+								<li><a href="samchon.protocol.parallel.mediatorsharedworkerclient.html">MediatorSharedWorkerClient</a></li>
+							</ul>
+						</li>
+						<li>A server slave accepting master client:<ul>
+								<li><a href="samchon.protocol.parallel.mediatorserver.html">MediatorServer</a></li>
+								<li><a href="samchon.protocol.parallel.mediatorwebserver.html">MediatorWebServer</a></li>
+								<li><a href="samchon.protocol.parallel.mediatorsharedworkerserver.html">MediatorSharedWorkerServer</a></li>
+							</ul>
+						</li>
+					</ul>
+					<h4 id="-inherited-a-href-samchon-protocol-parallel-parallelsystemarray-html-parallelsystemarray-a-">[Inherited] <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a></h4>
+					<p>The <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> is an abstract class containing and managing remote parallel <strong>slave</strong> system
+						drivers, <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects. Within framework of network, <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> represents your
+						system, a <strong>Master</strong> of <em>Parallel Processing System</em> that requesting <em>parallel process</em> to slave systems and the
+						children <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects represent the remote slave systems, who is being requested the
+					<em>parallel processes</em>.</p>
+					<p>When you need the <strong>parallel process</strong>, then call one of them: <a href="samchon.protocol.parallel.parallelclientarraymediator.html#sendsegmentdata">sendSegmentData</a> or <a href="samchon.protocol.parallel.parallelclientarraymediator.html#sendpiecedata">sendPieceData</a>.
+						When the <strong>parallel process</strong> has completed, <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> estimates each <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>&#39;s
+						<a href="samchon.protocol.parallel.parallelsystem.html#getperformance">performance index</a> basis on their execution time. Those performance indices
+					will be reflected to the next <strong>parallel process</strong>, how much pieces to allocate to each <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.</p>
+					<p><a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_parallel_system.png"
+						target="_blank">
+						<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_parallel_system.png"
+						style="max-width: 100%" />
+					</a></p>
+					<h4 id="proxy-pattern">Proxy Pattern</h4>
+					<p>This class <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> is derived from the <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a> class. Thus, you can take
+						advantage of the <em>Proxy Pattern</em> in the <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> class. If a process to request is not the
+						<em>parallel process</em> (to be distrubted to all slaves), but the <strong>exclusive process</strong> handled in a system, then it
+					may better to utilizing the <em>Proxy Pattern</em>:</p>
+					<p>The <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a> class can use <em>Proxy Pattern</em>. In framework within user, which
+						<a href="samchon.protocol.external.externalsystem.html">external system</a> is connected with <a href="samchon.protocol.external.externalsystemarray.html">this system</a>, it&#39;s not
+					important. Only interested in user&#39;s perspective is <em>which can be done</em>.</p>
+					<p>By using the <em>logical proxy</em>, user dont&#39;t need to know which <a href="samchon.protocol.external.externalsystemrole.html">role</a> is belonged
+						to which <a href="samchon.protocol.external.externalsystem.html">system</a>. Just access to a role directly from <a href="samchon.protocol.external.externalsystemarray.html#getrole">ExternalSystemArray.getRole</a>.
+					Sends and receives <a href="samchon.protocol.invoke.html">Invoke</a> message via the <a href="samchon.protocol.external.externalsystemrole.html">role</a>.</p>
+					<ul>
+						<li>
+							<a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> can be accessed from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a> directly, without inteferring
+							from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>, with <a href="samchon.protocol.external.externalsystemarray.html#getrole">ExternalSystemArray.getRole</a>.
+						</li>
+						<li>
+							When you want to send an <a href="samchon.protocol.invoke.html">Invoke</a> message to the belonged <a href="samchon.protocol.external.externalsystem.html">system</a>, just call
+							<a href="samchon.protocol.external.externalsystemrole.html#senddata">ExternalSystemRole.sendData()</a>. Then, the message will be sent to the
+							external system.
+						</li>
+						<li> Those strategy is called <em>Proxy Pattern</em>. </li>
+					</ul>
+					<dl class="tsd-comment-tags">
+						<dt>handbook</dt>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Parallel_System">Protocol - Parallel System</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -117,18 +199,11 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#server_base_" class="tsd-kind-icon">server_<wbr>base_</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#child_tag" class="tsd-kind-icon">CHILD_<wbr>TAG</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#tag" class="tsd-kind-icon">TAG</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#_complete_history" class="tsd-kind-icon">_<wbr>Complete_<wbr>history</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#addclient" class="tsd-kind-icon">add<wbr>Client</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#at" class="tsd-kind-icon">at</a></li>
@@ -157,7 +232,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#senddata" class="tsd-kind-icon">send<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#sendpiecedata" class="tsd-kind-icon">send<wbr>Piece<wbr>Data</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#sendsegmentdata" class="tsd-kind-icon">send<wbr>Segment<wbr>Data</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#start_mediator" class="tsd-kind-icon">start_<wbr>mediator</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#startmediator" class="tsd-kind-icon">start<wbr>Mediator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.parallel.parallelclientarraymediator.html#toxml" class="tsd-kind-icon">toXML</a></li>
 							</ul>
 						</section>
@@ -177,7 +252,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>.<a href="samchon.protocol.parallel.parallelsystemarraymediator.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L14">samchon/protocol/parallel/ParallelClientArrayMediator.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L93">samchon/protocol/parallel/ParallelClientArrayMediator.ts:93</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -188,24 +263,6 @@
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.parallel.parallelclientarraymediator.html" class="tsd-signature-type">ParallelClientArrayMediator</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="server_base_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> server_<wbr>base_</h3>
-					<div class="tsd-signature tsd-kind-icon">server_<wbr>base_<span class="tsd-signature-symbol">:</span> <a href="../interfaces/samchon.protocol.iserverbase.html" class="tsd-signature-type">IServerBase</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L14">samchon/protocol/parallel/ParallelClientArrayMediator.ts:14</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A subrogator of <a href="../interfaces/samchon.protocol.iserver.html">server</a>&#39;s role instead of this <a href="samchon.protocol.external.externalclientarray.html">ExternalClientArray</a>.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -223,7 +280,7 @@
 								<p>Inherited from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a>.<a href="samchon.protocol.external.externalsystemarray.html#child_tag">CHILD_TAG</a></p>
 								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#child_tag">CHILD_TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L162">samchon/protocol/external/ExternalSystemArray.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L161">samchon/protocol/external/ExternalSystemArray.ts:161</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -249,7 +306,7 @@
 								<p>Inherited from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a>.<a href="samchon.protocol.external.externalsystemarray.html#tag">TAG</a></p>
 								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#tag">TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L152">samchon/protocol/external/ExternalSystemArray.ts:152</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L151">samchon/protocol/external/ExternalSystemArray.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -259,31 +316,6 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p><em>systemArray</em>.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
-					<a name="_complete_history" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Complete_<wbr>history</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_<wbr>Complete_<wbr>history<span class="tsd-signature-symbol">(</span>history<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.parallel.prinvokehistory.html" class="tsd-signature-type">PRInvokeHistory</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>.<a href="samchon.protocol.parallel.parallelsystemarraymediator.html#_complete_history">_Complete_history</a></p>
-								<p>Overwrites ParallelSystemArray._Complete_history</p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts#L47">samchon/protocol/parallel/ParallelSystemArrayMediator.ts:47</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>history: <a href="samchon.protocol.parallel.prinvokehistory.html" class="tsd-signature-type">PRInvokeHistory</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -298,13 +330,24 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addclient">addClient</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L52">samchon/protocol/parallel/ParallelClientArrayMediator.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L140">samchon/protocol/parallel/ParallelClientArrayMediator.ts:140</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Add a newly connected remote client.</p>
+								</div>
+								<p>When a <a href="../interfaces/samchon.protocol.iclientdriver.html">remote client</a> connects to this <em>master server of parallel processing system</em>,
+									then this <a href="samchon.protocol.parallel.parallelclientarraymediator.html">ParallelClientArrayMediator</a> creates a child <a href="samchon.protocol.parallel.parallelsystem.html">parallel client</a> object
+								through the <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createexternalclient">createExternalClient()</a> method and <a href="samchon.collection.arraycollection.html#insert">inserts</a> it.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>driver: <a href="../interfaces/samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A communicator for parallel client.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -330,7 +373,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L256">samchon/collection/DequeCollection.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L256">samchon/collection/DequeCollection.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +398,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L257">samchon/collection/DequeCollection.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L257">samchon/collection/DequeCollection.ts:257</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -374,7 +417,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L258">samchon/collection/DequeCollection.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L258">samchon/collection/DequeCollection.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -393,7 +436,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L259">samchon/collection/DequeCollection.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L259">samchon/collection/DequeCollection.ts:259</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -412,7 +455,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L264">samchon/collection/DequeCollection.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L264">samchon/collection/DequeCollection.ts:264</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -440,7 +483,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L265">samchon/collection/DequeCollection.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L265">samchon/collection/DequeCollection.ts:265</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -462,7 +505,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L266">samchon/collection/DequeCollection.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L266">samchon/collection/DequeCollection.ts:266</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -484,7 +527,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L267">samchon/collection/DequeCollection.ts:267</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L267">samchon/collection/DequeCollection.ts:267</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -514,7 +557,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a>.<a href="samchon.protocol.parallel.parallelsystemarray.html#at">at</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystemArray.ts#L41">samchon/protocol/parallel/ParallelSystemArray.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystemArray.ts#L96">samchon/protocol/parallel/ParallelSystemArray.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,7 +587,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L83">samchon/protocol/parallel/ParallelClientArrayMediator.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L199">samchon/protocol/parallel/ParallelClientArrayMediator.ts:199</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -570,7 +613,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#construct">construct</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#construct">construct</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L205">samchon/protocol/EntityCollection.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L205">samchon/protocol/EntityCollection.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -605,7 +648,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#count">count</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L237">samchon/protocol/EntityCollection.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L237">samchon/protocol/EntityCollection.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -637,16 +680,28 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#createchild">createChild</a></p>
 								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#createchild">createChild</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L61">samchon/protocol/parallel/ParallelClientArrayMediator.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L161">samchon/protocol/parallel/ParallelClientArrayMediator.ts:161</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>(Deprecated) Factory method creating child object.</p>
+								</div>
+								<p>The method <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createchild">createChild()</a> is deprecated. Don&#39;t use and override this.</p>
+								<p>Note that, the <a href="samchon.protocol.parallel.parallelclientarraymediator.html">ParallelClientArrayMediator</a> is a server accepting <a href="samchon.protocol.parallel.parallelsystem.html">parallel clients</a> as a master. There&#39;s no way to creating the <a href="samchon.protocol.parallel.parallelsystem.html">parallel clients</a> in advance before
+								opening the server.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>xml: <a href="samchon.library.xml.html" class="tsd-signature-type">XML</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="samchon.library.xml.html">XML</a> object represents the child <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.parallel.parallelsystem.html" class="tsd-signature-type">ParallelSystem</a></h4>
+							<p>null</p>
 						</li>
 					</ul>
 				</section>
@@ -660,16 +715,32 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L62">samchon/protocol/parallel/ParallelClientArrayMediator.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L178">samchon/protocol/parallel/ParallelClientArrayMediator.ts:178</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Factory method creating <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object.</p>
+								</div>
+								<p>The method <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createexternalclient">createExternalClient()</a> is a factory method creating a child
+									<a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object, that is called whenever a parallel client has connected, by
+								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#addclient">addClient()</a>.</p>
+								<p>Overrides this <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createexternalclient">createExternalClient</a> method and creates a type of <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object with
+									the <em>driver</em> that communicates with the parallel client. After the creation, returns the <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>
+									object. Then whenever a parallel client has connected, matched <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object will be
+								constructed and <a href="samchon.collection.arraycollection.html#insert">inserted</a> into this <a href="samchon.protocol.parallel.parallelclientarraymediator.html">ParallelClientArrayMediator</a> object.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>driver: <a href="../interfaces/samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A communicator with the parallel client.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.parallel.parallelsystem.html" class="tsd-signature-type">ParallelSystem</a></h4>
+							<p>A newly created <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object.</p>
 						</li>
 					</ul>
 				</section>
@@ -684,10 +755,36 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>.<a href="samchon.protocol.parallel.parallelsystemarraymediator.html#createmediator">createMediator</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts#L25">samchon/protocol/parallel/ParallelSystemArrayMediator.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts#L130">samchon/protocol/parallel/ParallelSystemArrayMediator.ts:130</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Factory method creating a <a href="samchon.protocol.parallel.mediatorsystem.html">MediatorSystem</a> object.</p>
+								</div>
+								<p>The <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createmediator">createMediator()</a> is an abstract method creating the <a href="samchon.protocol.parallel.mediatorsystem.html">MediatorSystem</a> object.</p>
+								<p>You know what? this <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a> class be a <strong>master</strong> for its slave systems, and be a
+									<strong>slave</strong> to its master system at the same time. The <a href="samchon.protocol.parallel.mediatorsystem.html">MediatorSystem</a> object makes it possible; be a
+								<strong>slave</strong> system. This <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createmediator">createMediator</a> determines specific type of the <a href="samchon.protocol.parallel.mediatorsystem.html">MediatorSystem</a>.</p>
+								<p>Overrides the <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createmediator">createMediator()</a> method to create and return one of them following which
+								protocol and which type of remote connection (server or client) will be used:</p>
+								<ul>
+									<li>A client slave connecting to master server:<ul>
+											<li><a href="samchon.protocol.parallel.mediatorclient.html">MediatorClient</a></li>
+											<li><a href="samchon.protocol.parallel.mediatorwebclient.html">MediatorWebClient</a></li>
+											<li><a href="samchon.protocol.parallel.mediatorsharedworkerclient.html">MediatorSharedWorkerClient</a></li>
+										</ul>
+									</li>
+									<li>A server slave accepting master client:<ul>
+											<li><a href="samchon.protocol.parallel.mediatorserver.html">MediatorServer</a></li>
+											<li><a href="samchon.protocol.parallel.mediatorwebserver.html">MediatorWebServer</a></li>
+											<li><a href="samchon.protocol.parallel.mediatorsharedworkerserver.html">MediatorSharedWorkerServer</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.parallel.mediatorsystem.html" class="tsd-signature-type">MediatorSystem</a></h4>
+							<p>A newly created <a href="samchon.protocol.parallel.mediatorsystem.html">MediatorSystem</a> object.</p>
 						</li>
 					</ul>
 				</section>
@@ -701,7 +798,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L47">samchon/protocol/parallel/ParallelClientArrayMediator.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L126">samchon/protocol/parallel/ParallelClientArrayMediator.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -709,13 +806,14 @@
 									<p>Factory method creating <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a> object.</p>
 								</div>
 								<p>This method <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createserverbase">createServerBase()</a> determines which protocol is used in this server,
-									<a href="samchon.protocol.external.externalclientarray.html">ExternalClientArray</a>. If the protocol is determined, then <a href="samchon.protocol.external.externalsystem.html">external clients</a> who
-								may connect to <a href="samchon.protocol.external.externalclientarray.html">this server</a> must follow the specified protocol.</p>
-								<p>Creates and returns one of them:</p>
+									<a href="samchon.protocol.parallel.parallelclientarraymediator.html">ParallelClientArrayMediator</a>. If the protocol is determined, then
+									<a href="samchon.protocol.parallel.parallelsystem.html">parallel clients</a> who may connect to <a href="samchon.protocol.parallel.parallelclientarraymediator.html">this server</a>
+								must follow the specified protocol.</p>
+								<p>Overrides the <a href="samchon.protocol.parallel.parallelclientarraymediator.html#createserverbase">createServerBase()</a> method to create and return one of them:</p>
 								<ul>
-									<li> <a href="samchon.protocol.serverbase.html">ServerBase</a> </li>
-									<li> <a href="samchon.protocol.webserverbase.html">WebServerBase</a> </li>
-									<li> <a href="samchon.protocol.sharedworkerserverbase.html">SharedWorkerServerBase</a> </li>
+									<li><a href="samchon.protocol.serverbase.html">ServerBase</a></li>
+									<li><a href="samchon.protocol.webserverbase.html">WebServerBase</a></li>
+									<li><a href="samchon.protocol.sharedworkerserverbase.html">SharedWorkerServerBase</a></li>
 								</ul>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/samchon.protocol.iserverbase.html" class="tsd-signature-type">IServerBase</a></h4>
@@ -735,7 +833,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#dispatchevent">dispatchEvent</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#dispatchevent">dispatchEvent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L206">samchon/collection/DequeCollection.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L206">samchon/collection/DequeCollection.ts:206</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -767,7 +865,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#get">get</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#get">get</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L245">samchon/protocol/EntityCollection.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L245">samchon/protocol/EntityCollection.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -803,9 +901,18 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>.<a href="samchon.protocol.parallel.parallelsystemarraymediator.html#getmediator">getMediator</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts#L39">samchon/protocol/parallel/ParallelSystemArrayMediator.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts#L160">samchon/protocol/parallel/ParallelSystemArrayMediator.ts:160</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get <a href="samchon.protocol.parallel.mediatorsystem.html">MediatorSystem</a> object.</p>
+								</div>
+								<p>When you need to send an <a href="samchon.protocol.invoke.html">Invoke</a> message to the master system of this
+								<a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>, then send to the <a href="samchon.protocol.parallel.mediatorsystem.html">MediatorSystem</a> through this <a href="samchon.protocol.parallel.parallelclientarraymediator.html#getmediator">getMediator</a>.</p>
+								<pre><code class="lang-typescript"><span class="hljs-keyword">this</span>.getMediator().sendData(...);
+</code></pre>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.parallel.mediatorsystem.html" class="tsd-signature-type">MediatorSystem</a></h4>
 						</li>
 					</ul>
@@ -822,7 +929,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#getrole">getRole</a></p>
 								<p>Inherited from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a>.<a href="samchon.protocol.external.externalsystemarray.html#getrole">getRole</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L110">samchon/protocol/external/ExternalSystemArray.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L109">samchon/protocol/external/ExternalSystemArray.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -856,7 +963,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#has">has</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L229">samchon/protocol/EntityCollection.ts:229</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L229">samchon/protocol/EntityCollection.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -888,7 +995,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#haseventlistener">hasEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#haseventlistener">hasEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L198">samchon/collection/DequeCollection.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L198">samchon/collection/DequeCollection.ts:198</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -924,12 +1031,12 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#hasrole">hasRole</a></p>
 								<p>Inherited from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a>.<a href="samchon.protocol.external.externalsystemarray.html#hasrole">hasRole</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L93">samchon/protocol/external/ExternalSystemArray.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L92">samchon/protocol/external/ExternalSystemArray.ts:92</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Test whether this system array has the role.</p>
+									<p>Test whether the role exists.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -958,7 +1065,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#key">key</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#key">key</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L221">samchon/protocol/EntityCollection.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L221">samchon/protocol/EntityCollection.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -994,7 +1101,7 @@ class Point extends Entity
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#open">open</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L70">samchon/protocol/parallel/ParallelClientArrayMediator.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts#L186">samchon/protocol/parallel/ParallelClientArrayMediator.ts:186</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1024,7 +1131,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#pop_back">pop_back</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#pop_back">pop_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L151">samchon/collection/DequeCollection.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L151">samchon/collection/DequeCollection.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1049,7 +1156,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#push">push</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L98">samchon/collection/DequeCollection.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L98">samchon/collection/DequeCollection.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1080,7 +1187,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#push_back">push_back</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#push_back">push_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L110">samchon/collection/DequeCollection.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L110">samchon/collection/DequeCollection.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1113,7 +1220,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#refresh">refresh</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#refresh">refresh</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L214">samchon/collection/DequeCollection.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L214">samchon/collection/DequeCollection.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1137,7 +1244,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#refresh">refresh</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#refresh">refresh</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L219">samchon/collection/DequeCollection.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L219">samchon/collection/DequeCollection.ts:219</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1159,7 +1266,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#refresh">refresh</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#refresh">refresh</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L224">samchon/collection/DequeCollection.ts:224</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L224">samchon/collection/DequeCollection.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1200,7 +1307,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L280">samchon/collection/DequeCollection.ts:280</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L280">samchon/collection/DequeCollection.ts:280</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1225,7 +1332,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L281">samchon/collection/DequeCollection.ts:281</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L281">samchon/collection/DequeCollection.ts:281</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1244,7 +1351,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L282">samchon/collection/DequeCollection.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L282">samchon/collection/DequeCollection.ts:282</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1263,7 +1370,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L283">samchon/collection/DequeCollection.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L283">samchon/collection/DequeCollection.ts:283</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1282,7 +1389,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L288">samchon/collection/DequeCollection.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L288">samchon/collection/DequeCollection.ts:288</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1310,7 +1417,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L289">samchon/collection/DequeCollection.ts:289</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L289">samchon/collection/DequeCollection.ts:289</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1332,7 +1439,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L290">samchon/collection/DequeCollection.ts:290</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L290">samchon/collection/DequeCollection.ts:290</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1354,7 +1461,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L291">samchon/collection/DequeCollection.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L291">samchon/collection/DequeCollection.ts:291</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1385,7 +1492,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#replydata">replyData</a></p>
 								<p>Inherited from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a>.<a href="samchon.protocol.external.externalsystemarray.html#replydata">replyData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L139">samchon/protocol/external/ExternalSystemArray.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L138">samchon/protocol/external/ExternalSystemArray.ts:138</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1418,7 +1525,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#senddata">sendData</a></p>
 								<p>Inherited from <a href="samchon.protocol.external.externalsystemarray.html">ExternalSystemArray</a>.<a href="samchon.protocol.external.externalsystemarray.html#senddata">sendData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L128">samchon/protocol/external/ExternalSystemArray.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystemArray.ts#L127">samchon/protocol/external/ExternalSystemArray.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1450,17 +1557,42 @@ class Point extends Entity
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a>.<a href="samchon.protocol.parallel.parallelsystemarray.html#sendpiecedata">sendPieceData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystemArray.ts#L72">samchon/protocol/parallel/ParallelSystemArray.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystemArray.ts#L167">samchon/protocol/parallel/ParallelSystemArray.ts:167</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Send an <a href="samchon.protocol.invoke.html">Invoke</a> message with range of pieces.</p>
+								</div>
+								<p>Sends an <a href="samchon.protocol.invoke.html">Invoke</a> message requesting a <strong>parallel process</strong> with its <em>range of pieces [first, last)</em>.
+									The <a href="samchon.protocol.invoke.html">Invoke</a> will be delivered to children <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects with the newly computed
+									<em>range of sub-pieces</em>, which is divided from the <em>range of pieces (first to last)</em>, basis on their
+								<a href="samchon.protocol.parallel.parallelsystem.html#getperformance">performance indices</a>.</p>
+								<ul>
+									<li>If indices of pieces are 0 to 50,</li>
+									<li>The sub-pieces will be allocated such below:
+										Name    | Performance index | Range of sub-pieces to be allocated | Formula
+										---------|-------------------|-------------------------------------|------------------------
+										Snail   |                 1 |                            ( 0,  5] | (50 - 0) / 10 <em> 1
+										Cheetah |                 4 |                            ( 5, 25] | (50 - 0) / 10 </em> 4 + 5
+										Rabbit  |                 3 |                            (25, 40] | (50 - 0) / 10 <em> 3 + 25
+									Turtle  |                 2 |                            (40, 50] | (50 - 0) / 10 </em> 2 + 40</li>
+								</ul>
+								<p>When the <strong>parallel process</strong> has completed, then this {@link ParallelSystemArraY} will estimate
+									<a href="samchon.protocol.parallel.parallelsystem.html#getperformance">performance indices</a> of <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects basis on their
+								execution time.</p>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="samchon.protocol.parallel.parallelclientarraymediator.html#sendsegmentdata">sendSegmentData</a>, {@link ParallelSystem.getPerformacen}</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>An invoke message requesting parallel process.</p>
+										<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message requesting parallel process.</p>
 									</div>
 								</li>
 								<li>
@@ -1472,7 +1604,7 @@ class Point extends Entity
 								<li>
 									<h5>last: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Final piece&#39;s index in a section. The ranged used is [<em>first</em>, <em>last</em>), which contains
+										<p>Final piece&#39;s index in a section. The range used is [<em>first</em>, <em>last</em>), which contains
 											all the pieces&#39; indices between <em>first</em> and <em>last</em>, including the piece pointed by index
 										<em>first</em>, but not the piece pointed by the index <em>last</em>.</p>
 									</div>
@@ -1493,23 +1625,47 @@ class Point extends Entity
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a>.<a href="samchon.protocol.parallel.parallelsystemarray.html#sendsegmentdata">sendSegmentData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystemArray.ts#L58">samchon/protocol/parallel/ParallelSystemArray.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystemArray.ts#L133">samchon/protocol/parallel/ParallelSystemArray.ts:133</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Send an <a href="samchon.protocol.invoke.html">Invoke</a> message with segment size.</p>
+								</div>
+								<p>Sends an <a href="samchon.protocol.invoke.html">Invoke</a> message requesting a <strong>parallel process</strong> with its <em>segment size</em>. The <a href="samchon.protocol.invoke.html">Invoke</a>
+									message will be delivered to children <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects with the <em>piece size</em>, which is divided
+								from the <em>segment size</em>, basis on their <a href="samchon.protocol.parallel.parallelsystem.html#getperformance">performance indices</a>.</p>
+								<ul>
+									<li>If segment size is 100,</li>
+									<li>The segment will be allocated such below:
+										Name    | Performance index | Number of pieces to be allocated | Formula
+										--------|-------------------|----------------------------------|--------------
+										Snail   |                 1 |                               10 | 100 / 10 <em> 1
+										Cheetah |                 4 |                               40 | 100 / 10 </em> 4
+										Rabbit  |                 3 |                               30 | 100 / 10 <em> 3
+									Turtle  |                 2 |                               20 | 100 / 10 </em> 2</li>
+								</ul>
+								<p>When the <strong>parallel process</strong> has completed, then this {@link ParallelSystemArraY} will estimate
+									<a href="samchon.protocol.parallel.parallelsystem.html#getperformance">performance indices</a> of <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects basis on their
+								execution time.</p>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="samchon.protocol.parallel.parallelclientarraymediator.html#sendpiecedata">sendPieceData</a>, {@link ParallelSystem.getPerformacen}</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>An invoke message requesting parallel process.</p>
+										<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message requesting parallel process.</p>
 									</div>
 								</li>
 								<li>
 									<h5>size: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Number of pieces.</p>
+										<p>Number of pieces to segment.</p>
 									</div>
 								</li>
 							</ul>
@@ -1518,19 +1674,26 @@ class Point extends Entity
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="start_mediator" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> start_<wbr>mediator</h3>
+					<a name="startmediator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> start<wbr>Mediator</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">start_<wbr>mediator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">start<wbr>Mediator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>.<a href="samchon.protocol.parallel.parallelsystemarraymediator.html#start_mediator">start_mediator</a></p>
+								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystemarraymediator.html">ParallelSystemArrayMediator</a>.<a href="samchon.protocol.parallel.parallelsystemarraymediator.html#startmediator">startMediator</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts#L27">samchon/protocol/parallel/ParallelSystemArrayMediator.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts#L138">samchon/protocol/parallel/ParallelSystemArrayMediator.ts:138</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Start mediator.</p>
+								</div>
+								<p>If the <a href="samchon.protocol.parallel.parallelclientarraymediator.html#getmediator">mediator</a> is a type of server, then opens the server accepting master client.
+								Otherwise, the <a href="samchon.protocol.parallel.parallelclientarraymediator.html#getmediator">mediator</a> is a type of client, then connects the master server.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -1547,7 +1710,7 @@ class Point extends Entity
 								<p>Implementation of <a href="../interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a>.<a href="../interfaces/samchon.protocol.external.iexternalclientarray.html#toxml">toXML</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#toxml">toXML</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L266">samchon/protocol/EntityCollection.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L266">samchon/protocol/EntityCollection.ts:266</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1652,17 +1815,11 @@ class Point extends Entity
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#server_base_" class="tsd-kind-icon">server_<wbr>base_</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#child_tag" class="tsd-kind-icon">CHILD_<wbr>TAG</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#tag" class="tsd-kind-icon">TAG</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
-								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#_complete_history" class="tsd-kind-icon">_<wbr>Complete_<wbr>history</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#addclient" class="tsd-kind-icon">add<wbr>Client</a>
@@ -1749,7 +1906,7 @@ class Point extends Entity
 								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#sendsegmentdata" class="tsd-kind-icon">send<wbr>Segment<wbr>Data</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#start_mediator" class="tsd-kind-icon">start_<wbr>mediator</a>
+								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#startmediator" class="tsd-kind-icon">start<wbr>Mediator</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.protocol.parallel.parallelclientarraymediator.html#toxml" class="tsd-kind-icon">toXML</a>

@@ -74,6 +74,73 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A driver for a distributed slave system.</p>
+					</div>
+					<p>The <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> is an abstract class represents a <strong>slave</strong> system in <em>Distributed Processing System</em>,
+						connected with this <strong>master</strong> system. This <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> takes full charge of network communication
+					with the remote, distributed <strong>slave</strong> system has connected.</p>
+					<p>This <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> has a <a href="samchon.protocol.distributed.distributedsystem.html#getperformance">performance index</a> that indicates how much the <strong>slave</strong>
+						system is fast. The <a href="samchon.protocol.distributed.distributedsystem.html#getperformance">performance index</a> is referenced and revaluated whenever those methods
+					are called:</p>
+					<ul>
+						<li>Requesting a <em>parallel process</em><ul>
+								<li><a href="samchon.protocol.distributed.distributedsystemarray.html#sendsegmentdata">DistributedSystemArray.sendSegmentData</a></li>
+								<li><a href="samchon.protocol.distributed.distributedsystemarray.html#sendpiecedata">DistributedSystemArray.sendPieceData</a></li>
+							</ul>
+						</li>
+						<li>Requesting a <em>distributed process</em>: <a href="samchon.protocol.distributed.distributedsystemrole.html#senddata">DistributedSystemRole.sendData</a></li>
+					</ul>
+					<p>Note that, this <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> class derived from the <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a> class. Thus, this
+						<a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> can also have children <a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> objects exclusively. However, the
+						children <a href="samchon.protocol.external.externalsystemrole.html">roles</a> objects are different with the <a href="samchon.protocol.distributed.distributedsystemrole.html">DistributedSystemRole</a>. The
+						domestic <a href="samchon.protocol.external.externalsystemrole.html">roles</a> are belonged to only a specific <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> object.
+						Otherwise, the <a href="samchon.protocol.distributed.distributedsystemrole.html">DistributedSystemRole</a> objects are belonged to a <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a> object.
+						Furthermore, the relationship between this <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> and <a href="samchon.protocol.distributed.distributedsystemrole.html">DistributedSystemRole</a> classes are
+					<strong>M: N Associative</strong>.</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Articles</th>
+								<th><a href="samchon.protocol.distributed.distributedsystemrole.html">DistributedSystemRole</a></th>
+								<th><a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td> Belonged to</td>
+								<td><a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a></td>
+								<td><a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a></td>
+							</tr>
+							<tr>
+								<td> Relationship</td>
+								<td>M: N Associative</td>
+								<td>1: N Composite</td>
+							</tr>
+							<tr>
+								<td> Ownership</td>
+								<td>References</td>
+								<td>Exclusive possession</td>
+							</tr>
+						</tbody>
+					</table>
+					<p><a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_distributed_system.png"
+						target="_blank">
+						<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_distributed_system.png"
+						style="max-width: 100%" />
+					</a></p>
+					<dl class="tsd-comment-tags">
+						<dt>handbook</dt>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Distributed_System">Protocol - Distributed System</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -113,22 +180,16 @@
 								<li class="tsd-kind-module tsd-parent-kind-class"><a href="../modules/samchon.protocol.distributed.distributedsystem.deque.html" class="tsd-kind-icon">Deque</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.distributed.distributedsystem.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.distributed.distributedsystem.html#name" class="tsd-kind-icon">name</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.distributed.distributedsystem.html#communicator" class="tsd-kind-icon">communicator</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -138,18 +199,17 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#tag" class="tsd-kind-icon">TAG</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#close" class="tsd-kind-icon">close</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.distributed.distributedsystem.html#compute_average_elapsed_time" class="tsd-kind-icon">compute_<wbr>average_<wbr>elapsed_<wbr>time</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#construct" class="tsd-kind-icon">construct</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#count" class="tsd-kind-icon">count</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.distributed.distributedsystem.html#createchild" class="tsd-kind-icon">create<wbr>Child</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#destructor" class="tsd-kind-icon">destructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected"><a href="samchon.protocol.distributed.distributedsystem.html#destructor" class="tsd-kind-icon">destructor</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#dispatchevent" class="tsd-kind-icon">dispatch<wbr>Event</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance" class="tsd-kind-icon">enforce<wbr>Performance</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.distributed.distributedsystem.html#get" class="tsd-kind-icon">get</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#get" class="tsd-kind-icon">get</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#getname" class="tsd-kind-icon">get<wbr>Name</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#getperformance" class="tsd-kind-icon">get<wbr>Performance</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.distributed.distributedsystem.html#getsystemarray" class="tsd-kind-icon">get<wbr>System<wbr>Array</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.distributed.distributedsystem.html#has" class="tsd-kind-icon">has</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#has" class="tsd-kind-icon">has</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#haseventlistener" class="tsd-kind-icon">has<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#key" class="tsd-kind-icon">key</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="samchon.protocol.distributed.distributedsystem.html#pop_back" class="tsd-kind-icon">pop_<wbr>back</a></li>
@@ -166,47 +226,70 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Distributed<wbr>System<span class="tsd-signature-symbol">(</span>systemArray<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.parallel.parallelsystemarray.html" class="tsd-signature-type">ParallelSystemArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.protocol.distributed.distributedsystem.html" class="tsd-signature-type">DistributedSystem</a></li>
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Distributed<wbr>System<span class="tsd-signature-symbol">(</span>systemArray<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.parallel.parallelsystemarray.html" class="tsd-signature-type">ParallelSystemArray</a>, communicator<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.protocol.distributed.distributedsystem.html" class="tsd-signature-type">DistributedSystem</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Distributed<wbr>System<span class="tsd-signature-symbol">(</span>systemArray<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.distributed.distributedsystemarray.html" class="tsd-signature-type">DistributedSystemArray</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.protocol.distributed.distributedsystem.html" class="tsd-signature-type">DistributedSystem</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Distributed<wbr>System<span class="tsd-signature-symbol">(</span>systemArray<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.distributed.distributedsystemarray.html" class="tsd-signature-type">DistributedSystemArray</a>, communicator<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.protocol.distributed.distributedsystem.html" class="tsd-signature-type">DistributedSystem</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L64">samchon/protocol/parallel/ParallelSystem.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L48">samchon/protocol/distributed/DistributedSystem.ts:48</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Construct from parent <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a>.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>systemArray: <a href="samchon.protocol.parallel.parallelsystemarray.html" class="tsd-signature-type">ParallelSystemArray</a></h5>
+									<h5>systemArray: <a href="samchon.protocol.distributed.distributedsystemarray.html" class="tsd-signature-type">DistributedSystemArray</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The parent <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a> object.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.distributed.distributedsystem.html" class="tsd-signature-type">DistributedSystem</a></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#constructor">constructor</a></p>
-								<p>Overwrites <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L69">samchon/protocol/parallel/ParallelSystem.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L57">samchon/protocol/distributed/DistributedSystem.ts:57</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constrct from parent <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a> and communicator.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>systemArray: <a href="samchon.protocol.parallel.parallelsystemarray.html" class="tsd-signature-type">ParallelSystemArray</a></h5>
+									<h5>systemArray: <a href="samchon.protocol.distributed.distributedsystemarray.html" class="tsd-signature-type">DistributedSystemArray</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The parent <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a> object.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>communicator: <a href="../interfaces/samchon.protocol.iclientdriver.html" class="tsd-signature-type">IClientDriver</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A communicator communicates with remote, the external system.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.distributed.distributedsystem.html" class="tsd-signature-type">DistributedSystem</a></h4>
@@ -223,7 +306,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#name">name</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L52">samchon/protocol/external/ExternalSystem.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystem.ts#L52">samchon/protocol/external/ExternalSystem.ts:52</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -231,43 +314,6 @@
 							<p>The name represents external system have connected.</p>
 						</div>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="communicator" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> communicator</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> communicator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.protocol.icommunicator.html" class="tsd-signature-type">ICommunicator</a></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> communicator<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.protocol.icommunicator.html" class="tsd-signature-type">ICommunicator</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#communicator">communicator</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L141">samchon/protocol/external/ExternalSystem.ts:141</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/samchon.protocol.icommunicator.html" class="tsd-signature-type">ICommunicator</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#communicator">communicator</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L133">samchon/protocol/external/ExternalSystem.ts:133</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>val: <a href="../interfaces/samchon.protocol.icommunicator.html" class="tsd-signature-type">ICommunicator</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -285,7 +331,7 @@
 								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#child_tag">CHILD_TAG</a></p>
 								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#child_tag">CHILD_TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L200">samchon/protocol/external/ExternalSystem.ts:200</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystem.ts#L243">samchon/protocol/external/ExternalSystem.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -311,7 +357,7 @@
 								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#tag">TAG</a></p>
 								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#tag">TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L190">samchon/protocol/external/ExternalSystem.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystem.ts#L233">samchon/protocol/external/ExternalSystem.ts:233</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -343,7 +389,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L256">samchon/collection/DequeCollection.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L256">samchon/collection/DequeCollection.ts:256</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -368,7 +414,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L257">samchon/collection/DequeCollection.ts:257</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L257">samchon/collection/DequeCollection.ts:257</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -387,7 +433,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L258">samchon/collection/DequeCollection.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L258">samchon/collection/DequeCollection.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -406,7 +452,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L259">samchon/collection/DequeCollection.ts:259</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L259">samchon/collection/DequeCollection.ts:259</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -425,7 +471,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L264">samchon/collection/DequeCollection.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L264">samchon/collection/DequeCollection.ts:264</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,7 +499,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L265">samchon/collection/DequeCollection.ts:265</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L265">samchon/collection/DequeCollection.ts:265</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -475,7 +521,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L266">samchon/collection/DequeCollection.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L266">samchon/collection/DequeCollection.ts:266</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -497,7 +543,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#addeventlistener">addEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L267">samchon/collection/DequeCollection.ts:267</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L267">samchon/collection/DequeCollection.ts:267</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -527,27 +573,15 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L149">samchon/protocol/external/ExternalSystem.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystem.ts#L195">samchon/protocol/external/ExternalSystem.ts:195</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Close connection.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="compute_average_elapsed_time" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> compute_<wbr>average_<wbr>elapsed_<wbr>time</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">compute_<wbr>average_<wbr>elapsed_<wbr>time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L51">samchon/protocol/distributed/DistributedSystem.ts:51</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -563,7 +597,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#construct">construct</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#construct">construct</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L205">samchon/protocol/EntityCollection.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L205">samchon/protocol/EntityCollection.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -598,7 +632,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#count">count</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L237">samchon/protocol/EntityCollection.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L237">samchon/protocol/EntityCollection.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -630,23 +664,40 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#createchild">createChild</a></p>
 								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#createchild">createChild</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L17">samchon/protocol/distributed/DistributedSystem.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L91">samchon/protocol/distributed/DistributedSystem.ts:91</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Factory method creating a <a href="samchon.protocol.external.externalsystemrole.html">child</a> object.</p>
+								</div>
+								<p>In <a href="../modules/samchon.protocol.distributed.html">distributed</a> module, the role class <a href="samchon.protocol.distributed.distributedsystemrole.html">DistributedSystemRole</a> is not belonged to a specific
+									<a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> object. It only belongs to a <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a> object and has a
+								<strong>M: N Associative Relationship</strong> between this <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> class.</p>
+								<p>By that reason, it&#39;s the normal case that the <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> object does not have any children
+								<a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> object. Thus, default <a href="samchon.protocol.distributed.distributedsystem.html#createchild">createChild</a> returns <code>null</code>.</p>
+								<p>However, if you want a <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> to have its own domestic <a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> objects
+									without reference to the <a href="samchon.protocol.distributed.distributedsystemrole.html">DistributedSystemRole</a> objects, it is possible. Creates and returns the
+								domestic <a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> object.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>xml: <a href="samchon.library.xml.html" class="tsd-signature-type">XML</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>represents the <a href="samchon.protocol.external.externalsystemrole.html">child</a> object.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.external.externalsystemrole.html" class="tsd-signature-type">ExternalSystemRole</a></h4>
+							<p>A newly created <a href="samchon.protocol.external.externalsystemrole.html">ExternalSystemRole</a> object or <code>null</code>.</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
 					<a name="destructor" class="tsd-anchor"></a>
-					<h3>destructor</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> destructor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">destructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -655,9 +706,38 @@
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#destructor">destructor</a></p>
 								<p>Overwrites <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#destructor">destructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L88">samchon/protocol/parallel/ParallelSystem.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L150">samchon/protocol/parallel/ParallelSystem.ts:150</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Default Destructor.</p>
+								</div>
+								<p>This <a href="samchon.protocol.distributed.distributedsystem.html#destructor">destructor()</a> method is called when the <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object is destructed and
+									the <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object is destructed when connection with the remote system is closed or this
+									<a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> object is {@link ParallelSystemArray.erase erased} from its parent
+								<a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> object.</p>
+								<p>You may think if there&#39;re some <em>parallel processes</em> have requested but not completed yet, then it would be a
+									critical problem because the <em>parallel processes</em> will not complete forever. Do not worry. The critical problem
+									does not happen. After the destruction, the remained <em>parallel processes</em> will be shifted to and proceeded in
+								other <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects.</p>
+								<p>Note that, don&#39;t call this <a href="samchon.protocol.distributed.distributedsystem.html#destructor">destructor()</a> method by yourself. It must be called automatically
+									by those <em>destruction</em> cases. Also, if your derived <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> class has something to do on the
+									<em>destruction</em>, then overrides this <a href="samchon.protocol.distributed.distributedsystem.html#destructor">destructor()</a> method and defines the something to do.
+								Overriding this {@ink destructor destructor()}, don&#39;t forget to calling <code>super.destructor();</code> on tail.</p>
+								<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> SomeSystem extends protocol.external.ExternalSystem
+{
+    <span class="hljs-keyword">protected</span> destructor(): <span class="hljs-built_in">void</span>
+    {
+        <span class="hljs-comment">// DO SOMETHING</span>
+        <span class="hljs-keyword">this</span>.do_something();
+
+        <span class="hljs-comment">// CALL SUPER.DESTRUCTOR() ON TAIL. DON'T FORGET THIS</span>
+        <span class="hljs-keyword">super</span>.destructor();
+    }
+}
+</code></pre>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -674,7 +754,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#dispatchevent">dispatchEvent</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#dispatchevent">dispatchEvent</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L206">samchon/collection/DequeCollection.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L206">samchon/collection/DequeCollection.ts:206</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -705,46 +785,76 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#enforceperformance">enforcePerformance</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L131">samchon/protocol/parallel/ParallelSystem.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L264">samchon/protocol/parallel/ParallelSystem.ts:264</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enforce performance index.</p>
+								</div>
+								<p>Enforce <em>performance index</em> that indicates how much fast the remote system is. The <em>performance index</em> will be
+								fixed, never be <strong>revaluated</strong>.</p>
+								<p>Note that, initial and average <em>performance index</em> of <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects are <code>1.0</code>. If the
+									<em>performance index</em> is higher than other <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects, then this <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> will
+									be ordered to handle more processes than other <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects. Otherwise, the
+								<em>performance index</em> is lower than others, of course, less processes will be delivered.</p>
+								<p>The difference between <a href="samchon.protocol.distributed.distributedsystem.html#setperformance">setPerformance</a> and this <a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance">enforcePerformance</a> is allowing <strong>revaluation</strong>
+									or not. This <a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance">enforcePerformance</a> does not allow the <strong>revaluation</strong>. The <em>performance index</em> is clearly
+									fixed and never be changed by the <strong>revaluation</strong>. But you&#39;ve to keep in mind that, you can&#39;t avoid the
+								<strong>mis-valuation</strong> with this <a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance">enforcePerformance</a>.</p>
+								<p>For example, there&#39;s a remote system much faster than any other, but you <strong>mis-estimated</strong> it to the slowest.
+									In that case, there&#39;s no way. The {@link ParalllelSystemArray entire parallel systems} will be slower by the
+									<strong>mis-valuation</strong>. By the reason, using <a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance">enforcePerformance</a>, it&#39;s recommended only when you can clearly
+									certain the <em>performance index</em>. If you can&#39;t certain the <em>performance index</em> but want to recommend, then use
+								<a href="samchon.protocol.distributed.distributedsystem.html#setperformance">setPerformance</a> instead.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>New performance index to be fixed.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="get" class="tsd-anchor"></a>
 					<h3>get</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.protocol.distributed.distributedsystemrole.html" class="tsd-signature-type">DistributedSystemRole</a></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">get<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.protocol.external.externalsystemrole.html" class="tsd-signature-type">ExternalSystemRole</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#get">get</a></p>
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#get">get</a></p>
+								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#get">get</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L46">samchon/protocol/distributed/DistributedSystem.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L245">samchon/protocol/EntityCollection.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get an element</p>
+								</div>
+								<p>Returns a reference to the mapped value of the element identified with <em>key</em>.</p>
 								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
+									<dt>throw</dt>
+									<dd><p>exception out of range</p>
+									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<h5>key: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.distributed.distributedsystemrole.html" class="tsd-signature-type">DistributedSystemRole</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.external.externalsystemrole.html" class="tsd-signature-type">ExternalSystemRole</a></h4>
+							<p>A reference object of the mapped value (_Ty)</p>
 						</li>
 					</ul>
 				</section>
@@ -759,7 +869,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#getname">getName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L128">samchon/protocol/external/ExternalSystem.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystem.ts#L165">samchon/protocol/external/ExternalSystem.ts:165</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -782,16 +892,35 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#getperformance">getPerformance</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L120">samchon/protocol/parallel/ParallelSystem.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L205">samchon/protocol/parallel/ParallelSystem.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get {@link performant performance index}.</p>
+									<p>Get performance index.</p>
 								</div>
-								<p>A performance index that indicates how much fast the connected parallel system is.</p>
+								<p>Get <em>performance index</em> that indicates how much fast the remote system is.</p>
+								<p>If this <a href="samchon.protocol.parallel.parallelsystem.html">parallel system</a> does not have any <a href="samchon.protocol.invoke.html">Invoke</a> message had handled, then the
+									<em>performance index</em> will be <code>1.0</code>, which means default and average value between all <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>
+								instances (that are belonged to a same <a href="samchon.protocol.parallel.parallelsystemarray.html">ParallelSystemArray</a> object).</p>
+								<p>You can specify this <em>performance index</em> by yourself but notice that, if the <em>performance index</em> is higher
+									than other <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects, then this <a href="samchon.protocol.parallel.parallelsystem.html">parallel system</a> will be ordered to
+									handle more processes than other <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects. Otherwise, the <em>performance index</em> is lower
+								than others, of course, less processes will be delivered.</p>
+								<ul>
+									<li><a href="samchon.protocol.distributed.distributedsystem.html#setperformance">setPerformance()</a></li>
+									<li><a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance">enforcePerformance()</a></li>
+								</ul>
+								<p>Unless <a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance">enforcePerformance()</a> is called, This <em>performance index</em> is <strong>revaluated</strong>
+								whenever user calls one of them below.</p>
+								<ul>
+									<li><a href="samchon.protocol.parallel.parallelsystemarray.html#sendsegmentdata">ParallelSystemArray.sendSegmentData()</a></li>
+									<li><a href="samchon.protocol.parallel.parallelsystemarray.html#sendpiecedata">ParallelSystemArray.sendPieceData()</a></li>
+									<li><a href="samchon.protocol.distributed.distributedsystemrole.html#senddata">DistributedSystemRole.sendData()</a>.</li>
+								</ul>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>Performance index.</p>
 						</li>
 					</ul>
 				</section>
@@ -806,46 +935,48 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#getsystemarray">getSystemArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L30">samchon/protocol/distributed/DistributedSystem.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L104">samchon/protocol/distributed/DistributedSystem.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get manager of this object.</p>
+									<p>Get parent <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a> object.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.distributed.distributedsystemarray.html" class="tsd-signature-type">DistributedSystemArray</a></h4>
-							<p>A manager containing this <a href="samchon.protocol.distributed.distributedsystem.html">DistributedSystem</a> objects.</p>
+							<p>The parent <a href="samchon.protocol.distributed.distributedsystemarray.html">DistributedSystemArray</a> object.</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="has" class="tsd-anchor"></a>
 					<h3>has</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#has">has</a></p>
+								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#has">has</a></p>
+								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L38">samchon/protocol/distributed/DistributedSystem.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L229">samchon/protocol/EntityCollection.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Whether have the item or not.</p>
+								</div>
+								<p>Indicates whether a map has an item having the specified identifier.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<h5>key: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether the map has an item having the specified identifier.</p>
 						</li>
 					</ul>
 				</section>
@@ -861,7 +992,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#haseventlistener">hasEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#haseventlistener">hasEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L198">samchon/collection/DequeCollection.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L198">samchon/collection/DequeCollection.ts:198</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -898,7 +1029,7 @@
 								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#key">key</a></p>
 								<p>Overwrites <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#key">key</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L120">samchon/protocol/external/ExternalSystem.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystem.ts#L157">samchon/protocol/external/ExternalSystem.ts:157</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -907,6 +1038,7 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>name.</p>
 						</li>
 					</ul>
 				</section>
@@ -921,7 +1053,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#pop_back">pop_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L151">samchon/collection/DequeCollection.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L151">samchon/collection/DequeCollection.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -945,7 +1077,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L98">samchon/collection/DequeCollection.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L98">samchon/collection/DequeCollection.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -975,7 +1107,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#push_back">push_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L110">samchon/collection/DequeCollection.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L110">samchon/collection/DequeCollection.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1008,7 +1140,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#refresh">refresh</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#refresh">refresh</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L214">samchon/collection/DequeCollection.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L214">samchon/collection/DequeCollection.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1031,7 +1163,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#refresh">refresh</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L219">samchon/collection/DequeCollection.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L219">samchon/collection/DequeCollection.ts:219</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1052,7 +1184,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#refresh">refresh</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L224">samchon/collection/DequeCollection.ts:224</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L224">samchon/collection/DequeCollection.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1093,7 +1225,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L280">samchon/collection/DequeCollection.ts:280</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L280">samchon/collection/DequeCollection.ts:280</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1118,7 +1250,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L281">samchon/collection/DequeCollection.ts:281</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L281">samchon/collection/DequeCollection.ts:281</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1137,7 +1269,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L282">samchon/collection/DequeCollection.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L282">samchon/collection/DequeCollection.ts:282</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1156,7 +1288,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L283">samchon/collection/DequeCollection.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L283">samchon/collection/DequeCollection.ts:283</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1175,7 +1307,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L288">samchon/collection/DequeCollection.ts:288</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L288">samchon/collection/DequeCollection.ts:288</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1203,7 +1335,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L289">samchon/collection/DequeCollection.ts:289</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L289">samchon/collection/DequeCollection.ts:289</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1225,7 +1357,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L290">samchon/collection/DequeCollection.ts:290</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L290">samchon/collection/DequeCollection.ts:290</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1247,7 +1379,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#removeeventlistener">removeEventListener</a></p>
 								<p>Inherited from <a href="samchon.collection.dequecollection.html">DequeCollection</a>.<a href="samchon.collection.dequecollection.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/collection/DequeCollection.ts#L291">samchon/collection/DequeCollection.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/collection/DequeCollection.ts#L291">samchon/collection/DequeCollection.ts:291</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1278,9 +1410,15 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iprotocol.html">IProtocol</a>.<a href="../interfaces/samchon.protocol.iprotocol.html#replydata">replyData</a></p>
 								<p>Overwrites <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#replydata">replyData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L75">samchon/protocol/distributed/DistributedSystem.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/distributed/DistributedSystem.ts#L139">samchon/protocol/distributed/DistributedSystem.ts:139</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Sending message.</p>
+								</div>
+								<p>Sends message to related system or shifts the responsibility to chain.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -1303,7 +1441,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iprotocol.html">IProtocol</a>.<a href="../interfaces/samchon.protocol.iprotocol.html#senddata">sendData</a></p>
 								<p>Inherited from <a href="samchon.protocol.external.externalsystem.html">ExternalSystem</a>.<a href="samchon.protocol.external.externalsystem.html#senddata">sendData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/external/ExternalSystem.ts#L159">samchon/protocol/external/ExternalSystem.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/external/ExternalSystem.ts#L205">samchon/protocol/external/ExternalSystem.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1335,13 +1473,38 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a>.<a href="samchon.protocol.parallel.parallelsystem.html#setperformance">setPerformance</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L125">samchon/protocol/parallel/ParallelSystem.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/ParallelSystem.ts#L234">samchon/protocol/parallel/ParallelSystem.ts:234</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set performance index.</p>
+								</div>
+								<p>Set <em>performance index</em> that indicates how much fast the remote system is. This <em>performance index</em> can be
+								<strong>revaulated</strong>.</p>
+								<p>Note that, initial and average <em>performance index</em> of <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects are <code>1.0</code>. If the
+									<em>performance index</em> is higher than other <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects, then this <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> will
+									be ordered to handle more processes than other <a href="samchon.protocol.parallel.parallelsystem.html">ParallelSystem</a> objects. Otherwise, the
+								<em>performance index</em> is lower than others, of course, less processes will be delivered.</p>
+								<p>Unlike <a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance">enforcePerformance</a>, configuring <em>performance index</em> by this <a href="samchon.protocol.distributed.distributedsystem.html#setperformance">setPerformance</a> allows
+									<strong>revaluation</strong>. This <strong>revaluation</strong> prevents wrong valuation from user. For example, you <em>mis-valuated</em> the
+									<em>performance index</em>. The remote system is much faster than any other, but you estimated it to the slowest one.
+									It looks like a terrible case that causes <a href="samchon.protocol.parallel.parallelsystemarray.html">entire parallel systems</a> to be slower,
+									however, don&#39;t mind. The system will direct to the <em>propriate performance index</em> eventually with the
+								<strong>revaluation</strong> by following methods.</p>
+								<ul>
+									<li><a href="samchon.protocol.parallel.parallelsystemarray.html#sendsegmentdata">ParallelSystemArray.sendSegmentData()</a></li>
+									<li><a href="samchon.protocol.parallel.parallelsystemarray.html#sendpiecedata">ParallelSystemArray.sendPieceData()</a></li>
+									<li><a href="samchon.protocol.distributed.distributedsystemrole.html#senddata">DistributedSystemRole.sendData()</a>.</li>
+								</ul>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>New performance index, but can be revaluated.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1360,7 +1523,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.ientitycollection.html">IEntityCollection</a>.<a href="../interfaces/samchon.protocol.ientitycollection.html#toxml">toXML</a></p>
 								<p>Inherited from <a href="samchon.protocol.entitydequecollection.html">EntityDequeCollection</a>.<a href="samchon.protocol.entitydequecollection.html#toxml">toXML</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/EntityCollection.ts#L266">samchon/protocol/EntityCollection.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/EntityCollection.ts#L266">samchon/protocol/EntityCollection.ts:266</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1459,14 +1622,11 @@
 					<li class="current tsd-kind-class tsd-parent-kind-module">
 						<a href="samchon.protocol.distributed.distributedsystem.html" class="tsd-kind-icon">Distributed<wbr>System</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.distributed.distributedsystem.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="samchon.protocol.distributed.distributedsystem.html#name" class="tsd-kind-icon">name</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="samchon.protocol.distributed.distributedsystem.html#communicator" class="tsd-kind-icon">communicator</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="samchon.protocol.distributed.distributedsystem.html#child_tag" class="tsd-kind-icon">CHILD_<wbr>TAG</a>
@@ -1480,9 +1640,6 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.protocol.distributed.distributedsystem.html#close" class="tsd-kind-icon">close</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.distributed.distributedsystem.html#compute_average_elapsed_time" class="tsd-kind-icon">compute_<wbr>average_<wbr>elapsed_<wbr>time</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.protocol.distributed.distributedsystem.html#construct" class="tsd-kind-icon">construct</a>
 							</li>
@@ -1492,7 +1649,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.distributed.distributedsystem.html#createchild" class="tsd-kind-icon">create<wbr>Child</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
 								<a href="samchon.protocol.distributed.distributedsystem.html#destructor" class="tsd-kind-icon">destructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -1501,7 +1658,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.protocol.distributed.distributedsystem.html#enforceperformance" class="tsd-kind-icon">enforce<wbr>Performance</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.protocol.distributed.distributedsystem.html#get" class="tsd-kind-icon">get</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -1513,7 +1670,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.distributed.distributedsystem.html#getsystemarray" class="tsd-kind-icon">get<wbr>System<wbr>Array</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="samchon.protocol.distributed.distributedsystem.html#has" class="tsd-kind-icon">has</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">

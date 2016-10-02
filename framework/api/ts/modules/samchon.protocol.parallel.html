@@ -71,6 +71,232 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<h1 id="parallel-system">Parallel System</h1>
+						<p>Module <em>Parallel System</em> provides module for realizing parallel processing system.</p>
+						<h2 id="references">References</h2>
+						<h4 id="conceptual-diagram">Conceptual Diagram</h4>
+						<p><img src="http://samchon.github.io/framework/images/design/conceptual_diagram/parallel_system.png" alt="Conceptual Diagram"></p>
+						<h4 id="class-diagram">Class Diagram</h4>
+						<p><img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_parallel_system.png" alt="Protocol - Parallel System"></p>
+						<h4 id="api-documents">API Documents</h4>
+						<ul>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelsystemarray.html"><strong>ParallelSystemArray</strong></a><ul>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelclientarray.html">ParallelClientArray</a></li>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelserverarray.html">ParallelServerAaray</a></li>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelserverclientarray.html">ParallelServerClientArray</a></li>
+								</ul>
+							</li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelsystemarraymediator.html"><strong>ParallelSystemArrayMediator</strong></a><ul>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelclientarraymediator.html">ParallelClientArrayMediator</a></li>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelserverarraymediator.html">ParallelServerAarayMediator</a></li>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelserverclientarraymediator.html">ParallelServerClientArrayMediator</a></li>
+								</ul>
+							</li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelsystem.html"><strong>ParallelSystem</strong></a><ul>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelclient.html">ParallelClient</a></li>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.parallel.parallelserver.html">ParallelServer</a></li>
+								</ul>
+							</li>
+						</ul>
+						<h4 id="source-codes">Source Codes</h4>
+						<ul>
+							<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelSystemArray.ts"><strong>ParallelSystemArray.ts</strong></a><ul>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelClientArray.ts">ParallelClientArray.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelServerAaray.ts">ParallelServerAaray.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelServerClientArray.ts">ParallelServerClientArray.ts</a></li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelSystemArrayMediator.ts"><strong>ParallelSystemArrayMediator.ts</strong></a><ul>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelClientArrayMediator.ts">ParallelClientArrayMediator.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelServerAarayMediator.ts">ParallelServerAarayMediator.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelServerClientArrayMediator.ts">ParallelServerClientArrayMediator.ts</a></li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelSystem.ts"><strong>ParallelSystem.ts</strong></a><ul>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelClient.ts">ParallelClient.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/parallel/ParallelServer.ts">ParallelServer.ts</a></li>
+								</ul>
+							</li>
+						</ul>
+						<h2 id="basic-classes">Basic Classes</h2>
+						<h3 id="parallelsystemarray">ParallelSystemArray</h3>
+						<h3 id="parallelsystemarraymediator">ParallelSystemArrayMediator</h3>
+						<h4 id="mediatorsystem">MediatorSystem</h4>
+						<h3 id="parallelsystem">ParallelSystem</h3>
+						<h2 id="derived-classes">Derived Classes</h2>
+						<h3 id="parallelsystemarray">ParallelSystemArray</h3>
+						<h4 id="parallelclientarray">ParallelClientArray</h4>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IExternalClientArray
+        <span class="hljs-keyword">extends</span> ExternalSystemArray, IServer
+    {
+    }
+}
+
+<span class="hljs-keyword">namespace</span> samchon.protocol.parallel
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ParallelClientArray
+        extends ParallelSystemArray
+        <span class="hljs-keyword">implements</span> external.IExternalClientArray
+    {
+        <span class="hljs-keyword">private</span> server_base: IServerBase;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS TO OVERRIDE</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// FACTORY METHOD CREATING SERVER_BASE OBJECT</span>
+        <span class="hljs-comment">// RETURN ONE OF THEM FOLLOWING SPECIFIED PROTOCOL</span>
+        <span class="hljs-comment">//     - ServerBase</span>
+        <span class="hljs-comment">//     - WebServerBase</span>
+        <span class="hljs-comment">//     - SharedWorkerServerBase</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> createServerBase(): IServerBase;
+
+        <span class="hljs-comment">// FACTORY METHOD CREATING PARALLEL_SYSTEM OBJECT</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> createExternalClient(driver: IClientDriver): ParallelSystem;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS OF ISERVER -&gt; HOOK TO SERVER_BASE OBJECT</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-keyword">public</span> open(port: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">this</span>.server_base = <span class="hljs-keyword">this</span>.createServerBase();
+            <span class="hljs-keyword">this</span>.server_base.open(port);
+        }
+        <span class="hljs-keyword">public</span> close(): vcid
+        {
+            <span class="hljs-keyword">this</span>.server_base.close();
+        }
+        <span class="hljs-keyword">public</span> addClient(driver: IClientDriver): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">let</span> system: ExternalSystem = <span class="hljs-keyword">this</span>.createExternalClient(driver);
+            <span class="hljs-keyword">this</span>.push_back(system);
+        }
+    }
+}
+</code></pre>
+						<h4 id="parallelserverarray">ParallelServerArray</h4>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IExternalServerArray
+        <span class="hljs-keyword">extends</span> ExternalSystemArray
+    {
+        <span class="hljs-comment">// MAY CALL CHILDREN IExternalServer.connect() METHODS</span>
+        connect(): <span class="hljs-built_in">void</span>;
+    }
+}
+
+<span class="hljs-keyword">namespace</span> samchon.protocol.parallel
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ParallelServerArray
+        extends external.ExternalSystemArray
+    {
+        <span class="hljs-comment">// VERY SIMPLE. JUST CALL CHILDREN IExternalServer.connect()</span>
+        <span class="hljs-keyword">public</span> connect(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.size(); i++)
+                (<span class="hljs-keyword">this</span>.at(i) as IExternalServer).connect();
+        }
+    }
+}
+</code></pre>
+						<h4 id="parallelserverclientarray">ParallelServerClientArray</h4>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.parallel
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ParallelServerClientArray
+        extends ParallelClientArray <span class="hljs-comment">// a server accepting external clients</span>
+        <span class="hljs-keyword">implements</span> external.IExternalServerArray <span class="hljs-comment">// a client connecting to external servers</span>
+    {
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// A METHOD TO OVERRIDE</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// FACTORY METHOD CREATING EXTERNAL_SERVER OBJECT VIA XML</span>
+        <span class="hljs-keyword">protected</span> createExternalServer(xml: library.XML): IExternalServer;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS OF EXTERNAL_SERVER_ARRAY</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// SHIFT FACTORY METHOD TO CREATE_EXTERNAL_SERVER</span>
+        <span class="hljs-keyword">public</span> createChild(xml: library.XML): IExternalServer
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.createExternalServer(xml);
+        }
+
+        <span class="hljs-comment">// WHEN CHILD IS A TYPE OF IExternalServer,</span>
+        <span class="hljs-comment">// THEN CALL IExternalServer.connect()</span>
+        <span class="hljs-keyword">public</span> connect(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.size(); i++)
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.at(i)[<span class="hljs-string">"connect"</span>] != <span class="hljs-literal">undefined</span>)
+                    (<span class="hljs-keyword">this</span>.at(i) as IExternalServer).connect();
+        }
+    }
+}
+</code></pre>
+						<h3 id="parallelsystemarraymediator">ParallelSystemArrayMediator</h3>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.parallel
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> ParallelSystemArrayMediator
+        extends ParallelSystemArray
+    {
+        <span class="hljs-keyword">private</span> mediator: MediatorSystem;
+
+        protectected <span class="hljs-keyword">abstract</span> createMediator(): MediatorSystem;
+    }
+}
+</code></pre>
+						<ul>
+							<li>MediatorClient<ul>
+									<li>MediatorClient</li>
+									<li>WebMediatorClient</li>
+									<li>SharedWorkerMediatorClient</li>
+								</ul>
+							</li>
+							<li>MediatorServer<ul>
+									<li>MediatorServer</li>
+									<li>WebMediatorServer</li>
+									<li>SharedWorkerMedaitorServer
+									```</li>
+								</ul>
+							</li>
+						</ul>
+						<h3 id="parallelsystem">ParallelSystem</h3>
+						<h4 id="parallelclient">ParallelClient</h4>
+						<h4 id="parallelserver">ParallelServer</h4>
+						<h2 id="example-project">Example Project</h2>
+						<h4 id="related-module">Related Module</h4>
+						<p>Referencing related modules, it will be much helpful for comprehending this <em>Parallel System Module</em>.</p>
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Source</th>
+									<th>Documents</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Distributed System</td>
+									<td><a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/distributed">protocol/distributed</a></td>
+									<td><a href="http://samchon.github.io/framework/api/ts/modules/samchon.protocol.distributed.html">API</a>, <a href="TypeScript-Protocol-Distributed_System">Guidance</a></td>
+								</tr>
+								<tr>
+									<td>Slave System</td>
+									<td><a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/slave">protocol/slave</a></td>
+									<td><a href="http://samchon.github.io/framework/api/ts/modules/samchon.protocol.slave.html">API</a>, <a href="TypeScript-Protocol-Slave_System">Guidance</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<h4 id="interaction">Interaction</h4>
+						<p><img src="http://samchon.github.io/framework/images/design/conceptual_diagram/interaction.png" alt="Conceptual Diagram"></p>
+						<p><strong>Interaction</strong> is an example implemented <em>Tree-structured Distributed &amp; Parallel Processing System</em>. The Interaction provides ultimate guidance; how to use <em>External System</em> and its derived modules.</p>
+						<p><a href="Examples-Interaction"><strong>Go to the Interaction</strong></a></p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">

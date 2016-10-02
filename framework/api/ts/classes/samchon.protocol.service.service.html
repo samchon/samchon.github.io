@@ -74,6 +74,30 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A service.</p>
+					</div>
+					<p>The <a href="samchon.protocol.service.service.html">Service</a> is an abstract class who represents a service, that is providing functions a specific page.</p>
+					<p>Extends the <a href="samchon.protocol.service.service.html">Service</a> class and defines its own service, which to be provided for the specific weg page,
+						by overriding the <a href="samchon.protocol.service.service.html#replydata">replyData()</a> method. Note that, the service, functions for the specific page
+						should be defined in this <a href="samchon.protocol.service.service.html">Service</a> class, not its parent <a href="samchon.protocol.service.client.html">Client</a> class who represents a remote client
+					and takes communication responsibility.</p>
+					<p><a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_service.png" target="_blank">
+							<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_service.png"
+							style="max-width: 100%" />
+					</a></p>
+					<dl class="tsd-comment-tags">
+						<dt>handbook</dt>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Service">Cloud Service</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -98,17 +122,10 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="samchon.protocol.service.service.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.service.service.html#client_" class="tsd-kind-icon">client_</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.service.service.html#path_" class="tsd-kind-icon">path_</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.service.service.html#destructor" class="tsd-kind-icon">destructor</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="samchon.protocol.service.service.html#destructor" class="tsd-kind-icon">destructor</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.service.service.html#getclient" class="tsd-kind-icon">get<wbr>Client</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.service.service.html#getpath" class="tsd-kind-icon">get<wbr>Path</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="samchon.protocol.service.service.html#replydata" class="tsd-kind-icon">reply<wbr>Data</a></li>
@@ -130,21 +147,31 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L9">samchon/protocol/service/Service.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/service/Service.ts#L34">samchon/protocol/service/Service.ts:34</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Default Constructor.</p>
+									<p>Construct from parent <a href="samchon.protocol.service.client.html">Client</a> and requested path.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>client: <a href="samchon.protocol.service.client.html" class="tsd-signature-type">Client</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Driver of remote client.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>path: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Requested path that identifies this <a href="samchon.protocol.service.service.html">Service</a>.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.service.service.html" class="tsd-signature-type">Service</a></h4>
@@ -152,44 +179,33 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="client_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> client_</h3>
-					<div class="tsd-signature tsd-kind-icon">client_<span class="tsd-signature-symbol">:</span> <a href="samchon.protocol.service.client.html" class="tsd-signature-type">Client</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L8">samchon/protocol/service/Service.ts:8</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="path_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> path_</h3>
-					<div class="tsd-signature tsd-kind-icon">path_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L9">samchon/protocol/service/Service.ts:9</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="destructor" class="tsd-anchor"></a>
-					<h3>destructor</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> destructor</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">destructor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L23">samchon/protocol/service/Service.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/service/Service.ts#L63">samchon/protocol/service/Service.ts:63</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Default Destructor.</p>
+								</div>
+								<p>This <a href="samchon.protocol.service.service.html#destructor">destructor()</a> method is call when the <a href="samchon.protocol.service.service.html">Service</a> object is destructed and the
+									<a href="samchon.protocol.service.service.html">Service</a> object is destructed when its parent <a href="samchon.protocol.service.client.html">Client</a> object has
+									<a href="samchon.protocol.service.client.html#destructor">destructed</a> or the <a href="samchon.protocol.service.client.html">Client</a> object <a href="samchon.protocol.service.client.html#changeservice">changed</a> its
+								child <a href="samchon.protocol.service.service.html">service</a> object to another one.</p>
+								<p>Note that, don&#39;t call this <a href="samchon.protocol.service.service.html#destructor">destructor()</a> method by yourself. It must be called automatically
+									by those <em>destruction</em> cases. Also, if your derived <a href="samchon.protocol.service.service.html">Service</a> class has something to do on the
+								<em>destruction</em>, then overrides this <a href="samchon.protocol.service.service.html#destructor">destructor()</a> method and defines the something to do.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -204,7 +220,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L33">samchon/protocol/service/Service.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/service/Service.ts#L73">samchon/protocol/service/Service.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -226,12 +242,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L41">samchon/protocol/service/Service.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/service/Service.ts#L81">samchon/protocol/service/Service.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get path.</p>
+									<p>Get requested path.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -249,13 +265,18 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iprotocol.html">IProtocol</a>.<a href="../interfaces/samchon.protocol.iprotocol.html#replydata">replyData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L53">samchon/protocol/service/Service.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/service/Service.ts#L105">samchon/protocol/service/Service.ts:105</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message to be handled in this <a href="samchon.protocol.service.service.html">Service</a> level.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -273,13 +294,22 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iprotocol.html">IProtocol</a>.<a href="../interfaces/samchon.protocol.iprotocol.html#senddata">sendData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/service/Service.ts#L49">samchon/protocol/service/Service.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/service/Service.ts#L96">samchon/protocol/service/Service.ts:96</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Send an <a href="samchon.protocol.invoke.html">Invoke</a> message.</p>
+								</div>
+								<p>Sends an <a href="samchon.protocol.invoke.html">Invoke</a> message to remote system through parent <a href="samchon.protocol.service.client.html">Client</a> object (<a href="samchon.protocol.service.client.html#senddata">Client.sendData</a>).</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message to send to the remte system.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -352,13 +382,7 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="samchon.protocol.service.service.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.service.service.html#client_" class="tsd-kind-icon">client_</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.service.service.html#path_" class="tsd-kind-icon">path_</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="samchon.protocol.service.service.html#destructor" class="tsd-kind-icon">destructor</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">

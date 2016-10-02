@@ -74,6 +74,32 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>History of an <a href="samchon.protocol.invoke.html">Invoke</a> message.</p>
+					</div>
+					<p>The <a href="samchon.protocol.parallel.prinvokehistory.html">PRInvokeHistory</a> is a class archiving history log of an <a href="samchon.protocol.invoke.html">Invoke</a> message which requests the
+						<em>parallel process</em>, created whenever <a href="samchon.protocol.parallel.parallelsystemarray.html#sendsegmentdata">ParallelSystemArray.sendSegmentData</a> or
+					<a href="samchon.protocol.parallel.parallelsystemarray.html#sendsegmentdata">ParallelSystemArray.sendSegmentData</a> is called.</p>
+					<p>When the <em>parallel process</em> has completed, then <a href="samchon.protocol.parallel.prinvokehistory.html#complete">complete()</a> is called and the <em>elapsed time</em> is
+						determined. The elapsed time is utilized for computation of <a href="samchon.protocol.parallel.parallelsystem.html#getperformance">performance index</a>
+					of each <a href="samchon.protocol.parallel.parallelsystem.html">parallel slave system</a>.</p>
+					<p><a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_parallel_system.png"
+						target="_blank">
+						<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_parallel_system.png"
+						style="max-width: 100%" />
+					</a></p>
+					<dl class="tsd-comment-tags">
+						<dt>handbook</dt>
+						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Parallel_System">Protocol - Parallel System</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -101,13 +127,6 @@
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="samchon.protocol.parallel.prinvokehistory.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.parallel.prinvokehistory.html#first" class="tsd-kind-icon">first</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="samchon.protocol.parallel.prinvokehistory.html#last" class="tsd-kind-icon">last</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -146,7 +165,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L17">samchon/protocol/parallel/PRInvokeHistory.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L38">samchon/protocol/parallel/PRInvokeHistory.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -160,12 +179,12 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L25">samchon/protocol/parallel/PRInvokeHistory.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L46">samchon/protocol/parallel/PRInvokeHistory.ts:46</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Construct from an Invoke message.</p>
+									<p>Construct from an <a href="samchon.protocol.invoke.html">Invoke</a> message.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -174,6 +193,7 @@
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
+											<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message requesting a <em>parallel process</em>.</p>
 										</div>
 									</div>
 								</li>
@@ -181,39 +201,6 @@
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.parallel.prinvokehistory.html" class="tsd-signature-type">PRInvokeHistory</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="first" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> first</h3>
-					<div class="tsd-signature tsd-kind-icon">first<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L12">samchon/protocol/parallel/PRInvokeHistory.ts:12</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Index number of initial piece.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="last" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> last</h3>
-					<div class="tsd-signature tsd-kind-icon">last<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L17">samchon/protocol/parallel/PRInvokeHistory.ts:17</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Index number of final piece.</p>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -230,7 +217,7 @@
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#tag">TAG</a></p>
 								<p>Overwrites <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#tag">TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L110">samchon/protocol/InvokeHistory.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L156">samchon/protocol/InvokeHistory.ts:156</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -254,9 +241,15 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#complete">complete</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L66">samchon/protocol/InvokeHistory.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L95">samchon/protocol/InvokeHistory.ts:95</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Complete the history.</p>
+								</div>
+								<p>Completes the history and determines the <a href="samchon.protocol.parallel.prinvokehistory.html#getendtime">end time</a>.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -272,10 +265,16 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#computeelapsedtime">computeElapsedTime</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L99">samchon/protocol/InvokeHistory.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L145">samchon/protocol/InvokeHistory.ts:145</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Compute elapsed time.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>milliseconds.</p>
 						</li>
 					</ul>
 				</section>
@@ -289,7 +288,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L62">samchon/protocol/parallel/PRInvokeHistory.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L100">samchon/protocol/parallel/PRInvokeHistory.ts:100</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -313,9 +312,15 @@
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#construct">construct</a></p>
 								<p>Overwrites <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#construct">construct</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L58">samchon/protocol/InvokeHistory.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L82">samchon/protocol/InvokeHistory.ts:82</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -337,9 +342,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#getendtime">getEndTime</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L94">samchon/protocol/InvokeHistory.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L135">samchon/protocol/InvokeHistory.ts:135</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get end time.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
 						</li>
 					</ul>
@@ -354,10 +364,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L50">samchon/protocol/parallel/PRInvokeHistory.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L78">samchon/protocol/parallel/PRInvokeHistory.ts:78</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get initial piece&#39;s index.</p>
+								</div>
+								<p>Returns initial piece&#39;s index in the section of requested <em>parallel process</em>.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The initial index.</p>
 						</li>
 					</ul>
 				</section>
@@ -371,10 +388,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L54">samchon/protocol/parallel/PRInvokeHistory.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/parallel/PRInvokeHistory.ts#L92">samchon/protocol/parallel/PRInvokeHistory.ts:92</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get final piece&#39;s index.</p>
+								</div>
+								<p>Returns initial piece&#39;s index in the section of requested <em>parallel process</em>. The range used is
+									[<em>first</em>, <em>last</em>), which contains all the pieces&#39; indices between <em>first</em> and <em>last</em>, including the piece
+								pointed by index <em>first</em>, but not the piece pointed by the index <em>last</em>.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The final index.</p>
 						</li>
 					</ul>
 				</section>
@@ -389,9 +415,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#getlistener">getListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L84">samchon/protocol/InvokeHistory.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L119">samchon/protocol/InvokeHistory.ts:119</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get <a href="samchon.protocol.invoke.html#getlistener">listener</a> of the <a href="samchon.protocol.invoke.html">Invoke</a> message.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
@@ -407,9 +438,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#getstarttime">getStartTime</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L89">samchon/protocol/InvokeHistory.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L127">samchon/protocol/InvokeHistory.ts:127</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get start time.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span></h4>
 						</li>
 					</ul>
@@ -425,9 +461,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#getuid">getUID</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L79">samchon/protocol/InvokeHistory.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L111">samchon/protocol/InvokeHistory.ts:111</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get unique ID.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
@@ -444,7 +485,7 @@
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#key">key</a></p>
 								<p>Overwrites <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#key">key</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L74">samchon/protocol/InvokeHistory.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L103">samchon/protocol/InvokeHistory.ts:103</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -462,9 +503,15 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#toinvoke">toInvoke</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L127">samchon/protocol/InvokeHistory.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L178">samchon/protocol/InvokeHistory.ts:178</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert to an <a href="samchon.protocol.invoke.html">Invoke</a> message.</p>
+								</div>
+								<p>Creates and returns an <a href="samchon.protocol.invoke.html">Invoke</a> message that is used to reporting to the <strong>master</strong>.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h4>
 						</li>
 					</ul>
@@ -481,7 +528,7 @@
 								<p>Inherited from <a href="samchon.protocol.invokehistory.html">InvokeHistory</a>.<a href="samchon.protocol.invokehistory.html#toxml">toXML</a></p>
 								<p>Overwrites <a href="samchon.protocol.entity.html">Entity</a>.<a href="samchon.protocol.entity.html#toxml">toXML</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/4d8f126/ts/src/samchon/protocol/InvokeHistory.ts#L118">samchon/protocol/InvokeHistory.ts:118</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/5ce4ebe/ts/src/samchon/protocol/InvokeHistory.ts#L164">samchon/protocol/InvokeHistory.ts:164</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -574,12 +621,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="samchon.protocol.parallel.prinvokehistory.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.parallel.prinvokehistory.html#first" class="tsd-kind-icon">first</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="samchon.protocol.parallel.prinvokehistory.html#last" class="tsd-kind-icon">last</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="samchon.protocol.parallel.prinvokehistory.html#tag" class="tsd-kind-icon">TAG</a>

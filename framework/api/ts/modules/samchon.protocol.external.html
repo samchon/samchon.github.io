@@ -74,7 +74,636 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>[[include: <a href="https://raw.githubusercontent.com/samchon/framework/master/handbook/TypeScript-Protocol-External_System.md">https://raw.githubusercontent.com/samchon/framework/master/handbook/TypeScript-Protocol-External_System.md</a>]]</p>
+						<h1 id="external-system">External System</h1>
+						<p>Module <em>External System</em> provides interfaces for interaction with external network systems.</p>
+						<h2 id="references">References</h2>
+						<h3 id="conceptual-diagram">Conceptual Diagram</h3>
+						<p><img src="http://samchon.github.io/framework/images/design/conceptual_diagram/external_system.png" alt="Conceptual Diagram"></p>
+						<h3 id="class-diagram">Class Diagram</h3>
+						<p><img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_external_system.png" alt="Protocol - External System"></p>
+						<h3 id="api-documents">API Documents</h3>
+						<ul>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalsystemarray.html"><strong>ExternalSystemArray</strong></a><ul>
+									<li><em>Derived classes</em><ul>
+											<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalclientarray.html">ExternalClientArray</a></li>
+											<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserverarray.html">ExternalServerArray</a></li>
+											<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserverclientarray.html">ExternalServerClientArray</a></li>
+										</ul>
+									</li>
+									<li><em>Interfaces</em><ul>
+											<li><a href="http://samchon.github.io/framework/api/ts/interfaces/samchon.protocol.external.iexternalclientarray.html">IExternalClientArray</a></li>
+											<li><a href="http://samchon.github.io/framework/api/ts/interfaces/samchon.protocol.external.iexternalserverarray.html">IExternalServerArray</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalsystem.html"><strong>ExternalSystem</strong></a><ul>
+									<li><a href="http://samchon.github.io/framework/api/ts/interfaces/samchon.protocol.external.iexternalserver.htm">IExternalServer</a></li>
+									<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserver.html">ExternalServer</a></li>
+								</ul>
+							</li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalsystemrole.html"><strong>ExternalSystemRole</strong></a></li>
+						</ul>
+						<h3 id="source-codes">Source Codes</h3>
+						<ul>
+							<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalSystemArray.ts"><strong>ExternalSystemArray.ts</strong></a><ul>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalClientArray.ts">ExternalClientArray.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalServerArray.ts">ExternalServerArray.ts</a></li>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalServerClientArray.ts">ExternalServerClientArray.ts</a></li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalSystem.ts"><strong>ExternalSystem.ts</strong></a><ul>
+									<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalServer.ts">ExternalServer.ts</a></li>
+								</ul>
+							</li>
+							<li><a href="https://github.com/samchon/framework/blob/master/ts/src/samchon/protocol/external/ExternalSystemRole.ts"><strong>ExternalSystemRole.ts</strong></a></li>
+						</ul>
+						<h2 id="basic-classes">Basic Classes</h2>
+						<h3 id="externalsystemarray">ExternalSystemArray</h3>
+						<p>An array and manager of external system drivers, <a href="#externalsystem">ExternalSystem</a> objects.</p>
+						<p><strong>ExternalSystemArray</strong> is an abstract class contains and manages external system drivers, <a href="#externalsystem">ExternalSystem</a> objects. Within framework of network, then <strong>ExternalSystemArray</strong> represents your system and <a href="#externalsystem">ExternalSystem</a> objects represent external system connected with yours. </p>
+						<p>You can specify this <strong>ExternalSystemArray</strong> object to be <em>a server accepting external client</em>s or <em>a client connecting to external servers</em>. Even <em>both of them</em> is also possible.</p>
+						<ul>
+							<li><a href="#externalclientarray">ExternalClientArray</a>: A server accepting external clients</li>
+							<li><a href="#externalserverarray">ExternalServerArray</a>: A client connecting to external servers</li>
+							<li><a href="#externalserverclientarray">ExternalServerClientArray</a>: Both of them; Accepts external clients and connects to external servers at the same time.</li>
+						</ul>
+						<h3 id="externalsystem">ExternalSystem</h3>
+						<p>An external system driver.</p>
+						<p>The <strong>ExternalSystem</strong> class represents an external system, connected and interact with this sytem. <strong>ExternalSystem</strong> also takes full charge of network communication with the external system has connected. However, handling <a href="TypeScript-Protocol-Standard_Message#invoke">Invoke messages</a> in <strong>ExternalSystem</strong> is not recommended. Replied <a href="TypeScript-Protocol-Standard_Message#invoke">Invoke message</a> from the external system is shifted to and processed in children elements of this class, <a href="#externalsystemrole">ExternalSystemRole</a> objects.</p>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">class</span> ExternalSystem 
+        extends protocol.EntityDeque&lt;ExternalSystemRole&gt; 
+        <span class="hljs-keyword">implements</span> protocol.IProtocol
+    {
+        <span class="hljs-comment">// EXTERNAL_SYSTEM HAS COMMUNICATOR</span>
+        <span class="hljs-keyword">private</span> communicator_: protocol.ICommunicator;
+
+        <span class="hljs-keyword">public</span> replyData(invoke: protocol.Invoke): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-comment">// HANDLING REPLIED MESSAGE, IT IS NOT HANDLED IN EXTERNAL_SYSTEM</span>
+            <span class="hljs-comment">// THE INVOKE MESSAGE WILL SHIFTED TO EXTERNAL_SYSTEM_ROLE OBJECTS</span>
+            <span class="hljs-comment">// AND THEY WILL PROCESS THE INVOKE MESSAGE</span>
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.size(); i++)
+                <span class="hljs-keyword">this</span>.at(i).replyData(invoke);
+        }
+    }
+}
+</code></pre>
+						<h3 id="externalsystemrole">ExternalSystemRole</h3>
+						<p>A role belonged to an external system.</p>
+						<p>The <strong>ExternalSystemRole</strong> class represents a role, what to do. Extends this class and defines methods handling <a href="TypeScript-Protocol-Standard_Message#invoke">Invoke message</a>, which are related the specified role, what to do.</p>
+						<p><strong>ExternalSystemRole</strong> can be a <em>Logical Proxy</em> for an <a href="#externalsystem">ExternalSystem</a> which is containing the <strong>ExternalSystemRole</strong>. Of course, the <strong>ExternalSystemRole</strong> is belonged to an <a href="#externalsystem">ExternalSystem</a>. However, if you access an <strong>ExternalSystemRole</strong> from an <a href="#externalsystemarray">ExternalSystemArray</a> directly, not passing by a belonged <a href="#externalsystem">ExternalSystem</a>, and send an <a href="TypeScript-Protocol-Standard_Message#invoke">Invoke message</a> even you&#39;re not knowing which <a href="#externalsystem">ExternalSystem</a> is related in, the <strong>ExternalSystemRole</strong> acted a role of proxy.</p>
+						<p>With the <em>Logical Proxy</em>, you can only concentrate on <strong>ExternalSystemRole</strong> itself, what to do with <a href="TypeScript-Protocol-Standard_Message#invoke">Invoke messages</a>, irrespective of the <strong>ExternalSystemRole</strong> is belonged to which <a href="#externalsystem">ExternalSystem</a> object. Those pattern is called <em>Proxy Pattern</em>.</p>
+						<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/samchon-framework/samchon-framework.d.ts" /&gt;</span>
+
+<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
+<span class="hljs-keyword">import</span> protocol = samchon.protocol;
+
+<span class="hljs-comment">//--------</span>
+<span class="hljs-comment">// MANAGER OF EXTERNAL FILE SERVERS' DRIVERS</span>
+<span class="hljs-comment">//--------</span>
+<span class="hljs-keyword">var</span> file_servers: protocol.external.ExternalSystemArray;
+
+<span class="hljs-keyword">var</span> png_data: <span class="hljs-built_in">Uint8Array</span>; <span class="hljs-comment">// DATA TO SAVE</span>
+<span class="hljs-keyword">var</span> invoke: protocol.Invoke = <span class="hljs-keyword">new</span> protocol.Invoke(<span class="hljs-string">"save"</span>, <span class="hljs-string">"my_picture"</span>, <span class="hljs-string">"png"</span>, png_data); 
+    <span class="hljs-comment">// MESSAGE TO SEND</span>
+
+<span class="hljs-comment">//--------</span>
+<span class="hljs-comment">// YOU CAN SEND AN INVOKE MESSAGE WITHOUT SPECIFYING TARGET SYSTEM</span>
+<span class="hljs-comment">// THE ExternalSystemRole OBJECT WILL ACT A ROLE NAMED "PROXY"</span>
+<span class="hljs-comment">//--------</span>
+file_servers.getRole(<span class="hljs-string">"image"</span>).sendData(invoke);
+</code></pre>
+						<h4 id="proxy-pattern">Proxy Pattern</h4>
+						<p>The <a href="##externalsystemarray">ExternalSystemArray</a> class can use the <em>Proxy Pattern</em>. In framework within developer, which external system is being connected or which external system can do something, it&#39;s not important. Only interested in developer&#39;s perspective is which can be done. Another word: </p>
+						<ul>
+							<li>Developer doesn&#39;t interested in which <a href="#externalsystemrole">ExternalSystemRole</a> is belonged to which <a href="##externalsystem">ExternalSystem</a>.</li>
+							<li>Developers, they&#39;re only interested in the <a href="##externalsystemrole">ExternalSystemRole</a> exists or not.</li>
+						</ul>
+						<p>By using the <em>logical proxy</em>, developer doesn&#39;t need to know which <a href="#externalsystemrole">ExternalSystemRole</a> is belonged to which <a href="#externalsystem">ExternalSystem</a>. Just access to an <a href="#externalsystemrole">ExternalSystemRole</a> via <a href="#externalsystemarray">ExternalSystemArray</a>. Sending and replying <a href="TypeScript-Protocol-Standard_Message#invoke">Invoke messages</a>, process them in the <a href="#externalsystemrole">ExternalSystemRole</a> object. The <a href="##externalsystemrole">ExternalSystemRole</a> objects will <a href="TypeScript-Protocol-Basic_Components#iprotocol">subrogate Invoke message I/O</a> instead of related <a href="#externalsystem">ExternalSystem</a> object.</p>
+						<h6 id="externalsystemarray-has-accessors-to-externalsystemrole-objects-">ExternalSystemArray has accessors to ExternalSystemRole objects.</h6>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ExternalSystemArray 
+        extends protocol.EntityDequeCollection&lt;ExternalSystem&gt; 
+        <span class="hljs-keyword">implements</span> protocol.IProtocol
+    {
+        <span class="hljs-comment">// ACCESSORS TO EXTENRAL_SYSTEM_ROLE OBJECTS</span>
+        <span class="hljs-keyword">public</span> hasRole(name: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">boolean</span>;
+        <span class="hljs-keyword">public</span> getRole(name: <span class="hljs-built_in">string</span>): ExternalSystemRole;
+    }
+}
+</code></pre>
+						<h6 id="externalsystemrole-can-subrogate-invoke-message-i-o-">ExternalSystemRole can subrogate Invoke message I/O.</h6>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ExternalSystemRole <span class="hljs-keyword">implements</span> protocol.IProtocol
+    {
+        <span class="hljs-comment">// LINKED WITH EXTENRAL_SYSTEM OBJECT.</span>
+        <span class="hljs-keyword">private</span> system: ExternalSystem;
+
+        <span class="hljs-keyword">public</span> sendData(invoke: protocol.Invoke): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-comment">// YOU CAN SEND INVOKE MESSAGE </span>
+            <span class="hljs-comment">// VIA THIS EXTENRAL_SYSTEM_ROLE OBJECT</span>
+            <span class="hljs-keyword">this</span>.system.sendData(invoke);
+        }
+
+        <span class="hljs-comment">// ExternalSystem.replyData() SHIFTS INVOKE MESSAGE TO </span>
+        <span class="hljs-comment">// THIS EXTENRAL_SYSTEM_ROLE OBJECT.</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> replyData(invoke: protocol.Invoke): <span class="hljs-built_in">void</span>;
+    }
+}
+</code></pre>
+						<h6 id="an-example-sending-invoke-message-typescript-protocol-standard_message-invoke-via-proxy-pattern-">An example sending <a href="TypeScript-Protocol-Standard_Message#invoke">Invoke message</a> via Proxy Pattern.</h6>
+						<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/samchon-framework/samchon-framework.d.ts" /&gt;</span>
+
+<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
+<span class="hljs-keyword">import</span> protocol = samchon.protocol;
+
+<span class="hljs-comment">//--------</span>
+<span class="hljs-comment">// MANAGER OF EXTERNAL FILE SERVERS' DRIVERS</span>
+<span class="hljs-comment">//--------</span>
+<span class="hljs-keyword">var</span> file_servers: protocol.external.ExternalSystemArray;
+
+<span class="hljs-keyword">var</span> png_data: <span class="hljs-built_in">Uint8Array</span>; <span class="hljs-comment">// DATA TO SAVE</span>
+<span class="hljs-keyword">var</span> invoke: protocol.Invoke = <span class="hljs-keyword">new</span> protocol.Invoke(<span class="hljs-string">"save"</span>, <span class="hljs-string">"my_picture"</span>, <span class="hljs-string">"png"</span>, png_data); 
+    <span class="hljs-comment">// MESSAGE TO SEND</span>
+
+<span class="hljs-comment">//--------</span>
+<span class="hljs-comment">// YOU CAN SEND AN INVOKE MESSAGE WITHOUT SPECIFYING TARGET SYSTEM</span>
+<span class="hljs-comment">// THE ExternalSystemRole OBJECT WILL ACT A ROLE NAMED "PROXY"</span>
+<span class="hljs-comment">//--------</span>
+file_servers.getRole(<span class="hljs-string">"image"</span>).sendData(invoke);
+</code></pre>
+						<h2 id="derived-classes">Derived Classes</h2>
+						<h3 id="externalsystemarray">ExternalSystemArray</h3>
+						<p>You can specify an <a href="#externalsystemarray">ExternalSystemArray</a> object to be:</p>
+						<ul>
+							<li><a href="#externalclientarray">ExternalClientArray</a>: A server accepting <em>exterenal clients</em>.</li>
+							<li><a href="#externalserverarray">ExternalServerArray</a>: A client connecting to <em>external servers</em>.</li>
+							<li><a href="#externalserverclientarray">ExternalServerClientArray</a>: Being <em>a server accepting external clients</em> and being <em>a client connecting to external servers</em> at the same time.</li>
+						</ul>
+						<h5 id="externalclientarray">ExternalClientArray</h5>
+						<p>You can specify an <a href="#externalsystemarray">ExternalSystemArray</a> object to be <em>a server accepting external clients</em>. Just extends <strong>ExternalClientArray</strong> and override two methods; <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalclientarray.html#createserverbase">createServerBase()</a> and <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalclientarray.html#createexternalclient">createExternalClient()</a>. </p>
+						<p>Do you remember that; the easiest way to defining a server is to extending <a href="TypeScript-Protocol-Basic_Components#iserver">protocol.Server</a>. However, if extending <a href="TypeScript-Protocol-Basic_Components#iserver">protocol.Server</a> is impossible becuase the target class already extended another one, then you can use <a href="TypeScript-Protocol-Basic_Components#iserverbase">protocol.IServerBase</a> object with implementing <a href="TypeScript-Protocol-Basic_Components#iserver">protocol.IServer</a>. <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalclientarray.html#createserverbase">ExternalClientArray.createServerBase()</a> is a factory method creating the <a href="TypeScript-Protocol-Basic_Components#iserverbase">protocol.IServerBase</a> object. Override the <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalclientarray.html#createexternalclient">ExternalClientArray.createServerBase()</a> method and return one of them considering which protocol is used in the server:</p>
+						<ul>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.serverbase.html">ServerBase</a></li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.webserverbase.html">WebServerBase</a></li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.sharedworkerserverbase.html">SharedWorkerServerBase</a></li>
+						</ul>
+						<p><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalclientarray.html#createexternalclient">ExternalClientArray.createExternalClient()</a> is a factory method creating <a href="#externalsystem">ExternalSystem</a> object. This is called by <a href="http://samchon.github.io/framework/api/ts/interfaces/samchon.protocol.iserver.html#addclient">IServer.addClient()</a> whenever an external client has connected. Override the <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalclientarray.html#createexternalclient">creatExternalClient()</a> method and return specified type of <a href="#externalsystem">ExternalSystem</a>.</p>
+						<h6 id="iexternalclientarray">IExternalClientArray</h6>
+						<p>The easiest way to defining an <a href="#externalsystemarray">ExternalSystemArray</a> class <strong>opening a server and accept external clients</strong> is to extending the <a href="#externalclientarray"><strong>ExternalClientArray</strong></a> class. However, if you can&#39;t specify your derived <a href="#externalsystemarray">ExternalSystemArray</a> to be server, client or both of them, then make an abstract class extending <a href="#externalsystemarray">ExternalSystemArray</a> (Now, I name it <em>BaseSystemArray</em>). When you need a <em>BaseSystemArray</em> class <strong>opening a server and accepting external clients</strong>, make a new class to extening the <em>BaseSystemArray</em> and implements <strong>IExternalClientArray</strong> (Name it <strong>BaseClientArray</strong>). Fill the <strong>BaseClientArray</strong> following below code: </p>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IExternalClientArray 
+        <span class="hljs-keyword">extends</span> ExternalSystemArray, IServer
+    {
+    }
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ExternalClientArray
+        extends ExternalSystemArray
+        <span class="hljs-keyword">implements</span> IExternalClientArray
+    {
+        <span class="hljs-keyword">private</span> server_base: IServerBase = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS TO OVERRIDE</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// FACTORY METHOD CREATING SERVER_BASE OBJECT</span>
+        <span class="hljs-comment">// RETURN ONE OF THEM FOLLOWING SPECIFIED PROTOCOL</span>
+        <span class="hljs-comment">//     - ServerBase</span>
+        <span class="hljs-comment">//     - WebServerBase</span>
+        <span class="hljs-comment">//     - SharedWorkerServerBase</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> createServerBase(): IServerBase;
+
+        <span class="hljs-comment">// FACTORY METHOD CREATING EXTERNAL_SYSTEM OBJECT</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> createExternalClient(driver: IClientDriver): ExternalSystem;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS OF ISERVER -&gt; HOOK TO SERVER_BASE OBJECT</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-keyword">public</span> open(port: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">this</span>.server_base = <span class="hljs-keyword">this</span>.createServerBase();
+            <span class="hljs-keyword">this</span>.server_base.open(port);
+        }
+        <span class="hljs-keyword">public</span> close(): vcid
+        {
+            <span class="hljs-keyword">this</span>.server_base.close();
+        }
+        <span class="hljs-keyword">public</span> addClient(driver: IClientDriver): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">let</span> system: ExternalSystem = <span class="hljs-keyword">this</span>.createExternalClient(driver);
+            <span class="hljs-keyword">this</span>.push_back(system);
+        }
+    }
+}
+</code></pre>
+						<h5 id="externalserverarray">ExternalServerArray</h5>
+						<p>You can specify an <a href="#externalsystemarray">ExternalSystemArray</a> object to be <em>a client connecting to external servers</em>. Just extends <strong>ExternalServerArray</strong> and override only a method; <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserverarray.html#createchild">createChild()</a> who makes child <a href="#iexternalserver">IExternalServer</a> object via <a href="TypeScript-Library-XML">XML</a>.</p>
+						<p>If you already read <a href="TypeScript-Protocol-Standard_Message#entity">Entity</a> module, then you may know that; <a href="http://samchon.github.io/framework/api/ts/interfaces/samchon.protocol.ientitycollection.html#createchild">IEntityGroup.createChild()</a> is a factory method creating a child object via <a href="TypeScript-Library-XML">XML</a> message called by <a href="http://samchon.github.io/framework/api/ts/interfaces/samchon.protocol.ientitycollection.html#construct">IEntityGroup.construct()</a>. <em>A client connecting to external servers</em>; the word means that my system (<strong>ExternalServerArray</strong>) knows ip addresses and port numbers to connect. They are already being specified. Thus storing the ip addresses and port nubmers to an <a href="TypeScript-Library-XML">XML</a> document construct <strong>ExternalServerArray</strong> from the <a href="TypeScript-Library-XML">XML</a> message is possible.</p>
+						<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/samchon-framework/samchon-framework.d.ts" /&gt;</span>
+
+<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
+<span class="hljs-keyword">import</span> library = samchon.library;
+<span class="hljs-keyword">import</span> protocol = samchon.protocol;
+
+<span class="hljs-keyword">class</span> FileServerArray extends protocol.external.ExternalServerArray
+{
+    <span class="hljs-keyword">public</span> createChild(xml: library.XML): protocol.external.ExternalServer
+    {
+        <span class="hljs-keyword">let</span> name: <span class="hljs-built_in">string</span> = xml.getProperty(<span class="hljs-string">"name"</span>);
+
+        <span class="hljs-keyword">if</span> (name == <span class="hljs-string">"document"</span>)
+            <span class="hljs-keyword">return</span> DocumentServer(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (name == <span class="hljs-string">"image"</span>)
+            reutrn ImageServer(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (name == <span class="hljs-string">"video"</span>)
+            <span class="hljs-keyword">return</span> VideoServer(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+}
+
+<span class="hljs-comment">// AN XML MESSAGE STORING ADDRESSES OF EXTERNAL SERVERS TO CONNECT</span>
+<span class="hljs-keyword">var</span> xml: library.XML = <span class="hljs-keyword">new</span> library.XML
+(
+    <span class="hljs-string">"&lt;systemArray&gt;\n"</span> +
+    <span class="hljs-string">"    &lt;system name='document' ip='192.168.0.202' port='17112' /&gt;\n"</span> +
+    <span class="hljs-string">"    &lt;system name='image' ip='192.168.0.203' port='17112' /&gt;\n"</span> +
+    <span class="hljs-string">"    &lt;system name='document' ip='192.168.0.204' port='17112' /&gt;\n"</span> +
+    <span class="hljs-string">"&lt;/systemArray&gt;"</span>
+);
+
+<span class="hljs-comment">// CREATE EXTERENAL_SERVER_ARRAY</span>
+<span class="hljs-keyword">var</span> file_servers: FileServerArray = <span class="hljs-keyword">new</span> FileServerArray();
+
+<span class="hljs-comment">// CONSTRUCT EXTERNAL_SERVER OBJECTS VIA THE XML MESSAGE</span>
+file_servers.construct(xml);
+
+<span class="hljs-comment">// START CONNECTION</span>
+file_servers.connect();
+</code></pre>
+						<h6 id="iexternalserverarray">IExternalServerArray</h6>
+						<p>The easiest way to defining an <a href="#externalsystemarray">ExternalSystemArray</a> class who is <strong>a client connecting to external servers</strong> is to extending the <a href="#externalserverarray"><strong>ExternalServerArray</strong></a> class. However, if you can&#39;t specify your derived <a href="#externalsystemarray">ExternalSystemArray</a> to be server, client or both of them, then make an abstract class extending <a href="#externalsystemarray">ExternalSystemArray</a> (Now, I name it <em>BaseSystemArray</em>). When you need a <em>BaseSystemArray</em> class to be <strong>a client connecting to external servers</strong>, make a new class to extening the <em>BaseSystemArray</em> and implements <strong>IExternalServerArray</strong> (Name it <strong>BaseServerArray</strong>). Fill the <strong>BaseServerArray</strong> following below code: </p>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IExternalServerArray
+        <span class="hljs-keyword">extends</span> ExternalSystemArray
+    {
+        <span class="hljs-comment">// MAY CALL CHILDREN IExternalServer.connect() METHODS</span>
+        connect(): <span class="hljs-built_in">void</span>;
+    }
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ExternalServerArray
+        extends ExternalSystemArray
+    {
+        <span class="hljs-comment">// VERY SIMPLE. JUST CALL CHILDREN IExternalServer.connect()</span>
+        <span class="hljs-keyword">public</span> connect(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.size(); i++)
+                (<span class="hljs-keyword">this</span>.at(i) as IExternalServer).connect();
+        }
+    }
+}
+</code></pre>
+						<h5 id="externalserverclientarray">ExternalServerClientArray</h5>
+						<p>You can specify an <a href="#externalsystemarray">ExternalSystemArray</a> object to be <em>a server accepting external clients</em> and <em>a client connecting to external servers</em> at the same timee by just extending <strong>ExternalServerClientArray</strong>. Extending the <strong>ExternalServerClientArray</strong>, you can take functions of <a href="#externalserverarray">ExternalServerArray</a> and <a href="#externalclientarray">ExternalClientArray</a>. Repeat again; <strong>ExternalServerClientArray</strong> can do what <a href="#externalserverarray">ExternalServerArray</a> and <a href="#externalclientarray">ExternalClientArray</a> at the same time. Thus, <strong>ExternalServerClientArray</strong> needs to override methods from <a href="#externalserverarray">ExternalServerArray</a> and <a href="externalclientarray">ExternalClientArray</a>, too. Override those methods:</p>
+						<ul>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserverclientarray.html#createserverbase"><strong>createServerBase</strong>()</a><ul>
+									<li>From <a href="#externalclientarray">ExternalClientArray</a></li>
+									<li>Factory method creating <a href="TypeScript-Protocol-Basic_Components#iserverbase">IServerBase</a> object, who makes this <strong>ExternalServerClientArray</strong> to be a server.</li>
+									<li>Craete one of them below considering which protocol is used:<ul>
+											<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.serverbase.html">ServerBase</a></li>
+											<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.webserverbase.html">WebServerBase</a></li>
+											<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.sharedworkerserverbase.html">SharedWorkerServerBase</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserverclientarray.html#createexternalclient"><strong>createExternalClient</strong>()</a><ul>
+									<li>From <a href="#externalclientarray">ExternalClientArray</a></li>
+									<li>Factory method creating <a href="#externalsystem">ExternalSystem</a> object whenever an external client has connected.</li>
+								</ul>
+							</li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserverclientarray.html#createexternalserver"><strong>createExternalServer</strong>()</a><ul>
+									<li>From <a href="#externalserverarray">ExternalServerArray</a></li>
+									<li>Factory method creating <a href="#iexternalserver">IExternalServer</a> object</li>
+									<li>Called by <a href="http://samchon.github.io/framework/api/ts/modules/samchon.protocol.ientitygroup.html#createchild">IEntityGroup.createChild()</a> with XML message.</li>
+								</ul>
+							</li>
+						</ul>
+						<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/samchon-framework/samchon-framework.d.ts" /&gt;</span>
+
+<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
+<span class="hljs-keyword">import</span> protocol = samchon.protocol;
+
+<span class="hljs-keyword">class</span> MyExternalServerClientArray 
+    extends protocol.external.ExternalServerClientArray
+{
+    <span class="hljs-comment">//--------</span>
+    <span class="hljs-comment">// METHODS OF EXTERNAL_CLIENT_ARRAY</span>
+    <span class="hljs-comment">//--------</span>
+    <span class="hljs-keyword">protected</span> createServerBase(): protocol.IServerBase
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> protocol.WebServerBase(<span class="hljs-keyword">this</span>);
+    }
+    <span class="hljs-keyword">protected</span> createExternalClient(driver: protocol.IClientDriver): protocol.external.ExternalSystem
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyExternalClient(<span class="hljs-keyword">this</span>, driver);
+    }
+
+    <span class="hljs-comment">//--------</span>
+    <span class="hljs-comment">// METHOD OF EXTERNAL_SERVER_ARRAY</span>
+    <span class="hljs-comment">//--------</span>
+    <span class="hljs-keyword">protected</span> createExternalServer(): protocol.external.IExternalServer
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyExternalServer(<span class="hljs-keyword">this</span>);
+    }
+}
+</code></pre>
+						<h6 id="iexternalserverclientarray">IExternalServerClientArray</h6>
+						<p>As I&#39;ve mentioned in IExternalClientArrat and IExternalServerArray, the easiest way to defining an <a href="#externalsystemarray">ExternalSystemArray</a> class <strong>opening a server and accept external clients and connecting to external servers at the same time</strong> is to extending the <a href="#externalserverclientarray"><strong>ExternalServerClientArray</strong></a> class. However, if you can&#39;t specify your derived <a href="#externalsystemarray">ExternalSystemArray</a> to be server, client or both of them, then make an abstract class extending <a href="#externalsystemarray">ExternalSystemArray</a> (Now, I name it <em>BaseSystemArray</em>). When you need a <em>BaseSystemArray</em> class <strong>opening a server and accepting external clients and connecting to external servers at the same time</strong>, make a new class to extening the <em>BaseSystemArray</em> and implements <a href="#iexternalclientarray"><strong>IExternalClientArray</strong></a> and <a href="#iexternalserverarray"><strong>IExternalServerArray</strong></a> (Name it <strong>BaseServerClientArray</strong>). Fill the <strong>BaseServerClientArray</strong> following below codes: </p>
+						<p>If you already made a class implementing <a href="#iexternalclientarray">IExternalClientArray</a>, then extends the class and just implements <a href="#iexternalserverarray">IExternalServerArray</a> additionally. Of course, filling methods of the <a href="#iexternalserverarray">IExternalServerArray</a> is required.</p>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ExternalServerClientArray
+        extends ExternalClientArray <span class="hljs-comment">// a server accepting external clients</span>
+        <span class="hljs-keyword">implements</span> IExternalServerArray <span class="hljs-comment">// a client connecting to external servers</span>
+    {
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// A METHOD TO OVERRIDE</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// FACTORY METHOD CREATING EXTERNAL_SERVER OBJECT VIA XML</span>
+        <span class="hljs-keyword">protected</span> createExternalServer(xml: library.XML): IExternalServer;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS OF EXTERNAL_SERVER_ARRAY</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// SHIFT FACTORY METHOD TO CREATE_EXTERNAL_SERVER</span>
+        <span class="hljs-keyword">public</span> createChild(xml: library.XML): IExternalServer
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.createExternalServer(xml);
+        }
+
+        <span class="hljs-comment">// WHEN CHILD IS A TYPE OF IExternalServer,</span>
+        <span class="hljs-comment">// THEN CALL IExternalServer.connect()</span>
+        <span class="hljs-keyword">public</span> connect(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.size(); i++)
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.at(i)[<span class="hljs-string">"connect"</span>] != <span class="hljs-literal">undefined</span>)
+                    (<span class="hljs-keyword">this</span>.at(i) as IExternalServer).connect();
+        }
+    }
+}
+</code></pre>
+						<p>Otherwise, you haven&#39;t made a class implementing the <a href="#iexternalclientarray">IExternalClientArray</a> interface, then extends <a href="#externalsystemarray">ExternalSystemArray</a> and implements two interfaces, <a href="#iexternalclientarray">IExternalClientArray</a> and <a href="#iexternalserverarray">IExternalServerArray</a>. Make such class referencing below code:</p>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ExternalServerClientArray
+        extends ExternalSystemArray
+        <span class="hljs-keyword">implements</span> IExternalClientArray, IExternalServerArray
+    {
+        <span class="hljs-keyword">private</span> server_base: IServerBase = <span class="hljs-literal">null</span>;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS TO OVERRIDE</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// FACTORY METHOD CREATING SERVER_BASE OBJECT</span>
+        <span class="hljs-comment">// RETURN ONE OF THEM FOLLOWING SPECIFIED PROTOCOL</span>
+        <span class="hljs-comment">//     - ServerBase</span>
+        <span class="hljs-comment">//     - WebServerBase</span>
+        <span class="hljs-comment">//     - SharedWorkerServerBase</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> createServerBase(): IServerBase;
+
+        <span class="hljs-comment">// FACTORY METHOD CREATING EXTERNAL_SYSTEM OBJECT</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> createExternalClient(driver: IClientDriver): ExternalSystem;
+
+        <span class="hljs-comment">// FACTORY METHOD CREATING EXTERNAL_SERVER OBJECT VIA XML</span>
+        <span class="hljs-keyword">protected</span> createExternalServer(xml: library.XML): IExternalServer;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS OF ISERVER -&gt; HOOK TO SERVER_BASE OBJECT</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-keyword">public</span> open(port: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">this</span>.server_base = <span class="hljs-keyword">this</span>.createServerBase();
+            <span class="hljs-keyword">this</span>.server_base.open(port);
+        }
+        <span class="hljs-keyword">public</span> close(): vcid
+        {
+            <span class="hljs-keyword">this</span>.server_base.close();
+        }
+        <span class="hljs-keyword">public</span> addClient(driver: IClientDriver): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">let</span> system: ExternalSystem = <span class="hljs-keyword">this</span>.createExternalClient(driver);
+            <span class="hljs-keyword">this</span>.push_back(system);
+        }
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS OF EXTERNAL_SERVER_ARRAY</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// SHIFT FACTORY METHOD TO CREATE_EXTERNAL_SERVER</span>
+        <span class="hljs-keyword">public</span> createChild(xml: library.XML): IExternalServer
+        {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.createExternalServer(xml);
+        }
+
+        <span class="hljs-comment">// WHEN CHILD IS A TYPE OF IExternalServer,</span>
+        <span class="hljs-comment">// THEN CALL IExternalServer.connect()</span>
+        <span class="hljs-keyword">public</span> connect(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.size(); i++)
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.at(i)[<span class="hljs-string">"connect"</span>] != <span class="hljs-literal">undefined</span>)
+                    (<span class="hljs-keyword">this</span>.at(i) as IExternalServer).connect();
+        }
+    }
+}
+</code></pre>
+						<h3 id="externalsystem">ExternalSystem</h3>
+						<p>You can specify an <a href="#externalsystem">ExternalSystem</a> to be:</p>
+						<ul>
+							<li><a href="#externalclient">ExternalClient</a>: external system is a client connecting to my server.</li>
+							<li><a href="#externalserver">ExternalServer</a>: external system is a server that I connect.</li>
+						</ul>
+						<h5 id="externalclient">ExternalClient</h5>
+						<p>You want to make an ExternalSystem class who handles external client connecting to my server, then just extends the ExternalSystem class and initialize with <code>super.constructor(systemArray: protocol.external.SystemArray, driver: protocol.IClientDriver)</code>. The IClientDriver object, it comes from ExternalSystemArray.createExternalClient().</p>
+						<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/samchon-framework/samchon-framework.d.ts" /&gt;</span>
+
+<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
+<span class="hljs-keyword">import</span> protocol = samchon.protocol;
+
+<span class="hljs-keyword">class</span> MyExternalClientArray
+    extends protocol.external.ExternalClientArray
+{
+    <span class="hljs-keyword">protected</span> createServerBase(): protocol.IServerBase
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> protocol.WebServerBase(<span class="hljs-keyword">this</span>);
+    }
+    <span class="hljs-keyword">protected</span> createExternalClient(driver: protocol.IClientDriver): protocol.external.ExternalSystem
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyExternalClient(<span class="hljs-keyword">this</span>, driver);
+    }
+}
+
+<span class="hljs-keyword">class</span> MyExternalClient
+    extends protocol.external.ExternalSystem
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">constructor</span>(systemArray: MyExternalClientArray, driver: protocol.IClientDriver)
+    {
+        <span class="hljs-keyword">super</span>(systemArray, driver);
+
+        <span class="hljs-keyword">this</span>.push
+        (
+            <span class="hljs-keyword">new</span> MyExternalClientRole1(<span class="hljs-keyword">this</span>),
+            <span class="hljs-keyword">new</span> MyExternalClientRole2(<span class="hljs-keyword">this</span>),
+            <span class="hljs-keyword">new</span> MyExternalClientRole3(<span class="hljs-keyword">this</span>)
+        );
+    }
+}
+</code></pre>
+						<h5 id="externalserver">ExternalServer</h5>
+						<p>You can specify an <a href="#externalsystem">ExternalSystem</a> object who connects to external server. Just extends <strong>ExternalServer</strong> and overrides two methods; <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserver.html#createserverconnector">createServerConnector()</a> and <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserver.html#createchild">createChild()</a>.</p>
+						<p>The <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserver.html#createserverconnector">createServerConnector()</a> is a factory method creating <a href="http://samchon.github.io/framework/api/ts/interfaces/samchon.protocol.iserverconnector.html">IServerConnector</a> object. Return one of them considering which protocol is used in the external server.</p>
+						<ul>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.serverconnector.html">ServerConnector</a></li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.webserverconnector.html">WebServerConector</a></li>
+							<li><a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.sharedworkerserverconnector.html">SharedWorkerServerConnector</a></li>
+						</ul>
+						<p>The <a href="http://samchon.github.io/framework/api/ts/classes/samchon.protocol.external.externalserver.html#createchild">createChild()</a> is a factory method creating child ExternalSystemRole object from XML object. Extends <strong>ExternalServer</strong> class following below code:</p>
+						<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/samchon-framework/samchon-framework.d.ts" /&gt;</span>
+
+<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
+<span class="hljs-keyword">import</span> library = samchon.library;
+<span class="hljs-keyword">import</span> protocol = samchon.protocol;
+
+<span class="hljs-keyword">class</span> MyExternalServerArray exnteds protocol.external.ExternalServerArray
+{
+    <span class="hljs-keyword">public</span> createChild(xml: library.XML): protocol.external.IExternalServer
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyExternalServer(<span class="hljs-keyword">this</span>);
+    }
+}
+
+<span class="hljs-keyword">class</span> MyExternalServer extends protocol.external.ExternalServer
+{
+    <span class="hljs-comment">// FACTORY METHOD CREATING SERVER_CONNECTOR OBJECT</span>
+    <span class="hljs-comment">// RETURN ONE OF THEM FOLLOWING SPECIFIED PROTOCOL</span>
+    <span class="hljs-comment">//     - ServerConnector</span>
+    <span class="hljs-comment">//     - WebServereConnector</span>
+    <span class="hljs-comment">//     - SharedWorkerServeerConnector</span>
+    <span class="hljs-keyword">protected</span> createServerConnector(): protocol.IServerConnector
+    {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> protocol.WebServerConnector(<span class="hljs-keyword">this</span>);
+    }
+
+    <span class="hljs-comment">// FACTORY METHOD CREATING EXTERNAL_SYSTEM_ROLE OBJECT</span>
+    <span class="hljs-comment">// THIS IS CALLED BY IEntityGroup.construct() WITH XML MESSAGE</span>
+    <span class="hljs-keyword">public</span> createChild(xml: library.XML): protocol.external.ExternalSystemRole
+    {
+        <span class="hljs-keyword">let</span> name: <span class="hljs-built_in">string</span> = xml.getProperty(<span class="hljs-string">"name"</span>);
+
+        <span class="hljs-keyword">if</span> (name == <span class="hljs-string">"role1"</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyExternalClientRole1(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (name == <span class="hljs-string">"role2"</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyExternalClientRole2(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (name == <span class="hljs-string">"role3"</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> MyExternalClientRole3(<span class="hljs-keyword">this</span>);
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+    }
+}
+</code></pre>
+						<h6 id="iexternalserver">IExternalServer</h6>
+						<p>The easiest way to defining an <a href="#externalsystem"><em>ExternalSystem</em></a> class who connects to external server is to extending the <strong>ExternalServer</strong> class. However, if you can&#39;t specify your derived <a href="#externalsystem"><em>ExternalSystem</em></a> is interacting with <strong>an external server that I connect</strong> or an external client connecting to my system, then make an abstract class extending <a href="#externalsystem"><em>ExternalSystem</em></a> (Nowm I am it <em>BaseSystem</em>). When you need a <em>BaseSystem</em> class who <strong>connects to external server</strong>, make a new class extending the <em>BaseSystem</em> and implements <strong>IExternalServer</strong>. Fill the <strong>BaseServer</strong> following below code:</p>
+						<pre><code class="lang-typescript"><span class="hljs-keyword">namespace</span> samchon.protocol.external
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IExternalServer
+        <span class="hljs-keyword">extends</span> ExternalSystem
+    {
+        <span class="hljs-comment">// CALLED BY IExternalServerArray.connect()</span>
+        connect(): <span class="hljs-built_in">void</span>;
+    }
+
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> ExternalServer
+        extends ExternalSystem
+        <span class="hljs-keyword">implements</span> IExternalServer
+    {
+        <span class="hljs-comment">// IP ADDRESS AND PORT NUMBER TO CONNECT</span>
+        <span class="hljs-keyword">protected</span> ip: <span class="hljs-built_in">string</span> = <span class="hljs-string">""</span>;
+        <span class="hljs-keyword">protected</span> port: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>;
+
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// METHODS OF IEXTERNAL_SERVER</span>
+        <span class="hljs-comment">//--------</span>
+        <span class="hljs-comment">// FACTORY METHOD CREATING SERVER_CONNECTOR OBJECT</span>
+        <span class="hljs-comment">// RETURN ONE OF THEM FOLLOWING SPECIFIED PROTOCOL</span>
+        <span class="hljs-comment">//     - ServerConnector</span>
+        <span class="hljs-comment">//     - WebServereConnector</span>
+        <span class="hljs-comment">//     - SharedWorkerServeerConnector</span>
+        <span class="hljs-keyword">protected</span> <span class="hljs-keyword">abstract</span> createServerConnector(): IServerConnector;
+
+        <span class="hljs-keyword">public</span> connect(): <span class="hljs-built_in">void</span>
+        {
+            <span class="hljs-comment">// CREATE SERVER_CONNECTOR VIA FACTORY METHOD</span>
+            <span class="hljs-keyword">this</span>.communicator = <span class="hljs-keyword">this</span>.createServerConnector();
+
+            <span class="hljs-comment">// AND CONNECT</span>
+            (<span class="hljs-keyword">this</span>.communicator as ServerConnector).connect(<span class="hljs-keyword">this</span>.ip, <span class="hljs-keyword">this</span>.port);
+        }
+    }
+}
+</code></pre>
+						<h2 id="derived-modules">Derived Modules</h2>
+						<h3 id="parallel-system">Parallel System</h3>
+						<p><img src="http://samchon.github.io/framework/images/design/conceptual_diagram/external_vs_parallel.png" alt="Conceptual Diagram"></p>
+						<p>Parallel System Module, it is extended from this <em>External System Module</em>.</p>
+						<p>On top of the External System Module who indendently separates each role to each system exclusively, Parallel Sysetm module also can do parallel processing. Parallel System Module separates a process to number of pieces and distributes the pieces to its slave systems. The slave systems process the pieces all together.</p>
+						<p><a href="TypeScript-Protocol-Parallel_System"><strong>Go to the Parallel System Module</strong></a></p>
+						<h3 id="distributed-system">Distributed System</h3>
+						<p><img src="http://samchon.github.io/framework/images/design/conceptual_diagram/external_vs_distributed.png" alt="Conceptual Diagram"></p>
+						<p>Distributed System Moudle, it is extended from the Parallel System Module.</p>
+						<p>On top of External System Moudle and Parallel System Module, Distributed System Module&#39;s system doesn&#39;t monopolize a role. The role can be shared in multiple systems. When developer requests to process belonged to a role, then DistributedSystemArray will deliver the role to the most idle slave system.</p>
+						<p><a href="TypeScript-Protocol-Distributed_System"><strong>Go to the Distributed System Module</strong></a></p>
+						<h3 id="slave-system">Slave System</h3>
+						<p><a href="TypeScript-Protocol-Slave_System"><strong>Go to the Slave System Module</strong></a></p>
+						<h2 id="example-project">Example Project</h2>
+						<h3 id="derived-modules">Derived Modules</h3>
+						<p>The <a href="#derived-modules">Derived Modules</a> can be very helpful for understanding how to utilize and specify type of classes in this External System module.</p>
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Source</th>
+									<th>Documents</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Parallel System</td>
+									<td><a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/parallel">protocol/parallel</a></td>
+									<td><a href="http://samchon.github.io/framework/api/ts/modules/samchon.protocol.parallel.html">API</a>, <a href="TypeScript-Protocol-Parallel_System">Guidance</a></td>
+								</tr>
+								<tr>
+									<td>Distributed System</td>
+									<td><a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/distributed">protocol/distributed</a></td>
+									<td><a href="http://samchon.github.io/framework/api/ts/modules/samchon.protocol.distributed.html">API</a>, <a href="TypeScript-Protocol-Distributed_System">Guidance</a></td>
+								</tr>
+								<tr>
+									<td>Slave System</td>
+									<td><a href="https://github.com/samchon/framework/tree/master/ts/src/samchon/protocol/slave">protocol/slave</a></td>
+									<td><a href="http://samchon.github.io/framework/api/ts/modules/samchon.protocol.slave.html">API</a>, <a href="TypeScript-Protocol-Slave_System">Guidance</a></td>
+								</tr>
+							</tbody>
+						</table>
+						<h3 id="interaction">Interaction</h3>
+						<p><img src="http://samchon.github.io/framework/images/design/conceptual_diagram/interaction.png" alt="Conceptual Diagram"></p>
+						<p><strong>Interaction</strong> is an example implemented <em>Tree-structured Distributed &amp; Parallel Processing System</em>. The Interaction provides ultimate guidance; how to use <em>External System</em> and its derived modules.</p>
+						<p><a href="Examples-Interaction"><strong>Go to the Interaction</strong></a></p>
 					</div>
 				</div>
 			</section>
