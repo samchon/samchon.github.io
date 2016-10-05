@@ -13,5 +13,6 @@ var dir_2b33953aff3604b427d260fead6e38af =
     [ "string_util", "dir_b39159bcf6b77e95d2bc51f1ab7270f5.html", "dir_b39159bcf6b77e95d2bc51f1ab7270f5" ],
     [ "test", "dir_6ed32ee05cfe333e26490f313cf13328.html", "dir_6ed32ee05cfe333e26490f313cf13328" ],
     [ "tsp", "dir_21d63499bc1afe579975e41070bcf3b6.html", "dir_21d63499bc1afe579975e41070bcf3b6" ],
+    [ "websocket", "dir_05f771fea3a788f83d1f72e48bb40088.html", "dir_05f771fea3a788f83d1f72e48bb40088" ],
     [ "xml", "dir_c80ea99d37b27c29b5e23feb27714b76.html", "dir_c80ea99d37b27c29b5e23feb27714b76" ]
 ];

@@ -13,7 +13,9 @@ var searchData=
   ['chatuser',['ChatUser',['../d7/df1/classsamchon_1_1example_1_1chat__service_1_1ChatUser.html',1,'samchon::example::chat_service']]],
   ['chief',['Chief',['../da/df4/classsamchon_1_1example_1_1interaction_1_1Chief.html',1,'samchon::example::interaction']]],
   ['chiefdriver',['ChiefDriver',['../d4/dde/classsamchon_1_1example_1_1interaction_1_1ChiefDriver.html',1,'samchon::example::interaction']]],
-  ['client',['Client',['../df/d31/classsamchon_1_1protocol_1_1service_1_1Client.html',1,'samchon::protocol::service']]],
+  ['client',['Client',['../db/d38/classsamchon_1_1templates_1_1service_1_1Client.html',1,'samchon::templates::service']]],
+  ['clientdriver',['ClientDriver',['../d7/da5/classsamchon_1_1protocol_1_1ClientDriver.html',1,'samchon::protocol']]],
   ['combinedpermutationgenerator',['CombinedPermutationGenerator',['../dc/db2/classsamchon_1_1library_1_1CombinedPermutationGenerator.html',1,'samchon::library']]],
+  ['communicator',['Communicator',['../dd/d5d/classsamchon_1_1protocol_1_1Communicator.html',1,'samchon::protocol']]],
   ['criticalallocator',['CriticalAllocator',['../d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html',1,'samchon::library']]]
 ];

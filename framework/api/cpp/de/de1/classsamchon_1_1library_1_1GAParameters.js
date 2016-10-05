@@ -10,8 +10,6 @@ var classsamchon_1_1library_1_1GAParameters =
     [ "getPopulation", "de/de1/classsamchon_1_1library_1_1GAParameters.html#a67a5effc2a3213919f83ac0bcf80587b", null ],
     [ "getTournament", "de/de1/classsamchon_1_1library_1_1GAParameters.html#a173a3c07178f6062bf6122e4509be779", null ],
     [ "getMutationRate", "de/de1/classsamchon_1_1library_1_1GAParameters.html#a9d6442b7ee28ed5ec8af20ee9b590489", null ],
-    [ "TAG", "de/de1/classsamchon_1_1library_1_1GAParameters.html#acb46040fc4549a65237793711398f6f2", null ],
-    [ "toXML", "de/de1/classsamchon_1_1library_1_1GAParameters.html#aa65a0118471d1c91c8ded34d5e114f3a", null ],
     [ "generation", "de/de1/classsamchon_1_1library_1_1GAParameters.html#a665f058da9a453d70188d12d5373e94e", null ],
     [ "population", "de/de1/classsamchon_1_1library_1_1GAParameters.html#a1befe3979a7049f0e9b8e71320d92ee5", null ],
     [ "tournament", "de/de1/classsamchon_1_1library_1_1GAParameters.html#aa27ea978793660e6d72fe501887bf6e4", null ],

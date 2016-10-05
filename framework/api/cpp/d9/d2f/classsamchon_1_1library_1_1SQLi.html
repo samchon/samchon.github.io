@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('d9/d2f/classsamchon_1_1library_1_1SQLi
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d9/d25/classsamchon_1_1library_1_1SQLi-members.html">List of all members</a>  </div>
@@ -128,7 +129,7 @@ Collaboration diagram for samchon::library::SQLi:</div>
 <div class="center"><img src="../../d8/dc4/classsamchon_1_1library_1_1SQLi__coll__graph.png" border="0" usemap="#samchon_1_1library_1_1SQLi_coll__map" alt="Collaboration graph"/></div>
 <map name="samchon_1_1library_1_1SQLi_coll__map" id="samchon_1_1library_1_1SQLi_coll__map">
 <area shape="rect" id="node2" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. " alt="" coords="33,109,245,136"/>
-<area shape="rect" id="node3" href="../../d1/d4e/classsamchon_1_1Map.html" title="samchon::Map\&lt; size\l_t, SQL_SIZE_T \&gt;" alt="" coords="184,5,328,47"/>
+<area shape="rect" id="node3" href="../../d1/d6c/classsamchon_1_1TreeMap.html" title="samchon::TreeMap\&lt; size\l_t, SQL_SIZE_T \&gt;" alt="" coords="185,5,354,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -147,6 +148,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0c8cfe34d8f2573e249583935dcd563"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html#aa0c8cfe34d8f2573e249583935dcd563">createStatement</a> () -&gt; std::shared_ptr&lt; <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html">SQLStatement</a> &gt;</td></tr>
 <tr class="memdesc:aa0c8cfe34d8f2573e249583935dcd563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory method for creating <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a>.  <a href="#aa0c8cfe34d8f2573e249583935dcd563">More...</a><br /></td></tr>
 <tr class="separator:aa0c8cfe34d8f2573e249583935dcd563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a08c23c7a5959d544745ad82347177f1d"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a08c23c7a5959d544745ad82347177f1d">getErrorMessage</a> (short type) const  -&gt; std::string</td></tr>
+<tr class="memdesc:a08c23c7a5959d544745ad82347177f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get error message.  <a href="#a08c23c7a5959d544745ad82347177f1d">More...</a><br /></td></tr>
+<tr class="separator:a08c23c7a5959d544745ad82347177f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -168,6 +175,9 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ad965fdc236d31b607cad14e77f73333f"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html#ad965fdc236d31b607cad14e77f73333f">stmtMutex</a></td></tr>
 <tr class="memdesc:ad965fdc236d31b607cad14e77f73333f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex ensuring concurrency with <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a>.  <a href="#ad965fdc236d31b607cad14e77f73333f">More...</a><br /></td></tr>
 <tr class="separator:ad965fdc236d31b607cad14e77f73333f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de917240451a593f487279bbdfe6e4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a4de917240451a593f487279bbdfe6e4c">connected</a></td></tr>
+<tr class="memdesc:a4de917240451a593f487279bbdfe6e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Had connected to DBMS.  <a href="#a4de917240451a593f487279bbdfe6e4c">More...</a><br /></td></tr>
+<tr class="separator:a4de917240451a593f487279bbdfe6e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A SQL interface; DBMS connector. </p>
@@ -217,7 +227,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00023">23</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00024">24</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
 
 </div>
 </div>
@@ -284,7 +294,7 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00040">40</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
 
 </div>
 </div>
@@ -311,7 +321,7 @@ Private Attributes</h2></td></tr>
 
 <p>Disconnect from DBMS. </p>
 
-<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00071">71</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00077">77</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
 
 </div>
 </div>
@@ -342,7 +352,48 @@ Private Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="../../da/dfd/classsamchon_1_1library_1_1TSQLi.html#af9430b3703c5ce4c66299f0f2aeeb0ab">samchon::library::TSQLi</a>.</p>
 
-<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00035">35</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00037">37</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08c23c7a5959d544745ad82347177f1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto SQLi::getErrorMessage </td>
+          <td>(</td>
+          <td class="paramtype">short&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td> const -&gt; std::string</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get error message. </p>
+<p>Gets error message for throwing exception. </p>
+
+<p>Definition at line <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html#l00103">103</a> of file <a class="el" href="../../d1/dd3/SQLi_8cpp_source.html">SQLi.cpp</a>.</p>
+
+<p>Referenced by <a class="el" href="../../d7/d3d/SQLStatement_8cpp_source.html#l00083">samchon::library::SQLStatement::execute()</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d2f/classsamchon_1_1library_1_1SQLi_a08c23c7a5959d544745ad82347177f1d_icgraph.png" border="0" usemap="#d9/d2f/classsamchon_1_1library_1_1SQLi_a08c23c7a5959d544745ad82347177f1d_icgraph" alt=""/></div>
+<map name="d9/d2f/classsamchon_1_1library_1_1SQLi_a08c23c7a5959d544745ad82347177f1d_icgraph" id="d9/d2f/classsamchon_1_1library_1_1SQLi_a08c23c7a5959d544745ad82347177f1d_icgraph">
+<area shape="rect" id="node2" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html#af3922df243cb6bb42cbc6c48de27e817" title="Execute the prepared sql statement. " alt="" coords="208,5,420,47"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -425,7 +476,7 @@ Private Attributes</h2></td></tr>
 
 <p>Handler of DB-connector. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html#l00076">76</a> of file <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html">SQLi.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html#l00071">71</a> of file <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html">SQLi.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d7/d3d/SQLStatement_8cpp_source.html#l00022">samchon::library::SQLStatement::SQLStatement()</a>.</p>
 
@@ -451,7 +502,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a>'s pointer linked with the <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html">SQLi.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html#l00076">76</a> of file <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html">SQLi.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d7/d3d/SQLStatement_8cpp_source.html#l00041">samchon::library::SQLStatement::free()</a>, and <a class="el" href="../../d7/d3d/SQLStatement_8cpp_source.html#l00053">samchon::library::SQLStatement::refresh()</a>.</p>
 
@@ -477,9 +528,34 @@ Private Attributes</h2></td></tr>
 
 <p>Mutex ensuring concurrency with <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a>. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html#l00086">86</a> of file <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html">SQLi.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html">SQLi.hpp</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d7/d3d/SQLStatement_8cpp_source.html#l00041">samchon::library::SQLStatement::free()</a>, and <a class="el" href="../../d7/d3d/SQLStatement_8cpp_source.html#l00053">samchon::library::SQLStatement::refresh()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4de917240451a593f487279bbdfe6e4c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool samchon::library::SQLi::connected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Had connected to DBMS. </p>
+<p><a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a4de917240451a593f487279bbdfe6e4c" title="Had connected to DBMS. ">connected</a> is a flag variable for connection to DBMS. However, it doesn't mean the real-time status. <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a4de917240451a593f487279bbdfe6e4c" title="Had connected to DBMS. ">connected</a> only stores whether a connection was succeeded or not. </p>
+
+<p>Definition at line <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html#l00090">90</a> of file <a class="el" href="../../d5/d6a/SQLi_8hpp_source.html">SQLi.hpp</a>.</p>
 
 </div>
 </div>

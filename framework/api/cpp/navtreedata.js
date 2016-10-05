@@ -2,7 +2,6 @@ var NAVTREE =
 [
   [ "Samchon Framework for CPP", "index.html", [
     [ "Samchon Framework", "index.html", null ],
-    [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
@@ -18,7 +17,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", "functions_vars" ]
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", null, [
@@ -29,13 +28,11 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"d2/db1/classsamchon_1_1library_1_1FTFolder.html",
-"d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html#abea6a15fb24c5b4fab0a4d4ed3aa9ba1",
-"d8/d82/classsamchon_1_1protocol_1_1Invoke.html#a7b82a8d429285781ce4563e2191f8442",
-"da/d6b/classsamchon_1_1library_1_1Date.html#a207d7179ef0a879ca534457fdc70dc6c",
-"dd/d37/XMLList_8hpp_source.html",
-"df/d66/ServiceRole_8hpp_source.html"
+".html",
+"d4/d2d/PackerSlave_8hpp_source.html",
+"d8/d3a/Service_8hpp_source.html",
+"da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html#a5cbae3a92436af7b53048934b2b2412e",
+"de/d8f/classsamchon_1_1library_1_1Math.html#a1d1f43d72da74376a685da6f9c67c3b7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

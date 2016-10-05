@@ -1,13 +1,13 @@
 var classsamchon_1_1library_1_1Semaphore =
 [
-    [ "Semaphore", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#aad1a6418984ac8f295ae3db6dd150ee2", null ],
-    [ "setSize", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a9056ed00899850d3f29dc2e0a40619ad", null ],
-    [ "size", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#accce0b54935f387805bae6d62de87a57", null ],
-    [ "acquiredSize", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a5cf4aeda154da4a75d5e55ea3ad70a5d", null ],
-    [ "acquire", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#acce26e3de2fa933e111a45ea48a90b1f", null ],
-    [ "tryAcquire", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#afa035c3036efc9eee1f155edf93b1968", null ],
-    [ "release", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a009928619bf9269b4518719b023fe040", null ],
-    [ "size_", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a35cd12f1ac3ec60be8eb87fd77317b7b", null ],
-    [ "acquired", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a06dae3512138ed698727cb4e7aa1fd49", null ],
-    [ "mtx", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#ae5e583e36ee2558534c4e665550aba40", null ]
+    [ "Semaphore", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a795bbb5c41680afd886bd5c055d2195a", null ],
+    [ "setCapacity", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#afc5aca67f5356c009ac7f4bf959ed01b", null ],
+    [ "capacity", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a2ee4fe502ff9a4fe6e576ca92f487e47", null ],
+    [ "acquired", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a2ecce32e1a564abc9518075d00c64687", null ],
+    [ "acquire", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#aa2a573b4dc2b0e9abdc7524c1d8c915e", null ],
+    [ "tryAcquire", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a4f2dac97fa100243673640dc940e2b4b", null ],
+    [ "release", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a8aabcbe0e4196826f27ef50243619f9a", null ],
+    [ "capacity_", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#afcb45cc6945b65840067cff7aa232681", null ],
+    [ "acquired_", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#a4708dd2bcf1ad9135756fd808d59de03", null ],
+    [ "mtx", "d9/d88/classsamchon_1_1library_1_1Semaphore.html#af2de9a5c0a2fd6a20b40f8cb2af2a97e", null ]
 ];

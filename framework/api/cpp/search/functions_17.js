@@ -1,12 +1,23 @@
 var searchData=
 [
   ['_7echatclient',['~ChatClient',['../d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient.html#aa5e3fa84e54a1107313f3e3c559df6ea',1,'samchon::example::console_chat_server::ChatClient']]],
+  ['_7eclient',['~Client',['../db/d38/classsamchon_1_1templates_1_1service_1_1Client.html#a840e519ca781888cbd54181572ebe3a7',1,'samchon::templates::service::Client']]],
   ['_7eeventdispatcher',['~EventDispatcher',['../d3/d9b/classsamchon_1_1library_1_1EventDispatcher.html#abb5f401014e87f03027d6c4450964e55',1,'samchon::library::EventDispatcher']]],
-  ['_7esharedacquire',['~SharedAcquire',['../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a89cecdb88b62d07f2b4fb1e1f5fb8ac1',1,'samchon::library::SharedAcquire']]],
-  ['_7esharedreadlock',['~SharedReadLock',['../d7/de5/classsamchon_1_1library_1_1SharedReadLock.html#a5b4519c00471e96f5bb4fed2b1e0da6d',1,'samchon::library::SharedReadLock']]],
-  ['_7esharedwritelock',['~SharedWriteLock',['../da/d5f/classsamchon_1_1library_1_1SharedWriteLock.html#aaabd1cde38b3e528ea042c532e0b0258',1,'samchon::library::SharedWriteLock']]],
+  ['_7eexternalserverclientarray',['~ExternalServerClientArray',['../de/d18/classsamchon_1_1templates_1_1external_1_1ExternalServerClientArray.html#aa2c865924c9d3dc7725f026de67ddbeb',1,'samchon::templates::external::ExternalServerClientArray']]],
+  ['_7eexternalsystem',['~ExternalSystem',['../db/de6/classsamchon_1_1templates_1_1external_1_1ExternalSystem.html#af1f41dbd3d8e42cfd05d43550449b04c',1,'samchon::templates::external::ExternalSystem']]],
+  ['_7eexternalsystemarray',['~ExternalSystemArray',['../de/dde/classsamchon_1_1templates_1_1external_1_1ExternalSystemArray.html#ab582d47268e1ed5660fc259346d2f95f',1,'samchon::templates::external::ExternalSystemArray']]],
+  ['_7eexternalsystemrole',['~ExternalSystemRole',['../df/d61/classsamchon_1_1templates_1_1external_1_1ExternalSystemRole.html#a3f2d578c6733df4a44e16f547f562f0f',1,'samchon::templates::external::ExternalSystemRole']]],
+  ['_7emediatorsystem',['~MediatorSystem',['../d8/d7e/classsamchon_1_1templates_1_1parallel_1_1MediatorSystem.html#a0c49c82f2383e16311f080710c6397c3',1,'samchon::templates::parallel::MediatorSystem']]],
+  ['_7eparallelsystem',['~ParallelSystem',['../df/d15/classsamchon_1_1templates_1_1parallel_1_1ParallelSystem.html#aa14ee72affd31447156857229c2b91d7',1,'samchon::templates::parallel::ParallelSystem']]],
+  ['_7eserver',['~Server',['../de/d12/classsamchon_1_1protocol_1_1Server.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'samchon::protocol::Server::~Server()'],['../d7/dcf/classsamchon_1_1templates_1_1service_1_1Server.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'samchon::templates::service::Server::~Server()']]],
+  ['_7eserverconnector',['~ServerConnector',['../db/d72/classsamchon_1_1protocol_1_1ServerConnector.html#a7d4791e70d5dbc3b54adb777a764639f',1,'samchon::protocol::ServerConnector']]],
+  ['_7eservice',['~Service',['../d9/d8e/classsamchon_1_1templates_1_1service_1_1Service.html#af6c3577b59652ac817d1d76aaccee904',1,'samchon::templates::service::Service']]],
+  ['_7esharedacquire',['~SharedAcquire',['../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#aafbbb578750a4644d3c28b1eac6b83b5',1,'samchon::library::SharedAcquire']]],
+  ['_7esharedreadlock',['~SharedReadLock',['../d7/de5/classsamchon_1_1library_1_1SharedReadLock.html#a54d7e0fcb95df7ed49a31ec1f44359f1',1,'samchon::library::SharedReadLock']]],
+  ['_7esharedwritelock',['~SharedWriteLock',['../da/d5f/classsamchon_1_1library_1_1SharedWriteLock.html#aaef26d7d4653c8be53810808b9d1e51d',1,'samchon::library::SharedWriteLock']]],
   ['_7esmartpointer',['~SmartPointer',['../d9/d2d/classsamchon_1_1SmartPointer.html#ad8a27a1ae027769078af930c52449a5b',1,'samchon::SmartPointer']]],
-  ['_7euniqueacquire',['~UniqueAcquire',['../d1/df7/classsamchon_1_1library_1_1UniqueAcquire.html#a85ed3efb8dd56d32c3bc8c0f826992ed',1,'samchon::library::UniqueAcquire']]],
-  ['_7euniquereadlock',['~UniqueReadLock',['../de/d6f/classsamchon_1_1library_1_1UniqueReadLock.html#a730da5da90f928845124f843758f643a',1,'samchon::library::UniqueReadLock']]],
-  ['_7euniquewritelock',['~UniqueWriteLock',['../d1/dc0/classsamchon_1_1library_1_1UniqueWriteLock.html#a8103e0f042f6bc2bd0484403ca1351ad',1,'samchon::library::UniqueWriteLock']]]
+  ['_7euniqueacquire',['~UniqueAcquire',['../d1/df7/classsamchon_1_1library_1_1UniqueAcquire.html#ad578b9fc7e9a452bfd2420106dd59597',1,'samchon::library::UniqueAcquire']]],
+  ['_7euniquereadlock',['~UniqueReadLock',['../de/d6f/classsamchon_1_1library_1_1UniqueReadLock.html#a85274a9e1dc55953cf5c29f6d9a45ba8',1,'samchon::library::UniqueReadLock']]],
+  ['_7euniquewritelock',['~UniqueWriteLock',['../d1/dc0/classsamchon_1_1library_1_1UniqueWriteLock.html#a90ae61d1e33cbe75dd7a628477fd3e8f',1,'samchon::library::UniqueWriteLock']]],
+  ['_7euser',['~User',['../d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#ac00b72ad64eb4149f7b21b9f5468c2b2',1,'samchon::templates::service::User']]]
 ];

@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['r_5f',['r_',['../de/ddf/classsamchon_1_1library_1_1CaseGenerator.html#a213783f77b74d86ee31a07027db29415',1,'samchon::library::CaseGenerator']]],
-  ['reference',['reference',['../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#af2420d9f31d229a5f5a283fd5b060c3a',1,'samchon::library::SharedAcquire::reference()'],['../d7/de5/classsamchon_1_1library_1_1SharedReadLock.html#a2e3973e68cb34e7e83ecc50704eeac26',1,'samchon::library::SharedReadLock::reference()'],['../da/d5f/classsamchon_1_1library_1_1SharedWriteLock.html#ab31c3ada2dab221f86b57c5c3843bee3',1,'samchon::library::SharedWriteLock::reference()']]],
-  ['replylisteners',['replyListeners',['../d4/db7/classsamchon_1_1protocol_1_1ExternalSystemRole.html#a662d23eb44cf17a9e2fe7783885c269c',1,'samchon::protocol::ExternalSystemRole']]],
-  ['reserved',['reserved',['../d4/dfe/classsamchon_1_1example_1_1packer_1_1WrapperArray.html#aaf203c93fc82f10f0b1abbf08ed383f6',1,'samchon::example::packer::WrapperArray']]],
-  ['role',['role',['../de/d14/classsamchon_1_1protocol_1_1master_1_1DSInvokeHistory.html#a9078c67bb5c67a8e0348a9a815168b2a',1,'samchon::protocol::master::DSInvokeHistory']]],
-  ['roledictionary',['roleDictionary',['../d3/d88/classsamchon_1_1protocol_1_1master_1_1DistributedSystemArray.html#ad941197cb772b0d2fb9e3a0ae0300456',1,'samchon::protocol::master::DistributedSystemArray']]],
-  ['rolehistorylist',['roleHistoryList',['../db/d2d/classsamchon_1_1protocol_1_1master_1_1DistributedSystem.html#add03c6b7b55b6cc0a4ad1776c81a5ca6',1,'samchon::protocol::master::DistributedSystem']]],
-  ['room',['room',['../df/de2/classsamchon_1_1example_1_1chat__service_1_1ChatService.html#aca055f7faa4fdf0bcaf3602504380f0b',1,'samchon::example::chat_service::ChatService']]],
-  ['roomarray',['roomArray',['../d7/d41/classsamchon_1_1example_1_1chat__service_1_1ChatRoom.html#a1daa643dd648234779a371851b0f00a3',1,'samchon::example::chat_service::ChatRoom::roomArray()'],['../da/d56/classsamchon_1_1example_1_1chat__service_1_1ChatServer.html#a01f38a8e3cd6d7a2d38f4786a50e0341',1,'samchon::example::chat_service::ChatServer::roomArray()']]],
-  ['rwmutex',['rwMutex',['../dd/dc0/classsamchon_1_1example_1_1console__chat__server_1_1ChatServer.html#a17b1821e41c65e803c9b83532e8d33fa',1,'samchon::example::console_chat_server::ChatServer']]]
+  ['sample',['sample',['../d4/dfe/classsamchon_1_1example_1_1packer_1_1WrapperArray.html#a998589dd4c66a867a6b2408c97c5344a',1,'samchon::example::packer::WrapperArray']]],
+  ['semaphore',['semaphore',['../d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html#a0503a75f55d9c4a5c8071993e3b2240e',1,'samchon::library::SharedAcquire::semaphore()'],['../d1/df7/classsamchon_1_1library_1_1UniqueAcquire.html#a9c10a3201c16692f6ad18e874e3c2f1c',1,'samchon::library::UniqueAcquire::semaphore()']]],
+  ['server',['server',['../d2/d9a/classsamchon_1_1example_1_1chat__service_1_1ChatRoomArray.html#ab31bfcbd45bda14a21f00a56b81c8cdd',1,'samchon::example::chat_service::ChatRoomArray::server()'],['../d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient.html#a533f3ce958f77602b0ced306cc271f4c',1,'samchon::example::console_chat_server::ChatClient::server()']]],
+  ['size_5f',['size_',['../de/ddf/classsamchon_1_1library_1_1CaseGenerator.html#aac091a29ed6ea65dfbe218b598d70900',1,'samchon::library::CaseGenerator::size_()'],['../d8/de4/classsamchon_1_1WeakString.html#a765b8c2d85bff6a896fbd44d62dc5bad',1,'samchon::WeakString::size_()']]],
+  ['source',['source',['../d2/d56/classsamchon_1_1library_1_1Event.html#a4a1f085faecf6b69fe99a28d1fd9368d',1,'samchon::library::Event']]],
+  ['space_5farray',['SPACE_ARRAY',['../d8/de4/classsamchon_1_1WeakString.html#a1d43455a4e8a24af82c66de8a0e2fe3c',1,'samchon::WeakString']]],
+  ['sqli',['sqli',['../de/def/classsamchon_1_1library_1_1SQLStatement.html#a6270ac1661dba2cfce34fdb87ac15d3f',1,'samchon::library::SQLStatement']]],
+  ['stmt',['stmt',['../d9/d2f/classsamchon_1_1library_1_1SQLi.html#a47441dc2e662a712b0ae8a5a86183a7c',1,'samchon::library::SQLi']]],
+  ['stmtmutex',['stmtMutex',['../d9/d2f/classsamchon_1_1library_1_1SQLi.html#ad965fdc236d31b607cad14e77f73333f',1,'samchon::library::SQLi']]],
+  ['str',['str',['../d0/d1a/classsamchon_1_1protocol_1_1InvokeParameter.html#a539a235c71f8ea6feeef4baf1fef7092',1,'samchon::protocol::InvokeParameter']]]
 ];

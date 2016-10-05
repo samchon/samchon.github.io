@@ -5,5 +5,5 @@ var classsamchon_1_1library_1_1CriticalAllocator =
     [ "destroy", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a19449fc3eaefe15e274f1b7c97f677a2", null ],
     [ "allocate", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a4caf9461c91f8c4be9e8c21196966c97", null ],
     [ "deallocate", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a33099e31726dbb004bc0c7335b52cd3e", null ],
-    [ "mtx", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a91599e74f0c9067ed2300f3fe7494f53", null ]
+    [ "rw_mutex", "d6/d32/classsamchon_1_1library_1_1CriticalAllocator.html#a58d93aa45ac001c0c4e794ce1de376bb", null ]
 ];

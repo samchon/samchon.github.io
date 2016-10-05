@@ -1,10 +1,12 @@
 var classsamchon_1_1protocol_1_1EntityGroup =
 [
-    [ "EntityGroup", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a142701dee6a46f39918c1867a29e43b0", null ],
-    [ "construct", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a2aa942e255bbd8ed99d66daa3d771e69", null ],
-    [ "createChild", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a3bb0683a56d23d0bb3368dc78c43b2ca", null ],
-    [ "has", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a2718a784e85e57a48822d2487b4bef9d", null ],
-    [ "get", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a004f449dd5c153554c7abff3c8e25a34", null ],
-    [ "get", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a7b46f08443e8af727570e3dda26e6df5", null ],
-    [ "toXML", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a650c51bf90f5f45aa46bd97eed6e2a34", null ]
+    [ "construct", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a6b7363565afe05629533110fc9c5ecc6", null ],
+    [ "createChild", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a81387c93c33f6e977da8a9e32d2fa4cd", null ],
+    [ "find", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a7b0972943a7a0f6c87eab27271c609fd", null ],
+    [ "find", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a7da3afbe120d8cb6c9b16097e02a4b59", null ],
+    [ "has", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a544501bd6aedaef15790bf714ed0c4ea", null ],
+    [ "count", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#aae6b2077978ba43d0a665e8bfdd6f420", null ],
+    [ "get", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a2236b2c915ef6a6be30f29f4110688af", null ],
+    [ "get", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#a5d8eabf8f6e90c395397c1169aebb1b9", null ],
+    [ "toXML", "d4/deb/classsamchon_1_1protocol_1_1EntityGroup.html#ae0ee65141d65924851c97872a7253a2a", null ]
 ];

@@ -9,7 +9,7 @@ var dir_e208c9cb1f08f20da6b75679aca21349 =
     [ "example_tsp.hpp", "d7/d8d/example__tsp_8hpp_source.html", null ],
     [ "library.hpp", "dc/db7/documentation_2library_8hpp_source.html", null ],
     [ "mainpage.hpp", "d1/df0/mainpage_8hpp_source.html", null ],
-    [ "namtree.hpp", "d0/d5c/documentation_2namtree_8hpp_source.html", null ],
+    [ "namtree.hpp", "de/d52/namtree_8hpp_source.html", null ],
     [ "protocol.hpp", "dc/d97/documentation_2protocol_8hpp_source.html", null ],
     [ "protocol_master.hpp", "d7/dda/protocol__master_8hpp_source.html", null ],
     [ "protocol_service.hpp", "d5/d99/protocol__service_8hpp_source.html", null ],

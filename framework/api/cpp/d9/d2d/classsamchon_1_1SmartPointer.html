@@ -163,7 +163,7 @@ Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a85d5d992f1fc0b61a717882d7a3b1492"><td class="memItemLeft" align="right" valign="top">static std::map&lt; _Ty *, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2d/classsamchon_1_1SmartPointer.html#a85d5d992f1fc0b61a717882d7a3b1492">useCountMap</a></td></tr>
-<tr class="memdesc:a85d5d992f1fc0b61a717882d7a3b1492"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d4e/classsamchon_1_1Map.html" title="Customized std::map. ">Map</a> of use count of each pointer.  <a href="#a85d5d992f1fc0b61a717882d7a3b1492">More...</a><br /></td></tr>
+<tr class="memdesc:a85d5d992f1fc0b61a717882d7a3b1492"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d1/d6c/classsamchon_1_1TreeMap.html" title="Customized std::map. ">TreeMap</a> of use count of each pointer.  <a href="#a85d5d992f1fc0b61a717882d7a3b1492">More...</a><br /></td></tr>
 <tr class="separator:a85d5d992f1fc0b61a717882d7a3b1492"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af10f65405a3912ff5724019df6675f83"><td class="memItemLeft" align="right" valign="top">static std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2d/classsamchon_1_1SmartPointer.html#af10f65405a3912ff5724019df6675f83">mtx</a></td></tr>
 <tr class="memdesc:af10f65405a3912ff5724019df6675f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex assigned to useCountMap.  <a href="#af10f65405a3912ff5724019df6675f83">More...</a><br /></td></tr>
@@ -189,13 +189,13 @@ class samchon::SmartPointer&lt; _Ty &gt;</h3>
 </dl>
 <dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00023">23</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a91ed8a35987c5a21065a3a86f3a3d910"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -217,7 +217,7 @@ template&lt;typename _Ty&gt; </div>
 <p>Default Constructor. </p>
 <p>The object is empty (owns no pointer, use count of zero) </p>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
 </div>
 </div>
@@ -225,7 +225,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -254,7 +254,19 @@ template&lt;typename _Ty&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00060">60</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00061">61</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00129">samchon::SmartPointer&lt; _Ty &gt;::reset()</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/d2d/classsamchon_1_1SmartPointer_aa693fd037052c17690221aa9e4dc6a06_cgraph.png" border="0" usemap="#d9/d2d/classsamchon_1_1SmartPointer_aa693fd037052c17690221aa9e4dc6a06_cgraph" alt=""/></div>
+<map name="d9/d2d/classsamchon_1_1SmartPointer_aa693fd037052c17690221aa9e4dc6a06_cgraph" id="d9/d2d/classsamchon_1_1SmartPointer_aa693fd037052c17690221aa9e4dc6a06_cgraph">
+<area shape="rect" id="node2" href="../../d9/d2d/classsamchon_1_1SmartPointer.html#abea01ecb570e792d770dd8a462f3ab1c" title="Reset pointer. " alt="" coords="212,5,371,47"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -262,7 +274,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -291,7 +303,7 @@ template&lt;typename _Ty&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00073">73</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00074">74</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
 </div>
 </div>
@@ -299,7 +311,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -329,7 +341,7 @@ The ceding object becomes empty and there's no change on use count</p>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00084">84</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00085">85</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
 </div>
 </div>
@@ -337,7 +349,7 @@ The ceding object becomes empty and there's no change on use count</p>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -364,7 +376,7 @@ template&lt;typename _Ty&gt; </div>
 <li>If use_count is zero (i.e., the object is empty), this destructor has no side effects. </li>
 </ul>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00106">106</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
 </div>
 </div>
@@ -373,7 +385,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -403,16 +415,16 @@ template&lt;typename _Ty&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00128">128</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00129">129</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00060">samchon::SmartPointer&lt; samchon::protocol::service::User &gt;::SmartPointer()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00061">samchon::SmartPointer&lt; _Ty &gt;::SmartPointer()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d9/d2d/classsamchon_1_1SmartPointer_abea01ecb570e792d770dd8a462f3ab1c_icgraph.png" border="0" usemap="#d9/d2d/classsamchon_1_1SmartPointer_abea01ecb570e792d770dd8a462f3ab1c_icgraph" alt=""/></div>
 <map name="d9/d2d/classsamchon_1_1SmartPointer_abea01ecb570e792d770dd8a462f3ab1c_icgraph" id="d9/d2d/classsamchon_1_1SmartPointer_abea01ecb570e792d770dd8a462f3ab1c_icgraph">
-<area shape="rect" id="node2" href="../../d9/d2d/classsamchon_1_1SmartPointer.html#aa693fd037052c17690221aa9e4dc6a06" title="Constrct from pointer. " alt="" coords="212,5,405,61"/>
+<area shape="rect" id="node2" href="../../d9/d2d/classsamchon_1_1SmartPointer.html#aa693fd037052c17690221aa9e4dc6a06" title="Constrct from pointer. " alt="" coords="212,5,371,47"/>
 </map>
 </div>
 </p>
@@ -423,7 +435,7 @@ Here is the caller graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -448,19 +460,9 @@ template&lt;typename _Ty&gt; </div>
 <p>The stored pointer points to the object the shared_ptr object dereferences to, which is generally the same as its owned pointer. </p>
 <dl class="section return"><dt>Returns</dt><dd>The stored pointer </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00154">154</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00155">155</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../db/dd9/Server_8cpp_source.html#l00069">samchon::protocol::service::Server::addClient()</a>.</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../d9/d2d/classsamchon_1_1SmartPointer_ad76980ca51221155059243813f2ddb24_icgraph.png" border="0" usemap="#d9/d2d/classsamchon_1_1SmartPointer_ad76980ca51221155059243813f2ddb24_icgraph" alt=""/></div>
-<map name="d9/d2d/classsamchon_1_1SmartPointer_ad76980ca51221155059243813f2ddb24_icgraph" id="d9/d2d/classsamchon_1_1SmartPointer_ad76980ca51221155059243813f2ddb24_icgraph">
-<area shape="rect" id="node2" href="../../d9/d35/classsamchon_1_1protocol_1_1service_1_1Server.html#aebc4ff1c7906640dc6b85ef3b189efec" title="Handling connection of a client. " alt="" coords="239,5,407,47"/>
-</map>
-</div>
-</p>
+<p>References <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00040">samchon::SmartPointer&lt; _Ty &gt;::ptr</a>.</p>
 
 </div>
 </div>
@@ -468,7 +470,7 @@ Here is the caller graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -493,7 +495,7 @@ template&lt;typename _Ty&gt; </div>
 <p>It returns the same value as <a class="el" href="../../d9/d2d/classsamchon_1_1SmartPointer.html#ad76980ca51221155059243813f2ddb24" title="Get pointer. ">get()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to be managed by <a class="el" href="../../d9/d2d/classsamchon_1_1SmartPointer.html" title="Global shared pointer . ">SmartPointer</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00170">170</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00171">171</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
 </div>
 </div>
@@ -501,7 +503,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -525,7 +527,9 @@ template&lt;typename _Ty&gt; </div>
 <p>Returns a reference to the object pointerd by pointer. It is equivalent to: *get()</p>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the object pointed </dd></dl>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00184">184</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00185">185</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+
+<p>References <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00040">samchon::SmartPointer&lt; _Ty &gt;::ptr</a>.</p>
 
 </div>
 </div>
@@ -534,7 +538,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -550,9 +554,9 @@ template&lt;typename _Ty&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="../../d1/d4e/classsamchon_1_1Map.html" title="Customized std::map. ">Map</a> of use count of each pointer. </p>
+<p><a class="el" href="../../d1/d6c/classsamchon_1_1TreeMap.html" title="Customized std::map. ">TreeMap</a> of use count of each pointer. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00028">28</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00029">29</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
 </div>
 </div>
@@ -560,7 +564,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -578,7 +582,7 @@ template&lt;typename _Ty&gt; </div>
 
 <p>Mutex assigned to useCountMap. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00033">33</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00034">34</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
 </div>
 </div>
@@ -586,7 +590,7 @@ template&lt;typename _Ty&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename _Ty&gt; </div>
+template&lt;typename _Ty &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -604,9 +608,9 @@ template&lt;typename _Ty&gt; </div>
 
 <p>A pointer managed by <a class="el" href="../../d9/d2d/classsamchon_1_1SmartPointer.html" title="Global shared pointer . ">SmartPointer</a>. </p>
 
-<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00039">39</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00040">40</a> of file <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html">SmartPointer.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00154">samchon::SmartPointer&lt; samchon::protocol::service::User &gt;::get()</a>, and <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00184">samchon::SmartPointer&lt; samchon::protocol::service::User &gt;::operator*()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00155">samchon::SmartPointer&lt; _Ty &gt;::get()</a>, and <a class="el" href="../../d5/d34/SmartPointer_8hpp_source.html#l00185">samchon::SmartPointer&lt; _Ty &gt;::operator*()</a>.</p>
 
 </div>
 </div>

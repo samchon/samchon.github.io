@@ -9,7 +9,7 @@ var dir_25a7af59fd4759bf1e72bfdc0ddfbd2c =
     [ "tsp_slave", "dir_15e8118a569c7903934493d687e537ed.html", "dir_15e8118a569c7903934493d687e537ed" ],
     [ "Chief.hpp", "d2/d58/Chief_8hpp_source.html", null ],
     [ "ChiefDriver.hpp", "d2/d22/ChiefDriver_8hpp_source.html", null ],
-    [ "Master.hpp", "dc/d87/example_2interaction_2Master_8hpp_source.html", null ],
+    [ "Master.hpp", "d6/d29/Master_8hpp_source.html", null ],
     [ "MasterDriver.hpp", "df/d1b/MasterDriver_8hpp_source.html", null ],
     [ "PackerMaster.hpp", "d9/d10/PackerMaster_8hpp_source.html", null ],
     [ "PackerMediator.hpp", "d7/d56/PackerMediator_8hpp_source.html", null ],
