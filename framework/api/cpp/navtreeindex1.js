@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"d4/d26/Charset_8hpp_source.html":[4,0,0,0,2,3],
 "d4/d2d/PackerSlave_8hpp_source.html":[4,0,0,0,1,5,13],
 "d4/d31/classsamchon_1_1library_1_1PermutationGenerator.html":[3,0,0,1,17],
 "d4/d31/classsamchon_1_1library_1_1PermutationGenerator.html#a113f93513a7bede4fe559f8941a56fcc":[3,0,0,1,17,1],
@@ -152,12 +153,13 @@ var NAVTREEINDEX1 =
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html":[3,0,0,3,0,2],
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a1aafa33e3bd0a99c3c3bdc51e8ab8608":[3,0,0,3,0,2,1],
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a2c35c3d0ddf5d6a7ce587049a8af4925":[3,0,0,3,0,2,6],
+"d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a3f90e49f7a66756f3cf17021fe73faf0":[3,0,0,3,0,2,8],
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a665eac2768488436ed6f6f5a0140d32b":[3,0,0,3,0,2,2],
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a83ee65a608420f0d639a797ae8688070":[3,0,0,3,0,2,5],
-"d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a90326968349f13e0a78930f541e09ec0":[3,0,0,3,0,2,7],
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#aa1332b11173c0bfa24c644f7dd390216":[3,0,0,3,0,2,4],
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#ab51cfed20947cb54ab0448558afd7158":[3,0,0,3,0,2,0],
-"d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#aca0be891b66694428e81adb17530a221":[3,0,0,3,0,2,8],
+"d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#ac1636aecb03d15434340b8f6df7deff3":[3,0,0,3,0,2,7],
+"d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#aca0be891b66694428e81adb17530a221":[3,0,0,3,0,2,9],
 "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#afa2c526f319030cdd15a56ef9100c01c":[3,0,0,3,0,2,3],
 "d7/d1f/TSPMaster_8hpp_source.html":[4,0,0,0,1,5,17],
 "d7/d3d/SQLStatement_8cpp_source.html":[4,0,0,0,2,35],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#ac00b72ad64eb4149f7b21b9f5468c2b2":[3,0,0,3,3,3,1],
 "d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#ad9d4437f4039768a516fba59bee5f3bc":[3,0,0,3,3,3,3],
 "d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#ade7eb5acf5097892168086ceed504ab3":[3,0,0,3,3,3,7],
-"d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#ae520aaa0ad4f99b904c5e1b1207ef37b":[3,0,0,3,3,3,4],
-"d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#afc42f8451495a8652d21c1d8460cbdf4":[3,0,0,3,3,3,2],
-"d8/d29/ChatClient_8cpp_source.html":[4,0,0,0,1,1,0]
+"d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#ae520aaa0ad4f99b904c5e1b1207ef37b":[3,0,0,3,3,3,4]
 };

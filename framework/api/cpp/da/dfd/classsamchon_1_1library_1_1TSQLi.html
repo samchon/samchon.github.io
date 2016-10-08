@@ -171,13 +171,12 @@ Additional Inherited Members</h2></td></tr>
 <p><a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a> is an abstract class managing connection (session) with a specific database and manages SQL statements are executed and results are returned within the context of a connection. </p>
 <p>The reason why SQLStatement(s) are managed by <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a> is because of a principle of DBMS, DBMS system doesn't allow simultaneous query from a session (connection). Only a query (process0) is allowed at a time. If you try to simultaneous query from a <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>, ODBC throws error. To avoid the error, an execute of query from <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> will lock a mutex of <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a> to ensure exclusiveness. </p>
 <div class="image">
-<img src="../../library_sql.png" alt="library_sql.png"/>
+<img src="http://samchon.github.io/framework/images/design/cpp_class_diagram/library_data.png"  alt="Class Diagram"/>
 </div>
- <dl class="section note"><dt>Note</dt><dd></dd></dl>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
 <p>To ensure the exclusiveness, you've to make <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> from <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>. Do not make <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> by yourself. call SQLi::createSQLStatement() instead. Even you make a derived class from <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a>, don't make its constructor to have public accessor. </p>
 <p>Becuase execution of a sql statement causes lock on mutex in <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>, you've to destruct the <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> or call <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html#a2a261e3158ba41e22b757ae0b3b9ca3f" title="Free the sql statement. ">SQLStatement::free()</a> method(). If you don't, the mutex will not be unlocked, thus you can't do anything by the <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/dd4/namespacesamchon_1_1library.html" title="Package of libraries. ">samchon::library</a> </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
+<p><a href="https://github.com/samchon/framework/wiki/CPP-Library-SQL_Driver">Library - SQL Driver</a> </p><dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
 
 <p>Definition at line <a class="el" href="../../de/dac/TSQLi_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../de/dac/TSQLi_8hpp_source.html">TSQLi.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -230,7 +229,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Factory method for creating T-SQL statement. </p>
-<p>To realize domain function in T-SQL, 'FOR <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html" title="XML is a class representing xml object. ">XML</a>' statement. </p>
+<p>To realize domain function in T-SQL, 'FOR <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a>' statement. </p>
 <dl class="section user"><dt>[Inherited]</dt><dd><a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html#aa0c8cfe34d8f2573e249583935dcd563" title="Factory method for creating SQLStatement. ">SQLi::createStatement()</a></dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>A T-SQL statement </dd></dl>
 

@@ -37,7 +37,7 @@ var searchData=
   ['createexternalclient',['createExternalClient',['../dd/d0a/classsamchon_1_1templates_1_1external_1_1ExternalClientArray.html#acce68dd55f94e621812b064fd8131f8f',1,'samchon::templates::external::ExternalClientArray']]],
   ['createexternalserver',['createExternalServer',['../de/d18/classsamchon_1_1templates_1_1external_1_1ExternalServerClientArray.html#a1d02d92a74fefd588e1f0b4073ec8cb8',1,'samchon::templates::external::ExternalServerClientArray']]],
   ['createmediator',['createMediator',['../dd/da3/classsamchon_1_1templates_1_1parallel_1_1ParallelSystemArrayMediator.html#a682027fa850154b6bf3924abda7f7505',1,'samchon::templates::parallel::ParallelSystemArrayMediator']]],
-  ['createrole',['createRole',['../da/dae/classsamchon_1_1templates_1_1distributed_1_1DistributedSystemArray.html#a1b7ff0f4bc5a1bb1db70163990edb354',1,'samchon::templates::distributed::DistributedSystemArray']]],
+  ['createprocess',['createProcess',['../da/dae/classsamchon_1_1templates_1_1distributed_1_1DistributedSystemArray.html#ac613aa309c2507db3829c16ab3ae59d4',1,'samchon::templates::distributed::DistributedSystemArray']]],
   ['createroom',['createRoom',['../dd/de9/classsamchon_1_1example_1_1chat__service_1_1ListService.html#a24dc608754a5a41aa501ababf1275104',1,'samchon::example::chat_service::ListService']]],
   ['createserverconnector',['createServerConnector',['../d8/d92/classsamchon_1_1templates_1_1external_1_1ExternalServer.html#af25ec06daf0a1b51721816dffca0b310',1,'samchon::templates::external::ExternalServer']]],
   ['createservice',['createService',['../db/d38/classsamchon_1_1templates_1_1service_1_1Client.html#a7997b2e03bb4479af0398a80f02994af',1,'samchon::templates::service::Client']]],

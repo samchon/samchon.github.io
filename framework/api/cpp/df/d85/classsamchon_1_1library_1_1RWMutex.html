@@ -143,15 +143,14 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>rw_mutex </p>
 <p>A mutex divided into reading and writing. </p>
 <div class="image">
-<img src="../../library_critical_section.png" alt="library_critical_section.png"/>
+<img src="http://samchon.github.io/framework/images/design/cpp_class_diagram/library_critical_section.png"  alt="Class Diagram"/>
 </div>
- <dl class="section note"><dt>Note</dt><dd></dd></dl>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
 <p>Of course, rw_mutex is already defined in linux C. But it is dependent on the linux OS, so that cannot be compiled in Window having the rw_mutex. There's not a class like rw_mutex in STL yet. It's the reason why <a class="el" href="../../df/d85/classsamchon_1_1library_1_1RWMutex.html" title="rw_mutex ">RWMutex</a> is provided. </p>
 <p>As that reason, if STL supports the rw_mutex in near future, the <a class="el" href="../../df/d85/classsamchon_1_1library_1_1RWMutex.html" title="rw_mutex ">RWMutex</a> can be deprecated. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/dd4/namespacesamchon_1_1library.html" title="Package of libraries. ">samchon::library</a> </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
+<p><a href="https://github.com/samchon/framework/wiki/CPP-Library-Critical_Section">Library - Critical Section</a> </p><dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00030">30</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00029">29</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac7ca6169990b1e206f1dbfef948fd966"></a>
 <div class="memitem">
@@ -176,7 +175,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Default Constructor. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00045">45</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
 
 </div>
 </div>
@@ -211,9 +210,9 @@ Public Member Functions</h2></td></tr>
 </ul>
 <dl class="section warning"><dt>Warning</dt><dd>You've to call read_unlock when the reading work is terminated. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00064">64</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00063">63</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/da5/UniqueReadLock_8hpp_source.html#l00114">samchon::library::UniqueReadLock::lock()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00132">samchon::library::SharedReadLock::lock()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00073">samchon::library::SharedReadLock::SharedReadLock()</a>, and <a class="el" href="../../d0/d1f/Server__service_8cpp_source.html#l00022">samchon::templates::service::Server::~Server()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/da5/UniqueReadLock_8hpp_source.html#l00113">samchon::library::UniqueReadLock::lock()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00130">samchon::library::SharedReadLock::lock()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00071">samchon::library::SharedReadLock::SharedReadLock()</a>, and <a class="el" href="../../d0/d1f/Server__service_8cpp_source.html#l00022">samchon::templates::service::Server::~Server()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -256,9 +255,9 @@ Here is the caller graph for this function:</div>
 <p>Decreases a reading count. </p>
 <p>When write_lock had done after read_lock, it continues by read_unlock if the reading count was 1 (read_unlock makes the count to be zero). </p>
 
-<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00083">83</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00082">82</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/da5/UniqueReadLock_8hpp_source.html#l00126">samchon::library::UniqueReadLock::unlock()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00144">samchon::library::SharedReadLock::unlock()</a>, <a class="el" href="../../d0/d1f/Server__service_8cpp_source.html#l00022">samchon::templates::service::Server::~Server()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00114">samchon::library::SharedReadLock::~SharedReadLock()</a>, and <a class="el" href="../../d5/da5/UniqueReadLock_8hpp_source.html#l00102">samchon::library::UniqueReadLock::~UniqueReadLock()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/da5/UniqueReadLock_8hpp_source.html#l00125">samchon::library::UniqueReadLock::unlock()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00142">samchon::library::SharedReadLock::unlock()</a>, <a class="el" href="../../d0/d1f/Server__service_8cpp_source.html#l00022">samchon::templates::service::Server::~Server()</a>, <a class="el" href="../../d0/df1/SharedReadLock_8hpp_source.html#l00112">samchon::library::SharedReadLock::~SharedReadLock()</a>, and <a class="el" href="../../d5/da5/UniqueReadLock_8hpp_source.html#l00101">samchon::library::UniqueReadLock::~UniqueReadLock()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -307,9 +306,9 @@ Here is the caller graph for this function:</div>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>You've to call write_unlock when writing work was terminated. </dd></dl>
 
-<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00105">105</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00104">104</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/dcd/UniqueWriteLock_8hpp_source.html#l00118">samchon::library::UniqueWriteLock::lock()</a>, and <a class="el" href="../../d8/d53/SharedWriteLock_8hpp_source.html#l00132">samchon::library::SharedWriteLock::lock()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/dcd/UniqueWriteLock_8hpp_source.html#l00117">samchon::library::UniqueWriteLock::lock()</a>, and <a class="el" href="../../d8/d53/SharedWriteLock_8hpp_source.html#l00130">samchon::library::SharedWriteLock::lock()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -349,9 +348,9 @@ Here is the caller graph for this function:</div>
 
 <p>Unlock on writing. </p>
 
-<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00119">119</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
+<p>Definition at line <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html#l00118">118</a> of file <a class="el" href="../../dd/d85/RWMutex_8hpp_source.html">RWMutex.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d5/dcd/UniqueWriteLock_8hpp_source.html#l00130">samchon::library::UniqueWriteLock::unlock()</a>, <a class="el" href="../../d8/d53/SharedWriteLock_8hpp_source.html#l00144">samchon::library::SharedWriteLock::unlock()</a>, <a class="el" href="../../d8/d53/SharedWriteLock_8hpp_source.html#l00114">samchon::library::SharedWriteLock::~SharedWriteLock()</a>, and <a class="el" href="../../d5/dcd/UniqueWriteLock_8hpp_source.html#l00106">samchon::library::UniqueWriteLock::~UniqueWriteLock()</a>.</p>
+<p>Referenced by <a class="el" href="../../d5/dcd/UniqueWriteLock_8hpp_source.html#l00129">samchon::library::UniqueWriteLock::unlock()</a>, <a class="el" href="../../d8/d53/SharedWriteLock_8hpp_source.html#l00142">samchon::library::SharedWriteLock::unlock()</a>, <a class="el" href="../../d8/d53/SharedWriteLock_8hpp_source.html#l00112">samchon::library::SharedWriteLock::~SharedWriteLock()</a>, and <a class="el" href="../../d5/dcd/UniqueWriteLock_8hpp_source.html#l00105">samchon::library::UniqueWriteLock::~UniqueWriteLock()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>

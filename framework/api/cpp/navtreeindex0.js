@@ -42,7 +42,8 @@ var NAVTREEINDEX0 =
 "d0/da8/classsamchon_1_1templates_1_1distributed_1_1DSInvokeHistory.html#a368808d9d0d5032a9fab0155b2bf662d":[3,0,0,3,0,11,0],
 "d0/da8/classsamchon_1_1templates_1_1distributed_1_1DSInvokeHistory.html#a4244e3796b088a4b2607de07b1270c3b":[3,0,0,3,0,11,3],
 "d0/da8/classsamchon_1_1templates_1_1distributed_1_1DSInvokeHistory.html#a5b1c7efabde369f9dc9555c177b4f2a4":[3,0,0,3,0,11,2],
-"d0/da8/classsamchon_1_1templates_1_1distributed_1_1DSInvokeHistory.html#ade7cd14bb735935b5e682bfad2726ded":[3,0,0,3,0,11,1],
+"d0/da8/classsamchon_1_1templates_1_1distributed_1_1DSInvokeHistory.html#a5fba5670adf7f6de37a39c087fcd6498":[3,0,0,3,0,11,1],
+"d0/da8/classsamchon_1_1templates_1_1distributed_1_1DSInvokeHistory.html#ab77695a8ed8bac18232e4c803a68e136":[3,0,0,3,0,11,4],
 "d0/daa/namespacesamchon_1_1example_1_1event.html":[2,0,0,0,3],
 "d0/db1/example__event_8hpp_source.html":[4,0,0,0,0,2],
 "d0/dcb/classsamchon_1_1templates_1_1distributed_1_1DistributedClientArray.html":[3,0,0,3,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "d4/d05/ParallelServerArrayMediator_8hpp_source.html":[4,0,0,0,4,2,6],
 "d4/d05/TSQLStatement_8cpp_source.html":[4,0,0,0,2,40],
 "d4/d05/namespacesamchon_1_1namtree.html":[2,0,0,2],
-"d4/d1a/GAPopulation_8hpp_source.html":[4,0,0,0,2,18],
-"d4/d26/Charset_8hpp_source.html":[4,0,0,0,2,3]
+"d4/d1a/GAPopulation_8hpp_source.html":[4,0,0,0,2,18]
 };

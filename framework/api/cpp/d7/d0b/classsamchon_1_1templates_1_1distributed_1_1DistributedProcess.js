@@ -7,6 +7,7 @@ var classsamchon_1_1templates_1_1distributed_1_1DistributedProcess =
     [ "getResource", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#aa1332b11173c0bfa24c644f7dd390216", null ],
     [ "setResource", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a83ee65a608420f0d639a797ae8688070", null ],
     [ "enforceResource", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a2c35c3d0ddf5d6a7ce587049a8af4925", null ],
-    [ "sendData", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a90326968349f13e0a78930f541e09ec0", null ],
+    [ "sendData", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#ac1636aecb03d15434340b8f6df7deff3", null ],
+    [ "sendData", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a3f90e49f7a66756f3cf17021fe73faf0", null ],
     [ "name", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#aca0be891b66694428e81adb17530a221", null ]
 ];

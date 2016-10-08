@@ -134,7 +134,7 @@ Collaboration diagram for samchon::library::TSQLStatement:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac2790c215d5e338407adb6207acd8b49"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d69/classsamchon_1_1library_1_1TSQLStatement.html#ac2790c215d5e338407adb6207acd8b49">toXML</a> () const  -&gt; std::shared_ptr&lt; <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a> &gt; override</td></tr>
-<tr class="memdesc:ac2790c215d5e338407adb6207acd8b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html" title="XML is a class representing xml object. ">XML</a> representing records.  <a href="#ac2790c215d5e338407adb6207acd8b49">More...</a><br /></td></tr>
+<tr class="memdesc:ac2790c215d5e338407adb6207acd8b49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a> representing records.  <a href="#ac2790c215d5e338407adb6207acd8b49">More...</a><br /></td></tr>
 <tr class="separator:ac2790c215d5e338407adb6207acd8b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classsamchon_1_1library_1_1SQLStatement"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classsamchon_1_1library_1_1SQLStatement')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html">samchon::library::SQLStatement</a></td></tr>
 <tr class="memitem:a2a261e3158ba41e22b757ae0b3b9ca3f inherit pub_methods_classsamchon_1_1library_1_1SQLStatement"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html#a2a261e3158ba41e22b757ae0b3b9ca3f">free</a> ()</td></tr>
@@ -194,18 +194,17 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A t-sql statement. </p>
-<p><a class="el" href="../../d3/d69/classsamchon_1_1library_1_1TSQLStatement.html" title="A t-sql statement. ">TSQLStatement</a> is a <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> for adjusting domain function f T-SQL, 'FOR <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html" title="XML is a class representing xml object. ">XML</a>' statement. </p>
+<p><a class="el" href="../../d3/d69/classsamchon_1_1library_1_1TSQLStatement.html" title="A t-sql statement. ">TSQLStatement</a> is a <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> for adjusting domain function f T-SQL, 'FOR <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a>' statement. </p>
 <dl class="section user"><dt>[Inherited]</dt><dd></dd></dl>
 <p>A <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> instance is used to executing a SQL statement and returning the results it produces against a SQL database that is opened through a <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a> instance. </p>
 <p>Through the <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>, it's the reason why a principle of DBMS, DBMS system doesn't allow simultaneous query from a session (connection). Only a query (process) is allowed at a time. If you try to simultaneous query from a <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>, ODBC throws error. To avoid the error, an execute of query from <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> will lock a mutex of <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a> to ensure exclusiveness. </p>
 <div class="image">
-<img src="../../library_sql.png" alt="library_sql.png"/>
+<img src="http://samchon.github.io/framework/images/design/cpp_class_diagram/library_data.png"  alt="Class Diagram"/>
 </div>
- <dl class="section note"><dt>Note</dt><dd></dd></dl>
+<dl class="section note"><dt>Note</dt><dd></dd></dl>
 <p>To ensure the exclusiveness, you've to make <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> from <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>. Do not make <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> by yourself. call SQLi::createSQLStatement() instead. Even you make a derived class from <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a>, don't make its constructor to have public accessor. </p>
 <p>Becuase execution of a sql statement causes lock on mutex in <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>, you've to destruct the <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html" title="A sql statement. ">SQLStatement</a> or call <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html#a2a261e3158ba41e22b757ae0b3b9ca3f" title="Free the sql statement. ">SQLStatement::free()</a> method(). If you don't, the mutex will not be unlocked, thus you can't do anything by the <a class="el" href="../../d9/d2f/classsamchon_1_1library_1_1SQLi.html" title="A SQL interface; DBMS connector. ">SQLi</a>. </p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/dd4/namespacesamchon_1_1library.html" title="Package of libraries. ">samchon::library</a> </dd></dl>
-<dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
+<p><a href="https://github.com/samchon/framework/wiki/CPP-Library-SQL_Driver">Library - SQL Driver</a> </p><dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
 
 <p>Definition at line <a class="el" href="../../d2/da6/TSQLStatement_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../d2/da6/TSQLStatement_8hpp_source.html">TSQLStatement.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
@@ -230,9 +229,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Return an <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html" title="XML is a class representing xml object. ">XML</a> representing records. </p>
-<p>Get an <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html" title="XML is a class representing xml object. ">XML</a> object generated from a sql statement containing 'FOR <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html" title="XML is a class representing xml object. ">XML</a>'</p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html" title="XML is a class representing xml object. ">XML</a> represents records </dd></dl>
+<p>Return an <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a> representing records. </p>
+<p>Get an <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a> object generated from a sql statement containing 'FOR <a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a>'</p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="../../d5/d37/classsamchon_1_1library_1_1XML.html">XML</a> represents records </dd></dl>
 
 <p>Reimplemented from <a class="el" href="../../de/def/classsamchon_1_1library_1_1SQLStatement.html#a886b8a54a18d125734a21eb56e6e990b">samchon::library::SQLStatement</a>.</p>
 
