@@ -77,7 +77,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A role of Distributed Processing System.</p>
+						<p>A process of Distributed Processing System.</p>
 					</div>
 					<p>The <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> is an abstract class who represents a <strong>process</strong>, <em>SOMETHING TO DISTRIBUTE</em> in a Distributed
 					Processing System. Overrides the <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> and defines the <em>SOMETHING TO DISTRIBUTE</em>.</p>
@@ -287,7 +287,7 @@
 								<div class="lead">
 									<p>Enforce resource index.</p>
 								</div>
-								<p>Enforce <em>resource index</em> that indicates how much heavy the <a href="samchon.templates.distributed.distributedprocess.html">role is</a>. The
+								<p>Enforce <em>resource index</em> that indicates how much heavy the <a href="samchon.templates.distributed.distributedprocess.html">process is</a>. The
 								<em>resource index</em> will be fixed, never be <strong>revaluated</strong>.</p>
 								<p>Note that, initial and average <em>resource index</em> of <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> objects are <code>1.0</code>. If the
 									<em>resource index</em> is higher than other <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> objects, then this
@@ -297,7 +297,7 @@
 									This <a href="samchon.templates.distributed.distributedprocess.html#enforceresource">enforceResource</a> does not allow the <strong>revaluation</strong>. The <em>resource index</em> is clearly fixed and
 									never be changed by the <strong>revaluation</strong>. But you&#39;ve to keep in mind that, you can&#39;t avoid the <strong>mis-valuation</strong>
 								with this <a href="samchon.templates.distributed.distributedprocess.html#enforceresource">enforceResource</a>.</p>
-								<p>For example, there&#39;s a <a href="samchon.templates.distributed.distributedprocess.html">role</a> much heavier than any other, but you
+								<p>For example, there&#39;s a <a href="samchon.templates.distributed.distributedprocess.html">process</a> much heavier than any other, but you
 									<strong>mis-estimated</strong> it to the lightest. In that case, there&#39;s no way. The
 									<a href="samchon.templates.distributed.distributedsystemarray.html">entire distributed processing system</a> will be slower by the <strong>mis-valuation</strong>.
 									By the reason, using <a href="samchon.templates.distributed.distributedprocess.html#enforceresource">enforceResource</a>, it&#39;s recommended only when you can clearly certain the
@@ -356,12 +356,12 @@
 								<div class="lead">
 									<p>Get resource index.</p>
 								</div>
-								<p>Get <em>resource index</em> that indicates how much this <a href="samchon.templates.distributed.distributedprocess.html">role</a> is heavy.</p>
-								<p>If this <a href="samchon.templates.distributed.distributedprocess.html">role</a> does not have any    <a href="samchon.protocol.invoke.html">Invoke</a> message had handled, then the
+								<p>Get <em>resource index</em> that indicates how much this <a href="samchon.templates.distributed.distributedprocess.html">process</a> is heavy.</p>
+								<p>If this <a href="samchon.templates.distributed.distributedprocess.html">process</a> does not have any    <a href="samchon.protocol.invoke.html">Invoke</a> message had handled, then the
 									<em>resource index</em> will be <code>1.0</code>, which means default and average value between all
 								<a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> instances (that are belonged to a same <a href="samchon.templates.distributed.distributedsystemarray.html">DistributedSystemArray</a> object).</p>
 								<p>You can specify the <em>resource index</em> by yourself, but notice that, if the <em>resource index</em> is higher than
-									other <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> objects, then this <a href="samchon.templates.distributed.distributedprocess.html">role</a> will be ordered to
+									other <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> objects, then this <a href="samchon.templates.distributed.distributedprocess.html">process</a> will be ordered to
 									handle less processes than other <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> objects. Otherwise, the <em>resource index</em> is
 								lower than others, of course, much processes will be requested.</p>
 								<ul>
@@ -544,7 +544,7 @@
 								<div class="lead">
 									<p>Set resource index.</p>
 								</div>
-								<p>Set <em>resource index</em> that indicates how much this <a href="samchon.templates.distributed.distributedprocess.html">role</a> is heavy. This
+								<p>Set <em>resource index</em> that indicates how much this <a href="samchon.templates.distributed.distributedprocess.html">process</a> is heavy. This
 								<em>resource index</em> can be <strong>revaulated</strong>.</p>
 								<p>Note that, initial and average <em>resource index</em> of <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> objects are <code>1.0</code>. If the
 									<em>resource index</em> is higher than other <a href="samchon.templates.distributed.distributedprocess.html">DistributedProcess</a> objects, then this
@@ -552,10 +552,10 @@
 								objects. Otherwise, the <em>resource index</em> is lower than others, of course, less processes will be requested.</p>
 								<p>Unlike <a href="samchon.templates.distributed.distributedprocess.html#enforceresource">enforceResource</a>, configuring <em>resource index</em> by this <a href="samchon.templates.distributed.distributedprocess.html#setresource">setResource</a> allows the
 									<strong>revaluation</strong>. This <strong>revaluation</strong> prevents wrong valuation from user. For example, you <em>mis-valuated</em> the
-									<em>resource index</em>. The <a href="samchon.templates.distributed.distributedprocess.html">role</a> is much heavier than any other, but you estimated it
+									<em>resource index</em>. The <a href="samchon.templates.distributed.distributedprocess.html">process</a> is much heavier than any other, but you estimated it
 									to the lightest one. It looks like a terrible case that causes
 									<a href="samchon.templates.distributed.distributedsystemarray.html">entire distributed processing system</a> to be slower, however, don&#39;t mind. The
-									<a href="samchon.templates.distributed.distributedprocess.html">role</a> will the direct to the <em>propriate resource index</em> eventually with the
+									<a href="samchon.templates.distributed.distributedprocess.html">process</a> will the direct to the <em>propriate resource index</em> eventually with the
 								<strong>revaluation</strong>.</p>
 								<ul>
 									<li>The <strong>revaluation</strong> is caused by the <a href="samchon.templates.distributed.distributedprocess.html#senddata">sendData()</a> method.</li>
