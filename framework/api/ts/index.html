@@ -66,110 +66,93 @@
 				<h1 id="samchon-framework">Samchon Framework</h1>
 				<p><a href="https://nodei.co/npm/samchon-framework"><img src="https://nodei.co/npm/samchon-framework.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a></p>
 				<p>GitHub Repository: <a href="https://github.com/samchon/framework">https://github.com/samchon/framework</a></p>
-				<h2 id="introduction">Introduction</h2>
-				<h4 id="samchon-framework-is">Samchon Framework is</h4>
-				<p>Samchon framework is an <strong>OON</strong><sup id="a_oon"><a href="#f_oon">1</a></sup> framework; who can build network system within framework of <strong>OOD</strong><sup id="a_ood"><a href="#f_ood">2</a></sup>, like <em>cloud system</em> and <em>distributed</em> &amp; <em>parallel processing systems</em>, even how the system is enormously complicate.</p>
-				<p>Samchon Framework supports two languages; <strong>C++</strong> and <strong>TypeScript/NodeJs</strong>. Not only connecting to an external server, but also opening a server is also possible both in <em>C++</em> and <em>TypeScript/NodeJS</em>. In my case, I prefer to build a cloud server with <em>TypeScript &amp; NodeJS</em> quickly. When the cloud server grows up and lots of traffic occurs, I let the cloud server to deliver heavy processes to Distributed systems built via <em>C++</em>.</p>
-				<p><a href="#interaction"><img src="http://samchon.github.io/framework/images/accessory/language_diagram.png" alt="Supported Languages Diagram"></a></p>
-				<h4 id="what-can-we-do">What can we do</h4>
+				<h2 id="what-samchon-framework-is">What Samchon Framework is</h2>
+				<h3 id="object-oriented-network">Object Oriented Network</h3>
+				<p><img src="http://samchon.github.io/framework/images/accessory/oon.png" alt="Network Connectivity to Class Relationship"></p>
+				<p>Samchon Framework is an OOD (Object-Oriented Network) framework. You can compose network systems within framework of the Object-Oriented. </p>
+				<p>Whether how the network system is enormous and complicate, <strong>the system nodes, they&#39;re just objects</strong> in the Samchon Framework. Define <u>objects who represent the <em>system nodes</em></u> and <u>deliver message by calling methods from objects to objects</u>. That&#39;s all.</p>
+				<h3 id="system-templates-modules-of-oon">System Templates, Modules of OON</h3>
+				<p>I repeat, Samchon is an OON (Object-Oriented Network) framework, composing a network system within framework of the Object-Oriented. It means that even <strong>modulization</strong> is possible and it&#39;s called <strong>System Templates</strong>. You can maximize the <strong>reusability</strong> with the <strong>modulization, System Templates</strong>.</p>
+				<p>When you need a cloud system, then take a System Template named <a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-Cloud_Service">Cloud Service</a>. When you need a distributed processings system, then take the <a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-Distributed-System">Distributed System</a>. If you should implement a specific network system and the network system will be used repeatedly, then <strong>modulize</strong> it to be one of the <strong>System Templates</strong>.</p>
+				<p>Below <strong>System Templates</strong> are basically provided in Samcho Framework:</p>
+				<ul>
+					<li><a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-Cloud_Service">Cloud Service</a>: Cloud Server Template</li>
+					<li><a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-External-System">External System</a>: A template for 1: N composite relationship&#39;s network system.<ul>
+							<li><a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-Parallel-System">Parallel System</a>: Parallel Processing System Template.</li>
+							<li><a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-Distributed-System">Distributed System</a>: Distributed Processing System Template.</li>
+						</ul>
+					</li>
+				</ul>
+				<h3 id="-typescript-stl-https-github-com-samchon-typescript-stl-interaction-with-typescript-and-c-"><a href="https://github.com/samchon/typescript-stl">TypeScript-STL</a>, interaction with TypeScript and C++</h3>
+				<p><a href="#interaction"><img src="http://samchon.github.io/framework/images/accessory/language_diagram.png" alt="Supported Languages"></a></p>
+				<p>The best solution, for integrating and migrating a system built by different languages (TypeScript and C++), is to sharing same designs and grammers. Those designs and grammers are unitifed, then any other solution can&#39;t be better. Samchon Framework provides the best solution.</p>
+				<p>Unifying designs, it can be come true by utilizing the <strong>Object-Oriented Network</strong> paradigm with Samchon Framework. Unifying grammer, it also can be done by using the <a href="https://github.com/samchon/typescript-stl"><strong>TypeScript-STL</strong></a>, a sub-project who migrated C++&#39;s STL (Standard Template Library) to TypeScript. You can use STL&#39;s containers and algorithms in TypeScript with the <a href="https://github.com/samchon/typescript-stl"><strong>TypeScript-STL</strong></a>. Thus, you can unify not only designs but also grammers, algorithms and even data structures with the <a href="https://github.com/samchon/typescript-stl"><strong>TypeScript-STL</strong></a>.</p>
+				<h4 id="suggestion">Suggestion</h4>
+				<p>If you&#39;re planning to build a cloud solution, then I sugguest you to follow such step:</p>
 				<ol>
-					<li>Build <a href="https://github.com/samchon/framework/wiki/Conception-Modules-Service">Cloud Server</a></li>
-					<li>Integrate systems with standard ~<ul>
-							<li>Message protocol: <a href="https://github.com/samchon/framework/wiki/Conception-Message_Protocol#invoke">Invoke</a></li>
-							<li>Data expression method: <a href="https://github.com/samchon/framework/wiki/Conception-Message_Protocol#entity">Entity</a></li>
-						</ul>
+					<li>Fast Implementation<ol>
+							<li>Cloud Application with TypeScript &amp; HTML </li>
+							<li>Cloud Service with TypeScripty &amp; NodeJS</li>
+						</ol>
 					</li>
-					<li>Construct complicate network system<ul>
-							<li>Like<ul>
-									<li>Interaction with <a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-External_System">External Systems</a></li>
-									<li>(Tree-structured) <a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-Parallel_System">Parallel Processing System</a></li>
-									<li>(Tree-structured) <a href="https://github.com/samchon/framework/wiki/TypeScript-Templates-Distributed_System">Distributed Processing System</a></li>
-								</ul>
-							</li>
-							<li>Easily within framework of OOD<sup><a href="#f_ood">2</a></sup>, by considering a system as a object (class), via <a href="https://github.com/samchon/framework/wiki/Conception-Modules-Basic_Components">Basic Components</a></li>
-						</ul>
-					</li>
-					<li>Utilize libraries independent on operating systems<ul>
-							<li>Enable to cross-compile</li>
-						</ul>
+					<li>Performance Improvement<ol>
+							<li>Heavy processes, distribute them to C++ systems.</li>
+							<li>Migrate Cloud server from TypeScript to C++ gradually.</li>
+						</ol>
 					</li>
 				</ol>
-				<p><img src="http://samchon.github.io/framework/images/example/interaction/demo.gif?ver=2" alt="Interaction Movie"></p>
-				<h2 id="references">References</h2>
-				<h4 id="api-documents">API Documents</h4>
-				<ul>
-					<li><a href="http://samchon.github.io/framework/api/cpp">C++ API Documents</a></li>
-					<li><a href="http://samchon.github.io/framework/api/ts">TypeScript API Documents</a></li>
-					<li><del><a href="http://samchon.github.io/framework/api/flex">Flex API Documents</a></del></li>
-				</ul>
+				<h2 id="installation">Installation</h2>
+				<h4 id="typescript">TypeScript</h4>
+				<pre><code class="lang-bash"><span class="hljs-comment"># Install NPM module.</span>
+npm install -g samchon-framework
+
+<span class="hljs-comment"># Install Definition (*.d.ts) files.</span>
+npm install --save @types/samchon-framework
+</code></pre>
+				<p>Installs Samchon-Framework from NPM module and imports the definition.</p>
+				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference types="samchon-framework" /&gt;</span>
+<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
+</code></pre>
+				<h4 id="c-">C++</h4>
+				<p>Just include header files what you want.</p>
+				<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/lilbrary.hpp&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/protocol.hpp&gt;</span></span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/templates/service.hpp&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/templates/external.hpp&gt;</span></span>
+<span class="hljs-meta">#    <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/templates/parallel.hpp&gt;</span></span>
+<span class="hljs-meta">#    <span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/templates/distributed.hpp&gt;</span></span>
+</code></pre>
+				<h2 id="documents">Documents</h2>
 				<h4 id="architecture-designs">Architecture Designs</h4>
 				<ul>
-					<li><a href="http://samchon.github.io/framework/design/cpp_class_diagram.pdf">C++ Class Diagram</a></li>
-					<li><a href="http://samchon.github.io/framework/design/ts_class_diagram.pdf">TypeScript Class Diagram</a></li>
+					<li>Class Diagrams<ul>
+							<li><a href="http://samchon.github.io/framework/design/ts_class_diagram.pdf">TypeScript</a></li>
+							<li><a href="http://samchon.github.io/framework/design/cpp_class_diagram.pdf">C++</a></li>
+						</ul>
+					</li>
+					<li><a href="http://samchon.github.io/framework/design/conceptual_diagram.pdf">Conceptual Diagram</a></li>
 					<li><a href="http://samchon.github.io/framework/design/sequence_diagram.pdf">Sequence Diagram</a></li>
 				</ul>
 				<h4 id="guide-documents">Guide Documents</h4>
-				<p>Samchon Framework provides guide documents in <a href="https://github.com/samchon/framework/wiki">Wiki Page</a></p>
-				<p>The contents in the guide documents are such below:</p>
-				<ol>
-					<li><a href="https://github.com/samchon/framework/wiki/Home">Outline</a></li>
-					<li><a href="https://github.com/samchon/framework/wiki/CPP">C++</a></li>
-					<li><a href="https://github.com/samchon/framework/wiki/TypeScript">TypeScript</a></li>
-					<li><a href="https://github.com/samchon/framework/wiki/Examples">Example Projects</a></li>
-				</ol>
-				<h2 id="license">License</h2>
-				<h4 id="bsd-license">BSD License</h4>
-				<p><em>Samchon Framework</em> follows <a href="http://spdx.org/licenses/BSD-3-Clause">BSD-3-Clause</a> license.</p>
-				<h4 id="dependencies">Dependencies</h4>
 				<ul>
-					<li>C++<ul>
-							<li><a href="http://www.boost.org/doc/libs/1_61_0/doc/html/boost_asio.html">Boost.Asio</a></li>
-							<li><a href="https://support.microsoft.com/en-us/kb/110093">ODBC</a></li>
+					<li><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Basic_Components">TypeScript</a></li>
+					<li><a href="https://github.com/samchon/framework/wiki/CPP-Protocol-Basic_Components">C++</a></li>
+					<li><a href="https://github.com/samchon/framework/wiki/Examples-Interaction">Examples</a></li>
+				</ul>
+				<h4 id="api-documents">API Documents</h4>
+				<ul>
+					<li><strong>v2.0</strong><ul>
+							<li><a href="http://samchon.github.io/framework/api/ts"><strong>TypeScript</strong></a></li>
+							<li><a href="http://samchon.github.io/framework/api/cpp"><strong>C++</strong></a></li>
 						</ul>
 					</li>
-					<li>TypeScript<ul>
-							<li><a href="https://github.com/samchon/typescript-stl">TypeScript-STL</a></li>
-							<li><a href="https://github.com/theturtle32/WebSocket-Node">WebSocket</a></li>
+					<li>v1.0<ul>
+							<li><a href="http://samchon.github.io/framework/api/v1.0/cpp">C++</a></li>
+							<li><a href="http://samchon.github.io/framework/api/v1.0/flex">Flex</a></li>
 						</ul>
 					</li>
 				</ul>
-				<h2 id="installation">Installation</h2>
-				<h4 id="c-">C++</h4>
-				<p>Samchon Framework has two dependencies in C++, <strong>Boost libraries</strong> and <strong>ODBC</strong>.</p>
-				<ul>
-					<li>Install <strong>Boost libraries</strong> and enroll path of the <em>Boost libraries</em> in <strong>environment variable&#39;s PATH</strong>.</li>
-					<li>Install <strong>ODBC</strong> and enroll path of the <em>ODBC</em> in <strong>environment variable&#39;s PATH</strong>.</li>
-				</ul>
-				<p>After installation and configuration of those dependencies, download or fork this repository. And follow those steps:</p>
-				<ul>
-					<li>Go to the path <em>./cpp/samchon</em>.</li>
-					<li>Compile all <em>cpp</em> files.</li>
-				</ul>
-				<h4 id="typescript-nodejs-">TypeScript (NodeJS)</h4>
-				<p>Installing <em>Samchon-Framework</em> in <strong>NodeJS</strong> is very easy. Just install with <strong>npm</strong>.</p>
-				<pre><code class="lang-bash"><span class="hljs-comment"># Install Samchon-Framework from NPM modules</span>
-npm install -g samchon-framework
-
-<span class="hljs-comment"># Fetch definition (header) file from TSD</span>
-<span class="hljs-comment"># If TSD is not installed, then type "npm install -g tsd"</span>
-tsd install samchon-framework
-</code></pre>
-				<p>When importing <em>Samchon Framework</em>, don&#39;t forget to referencing the header file <code>samchon-framework.d.ts</code></p>
-				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/samchon-framework/samchon-framework.d.ts" /&gt;</span>
-<span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
-</code></pre>
-				<h5 id="typescript-browser-">TypeScript (Browser)</h5>
-				<p><em>Samchon Framework</em> follows <strong>commonjs</strong> module. Thus, you can&#39;t use <del>RequireJS</del>. However, using <strong>Browserify</strong> is possible.</p>
-				<p>If you want to include directly without the <em>Browserify</em>, then you&#39;ve to include <strong>TypeScript-STL</strong> first and Samchon-Framework laster.</p>
-				<pre><code class="lang-javascript">&lt;head&gt;
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span> Samchon-Framework requires TypeScript-STL <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></span>
-    &lt;script src=<span class="hljs-string">"include/typescript-stl.js"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span> &lt;!-- MUST BE INCLUDED FIRST --&gt;
-    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"include/samchon-framework.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span> &lt;!-- MUST BE INCLUDED AFTER TYPESCRIPT-STL --&gt;
-<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span>
-</code></pre>
-				<hr>
-				<p><b id="f_oon"><a href="#a_oon">[1]</a></b> Object-Oriented Network <br />
-				<b id="f_ood"><a href="#f_ood">[2]</a></b> Object-Oriented Design</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -181,7 +164,7 @@ tsd install samchon-framework
 					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="modules/_typescript_stl_.html">"typescript-<wbr>stl"</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="modules/samchon.html">samchon</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-not-exported">

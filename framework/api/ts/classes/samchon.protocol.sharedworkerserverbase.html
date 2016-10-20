@@ -78,6 +78,7 @@
 					</div>
 					<p>The <a href="samchon.protocol.sharedworkerserverbase.html">SharedWorkerServerBase</a> is a substitute class who subrogates <a href="samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a>&#39;s
 					responsibility.</p>
+					<h4 id="-inherited-a-href-interfaces-samchon-protocol-iserverbase-html-iserverbase-a-">[Inherited] <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a></h4>
 					<p><a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a> is an interface for substitue server classes who subrogate server&#39;s role.</p>
 					<p>The easiest way to defining a server class is to extending one of them below, who implemented the <a href="../interfaces/samchon.protocol.iserver.html">IServer</a>.
 						However, it is impossible (that is, if the class is already extending another class), you can instead implement
@@ -104,6 +105,12 @@
 								<td><a href="samchon.protocol.webserver.html">WebServer</a></td>
 								<td><a href="samchon.protocol.webserverbase.html">WebServerBase</a></td>
 								<td><a href="samchon.protocol.webclientdriver.html">WebClientDriver</a></td>
+							</tr>
+							<tr>
+								<td>DedicatedWorker</td>
+								<td><a href="samchon.protocol.dedicatedworkerserver.html">DedicatedWorkerServer</a></td>
+								<td><a href="samchon.protocol.dedicatedworkerserverbase.html">DedicatedWorkerServerBase</a></td>
+								<td><a href="samchon.protocol.dedicatedworkerclientdriver.html">DedicatedWorkerClientDriver</a></td>
 							</tr>
 							<tr>
 								<td>SharedWorker</td>
@@ -206,7 +213,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/98dff5b/ts/src/samchon/protocol/ServerBase.ts#L298">samchon/protocol/ServerBase.ts:298</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/fceca6f/ts/src/samchon/protocol/ServerBase.ts#L392">samchon/protocol/ServerBase.ts:392</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -244,7 +251,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a>.<a href="../interfaces/samchon.protocol.iserverbase.html#addclient">addClient</a></p>
 								<p>Overwrites <a href="samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a>.<a href="samchon.protocol.sharedworkerserver.html#addclient">addClient</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/98dff5b/ts/src/samchon/protocol/ServerBase.ts#L314">samchon/protocol/ServerBase.ts:314</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/fceca6f/ts/src/samchon/protocol/ServerBase.ts#L408">samchon/protocol/ServerBase.ts:408</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -285,7 +292,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a>.<a href="../interfaces/samchon.protocol.iserverbase.html#close">close</a></p>
 								<p>Inherited from <a href="samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a>.<a href="samchon.protocol.sharedworkerserver.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/98dff5b/ts/src/samchon/protocol/Server.ts#L403">samchon/protocol/Server.ts:403</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/fceca6f/ts/src/samchon/protocol/Server.ts#L487">samchon/protocol/Server.ts:487</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -310,7 +317,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a>.<a href="samchon.protocol.sharedworkerserver.html#open">open</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/98dff5b/ts/src/samchon/protocol/Server.ts#L395">samchon/protocol/Server.ts:395</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/fceca6f/ts/src/samchon/protocol/Server.ts#L479">samchon/protocol/Server.ts:479</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -334,7 +341,7 @@
 					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/_typescript_stl_.html">"typescript-<wbr>stl"</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/samchon.html">samchon</a>
 						<ul>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
@@ -368,10 +375,19 @@
 						<a href="samchon.protocol.communicatorbase.html" class="tsd-kind-icon">Communicator<wbr>Base</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworker.html" class="tsd-kind-icon">Dedicated<wbr>Worker</a>
+						<a href="samchon.protocol.dedicatedworkerclientdriver.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Client<wbr>Driver</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.dedicatedworkerconnector.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Connector</a>
+						<a href="samchon.protocol.dedicatedworkercommunicator.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Communicator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="samchon.protocol.dedicatedworkerserver.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="samchon.protocol.dedicatedworkerserverbase.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Server<wbr>Base</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="samchon.protocol.dedicatedworkerserverconnector.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Server<wbr>Connector</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="samchon.protocol.entity.html" class="tsd-kind-icon">Entity</a>
