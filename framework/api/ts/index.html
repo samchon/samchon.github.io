@@ -69,7 +69,7 @@
 				<h2 id="what-samchon-framework-is">What Samchon Framework is</h2>
 				<h3 id="object-oriented-network">Object Oriented Network</h3>
 				<p><img src="http://samchon.github.io/framework/images/accessory/oon.png" alt="Network Connectivity to Class Relationship"></p>
-				<p>Samchon Framework is an OOD (Object-Oriented Network) framework. You can compose network systems within framework of the Object-Oriented. </p>
+				<p>Samchon Framework is an OON (Object-Oriented Network) framework. You can compose network systems within framework of the Object-Oriented. </p>
 				<p>Whether how the network system is enormous and complicate, <strong>the system nodes, they&#39;re just objects</strong> in the Samchon Framework. Define <u>objects who represent the <em>system nodes</em></u> and <u>deliver message by calling methods from objects to objects</u>. That&#39;s all.</p>
 				<h3 id="system-templates-modules-of-oon">System Templates, Modules of OON</h3>
 				<p>I repeat, Samchon is an OON (Object-Oriented Network) framework, composing a network system within framework of the Object-Oriented. It means that even <strong>modulization</strong> is possible and it&#39;s called <strong>System Templates</strong>. You can maximize the <strong>reusability</strong> with the <strong>modulization, System Templates</strong>.</p>
@@ -114,8 +114,12 @@ npm install --save @types/samchon-framework
 <span class="hljs-keyword">import</span> samchon = <span class="hljs-built_in">require</span>(<span class="hljs-string">"samchon-framework"</span>);
 </code></pre>
 				<h4 id="c-">C++</h4>
-				<p>Just include header files what you want.</p>
-				<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/lilbrary.hpp&gt;</span></span>
+				<p>Samchon Framework is a header only project. Linkage like LIB, DLL or SO is not required at all. <strong>Just include header files what you want</strong>. However, notice that, Samchon Framework has two dependencies you should install.</p>
+				<ul>
+					<li><a href="http://www.boost.org">Boost</a> - essential.</li>
+					<li><a href="https://en.wikipedia.org/wiki/Open_Database_Connectivity">ODBC</a> - optional, required only when using SQL driver.</li>
+				</ul>
+				<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/library.hpp&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/protocol.hpp&gt;</span></span>
 
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;samchon/templates/service.hpp&gt;</span></span>

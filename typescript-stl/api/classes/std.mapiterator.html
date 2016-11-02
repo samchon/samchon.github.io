@@ -97,7 +97,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="std.base.listiteratorbase.html" class="tsd-signature-type">ListIteratorBase</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">MapIterator</span>
@@ -122,10 +122,9 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="std.mapiterator.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.mapiterator.html#list_iterator_" class="tsd-kind-icon">list_<wbr>iterator_</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.mapiterator.html#source_" class="tsd-kind-icon">source_</a></li>
 							</ul>
 						</section>
@@ -134,7 +133,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="std.mapiterator.html#first" class="tsd-kind-icon">first</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="std.mapiterator.html#second" class="tsd-kind-icon">second</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite"><a href="std.mapiterator.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.mapiterator.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -142,8 +141,6 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.mapiterator.html#advance" class="tsd-kind-icon">advance</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.mapiterator.html#equal_to" class="tsd-kind-icon">equal_<wbr>to</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.mapiterator.html#get_list_iterator" class="tsd-kind-icon">get_<wbr>list_<wbr>iterator</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.mapiterator.html#get_source" class="tsd-kind-icon">get_<wbr>source</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.mapiterator.html#hash" class="tsd-kind-icon">hash</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="std.mapiterator.html#less" class="tsd-kind-icon">less</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.mapiterator.html#next" class="tsd-kind-icon">next</a></li>
@@ -160,14 +157,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Map<wbr>Iterator<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="std.base.mapcontainer.html" class="tsd-signature-type">MapContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, list_iterator<span class="tsd-signature-symbol">: </span><a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Map<wbr>Iterator<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">MapElementList</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, prev<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, next<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, val<span class="tsd-signature-symbol">: </span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#constructor">constructor</a></p>
+								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L734">base/MapContainer.ts:734</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L756">base/MapContainer.ts:756</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -178,7 +175,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>source: <a href="std.base.mapcontainer.html" class="tsd-signature-type">MapContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>source: <span class="tsd-signature-type">MapElementList</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
 											<p>The source <a href="std.base.mapcontainer.html">MapContainer</a>.</p>
@@ -186,12 +183,13 @@
 									</div>
 								</li>
 								<li>
-									<h5>list_iterator: <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A <a href="std.listiterator.html">ListIterator</a> pointing <a href="std.pair.html">Pair</a> of <i>key</i> and <i>value</i>.</p>
-										</div>
-									</div>
+									<h5>prev: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>next: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>val: <a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a></h4>
@@ -199,23 +197,8 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="list_iterator_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> list_<wbr>iterator_</h3>
-					<div class="tsd-signature tsd-kind-icon">list_<wbr>iterator_<span class="tsd-signature-symbol">:</span> <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L734">base/MapContainer.ts:734</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A <a href="std.listiterator.html">ListIterator</a> pointing <a href="std.pair.html">Pair</a> of <i>key</i> and <i>value</i>.</p>
-						</div>
-					</div>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="source_" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> source_</h3>
@@ -223,7 +206,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#source_">source_</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/Iterator.ts#L34">Iterator.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/Iterator.ts#L34">Iterator.ts:34</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -245,7 +228,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L812">base/MapContainer.ts:812</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L815">base/MapContainer.ts:815</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -268,7 +251,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L820">base/MapContainer.ts:820</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L823">base/MapContainer.ts:823</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -281,7 +264,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L828">base/MapContainer.ts:828</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L831">base/MapContainer.ts:831</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -299,18 +282,19 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 					<a name="value" class="tsd-anchor"></a>
 					<h3>value</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#value">value</a></p>
 								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#value">value</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L804">base/MapContainer.ts:804</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/ListContainer.ts#L597">base/ListContainer.ts:597</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -335,9 +319,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#advance">advance</a></p>
+								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#advance">advance</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L777">base/MapContainer.ts:777</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L796">base/MapContainer.ts:796</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -368,9 +352,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#equal_to">equal_to</a></p>
+								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#equal_to">equal_to</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L844">base/MapContainer.ts:844</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L847">base/MapContainer.ts:847</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -403,51 +387,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="get_list_iterator" class="tsd-anchor"></a>
-					<h3>get_<wbr>list_<wbr>iterator</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get_<wbr>list_<wbr>iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L796">base/MapContainer.ts:796</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get ListIterator.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="get_source" class="tsd-anchor"></a>
-					<h3>get_<wbr>source</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get_<wbr>source<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#get_source">get_source</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/Iterator.ts#L108">Iterator.ts:108</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get source</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="hash" class="tsd-anchor"></a>
 					<h3>hash</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -458,7 +397,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.icomparable.html">IComparable</a>.<a href="../interfaces/std.icomparable.html#hash">hash</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L854">base/MapContainer.ts:854</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L857">base/MapContainer.ts:857</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -475,7 +414,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L849">base/MapContainer.ts:849</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L852">base/MapContainer.ts:852</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -506,9 +445,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#next">next</a></p>
+								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#next">next</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L766">base/MapContainer.ts:766</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L785">base/MapContainer.ts:785</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -529,9 +468,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#prev">prev</a></p>
+								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#prev">prev</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L758">base/MapContainer.ts:758</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L777">base/MapContainer.ts:777</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -552,9 +491,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#swap">swap</a></p>
+								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/e70005b/ts/src/std/base/MapContainer.ts#L859">base/MapContainer.ts:859</a></li>
+									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/3ae98b5/ts/src/std/base/MapContainer.ts#L862">base/MapContainer.ts:862</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -575,7 +514,7 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/std.html">std</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
@@ -596,9 +535,6 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.mapiterator.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="std.mapiterator.html#list_iterator_" class="tsd-kind-icon">list_<wbr>iterator_</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="std.mapiterator.html#source_" class="tsd-kind-icon">source_</a>
 							</li>
@@ -608,7 +544,7 @@
 							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="std.mapiterator.html#second" class="tsd-kind-icon">second</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.mapiterator.html#value" class="tsd-kind-icon">value</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
@@ -616,12 +552,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 								<a href="std.mapiterator.html#equal_to" class="tsd-kind-icon">equal_<wbr>to</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="std.mapiterator.html#get_list_iterator" class="tsd-kind-icon">get_<wbr>list_<wbr>iterator</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="std.mapiterator.html#get_source" class="tsd-kind-icon">get_<wbr>source</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.mapiterator.html#hash" class="tsd-kind-icon">hash</a>

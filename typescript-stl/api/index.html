@@ -128,13 +128,12 @@
 				<pre><code class="lang-bash"><span class="hljs-comment"># Install TypeScript-STL from NPM modules</span>
 npm install -g typescript-stl 
 
-<span class="hljs-comment"># Fetch definition (header) file from TSD</span>
-<span class="hljs-comment"># If TSD is not installed, then type "npm install -g tsd"</span>
-tsd install typescript-stl
+<span class="hljs-comment"># Fetch definition (header) file from DefinitelyTyped</span>
+npm install --save @types/typescript-stl
 </code></pre>
 				<h4 id="typescript">TypeScript</h4>
-				<p>Don&#39;t forget to referencing header files, <code>typescript-stl.d.ts</code>.</p>
-				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference path="typings/typescript-stl/typescript-stl.d.ts" /&gt;</span>
+				<p>Don&#39;t forget to referencing and importing the <code>typescript-stl</code>.</p>
+				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference types="typescript-stl" /&gt;</span>
 
 <span class="hljs-keyword">import</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"typescript-stl"</span>);
 <span class="hljs-keyword">let</span> map: std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt; = <span class="hljs-keyword">new</span> std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt;();
@@ -188,7 +187,7 @@ map.set(<span class="hljs-string">"Fourth"</span>, <span class="hljs-number">4</
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="modules/std.html">std</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">

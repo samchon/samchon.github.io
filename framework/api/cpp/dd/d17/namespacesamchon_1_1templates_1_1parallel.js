@@ -1,6 +1,10 @@
 var namespacesamchon_1_1templates_1_1parallel =
 [
+    [ "MediatorClient", "d9/d3b/classsamchon_1_1templates_1_1parallel_1_1MediatorClient.html", "d9/d3b/classsamchon_1_1templates_1_1parallel_1_1MediatorClient" ],
+    [ "MediatorServer", "dc/de8/classsamchon_1_1templates_1_1parallel_1_1MediatorServer.html", "dc/de8/classsamchon_1_1templates_1_1parallel_1_1MediatorServer" ],
     [ "MediatorSystem", "d8/d7e/classsamchon_1_1templates_1_1parallel_1_1MediatorSystem.html", "d8/d7e/classsamchon_1_1templates_1_1parallel_1_1MediatorSystem" ],
+    [ "MediatorWebClient", "dc/dd0/classsamchon_1_1templates_1_1parallel_1_1MediatorWebClient.html", "dc/dd0/classsamchon_1_1templates_1_1parallel_1_1MediatorWebClient" ],
+    [ "MediatorWebServer", "d4/d88/classsamchon_1_1templates_1_1parallel_1_1MediatorWebServer.html", "d4/d88/classsamchon_1_1templates_1_1parallel_1_1MediatorWebServer" ],
     [ "ParallelClientArray", "d6/d9e/classsamchon_1_1templates_1_1parallel_1_1ParallelClientArray.html", "d6/d9e/classsamchon_1_1templates_1_1parallel_1_1ParallelClientArray" ],
     [ "ParallelClientArrayMediator", "dd/dce/classsamchon_1_1templates_1_1parallel_1_1ParallelClientArrayMediator.html", "dd/dce/classsamchon_1_1templates_1_1parallel_1_1ParallelClientArrayMediator" ],
     [ "ParallelServer", "db/d95/classsamchon_1_1templates_1_1parallel_1_1ParallelServer.html", "db/d95/classsamchon_1_1templates_1_1parallel_1_1ParallelServer" ],

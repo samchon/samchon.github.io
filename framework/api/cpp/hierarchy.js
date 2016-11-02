@@ -123,9 +123,11 @@ var hierarchy =
     [ "samchon::library::GeneticAlgorithm< GeneArray, Compare >", "d5/d28/classsamchon_1_1library_1_1GeneticAlgorithm.html", null ],
     [ "samchon::HashMap< Key, T, Hash, Pred, Alloc >", "d0/dee/classsamchon_1_1HashMap.html", null ],
     [ "samchon::HashMap< size_t, std::pair< std::shared_ptr< protocol::Invoke >, std::shared_ptr< protocol::InvokeHistory > > >", "d0/dee/classsamchon_1_1HashMap.html", null ],
+    [ "samchon::HashMap< size_t, std::shared_ptr< Client > >", "d0/dee/classsamchon_1_1HashMap.html", [
+      [ "samchon::templates::service::User", "d8/d20/classsamchon_1_1templates_1_1service_1_1User.html", null ]
+    ] ],
     [ "samchon::HashMap< size_t, std::shared_ptr< protocol::InvokeHistory > >", "d0/dee/classsamchon_1_1HashMap.html", null ],
     [ "samchon::HashMap< size_t, std::shared_ptr< samchon::templates::distributed::DSInvokeHistory > >", "d0/dee/classsamchon_1_1HashMap.html", null ],
-    [ "samchon::HashMap< size_t, std::shared_ptr< samchon::templates::service::Client > >", "d0/dee/classsamchon_1_1HashMap.html", null ],
     [ "samchon::HashMap< std::string, std::shared_ptr< samchon::templates::distributed::DistributedProcess > >", "d0/dee/classsamchon_1_1HashMap.html", null ],
     [ "samchon::HashMap< std::string, std::shared_ptr< samchon::templates::service::User > >", "d0/dee/classsamchon_1_1HashMap.html", null ],
     [ "samchon::HashMap< std::string, std::shared_ptr< XMLList > >", "d0/dee/classsamchon_1_1HashMap.html", [
@@ -155,11 +157,17 @@ var hierarchy =
         ] ]
       ] ],
       [ "samchon::protocol::IListener", "db/d17/classsamchon_1_1protocol_1_1IListener.html", [
-        [ "samchon::templates::parallel::MediatorSystem", "d8/d7e/classsamchon_1_1templates_1_1parallel_1_1MediatorSystem.html", null ],
+        [ "samchon::templates::parallel::MediatorSystem", "d8/d7e/classsamchon_1_1templates_1_1parallel_1_1MediatorSystem.html", [
+          [ "samchon::templates::parallel::MediatorClient", "d9/d3b/classsamchon_1_1templates_1_1parallel_1_1MediatorClient.html", [
+            [ "samchon::templates::parallel::MediatorWebClient", "dc/dd0/classsamchon_1_1templates_1_1parallel_1_1MediatorWebClient.html", null ]
+          ] ],
+          [ "samchon::templates::parallel::MediatorServer", "dc/de8/classsamchon_1_1templates_1_1parallel_1_1MediatorServer.html", [
+            [ "samchon::templates::parallel::MediatorWebServer", "d4/d88/classsamchon_1_1templates_1_1parallel_1_1MediatorWebServer.html", null ]
+          ] ]
+        ] ],
         [ "samchon::templates::parallel::ParallelSystem", "df/d15/classsamchon_1_1templates_1_1parallel_1_1ParallelSystem.html", null ]
       ] ],
       [ "samchon::protocol::SystemRole", "d5/de8/classsamchon_1_1protocol_1_1SystemRole.html", null ],
-      [ "samchon::templates::distributed::DistributedProcess", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html", null ],
       [ "samchon::templates::external::ExternalSystem", "db/de6/classsamchon_1_1templates_1_1external_1_1ExternalSystem.html", null ],
       [ "samchon::templates::external::ExternalSystemArray", "de/dde/classsamchon_1_1templates_1_1external_1_1ExternalSystemArray.html", null ],
       [ "samchon::templates::external::ExternalSystemRole", "df/d61/classsamchon_1_1templates_1_1external_1_1ExternalSystemRole.html", null ],
@@ -181,9 +189,11 @@ var hierarchy =
     [ "samchon::library::Semaphore", "d9/d88/classsamchon_1_1library_1_1Semaphore.html", null ],
     [ "samchon::protocol::Server", "de/d12/classsamchon_1_1protocol_1_1Server.html", [
       [ "samchon::protocol::WebServer", "d8/deb/classsamchon_1_1protocol_1_1WebServer.html", [
+        [ "samchon::templates::parallel::MediatorWebServer", "d4/d88/classsamchon_1_1templates_1_1parallel_1_1MediatorWebServer.html", null ],
         [ "samchon::templates::service::Server", "d7/dcf/classsamchon_1_1templates_1_1service_1_1Server.html", null ]
       ] ],
-      [ "samchon::templates::external::ExternalClientArray", "dd/d0a/classsamchon_1_1templates_1_1external_1_1ExternalClientArray.html", null ]
+      [ "samchon::templates::external::ExternalClientArray", "dd/d0a/classsamchon_1_1templates_1_1external_1_1ExternalClientArray.html", null ],
+      [ "samchon::templates::parallel::MediatorServer", "dc/de8/classsamchon_1_1templates_1_1parallel_1_1MediatorServer.html", null ]
     ] ],
     [ "samchon::library::SharedAcquire", "d7/d8e/classsamchon_1_1library_1_1SharedAcquire.html", null ],
     [ "samchon::library::SharedReadLock", "d7/de5/classsamchon_1_1library_1_1SharedReadLock.html", null ],

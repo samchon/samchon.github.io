@@ -5,7 +5,7 @@ var searchData=
   ['webclientdriver',['WebClientDriver',['../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html',1,'samchon::protocol']]],
   ['webcommunicator',['WebCommunicator',['../de/d5c/classsamchon_1_1protocol_1_1WebCommunicator.html',1,'samchon::protocol']]],
   ['webserver',['WebServer',['../d8/deb/classsamchon_1_1protocol_1_1WebServer.html',1,'samchon::protocol']]],
-  ['webserver',['WebServer',['../d8/deb/classsamchon_1_1protocol_1_1WebServer.html#ad053f4e1808a3c10c7522d0dbbbc031a',1,'samchon::protocol::WebServer']]],
+  ['webserver',['WebServer',['../d8/deb/classsamchon_1_1protocol_1_1WebServer.html#ac21e7715b29e975a14914039a1c866e7',1,'samchon::protocol::WebServer']]],
   ['webserverconnector',['WebServerConnector',['../d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html',1,'samchon::protocol']]],
   ['weight',['weight',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a8c156452a52e08e2f70797e15b9fc63e',1,'samchon::example::packer::Instance']]],
   ['wrapper',['Wrapper',['../dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper.html#a7c8e3d79c929c11f98bd5db32da54188',1,'samchon::example::packer::Wrapper::Wrapper()'],['../dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper.html#a80d25ec341fea86fbaa742992cfcd545',1,'samchon::example::packer::Wrapper::Wrapper(const string &amp;name, int price, int volume, int weight)'],['../dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper.html#a98a05683215994fc16b199fabb168b76',1,'samchon::example::packer::Wrapper::Wrapper(const Wrapper &amp;wrapper)']]],

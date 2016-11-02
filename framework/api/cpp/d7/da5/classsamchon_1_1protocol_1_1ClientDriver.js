@@ -1,4 +1,4 @@
 var classsamchon_1_1protocol_1_1ClientDriver =
 [
-    [ "listen", "d7/da5/classsamchon_1_1protocol_1_1ClientDriver.html#aefc96f85afdef9fe8f519ad1b433b9af", null ]
+    [ "listen", "d7/da5/classsamchon_1_1protocol_1_1ClientDriver.html#a96b17f2b7120c11bd52e67918517a831", null ]
 ];

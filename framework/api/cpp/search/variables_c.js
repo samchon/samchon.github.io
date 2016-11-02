@@ -8,6 +8,5 @@ var searchData=
   ['position',['position',['../dc/d37/classsamchon_1_1ByteArray.html#ac5892668eaa194254489738d378e52ff',1,'samchon::ByteArray']]],
   ['price',['price',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#ab035bfc085d9fed7091b9487d574ef60',1,'samchon::example::packer::Instance']]],
   ['productarray',['productArray',['../da/da0/classsamchon_1_1example_1_1packer_1_1Packer.html#a5cbae3a92436af7b53048934b2b2412e',1,'samchon::example::packer::Packer']]],
-  ['properties',['properties',['../d5/d37/classsamchon_1_1library_1_1XML.html#a3ed840d45781bc9c44bd9a16c5076f21',1,'samchon::library::XML']]],
   ['ptr',['ptr',['../d9/d2d/classsamchon_1_1SmartPointer.html#a26e99ae7092b02bd6db742b58a80e3e7',1,'samchon::SmartPointer']]]
 ];

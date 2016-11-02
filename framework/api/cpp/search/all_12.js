@@ -15,5 +15,5 @@ var searchData=
   ['urlvariables',['URLVariables',['../dc/d30/classsamchon_1_1library_1_1URLVariables.html#aea2622fc8375e7cd1b1d04fda33cdf26',1,'samchon::library::URLVariables::URLVariables()'],['../dc/d30/classsamchon_1_1library_1_1URLVariables.html#a49690b953bb23c64a6a064d15189754a',1,'samchon::library::URLVariables::URLVariables(const WeakString &amp;flashVars)']]],
   ['usecountmap',['useCountMap',['../d9/d2d/classsamchon_1_1SmartPointer.html#a85d5d992f1fc0b61a717882d7a3b1492',1,'samchon::SmartPointer']]],
   ['user',['User',['../d8/d20/classsamchon_1_1templates_1_1service_1_1User.html',1,'samchon::templates::service']]],
-  ['user',['User',['../d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#a4f8d760966244c47b6b8928c4f228ad5',1,'samchon::templates::service::User']]]
+  ['user',['User',['../d8/d20/classsamchon_1_1templates_1_1service_1_1User.html#aedd36882113e55a9ad2546da221d1be9',1,'samchon::templates::service::User']]]
 ];

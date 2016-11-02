@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['open',['open',['../d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer.html#ababc4b28cf44f1a44b8258263b012990',1,'samchon::protocol::FlashPolicyServer::open()'],['../de/d12/classsamchon_1_1protocol_1_1Server.html#a3ec30d860f677a108623caf6c30cc402',1,'samchon::protocol::Server::open()']]],
+  ['open',['open',['../d2/d55/classsamchon_1_1protocol_1_1FlashPolicyServer.html#ae99de9a5ed64609c83a135c7dcf56533',1,'samchon::protocol::FlashPolicyServer::open()'],['../de/d12/classsamchon_1_1protocol_1_1Server.html#ab656523a0c27493cbd5de486df5cf899',1,'samchon::protocol::Server::open()']]],
   ['operator_2a',['operator*',['../d9/d2d/classsamchon_1_1SmartPointer.html#abb5f9606eab54e8f400a4b90cd765257',1,'samchon::SmartPointer']]],
   ['operator_2d_3e',['operator-&gt;',['../d9/d2d/classsamchon_1_1SmartPointer.html#a0ec36f2c63d06186d996cacb5e0f5cf6',1,'samchon::SmartPointer']]],
   ['operator_3c',['operator&lt;',['../db/dd4/classsamchon_1_1example_1_1tsp_1_1Travel.html#aa4d86296405e67dd0042a5e115ef3a55',1,'samchon::example::tsp::Travel::operator&lt;()'],['../dd/d2e/classsamchon_1_1library_1_1IOperator.html#a211eba4610dede1d6b815169a7deb87f',1,'samchon::library::IOperator::operator&lt;()']]],
