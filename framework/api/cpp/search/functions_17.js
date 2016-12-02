@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['_7echatclient',['~ChatClient',['../d2/d3b/classsamchon_1_1example_1_1console__chat__server_1_1ChatClient.html#aa5e3fa84e54a1107313f3e3c559df6ea',1,'samchon::example::console_chat_server::ChatClient']]],
   ['_7eclient',['~Client',['../db/d38/classsamchon_1_1templates_1_1service_1_1Client.html#aaa319f7f8ca6a7fdc120d6a0caf7f177',1,'samchon::templates::service::Client']]],
-  ['_7eeventdispatcher',['~EventDispatcher',['../d3/d9b/classsamchon_1_1library_1_1EventDispatcher.html#abb5f401014e87f03027d6c4450964e55',1,'samchon::library::EventDispatcher']]],
-  ['_7eexternalserverclientarray',['~ExternalServerClientArray',['../de/d18/classsamchon_1_1templates_1_1external_1_1ExternalServerClientArray.html#a0470d62555e4f23daad491893c5fb974',1,'samchon::templates::external::ExternalServerClientArray']]],
+  ['_7eeventdispatcher',['~EventDispatcher',['../d3/d9b/classsamchon_1_1library_1_1EventDispatcher.html#a29c6bd0092f6376afcdd528a567336f9',1,'samchon::library::EventDispatcher']]],
+  ['_7eexternalserverclientarray',['~ExternalServerClientArray',['../de/d18/classsamchon_1_1templates_1_1external_1_1ExternalServerClientArray.html#aff99717040e63eac04092164b30ff430',1,'samchon::templates::external::ExternalServerClientArray']]],
   ['_7eexternalsystem',['~ExternalSystem',['../db/de6/classsamchon_1_1templates_1_1external_1_1ExternalSystem.html#afea600c3889747adcc25b37cec5b32bf',1,'samchon::templates::external::ExternalSystem']]],
-  ['_7eexternalsystemarray',['~ExternalSystemArray',['../de/dde/classsamchon_1_1templates_1_1external_1_1ExternalSystemArray.html#a16f95280b090df760330a31439739bf6',1,'samchon::templates::external::ExternalSystemArray']]],
+  ['_7eexternalsystemarray',['~ExternalSystemArray',['../de/dde/classsamchon_1_1templates_1_1external_1_1ExternalSystemArray.html#a1326816759e8930b6adc541b38c00032',1,'samchon::templates::external::ExternalSystemArray']]],
   ['_7eexternalsystemrole',['~ExternalSystemRole',['../df/d61/classsamchon_1_1templates_1_1external_1_1ExternalSystemRole.html#afbb0896a6ce35dadfdac234c40ed64d0',1,'samchon::templates::external::ExternalSystemRole']]],
   ['_7emediatorsystem',['~MediatorSystem',['../d8/d7e/classsamchon_1_1templates_1_1parallel_1_1MediatorSystem.html#a8d9d1e4927f38f692e9469800a6580de',1,'samchon::templates::parallel::MediatorSystem']]],
-  ['_7eparallelsystem',['~ParallelSystem',['../df/d15/classsamchon_1_1templates_1_1parallel_1_1ParallelSystem.html#a5771cf39b5ac03346f15f86dd267d080',1,'samchon::templates::parallel::ParallelSystem']]],
+  ['_7eparallelsystem',['~ParallelSystem',['../df/d15/classsamchon_1_1templates_1_1parallel_1_1ParallelSystem.html#a30ed7d9b41ebd8a931890af5d1287107',1,'samchon::templates::parallel::ParallelSystem']]],
   ['_7eserver',['~Server',['../de/d12/classsamchon_1_1protocol_1_1Server.html#a92b5c3801c94c9b84e83e4accd12edf4',1,'samchon::protocol::Server::~Server()'],['../d7/dcf/classsamchon_1_1templates_1_1service_1_1Server.html#afc276754677fd917971ad0234b20cb8e',1,'samchon::templates::service::Server::~Server()']]],
   ['_7eserverconnector',['~ServerConnector',['../db/d72/classsamchon_1_1protocol_1_1ServerConnector.html#aafc0349145e828d8989c585c4e91f5c5',1,'samchon::protocol::ServerConnector']]],
   ['_7eservice',['~Service',['../d9/d8e/classsamchon_1_1templates_1_1service_1_1Service.html#a2e3b24e01aa90ece9ce806f99fdf3a2f',1,'samchon::templates::service::Service']]],

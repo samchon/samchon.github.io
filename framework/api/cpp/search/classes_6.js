@@ -1,10 +1,11 @@
 var searchData=
 [
   ['hashmap',['HashMap',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
-  ['hashmap_3c_20size_5ft_2c_20std_3a_3apair_3c_20std_3a_3ashared_5fptr_3c_20protocol_3a_3ainvoke_20_3e_2c_20std_3a_3ashared_5fptr_3c_20protocol_3a_3ainvokehistory_20_3e_20_3e_20_3e',['HashMap&lt; size_t, std::pair&lt; std::shared_ptr&lt; protocol::Invoke &gt;, std::shared_ptr&lt; protocol::InvokeHistory &gt; &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
-  ['hashmap_3c_20size_5ft_2c_20std_3a_3ashared_5fptr_3c_20client_20_3e_20_3e',['HashMap&lt; size_t, std::shared_ptr&lt; Client &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
-  ['hashmap_3c_20size_5ft_2c_20std_3a_3ashared_5fptr_3c_20protocol_3a_3ainvokehistory_20_3e_20_3e',['HashMap&lt; size_t, std::shared_ptr&lt; protocol::InvokeHistory &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
+  ['hashmap_3c_20int_2c_20system_20_2a_20_3e',['HashMap&lt; int, System * &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
+  ['hashmap_3c_20size_5ft_2c_20sql_5fsize_5ft_20_3e',['HashMap&lt; size_t, SQL_SIZE_T &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
+  ['hashmap_3c_20size_5ft_2c_20std_3a_3apair_3c_20std_3a_3ashared_5fptr_3c_20protocol_3a_3ainvoke_20_3e_2c_20std_3a_3ashared_5fptr_3c_20slave_3a_3ainvokehistory_20_3e_20_3e_20_3e',['HashMap&lt; size_t, std::pair&lt; std::shared_ptr&lt; protocol::Invoke &gt;, std::shared_ptr&lt; slave::InvokeHistory &gt; &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20size_5ft_2c_20std_3a_3ashared_5fptr_3c_20samchon_3a_3atemplates_3a_3adistributed_3a_3adsinvokehistory_20_3e_20_3e',['HashMap&lt; size_t, std::shared_ptr&lt; samchon::templates::distributed::DSInvokeHistory &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
+  ['hashmap_3c_20size_5ft_2c_20std_3a_3ashared_5fptr_3c_20slave_3a_3ainvokehistory_20_3e_20_3e',['HashMap&lt; size_t, std::shared_ptr&lt; slave::InvokeHistory &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20std_3a_3astring_2c_20std_3a_3ashared_5fptr_3c_20samchon_3a_3atemplates_3a_3adistributed_3a_3adistributedprocess_20_3e_20_3e',['HashMap&lt; std::string, std::shared_ptr&lt; samchon::templates::distributed::DistributedProcess &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20std_3a_3astring_2c_20std_3a_3ashared_5fptr_3c_20samchon_3a_3atemplates_3a_3aservice_3a_3auser_20_3e_20_3e',['HashMap&lt; std::string, std::shared_ptr&lt; samchon::templates::service::User &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],
   ['hashmap_3c_20std_3a_3astring_2c_20std_3a_3ashared_5fptr_3c_20xmllist_20_3e_20_3e',['HashMap&lt; std::string, std::shared_ptr&lt; XMLList &gt; &gt;',['../d0/dee/classsamchon_1_1HashMap.html',1,'samchon']]],

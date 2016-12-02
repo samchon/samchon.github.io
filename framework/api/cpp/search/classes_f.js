@@ -5,6 +5,6 @@ var searchData=
   ['webcommunicator',['WebCommunicator',['../de/d5c/classsamchon_1_1protocol_1_1WebCommunicator.html',1,'samchon::protocol']]],
   ['webserver',['WebServer',['../d8/deb/classsamchon_1_1protocol_1_1WebServer.html',1,'samchon::protocol']]],
   ['webserverconnector',['WebServerConnector',['../d8/dc2/classsamchon_1_1protocol_1_1WebServerConnector.html',1,'samchon::protocol']]],
-  ['wrapper',['Wrapper',['../dc/d06/classsamchon_1_1example_1_1packer_1_1Wrapper.html',1,'samchon::example::packer']]],
-  ['wrapperarray',['WrapperArray',['../d4/dfe/classsamchon_1_1example_1_1packer_1_1WrapperArray.html',1,'samchon::example::packer']]]
+  ['wrapper',['Wrapper',['../d1/dde/classsamchon_1_1examples_1_1packer_1_1Wrapper.html',1,'samchon::examples::packer']]],
+  ['wrapperarray',['WrapperArray',['../d4/d4b/classsamchon_1_1examples_1_1packer_1_1WrapperArray.html',1,'samchon::examples::packer']]]
 ];

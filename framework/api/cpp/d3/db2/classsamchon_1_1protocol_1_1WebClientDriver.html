@@ -149,8 +149,8 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A communicator with remote web-client.</p>
-<p>The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> class is a type of <a class="el" href="../../de/d5c/classsamchon_1_1protocol_1_1WebCommunicator.html">WebCommunicator</a>, specified for communication with remote web-client who has connected in a <a class="el" href="../../">WebServer</a> object who follows the protocol of web-socket. The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> takes full charge of network communication with the remote web-client.</p>
-<p>The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> object is always created by <a class="el" href="../../">WebServer</a> class. When you got this <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> object from the <a class="el" href="../../de/d12/classsamchon_1_1protocol_1_1Server.html#a21d6887e5f23ce00e09797927a21973a">WebServer.addClient()</a>, then specify <a class="el" href="../../d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html">listener</a> with the <a class="el" href="../../d7/da5/classsamchon_1_1protocol_1_1ClientDriver.html#a96b17f2b7120c11bd52e67918517a831">WebClientDriver.listen()</a> method. Below code is an example specifying and managing the <a class="el" href="../../d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html">listener</a> objects.</p>
+<p>The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> class is a type of <a class="el" href="../../de/d5c/classsamchon_1_1protocol_1_1WebCommunicator.html">WebCommunicator</a>, specified for communication with remote web-client who has connected in a <a class="el" href="../../d8/deb/classsamchon_1_1protocol_1_1WebServer.html">WebServer</a> object who follows the protocol of web-socket. The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> takes full charge of network communication with the remote web-client.</p>
+<p>The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> object is always created by <a class="el" href="../../d8/deb/classsamchon_1_1protocol_1_1WebServer.html">WebServer</a> class. When you got this <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> object from the <a class="el" href="../../de/d12/classsamchon_1_1protocol_1_1Server.html#a21d6887e5f23ce00e09797927a21973a">WebServer.addClient()</a>, then specify <a class="el" href="../../d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html">listener</a> with the <a class="el" href="../../d7/da5/classsamchon_1_1protocol_1_1ClientDriver.html#a96b17f2b7120c11bd52e67918517a831">WebClientDriver.listen()</a> method. Below code is an example specifying and managing the <a class="el" href="../../d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html">listener</a> objects.</p>
 <ul>
 <li><a href="https://github.com/samchon/framework/blob/master/ts/examples/calculator/calculator-server.ts">https://github.com/samchon/framework/blob/master/ts/examples/calculator/calculator-server.ts</a></li>
 </ul>
@@ -160,9 +160,9 @@ Public Member Functions</h2></td></tr>
 <tr>
 <td>Samchon Framework's own </td><td><a class="el" href="../../d7/da5/classsamchon_1_1protocol_1_1ClientDriver.html">ClientDriver</a> </td><td><a class="el" href="../../de/d12/classsamchon_1_1protocol_1_1Server.html">Server</a> </td></tr>
 <tr>
-<td>Web-socket protocol </td><td><a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> </td><td><a class="el" href="../../">WebServer</a> </td></tr>
+<td>Web-socket protocol </td><td><a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a> </td><td><a class="el" href="../../d8/deb/classsamchon_1_1protocol_1_1WebServer.html">WebServer</a> </td></tr>
 </table>
-<p>Unlike other protocol, Web-socket protocol's clients notify two parameters on their connection; <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#af226e0d0cc26e49f3f2c79abf54fee33">session-id</a> and <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#a31f171d64e524730170d78b3d39ecdb7">path</a>. The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#af226e0d0cc26e49f3f2c79abf54fee33">session-id</a> can be used to identify <em>user</em> of each client, and the <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#a31f171d64e524730170d78b3d39ecdb7">path</a> can be used which type of <em>service</em> that client wants. In <a class="el" href="../../d8/d70/namespacesamchon_1_1protocol_1_1service.html">service</a> module, you can see the best utilization case of them.</p>
+<p>Unlike other protocol, Web-socket protocol's clients notify two parameters on their connection; <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#af226e0d0cc26e49f3f2c79abf54fee33">session-id</a> and <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#a31f171d64e524730170d78b3d39ecdb7">path</a>. The <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#af226e0d0cc26e49f3f2c79abf54fee33">session-id</a> can be used to identify <em>user</em> of each client, and the <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#a31f171d64e524730170d78b3d39ecdb7">path</a> can be used which type of <em>service</em> that client wants. In <a class="el" href="../../">service</a> module, you can see the best utilization case of them.</p>
 <ul>
 <li><a class="el" href="../../">service.User</a>: utlization of the <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#af226e0d0cc26e49f3f2c79abf54fee33">session-id</a>.</li>
 <li><a class="el" href="../../">service.Service</a>: utilization of the <a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html#a31f171d64e524730170d78b3d39ecdb7">path</a>.</li>
@@ -170,7 +170,7 @@ Public Member Functions</h2></td></tr>
 <div class="image">
 <img src="http://samchon.github.io/framework/images/design/cpp_class_diagram/protocol_basic_components.png"  alt="Basic Components"/>
 </div>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../">WebServer</a>, <a class="el" href="../../d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html">IProtocol</a>  <a href="https://github.com/samchon/framework/wiki/CPP-Protocol-Basic_Components#clientdriver">Protocol - Basic Components</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/deb/classsamchon_1_1protocol_1_1WebServer.html">WebServer</a>, <a class="el" href="../../d4/dcf/classsamchon_1_1protocol_1_1IProtocol.html">IProtocol</a>  <a href="https://github.com/samchon/framework/wiki/CPP-Protocol-Basic_Components#clientdriver">Protocol - Basic Components</a> </dd></dl>
 <dl class="section author"><dt>Author</dt><dd>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a> </dd></dl>
 
 <p>Definition at line <a class="el" href="../../d1/da0/WebClientDriver_8hpp_source.html#l00046">46</a> of file <a class="el" href="../../d1/da0/WebClientDriver_8hpp_source.html">WebClientDriver.hpp</a>.</p>
@@ -200,7 +200,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d1/da0/WebClientDriver_8hpp_source.html#l00070">70</a> of file <a class="el" href="../../d1/da0/WebClientDriver_8hpp_source.html">WebClientDriver.hpp</a>.</p>
 
-<p>Referenced by <a class="el" href="../../d4/d9c/templates_2service_2Server_8hpp_source.html#l00182">samchon::templates::service::Server::addClient()</a>.</p>
+<p>Referenced by <a class="el" href="../../d4/d9c/templates_2service_2Server_8hpp_source.html#l00190">samchon::templates::service::Server::addClient()</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -249,7 +249,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../db/df1/namespacesamchon.html">samchon</a></li><li class="navelem"><a class="el" href="../../db/d64/namespacesamchon_1_1protocol.html">protocol</a></li><li class="navelem"><a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a></li>
+    <li class="navelem"><b>samchon</b></li><li class="navelem"><b>protocol</b></li><li class="navelem"><a class="el" href="../../d3/db2/classsamchon_1_1protocol_1_1WebClientDriver.html">WebClientDriver</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.11 </li>

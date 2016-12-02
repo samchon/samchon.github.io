@@ -126,9 +126,9 @@
 				<p>Installing <em>TypeScript-STL</em> in <strong>node</strong> is very easy. Just install with <strong>npm</strong> and <strong>tsd</strong>.</p>
 				<h4 id="node">Node</h4>
 				<pre><code class="lang-bash"><span class="hljs-comment"># Install TypeScript-STL from NPM modules</span>
-npm install -g typescript-stl 
+npm install --save typescript-stl 
 
-<span class="hljs-comment"># Fetch definition (header) file from DefinitelyTyped</span>
+<span class="hljs-comment"># If you need header, then fetch from the @types</span>
 npm install --save @types/typescript-stl
 </code></pre>
 				<h4 id="typescript">TypeScript</h4>
@@ -143,7 +143,7 @@ map.insert([<span class="hljs-string">"Second"</span>, <span class="hljs-number"
 map.insert_or_assign(<span class="hljs-string">"Third"</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// C++17 Feature.</span>
 map.set(<span class="hljs-string">"Fourth"</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// Non-standard Feature.</span>
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = map.begin(); !it.equal_to(map.end()); it = it.next())
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = map.begin(); !it.equals(map.end()); it = it.next())
     <span class="hljs-built_in">console</span>.log(it.first, it.second); <span class="hljs-comment">// key =&gt; string, value =&gt; number</span>
 </code></pre>
 				<h4 id="browser">Browser</h4>

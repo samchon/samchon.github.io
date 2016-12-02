@@ -1,8 +1,8 @@
 var classsamchon_1_1templates_1_1distributed_1_1DistributedProcess =
 [
-    [ "DistributedProcess", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a1d9283a1f6179286a6063a731a491d3b", null ],
+    [ "DistributedProcess", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a74ab0431671bc26d6b90c87c3235e7e2", null ],
     [ "key", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a1aafa33e3bd0a99c3c3bdc51e8ab8608", null ],
-    [ "getSystemArray", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a665eac2768488436ed6f6f5a0140d32b", null ],
+    [ "getSystemArray", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a69c711392bf4d026033057293dd2f86b", null ],
     [ "getName", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#afa2c526f319030cdd15a56ef9100c01c", null ],
     [ "getResource", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#aa1332b11173c0bfa24c644f7dd390216", null ],
     [ "setResource", "d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html#a06e48cabf3daaebdbe0b4fe31bf5f664", null ],

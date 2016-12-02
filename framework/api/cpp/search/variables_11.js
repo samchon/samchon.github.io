@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['volume',['volume',['../dc/d54/classsamchon_1_1example_1_1packer_1_1Instance.html#a05e775f1ce5dd5afd0876e262b3f9c3c',1,'samchon::example::packer::Instance']]]
+  ['weight',['weight',['../d1/d3b/classsamchon_1_1examples_1_1packer_1_1Instance.html#a8b1bd48bb9a7d8bed28845b0cc900bf1',1,'samchon::examples::packer::Instance']]]
 ];

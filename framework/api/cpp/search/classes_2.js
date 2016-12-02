@@ -2,6 +2,7 @@ var searchData=
 [
   ['date',['Date',['../da/d6b/classsamchon_1_1library_1_1Date.html',1,'samchon::library']]],
   ['distributedclientarray',['DistributedClientArray',['../d0/dcb/classsamchon_1_1templates_1_1distributed_1_1DistributedClientArray.html',1,'samchon::templates::distributed']]],
+  ['distributedclientarray_3c_20mastersystem_20_3e',['DistributedClientArray&lt; MasterSystem &gt;',['../d0/dcb/classsamchon_1_1templates_1_1distributed_1_1DistributedClientArray.html',1,'samchon::templates::distributed']]],
   ['distributedclientarraymediator',['DistributedClientArrayMediator',['../de/d48/classsamchon_1_1templates_1_1distributed_1_1DistributedClientArrayMediator.html',1,'samchon::templates::distributed']]],
   ['distributedprocess',['DistributedProcess',['../d7/d0b/classsamchon_1_1templates_1_1distributed_1_1DistributedProcess.html',1,'samchon::templates::distributed']]],
   ['distributedserver',['DistributedServer',['../da/db8/classsamchon_1_1templates_1_1distributed_1_1DistributedServer.html',1,'samchon::templates::distributed']]],
@@ -11,6 +12,7 @@ var searchData=
   ['distributedserverclientarraymediator',['DistributedServerClientArrayMediator',['../d3/d3b/classsamchon_1_1templates_1_1distributed_1_1DistributedServerClientArrayMediator.html',1,'samchon::templates::distributed']]],
   ['distributedsystem',['DistributedSystem',['../d2/dea/classsamchon_1_1templates_1_1distributed_1_1DistributedSystem.html',1,'samchon::templates::distributed']]],
   ['distributedsystemarray',['DistributedSystemArray',['../da/dae/classsamchon_1_1templates_1_1distributed_1_1DistributedSystemArray.html',1,'samchon::templates::distributed']]],
+  ['distributedsystemarray_3c_20mastersystem_20_3e',['DistributedSystemArray&lt; MasterSystem &gt;',['../da/dae/classsamchon_1_1templates_1_1distributed_1_1DistributedSystemArray.html',1,'samchon::templates::distributed']]],
   ['distributedsystemarraymediator',['DistributedSystemArrayMediator',['../d5/d7c/classsamchon_1_1templates_1_1distributed_1_1DistributedSystemArrayMediator.html',1,'samchon::templates::distributed']]],
   ['dsinvokehistory',['DSInvokeHistory',['../d0/da8/classsamchon_1_1templates_1_1distributed_1_1DSInvokeHistory.html',1,'samchon::templates::distributed']]]
 ];

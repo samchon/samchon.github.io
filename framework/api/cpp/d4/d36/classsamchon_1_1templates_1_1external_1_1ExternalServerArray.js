@@ -1,5 +1,5 @@
 var classsamchon_1_1templates_1_1external_1_1ExternalServerArray =
 [
-    [ "ExternalServerArray", "d4/d36/classsamchon_1_1templates_1_1external_1_1ExternalServerArray.html#aa9a5f75f7a7cd17656a26d04e08642b5", null ],
-    [ "connect", "d4/d36/classsamchon_1_1templates_1_1external_1_1ExternalServerArray.html#ac173a8b6d579cec38a72915988497f72", null ]
+    [ "ExternalServerArray", "d4/d36/classsamchon_1_1templates_1_1external_1_1ExternalServerArray.html#a854fa94710f07cf6621e91a18e48bfa3", null ],
+    [ "connect", "d4/d36/classsamchon_1_1templates_1_1external_1_1ExternalServerArray.html#a2e8fec9d708e9012d2820d7201292807", null ]
 ];
