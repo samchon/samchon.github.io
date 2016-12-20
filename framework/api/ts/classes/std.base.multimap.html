@@ -85,10 +85,10 @@
 					<a href="std.pair.html">Pair</a> type combining both: </p>
 					<p> <code>typedef pair<const Key, T> value_type;</code> </p>
 					<p> <a href="std.base.uniquemap.html">UniqueMap</a> stores elements, keeps sequence and enables indexing by inserting elements into a
-						<a href="std.list.html">List</a> and registering <a href="std.listiterator.html">iterators</a> of the <a href="std.base.mapcontainer.html#data_">list container</a> to an index
+						<a href="std.list.html">List</a> and registering <a href="std.listiterator.html">iterators</a> of the <a href="std.base.setcontainer.html#data_">list container</a> to an index
 					table like {@link RBTree tree} or <a href="std.base.hashbuckets.html">hash-table</a>. </p>
-					<p> <a href="http://samchon.github.io/typescript-stl/images/design/class_diagram/map_containers.png" target="_blank">
-					<img src="http://samchon.github.io/typescript-stl/images/design/class_diagram/map_containers.png" style="max-width: 100%" /></a> </p>
+					<p> <a href="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" style="max-width: 100%" /></a> </p>
 					<p><h3> Container properties </h3></p>
 					<dl>
 						<dt> Associative </dt>
@@ -153,12 +153,6 @@
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -211,7 +205,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4853">typings/typescript-stl/typescript-stl.d.ts:4853</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4735</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -237,7 +231,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_erase">_Handle_erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5272">typings/typescript-stl/typescript-stl.d.ts:5272</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5154</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -286,7 +280,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_insert">_Handle_insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5251">typings/typescript-stl/typescript-stl.d.ts:5251</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5133</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -295,7 +289,7 @@
 								</div>
 								<p> This method, <a href="std.base.multimap.html#_handle_insert">_Handle_insert</a> is designed to register the <i>first to last</i> to somewhere storing
 								those <a href="std.mapiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
-								<p> When <a href="std.base.multimap.html#insert">insert</a> is called, new elements will be inserted into the <a href="std.base.mapcontainer.html#data_">list container</a> and new
+								<p> When <a href="std.base.multimap.html#insert">insert</a> is called, new elements will be inserted into the <a href="std.base.setcontainer.html#data_">list container</a> and new
 									<a href="std.mapiterator.html">iterators</a> <i>first to last</i>, pointing the inserted elements, will be created and the
 									newly created iterators <i>first to last</i> will be shifted into this method <a href="std.base.multimap.html#_handle_insert">_Handle_insert</a> after the
 								insertions. </p>
@@ -334,19 +328,17 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#assign">assign</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#assign">assign</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4861">typings/typescript-stl/typescript-stl.d.ts:4861</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4743</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Assign new content to content. </p>
-								</div>
-								<p> Assigns new contents to the container, replacing its current contents, and modifying its
-								<a href="std.base.multimap.html#size">size</a> accordingly. </p>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -382,11 +374,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#begin">begin</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4893">typings/typescript-stl/typescript-stl.d.ts:4893</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4775</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -411,18 +402,17 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#clear">clear</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#clear">clear</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4865">typings/typescript-stl/typescript-stl.d.ts:4865</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4747</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Clear content. </p>
-								</div>
-								<p> Removes all elements from the Container, leaving the container with a size of 0. </p>
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -439,7 +429,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4962">typings/typescript-stl/typescript-stl.d.ts:4962</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4844</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -473,7 +463,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5446">typings/typescript-stl/typescript-stl.d.ts:5446</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5328</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -507,7 +497,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5463">typings/typescript-stl/typescript-stl.d.ts:5463</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5345</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -550,7 +540,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4993">typings/typescript-stl/typescript-stl.d.ts:4993</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4875</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -590,7 +580,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5012">typings/typescript-stl/typescript-stl.d.ts:5012</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4894</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -630,7 +620,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5032">typings/typescript-stl/typescript-stl.d.ts:5032</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4914</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -669,7 +659,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5052">typings/typescript-stl/typescript-stl.d.ts:5052</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4934</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -715,10 +705,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L2881">typings/typescript-stl/typescript-stl.d.ts:2881</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:2941</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -743,11 +732,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#end">end</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4913">typings/typescript-stl/typescript-stl.d.ts:4913</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4795</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -786,7 +774,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5151">typings/typescript-stl/typescript-stl.d.ts:5151</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5033</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -813,7 +801,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5162">typings/typescript-stl/typescript-stl.d.ts:5162</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5044</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -840,7 +828,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5178">typings/typescript-stl/typescript-stl.d.ts:5178</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5060</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -877,7 +865,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5189">typings/typescript-stl/typescript-stl.d.ts:5189</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5071</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -904,7 +892,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5205">typings/typescript-stl/typescript-stl.d.ts:5205</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5087</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -949,7 +937,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4882">typings/typescript-stl/typescript-stl.d.ts:4882</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4764</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -989,7 +977,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4952">typings/typescript-stl/typescript-stl.d.ts:4952</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4834</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1029,7 +1017,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5476">typings/typescript-stl/typescript-stl.d.ts:5476</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5358</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1057,7 +1045,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5487">typings/typescript-stl/typescript-stl.d.ts:5487</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5369</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1092,7 +1080,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5491">typings/typescript-stl/typescript-stl.d.ts:5491</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5373</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1116,7 +1104,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5495">typings/typescript-stl/typescript-stl.d.ts:5495</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5377</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1140,7 +1128,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5499">typings/typescript-stl/typescript-stl.d.ts:5499</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5381</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1173,7 +1161,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5503">typings/typescript-stl/typescript-stl.d.ts:5503</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5385</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1206,7 +1194,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5507">typings/typescript-stl/typescript-stl.d.ts:5507</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5389</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1251,7 +1239,7 @@
 							<aside class="tsd-sources">
 								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#merge">merge</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L5511">typings/typescript-stl/typescript-stl.d.ts:5511</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:5393</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1292,7 +1280,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4970">typings/typescript-stl/typescript-stl.d.ts:4970</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4852</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1314,7 +1302,7 @@
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4974">typings/typescript-stl/typescript-stl.d.ts:4974</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4856</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1342,11 +1330,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#rbegin">rbegin</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4929">typings/typescript-stl/typescript-stl.d.ts:4929</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4811</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1374,11 +1361,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#rend">rend</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4942">typings/typescript-stl/typescript-stl.d.ts:4942</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4824</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1405,11 +1391,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#size">size</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#size">size</a></p>
 								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L4966">typings/typescript-stl/typescript-stl.d.ts:4966</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:4848</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1425,15 +1410,14 @@
 					<a name="swap" class="tsd-anchor"></a>
 					<h3>swap</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/std.base.icontainer.html">IContainer</a>.<a href="../interfaces/std.base.icontainer.html#swap">swap</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/505ba3b/ts/src/typings/typescript-stl/typescript-stl.d.ts#L2901">typings/typescript-stl/typescript-stl.d.ts:2901</a></li>
+									<li>Defined in typings/tstl/tstl.d.ts:3016</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1441,7 +1425,7 @@
 									<p> Swap content. </p>
 								</div>
 								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								<a href="../interfaces/std.base.icontainer.html">container</a> object with same type of elements. Sizes and container type may differ. </p>
+								{@link IContainer container} object with same type of elements. Sizes and container type may differ. </p>
 								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
 									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
 								pointers remain valid for the swapped objects. </p>
@@ -1451,7 +1435,12 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <a href="../interfaces/std.base.icontainer.html" class="tsd-signature-type">IContainer</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>obj: <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Another {@link IContainer container} of the same type of elements (i.e., instantiated
+											with the same template parameter, <b>T</b>) whose content is swapped with that of this
+										{@link container IContainer}.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1467,7 +1456,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-not-exported">
-						<a href="../modules/_typescript_stl_.html">"typescript-<wbr>stl"</a>
+						<a href="../modules/_tstl_.html">"tstl"</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/samchon.html">samchon</a>
@@ -1618,9 +1607,6 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
 						<a href="../interfaces/std.base.iarrayiterator.html" class="tsd-kind-icon">IArray<wbr>Iterator</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
-						<a href="../interfaces/std.base.icontainer.html" class="tsd-kind-icon">IContainer</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter tsd-is-not-exported">
 						<a href="../interfaces/std.base.idequecontainer.html" class="tsd-kind-icon">IDeque<wbr>Container</a>
