@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -71,44 +72,44 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> Tree-structured map, <code>std::map</code> of STL. </p>
+						<p>Tree-structured map, <code>std::map</code> of STL.</p>
 					</div>
-					<p> <a href="std.treemap.html">TreeMaps</a> are associative containers that store elements formed by a combination of a
-					<i>key value</i> (<i>Key</i>) and a <i>mapped value</i> (<i>T</i>), following order. </p>
-					<p> In a <a href="std.treemap.html">TreeMap</a>, the <i>key values</i> are generally used to sort and uniquely identify the elements,
+					<p><a href="std.treemap.html">TreeMaps</a> are associative containers that store elements formed by a combination of a
+					<i>key value</i> (<i>Key</i>) and a <i>mapped value</i> (<i>T</i>), following order.</p>
+					<p>In a <a href="std.treemap.html">TreeMap</a>, the <i>key values</i> are generally used to sort and uniquely identify the elements,
 						while the <i>mapped values</i> store the content associated to this key. The types of <i>key</i> and
 						<i>mapped value</i> may differ, and are grouped together in member type <i>value_type</i>, which is a <a href="std.pair.html">Pair</a>
-					type combining both: </p>
-					<p> <code>typedef Pair<Key, T> value_type;</code> </p>
-					<p> Internally, the elements in a <a href="std.treemap.html">TreeMap</a> are always sorted by its <i>key</i> following a
-						<i>strict weak ordering</i> criterion indicated by its internal comparison method <a href="../modules/std.html#less">less</a>.
-						<p> <a href="std.treemap.html">TreeMap</a> containers are generally slower than <a href="std.hashmap.html">HashMap</a> containers to access individual
-						elements by their <i>key</i>, but they allow the direct iteration on subsets based on their order. </p>
-						<p> <a href="std.treemap.html">TreeMap</a>s are typically implemented as binary search trees. </p>
-						<p> <a href="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" target="_blank">
-						<img src="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" style="max-width: 100%" /> </a></p>
-						<p><h3> Container properties </h3></p>
-						<dl>
-							<dt> Associative </dt>
-							<dd> Elements in associative containers are referenced by their <i>key</i> and not by their absolute
-							position in the container. </dd>
-							<dt> Ordered </dt>
-							<dd> The elements in the container follow a strict order at all times. All inserted elements are
-							given a position in this order. </dd>
-							<dt> Map </dt>
-							<dd> Each element associates a <i>key</i> to a <i>mapped value</i>:
-							<i>Keys</i> are meant to identify the elements whose main content is the <i>mapped value</i>. </dd>
-							<dt> Unique keys </dt>
-							<dd> No two elements in the container can have equivalent <i>keys</i>. </dd>
-						</dl>
-						<dl class="tsd-comment-tags">
-							<dt>reference</dt>
-							<dd><p><a href="http://www.cplusplus.com/reference/map/map">http://www.cplusplus.com/reference/map/map</a></p>
-							</dd>
-							<dt>author</dt>
-							<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
-							</dd>
-						</dl>
+					type combining both:</p>
+					<p><code>typedef Pair<Key, T> value_type;</code></p>
+					<p>Internally, the elements in a <a href="std.treemap.html">TreeMap</a> are always sorted by its <i>key</i> following a
+					<i>strict weak ordering</i> criterion indicated by its internal comparison method <a href="../modules/std.html#less">less</a>.</p>
+					<p><a href="std.treemap.html">TreeMap</a> containers are generally slower than <a href="std.hashmap.html">HashMap</a> containers to access individual
+					elements by their <i>key</i>, but they allow the direct iteration on subsets based on their order.</p>
+					<p><a href="std.treemap.html">TreeMap</a>s are typically implemented as binary search trees.</p>
+					<p><a href="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" style="max-width: 100%" /> </a></p></p>
+					<h3 id="container-properties">Container properties</h3>
+					<dl>
+						<dt> Associative </dt>
+						<dd> Elements in associative containers are referenced by their <i>key</i> and not by their absolute
+						position in the container. </dd>
+						<dt> Ordered </dt>
+						<dd> The elements in the container follow a strict order at all times. All inserted elements are
+						given a position in this order. </dd>
+						<dt> Map </dt>
+						<dd> Each element associates a <i>key</i> to a <i>mapped value</i>:
+						<i>Keys</i> are meant to identify the elements whose main content is the <i>mapped value</i>. </dd>
+						<dt> Unique keys </dt>
+						<dd> No two elements in the container can have equivalent <i>keys</i>. </dd>
+					</dl>
+					<dl class="tsd-comment-tags">
+						<dt>reference</dt>
+						<dd><p><a href="http://www.cplusplus.com/reference/map/map">http://www.cplusplus.com/reference/map/map</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-type-parameters">
@@ -171,8 +172,6 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.treemap.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.treemap.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.treemap.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.treemap.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.treemap.html#clear" class="tsd-kind-icon">clear</a></li>
@@ -213,7 +212,7 @@
 					<div class="tsd-signature tsd-kind-icon">iterator<span class="tsd-signature-symbol">:</span> <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L7">TreeMap.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L7">TreeMap.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -223,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">reverse_<wbr>iterator<span class="tsd-signature-symbol">:</span> <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L8">TreeMap.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L8">TreeMap.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -248,9 +247,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L68">TreeMap.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L68">TreeMap.ts:68</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -262,9 +261,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L80">TreeMap.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L80">TreeMap.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -308,9 +307,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L87">TreeMap.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L87">TreeMap.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -333,9 +332,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L94">TreeMap.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L94">TreeMap.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -387,9 +386,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L102">TreeMap.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L102">TreeMap.ts:102</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -412,9 +411,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L109">TreeMap.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L109">TreeMap.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,9 +465,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L117">TreeMap.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L117">TreeMap.ts:117</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -491,9 +490,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L124">TreeMap.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L124">TreeMap.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -545,9 +544,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L132">TreeMap.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L132">TreeMap.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -578,9 +577,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L140">TreeMap.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L140">TreeMap.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -643,72 +642,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-					<a name="_handle_erase" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>erase</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_erase">_Handle_erase</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L362">TreeMap.ts:362</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-					<a name="_handle_insert" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>insert</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>insert<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_insert">_Handle_insert</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L354">TreeMap.ts:354</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 					<a name="assign" class="tsd-anchor"></a>
 					<h3>assign</h3>
@@ -718,10 +651,11 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#assign">assign</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#assign">assign</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L72">base/MapContainer.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L72">base/MapContainer.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -764,19 +698,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#begin">begin</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L124">base/MapContainer.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L124">base/MapContainer.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to beginning. </p>
+									<p>Return iterator to beginning.</p>
 								</div>
-								<p> Returns an iterator referring the first element in the  </p>
-								<p><h4> Note </h4></p>
-								<p> If the container is <a href="std.treemap.html#empty">empty</a>, the returned iterator is same with <a href="std.treemap.html#end">end()</a>. </p>
+								<p>Returns an iterator referring the first element in the</p>
+								<h4 id="note">Note</h4>
+								<p>If the container is <a href="std.treemap.html#empty">empty</a>, the returned iterator is same with <a href="std.treemap.html#end">end()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the first element in the  The iterator containes the first element&#39;s value.</p>
@@ -792,9 +727,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#clear">clear</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#clear">clear</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L202">TreeMap.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L213">TreeMap.ts:213</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -816,17 +752,18 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#count">count</a></p>
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#count">count</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#count">count</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L60">base/UniqueMap.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L60">base/UniqueMap.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Count elements with a specific key.</p>
+								</div>
+								<p>Searches the container for elements whose key is <i>key</i> and returns the number of elements found.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -835,6 +772,7 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The number of elements in the container with a <i>key</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -850,7 +788,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#emplace">emplace</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L125">base/UniqueMap.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L125">base/UniqueMap.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -891,7 +829,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#emplace">emplace</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L151">base/UniqueMap.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L151">base/UniqueMap.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -938,9 +876,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#emplace_hint">emplace_hint</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L275">base/MapContainer.ts:275</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L288">base/MapContainer.ts:288</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -978,9 +917,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#emplace_hint">emplace_hint</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L295">base/MapContainer.ts:295</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L308">base/MapContainer.ts:308</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1018,9 +958,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#emplace_hint">emplace_hint</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L316">base/MapContainer.ts:316</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L329">base/MapContainer.ts:329</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1057,9 +998,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#emplace_hint">emplace_hint</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L337">base/MapContainer.ts:337</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L350">base/MapContainer.ts:350</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1105,18 +1047,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/Container.ts#L153">base/Container.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/Container.ts#L153">base/Container.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Test whether the container is empty. </p>
-									<p> Returns whether the container is empty (i.e. whether its size is 0). </p>
+									<p>Test whether the container is empty.
+									Returns whether the container is empty (i.e. whether its size is 0).</p>
 								</div>
-								<p> This function does not modify the container in any way. To clear the content of the container,
-								see <a href="std.treemap.html#clear">clear()</a>. </p>
+								<p>This function does not modify the container in any way. To clear the content of the container,
+								see <a href="std.treemap.html#clear">clear()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p><code>true</code> if the container size is 0, <code>false</code> otherwise.</p>
@@ -1132,26 +1075,27 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#end">end</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L148">base/MapContainer.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L148">base/MapContainer.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to end. </p>
-									<p> Returns an iterator referring to the past-the-end element in the  </p>
+									<p>Return iterator to end.
+									Returns an iterator referring to the past-the-end element in the</p>
 								</div>
-								<p> The past-the-end element is the theoretical element that would follow the last element in the
-								It does not point to any element, and thus shall not be dereferenced. </p>
-								<p> Because the ranges used by functions of the container do not include the element reference by their
+								<p>The past-the-end element is the theoretical element that would follow the last element in the
+								It does not point to any element, and thus shall not be dereferenced.</p>
+								<p>Because the ranges used by functions of the container do not include the element reference by their
 									closing iterator, this function is often used in combination with <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.treemap.html#begin">begin</a> to
-								specify a range including all the elements in the  </p>
-								<p><h4> Note </h4></p>
-								<p> Returned iterator from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.treemap.html#end">end</a> does not refer any element. Trying to accessing
-								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>). </p>
-								<p> If the container is <a href="std.treemap.html#empty">empty</a>, this function returns the same as <a href="std.treemap.html#begin">begin</a>. </p>
+								specify a range including all the elements in the</p>
+								<h4 id="note">Note</h4>
+								<p>Returned iterator from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.treemap.html#end">end</a> does not refer any element. Trying to accessing
+								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>).</p>
+								<p>If the container is <a href="std.treemap.html#empty">empty</a>, this function returns the same as <a href="std.treemap.html#begin">begin</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the end element in the</p>
@@ -1169,20 +1113,20 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#equal_range">equal_range</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L260">TreeMap.ts:260</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L271">TreeMap.ts:271</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get range of equal elements. </p>
+									<p>Get range of equal elements.</p>
 								</div>
-								<p> Returns the bounds of a range that includes all the elements in the container which have a key
-								equivalent to <i>k</i> </p>.
-								<p> If no matches are found, the range returned has a length of zero, with both iterators pointing to
+								<p>Returns the bounds of a range that includes all the elements in the container which have a key
+								equivalent to <i>k</i>.</p>
+								<p>If no matches are found, the range returned has a length of zero, with both iterators pointing to
 									the first element that has a key considered to go after <i>k</i> according to the container&#39;s internal
-								comparison object (key_comp). </p>
-								<p> Two keys are considered equivalent if the container&#39;s comparison object returns false reflexively
-								(i.e., no matter the order in which the keys are passed as arguments). </p>
+								comparison object (key_comp).</p>
+								<p>Two keys are considered equivalent if the container&#39;s comparison object returns false reflexively
+								(i.e., no matter the order in which the keys are passed as arguments).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1210,19 +1154,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#erase">erase</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L508">base/MapContainer.ts:508</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L521">base/MapContainer.ts:521</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by key. </p>
+									<p>Erase an elemet by key.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1237,19 +1182,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#erase">erase</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L520">base/MapContainer.ts:520</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L533">base/MapContainer.ts:533</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by iterator. </p>
+									<p>Erase an elemet by iterator.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1264,19 +1210,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#erase">erase</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L537">base/MapContainer.ts:537</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L550">base/MapContainer.ts:550</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements by range iterators. </p>
+									<p>Erase elements by range iterators.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of elements removed, which are
-								destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of elements removed, which are
+								destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1301,19 +1248,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#erase">erase</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L549">base/MapContainer.ts:549</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L562">base/MapContainer.ts:562</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by iterator. </p>
+									<p>Erase an elemet by iterator.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1328,19 +1276,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#erase">erase</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L566">base/MapContainer.ts:566</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L579">base/MapContainer.ts:579</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements by range iterators. </p>
+									<p>Erase elements by range iterators.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of elements removed, which are
-								destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.treemap.html#size">size</a> by the number of elements removed, which are
+								destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1378,14 +1327,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#extract">extract</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L370">base/UniqueMap.ts:370</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L370">base/UniqueMap.ts:370</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Extract an element. </p>
+									<p>Extract an element.</p>
 								</div>
-								<p> Extracts the element pointed to by <i>key</i> and erases it from the <a href="std.base.uniquemap.html">UniqueMap</a>. </p>
+								<p>Extracts the element pointed to by <i>key</i> and erases it from the <a href="std.base.uniquemap.html">UniqueMap</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1403,14 +1352,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#extract">extract</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L382">base/UniqueMap.ts:382</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L382">base/UniqueMap.ts:382</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Extract an element. </p>
+									<p>Extract an element.</p>
 								</div>
-								<p> Extracts the element pointed to by <i>key</i> and erases it from the <a href="std.base.uniquemap.html">UniqueMap</a>. </p>
+								<p>Extracts the element pointed to by <i>key</i> and erases it from the <a href="std.base.uniquemap.html">UniqueMap</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1429,14 +1378,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#extract">extract</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L394">base/UniqueMap.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L394">base/UniqueMap.ts:394</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Extract an element. </p>
+									<p>Extract an element.</p>
 								</div>
-								<p> Extracts the element pointed to by <i>key</i> and erases it from the <a href="std.base.uniquemap.html">UniqueMap</a>. </p>
+								<p>Extracts the element pointed to by <i>key</i> and erases it from the <a href="std.base.uniquemap.html">UniqueMap</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1462,16 +1411,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#find">find</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#find">find</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L215">TreeMap.ts:215</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L226">TreeMap.ts:226</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Get iterator to element.</p>
+								</div>
+								<p>Searches the container for an element with a identifier equivalent to <i>key</i> and returns an
+								iterator to it if found, otherwise it returns an iterator to <a href="std.treemap.html#end">end()</a>.</p>
+								<p>Two keys are considered equivalent if the container&#39;s comparison object returns false reflexively
+								(i.e., no matter the order in which the elements are passed as arguments).</p>
+								<p>Another member functions, <a href="std.treemap.html#has">has()</a> and <a href="std.treemap.html#count">count()</a>, can be used to just check
+								whether a particular <i>key</i> exists.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1480,6 +1435,8 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator to the element, if an element with specified <i>key</i> is found, or
+							<a href="std.treemap.html#end">end()</a> otherwise.</p>
 						</li>
 					</ul>
 				</section>
@@ -1494,14 +1451,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#get">get</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L76">base/UniqueMap.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L76">base/UniqueMap.ts:76</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get an element </p>
+									<p>Get an element</p>
 								</div>
-								<p> Returns a reference to the mapped value of the element identified with <i>key</i>. </p>
+								<p>Returns a reference to the mapped value of the element identified with <i>key</i>.</p>
 								<dl class="tsd-comment-tags">
 									<dt>throw</dt>
 									<dd><p>exception out of range</p>
@@ -1531,16 +1488,17 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#has">has</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L202">base/MapContainer.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L202">base/MapContainer.ts:202</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Whether have the item or not. </p>
+									<p>Whether have the item or not.</p>
 								</div>
-								<p> Indicates whether a map has an item having the specified identifier. </p>
+								<p>Indicates whether a map has an item having the specified identifier.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1572,22 +1530,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L183">base/UniqueMap.ts:183</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L183">base/UniqueMap.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> Extends the container by inserting new elements, effectively increasing the container <a href="std.treemap.html#size">size</a> by
-								one. </p>
-								<p> Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.treemap.html#size">size</a> by
+								one.</p>
+								<p>Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
 									each inserted element has a <i>key</i> equivalent to the one of an element already in the container, and
 									if so, the element is not inserted, returning an iterator to this existing element (if the function
-								returns a value). </p>
-								<p> For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>. </p>
+								returns a value).</p>
+								<p>For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1609,22 +1567,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L205">base/UniqueMap.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L205">base/UniqueMap.ts:205</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> Extends the container by inserting a new element, effectively increasing the container size by the
-								number of elements inserted. </p>
-								<p> Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
+								<p>Extends the container by inserting a new element, effectively increasing the container size by the
+								number of elements inserted.</p>
+								<p>Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
 									each inserted element has a <i>key</i> equivalent to the one of an element already in the container, and
 									if so, the element is not inserted, returning an iterator to this existing element (if the function
-								returns a value). </p>
-								<p> For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>. </p>
+								returns a value).</p>
+								<p>For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1652,17 +1610,19 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#insert">insert</a></p>
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L211">base/UniqueMap.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L211">base/UniqueMap.ts:211</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Insert an element.</p>
+								</div>
+								<p>Extends the container by inserting a new element, effectively increasing the container <a href="std.treemap.html#size">size</a>
+								by the number of element inserted (zero or one).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1674,20 +1634,24 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator pointing to either the newly inserted element or to the element that already had an
+							equivalent key in the <a href="std.base.mapcontainer.html">MapContainer</a>.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#insert">insert</a></p>
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L216">base/UniqueMap.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L216">base/UniqueMap.ts:216</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Insert an element.</p>
+								</div>
+								<p>Extends the container by inserting a new element, effectively increasing the container <a href="std.treemap.html#size">size</a>
+								by the number of element inserted (zero or one).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1699,20 +1663,24 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator pointing to either the newly inserted element or to the element that already had an
+							equivalent key in the <a href="std.base.mapcontainer.html">MapContainer</a>.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#insert">insert</a></p>
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L221">base/UniqueMap.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L221">base/UniqueMap.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Insert an element.</p>
+								</div>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.treemap.html#size">size</a>
+								by the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1733,20 +1701,24 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator pointing to either the newly inserted element or to the element that already had an
+							equivalent key in the <a href="std.base.mapcontainer.html">MapContainer</a>.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#insert">insert</a></p>
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L227">base/UniqueMap.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L227">base/UniqueMap.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Insert an element.</p>
+								</div>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.treemap.html#size">size</a>
+								by the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1767,20 +1739,24 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An iterator pointing to either the newly inserted element or to the element that already had an
+							equivalent key in the <a href="std.base.mapcontainer.html">MapContainer</a>.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#insert">insert</a></p>
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L233">base/UniqueMap.ts:233</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L233">base/UniqueMap.ts:233</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Insert elements from range iterators.</p>
+								</div>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.treemap.html#size">size</a> by
+								the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1820,19 +1796,19 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert_or_assign">insert_or_assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L261">base/UniqueMap.ts:261</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L261">base/UniqueMap.ts:261</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert or assign an element. </p>
+									<p>Insert or assign an element.</p>
 								</div>
-								<p> Inserts an element or assigns to the current element if the <i>key</i> already exists. </p>
-								<p> Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
+								<p>Inserts an element or assigns to the current element if the <i>key</i> already exists.</p>
+								<p>Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
 									each inserted element has a <i>key</i> equivalent to the one of an element already in the container, and
 									if so, the element is assigned, returning an iterator to this existing element (if the function returns a
-								value). </p>
-								<p> For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>. </p>
+								value).</p>
+								<p>For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1859,19 +1835,19 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert_or_assign">insert_or_assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L282">base/UniqueMap.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L282">base/UniqueMap.ts:282</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert or assign an element. </p>
+									<p>Insert or assign an element.</p>
 								</div>
-								<p> Inserts an element or assigns to the current element if the <i>key</i> already exists. </p>
-								<p> Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
+								<p>Inserts an element or assigns to the current element if the <i>key</i> already exists.</p>
+								<p>Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
 									each inserted element has a <i>key</i> equivalent to the one of an element already in the container, and
 									if so, the element is assigned, returning an iterator to this existing element (if the function returns a
-								value). </p>
-								<p> For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>. </p>
+								value).</p>
+								<p>For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1902,19 +1878,19 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#insert_or_assign">insert_or_assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L303">base/UniqueMap.ts:303</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L303">base/UniqueMap.ts:303</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert or assign an element. </p>
+									<p>Insert or assign an element.</p>
 								</div>
-								<p> Inserts an element or assigns to the current element if the <i>key</i> already exists. </p>
-								<p> Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
+								<p>Inserts an element or assigns to the current element if the <i>key</i> already exists.</p>
+								<p>Because element <i>keys</i> in a <a href="std.base.uniquemap.html">UniqueMap</a> are unique, the insertion operation checks whether
 									each inserted element has a <i>key</i> equivalent to the one of an element already in the container, and
 									if so, the element is assigned, returning an iterator to this existing element (if the function returns a
-								value). </p>
-								<p> For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>. </p>
+								value).</p>
+								<p>For a similar container allowing for duplicate elements, see <a href="std.base.multimap.html">MultiMap</a>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1954,24 +1930,23 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#key_comp">key_comp</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L228">TreeMap.ts:228</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L239">TreeMap.ts:239</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return key comparison function. </p>
+									<p>Return key comparison function.</p>
 								</div>
-								<p> Returns a references of the comparison function used by the container to compare <i>keys</i>. </p>
-								<p> The <i>comparison object</i> of a <a href="../interfaces/std.base.itreemap.html">tree-map object</a> is set on
+								<p>Returns a references of the comparison function used by the container to compare <i>keys</i>.</p>
+								<p>The <i>comparison object</i> of a <a href="../interfaces/std.base.itreemap.html">tree-map object</a> is set on
 									<a href="std.treemap.html#constructor">construction</a>. Its type (<i>Key</i>) is the last parameter of the
-									{@link ITreeMap.constructor constructors}. By default, this is a <a href="../modules/std.html#less">less</a> function, which returns the same
-								as <i>operator&lt;</i>. </p>
-								<p> This function determines the order of the elements in the container: it is a function pointer that takes
+									<a href="../interfaces/std.base.itreemap.html#constructor">constructors</a>. By default, this is a <a href="../modules/std.html#less">less</a> function, which returns the same
+								as <i>operator&lt;</i>.</p>
+								<p>This function determines the order of the elements in the container: it is a function pointer that takes
 									two arguments of the same type as the element <i>keys</i>, and returns <code>true</code> if the first argument
-									is considered to go before the second in the strict weak ordering it defines, and <code>false</code> otherwise.
-								</p>
-								<p> Two keys are considered equivalent if <a href="std.treemap.html#key_comp">key_comp</a> returns <code>false</code> reflexively (i.e., no
-								matter the order in which the keys are passed as arguments). </p>
+								is considered to go before the second in the strict weak ordering it defines, and <code>false</code> otherwise.</p>
+								<p>Two keys are considered equivalent if <a href="std.treemap.html#key_comp">key_comp</a> returns <code>false</code> reflexively (i.e., no
+								matter the order in which the keys are passed as arguments).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
 							<p>The comparison function.</p>
@@ -2010,23 +1985,23 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#lower_bound">lower_bound</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L244">TreeMap.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L255">TreeMap.ts:255</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to lower bound. </p>
+									<p>Return iterator to lower bound.</p>
 								</div>
-								<p> Returns an iterator pointing to the first element in the container whose key is not considered to
-								go before <i>k</i> (i.e., either it is equivalent or goes after). </p>
-								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
-								iterator to the first element for which key_comp(<i>k</i>, element_key) would return false. </p>
-								<p> If the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
-								the function returns an iterator to the first element whose key is not less than <i>k</i> </p>.
-								<p> A similar member function, <a href="std.treemap.html#upper_bound">upper_bound</a>, has the same behavior as <a href="std.treemap.html#lower_bound">lower_bound</a>, except
+								<p>Returns an iterator pointing to the first element in the container whose key is not considered to
+								go before <i>k</i> (i.e., either it is equivalent or goes after).</p>
+								<p>The function uses its internal comparison object (key_comp) to determine this, returning an
+								iterator to the first element for which key_comp(<i>k</i>, element_key) would return false.</p>
+								<p>If the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
+								the function returns an iterator to the first element whose key is not less than <i>k</i>.</p>
+								<p>A similar member function, <a href="std.treemap.html#upper_bound">upper_bound</a>, has the same behavior as <a href="std.treemap.html#lower_bound">lower_bound</a>, except
 									in the case that the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> contains an element with a key equivalent to <i>k</i>: In this
 									case, <a href="std.treemap.html#lower_bound">lower_bound</a> returns an iterator pointing to that element, whereas <a href="std.treemap.html#upper_bound">upper_bound</a>
-								returns an iterator pointing to the next element. </p>
+								returns an iterator pointing to the next element.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2036,7 +2011,7 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the the first element in the container whose key is not considered to go before
-							<i>k</i>, or {@link ITreeMap.end} if all keys are considered to go before <i>k</i>.</p>
+							<i>k</i>, or <a href="../interfaces/std.base.itreemap.html#end">ITreeMap.end</a> if all keys are considered to go before <i>k</i>.</p>
 						</li>
 					</ul>
 				</section>
@@ -2049,10 +2024,11 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#merge">merge</a></p>
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#merge">merge</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#merge">merge</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#merge">merge</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L455">base/UniqueMap.ts:455</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L455">base/UniqueMap.ts:455</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2096,10 +2072,11 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#push">push</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L238">base/MapContainer.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L238">base/MapContainer.ts:238</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2118,10 +2095,11 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#push">push</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L243">base/MapContainer.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L243">base/MapContainer.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2149,22 +2127,23 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#rbegin">rbegin</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L168">base/MapContainer.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L168">base/MapContainer.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>. </p>
+									<p>Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>.</p>
 								</div>
-								<p> Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the last element in the container
-								(i.e., its <i>reverse beginning</i>). </p>
+								<p>Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the last element in the container
+								(i.e., its <i>reverse beginning</i>).</p>
 								<p><a href="std.mapreverseiterator.html">Reverse iterators</a> iterate backwards: increasing them moves them towards the
-								beginning of the container. </p></p>
-								<p><p> <a href="std.treemap.html#rbegin">rbegin</a> points to the element preceding the one that would be pointed to by member <a href="std.treemap.html#end">end</a>.
-								</p>7</p>
+								beginning of the container.</p>
+								<p><a href="std.treemap.html#rbegin">rbegin</a> points to the element preceding the one that would be pointed to by member <a href="std.treemap.html#end">end</a>.
+								7</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.mapreverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
@@ -2180,21 +2159,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#rend">rend</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L185">base/MapContainer.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L185">base/MapContainer.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse end</i>. </p>
+									<p>Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse end</i>.</p>
 								</div>
-								<p> Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the theoretical element right before
-									the first element in the <a href="std.base.mapcontainer.html">map container</a> (which is considered its <i>reverse end</i>).
-								</p>
-								<p> The range between <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.treemap.html#rbegin">rbegin</a> and <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.treemap.html#rend">rend</a> contains
-								all the elements of the container (in reverse order). </p>
+								<p>Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the theoretical element right before
+								the first element in the <a href="std.base.mapcontainer.html">map container</a> (which is considered its <i>reverse end</i>).</p>
+								<p>The range between <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.treemap.html#rbegin">rbegin</a> and <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.treemap.html#rend">rend</a> contains
+								all the elements of the container (in reverse order).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.mapreverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
@@ -2212,15 +2191,15 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.uniquemap.html">UniqueMap</a>.<a href="std.base.uniquemap.html#set">set</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/UniqueMap.ts#L94">base/UniqueMap.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/UniqueMap.ts#L94">base/UniqueMap.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Set an item as the specified identifier. </p>
+									<p>Set an item as the specified identifier.</p>
 								</div>
 								<p>If the identifier is already in map, change value of the identifier. If not, then insert the object
-								with the identifier. </p>
+								with the identifier.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2250,10 +2229,11 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#size">size</a></p>
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#size">size</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L221">base/MapContainer.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L221">base/MapContainer.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2275,22 +2255,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L388">TreeMap.ts:388</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L397">TreeMap.ts:397</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Swap content. </p>
+									<p>Swap content.</p>
 								</div>
-								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								<a href="std.treemap.html">map</a> of the same type. Sizes abd container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.treemap.html">map</a> of the same type. Sizes abd container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were
 									in <i>obj</i> before the call, and the elements of <i>obj</i> are those which were in this. All
-								iterators, references and pointers remain valid for the swapped objects. </p>
-								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function. </p>
+								iterators, references and pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.treemap.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2307,16 +2287,23 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#swap">swap</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L393">TreeMap.ts:393</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L402">TreeMap.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Swap content.</p>
+								</div>
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.base.container.html">container</a> object with same type of elements. Sizes and container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were in <i>obj</i>
+									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
+								pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.treemap.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2339,23 +2326,23 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#upper_bound">upper_bound</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L252">TreeMap.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L263">TreeMap.ts:263</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to upper bound. </p>
+									<p>Return iterator to upper bound.</p>
 								</div>
-								<p> Returns an iterator pointing to the first element in the container whose key is considered to
-								go after <i>k</i> </p>.
-								<p> The function uses its internal comparison object (key_comp) to determine this, returning an
-								iterator to the first element for which key_comp(<i>k</i>, element_key) would return true. </p>
-								<p> If the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
-								the function returns an iterator to the first element whose key is greater than <i>k</i> </p>.
-								<p> A similar member function, <a href="std.treemap.html#lower_bound">lower_bound</a>, has the same behavior as <a href="std.treemap.html#upper_bound">upper_bound</a>, except
+								<p>Returns an iterator pointing to the first element in the container whose key is considered to
+								go after <i>k</i>.</p>
+								<p>The function uses its internal comparison object (key_comp) to determine this, returning an
+								iterator to the first element for which key_comp(<i>k</i>, element_key) would return true.</p>
+								<p>If the <a href="../interfaces/std.base.itreemap.html">ITreeMap</a> class is instantiated with the default comparison type (<a href="../modules/std.html#less">less</a>),
+								the function returns an iterator to the first element whose key is greater than <i>k</i>.</p>
+								<p>A similar member function, <a href="std.treemap.html#lower_bound">lower_bound</a>, has the same behavior as <a href="std.treemap.html#upper_bound">upper_bound</a>, except
 									in the case that the map contains an element with a key equivalent to <i>k</i>: In this case
 									<a href="std.treemap.html#lower_bound">lower_bound</a> returns an iterator pointing to that element, whereas <a href="std.treemap.html#upper_bound">upper_bound</a> returns an
-								iterator pointing to the next element. </p>
+								iterator pointing to the next element.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -2380,21 +2367,21 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.itreemap.html">ITreeMap</a>.<a href="../interfaces/std.base.itreemap.html#value_comp">value_comp</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/TreeMap.ts#L236">TreeMap.ts:236</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/TreeMap.ts#L247">TreeMap.ts:247</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return value comparison function. </p>
+									<p>Return value comparison function.</p>
 								</div>
-								<p> Returns a comparison function that can be used to compare two elements to get whether the key of the first
-								one goes before the second. </p>
-								<p> The arguments taken by this function object are of member type <code>std.Pair<Key, T></code> (defined in
+								<p>Returns a comparison function that can be used to compare two elements to get whether the key of the first
+								one goes before the second.</p>
+								<p>The arguments taken by this function object are of member type <code>Pair<Key, T></code> (defined in
 									<a href="../interfaces/std.base.itreemap.html">ITreeMap</a>), but the mapped type (<i>T</i>) part of the value is not taken into consideration in this
-								comparison. </p>
-								<p> This comparison class returns <code>true</code> if the <a href="std.pair.html#first">key</a> of the <i>first argument</i>
+								comparison.</p>
+								<p>This comparison class returns <code>true</code> if the <a href="std.pair.html#first">key</a> of the <i>first argument</i>
 									is considered to go before that of the <i>second</i> (according to the strict weak ordering specified by the
-								container&#39;s comparison function, <a href="std.treemap.html#key_comp">key_comp</a>), and <code>false</code> otherwise. </p>
+								container&#39;s comparison function, <a href="std.treemap.html#key_comp">key_comp</a>), and <code>false</code> otherwise.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
 							<p>The comparison function for element values.</p>
@@ -2456,12 +2443,6 @@
 							</li>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.treemap.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="std.treemap.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="std.treemap.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 								<a href="std.treemap.html#assign" class="tsd-kind-icon">assign</a>
@@ -2613,7 +2594,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -71,24 +72,23 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> Hashed, unordered Multimap. </p>
+						<p>Hashed, unordered Multimap.</p>
 					</div>
-					<p> <a href="std.hashmultimap.html">HashMultiMap</a>s are associative containers that store elements formed by the combination of
+					<p><a href="std.hashmultimap.html">HashMultiMap</a>s are associative containers that store elements formed by the combination of
 						a <i>key value</i> and a <i>mapped value</i>, much like <a href="std.hashmultimap.html">HashMultiMap</a> containers, but allowing
-					different elements to have equivalent <i>keys</i>. </p>
-					<p> In an <a href="std.hashmultimap.html">HashMultiMap</a>, the <i>key value</i> is generally used to uniquely identify the
+					different elements to have equivalent <i>keys</i>.</p>
+					<p>In an <a href="std.hashmultimap.html">HashMultiMap</a>, the <i>key value</i> is generally used to uniquely identify the
 						element, while the <i>mapped value</i> is an object with the content associated to this <i>key</i>.
-					Types of <i>key</i> and <i>mapped value</i> may differ. </p>
-					<p> Internally, the elements in the <a href="std.hashmultimap.html">HashMultiMap</a> are not sorted in any particular order with
+					Types of <i>key</i> and <i>mapped value</i> may differ.</p>
+					<p>Internally, the elements in the <a href="std.hashmultimap.html">HashMultiMap</a> are not sorted in any particular order with
 						respect to either their <i>key</i> or <i>mapped values</i>, but organized into <i>buckets</i> depending on
 						their hash values to allow for fast access to individual elements directly by their <i>key values</i>
-					(with a constant average time complexity on average). </p>
-					<p> Elements with equivalent <i>keys</i> are grouped together in the same bucket and in such a way that
-					an iterator can iterate through all of them. Iterators in the container are doubly linked iterators. </p>
-					<p> <a href="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" target="_blank">
-						<img src="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" style="max-width: 100%" /> </a>
-					</p>
-					<p><h3> Container properties </h3></p>
+					(with a constant average time complexity on average).</p>
+					<p>Elements with equivalent <i>keys</i> are grouped together in the same bucket and in such a way that
+					an iterator can iterate through all of them. Iterators in the container are doubly linked iterators.</p>
+					<p><a href="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/design/class_diagram/map_containers.png" style="max-width: 100%" /> </a></p>
+					<h3 id="container-properties">Container properties</h3>
 					<dl>
 						<dt> Associative </dt>
 						<dd> Elements in associative containers are referenced by their <i>key</i> and not by their absolute
@@ -168,8 +168,6 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.hashmultimap.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.hashmultimap.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited"><a href="std.hashmultimap.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.hashmultimap.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.hashmultimap.html#bucket" class="tsd-kind-icon">bucket</a></li>
@@ -207,7 +205,7 @@
 					<div class="tsd-signature tsd-kind-icon">iterator<span class="tsd-signature-symbol">:</span> <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L7">HashMultiMap.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L7">HashMultiMap.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -217,7 +215,7 @@
 					<div class="tsd-signature tsd-kind-icon">reverse_<wbr>iterator<span class="tsd-signature-symbol">:</span> <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L8">HashMultiMap.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L8">HashMultiMap.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -237,9 +235,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L68">HashMultiMap.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L67">HashMultiMap.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -251,9 +249,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L80">HashMultiMap.ts:80</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L79">HashMultiMap.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -271,9 +269,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L85">HashMultiMap.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L84">HashMultiMap.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -296,9 +294,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L92">HashMultiMap.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L91">HashMultiMap.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -316,9 +314,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L97">HashMultiMap.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L96">HashMultiMap.ts:96</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -342,72 +340,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-					<a name="_handle_erase" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>erase</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_erase">_Handle_erase</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L382">HashMultiMap.ts:382</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-					<a name="_handle_insert" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>insert</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>insert<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#_handle_insert">_Handle_insert</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L373">HashMultiMap.ts:373</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 					<a name="assign" class="tsd-anchor"></a>
 					<h3>assign</h3>
@@ -418,9 +350,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#assign">assign</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L72">base/MapContainer.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L72">base/MapContainer.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -464,9 +396,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L189">HashMultiMap.ts:189</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L188">HashMultiMap.ts:188</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -479,9 +411,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L194">HashMultiMap.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L193">HashMultiMap.ts:193</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -510,7 +442,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L292">HashMultiMap.ts:292</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L291">HashMultiMap.ts:291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -539,7 +471,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L258">HashMultiMap.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L257">HashMultiMap.ts:257</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -562,7 +494,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L266">HashMultiMap.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L265">HashMultiMap.ts:265</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -590,9 +522,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#clear">clear</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L146">HashMultiMap.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L145">HashMultiMap.ts:145</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -614,9 +546,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#count">count</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L171">HashMultiMap.ts:171</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L170">HashMultiMap.ts:170</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -647,7 +579,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#emplace">emplace</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L73">base/MultiMap.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L73">base/MultiMap.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -682,7 +614,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#emplace">emplace</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L91">base/MultiMap.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L91">base/MultiMap.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -725,7 +657,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L275">base/MapContainer.ts:275</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L288">base/MapContainer.ts:288</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -765,7 +697,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L295">base/MapContainer.ts:295</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L308">base/MapContainer.ts:308</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -805,7 +737,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L316">base/MapContainer.ts:316</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L329">base/MapContainer.ts:329</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -844,7 +776,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#emplace_hint">emplace_hint</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L337">base/MapContainer.ts:337</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L350">base/MapContainer.ts:350</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -892,16 +824,16 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/Container.ts#L153">base/Container.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/Container.ts#L153">base/Container.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Test whether the container is empty. </p>
-									<p> Returns whether the container is empty (i.e. whether its size is 0). </p>
+									<p>Test whether the container is empty.
+									Returns whether the container is empty (i.e. whether its size is 0).</p>
 								</div>
-								<p> This function does not modify the container in any way. To clear the content of the container,
-								see <a href="std.hashmultimap.html#clear">clear()</a>. </p>
+								<p>This function does not modify the container in any way. To clear the content of the container,
+								see <a href="std.hashmultimap.html#clear">clear()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p><code>true</code> if the container size is 0, <code>false</code> otherwise.</p>
@@ -918,9 +850,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L207">HashMultiMap.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L206">HashMultiMap.ts:206</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -933,9 +865,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L212">HashMultiMap.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L211">HashMultiMap.ts:211</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -968,18 +900,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L508">base/MapContainer.ts:508</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L521">base/MapContainer.ts:521</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by key. </p>
+									<p>Erase an elemet by key.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -995,18 +927,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L520">base/MapContainer.ts:520</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L533">base/MapContainer.ts:533</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by iterator. </p>
+									<p>Erase an elemet by iterator.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1022,18 +954,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L537">base/MapContainer.ts:537</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L550">base/MapContainer.ts:550</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements by range iterators. </p>
+									<p>Erase elements by range iterators.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of elements removed, which are
-								destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of elements removed, which are
+								destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1059,18 +991,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L549">base/MapContainer.ts:549</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L562">base/MapContainer.ts:562</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by iterator. </p>
+									<p>Erase an elemet by iterator.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1086,18 +1018,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#erase">erase</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L566">base/MapContainer.ts:566</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L579">base/MapContainer.ts:579</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements by range iterators. </p>
+									<p>Erase elements by range iterators.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of elements removed, which are
-								destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.hashmultimap.html#size">size</a> by the number of elements removed, which are
+								destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1131,9 +1063,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#find">find</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#find">find</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L163">HashMultiMap.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L162">HashMultiMap.ts:162</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1163,14 +1095,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L202">base/MapContainer.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L202">base/MapContainer.ts:202</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Whether have the item or not. </p>
+									<p>Whether have the item or not.</p>
 								</div>
-								<p> Indicates whether a map has an item having the specified identifier. </p>
+								<p>Indicates whether a map has an item having the specified identifier.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1202,17 +1134,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L113">base/MultiMap.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L113">base/MultiMap.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements. </p>
+									<p>Insert elements.</p>
 								</div>
-								<p> Extends the container by inserting new elements, effectively increasing the container <a href="std.hashmultimap.html#size">size</a> by
-								the number of elements inserted. </p>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.hashmultimap.html#size">size</a> by
+								the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1231,17 +1163,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L125">base/MultiMap.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L125">base/MultiMap.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements. </p>
+									<p>Insert elements.</p>
 								</div>
-								<p> Extends the container by inserting new elements, effectively increasing the container <a href="std.hashmultimap.html#size">size</a> by
-								the number of elements inserted. </p>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.hashmultimap.html#size">size</a> by
+								the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1267,9 +1199,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L130">base/MultiMap.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L130">base/MultiMap.ts:130</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1292,9 +1224,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L135">base/MultiMap.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L135">base/MultiMap.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1317,9 +1249,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L140">base/MultiMap.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L140">base/MultiMap.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1351,9 +1283,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L146">base/MultiMap.ts:146</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L146">base/MultiMap.ts:146</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1385,9 +1317,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#insert">insert</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L152">base/MultiMap.ts:152</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L152">base/MultiMap.ts:152</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1432,7 +1364,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L274">HashMultiMap.ts:274</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L273">HashMultiMap.ts:273</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1446,7 +1378,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L279">HashMultiMap.ts:279</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L278">HashMultiMap.ts:278</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1475,9 +1407,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.multimap.html">MultiMap</a>.<a href="std.base.multimap.html#merge">merge</a></p>
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#merge">merge</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#merge">merge</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MultiMap.ts#L166">base/MultiMap.ts:166</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MultiMap.ts#L166">base/MultiMap.ts:166</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1516,9 +1448,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L238">base/MapContainer.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L238">base/MapContainer.ts:238</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1538,9 +1470,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#push">push</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L243">base/MapContainer.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L243">base/MapContainer.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1569,9 +1501,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L225">HashMultiMap.ts:225</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L224">HashMultiMap.ts:224</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1584,9 +1516,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L230">HashMultiMap.ts:230</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L229">HashMultiMap.ts:229</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1615,7 +1547,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L308">HashMultiMap.ts:308</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L307">HashMultiMap.ts:307</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1644,9 +1576,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L240">HashMultiMap.ts:240</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L239">HashMultiMap.ts:239</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1659,9 +1591,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
+								<p>Overrides <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L245">HashMultiMap.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L244">HashMultiMap.ts:244</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1690,7 +1622,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L300">HashMultiMap.ts:300</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L299">HashMultiMap.ts:299</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1719,9 +1651,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#size">size</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L221">base/MapContainer.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L221">base/MapContainer.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1743,22 +1675,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L408">HashMultiMap.ts:408</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L407">HashMultiMap.ts:407</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Swap content. </p>
+									<p>Swap content.</p>
 								</div>
-								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								<a href="std.hashmultimap.html">map</a> of the same type. Sizes abd container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.hashmultimap.html">map</a> of the same type. Sizes abd container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were
 									in <i>obj</i> before the call, and the elements of <i>obj</i> are those which were in this. All
-								iterators, references and pointers remain valid for the swapped objects. </p>
-								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function. </p>
+								iterators, references and pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.hashmultimap.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1775,9 +1707,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/HashMultiMap.ts#L413">HashMultiMap.ts:413</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/HashMultiMap.ts#L412">HashMultiMap.ts:412</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1830,12 +1762,6 @@
 							</li>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.hashmultimap.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="std.hashmultimap.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
-								<a href="std.hashmultimap.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited">
 								<a href="std.hashmultimap.html#assign" class="tsd-kind-icon">assign</a>
@@ -1978,7 +1904,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

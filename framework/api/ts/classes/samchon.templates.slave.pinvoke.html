@@ -3,11 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PInvoke | samchon-framework</title>
+	<title>PInvoke | tstl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -23,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">samchon-framework</a>
+					<a href="../index.html" class="title">tstl</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -74,6 +73,19 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An <a href="samchon.protocol.invoke.html">Invoke</a> message which represents a <strong>process</strong>.</p>
+					</div>
+					<h4 id="-inherited-a-href-samchon-protocol-invoke-html-invoke-a-">[Inherited] <a href="samchon.protocol.invoke.html">Invoke</a></h4>
+					<dl class="tsd-comment-tags">
+						<dt>copydoc</dt>
+						<dd><p>Invoke</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -139,26 +151,46 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new PInvoke<span class="tsd-signature-symbol">(</span>invoke<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a>, history<span class="tsd-signature-symbol">: </span><a href="samchon.templates.slave.invokehistory.html" class="tsd-signature-type">InvokeHistory</a>, masterDriver<span class="tsd-signature-symbol">: </span><a href="../interfaces/samchon.protocol.iprotocol.html" class="tsd-signature-type">IProtocol</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.templates.slave.pinvoke.html" class="tsd-signature-type">PInvoke</a></li>
+						<li class="tsd-signature tsd-kind-icon">new PInvoke<span class="tsd-signature-symbol">(</span>invoke<span class="tsd-signature-symbol">: </span><a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a>, history<span class="tsd-signature-symbol">: </span><a href="samchon.templates.slave.invokehistory.html" class="tsd-signature-type">InvokeHistory</a>, slaveSystem<span class="tsd-signature-symbol">: </span><a href="samchon.templates.slave.slavesystem.html" class="tsd-signature-type">SlaveSystem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.templates.slave.pinvoke.html" class="tsd-signature-type">PInvoke</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#constructor">constructor</a></p>
+								<p>Overrides <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/templates/slave/PInvoke.ts#L22">samchon/templates/slave/PInvoke.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/templates/slave/PInvoke.ts#L30">src/samchon/templates/slave/PInvoke.ts:30</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initializer Constructor.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>invoke: <a href="samchon.protocol.invoke.html" class="tsd-signature-type">Invoke</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Original <a href="samchon.protocol.invoke.html">Invoke</a> message.</p>
+										</div>
+									</div>
 								</li>
 								<li>
 									<h5>history: <a href="samchon.templates.slave.invokehistory.html" class="tsd-signature-type">InvokeHistory</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>object archiving execution time.</p>
+										</div>
+									</div>
 								</li>
 								<li>
-									<h5>masterDriver: <a href="../interfaces/samchon.protocol.iprotocol.html" class="tsd-signature-type">IProtocol</a></h5>
+									<h5>slaveSystem: <a href="samchon.templates.slave.slavesystem.html" class="tsd-signature-type">SlaveSystem</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Related <a href="samchon.templates.slave.slavesystem.html">SlaveSystem</a> object who gets those processes from its master.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.templates.slave.pinvoke.html" class="tsd-signature-type">PInvoke</a></h4>
@@ -178,9 +210,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#child_tag">CHILD_TAG</a></p>
-								<p>Overwrites <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#child_tag">CHILD_TAG</a></p>
+								<p>Overrides <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#child_tag">CHILD_TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Invoke.ts#L167">samchon/protocol/Invoke.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/invoke/Invoke.ts#L167">src/samchon/protocol/invoke/Invoke.ts:167</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -203,9 +235,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#tag">TAG</a></p>
-								<p>Overwrites <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#tag">TAG</a></p>
+								<p>Overrides <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#tag">TAG</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Invoke.ts#L159">samchon/protocol/Invoke.ts:159</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/invoke/Invoke.ts#L159">src/samchon/protocol/invoke/Invoke.ts:159</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -230,7 +262,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#apply">apply</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Invoke.ts#L127">samchon/protocol/Invoke.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/invoke/Invoke.ts#L127">src/samchon/protocol/invoke/Invoke.ts:127</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -254,7 +286,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#apply">apply</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Invoke.ts#L135">samchon/protocol/Invoke.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/invoke/Invoke.ts#L135">src/samchon/protocol/invoke/Invoke.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -291,7 +323,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/templates/slave/PInvoke.ts#L54">samchon/templates/slave/PInvoke.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/templates/slave/PInvoke.ts#L86">src/samchon/templates/slave/PInvoke.ts:86</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -314,7 +346,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#construct">construct</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/EntityArray.ts#L230">samchon/protocol/EntityArray.ts:230</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/entity/EntityArray.ts#L230">src/samchon/protocol/entity/EntityArray.ts:230</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,7 +376,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#count">count</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/EntityArray.ts#L262">samchon/protocol/EntityArray.ts:262</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/entity/EntityArray.ts#L262">src/samchon/protocol/entity/EntityArray.ts:262</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -373,9 +405,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#createchild">createChild</a></p>
-								<p>Overwrites <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#createchild">createChild</a></p>
+								<p>Overrides <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#createchild">createChild</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Invoke.ts#L84">samchon/protocol/Invoke.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/invoke/Invoke.ts#L84">src/samchon/protocol/invoke/Invoke.ts:84</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,7 +437,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#get">get</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/EntityArray.ts#L270">samchon/protocol/EntityArray.ts:270</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/entity/EntityArray.ts#L270">src/samchon/protocol/entity/EntityArray.ts:270</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -435,7 +467,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#getarguments">getArguments</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Invoke.ts#L105">samchon/protocol/Invoke.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/invoke/Invoke.ts#L105">src/samchon/protocol/invoke/Invoke.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -458,9 +490,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/templates/slave/PInvoke.ts#L34">samchon/templates/slave/PInvoke.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/templates/slave/PInvoke.ts#L62">src/samchon/templates/slave/PInvoke.ts:62</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get history object.</p>
+								</div>
+								<p>Get <a href="samchon.templates.slave.invokehistory.html">InvokeHistory</a> object who is archiving execution time of this process.</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <a href="samchon.templates.slave.invokehistory.html" class="tsd-signature-type">InvokeHistory</a></h4>
 						</li>
 					</ul>
@@ -476,7 +514,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.invoke.html">Invoke</a>.<a href="samchon.protocol.invoke.html#getlistener">getListener</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Invoke.ts#L95">samchon/protocol/Invoke.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/invoke/Invoke.ts#L95">src/samchon/protocol/invoke/Invoke.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -499,7 +537,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#has">has</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/EntityArray.ts#L254">samchon/protocol/EntityArray.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/entity/EntityArray.ts#L254">src/samchon/protocol/entity/EntityArray.ts:254</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -528,7 +566,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/templates/slave/PInvoke.ts#L46">samchon/templates/slave/PInvoke.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/templates/slave/PInvoke.ts#L78">src/samchon/templates/slave/PInvoke.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -550,9 +588,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/templates/slave/PInvoke.ts#L38">samchon/templates/slave/PInvoke.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/templates/slave/PInvoke.ts#L70">src/samchon/templates/slave/PInvoke.ts:70</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Is the reporting hold?</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -568,7 +611,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#key">key</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/EntityArray.ts#L246">samchon/protocol/EntityArray.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/entity/EntityArray.ts#L246">src/samchon/protocol/entity/EntityArray.ts:246</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -592,7 +635,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.protocol.entityarray.html">EntityArray</a>.<a href="samchon.protocol.entityarray.html#toxml">toXML</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/EntityArray.ts#L291">samchon/protocol/EntityArray.ts:291</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/entity/EntityArray.ts#L291">src/samchon/protocol/entity/EntityArray.ts:291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -614,9 +657,12 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/_samchon_.html">"samchon"</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/_tstl_.html">"tstl"</a>
 					</li>
-					<li class="current tsd-kind-module tsd-is-not-exported">
+					<li class="current tsd-kind-module">
 						<a href="../modules/samchon.html">samchon</a>
 						<ul>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
@@ -800,7 +846,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

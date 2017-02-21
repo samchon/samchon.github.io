@@ -3,11 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ServerBase | samchon-framework</title>
+	<title>ServerBase | tstl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -23,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">samchon-framework</a>
+					<a href="../index.html" class="title">tstl</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -78,83 +77,9 @@
 					</div>
 					<p>The <a href="samchon.protocol.serverbase.html">ServerBase</a> is a substitute class who subrogates <a href="samchon.protocol.server.html">Server</a>&#39;s responsibility.</p>
 					<h4 id="-inherited-a-href-interfaces-samchon-protocol-iserverbase-html-iserverbase-a-">[Inherited] <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a></h4>
-					<p><a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a> is an interface for substitue server classes who subrogate server&#39;s role.</p>
-					<p>The easiest way to defining a server class is to extending one of them below, who implemented the <a href="../interfaces/samchon.protocol.iserver.html">IServer</a>.
-						However, it is impossible (that is, if the class is already extending another class), you can instead implement
-						the <a href="../interfaces/samchon.protocol.iserver.html">IServer</a> interface, create an <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a> member, and write simple hooks to route calls into
-					the aggregated <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a>.</p>
-					<table>
-						<thead>
-							<tr>
-								<th>Protocol</th>
-								<th><a href="../interfaces/samchon.protocol.iserver.html">IServer</a></th>
-								<th><a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a></th>
-								<th><a href="../interfaces/samchon.protocol.iclientdriver.html">IClientDriver</a></th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Samchon Framework&#39;s own</td>
-								<td><a href="samchon.protocol.server.html">Server</a></td>
-								<td><a href="samchon.protocol.serverbase.html">ServerBase</a></td>
-								<td><a href="samchon.protocol.clientdriver.html">ClientDriver</a></td>
-							</tr>
-							<tr>
-								<td>Web-socket protocol</td>
-								<td><a href="samchon.protocol.webserver.html">WebServer</a></td>
-								<td><a href="samchon.protocol.webserverbase.html">WebServerBase</a></td>
-								<td><a href="samchon.protocol.webclientdriver.html">WebClientDriver</a></td>
-							</tr>
-							<tr>
-								<td>DedicatedWorker</td>
-								<td><a href="samchon.protocol.dedicatedworkerserver.html">DedicatedWorkerServer</a></td>
-								<td><a href="samchon.protocol.dedicatedworkerserverbase.html">DedicatedWorkerServerBase</a></td>
-								<td><a href="samchon.protocol.dedicatedworkerclientdriver.html">DedicatedWorkerClientDriver</a></td>
-							</tr>
-							<tr>
-								<td>SharedWorker</td>
-								<td><a href="samchon.protocol.sharedworkerserver.html">SharedWorkerServer</a></td>
-								<td><a href="samchon.protocol.sharedworkerserverbase.html">SharedWorkerServerBase</a></td>
-								<td><a href="samchon.protocol.sharedworkerclientdriver.html">SharedWorkerClientDriver</a></td>
-							</tr>
-						</tbody>
-					</table>
-					<p>After the hooking to aggregated <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a> object, overrides <a href="samchon.protocol.serverbase.html#addclient">addClient()</a> method who
-						accepts a newly connected client as an <a href="../interfaces/samchon.protocol.iclientdriver.html">IClientDriver</a> object. At last, call <a href="samchon.protocol.serverbase.html#open">open()</a> method with
-					specified port number.</p>
-					<pre><code class="lang-typescript"><span class="hljs-keyword">class</span> MyServer extends Something <span class="hljs-keyword">implements</span> IServer
-{
-    <span class="hljs-keyword">private</span> server_base_: IServerBase = <span class="hljs-keyword">new</span> WebServerBase(<span class="hljs-keyword">this</span>);
-
-    <span class="hljs-keyword">public</span> addClient(driver: IClientDriver): <span class="hljs-built_in">void</span>
-    {
-        <span class="hljs-comment">// WHAT TO DO WHEN A CLIENT HAS CONNECTED</span>
-    }
-
-    <span class="hljs-keyword">public</span> open(port: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">void</span>
-    {
-        <span class="hljs-keyword">this</span>.server_base_.open();
-    }
-    <span class="hljs-keyword">public</span> close(): <span class="hljs-built_in">void</span>
-    {
-        <span class="hljs-keyword">this</span>.server_base_.close();
-    }
-}
-</code></pre>
-					<p><a href="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_basic_components.png"
-						target="_blank">
-						<img src="http://samchon.github.io/framework/images/design/ts_class_diagram/protocol_basic_components.png"
-						style="max-width: 100%" />
-					</a></p>
 					<dl class="tsd-comment-tags">
-						<dt>see</dt>
-						<dd><p><a href="samchon.protocol.server.html">Server</a>, <a href="samchon.protocol.clientdriver.html">ClientDriver</a></p>
-						</dd>
-						<dt>handbook</dt>
-						<dd><p><a href="https://github.com/samchon/framework/wiki/TypeScript-Protocol-Basic_Components#iserverbase">Protocol - Basic Components</a></p>
-						</dd>
-						<dt>author</dt>
-						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						<dt>copydoc</dt>
+						<dd><p>IServerBase</p>
 						</dd>
 					</dl>
 				</div>
@@ -212,7 +137,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/ServerBase.ts#L129">samchon/protocol/ServerBase.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/server/base/ServerBase.ts#L22">src/samchon/protocol/server/base/ServerBase.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -248,9 +173,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a>.<a href="../interfaces/samchon.protocol.iserverbase.html#addclient">addClient</a></p>
-								<p>Overwrites <a href="samchon.protocol.server.html">Server</a>.<a href="samchon.protocol.server.html#addclient">addClient</a></p>
+								<p>Overrides <a href="samchon.protocol.server.html">Server</a>.<a href="samchon.protocol.server.html#addclient">addClient</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/ServerBase.ts#L145">samchon/protocol/ServerBase.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/server/base/ServerBase.ts#L41">src/samchon/protocol/server/base/ServerBase.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -262,8 +187,8 @@
 								what to do with the <em>driver</em>, a newly connected remote client.</p>
 								<p>Below methods and example codes may be good for comprehending how to utilize this <a href="samchon.protocol.serverbase.html#addclient">addClient</a> method.</p>
 								<ul>
-									<li><a href="https://github.com/samchon/framework/blob/master/ts/examples/calculator/calculator-server.ts">https://github.com/samchon/framework/blob/master/ts/examples/calculator/calculator-server.ts</a></li>
-									<li><a href="https://github.com/samchon/framework/blob/master/ts/examples/chat-server/server.ts">https://github.com/samchon/framework/blob/master/ts/examples/chat-server/server.ts</a></li>
+									<li><a href="https://github.com/samchon/framework-examples/blob/master/calculator/calculator-server.ts">https://github.com/samchon/framework-examples/blob/master/calculator/calculator-server.ts</a></li>
+									<li><a href="https://github.com/samchon/framework-examples/blob/master/chat-server/server.ts">https://github.com/samchon/framework-examples/blob/master/chat-server/server.ts</a></li>
 									<li><a href="samchon.templates.service.server.html#addclient">service.Server.addClient</a></li>
 									<li><a href="samchon.templates.external.externalclientarray.html#addclient">external.ExternalClientArray.addClient</a></li>
 									<li><a href="samchon.templates.slave.slaveserver.html#addclient">slave.SlaveServer.addClient</a></li>
@@ -291,7 +216,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a>.<a href="../interfaces/samchon.protocol.iserverbase.html#close">close</a></p>
 								<p>Inherited from <a href="samchon.protocol.server.html">Server</a>.<a href="samchon.protocol.server.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Server.ts#L151">samchon/protocol/Server.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/server/Server.ts#L52">src/samchon/protocol/server/Server.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -317,7 +242,7 @@
 								<p>Implementation of <a href="../interfaces/samchon.protocol.iserverbase.html">IServerBase</a>.<a href="../interfaces/samchon.protocol.iserverbase.html#open">open</a></p>
 								<p>Inherited from <a href="samchon.protocol.server.html">Server</a>.<a href="samchon.protocol.server.html#open">open</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/framework/blob/8f337d4/ts/src/samchon/protocol/Server.ts#L142">samchon/protocol/Server.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/samchon/framework/blob/d660b2d/ts/src/samchon/protocol/server/Server.ts#L43">src/samchon/protocol/server/Server.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,9 +269,12 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/_samchon_.html">"samchon"</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/_tstl_.html">"tstl"</a>
 					</li>
-					<li class="current tsd-kind-module tsd-is-not-exported">
+					<li class="current tsd-kind-module">
 						<a href="../modules/samchon.html">samchon</a>
 						<ul>
 							<li class=" tsd-kind-module tsd-parent-kind-module">
@@ -375,9 +303,6 @@
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="samchon.protocol.communicator.html" class="tsd-kind-icon">Communicator</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module">
-						<a href="samchon.protocol.communicatorbase.html" class="tsd-kind-icon">Communicator<wbr>Base</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="samchon.protocol.dedicatedworkerclientdriver.html" class="tsd-kind-icon">Dedicated<wbr>Worker<wbr>Client<wbr>Driver</a>
@@ -564,7 +489,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

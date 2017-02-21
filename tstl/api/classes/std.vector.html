@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -71,26 +72,25 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> Vector, the dynamic array. </p>
+						<p>Vector, the dynamic array.</p>
 					</div>
-					<p> <a href="std.vector.html">Vector</a>s are sequence containers representing arrays that can change in size. </p>
-					<p> Just like arrays, <a href="std.vector.html">Vector</a>s use contiguous storage locations for their elements, which means that
+					<p><a href="std.vector.html">Vector</a>s are sequence containers representing arrays that can change in size.</p>
+					<p>Just like arrays, <a href="std.vector.html">Vector</a>s use contiguous storage locations for their elements, which means that
 						their elements can also be accessed using offsets on regular pointers to its elements, and just as efficiently
 						as in arrays. But unlike arrays, their size can change dynamically, with their storage being handled
-					automatically by the container. </p>
-					<p> Internally, <a href="std.vector.html">Vector</a>s use a dynamically allocated array to store their elements. This array may need
+					automatically by the container.</p>
+					<p>Internally, <a href="std.vector.html">Vector</a>s use a dynamically allocated array to store their elements. This array may need
 						to be reallocated in order to grow in size when new elements are inserted, which implies allocating a new
 						array and moving all elements to it. This is a relatively expensive task in terms of processing time, and
-					thus, <a href="std.vector.html">Vector</a>s do not reallocate each time an element is added to the container. </p>
-					<p> Compared to the other dynamic sequence containers (<a href="std.deque.html">Deque</a>s, <a href="std.list.html">List</a>s), <a href="std.vector.html">Vectors</a>
+					thus, <a href="std.vector.html">Vector</a>s do not reallocate each time an element is added to the container.</p>
+					<p>Compared to the other dynamic sequence containers (<a href="std.deque.html">Deque</a>s, <a href="std.list.html">List</a>s), <a href="std.vector.html">Vectors</a>
 						are very efficient accessing its elements (just like arrays) and relatively efficient adding or removing
 						elements from its end. For operations that involve inserting or removing elements at positions other than the
-						end, they perform worse than the others, and have less consistent iterators and references than <a href="std.list.html">List</a>s.
-					</p>
-					<p> <a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
+					end, they perform worse than the others, and have less consistent iterators and references than <a href="std.list.html">List</a>s.</p>
+					<p><a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
 							<img src="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" style="max-width: 100%" />
-					</a> </p>
-					<p><h3> Container properties </h3></p>
+					</a></p>
+					<h3 id="container-properties">Container properties</h3>
 					<dl>
 						<dt> Sequence </dt>
 						<dd>
@@ -197,7 +197,7 @@
 					<div class="tsd-signature tsd-kind-icon">iterator<span class="tsd-signature-symbol">:</span> <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L7">Vector.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L8">Vector.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -207,7 +207,7 @@
 					<div class="tsd-signature tsd-kind-icon">reverse_<wbr>iterator<span class="tsd-signature-symbol">:</span> <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L8">Vector.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L9">Vector.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -228,24 +228,24 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L75">Vector.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L80">Vector.ts:80</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Default Constructor. </p>
+									<p>Default Constructor.</p>
 								</div>
-								<p> Constructs an empty container, with no elements. </p>
+								<p>Constructs an empty container, with no elements.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.vector.html" class="tsd-signature-type">Vector</a></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L89">Vector.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L94">Vector.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -267,16 +267,16 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L94">Vector.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L99">Vector.ts:99</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Initializer list Constructor. </p>
+									<p>Initializer list Constructor.</p>
 								</div>
-								<p> Constructs a container with a copy of each of the elements in <i>array</i>, in the same order. </p>
+								<p>Constructs a container with a copy of each of the elements in <i>array</i>, in the same order.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -288,16 +288,16 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L103">Vector.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L108">Vector.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Fill Constructor. </p>
+									<p>Fill Constructor.</p>
 								</div>
-								<p> Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided). </p>
+								<p>Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -319,16 +319,16 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L114">Vector.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L119">Vector.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Copy Constructor. </p>
+									<p>Copy Constructor.</p>
 								</div>
-								<p> Constructs a container with a copy of each of the elements in <i>container</i>, in the same order. </p>
+								<p>Constructs a container with a copy of each of the elements in <i>container</i>, in the same order.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -344,17 +344,17 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L124">Vector.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L129">Vector.ts:129</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Range Constructor. </p>
+									<p>Range Constructor.</p>
 								</div>
-								<p> Constructs a container with as many elements as the range (<i>begin</i>, <i>end<i>), with each
-								element emplace-constructed from its corresponding element in that range, in the same order. </p>
+								<p>Constructs a container with as many elements as the range (<i>begin</i>, <i>end<i>), with each
+								element emplace-constructed from its corresponding element in that range, in the same order.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -389,9 +389,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#assign">assign</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L191">Vector.ts:191</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L197">Vector.ts:197</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -423,17 +423,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#assign">assign</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L197">Vector.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L203">Vector.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Assign container content. </p>
+									<p>Assign container content.</p>
 								</div>
-								<p> Assigns new contents to the {@link IList container}, replacing its current contents,
-								and modifying its <a href="std.vector.html#size">size</a> accordingly. </p>
+								<p>Assigns new contents to the {@link IList container}, replacing its current contents,
+								and modifying its <a href="std.vector.html#size">size</a> accordingly.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -459,17 +459,17 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#at">at</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L274">Vector.ts:274</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L280">Vector.ts:280</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Access element. </p>
-									<p> Returns a value to the element at position <i>index</i> in the <a href="../interfaces/std.base.iarraycontainer.html">container</a>.</p>
+									<p>Access element.
+									Returns a value to the element at position <i>index</i> in the <a href="../interfaces/std.base.iarraycontainer.html">container</a>.</p></p>
 								</div>
-								<p> The function automatically checks whether <i>index</i> is within the bounds of valid elements
+								<p>The function automatically checks whether <i>index</i> is within the bounds of valid elements
 									in the <a href="../interfaces/std.base.iarraycontainer.html">container</a>, throwing an <a href="std.outofrange.html">OutOfRange</a> exception if it is not (i.e.,
-								if <i>index</i> is greater or equal than its <a href="std.vector.html#size">size</a>). </p>
+								if <i>index</i> is greater or equal than its <a href="std.vector.html#size">size</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -493,17 +493,17 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#back">back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L307">Vector.ts:307</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L313">Vector.ts:313</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Access last element. </p>
-									<p> Returns a value of the last element in the {@link IList container}. </p>
+									<p>Access last element.
+									Returns a value of the last element in the {@link IList container}.</p>
 								</div>
-								<p> Unlike member <a href="std.vector.html#end">end()</a>, which returns an iterator just past this element,
-								this function returns a direct value. </p>
-								<p> Calling this function on an <a href="std.vector.html#empty">empty</a> {@link IList container} causes undefined behavior. </p>
+								<p>Unlike member <a href="std.vector.html#end">end()</a>, which returns an iterator just past this element,
+								this function returns a direct value.</p>
+								<p>Calling this function on an <a href="std.vector.html#empty">empty</a> {@link IList container} causes undefined behavior.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 							<p>A value of the last element of the {@link IList container}.</p>
@@ -520,18 +520,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#begin">begin</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L220">Vector.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L226">Vector.ts:226</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to beginning. </p>
+									<p>Return iterator to beginning.</p>
 								</div>
-								<p> Returns an iterator referring the first element in the  </p>
-								<p><h4> Note </h4></p>
-								<p> If the container is <a href="std.vector.html#empty">empty</a>, the returned iterator is same with <a href="std.vector.html#end">end()</a>. </p>
+								<p>Returns an iterator referring the first element in the</p>
+								<h4 id="note">Note</h4>
+								<p>If the container is <a href="std.vector.html#empty">empty</a>, the returned iterator is same with <a href="std.vector.html#end">end()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the first element in the  The iterator containes the first element&#39;s value.</p>
@@ -548,16 +548,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#clear">clear</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L209">Vector.ts:209</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L215">Vector.ts:215</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Clear content. </p>
+									<p>Clear content.</p>
 								</div>
-								<p> Removes all elements from the Container, leaving the container with a size of 0. </p>
+								<p>Removes all elements from the Container, leaving the container with a size of 0.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -573,7 +573,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L319">Vector.ts:319</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L325">Vector.ts:325</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -597,18 +597,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#empty">empty</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L266">Vector.ts:266</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L272">Vector.ts:272</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Test whether the container is empty. </p>
-									<p> Returns whether the container is empty (i.e. whether its size is 0). </p>
+									<p>Test whether the container is empty.
+									Returns whether the container is empty (i.e. whether its size is 0).</p>
 								</div>
-								<p> This function does not modify the container in any way. To clear the content of the container,
-								see <a href="std.vector.html#clear">clear()</a>. </p>
+								<p>This function does not modify the container in any way. To clear the content of the container,
+								see <a href="std.vector.html#clear">clear()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p><code>true</code> if the container size is 0, <code>false</code> otherwise.</p>
@@ -625,26 +625,25 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#end">end</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L231">Vector.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L237">Vector.ts:237</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to end. </p>
-									<p> Returns an iterator referring to the past-the-end element in the  </p>
+									<p>Return iterator to end.
+									Returns an iterator referring to the past-the-end element in the</p>
 								</div>
-								<p> The past-the-end element is the theoretical element that would follow the last element in the
-								It does not point to any element, and thus shall not be dereferenced. </p>
-								<p> Because the ranges used by functions of the Container do not include the element reference by their
-									closing iterator, this function is often used in combination with {@link IContainer}.<a href="std.vector.html#begin">begin</a> to
-								specify a range including all the elements in the container. </p>
-								<p><h4> Note </h4></p>
-								<p> Returned iterator from {@link IContainer}.<a href="std.vector.html#end">end</a> does not refer any element. Trying to accessing
-								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>). </p>
-								<p> If the container is <a href="std.vector.html#empty">empty</a>, this function returns the same as <a href="std.base.container.html">Container</a>.<a href="std.vector.html#begin">begin</a>.
-								</p>
+								<p>The past-the-end element is the theoretical element that would follow the last element in the
+								It does not point to any element, and thus shall not be dereferenced.</p>
+								<p>Because the ranges used by functions of the Container do not include the element reference by their
+									closing iterator, this function is often used in combination with <a href="std.base.container.html">Container</a>.<a href="std.vector.html#begin">begin</a> to
+								specify a range including all the elements in the container.</p>
+								<h4 id="note">Note</h4>
+								<p>Returned iterator from <a href="std.base.container.html">Container</a>.<a href="std.vector.html#end">end</a> does not refer any element. Trying to accessing
+								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>).</p>
+								<p>If the container is <a href="std.vector.html#empty">empty</a>, this function returns the same as <a href="std.base.container.html">Container</a>.<a href="std.vector.html#begin">begin</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.vectoriterator.html" class="tsd-signature-type">VectorIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the end element in the</p>
@@ -663,21 +662,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L609">Vector.ts:609</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L592">Vector.ts:592</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase element. </p>
+									<p>Erase element.</p>
 								</div>
-								<p> Removes from the <a href="std.vector.html">Vector</a> either a single element; <i>position</i>. </p>
-								<p> This effectively reduces the container size by the number of element removed. </p>
-								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing an element in
+								<p>Removes from the <a href="std.vector.html">Vector</a> either a single element; <i>position</i>.</p>
+								<p>This effectively reduces the container size by the number of element removed.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing an element in
 									position other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements after the
 									segment erased to their new positions. This is generally an inefficient operation compared to the one
-								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -695,21 +694,21 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L630">Vector.ts:630</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L613">Vector.ts:613</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase element. </p>
+									<p>Erase element.</p>
 								</div>
-								<p> Removes from the <ode>Vector</code> either a single element; <i>position</i>. </p>
-								<p> This effectively reduces the container size by the number of elements removed. </p>
-								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing elements in
+								<p>Removes from the <ode>Vector</code> either a single element; <i>position</i>.</p>
+								<p>This effectively reduces the container size by the number of elements removed.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing elements in
 									position other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements after the
 									segment erased to their new positions. This is generally an inefficient operation compared to the one
-								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -727,21 +726,21 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L650">Vector.ts:650</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L633">Vector.ts:633</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase element. </p>
+									<p>Erase element.</p>
 								</div>
-								<p> Removes from the <a href="std.vector.html">Vector</a> either a single element; <i>position</i>. </p>
-								<p> This effectively reduces the container size by the number of element removed. </p>
-								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing an element in
+								<p>Removes from the <a href="std.vector.html">Vector</a> either a single element; <i>position</i>.</p>
+								<p>This effectively reduces the container size by the number of element removed.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing an element in
 									position other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements after the
 									segment erased to their new positions. This is generally an inefficient operation compared to the one
-								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -759,21 +758,21 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L671">Vector.ts:671</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L654">Vector.ts:654</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase element. </p>
+									<p>Erase element.</p>
 								</div>
-								<p> Removes from the <ode>Vector</code> either a single element; <i>position</i>. </p>
-								<p> This effectively reduces the container size by the number of elements removed. </p>
-								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing elements in
+								<p>Removes from the <ode>Vector</code> either a single element; <i>position</i>.</p>
+								<p>This effectively reduces the container size by the number of elements removed.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, erasing elements in
 									position other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements after the
 									segment erased to their new positions. This is generally an inefficient operation compared to the one
-								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -802,17 +801,17 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#front">front</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L299">Vector.ts:299</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L305">Vector.ts:305</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Access first element. </p>
-									<p> Returns a value of the first element in the {@link IList container}. </p>
+									<p>Access first element.
+									Returns a value of the first element in the {@link IList container}.</p>
 								</div>
-								<p> Unlike member <a href="std.vector.html#end">end()</a>, which returns an iterator just past this element,
-								this function returns a direct value. </p>
-								<p> Calling this function on an <a href="std.vector.html#empty">empty</a> {@link IList container} causes undefined behavior. </p>
+								<p>Unlike member <a href="std.vector.html#end">end()</a>, which returns an iterator just past this element,
+								this function returns a direct value.</p>
+								<p>Calling this function on an <a href="std.vector.html#empty">empty</a> {@link IList container} causes undefined behavior.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 							<p>A value of the first element of the {@link IList container}.</p>
@@ -834,19 +833,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L366">Vector.ts:366</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L372">Vector.ts:372</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new element before the element at the specified
-								<i>position</i>, effectively increasing the container size by one. </p>
-								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting element in
+								<p>The <a href="std.vector.html">Vector</a> is extended by inserting new element before the element at the specified
+								<i>position</i>, effectively increasing the container size by one.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting element in
 									positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
 									after <i>position</i> to its new position. This is generally an inefficient operation compared to the one
-								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -871,19 +870,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L387">Vector.ts:387</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L393">Vector.ts:393</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by repeated filling. </p>
+									<p>Insert elements by repeated filling.</p>
 								</div>
-								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
-								<i>position</i>, effectively increasing the container size by the number of elements inserted. </p>
-								<p><p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
-										positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
-										after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
-									one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
+								<p>The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
+								<i>position</i>, effectively increasing the container size by the number of elements inserted.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
+									positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
+									after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
+								one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -914,20 +913,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L409">Vector.ts:409</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L415">Vector.ts:415</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by range iterators. </p>
+									<p>Insert elements by range iterators.</p>
 								</div>
-								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
+								<p>The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
 									<i>position</i>, effectively increasing the container size by the number of elements inserted by range
-								iterators. </p>
-								<p><p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
-										positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
-										after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
-									one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
+								iterators.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
+									positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
+									after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
+								one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -967,19 +966,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L430">Vector.ts:430</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L436">Vector.ts:436</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new element before the element at the specified
-								<i>position</i>, effectively increasing the container size by one. </p>
-								<p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting element in
+								<p>The <a href="std.vector.html">Vector</a> is extended by inserting new element before the element at the specified
+								<i>position</i>, effectively increasing the container size by one.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting element in
 									positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
 									after <i>position</i> to its new position. This is generally an inefficient operation compared to the one
-								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>). </p>
+								performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1004,19 +1003,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L451">Vector.ts:451</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L457">Vector.ts:457</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by repeated filling. </p>
+									<p>Insert elements by repeated filling.</p>
 								</div>
-								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
-								<i>position</i>, effectively increasing the container size by the number of elements inserted. </p>
-								<p><p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
-										positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
-										after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
-									one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
+								<p>The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
+								<i>position</i>, effectively increasing the container size by the number of elements inserted.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
+									positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
+									after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
+								one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1047,20 +1046,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L473">Vector.ts:473</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L479">Vector.ts:479</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by range iterators. </p>
+									<p>Insert elements by range iterators.</p>
 								</div>
-								<p> The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
+								<p>The <a href="std.vector.html">Vector</a> is extended by inserting new elements before the element at the specified
 									<i>position</i>, effectively increasing the container size by the number of elements inserted by range
-								iterators. </p>
-								<p><p> Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
-										positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
-										after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
-									one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
+								iterators.</p>
+								<p>Because <a href="std.vector.html">Vector</a>s use an <code>Array</code> as their underlying storage, inserting elements in
+									positions other than the <a href="std.vector.html#end">end()</a> causes the container to relocate all the elements that were
+									after <i>position</i> to their new positions. This is generally an inefficient operation compared to the
+								one performed for the same operation by other kinds of sequence containers (such as <a href="std.list.html">List</a>).</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1110,15 +1109,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#pop_back">pop_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L586">Vector.ts:586</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L569">Vector.ts:569</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Delete last element. </p>
+									<p>Delete last element.</p>
 								</div>
-								<p> Removes the last element in the {@link IList container}, effectively reducing the
-								{@link IList container} <a href="std.vector.html#size">size</a> by one. </p>
+								<p>Removes the last element in the {@link IList container}, effectively reducing the
+								{@link IList container} <a href="std.vector.html#size">size</a> by one.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1134,16 +1133,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#push">push</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L335">Vector.ts:335</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L341">Vector.ts:341</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements. </p>
+									<p>Insert elements.</p>
 								</div>
-								<p> Appends new elements to the container, and returns the new size of the  </p>
+								<p>Appends new elements to the container, and returns the new size of the</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1167,15 +1166,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#push_back">push_back</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L343">Vector.ts:343</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L349">Vector.ts:349</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Add element at the end. </p>
+									<p>Add element at the end.</p>
 								</div>
-								<p> Adds a new element at the end of the {@link IList container}, after its current last element.
-								This effectively increases the {@link IList container} <a href="std.vector.html#size">size</a> by one. </p>
+								<p>Adds a new element at the end of the {@link IList container}, after its current last element.
+								This effectively increases the {@link IList container} <a href="std.vector.html#size">size</a> by one.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1197,21 +1196,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#rbegin">rbegin</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L239">Vector.ts:239</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L245">Vector.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>. </p>
+									<p>Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>.</p>
 								</div>
-								<p> Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
-								its <i>reverse beginning</i>). </p>
-								<p> <a href="std.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
-								beginning of the  </p>
-								<p> <a href="std.vector.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="std.vector.html#end">end</a>.
-								</p>
+								<p>Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
+								its <i>reverse beginning</i>).</p>
+								<p><a href="std.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
+								beginning of the</p>
+								<p><a href="std.vector.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="std.vector.html#end">end</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
@@ -1228,19 +1226,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#rend">rend</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L247">Vector.ts:247</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L253">Vector.ts:253</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>. </p>
+									<p>Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>.</p>
 								</div>
-								<p> Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
-								first element in the container (which is considered its <i>reverse end</i>). </p>
-								<p><p> The range between {@link IContainer}.<a href="std.vector.html#rbegin">rbegin</a> and {@link IContainer}.<a href="std.vector.html#rend">rend</a> contains all
-									the elements of the container (in reverse order).</p>
+								<p>Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
+								first element in the container (which is considered its <i>reverse end</i>).</p>
+								<p>The range between <a href="std.base.container.html">Container</a>.<a href="std.vector.html#rbegin">rbegin</a> and <a href="std.base.container.html">Container</a>.<a href="std.vector.html#rend">rend</a> contains all
+								the elements of the container (in reverse order).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
@@ -1258,18 +1256,18 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#set">set</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L285">Vector.ts:285</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L291">Vector.ts:291</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Modify element. </p>
-									<p> Replaces an element at the specified position (<i>index</i>) in this <a href="../interfaces/std.base.iarraycontainer.html">container</a>
-									with the specified element (<i>val</i>). </p>
+									<p>Modify element.
+										Replaces an element at the specified position (<i>index</i>) in this <a href="../interfaces/std.base.iarraycontainer.html">container</a>
+									with the specified element (<i>val</i>).</p>
 								</div>
-								<p> The function automatically checks whether <i>index</i> is within the bounds of valid elements
+								<p>The function automatically checks whether <i>index</i> is within the bounds of valid elements
 									in the <a href="../interfaces/std.base.iarraycontainer.html">container</a>, throwing an <a href="std.outofrange.html">OutOfRange</a> exception if it is not (i.e., if
-								<i>index</i> is greater or equal than its <a href="std.vector.html#size">size</a>). </p>
+								<i>index</i> is greater or equal than its <a href="std.vector.html#size">size</a>).</p>
 								<p>@.param index A specified position of the value to replace.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1296,18 +1294,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#size">size</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L258">Vector.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L264">Vector.ts:264</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Return the number of elements in the Container.</p>
+									<p>Return the number of elements in the <a href="std.base.container.html">Container</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The number of elements in the</p>
+							<p>The number of elements in the container.</p>
 						</li>
 					</ul>
 				</section>
@@ -1321,22 +1319,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L740">Vector.ts:740</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L723">Vector.ts:723</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Swap content. </p>
+									<p>Swap content.</p>
 								</div>
-								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								<a href="std.vector.html">container</a> object with same type of elements. Sizes and container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.vector.html">container</a> object with same type of elements. Sizes and container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were in <i>obj</i>
 									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
-								pointers remain valid for the swapped objects. </p>
-								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function. </p>
+								pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.vector.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1345,7 +1343,7 @@
 									<div class="tsd-comment tsd-typography">
 										<p>Another <a href="std.vector.html">container</a> of the same type of elements (i.e., instantiated
 											with the same template parameter, <b>T</b>) whose content is swapped with that of this
-										{@link container Vector}.</p>
+										<a href="std.vector.html">container</a>.</p>
 									</div>
 								</li>
 							</ul>
@@ -1354,22 +1352,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#swap">swap</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Vector.ts#L745">Vector.ts:745</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Vector.ts#L728">Vector.ts:728</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Swap content. </p>
+									<p>Swap content.</p>
 								</div>
-								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								{@link IContainer container} object with same type of elements. Sizes and container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.base.container.html">container</a> object with same type of elements. Sizes and container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were in <i>obj</i>
 									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
-								pointers remain valid for the swapped objects. </p>
-								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function. </p>
+								pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.vector.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1542,7 +1540,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

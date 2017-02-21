@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -74,22 +75,22 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> An abstract map. </p>
+						<p>An abstract map.</p>
 					</div>
-					<p> <a href="std.base.mapcontainer.html">MapContainers</a> are associative containers that store elements formed by a combination
+					<p><a href="std.base.mapcontainer.html">MapContainers</a> are associative containers that store elements formed by a combination
 						of a <i>key value</i> (<i>Key</i>) and a <i>mapped value</i> (<i>T</i>), and which allows for fast retrieval
-					of individual elements based on their keys. </p>
-					<p> In a <a href="std.base.mapcontainer.html">MapContainer</a>, the <i>key values</i> are generally used to identify the elements, while the
+					of individual elements based on their keys.</p>
+					<p>In a <a href="std.base.mapcontainer.html">MapContainer</a>, the <i>key values</i> are generally used to identify the elements, while the
 						<i>mapped values</i> store the content associated to this key. The types of <i>key</i> and
 						<i>mapped value</i> may differ, and are grouped together in member type <i>value_type</i>, which is a
-					<a href="std.pair.html">Pair</a> type combining both: </p>
-					<p> <code>typedef pair<const Key, T> value_type;</code> </p>
-					<p> <a href="std.base.mapcontainer.html">MapContainer</a> stores elements, keeps sequence and enables indexing by inserting elements into a
+					<a href="std.pair.html">Pair</a> type combining both:</p>
+					<p><code>typedef pair<const Key, T> value_type;</code></p>
+					<p><a href="std.base.mapcontainer.html">MapContainer</a> stores elements, keeps sequence and enables indexing by inserting elements into a
 						<a href="std.list.html">List</a> and registering <a href="std.listiterator.html">iterators</a> of the <a href="std.base.setcontainer.html#data_">list container</a> to an index
-					table like {@link RBTree tree} or <a href="std.base.hashbuckets.html">hash-table</a>. </p>
-					<p> <a href="http://samchon.github.io/tstl/images/design/class_diagram" target="_blank">
-					<img src="http://samchon.github.io/tstl/images/design/class_diagram" style="max-width: 100%" /></a> </p>
-					<p><h3> Container properties </h3></p>
+					table like {@link RBTree tree} or {@link HashBuckets hash-table}.</p>
+					<p><a href="http://samchon.github.io/tstl/images/design/class_diagram" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/design/class_diagram" style="max-width: 100%" /></a></p>
+					<h3 id="container-properties">Container properties</h3>
 					<dl>
 						<dt> Associative </dt>
 						<dd>
@@ -140,6 +141,12 @@
 								<span class="target">MapContainer</span>
 								<ul class="tsd-hierarchy">
 									<li>
+										<a href="../interfaces/std.base.ihashmap.html" class="tsd-signature-type">IHashMap</a>
+									</li>
+									<li>
+										<a href="../interfaces/std.base.itreemap.html" class="tsd-signature-type">ITreeMap</a>
+									</li>
+									<li>
 										<a href="std.base.multimap.html" class="tsd-signature-type">MultiMap</a>
 									</li>
 									<li>
@@ -155,17 +162,15 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.base.mapcontainer.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.mapcontainer.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="std.base.mapcontainer.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="std.base.mapcontainer.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite"><a href="std.base.mapcontainer.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.mapcontainer.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.mapcontainer.html#clear" class="tsd-kind-icon">clear</a></li>
@@ -188,20 +193,20 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Map<wbr>Container<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.mapcontainer.html" class="tsd-signature-type">MapContainer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L54">base/MapContainer.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L54">base/MapContainer.ts:54</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -216,103 +221,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="_handle_erase" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>erase</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>erase<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L702">base/MapContainer.ts:702</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Abstract method handling deletions for indexing. </p>
-								</div>
-								<p> This method, <a href="std.base.mapcontainer.html#_handle_erase">_Handle_erase</a> is designed to unregister the <i>first to last</i> to somewhere storing
-								those <a href="std.mapiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
-								<p> When <a href="std.base.mapcontainer.html#erase">erase</a> is called with <i>first to last</i>, <a href="std.mapiterator.html">iterators</a> positioning somewhere
-									place to be deleted, is memorized and shifted to this method <a href="std.base.mapcontainer.html#_handle_erase">_Handle_erase</a> after the deletion process is
-								terminated. </p>
-								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <a href="std.mapiterator.html">iterators</a>
-									will be unregistered from the {@link TreeSet.tree_ tree} as a <a href="std.base.xtreenode.html">tree node item</a>. Else if the
-									derived one is <a href="std.base.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>first to last</i> will be
-								unregistered from the {@link HashSet.hash<em>buckets</em> hash bucket}. </p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the initial position in a sequence.</p>
-									</div>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the final position in a sequence. The range used is
-											[<i>first</i>, <i>last</i>), which contains all the elements between <i>first</i> and <i>last</i>,
-										including the element pointed by <i>first</i> but not the element pointed by <i>last</i>.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-					<a name="_handle_insert" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _<wbr>Handle_<wbr>insert</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">_<wbr>Handle_<wbr>insert<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L680">base/MapContainer.ts:680</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p> Abstract method handling insertions for indexing. </p>
-								</div>
-								<p> This method, <a href="std.base.mapcontainer.html#_handle_insert">_Handle_insert</a> is designed to register the <i>first to last</i> to somewhere storing
-								those <a href="std.mapiterator.html">iterators</a> for indexing, fast accessment and retrievalance. </p>
-								<p> When <a href="std.base.mapcontainer.html#insert">insert</a> is called, new elements will be inserted into the <a href="std.base.setcontainer.html#data_">list container</a> and new
-									<a href="std.mapiterator.html">iterators</a> <i>first to last</i>, pointing the inserted elements, will be created and the
-									newly created iterators <i>first to last</i> will be shifted into this method <a href="std.base.mapcontainer.html#_handle_insert">_Handle_insert</a> after the
-								insertions. </p>
-								<p> If the derived one is {@link RBTree tree-based} like <a href="std.treeset.html">TreeSet</a>, the <a href="std.mapiterator.html">iterators</a>
-									will be registered into the {@link TreeSet.tree_ tree} as a <a href="std.base.xtreenode.html">tree node item</a>. Else if the
-									derived one is <a href="std.base.hashbuckets.html">hash-based</a> like <a href="std.hashset.html">HashSet</a>, the <i>first</i> to <i>last</i> will be
-								registered into the {@link HashSet.hash<em>buckets</em> hash bucket}. </p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>first: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the initial position in a sequence.</p>
-									</div>
-								</li>
-								<li>
-									<h5>last: <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <a href="std.mapiterator.html">MapIterator</a> to the final position in a sequence. The range used is
-											[<i>first</i>, <i>last</i>), which contains all the elements between <i>first</i> and <i>last</i>,
-										including the element pointed by <i>first</i> but not the element pointed by <i>last</i>.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 					<a name="assign" class="tsd-anchor"></a>
 					<h3>assign</h3>
@@ -322,9 +230,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L72">base/MapContainer.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L72">base/MapContainer.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -367,18 +275,18 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L124">base/MapContainer.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L124">base/MapContainer.ts:124</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to beginning. </p>
+									<p>Return iterator to beginning.</p>
 								</div>
-								<p> Returns an iterator referring the first element in the  </p>
-								<p><h4> Note </h4></p>
-								<p> If the container is <a href="std.base.mapcontainer.html#empty">empty</a>, the returned iterator is same with <a href="std.base.mapcontainer.html#end">end()</a>. </p>
+								<p>Returns an iterator referring the first element in the</p>
+								<h4 id="note">Note</h4>
+								<p>If the container is <a href="std.base.mapcontainer.html#empty">empty</a>, the returned iterator is same with <a href="std.base.mapcontainer.html#end">end()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the first element in the  The iterator containes the first element&#39;s value.</p>
@@ -394,9 +302,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L83">base/MapContainer.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L83">base/MapContainer.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -419,14 +327,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L216">base/MapContainer.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L216">base/MapContainer.ts:216</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Count elements with a specific key. </p>
+									<p>Count elements with a specific key.</p>
 								</div>
-								<p> Searches the container for elements whose key is <i>key</i> and returns the number of elements found. </p>
+								<p>Searches the container for elements whose key is <i>key</i> and returns the number of elements found.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -455,7 +363,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L275">base/MapContainer.ts:275</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L288">base/MapContainer.ts:288</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -494,7 +402,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L295">base/MapContainer.ts:295</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L308">base/MapContainer.ts:308</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -533,7 +441,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L316">base/MapContainer.ts:316</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L329">base/MapContainer.ts:329</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -571,7 +479,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L337">base/MapContainer.ts:337</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L350">base/MapContainer.ts:350</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -619,16 +527,16 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/Container.ts#L153">base/Container.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/Container.ts#L153">base/Container.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Test whether the container is empty. </p>
-									<p> Returns whether the container is empty (i.e. whether its size is 0). </p>
+									<p>Test whether the container is empty.
+									Returns whether the container is empty (i.e. whether its size is 0).</p>
 								</div>
-								<p> This function does not modify the container in any way. To clear the content of the container,
-								see <a href="std.base.mapcontainer.html#clear">clear()</a>. </p>
+								<p>This function does not modify the container in any way. To clear the content of the container,
+								see <a href="std.base.mapcontainer.html#clear">clear()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p><code>true</code> if the container size is 0, <code>false</code> otherwise.</p>
@@ -644,25 +552,25 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L148">base/MapContainer.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L148">base/MapContainer.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to end. </p>
-									<p> Returns an iterator referring to the past-the-end element in the  </p>
+									<p>Return iterator to end.
+									Returns an iterator referring to the past-the-end element in the</p>
 								</div>
-								<p> The past-the-end element is the theoretical element that would follow the last element in the
-								It does not point to any element, and thus shall not be dereferenced. </p>
-								<p> Because the ranges used by functions of the container do not include the element reference by their
+								<p>The past-the-end element is the theoretical element that would follow the last element in the
+								It does not point to any element, and thus shall not be dereferenced.</p>
+								<p>Because the ranges used by functions of the container do not include the element reference by their
 									closing iterator, this function is often used in combination with <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#begin">begin</a> to
-								specify a range including all the elements in the  </p>
-								<p><h4> Note </h4></p>
-								<p> Returned iterator from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a> does not refer any element. Trying to accessing
-								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>). </p>
-								<p> If the container is <a href="std.base.mapcontainer.html#empty">empty</a>, this function returns the same as <a href="std.base.mapcontainer.html#begin">begin</a>. </p>
+								specify a range including all the elements in the</p>
+								<h4 id="note">Note</h4>
+								<p>Returned iterator from <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#end">end</a> does not refer any element. Trying to accessing
+								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>).</p>
+								<p>If the container is <a href="std.base.mapcontainer.html#empty">empty</a>, this function returns the same as <a href="std.base.mapcontainer.html#begin">begin</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapiterator.html" class="tsd-signature-type">MapIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the end element in the</p>
@@ -682,18 +590,18 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L508">base/MapContainer.ts:508</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L521">base/MapContainer.ts:521</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by key. </p>
+									<p>Erase an elemet by key.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -708,18 +616,18 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L520">base/MapContainer.ts:520</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L533">base/MapContainer.ts:533</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by iterator. </p>
+									<p>Erase an elemet by iterator.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -734,18 +642,18 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L537">base/MapContainer.ts:537</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L550">base/MapContainer.ts:550</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements by range iterators. </p>
+									<p>Erase elements by range iterators.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of elements removed, which are
-								destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of elements removed, which are
+								destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -770,18 +678,18 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L549">base/MapContainer.ts:549</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L562">base/MapContainer.ts:562</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an elemet by iterator. </p>
+									<p>Erase an elemet by iterator.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element. </p>
-								<p> This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of element removed (zero or one),
-								which are destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a single element.</p>
+								<p>This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of element removed (zero or one),
+								which are destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -796,18 +704,18 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L566">base/MapContainer.ts:566</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L579">base/MapContainer.ts:579</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements by range iterators. </p>
+									<p>Erase elements by range iterators.</p>
 								</div>
-								<p> Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of elements removed, which are
-								destroyed. </p>
+								<p>Removes from the <a href="std.base.mapcontainer.html">map container</a> a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.base.mapcontainer.html#size">size</a> by the number of elements removed, which are
+								destroyed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -842,19 +750,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L112">base/MapContainer.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L112">base/MapContainer.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get iterator to element. </p>
+									<p>Get iterator to element.</p>
 								</div>
-								<p> Searches the container for an element with a identifier equivalent to <i>key</i> and returns an
-								iterator to it if found, otherwise it returns an iterator to <a href="std.base.mapcontainer.html#end">end()</a>. </p>
-								<p> Two keys are considered equivalent if the container&#39;s comparison object returns false reflexively
-								(i.e., no matter the order in which the elements are passed as arguments). </p>
-								<p> Another member functions, <a href="std.base.mapcontainer.html#has">has()</a> and <a href="std.base.mapcontainer.html#count">count()</a>, can be used to just check
-								whether a particular <i>key</i> exists. </p>
+								<p>Searches the container for an element with a identifier equivalent to <i>key</i> and returns an
+								iterator to it if found, otherwise it returns an iterator to <a href="std.base.mapcontainer.html#end">end()</a>.</p>
+								<p>Two keys are considered equivalent if the container&#39;s comparison object returns false reflexively
+								(i.e., no matter the order in which the elements are passed as arguments).</p>
+								<p>Another member functions, <a href="std.base.mapcontainer.html#has">has()</a> and <a href="std.base.mapcontainer.html#count">count()</a>, can be used to just check
+								whether a particular <i>key</i> exists.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -881,14 +789,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L202">base/MapContainer.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L202">base/MapContainer.ts:202</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Whether have the item or not. </p>
+									<p>Whether have the item or not.</p>
 								</div>
-								<p> Indicates whether a map has an item having the specified identifier. </p>
+								<p>Indicates whether a map has an item having the specified identifier.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -918,15 +826,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L361">base/MapContainer.ts:361</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L374">base/MapContainer.ts:374</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> Extends the container by inserting a new element, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
-								by the number of element inserted (zero or one). </p>
+								<p>Extends the container by inserting a new element, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
+								by the number of element inserted (zero or one).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -952,15 +860,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L377">base/MapContainer.ts:377</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L390">base/MapContainer.ts:390</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> Extends the container by inserting a new element, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
-								by the number of element inserted (zero or one). </p>
+								<p>Extends the container by inserting a new element, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
+								by the number of element inserted (zero or one).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -986,15 +894,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L391">base/MapContainer.ts:391</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L404">base/MapContainer.ts:404</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> Extends the container by inserting new elements, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
-								by the number of elements inserted. </p>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
+								by the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1027,15 +935,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L406">base/MapContainer.ts:406</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L419">base/MapContainer.ts:419</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> Extends the container by inserting new elements, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
-								by the number of elements inserted. </p>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a>
+								by the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1068,15 +976,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L420">base/MapContainer.ts:420</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L433">base/MapContainer.ts:433</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements from range iterators. </p>
+									<p>Insert elements from range iterators.</p>
 								</div>
-								<p> Extends the container by inserting new elements, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a> by
-								the number of elements inserted. </p>
+								<p>Extends the container by inserting new elements, effectively increasing the container <a href="std.base.mapcontainer.html#size">size</a> by
+								the number of elements inserted.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1113,7 +1021,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L654">base/MapContainer.ts:654</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L667">base/MapContainer.ts:667</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1154,9 +1062,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L238">base/MapContainer.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L238">base/MapContainer.ts:238</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1175,9 +1083,9 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L243">base/MapContainer.ts:243</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L243">base/MapContainer.ts:243</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1205,21 +1113,21 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L168">base/MapContainer.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L168">base/MapContainer.ts:168</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>. </p>
+									<p>Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>.</p>
 								</div>
-								<p> Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the last element in the container
-								(i.e., its <i>reverse beginning</i>). </p>
+								<p>Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the last element in the container
+								(i.e., its <i>reverse beginning</i>).</p>
 								<p><a href="std.mapreverseiterator.html">Reverse iterators</a> iterate backwards: increasing them moves them towards the
-								beginning of the container. </p></p>
-								<p><p> <a href="std.base.mapcontainer.html#rbegin">rbegin</a> points to the element preceding the one that would be pointed to by member <a href="std.base.mapcontainer.html#end">end</a>.
-								</p>7</p>
+								beginning of the container.</p>
+								<p><a href="std.base.mapcontainer.html#rbegin">rbegin</a> points to the element preceding the one that would be pointed to by member <a href="std.base.mapcontainer.html#end">end</a>.
+								7</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.mapreverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
@@ -1235,20 +1143,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L185">base/MapContainer.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L185">base/MapContainer.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse end</i>. </p>
+									<p>Return <a href="std.mapreverseiterator.html">reverse iterator</a> to <i>reverse end</i>.</p>
 								</div>
-								<p> Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the theoretical element right before
-									the first element in the <a href="std.base.mapcontainer.html">map container</a> (which is considered its <i>reverse end</i>).
-								</p>
-								<p> The range between <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a> and <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a> contains
-								all the elements of the container (in reverse order). </p>
+								<p>Returns a <a href="std.mapreverseiterator.html">reverse iterator</a> pointing to the theoretical element right before
+								the first element in the <a href="std.base.mapcontainer.html">map container</a> (which is considered its <i>reverse end</i>).</p>
+								<p>The range between <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rbegin">rbegin</a> and <a href="std.base.mapcontainer.html">MapContainer</a>.<a href="std.base.mapcontainer.html#rend">rend</a> contains
+								all the elements of the container (in reverse order).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.mapreverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
@@ -1264,9 +1171,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/MapContainer.ts#L221">base/MapContainer.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/MapContainer.ts#L221">base/MapContainer.ts:221</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1289,29 +1196,29 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/Container.ts#L245">base/Container.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/Container.ts#L245">base/Container.ts:245</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Swap content. </p>
+									<p>Swap content.</p>
 								</div>
-								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								{@link IContainer container} object with same type of elements. Sizes and container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.base.container.html">container</a> object with same type of elements. Sizes and container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were in <i>obj</i>
 									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
-								pointers remain valid for the swapped objects. </p>
-								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function. </p>
+								pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.base.mapcontainer.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><a href="std.pair.html" class="tsd-signature-type">Pair</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Key</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Another {@link IContainer container} of the same type of elements (i.e., instantiated
+										<p>Another <a href="std.base.container.html">container</a> of the same type of elements (i.e., instantiated
 											with the same template parameter, <b>T</b>) whose content is swapped with that of this
-										{@link container IContainer}.</p>
+										<a href="std.base.container.html">container</a>.</p>
 									</div>
 								</li>
 							</ul>
@@ -1340,43 +1247,19 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/std.base.color.html" class="tsd-kind-icon">Color</a>
-					</li>
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/std.base.hash.html" class="tsd-kind-icon">Hash</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.atomictree.html" class="tsd-kind-icon">Atomic<wbr>Tree</a>
-					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.container.html" class="tsd-kind-icon">Container</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module">
 						<a href="std.base.errorinstance.html" class="tsd-kind-icon">Error<wbr>Instance</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.hashbuckets.html" class="tsd-kind-icon">Hash<wbr>Buckets</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.listcontainer.html" class="tsd-kind-icon">List<wbr>Container</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.listiteratorbase.html" class="tsd-kind-icon">List<wbr>Iterator<wbr>Base</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.mapcontainer.html" class="tsd-kind-icon">Map<wbr>Container</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.base.mapcontainer.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="std.base.mapcontainer.html#_handle_erase" class="tsd-kind-icon">_<wbr>Handle_<wbr>erase</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
-								<a href="std.base.mapcontainer.html#_handle_insert" class="tsd-kind-icon">_<wbr>Handle_<wbr>insert</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-overwrite">
 								<a href="std.base.mapcontainer.html#assign" class="tsd-kind-icon">assign</a>
@@ -1434,22 +1317,13 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.maphashbuckets.html" class="tsd-kind-icon">Map<wbr>Hash<wbr>Buckets</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.multimap.html" class="tsd-kind-icon">Multi<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.multiset.html" class="tsd-kind-icon">Multi<wbr>Set</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.pairtree.html" class="tsd-kind-icon">Pair<wbr>Tree</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.setcontainer.html" class="tsd-kind-icon">Set<wbr>Container</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.sethashbuckets.html" class="tsd-kind-icon">Set<wbr>Hash<wbr>Buckets</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.uniquemap.html" class="tsd-kind-icon">Unique<wbr>Map</a>
@@ -1458,10 +1332,7 @@
 						<a href="std.base.uniqueset.html" class="tsd-kind-icon">Unique<wbr>Set</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.xtree.html" class="tsd-kind-icon">XTree</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base.xtreenode.html" class="tsd-kind-icon">XTree<wbr>Node</a>
+						<a href="std.base._multimaptree.html" class="tsd-kind-icon">_<wbr>Multi<wbr>Map<wbr>Tree</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="../interfaces/std.base.iarraycontainer.html" class="tsd-kind-icon">IArray<wbr>Container</a>
@@ -1558,7 +1429,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

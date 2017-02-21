@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -71,10 +72,10 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> An iterator of a Set. </p>
+						<p>An iterator of a Set.</p>
 					</div>
-					<p> <a href="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" target="_blank">
-					<img src="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" style="max-width: 100%" /></a> </p>
+					<p><a href="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" style="max-width: 100%" /></a></p>
 					<dl class="tsd-comment-tags">
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
@@ -94,7 +95,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="std.base.listiteratorbase.html" class="tsd-signature-type">ListIteratorBase</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+						<span class="tsd-signature-type">_ListIteratorBase</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">SetIterator</span>
@@ -117,12 +118,6 @@
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="std.setiterator.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.setiterator.html#source_" class="tsd-kind-icon">source_</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
@@ -153,28 +148,28 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Set<wbr>Iterator<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SetElementList</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, prev<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, next<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Set<wbr>Iterator<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">_SetElementList</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, prev<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, next<span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#constructor">constructor</a></p>
+								<p>Overrides _ListIteratorBase.constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L537">base/SetContainer.ts:537</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L508">base/SetContainer.ts:508</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Construct from source and index number. </p>
+									<p>Construct from source and index number.</p>
 								</div>
-								<p><h4> Note </h4></p>
-								<p> Do not create iterator directly. </p>
-								<p> Use begin(), find() or end() in Map instead. </p>
+								<h4 id="note">Note</h4>
+								<p>Do not create iterator directly.</p>
+								<p>Use begin(), find() or end() in Map instead.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>source: <span class="tsd-signature-type">SetElementList</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>source: <span class="tsd-signature-type">_SetElementList</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>prev: <a href="std.setiterator.html" class="tsd-signature-type">SetIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
@@ -191,25 +186,6 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="source_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> source_</h3>
-					<div class="tsd-signature tsd-kind-icon">source_<span class="tsd-signature-symbol">:</span> <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#source_">source_</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L34">Iterator.ts:34</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Source container of the iterator is directing for.</p>
-						</div>
-					</div>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
@@ -221,10 +197,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#value">value</a></p>
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#value">value</a></p>
+								<p>Inherited from _ListIteratorBase.value</p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#value">value</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/ListContainer.ts#L608">base/ListContainer.ts:608</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/_ListContainer.ts#L520">base/_ListContainer.ts:520</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -249,9 +225,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#advance">advance</a></p>
+								<p>Overrides _ListIteratorBase.advance</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L586">base/SetContainer.ts:586</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L558">base/SetContainer.ts:558</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -279,9 +255,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#equals">equals</a></p>
+								<p>Overrides _ListIteratorBase.equals</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L605">base/SetContainer.ts:605</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L577">base/SetContainer.ts:577</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -311,24 +287,24 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.icomparable.html">IComparable</a>.<a href="../interfaces/std.icomparable.html#hashcode">hashCode</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L613">base/SetContainer.ts:613</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L585">base/SetContainer.ts:585</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Issue a hash code. </p>
+									<p>Issue a hash code.</p>
 								</div>
-								<p> Returns a hash code value for the object. This method is supported for the benefit of hash tables such
+								<p>Returns a hash code value for the object. This method is supported for the benefit of hash tables such
 									as those provided by hash containers; <a href="std.hashset.html">HashSet</a>, <a href="std.hashmap.html">HashMap</a>, {@link MultiHashSet} and
-								{@link MultiHashMap}. </p>
-								<p> As much as is reasonably practical, the {@link hash_code} method defined by interface
+								{@link MultiHashMap}.</p>
+								<p>As much as is reasonably practical, the {@link hash_code} method defined by interface
 									<a href="../interfaces/std.icomparable.html">IComparable</a> does return distinct integers for distinct objects. (This is typically implemented by
 									converting the internal address of the object into an integer, but this implementation technique is not
-								required by the JavaScript programming language.) </p>
+								required by the JavaScript programming language.)</p>
 								<ul>
 									<li>
-										{@link IComparable.hash_code} is called by {@link std.hash_code}. If you want to keep basically
-										provided hash function, then returns {@link std.Hash.code}; <code>return std.Hash.code(this);</code>
+										{@link IComparable.hash_code} is called by {@link hash_code}. If you want to keep basically
+										provided hash function, then returns {@link Hash.code}; <code>return Hash.code(this);</code>
 									</li>
 								</ul>
 							</div>
@@ -347,7 +323,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L597">base/SetContainer.ts:597</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L569">base/SetContainer.ts:569</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -375,9 +351,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#next">next</a></p>
+								<p>Overrides _ListIteratorBase.next</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L578">base/SetContainer.ts:578</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L550">base/SetContainer.ts:550</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -399,9 +375,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#prev">prev</a></p>
+								<p>Overrides _ListIteratorBase.prev</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L570">base/SetContainer.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L542">base/SetContainer.ts:542</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -423,9 +399,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#source">source</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#source">source</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L562">base/SetContainer.ts:562</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L534">base/SetContainer.ts:534</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -447,9 +423,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listiteratorbase.html">ListIteratorBase</a>.<a href="std.base.listiteratorbase.html#swap">swap</a></p>
+								<p>Overrides _ListIteratorBase.swap</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/base/SetContainer.ts#L621">base/SetContainer.ts:621</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/base/SetContainer.ts#L593">base/SetContainer.ts:593</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -496,9 +472,6 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.setiterator.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.setiterator.html#source_" class="tsd-kind-icon">source_</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.setiterator.html#value" class="tsd-kind-icon">value</a>
@@ -596,7 +569,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

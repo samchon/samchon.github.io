@@ -3,11 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>List | samchon-framework</title>
+	<title>List | tstl</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -23,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">samchon-framework</a>
+					<a href="../index.html" class="title">tstl</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -71,25 +70,24 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> Doubly linked list. </p>
+						<p>Doubly linked list.</p>
 					</div>
-					<p> <a href="std.list.html">List</a>s are sequence containers that allow constant time insert and erase operations anywhere within the
-					sequence, and iteration in both directions. </p>
-					<p> List containers are implemented as doubly-linked lists; Doubly linked lists can store each of the elements they
+					<p><a href="std.list.html">List</a>s are sequence containers that allow constant time insert and erase operations anywhere within the
+					sequence, and iteration in both directions.</p>
+					<p>List containers are implemented as doubly-linked lists; Doubly linked lists can store each of the elements they
 						contain in different and unrelated storage locations. The ordering is kept internally by the association to each
-					element of a link to the element preceding it and a link to the element following it. </p>
-					<p> Compared to other base standard sequence containers (array, vector and deque), lists perform generally better
+					element of a link to the element preceding it and a link to the element following it.</p>
+					<p>Compared to other base standard sequence containers (array, vector and deque), lists perform generally better
 						in inserting, extracting and moving elements in any position within the container for which an iterator has already
-					been obtained, and therefore also in algorithms that make intensive use of these, like sorting algorithms. </p>
-					<p> The main drawback of lists and forward_lists compared to these other sequence containers is that they lack
+					been obtained, and therefore also in algorithms that make intensive use of these, like sorting algorithms.</p>
+					<p>The main drawback of lists and forward_lists compared to these other sequence containers is that they lack
 						direct access to the elements by their position; For example, to access the sixth element in a list, one has to
 						iterate from a known position (like the beginning or the end) to that position, which takes linear time in the
 						distance between these. They also consume some extra memory to keep the linking information associated to each
-					element (which may be an important factor for large lists of small-sized elements). </p>
-					<p> <a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
-						<img src="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" style="max-width: 100%" /></a>
-					</p>
-					<p><h3> Container properties </h3></p>
+					element (which may be an important factor for large lists of small-sized elements).</p>
+					<p><a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" style="max-width: 100%" /></a></p>
+					<h3 id="container-properties">Container properties</h3>
 					<dl>
 						<dt> Sequence </dt>
 						<dd> Elements in sequence containers are ordered in a strict linear sequence. Individual elements are accessed by
@@ -126,7 +124,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="std.base.listcontainer.html" class="tsd-signature-type">ListContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
+						<span class="tsd-signature-type">_ListContainer</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">List</span>
@@ -194,6 +192,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#remove" class="tsd-kind-icon">remove</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#remove_if" class="tsd-kind-icon">remove_<wbr>if</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.list.html#rend" class="tsd-kind-icon">rend</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#reverse" class="tsd-kind-icon">reverse</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="std.list.html#size" class="tsd-kind-icon">size</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.list.html#sort" class="tsd-kind-icon">sort</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="std.list.html#splice" class="tsd-kind-icon">splice</a></li>
@@ -212,7 +211,7 @@
 					<div class="tsd-signature tsd-kind-icon">iterator<span class="tsd-signature-symbol">:</span> <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/tstl/tstl.d.ts:9565</li>
+							<li>Defined in node_modules/tstl/lib/tstl.d.ts:8377</li>
 						</ul>
 					</aside>
 				</section>
@@ -222,7 +221,7 @@
 					<div class="tsd-signature tsd-kind-icon">reverse_<wbr>iterator<span class="tsd-signature-symbol">:</span> <a href="std.listreverseiterator.html" class="tsd-signature-type">ListReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/tstl/tstl.d.ts:9566</li>
+							<li>Defined in node_modules/tstl/lib/tstl.d.ts:8378</li>
 						</ul>
 					</aside>
 				</section>
@@ -242,31 +241,31 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#constructor">constructor</a></p>
+								<p>Overrides _ListContainer.constructor</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9611</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8423</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Default Constructor. </p>
+									<p>Default Constructor.</p>
 								</div>
-								<p> Constructs an empty container, with no elements. </p>
+								<p>Constructs an empty container, with no elements.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.list.html" class="tsd-signature-type">List</a></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#constructor">constructor</a></p>
+								<p>Overrides _ListContainer.constructor</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9617</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8429</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Initializer list Constructor. </p>
+									<p>Initializer list Constructor.</p>
 								</div>
-								<p> Constructs a container with a copy of each of the elements in <i>array</i>, in the same order. </p>
+								<p>Constructs a container with a copy of each of the elements in <i>array</i>, in the same order.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -278,16 +277,16 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#constructor">constructor</a></p>
+								<p>Overrides _ListContainer.constructor</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9625</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8437</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Fill Constructor. </p>
+									<p>Fill Constructor.</p>
 								</div>
-								<p> Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided). </p>
+								<p>Constructs a container with <i>n</i> elements. Each element is a copy of <i>val</i> (if provided).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -308,16 +307,16 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#constructor">constructor</a></p>
+								<p>Overrides _ListContainer.constructor</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9635</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8447</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Copy Constructor. </p>
+									<p>Copy Constructor.</p>
 								</div>
-								<p> Constructs a container with a copy of each of the elements in <i>container</i>, in the same order. </p>
+								<p>Constructs a container with a copy of each of the elements in <i>container</i>, in the same order.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -335,17 +334,17 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#constructor">constructor</a></p>
+								<p>Overrides _ListContainer.constructor</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9644</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8456</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Range Constructor. </p>
+									<p>Range Constructor.</p>
 								</div>
-								<p> Constructs a container with as many elements as the range (<i>begin</i>, <i>end<i>), with each
-								element emplace-constructed from its corresponding element in that range, in the same order. </p>
+								<p>Constructs a container with as many elements as the range (<i>begin</i>, <i>end<i>), with each
+								element emplace-constructed from its corresponding element in that range, in the same order.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -379,7 +378,7 @@
 					<div class="tsd-signature tsd-kind-icon">rend_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in typings/tstl/tstl.d.ts:9611</li>
+							<li>Defined in node_modules/tstl/lib/tstl.d.ts:8423</li>
 						</ul>
 					</aside>
 				</section>
@@ -397,17 +396,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#assign">assign</a></p>
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#assign">assign</a></p>
+								<p>Overrides _ListContainer.assign</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9666</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8478</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Assign container content. </p>
+									<p>Assign container content.</p>
 								</div>
-								<p> Assigns new contents to the {@link IList container}, replacing its current contents,
-								and modifying its <a href="std.list.html#size">size</a> accordingly. </p>
+								<p>Assigns new contents to the {@link IList container}, replacing its current contents,
+								and modifying its <a href="std.list.html#size">size</a> accordingly.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -423,9 +422,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#assign">assign</a></p>
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#assign">assign</a></p>
+								<p>Overrides _ListContainer.assign</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9670</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8482</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -466,19 +465,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#back">back</a></p>
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#back">back</a></p>
+								<p>Overrides _ListContainer.back</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9686</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8498</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Access last element. </p>
-									<p> Returns a value of the last element in the {@link IList container}. </p>
+									<p>Access last element.
+									Returns a value of the last element in the {@link IList container}.</p>
 								</div>
-								<p> Unlike member <a href="std.list.html#end">end()</a>, which returns an iterator just past this element,
-								this function returns a direct value. </p>
-								<p> Calling this function on an <a href="std.list.html#empty">empty</a> {@link IList container} causes undefined behavior. </p>
+								<p>Unlike member <a href="std.list.html#end">end()</a>, which returns an iterator just past this element,
+								this function returns a direct value.</p>
+								<p>Calling this function on an <a href="std.list.html#empty">empty</a> {@link IList container} causes undefined behavior.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 							<p>A value of the last element of the {@link IList container}.</p>
@@ -495,19 +494,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#begin">begin</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#begin">begin</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
+								<p>Inherited from _ListContainer.begin</p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4465</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3326</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to beginning. </p>
+									<p>Return iterator to beginning.</p>
 								</div>
-								<p> Returns an iterator referring the first element in the  </p>
-								<p><h4> Note </h4></p>
-								<p> If the container is <a href="std.list.html#empty">empty</a>, the returned iterator is same with <a href="std.list.html#end">end()</a>. </p>
+								<p>Returns an iterator referring the first element in the</p>
+								<h4 id="note">Note</h4>
+								<p>If the container is <a href="std.list.html#empty">empty</a>, the returned iterator is same with <a href="std.list.html#end">end()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the first element in the  The iterator containes the first element&#39;s value.</p>
@@ -524,17 +523,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#clear">clear</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#clear">clear</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
+								<p>Inherited from _ListContainer.clear</p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4461</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3322</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Clear content. </p>
+									<p>Clear content.</p>
 								</div>
-								<p> Removes all elements from the Container, leaving the container with a size of 0. </p>
+								<p>Removes all elements from the Container, leaving the container with a size of 0.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -552,16 +551,16 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#empty">empty</a></p>
 								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:2941</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2906</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Test whether the container is empty. </p>
-									<p> Returns whether the container is empty (i.e. whether its size is 0). </p>
+									<p>Test whether the container is empty.
+									Returns whether the container is empty (i.e. whether its size is 0).</p>
 								</div>
-								<p> This function does not modify the container in any way. To clear the content of the container,
-								see <a href="std.list.html#clear">clear()</a>. </p>
+								<p>This function does not modify the container in any way. To clear the content of the container,
+								see <a href="std.list.html#clear">clear()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p><code>true</code> if the container size is 0, <code>false</code> otherwise.</p>
@@ -578,27 +577,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#end">end</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#end">end</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
+								<p>Inherited from _ListContainer.end</p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4469</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3330</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return iterator to end. </p>
-									<p> Returns an iterator referring to the past-the-end element in the  </p>
+									<p>Return iterator to end.
+									Returns an iterator referring to the past-the-end element in the</p>
 								</div>
-								<p> The past-the-end element is the theoretical element that would follow the last element in the
-								It does not point to any element, and thus shall not be dereferenced. </p>
-								<p> Because the ranges used by functions of the Container do not include the element reference by their
-									closing iterator, this function is often used in combination with {@link IContainer}.<a href="std.list.html#begin">begin</a> to
-								specify a range including all the elements in the container. </p>
-								<p><h4> Note </h4></p>
-								<p> Returned iterator from {@link IContainer}.<a href="std.list.html#end">end</a> does not refer any element. Trying to accessing
-								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>). </p>
-								<p> If the container is <a href="std.list.html#empty">empty</a>, this function returns the same as <a href="std.base.container.html">Container</a>.<a href="std.list.html#begin">begin</a>.
-								</p>
+								<p>The past-the-end element is the theoretical element that would follow the last element in the
+								It does not point to any element, and thus shall not be dereferenced.</p>
+								<p>Because the ranges used by functions of the Container do not include the element reference by their
+									closing iterator, this function is often used in combination with <a href="std.base.container.html">Container</a>.<a href="std.list.html#begin">begin</a> to
+								specify a range including all the elements in the container.</p>
+								<h4 id="note">Note</h4>
+								<p>Returned iterator from <a href="std.base.container.html">Container</a>.<a href="std.list.html#end">end</a> does not refer any element. Trying to accessing
+								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>).</p>
+								<p>If the container is <a href="std.list.html#empty">empty</a>, this function returns the same as <a href="std.base.container.html">Container</a>.<a href="std.list.html#begin">begin</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.listiterator.html" class="tsd-signature-type">ListIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the end element in the</p>
@@ -617,19 +615,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#erase">erase</a></p>
+								<p>Overrides _ListContainer.erase</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9814</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8626</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an element. </p>
+									<p>Erase an element.</p>
 								</div>
-								<p> Removes from the <a href="std.list.html">List</a> either a single element; <i>position</i>. </p>
-								<p> This effectively reduces the container size by the number of element removed. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
-								efficient inserting and removing elements in any position, even in the middle of the sequence. </p>
+								<p>Removes from the <a href="std.list.html">List</a> either a single element; <i>position</i>.</p>
+								<p>This effectively reduces the container size by the number of element removed.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
+								efficient inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -646,19 +644,19 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#erase">erase</a></p>
+								<p>Overrides _ListContainer.erase</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9831</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8643</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements. </p>
+									<p>Erase elements.</p>
 								</div>
-								<p> Removes from the <a href="std.list.html">List</a> container a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.list.html#size">size</a> by the number of elements removed. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
-								efficient inserting and removing elements in any position, even in the middle of the sequence. </p>
+								<p>Removes from the <a href="std.list.html">List</a> container a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.list.html#size">size</a> by the number of elements removed.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
+								efficient inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -681,19 +679,19 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#erase">erase</a></p>
+								<p>Overrides _ListContainer.erase</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9847</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8659</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase an element. </p>
+									<p>Erase an element.</p>
 								</div>
-								<p> Removes from the <a href="std.list.html">List</a> either a single element; <i>position</i>. </p>
-								<p> This effectively reduces the container size by the number of element removed. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
-								efficient inserting and removing elements in any position, even in the middle of the sequence. </p>
+								<p>Removes from the <a href="std.list.html">List</a> either a single element; <i>position</i>.</p>
+								<p>This effectively reduces the container size by the number of element removed.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
+								efficient inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -710,19 +708,19 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#erase">erase</a></p>
+								<p>Overrides _ListContainer.erase</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9864</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8676</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Erase elements. </p>
+									<p>Erase elements.</p>
 								</div>
-								<p> Removes from the <a href="std.list.html">List</a> container a range of elements. </p>
-								<p> This effectively reduces the container <a href="std.list.html#size">size</a> by the number of elements removed. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
-								efficient inserting and removing elements in any position, even in the middle of the sequence. </p>
+								<p>Removes from the <a href="std.list.html">List</a> container a range of elements.</p>
+								<p>This effectively reduces the container <a href="std.list.html#size">size</a> by the number of elements removed.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> objects are specifically designed to be
+								efficient inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -755,19 +753,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#front">front</a></p>
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#front">front</a></p>
+								<p>Overrides _ListContainer.front</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9682</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8494</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Access first element. </p>
-									<p> Returns a value of the first element in the {@link IList container}. </p>
+									<p>Access first element.
+									Returns a value of the first element in the {@link IList container}.</p>
 								</div>
-								<p> Unlike member <a href="std.list.html#end">end()</a>, which returns an iterator just past this element,
-								this function returns a direct value. </p>
-								<p> Calling this function on an <a href="std.list.html#empty">empty</a> {@link IList container} causes undefined behavior. </p>
+								<p>Unlike member <a href="std.list.html#end">end()</a>, which returns an iterator just past this element,
+								this function returns a direct value.</p>
+								<p>Calling this function on an <a href="std.list.html#empty">empty</a> {@link IList container} causes undefined behavior.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
 							<p>A value of the first element of the {@link IList container}.</p>
@@ -788,20 +786,20 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#insert">insert</a></p>
+								<p>Overrides _ListContainer.insert</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9704</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8516</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> The container is extended by inserting a new element before the element at the specified
+								<p>The container is extended by inserting a new element before the element at the specified
 									<i>position</i>. This effectively increases the <a href="std.list.html#size">List size</a> by the amount of elements
-								inserted. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
-								inserting and removing elements in any position, even in the middle of the sequence. </p>
+								inserted.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
+								inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -825,20 +823,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#insert">insert</a></p>
+								<p>Overrides _ListContainer.insert</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9723</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8535</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by repeated filling. </p>
+									<p>Insert elements by repeated filling.</p>
 								</div>
-								<p> The container is extended by inserting a new element before the element at the specified
+								<p>The container is extended by inserting a new element before the element at the specified
 									<i>position</i>. This effectively increases the <a href="std.list.html#size">List size</a> by the amount of elements
-								inserted. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
-								inserting and removing elements in any position, even in the middle of the sequence. </p>
+								inserted.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
+								inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -868,20 +866,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#insert">insert</a></p>
+								<p>Overrides _ListContainer.insert</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9742</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8554</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by range iterators. </p>
+									<p>Insert elements by range iterators.</p>
 								</div>
-								<p> The container is extended by inserting a new element before the element at the specified
+								<p>The container is extended by inserting a new element before the element at the specified
 									<i>position</i>. This effectively increases the <a href="std.list.html#size">List size</a> by the amount of elements
-								inserted. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
-								inserting and removing elements in any position, even in the middle of the sequence. </p>
+								inserted.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
+								inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -920,20 +918,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#insert">insert</a></p>
+								<p>Overrides _ListContainer.insert</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9760</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8572</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert an element. </p>
+									<p>Insert an element.</p>
 								</div>
-								<p> The container is extended by inserting a new element before the element at the specified
+								<p>The container is extended by inserting a new element before the element at the specified
 									<i>position</i>. This effectively increases the <a href="std.list.html#size">List size</a> by the amount of elements
-								inserted. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
-								inserting and removing elements in any position, even in the middle of the sequence. </p>
+								inserted.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
+								inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -957,20 +955,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#insert">insert</a></p>
+								<p>Overrides _ListContainer.insert</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9779</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8591</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by repeated filling. </p>
+									<p>Insert elements by repeated filling.</p>
 								</div>
-								<p> The container is extended by inserting a new element before the element at the specified
+								<p>The container is extended by inserting a new element before the element at the specified
 									<i>position</i>. This effectively increases the <a href="std.list.html#size">List size</a> by the amount of elements
-								inserted. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
-								inserting and removing elements in any position, even in the middle of the sequence. </p>
+								inserted.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
+								inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1000,20 +998,20 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#insert">insert</a></p>
+								<p>Overrides _ListContainer.insert</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9798</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8610</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements by range iterators. </p>
+									<p>Insert elements by range iterators.</p>
 								</div>
-								<p> The container is extended by inserting a new element before the element at the specified
+								<p>The container is extended by inserting a new element before the element at the specified
 									<i>position</i>. This effectively increases the <a href="std.list.html#size">List size</a> by the amount of elements
-								inserted. </p>
-								<p> Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
-								inserting and removing elements in any position, even in the middle of the sequence. </p>
+								inserted.</p>
+								<p>Unlike other standard sequence containers, <a href="std.list.html">List</a> is specifically designed to be efficient
+								inserting and removing elements in any position, even in the middle of the sequence.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1063,28 +1061,27 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9954</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8766</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Merge sorted <a href="std.list.html">Lists</a>. </p>
+									<p>Merge sorted <a href="std.list.html">Lists</a>.</p>
 								</div>
-								<p> Merges <i>obj</i> into the <a href="std.list.html">List</a> by transferring all of its elements at their respective
-									ordered positions into the container (<font color='red'>both containers shall already be ordered</font>).
-								</p>
-								<p> This effectively removes all the elements in <i>obj</i> (which becomes <a href="std.list.html#empty">empty</a>), and inserts
+								<p>Merges <i>obj</i> into the <a href="std.list.html">List</a> by transferring all of its elements at their respective
+								ordered positions into the container (<font color='red'>both containers shall already be ordered</font>).</p>
+								<p>This effectively removes all the elements in <i>obj</i> (which becomes <a href="std.list.html#empty">empty</a>), and inserts
 									them into their ordered position within container (which expands in <a href="std.list.html#size">size</a> by the number of elements
 									transferred). The operation is performed without constructing nor destroying any element: they are
 									transferred, no matter whether <i>obj</i> is an lvalue or an rvalue, or whether the value_type supports
-								move-construction or not. </p>
-								<p> This function requires that the <a href="std.list.html">List</a> containers have their elements already ordered by value
+								move-construction or not.</p>
+								<p>This function requires that the <a href="std.list.html">List</a> containers have their elements already ordered by value
 									(<a href="../modules/std.html#less">less</a>) before the call. For an alternative on unordered <a href="std.list.html">Lists</a>, see
-								<a href="std.list.html#splice">List.splice</a>. </p>
-								<p> Assuming such ordering, each element of <i>obj</i> is inserted at the position that corresponds to its
+								<a href="std.list.html#splice">List.splice</a>.</p>
+								<p>Assuming such ordering, each element of <i>obj</i> is inserted at the position that corresponds to its
 									value according to the strict weak ordering defined by <a href="../modules/std.html#less">less</a>. The resulting order of equivalent
 									elements is stable (i.e., equivalent elements preserve the relative order they had before the call, and
-								existing elements precede those equivalent inserted from <i>obj</i>). </p>
+								existing elements precede those equivalent inserted from <i>obj</i>).</p>
 								<p>The function does nothing if <code>this == obj</code>.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1109,32 +1106,31 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9991</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8803</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Merge sorted <a href="std.list.html">Lists</a>. </p>
+									<p>Merge sorted <a href="std.list.html">Lists</a>.</p>
 								</div>
-								<p> Merges <i>obj</i> into the <a href="std.list.html">List</a> by transferring all of its elements at their respective
-									ordered positions into the container (<font color='red'>both containers shall already be ordered</font>).
-								</p>
-								<p> This effectively removes all the elements in <i>obj</i> (which becomes <a href="std.list.html#empty">empty</a>), and inserts
+								<p>Merges <i>obj</i> into the <a href="std.list.html">List</a> by transferring all of its elements at their respective
+								ordered positions into the container (<font color='red'>both containers shall already be ordered</font>).</p>
+								<p>This effectively removes all the elements in <i>obj</i> (which becomes <a href="std.list.html#empty">empty</a>), and inserts
 									them into their ordered position within container (which expands in <a href="std.list.html#size">size</a> by the number of elements
 									transferred). The operation is performed without constructing nor destroying any element: they are
 									transferred, no matter whether <i>obj</i> is an lvalue or an rvalue, or whether the value_type supports
-								move-construction or not. </p>
-								<p> The argument <i>compare</i> is a specific predicate to perform the comparison operation between
+								move-construction or not.</p>
+								<p>The argument <i>compare</i> is a specific predicate to perform the comparison operation between
 									elements. This comparison shall produce a strict weak ordering of the elements (i.e., a consistent
-									transitive comparison, without considering its reflexiveness).
-									<p> This function requires that the <a href="std.list.html">List</a> containers have their elements already ordered by
-										<i>compare</i> before the call. For an alternative on unordered <a href="std.list.html">Lists</a>, see
-									<a href="std.list.html#splice">List.splice</a>. </p>
-									<p> Assuming such ordering, each element of <i>obj</i> is inserted at the position that corresponds to its
-										value according to the strict weak ordering defined by <i>compare</i>. The resulting order of equivalent
-										elements is stable (i.e., equivalent elements preserve the relative order they had before the call, and
-									existing elements precede those equivalent inserted from <i>obj</i>). </p>
-									<p>The function does nothing if <code>this == obj</code>.</p>
+								transitive comparison, without considering its reflexiveness).</p>
+								<p>This function requires that the <a href="std.list.html">List</a> containers have their elements already ordered by
+									<i>compare</i> before the call. For an alternative on unordered <a href="std.list.html">Lists</a>, see
+								<a href="std.list.html#splice">List.splice</a>.</p>
+								<p>Assuming such ordering, each element of <i>obj</i> is inserted at the position that corresponds to its
+									value according to the strict weak ordering defined by <i>compare</i>. The resulting order of equivalent
+									elements is stable (i.e., equivalent elements preserve the relative order they had before the call, and
+								existing elements precede those equivalent inserted from <i>obj</i>).</p>
+								<p>The function does nothing if <code>this == obj</code>.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1197,17 +1193,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#pop_back">pop_back</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#pop_back">pop_back</a></p>
+								<p>Inherited from _ListContainer.pop_back</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4497</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3358</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Delete last element. </p>
+									<p>Delete last element.</p>
 								</div>
-								<p> Removes the last element in the {@link IList container}, effectively reducing the
-								{@link IList container} <a href="std.list.html#size">size</a> by one. </p>
+								<p>Removes the last element in the {@link IList container}, effectively reducing the
+								{@link IList container} <a href="std.list.html#size">size</a> by one.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1223,17 +1219,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#pop_front">pop_front</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#pop_front">pop_front</a></p>
+								<p>Inherited from _ListContainer.pop_front</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4493</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3354</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Delete first element. </p>
+									<p>Delete first element.</p>
 								</div>
-								<p> Removes the first element in the {@link IDeque container}, effectively reducing its
-								<a href="std.list.html#size">size</a> by one. </p>
+								<p>Removes the first element in the {@link IDeque container}, effectively reducing its
+								<a href="std.list.html#size">size</a> by one.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1249,17 +1245,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#push">push</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#push">push</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
+								<p>Inherited from _ListContainer.push</p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4501</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3362</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert elements. </p>
+									<p>Insert elements.</p>
 								</div>
-								<p> Appends new elements to the container, and returns the new size of the  </p>
+								<p>Appends new elements to the container, and returns the new size of the</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1282,17 +1278,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#push_back">push_back</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#push_back">push_back</a></p>
+								<p>Inherited from _ListContainer.push_back</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4489</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3350</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Add element at the end. </p>
+									<p>Add element at the end.</p>
 								</div>
-								<p> Adds a new element at the end of the {@link IList container}, after its current last element.
-								This effectively increases the {@link IList container} <a href="std.list.html#size">size</a> by one. </p>
+								<p>Adds a new element at the end of the {@link IList container}, after its current last element.
+								This effectively increases the {@link IList container} <a href="std.list.html#size">size</a> by one.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1314,18 +1310,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#push_front">push_front</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#push_front">push_front</a></p>
+								<p>Inherited from _ListContainer.push_front</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4485</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3346</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Insert element at beginning. </p>
+									<p>Insert element at beginning.</p>
 								</div>
-								<p> Inserts a new element at the beginning of the {@link IDeque container}, right before its
+								<p>Inserts a new element at the beginning of the {@link IDeque container}, right before its
 									current first element. This effectively increases the {@link IDeque container} <a href="std.list.html#size">size</a> by
-								one. </p>
+								one.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1347,21 +1343,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#rbegin">rbegin</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9674</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8486</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>. </p>
+									<p>Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>.</p>
 								</div>
-								<p> Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
-								its <i>reverse beginning</i>). </p>
-								<p> <a href="std.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
-								beginning of the  </p>
-								<p> <a href="std.list.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="std.list.html#end">end</a>.
-								</p>
+								<p>Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
+								its <i>reverse beginning</i>).</p>
+								<p><a href="std.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
+								beginning of the</p>
+								<p><a href="std.list.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="std.list.html#end">end</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.listreverseiterator.html" class="tsd-signature-type">ListReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
@@ -1378,19 +1373,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9908</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8720</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Remove elements with specific value. </p>
+									<p>Remove elements with specific value.</p>
 								</div>
-								<p> Removes from the container all the elements that compare equal to <i>val</i>. This calls the
-								destructor of these objects and reduces the container <a href="std.list.html#size">size</a> by the number of elements removed. </p>
-								<p> Unlike member function <a href="std.list.html#erase">List.erase</a>, which erases elements by their position (using an
-								iterator), this function (<a href="std.list.html#remove">List.remove</a>) removes elements by their value. </p>
-								<p> A similar function, <a href="std.list.html#remove_if">List.remove_if</a>, exists, which allows for a condition other than an
-								equality comparison to determine whether an element is removed. </p>
+								<p>Removes from the container all the elements that compare equal to <i>val</i>. This calls the
+								destructor of these objects and reduces the container <a href="std.list.html#size">size</a> by the number of elements removed.</p>
+								<p>Unlike member function <a href="std.list.html#erase">List.erase</a>, which erases elements by their position (using an
+								iterator), this function (<a href="std.list.html#remove">List.remove</a>) removes elements by their value.</p>
+								<p>A similar function, <a href="std.list.html#remove_if">List.remove_if</a>, exists, which allows for a condition other than an
+								equality comparison to determine whether an element is removed.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1415,19 +1410,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9925</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8737</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Remove elements fulfilling condition. </p>
+									<p>Remove elements fulfilling condition.</p>
 								</div>
-								<p> Removes from the container all the elements for which <i>pred</i> returns <code>true</code>. This
+								<p>Removes from the container all the elements for which <i>pred</i> returns <code>true</code>. This
 									calls the destructor of these objects and reduces the container <a href="std.list.html#size">size</a> by the number of elements
-								removed. </p>
-								<p> The function calls <code>pred(it.value)</code> for each element (where <code>it</code> is an iterator
+								removed.</p>
+								<p>The function calls <code>pred(it.value)</code> for each element (where <code>it</code> is an iterator
 									to that element). Any of the elements in the list for which this returns <code>true</code>, are removed
-								from the  </p>
+								from the</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1473,22 +1468,45 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#rend">rend</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9678</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8490</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>. </p>
+									<p>Return <a href="std.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>.</p>
 								</div>
-								<p> Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
-								first element in the container (which is considered its <i>reverse end</i>). </p>
-								<p><p> The range between {@link IContainer}.<a href="std.list.html#rbegin">rbegin</a> and {@link IContainer}.<a href="std.list.html#rend">rend</a> contains all
-									the elements of the container (in reverse order).</p>
+								<p>Returns a <a href="std.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
+								first element in the container (which is considered its <i>reverse end</i>).</p>
+								<p>The range between <a href="std.base.container.html">Container</a>.<a href="std.list.html#rbegin">rbegin</a> and <a href="std.base.container.html">Container</a>.<a href="std.list.html#rend">rend</a> contains all
+								the elements of the container (in reverse order).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.listreverseiterator.html" class="tsd-signature-type">ListReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A <a href="std.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="reverse" class="tsd-anchor"></a>
+					<h3>reverse</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">reverse<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8918</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reverse the order of elements.</p>
+								</div>
+								<p>Reverses the order of the elements in the list container.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1502,19 +1520,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#size">size</a></p>
-								<p>Inherited from <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#size">size</a></p>
-								<p>Overwrites <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
+								<p>Inherited from _ListContainer.size</p>
+								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:4473</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3334</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Return the number of elements in the Container.</p>
+									<p>Return the number of elements in the <a href="std.base.container.html">Container</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The number of elements in the</p>
+							<p>The number of elements in the container.</p>
 						</li>
 					</ul>
 				</section>
@@ -1529,42 +1547,42 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:10071</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8883</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Sort elements in  </p>
+									<p>Sort elements in</p>
 								</div>
-								<p> Sorts the elements in the <a href="std.list.html">List</a>, altering their position within the  </p>
-								<p> The sorting is performed by applying an algorithm that uses <a href="../modules/std.html#less">less</a>. This comparison shall
+								<p>Sorts the elements in the <a href="std.list.html">List</a>, altering their position within the</p>
+								<p>The sorting is performed by applying an algorithm that uses <a href="../modules/std.html#less">less</a>. This comparison shall
 									produce a strict weak ordering of the elements (i.e., a consistent transitive comparison, without
-								considering its reflexiveness). </p>
-								<p> The resulting order of equivalent elements is stable: i.e., equivalent elements preserve the relative
-								order they had before the call. </p>
-								<p> The entire operation does not involve the construction, destruction or copy of any element object.
-								Elements are moved within the  </p>
+								considering its reflexiveness).</p>
+								<p>The resulting order of equivalent elements is stable: i.e., equivalent elements preserve the relative
+								order they had before the call.</p>
+								<p>The entire operation does not involve the construction, destruction or copy of any element object.
+								Elements are moved within the</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:10092</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8904</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Sort elements in  </p>
+									<p>Sort elements in</p>
 								</div>
-								<p> Sorts the elements in the <a href="std.list.html">List</a>, altering their position within the  </p>
-								<p> The sorting is performed by applying an algorithm that uses <i>compare</i>. This comparison shall
+								<p>Sorts the elements in the <a href="std.list.html">List</a>, altering their position within the</p>
+								<p>The sorting is performed by applying an algorithm that uses <i>compare</i>. This comparison shall
 									produce a strict weak ordering of the elements (i.e., a consistent transitive comparison, without
-								considering its reflexiveness). </p>
-								<p> The resulting order of equivalent elements is stable: i.e., equivalent elements preserve the relative
-								order they had before the call. </p>
-								<p> The entire operation does not involve the construction, destruction or copy of any element object.
-								Elements are moved within the  </p>
+								considering its reflexiveness).</p>
+								<p>The resulting order of equivalent elements is stable: i.e., equivalent elements preserve the relative
+								order they had before the call.</p>
+								<p>The entire operation does not involve the construction, destruction or copy of any element object.
+								Elements are moved within the</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1615,19 +1633,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:10007</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8819</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Transfer elements from <a href="std.list.html">List</a> to <a href="std.list.html">List</a>. </p>
+									<p>Transfer elements from <a href="std.list.html">List</a> to <a href="std.list.html">List</a>.</p>
 								</div>
-								<p> Transfers elements from <i>obj</i> into the container, inserting them at <i>position</i>. </p>
-								<p> This effectively inserts all elements into the container and removes them from <i>obj</i>, altering
+								<p>Transfers elements from <i>obj</i> into the container, inserting them at <i>position</i>.</p>
+								<p>This effectively inserts all elements into the container and removes them from <i>obj</i>, altering
 									the sizes of both containers. The operation does not involve the construction or destruction of any
 									element. They are transferred, no matter whether <i>obj</i> is an lvalue or an rvalue, or whether the
-								value_type supports move-construction or not. </p>
-								<p> This first version (1) transfers all the elements of <i>obj</i> into the  </p>
+								value_type supports move-construction or not.</p>
+								<p>This first version (1) transfers all the elements of <i>obj</i> into the</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1655,21 +1673,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:10029</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8841</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Transfer an element from <a href="std.list.html">List</a> to <a href="std.list.html">List</a>. </p>
+									<p>Transfer an element from <a href="std.list.html">List</a> to <a href="std.list.html">List</a>.</p>
 								</div>
-								<p> Transfers an element from <i>obj</i>, which is pointed by an <a href="std.listiterator.html">iterator</a> <i>it</i>,
-								into the container, inserting the element at specified <i>position</i>. </p>
-								<p> This effectively inserts an element into the container and removes it from <i>obj</i>, altering the
+								<p>Transfers an element from <i>obj</i>, which is pointed by an <a href="std.listiterator.html">iterator</a> <i>it</i>,
+								into the container, inserting the element at specified <i>position</i>.</p>
+								<p>This effectively inserts an element into the container and removes it from <i>obj</i>, altering the
 									sizes of both containers. The operation does not involve the construction or destruction of any element.
 									They are transferred, no matter whether <i>obj</i> is an lvalue or an rvalue, or whether the value_type
-								supports move-construction or not. </p>
-								<p> This second version (2) transfers only the element pointed by <i>it</i> from <i>obj</i> into the
-								</p>
+								supports move-construction or not.</p>
+								<p>This second version (2) transfers only the element pointed by <i>it</i> from <i>obj</i> into the</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1706,20 +1723,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:10055</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8867</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Transfer elements from <a href="std.list.html">List</a> to <a href="std.list.html">List</a>. </p>
+									<p>Transfer elements from <a href="std.list.html">List</a> to <a href="std.list.html">List</a>.</p>
 								</div>
-								<p> Transfers elements from <i>obj</i> into the container, inserting them at <i>position</i>. </p>
-								<p> This effectively inserts those elements into the container and removes them from <i>obj</i>, altering
+								<p>Transfers elements from <i>obj</i> into the container, inserting them at <i>position</i>.</p>
+								<p>This effectively inserts those elements into the container and removes them from <i>obj</i>, altering
 									the sizes of both containers. The operation does not involve the construction or destruction of any
 									element. They are transferred, no matter whether <i>obj</i> is an lvalue or an rvalue, or whether the
-								value_type supports move-construction or not. </p>
-								<p> This third version (3) transfers the range [<i>begin</i>, <i>end</i>) from <i>obj</i> into the
-								</p>
+								value_type supports move-construction or not.</p>
+								<p>This third version (3) transfers the range [<i>begin</i>, <i>end</i>) from <i>obj</i> into the</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
@@ -1775,22 +1791,22 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#swap">swap</a></p>
+								<p>Overrides _ListContainer.swap</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:10118</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8936</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Swap content. </p>
+									<p>Swap content.</p>
 								</div>
-								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								<a href="std.list.html">container</a> object with same type of elements. Sizes and container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.list.html">container</a> object with same type of elements. Sizes and container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were in <i>obj</i>
 									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
-								pointers remain valid for the swapped objects. </p>
-								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function. </p>
+								pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.list.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1799,7 +1815,7 @@
 									<div class="tsd-comment tsd-typography">
 										<p>Another <a href="std.list.html">container</a> of the same type of elements (i.e., instantiated
 											with the same template parameter, <b>T</b>) whose content is swapped with that of this
-										{@link container List}.</p>
+										<a href="std.list.html">container</a>.</p>
 									</div>
 								</li>
 							</ul>
@@ -1808,22 +1824,22 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#swap">swap</a></p>
-								<p>Overwrites <a href="std.base.listcontainer.html">ListContainer</a>.<a href="std.base.listcontainer.html#swap">swap</a></p>
+								<p>Overrides _ListContainer.swap</p>
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:10122</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8940</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Swap content. </p>
+									<p>Swap content.</p>
 								</div>
-								<p> Exchanges the content of the container by the content of <i>obj</i>, which is another
-								{@link IContainer container} object with same type of elements. Sizes and container type may differ. </p>
-								<p> After the call to this member function, the elements in this container are those which were in <i>obj</i>
+								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
+								<a href="std.base.container.html">container</a> object with same type of elements. Sizes and container type may differ.</p>
+								<p>After the call to this member function, the elements in this container are those which were in <i>obj</i>
 									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
-								pointers remain valid for the swapped objects. </p>
-								<p> Notice that a non-member function exists with the same name, <a href="../modules/std.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function. </p>
+								pointers remain valid for the swapped objects.</p>
+								<p>Notice that a non-member function exists with the same name, <a href="std.list.html#swap">swap</a>, overloading that
+								algorithm with an optimization that behaves like this member function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1846,37 +1862,37 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9873</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8685</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Remove duplicate values. </p>
+									<p>Remove duplicate values.</p>
 								</div>
-								<p> Removes all but the first element from every consecutive group of equal elements in the  </p>
-								<p> Notice that an element is only removed from the <a href="std.list.html">List</a> container if it compares equal to the
-								element immediately preceding it. Thus, this function is especially useful for sorted lists. </p>
+								<p>Removes all but the first element from every consecutive group of equal elements in the</p>
+								<p>Notice that an element is only removed from the <a href="std.list.html">List</a> container if it compares equal to the
+								element immediately preceding it. Thus, this function is especially useful for sorted lists.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in typings/tstl/tstl.d.ts:9893</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:8705</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Remove duplicate values. </p>
+									<p>Remove duplicate values.</p>
 								</div>
-								<p> Removes all but the first element from every consecutive group of equal elements in the  </p>
-								<p> The argument <i>binary_pred</i> is a specific comparison function that determine the <u>uniqueness</u>
+								<p>Removes all but the first element from every consecutive group of equal elements in the</p>
+								<p>The argument <i>binary_pred</i> is a specific comparison function that determine the <u>uniqueness</u>
 									of an element. In fact, any behavior can be implemented (and not only an equality comparison), but notice
 									that the function will call <code>binary_pred(it.value, it.prev().value)</code> for all pairs of elements
 									(where <code>it</code> is an iterator to an element, starting from the second) and remove <code>it</code>
-									from the <a href="std.list.html">List</a> if the predicate returns <code>true</code>.
-									<p> Notice that an element is only removed from the <a href="std.list.html">List</a> container if it compares equal to the
-									element immediately preceding it. Thus, this function is especially useful for sorted lists. </p>
+								from the <a href="std.list.html">List</a> if the predicate returns <code>true</code>.</p>
+								<p>Notice that an element is only removed from the <a href="std.list.html">List</a> container if it compares equal to the
+								element immediately preceding it. Thus, this function is especially useful for sorted lists.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1924,9 +1940,12 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-not-exported">
-						<a href="../modules/_tstl_.html">"tstl"</a>
+						<a href="../modules/_samchon_.html">"samchon"</a>
 					</li>
 					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/_tstl_.html">"tstl"</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="../modules/samchon.html">samchon</a>
 					</li>
 					<li class="current tsd-kind-module tsd-is-not-exported">
@@ -2018,6 +2037,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.list.html#rend" class="tsd-kind-icon">rend</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.list.html#reverse" class="tsd-kind-icon">reverse</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
 								<a href="std.list.html#size" class="tsd-kind-icon">size</a>
 							</li>
@@ -2102,7 +2124,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

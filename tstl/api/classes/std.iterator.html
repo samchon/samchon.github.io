@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -71,17 +72,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> Bi-directional iterator. </p>
+						<p>Bi-directional iterator.</p>
 					</div>
-					<p> <a href="std.iterator.html">Bidirectional iterators</a> are iterators that can be used to access the sequence of elements
-					in a range in both directions (towards the end and towards the beginning). </p>
-					<p> All <a href="../interfaces/std.base.iarrayiterator.html">random-access iterators</a> are also valid {@link Iterrator bidirectional iterators}.
-					</p>
-					<p> There is not a single type of <a href="std.iterator.html">bidirectional iterator</a>: {@link IContainer Each container}
-					may define its own specific iterator type able to iterate through it and access its elements. </p>
-					<p> <a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
-						<img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a>
-					</p>
+					<p><a href="std.iterator.html">Bidirectional iterators</a> are iterators that can be used to access the sequence of elements
+					in a range in both directions (towards the end and towards the beginning).</p>
+					<p>All <a href="../interfaces/std.base.iarrayiterator.html">random-access iterators</a> are also valid {@link Iterrator bidirectional iterators}.</p>
+					<p>There is not a single type of <a href="std.iterator.html">bidirectional iterator</a>: <a href="std.base.container.html">Each container</a>
+					may define its own specific iterator type able to iterate through it and access its elements.</p>
+					<p><a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a></p>
 					<dl class="tsd-comment-tags">
 						<dt>reference</dt>
 						<dd><p><a href="http://www.cplusplus.com/reference/iterator/BidirectionalIterator">http://www.cplusplus.com/reference/iterator/BidirectionalIterator</a></p>
@@ -107,13 +106,10 @@
 						<span class="target">Iterator</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="../interfaces/std.base.ilineariterator.html" class="tsd-signature-type">ILinearIterator</a>
-							</li>
-							<li>
 								<a href="std.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a>
 							</li>
 							<li>
-								<a href="std.base.listiteratorbase.html" class="tsd-signature-type">ListIteratorBase</a>
+								<a href="../interfaces/std.base.ilineariterator.html" class="tsd-signature-type">ILinearIterator</a>
 							</li>
 							<li>
 								<a href="std.dequeiterator.html" class="tsd-signature-type">DequeIterator</a>
@@ -129,16 +125,10 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-protected"><a href="std.iterator.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="std.iterator.html#source_" class="tsd-kind-icon">source_</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="std.iterator.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -161,24 +151,24 @@
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-protected">
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Iterator<span class="tsd-signature-symbol">(</span>source<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L34">Iterator.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L32">Iterator.ts:32</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Construct from the source {@link IContainer container}.</p>
+									<p>Construct from the source <a href="std.base.container.html">container</a>.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -197,24 +187,6 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-					<a name="source_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> source_</h3>
-					<div class="tsd-signature tsd-kind-icon">source_<span class="tsd-signature-symbol">:</span> <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L34">Iterator.ts:34</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Source container of the iterator is directing for.</p>
-						</div>
-					</div>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
@@ -227,12 +199,12 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L138">Iterator.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L112">Iterator.ts:112</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get value of the iterator is pointing. </p>
+									<p>Get value of the iterator is pointing.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
@@ -253,7 +225,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L75">Iterator.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L75">Iterator.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -285,19 +257,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L128">Iterator.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L102">Iterator.ts:102</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Whether an iterator is equal with the iterator. </p>
+									<p>Whether an iterator is equal with the iterator.</p>
 								</div>
-								<p> Compare two iterators and returns whether they are equal or not. </p>
-								<p><h4> Note </h4></p>
-								<p> Iterator&#39;s <a href="std.iterator.html#equals">equals()</a> only compare souce container and index number. </p>
-								<p> Although elements in a pair, key and value are <a href="../modules/std.html#equal_to">equal_to</a>, if the source map or
+								<p>Compare two iterators and returns whether they are equal or not.</p>
+								<h4 id="note">Note</h4>
+								<p>Iterator&#39;s <a href="std.iterator.html#equals">equals()</a> only compare souce container and index number.</p>
+								<p>Although elements in a pair, key and value are <a href="../modules/std.html#equal_to">equal_to</a>, if the source map or
 									index number is different, then the <a href="std.iterator.html#equals">equals()</a> will return false. If you want to
-								compare the elements of a pair, compare them directly by yourself. </p>
+								compare the elements of a pair, compare them directly by yourself.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -323,14 +295,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L67">Iterator.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L67">Iterator.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get iterator to next element. </p>
-									<p> If current iterator is the last item, returns {@link IContainer.end IContainer.end()}. </p>
+									<p>Get iterator to next element.</p>
 								</div>
+								<p>If current iterator is the last item, returns <a href="std.base.container.html#end">Container.end()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator of the next item.</p>
@@ -347,15 +319,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L59">Iterator.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L58">Iterator.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get iterator to previous element. </p>
-									<p> If current iterator is the first item(equal with {@link IContainer.begin IContainer.begin()}),
-									returns {@link IContainer.end IContainer.end()}. </p>
+									<p>Get iterator to previous element.</p>
 								</div>
+								<p>If current iterator is the first item(equal with <a href="std.base.container.html#begin">Container.begin()</a>),
+								returns <a href="std.base.container.html#end">Container.end()</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator of the previous item.</p>
@@ -372,13 +344,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L108">Iterator.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L85">Iterator.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Get source container.</p>
 								</div>
+								<p>Get source container of this iterator is directing for.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -394,7 +367,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L140">Iterator.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L114">Iterator.ts:114</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -433,11 +406,8 @@
 					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.iterator.html" class="tsd-kind-icon">Iterator</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-protected">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="std.iterator.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
-								<a href="std.iterator.html#source_" class="tsd-kind-icon">source_</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="std.iterator.html#value" class="tsd-kind-icon">value</a>
@@ -529,7 +499,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>

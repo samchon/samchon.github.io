@@ -7,7 +7,6 @@
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script src="../assets/js/modernizr.js"></script>
 </head>
 <body>
 <header>
@@ -39,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -61,7 +62,7 @@
 					<a href="std.reverseiterator.html">ReverseIterator</a>
 				</li>
 			</ul>
-			<h1>Class ReverseIterator&lt;T, Base, This&gt;</h1>
+			<h1>Class ReverseIterator&lt;T, Source, Base, This&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -71,22 +72,20 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p> This class reverses the direction in which a bidirectional or random-access iterator iterates through a range.
-						</p>
+						<p>This class reverses the direction in which a bidirectional or random-access iterator iterates through a range.</p>
 					</div>
-					<p> A copy of the original iterator (the <a href="std.iterator.html">base iterator</a>) is kept internally and used to reflect
+					<p>A copy of the original iterator (the <a href="std.iterator.html">base iterator</a>) is kept internally and used to reflect
 						the operations performed on the <a href="std.reverseiterator.html">ReverseIterator</a>: whenever the <a href="std.reverseiterator.html">ReverseIterator</a> is incremented, its
 						<a href="std.iterator.html">base iterator</a> is decreased, and vice versa. A copy of the <a href="std.iterator.html">base iterator</a> with the
-					current state can be obtained at any time by calling member <a href="std.reverseiterator.html#base">base</a>. </p>
-					<p> Notice however that when an iterator is reversed, the reversed version does not point to the same element in
+					current state can be obtained at any time by calling member <a href="std.reverseiterator.html#base">base</a>.</p>
+					<p>Notice however that when an iterator is reversed, the reversed version does not point to the same element in
 						the range, but to <b>the one preceding it</b>. This is so, in order to arrange for the past-the-end element of a
 						range: An iterator pointing to a past-the-end element in a range, when reversed, is pointing to the last element
 						(not past it) of the range (this would be the first element of the reversed range). And if an iterator to the
 						first element in a range is reversed, the reversed iterator points to the element before the first element (this
-					would be the past-the-end element of the reversed range). </p>
-					<p> <a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
-						<img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a>
-					</p>
+					would be the past-the-end element of the reversed range).</p>
+					<p><a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
+					<img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a></p>
 					<dl class="tsd-comment-tags">
 						<dt>reference</dt>
 						<dd><p><a href="http://www.cplusplus.com/reference/iterator/reverse_iterator">http://www.cplusplus.com/reference/iterator/reverse_iterator</a></p>
@@ -104,10 +103,13 @@
 						<h4>T</h4>
 					</li>
 					<li>
+						<h4>Source<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+					<li>
 						<h4>Base<span class="tsd-signature-symbol">: </span><a href="std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>This<span class="tsd-signature-symbol">: </span><a href="std.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Base</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>This<span class="tsd-signature-symbol">: </span><a href="std.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Source</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Base</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -133,10 +135,10 @@
 										<a href="std.dequereverseiterator.html" class="tsd-signature-type">DequeReverseIterator</a>
 									</li>
 									<li>
-										<a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a>
+										<a href="std.listreverseiterator.html" class="tsd-signature-type">ListReverseIterator</a>
 									</li>
 									<li>
-										<a href="std.listreverseiterator.html" class="tsd-signature-type">ListReverseIterator</a>
+										<a href="std.vectorreverseiterator.html" class="tsd-signature-type">VectorReverseIterator</a>
 									</li>
 								</ul>
 							</li>
@@ -148,16 +150,10 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-private-protected">
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="std.reverseiterator.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="std.reverseiterator.html#source_" class="tsd-kind-icon">source_</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="std.reverseiterator.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -174,27 +170,27 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.reverseiterator.html#equals" class="tsd-kind-icon">equals</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.reverseiterator.html#next" class="tsd-kind-icon">next</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.reverseiterator.html#prev" class="tsd-kind-icon">prev</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.reverseiterator.html#source" class="tsd-kind-icon">source</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.reverseiterator.html#source" class="tsd-kind-icon">source</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.reverseiterator.html#swap" class="tsd-kind-icon">swap</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">new <wbr>Reverse<wbr>Iterator<span class="tsd-signature-symbol">(</span>base<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Base</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#constructor">constructor</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L175">Iterator.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L147">Iterator.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,25 +214,6 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-					<a name="source_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> source_</h3>
-					<div class="tsd-signature tsd-kind-icon">source_<span class="tsd-signature-symbol">:</span> <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#source_">source_</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L34">Iterator.ts:34</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Source container of the iterator is directing for.</p>
-						</div>
-					</div>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
@@ -248,14 +225,14 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#value">value</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#value">value</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L226">Iterator.ts:226</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L203">Iterator.ts:203</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Get value of the iterator is pointing. </p>
+									<p>Get value of the iterator is pointing.</p>
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
@@ -275,9 +252,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#advance">advance</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#advance">advance</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L253">Iterator.ts:253</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L230">Iterator.ts:230</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -306,17 +283,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L207">Iterator.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L193">Iterator.ts:193</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p> Return base iterator. </p>
+									<p>Return base iterator.</p>
 								</div>
-								<p> Return a reference of the base iteraotr. </p>
-								<p><p> The base iterator is an iterator of the same type as the one used to construct the <a href="std.reverseiterator.html">ReverseIterator</a>,
-										but pointing to the element next to the one the <a href="std.reverseiterator.html">ReverseIterator</a> is currently pointing to
-									(a <a href="std.reverseiterator.html">ReverseIterator</a> has always an offset of -1 with respect to its base iterator).</p>
+								<p>Return a reference of the base iteraotr.</p>
+								<p>The base iterator is an iterator of the same type as the one used to construct the <a href="std.reverseiterator.html">ReverseIterator</a>,
+									but pointing to the element next to the one the <a href="std.reverseiterator.html">ReverseIterator</a> is currently pointing to
+								(a <a href="std.reverseiterator.html">ReverseIterator</a> has always an offset of -1 with respect to its base iterator).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Base</span></h4>
 							<p>A reference of the base iterator, which iterates in the opposite direction.</p>
@@ -332,9 +309,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#equals">equals</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#equals">equals</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L264">Iterator.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L241">Iterator.ts:241</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -362,9 +339,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#next">next</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#next">next</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L245">Iterator.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L222">Iterator.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -386,9 +363,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#prev">prev</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#prev">prev</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L237">Iterator.ts:237</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L214">Iterator.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -401,26 +378,21 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="source" class="tsd-anchor"></a>
 					<h3>source</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Source</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#source">source</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#source">source</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L108">Iterator.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L177">Iterator.ts:177</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get source container.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Source</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -433,9 +405,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#swap">swap</a></p>
+								<p>Overrides <a href="std.iterator.html">Iterator</a>.<a href="std.iterator.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/typescript-stl/blob/fd03676/ts/src/std/Iterator.ts#L272">Iterator.ts:272</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/c547fc7/ts/std/Iterator.ts#L249">Iterator.ts:249</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -480,11 +452,8 @@
 					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.reverseiterator.html" class="tsd-kind-icon">Reverse<wbr>Iterator</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.reverseiterator.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-								<a href="std.reverseiterator.html#source_" class="tsd-kind-icon">source_</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.reverseiterator.html#value" class="tsd-kind-icon">value</a>
@@ -504,7 +473,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.reverseiterator.html#prev" class="tsd-kind-icon">prev</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.reverseiterator.html#source" class="tsd-kind-icon">source</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
@@ -579,7 +548,7 @@
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.io" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
