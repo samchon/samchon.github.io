@@ -64,119 +64,229 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="-u-t-u-ypescript-u-stl-u-"><u>T</u>ypeScript-<u>STL</u></h1>
+				<h1 id="typescript-stl">TypeScript-STL</h1>
 				<p><a href="https://nodei.co/npm/tstl"><img src="https://nodei.co/npm/tstl.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a></p>
-				<p>GitHub Repository: <a href="https://github.com/samchon/tstl">https://github.com/samchon/tstl</a></p>
-				<h2 id="introduction">Introduction</h2>
-				<p><strong>STL</strong> (Standard Template Library) Containers and Algorithms for <strong>TypeScript</strong>.</p>
-				<p><strong>T</strong>ypeScript-<strong>STL</strong> is an open-source JavaScript library providing containers and algorithms migrated from C++ STL. You can enjoy STL containers and algorithms in JavaScript. If TypeScript, you will be much happier feeling like using originla STL with type restriction and template programming.</p>
-				<p><img src="http://samchon.github.io/tstl/images/design/class_diagram/abstract_containers.png" alt="Abstract Containers"></p>
-				<h5 id="containers">Containers</h5>
 				<ul>
-					<li><a href="http://samchon.github.io/tstl/api/interfaces/std.base.container.ilinearcontainer.html"><strong>Linear containers</strong></a><ul>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.vector.html">Vector</a></li>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.list.html">List</a></li>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.deque.html">Deque</a></li>
+					<li>GitHub Repository: <a href="https://github.com/samchon/tstl">https://github.com/samchon/tstl</a></li>
+					<li>Guide Documents: <a href="https://github.com/samchon/tstl/wiki">https://github.com/samchon/tstl/wiki</a></li>
+				</ul>
+				<h2 id="introduction">Introduction</h2>
+				<p>C++ STL (Standard Template Library) <em>Containers</em> and <em>Algorithms</em> for the <strong>TypeScript</strong>.</p>
+				<p><strong>T</strong>ypeScript-<strong>STL</strong> is an open-source project providing <strong>containers</strong> and <strong>algorithms</strong> migrated from <em>C++ STL</em> to <em>TypeScript</em>. You can enjoy the STL&#39;s own specific <em>coantainers</em> and <em>algorithms</em> in the JavaScript. If TypeScript, you also can take advantage of type restrictions and generic programming with the TypeScript.</p>
+				<p>Below components are list of provided objects in the <strong>T</strong>ypeScript-<strong>STL</strong>. If you want to know more about the <strong>TypeScript-STL</strong>, then please read the <a href="https://github.com/samchon/tstl/wiki"><strong>Guide Documents</strong></a>.</p>
+				<h3 id="containers">Containers</h3>
+				<ul>
+					<li><strong>Linear Containers</strong><ul>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.vector.html">Vector <code>vector</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.list.html">List <code>list</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.deque.html">Deque <code>deque</code></a></li>
 						</ul>
 					</li>
 					<li><strong>Associative Containers</strong><ul>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.base.tree.rbtree.html"><strong>Tree-structured Containers</strong></a><ul>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.treeset.html">TreeSet</a></li>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.treemap.html">TreeMap</a></li>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.treemultiset.html">TreeMultiSet</a></li>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.treemultimap.html">TreeMultiMap</a></li>
+							<li><em>Tree-structured Containers</em><ul>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.treeset.html">TreeSet <code>set</code></a></li>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.treemultiset.html">TreeMultiSet <code>multiset</code></a></li>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.treemap.html">TreeMap <code>map</code></a></li>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.treemultimap.html">TreeMultiMap <code>multimap</code></a></li>
 								</ul>
 							</li>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.base.hash.hashbuckets.html"><strong>Hashed Containers</strong></a><ul>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashset.html">HashSet</a></li>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashmap.html">HashMap</a></li>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashmultiset.html">HashMultiSet</a></li>
-									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashmultimap.html">HashMultiMap</a></li>
+							<li><em>Hash-buckets based Container</em><ul>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashset.html">HashSet <code>unordered_set</code></a></li>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashmultiset.html">HashMultiSet <code>unordered_multiset</code></a></li>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashmap.html">HashMap <code>unordered_map</code></a></li>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.hashmultimap.html">HashMultiMap <code>unordered_multimap</code></a></li>
 								</ul>
 							</li>
 						</ul>
 					</li>
 					<li><strong>Adaptor Containers</strong><ul>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.queue.html">Queue</a></li>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.stack.html">Stack</a></li>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.priorityqueue.html">PriorityQueue</a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.queue.html">Queue <code>queue</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.stack.html">Stack <code>stack</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.priorityqueue.html">PriorityQueue <code>priority_queue</code></a></li>
 						</ul>
 					</li>
 				</ul>
-				<h5 id="global-functions">Global Functions</h5>
+				<h3 id="global-functions">Global Functions</h3>
 				<ul>
-					<li><a href="http://www.cplusplus.com/reference/algorithm">&lt;algorithm&gt;</a></li>
-					<li><a href="http://www.cplusplus.com/reference/exception">&lt;exception&gt;</a></li>
-					<li><a href="http://www.cplusplus.com/reference/functional">&lt;functional&gt;</a><ul>
-							<li><a href="http://samchon.github.io/tstl/api/modules/std.html#bind">std.bind</a></li>
+					<li><a href="http://www.cplusplus.com/reference/algorithm/"><code>&lt;algorithm&gt;</code></a><ul>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/iterations.ts">iterations</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/modifiers.ts">modifiers</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/partition.ts">partition</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/sorting.ts">sorting</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/binary_search.ts">binary search</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/union_set.ts">union set</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/heap.ts">heap</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/mathmatics.ts">mathmatics</a></li>
 						</ul>
 					</li>
-					<li><a href="http://www.cplusplus.com/reference/utility">&lt;utility&gt;</a><ul>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.pair.html">std.Pair</a></li>
-						</ul>
-					</li>
-				</ul>
-				<h2 id="references">References</h2>
-				<p>You can learn and explore about TSTL more deeply with such below:</p>
-				<ul>
-					<li><a href="https://github.com/samchon/tstl/wiki">Guidebook (wiki)</a></li>
-					<li><a href="http://samchon.github.io/tstl/api">API Documents</a></li>
-					<li><a href="http://samchon.github.io/tstl/design/class_diagram.pdf">Class Diagram</a></li>
-				</ul>
-				<h2 id="installation">Installation</h2>
-				<p>Installing <em>TSTL</em> in <strong>node</strong> is very easy. Just install with <strong>npm</strong> and <strong>tsd</strong>.</p>
-				<h4 id="node">Node</h4>
-				<pre><code class="lang-bash"><span class="hljs-comment"># Install TSTL from NPM modules</span>
-npm install --save tstl 
-
-<span class="hljs-comment"># If you need only header, then fetch from the @types</span>
-npm install --save @types/tstl
-</code></pre>
-				<h4 id="typescript">TypeScript</h4>
-				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference types="tstl" /&gt;</span>
-
-<span class="hljs-keyword">import</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"tstl"</span>);
-<span class="hljs-keyword">let</span> map: std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt; = <span class="hljs-keyword">new</span> std.TreeMap&lt;<span class="hljs-built_in">string</span>, <span class="hljs-built_in">number</span>&gt;();
-
-map.insert(std.make_pair(<span class="hljs-string">"First"</span>, <span class="hljs-number">1</span>));
-map.insert([<span class="hljs-string">"Second"</span>, <span class="hljs-number">2</span>]);
-map.insert_or_assign(<span class="hljs-string">"Third"</span>, <span class="hljs-number">3</span>); <span class="hljs-comment">// C++17 Feature.</span>
-map.set(<span class="hljs-string">"Fourth"</span>, <span class="hljs-number">4</span>); <span class="hljs-comment">// Non-standard Feature.</span>
-
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = map.begin(); !it.equals(map.end()); it = it.next())
-    <span class="hljs-built_in">console</span>.log(it.first, it.second); <span class="hljs-comment">// key =&gt; string, value =&gt; number</span>
-</code></pre>
-				<h4 id="browser">Browser</h4>
-				<p><em>TSTL</em> follows <em>CommonJS</em> module. </p>
-				<p>Use <a href="https://www.npmjs.com/package/browserify">browserify</a> or just include <em>TSTL</em>&#39;s <em>js file</em> with <code>&lt;script&gt;</code> tag.</p>
-				<h6 id="in-html-document">In HTML Document</h6>
-				<pre><code class="lang-javascript">&lt;script src=<span class="hljs-string">"tstl.js"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span>
-</code></pre>
-				<h2 id="index-of-guidance-wiki-">Index of Guidance, Wiki.</h2>
-				<ul>
-					<li><a href="https://github.com/samchon/tstl/wiki/Home"><strong>Outline</strong></a><ul>
-							<li><a href="https://github.com/samchon/tstl/wiki/Home#introduction">Introduction</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Home#references">References</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Home#installation">Installation</a></li>
-						</ul>
-					</li>
-					<li><a href="https://github.com/samchon/tstl/wiki/Differences"><strong>Differences between C++</strong></a><ul>
-							<li><a href="https://github.com/samchon/tstl/wiki/Differences#naming-convention">Naming Convention</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Differences#operator-overriding">Operator Overriding</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Differences#iterator">Iterator</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Differences#tree-container">Tree Container</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Differences#hash-container">Hash Container</a></li>
-						</ul>
-					</li>
-					<li><a href="https://github.com/samchon/tstl/wiki/Tutorial"><strong>Tutorial</strong></a><ul>
-							<li><a href="https://github.com/samchon/tstl/wiki/Tutorial#linear-container">Linear Container</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Tutorial#tree-container">Tree Container</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Tutorial#hash-container">Hash Container</a></li>
-							<li><a href="https://github.com/samchon/tstl/wiki/Tutorial-Miscellaneous">Miscellaneous</a><ul>
-									<li><a href="https://github.com/samchon/tstl/wiki/Tutorial-Miscellaneous#algorithm">Algorithm</a></li>
-									<li><a href="https://github.com/samchon/tstl/wiki/Tutorial-Miscellaneous#functional">Functional</a></li>
+					<li><a href="http://www.cplusplus.com/reference/exception/"><code>&lt;exception&gt;</code></a><ul>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.exception.html">Exception <code>exception</code></a><ul>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.logicerror.html">LogicError <code>logic_error</code></a></li>
+									<li><a href="http://samchon.github.io/tstl/api/classes/std.runtimeerror.html">RuntimeError <code>runtime_error</code></a></li>
 								</ul>
 							</li>
+						</ul>
+					</li>
+					<li><a href="http://www.cplusplus.com/reference/functional/"><code>&lt;functional&gt;</code></a><ul>
+							<li><a href="http://samchon.github.io/tstl/api/interfaces/std.icomparable.html">IComparable</a></li>
+						</ul>
+					</li>
+					<li><a href="http://www.cplusplus.com/reference/utility/"><code>&lt;utility&gt;</code></a><ul>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.pair.html">Pair <code>pair</code></a></li>
+						</ul>
+					</li>
+				</ul>
+				<h2 id="installation">Installation</h2>
+				<h3 id="npm-module">NPM Module</h3>
+				<p>Installing <strong>TSTL</strong> in <em>NodeJS</em> is very easy. Just install with the <code>npm</code></p>
+				<pre><code class="lang-bash"><span class="hljs-comment"># Install TSTL from the NPM module</span>
+npm install --save tstl
+
+<span class="hljs-comment"># If you need only definition, then fetch from the @types</span>
+npm install --save-dev @types/tstl
+</code></pre>
+				<h3 id="usage-typescript-">Usage (TypeScript)</h3>
+				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference types="tstl" /&gt;</span>
+<span class="hljs-keyword">import</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"tstl"</span>);
+
+<span class="hljs-keyword">let</span> map: std.TreeMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt; = <span class="hljs-keyword">new</span> std.TreeMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;();
+
+<span class="hljs-comment">// INSERT ITEMS</span>
+map.insert(std.make_pair(<span class="hljs-number">1</span>, <span class="hljs-string">"First"</span>));
+map.insert([<span class="hljs-number">4</span>, <span class="hljs-string">"Fourth"</span>]); <span class="hljs-comment">// via Tuple, C++11 Feature</span>
+map.insert_or_assign(<span class="hljs-number">5</span>, <span class="hljs-string">"Fifth"</span>); <span class="hljs-comment">// C++17 Feature</span>
+map.set(<span class="hljs-number">9</span>, <span class="hljs-string">"Nineth"</span>); <span class="hljs-comment">// Instead of the operetor[](Key)</span>
+
+<span class="hljs-comment">// ITERATION</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = map.begin(); !it.equals(map.end()); it = it.next())
+    <span class="hljs-built_in">console</span>.log(it.first, it.second); <span class="hljs-comment">// (key =&gt; number, value =&gt; string)</span>
+
+<span class="hljs-comment">// LOWER_BOUND</span>
+<span class="hljs-keyword">let</span> x = map.lower_bound(<span class="hljs-number">3</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"lower bound of 3 is: "</span> + x.first + <span class="hljs-string">", "</span> + x.second);
+</code></pre>
+				<h3 id="in-browser">In Browser</h3>
+				<p><strong>TypeScript-STL</strong> follows the <code>CommonJS</code> module. </p>
+				<p>Use <a href="https://www.npmjs.com/package/browserify">browserify</a> or just include the <strong>TypeSript-STL</strong>&#39;s JS file with the <code>&lt;script&gt;</code> tag.</p>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://samchon.github.io/dist/tstl.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+				<h2 id="differences-between-c-stl">Differences between C++ STL</h2>
+				<h3 id="binary-operator">Binary operator</h3>
+				<pre><code class="lang-typescript">namepsace std
+{
+    <span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> IComparable&lt;T&gt;
+    {
+        equals(obj: T): <span class="hljs-built_in">boolean</span>;
+
+        less?(obj: T): <span class="hljs-built_in">boolean</span>;
+        hashCode?(): <span class="hljs-built_in">number</span>;
+    }
+}
+</code></pre>
+				<h3 id="iterator-iteration">Iterator &amp; Iteration</h3>
+				<h4 id="operators">Operators</h4>
+				<table>
+					<thead>
+						<tr>
+							<th>C++ STL</th>
+							<th>TypeScript-STL</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>Iterator.operator==()</code></td>
+							<td><code>Iterator.equals()</code></td>
+						</tr>
+						<tr>
+							<td><code>Iterator.operator*()</code></td>
+							<td><code>Iterator.value</code></td>
+						</tr>
+						<tr>
+							<td>...</td>
+							<td><code>MapIterator.first</code></td>
+						</tr>
+						<tr>
+							<td>...</td>
+							<td><code>MapIterator.second</code></td>
+						</tr>
+					</tbody>
+				</table>
+				<h4 id="advancing">Advancing</h4>
+				<table>
+					<thead>
+						<tr>
+							<th>C++ STL</th>
+							<th>TypeScript-STL</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><code>it--</code></td>
+							<td><code>it = it.prev();</code></td>
+						</tr>
+						<tr>
+							<td><code>it++</code></td>
+							<td><code>it = it.next();</code></td>
+						</tr>
+						<tr>
+							<td><code>advance(it, 5);</code></td>
+							<td><code>it = it.advance(5);</code></td>
+						</tr>
+					</tbody>
+				</table>
+				<h4 id="sample-codes">Sample Codes</h4>
+				<h5 id="c-stl">C++ STL</h5>
+				<pre><code class="lang-cpp"><span class="hljs-comment">// Vector</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = v.begin(); it != it.end(); it++)
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+
+<span class="hljs-comment">// TreeMap</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; m;
+m.insert(<span class="hljs-built_in">std</span>::make_pair(<span class="hljs-number">1</span>, <span class="hljs-string">"first"</span>));
+m.insert({<span class="hljs-number">2</span>, <span class="hljs-string">"second"</span>});
+m.emplace(<span class="hljs-number">3</span>, <span class="hljs-string">"third"</span>);
+
+m[<span class="hljs-number">4</span>] = <span class="hljs-string">"fourth"</span>;
+<span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; m[<span class="hljs-number">4</span>] &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = m.begin(); it != m.end(); it++)
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="hljs-string">", "</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+</code></pre>
+				<h5 id="typescript-stl">TypeScript-STL</h5>
+				<pre><code class="lang-typescript"><span class="hljs-comment">// Vector</span>
+<span class="hljs-keyword">let</span> v = <span class="hljs-keyword">new</span> std.Vector&lt;<span class="hljs-built_in">number</span>&gt;(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = v.begin(); !it.equals(v.end()); it = it.next())
+    <span class="hljs-built_in">console</span>.log(it.value);
+
+<span class="hljs-comment">// TreeMap</span>
+<span class="hljs-keyword">let</span> m = <span class="hljs-keyword">new</span> std.TreeMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;();
+m.insert(std.make_pair(<span class="hljs-number">1</span>, <span class="hljs-string">"first"</span>));
+m.insert([<span class="hljs-number">2</span>, <span class="hljs-string">"second"</span>]);
+m.emplace(<span class="hljs-number">3</span>, <span class="hljs-string">"third"</span>);
+
+m.set(<span class="hljs-number">4</span>, <span class="hljs-string">"fourth"</span>);
+<span class="hljs-built_in">console</span>.log(m.get(<span class="hljs-number">4</span>));
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = m.begin(); !it.equals(m.end()); it = it.next())
+    <span class="hljs-built_in">console</span>.log(it.first, it.second);
+</code></pre>
+				<h2 id="references">References</h2>
+				<ul>
+					<li><strong>Repositories</strong><ul>
+							<li><a href="https://github.com/samchon/tstl">GitHub Repository</a></li>
+							<li><a href="https://www.npmjs.com/package/tstl">NPM Repository</a></li>
+						</ul>
+					</li>
+					<li><strong>Documents</strong><ul>
+							<li><a href="https://github.com/samchon/tstl/wiki"><strong>Guide Documents</strong></a></li>
+							<li><a href="http://samchon.github.io/samchon/tstl">API Documents</a></li>
+							<li><a href="http://samchon.github.io/tstl/design/class_diagram.pdf">Class Diagram</a></li>
+						</ul>
+					</li>
+					<li><strong>Related Projects</strong><ul>
+							<li><a href="https://github.com/samchon/framework">Samchon-Framework</a></li>
+							<li><a href="https://github.com/betterwaysystems/packer">3D-Bin-Packing</a></li>
 						</ul>
 					</li>
 				</ul>

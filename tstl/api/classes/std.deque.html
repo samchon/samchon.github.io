@@ -176,7 +176,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.deque.html#begin" class="tsd-kind-icon">begin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.deque.html#capacity" class="tsd-kind-icon">capacity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.deque.html#clear" class="tsd-kind-icon">clear</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.deque.html#empty" class="tsd-kind-icon">empty</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="std.deque.html#empty" class="tsd-kind-icon">empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.deque.html#end" class="tsd-kind-icon">end</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.deque.html#erase" class="tsd-kind-icon">erase</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.deque.html#front" class="tsd-kind-icon">front</a></li>
@@ -420,7 +420,7 @@
 								<div class="lead">
 									<p>Assign container content.</p>
 								</div>
-								<p>Assigns new contents to the {@link IList container}, replacing its current contents,
+								<p>Assigns new contents to the <a href="../interfaces/std.base.ilinearcontainer.html">container</a>, replacing its current contents,
 								and modifying its <a href="std.deque.html#size">size</a> accordingly.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -447,7 +447,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#at">at</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3579</li>
+									<li>Defined in tstl.d.ts:3583</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -475,6 +475,7 @@
 					<h3>back</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">back<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">back<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -486,15 +487,39 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Access last element.
-									Returns a value of the last element in the {@link IList container}.</p>
+									<p>Access last element.</p>
 								</div>
+								<p>Returns a value of the last element in the <a href="../interfaces/std.base.ilinearcontainer.html">container</a>.</p>
 								<p>Unlike member <a href="std.deque.html#end">end()</a>, which returns an iterator just past this element,
 								this function returns a direct value.</p>
-								<p>Calling this function on an <a href="std.deque.html#empty">empty</a> {@link IList container} causes undefined behavior.</p>
+								<p>Calling this function on an <a href="std.deque.html#empty">empty</a> <a href="../interfaces/std.base.ilinearcontainer.html">container</a> causes undefined behavior.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>A value of the last element of the {@link IList container}.</p>
+							<p>A value of the last element of the <a href="../interfaces/std.base.ilinearcontainer.html">container</a>.</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#back">back</a></p>
+								<ul>
+									<li>Defined in tstl.d.ts:3563</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set last element.</p>
+								</div>
+								<p>Modify a value of the last element in the {@link IListContainer container}.</p>
+								<p>Unlike member <a href="std.deque.html#end">end()</a>, which returns an iterator just past this element,
+								this function modifies a direct value.</p>
+								<p>Calling this function on an <a href="std.deque.html#empty">empty</a> {@link IListContainer container} causes undefined behavior.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -510,7 +535,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#begin">begin</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3563</li>
+									<li>Defined in tstl.d.ts:3567</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -536,7 +561,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in tstl.d.ts:3551</li>
+									<li>Defined in tstl.d.ts:3547</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -587,19 +612,19 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="empty" class="tsd-anchor"></a>
 					<h3>empty</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon">empty<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#empty">empty</a></p>
-								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
+								<p>Inherited from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3528</li>
+									<li>Defined in tstl.d.ts:2986</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -627,7 +652,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#end">end</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3567</li>
+									<li>Defined in tstl.d.ts:3571</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -665,7 +690,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#erase">erase</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3671</li>
+									<li>Defined in tstl.d.ts:3675</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -691,7 +716,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#erase">erase</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3675</li>
+									<li>Defined in tstl.d.ts:3679</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -720,7 +745,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#erase">erase</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3679</li>
+									<li>Defined in tstl.d.ts:3683</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -746,7 +771,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#erase">erase</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3683</li>
+									<li>Defined in tstl.d.ts:3687</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -777,8 +802,28 @@
 					<h3>front</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">front<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">front<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#front">front</a></p>
+								<ul>
+									<li>Defined in tstl.d.ts:3551</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Access first element.</p>
+								</div>
+								<p>Returns a value of the first element in the <a href="../interfaces/std.base.ilinearcontainer.html">container</a>.</p>
+								<p>Unlike member <a href="std.deque.html#end">end()</a>, which returns an iterator just past this element,
+								this function returns a direct value.</p>
+								<p>Calling this function on an <a href="std.deque.html#empty">empty</a> <a href="../interfaces/std.base.ilinearcontainer.html">container</a> causes undefined behavior.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+							<p>A value of the first element of the <a href="../interfaces/std.base.ilinearcontainer.html">container</a>.</p>
+						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#front">front</a></p>
@@ -788,15 +833,20 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Access first element.
-									Returns a value of the first element in the {@link IList container}.</p>
+									<p>Set first element.</p>
 								</div>
-								<p>Unlike member <a href="std.deque.html#end">end()</a>, which returns an iterator just past this element,
-								this function returns a direct value.</p>
-								<p>Calling this function on an <a href="std.deque.html#empty">empty</a> {@link IList container} causes undefined behavior.</p>
+								<p>Modify a value of the first element in the {@link IListContainer container}.</p>
+								<p>Unlike member <a href="std.deque.html#begin">begin()</a>, which returns an iterator to this same element, this
+								function modifies a direct value.</p>
+								<p>Calling this funtion on an <a href="std.deque.html#empty">empty</a> {@link IListContainer container} causes undefined behavior.</p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>A value of the first element of the {@link IList container}.</p>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -816,15 +866,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3615</li>
+									<li>Defined in tstl.d.ts:3619</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Insert an element.</p>
 								</div>
-								<p>The {@link IList conatiner} is extended by inserting new element before the element at the
-									specified <i>position</i>, effectively increasing the {@link IList container} <a href="std.deque.html#size">size</a> by
+								<p>The <a href="../interfaces/std.base.ilinearcontainer.html">conatiner</a> is extended by inserting new element before the element at the
+									specified <i>position</i>, effectively increasing the <a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by
 								one.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -843,15 +893,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3619</li>
+									<li>Defined in tstl.d.ts:3623</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Insert elements by range iterators.</p>
 								</div>
-								<p>The {@link IList container} is extended by inserting new elements before the element at the
-									specified <i>position</i>, effectively increasing the {@link IList container} <a href="std.deque.html#size">size</a> by
+								<p>The <a href="../interfaces/std.base.ilinearcontainer.html">container</a> is extended by inserting new elements before the element at the
+									specified <i>position</i>, effectively increasing the <a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by
 								the number of repeating elements </i>n</i>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -873,15 +923,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3623</li>
+									<li>Defined in tstl.d.ts:3627</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Insert elements by range iterators.</p>
 								</div>
-								<p>The {@link IList container} is extended by inserting new elements before the element at the
-									specified <i>position</i>, effectively increasing the {@link IList container} <a href="std.deque.html#size">size</a> by
+								<p>The <a href="../interfaces/std.base.ilinearcontainer.html">container</a> is extended by inserting new elements before the element at the
+									specified <i>position</i>, effectively increasing the <a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by
 								the number of elements inserted by range iterators.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -912,15 +962,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3627</li>
+									<li>Defined in tstl.d.ts:3631</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Insert an element.</p>
 								</div>
-								<p>The {@link IList conatiner} is extended by inserting new element before the element at the
-									specified <i>position</i>, effectively increasing the {@link IList container} <a href="std.deque.html#size">size</a> by
+								<p>The <a href="../interfaces/std.base.ilinearcontainer.html">conatiner</a> is extended by inserting new element before the element at the
+									specified <i>position</i>, effectively increasing the <a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by
 								one.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -939,15 +989,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3631</li>
+									<li>Defined in tstl.d.ts:3635</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Insert elements by range iterators.</p>
 								</div>
-								<p>The {@link IList container} is extended by inserting new elements before the element at the
-									specified <i>position</i>, effectively increasing the {@link IList container} <a href="std.deque.html#size">size</a> by
+								<p>The <a href="../interfaces/std.base.ilinearcontainer.html">container</a> is extended by inserting new elements before the element at the
+									specified <i>position</i>, effectively increasing the <a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by
 								the number of repeating elements </i>n</i>.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -969,15 +1019,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#insert">insert</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3635</li>
+									<li>Defined in tstl.d.ts:3639</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Insert elements by range iterators.</p>
 								</div>
-								<p>The {@link IList container} is extended by inserting new elements before the element at the
-									specified <i>position</i>, effectively increasing the {@link IList container} <a href="std.deque.html#size">size</a> by
+								<p>The <a href="../interfaces/std.base.ilinearcontainer.html">container</a> is extended by inserting new elements before the element at the
+									specified <i>position</i>, effectively increasing the <a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by
 								the number of elements inserted by range iterators.</p>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1017,15 +1067,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#pop_back">pop_back</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3611</li>
+									<li>Defined in tstl.d.ts:3615</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Delete last element.</p>
 								</div>
-								<p>Removes the last element in the {@link IList container}, effectively reducing the
-								{@link IList container} <a href="std.deque.html#size">size</a> by one.</p>
+								<p>Removes the last element in the <a href="../interfaces/std.base.ilinearcontainer.html">container</a>, effectively reducing the
+								<a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by one.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1042,7 +1092,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#pop_front">pop_front</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3607</li>
+									<li>Defined in tstl.d.ts:3611</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1068,7 +1118,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#push">push</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3595</li>
+									<li>Defined in tstl.d.ts:3599</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1099,15 +1149,15 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#push_back">push_back</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3603</li>
+									<li>Defined in tstl.d.ts:3607</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Add element at the end.</p>
 								</div>
-								<p>Adds a new element at the end of the {@link IList container}, after its current last element.
-								This effectively increases the {@link IList container} <a href="std.deque.html#size">size</a> by one.</p>
+								<p>Adds a new element at the end of the <a href="../interfaces/std.base.ilinearcontainer.html">container</a>, after its current last element.
+								This effectively increases the <a href="../interfaces/std.base.ilinearcontainer.html">container</a> <a href="std.deque.html#size">size</a> by one.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1130,7 +1180,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#push_front">push_front</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3599</li>
+									<li>Defined in tstl.d.ts:3603</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1163,7 +1213,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#rbegin">rbegin</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3571</li>
+									<li>Defined in tstl.d.ts:3575</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1193,7 +1243,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#rend">rend</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3575</li>
+									<li>Defined in tstl.d.ts:3579</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1258,7 +1308,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.base.iarraycontainer.html">IArrayContainer</a>.<a href="../interfaces/std.base.iarraycontainer.html#set">set</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3583</li>
+									<li>Defined in tstl.d.ts:3587</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1324,7 +1374,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#swap">swap</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3705</li>
+									<li>Defined in tstl.d.ts:3709</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1357,7 +1407,7 @@
 								<p>Implementation of <a href="../interfaces/std.base.idequecontainer.html">IDequeContainer</a>.<a href="../interfaces/std.base.idequecontainer.html#swap">swap</a></p>
 								<p>Overrides <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in tstl.d.ts:3709</li>
+									<li>Defined in tstl.d.ts:3713</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1438,7 +1488,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="std.deque.html#clear" class="tsd-kind-icon">clear</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="std.deque.html#empty" class="tsd-kind-icon">empty</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
