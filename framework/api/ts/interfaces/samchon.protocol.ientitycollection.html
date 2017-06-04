@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IEntityCollection | tstl</title>
+	<title>IEntityCollection | samchon</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">tstl</a>
+					<a href="../index.html" class="title">samchon</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -103,6 +103,13 @@
 				</ul>
 			</section>
 			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><span class="tsd-signature-type">Iterable</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
 				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../classes/samchon.templates.distributed.distributedclientarray.html" class="tsd-signature-type">DistributedClientArray</a></li>
@@ -157,6 +164,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="samchon.protocol.ientitycollection.html#child_tag" class="tsd-kind-icon">CHILD_<wbr>TAG</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported"><a href="samchon.protocol.ientitycollection.html#tag" class="tsd-kind-icon">TAG</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="samchon.protocol.ientitycollection.html#___iterator" class="tsd-kind-icon">__@iterator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="samchon.protocol.ientitycollection.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="samchon.protocol.ientitycollection.html#assign" class="tsd-kind-icon">assign</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported"><a href="samchon.protocol.ientitycollection.html#begin" class="tsd-kind-icon">begin</a></li>
@@ -225,7 +233,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IEntityGroup.CHILD_TAG</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:4441</li>
+									<li>Defined in lib/samchon.d.ts:4450</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -248,7 +256,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IEntity.TAG</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:539</li>
+									<li>Defined in lib/samchon.d.ts:515</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -262,17 +270,59 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
+					<a name="___iterator" class="tsd-anchor"></a>
+					<h3>__@iterator</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">__@iterator<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#___iterator">__@iterator</a></p>
+								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#___iterator">__@iterator</a></p>
+								<ul>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3012</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>To the <code>for of</code> statement.</p>
+								</div>
+								<p>The {@link [Symbol.iterator]} is a method returns an <code>IterableIterator</code> instance, who can implement the
+									<code>for of</code> statement, supporting the <em>full-forward-iteration</em>. You don&#39;t need to call this method, but just
+								use the <code>for of</code> statement such below:</p>
+								<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> container: std.base.Container&lt;<span class="hljs-built_in">number</span>&gt;;
+container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> elem of container) <span class="hljs-comment">// elem: number</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"An element in the container: "</span> + elem);
+
+<span class="hljs-comment">//--------</span>
+<span class="hljs-comment">// elem is the element in the container</span>
+<span class="hljs-comment">//--------</span>
+<span class="hljs-comment">// An element in the container: 1</span>
+<span class="hljs-comment">// An element in the container: 2</span>
+<span class="hljs-comment">// An element in the container: 3</span>
+<span class="hljs-comment">// An element in the container: 4</span>
+</code></pre>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>An <code>IterableIterator</code> instance, but do not consider about it. Just use the <code>for of</code> statement.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
 					<a name="addeventlistener" class="tsd-anchor"></a>
 					<h3>add<wbr>Event<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
 						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.library.html#basiceventlistener" class="tsd-signature-type">BasicEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.library.html#basiceventlistener" class="tsd-signature-type">BasicEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -280,7 +330,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2063</li>
+									<li>Defined in lib/samchon.d.ts:2039</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -305,7 +355,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2064</li>
+									<li>Defined in lib/samchon.d.ts:2040</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -314,7 +364,7 @@
 									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -324,7 +374,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2065</li>
+									<li>Defined in lib/samchon.d.ts:2041</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -333,7 +383,7 @@
 									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -343,7 +393,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2066</li>
+									<li>Defined in lib/samchon.d.ts:2042</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -352,7 +402,7 @@
 									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -362,7 +412,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2070</li>
+									<li>Defined in lib/samchon.d.ts:2046</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -390,7 +440,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2071</li>
+									<li>Defined in lib/samchon.d.ts:2047</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -399,7 +449,7 @@
 									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -412,7 +462,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2072</li>
+									<li>Defined in lib/samchon.d.ts:2048</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -421,7 +471,7 @@
 									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -434,7 +484,7 @@
 								<p>Inherited from ICollection.addEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2073</li>
+									<li>Defined in lib/samchon.d.ts:2049</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -443,7 +493,7 @@
 									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -481,7 +531,7 @@
 									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h4>
 								</li>
 								<li>
-									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -507,7 +557,7 @@
 					<a name="begin" class="tsd-anchor"></a>
 					<h3>begin</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">begin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">begin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -515,7 +565,7 @@
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#begin">begin</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#begin">begin</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2922</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2938</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -526,7 +576,7 @@
 								<h4 id="note">Note</h4>
 								<p>If the container is <a href="samchon.protocol.ientitycollection.html#empty">empty</a>, the returned iterator is same with <a href="samchon.protocol.ientitycollection.html#end">end()</a>.</p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the first element in the  The iterator containes the first element&#39;s value.</p>
 						</li>
 					</ul>
@@ -568,7 +618,7 @@
 								<p>Inherited from IEntityGroup.construct</p>
 								<p>Overrides IEntity.construct</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:4379</li>
+									<li>Defined in lib/samchon.d.ts:4388</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -602,7 +652,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IEntityGroup.count</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:4425</li>
+									<li>Defined in lib/samchon.d.ts:4434</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -636,7 +686,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IEntityGroup.createChild</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:4389</li>
+									<li>Defined in lib/samchon.d.ts:4398</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -669,7 +719,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#dispatchevent">dispatchEvent</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2680</li>
+									<li>Defined in lib/samchon.d.ts:2664</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -707,7 +757,7 @@
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#empty">empty</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#empty">empty</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2986</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2927</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -727,7 +777,7 @@
 					<a name="end" class="tsd-anchor"></a>
 					<h3>end</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -735,7 +785,7 @@
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#end">end</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#end">end</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2943</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2959</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -753,7 +803,7 @@
 								element by the iterator will cause throwing exception (<a href="../classes/std.outofrange.html">OutOfRange</a>).</p>
 								<p>If the container is <a href="samchon.protocol.ientitycollection.html#empty">empty</a>, this function returns the same as <a href="../classes/std.base.container.html">Container</a>.<a href="samchon.protocol.ientitycollection.html#begin">begin</a>.</p>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator to the end element in the</p>
 						</li>
 					</ul>
@@ -762,8 +812,8 @@
 					<a name="erase" class="tsd-anchor"></a>
 					<h3>erase</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">erase&lt;U&gt;<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">erase&lt;U&gt;<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -771,7 +821,7 @@
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#erase">erase</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3028</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3054</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -784,13 +834,13 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>position: <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>position: <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>Iterator pointing to a single element to be removed from the Container.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator pointing to the element that followed the last element erased by the function
 								call. This is the <a href="samchon.protocol.ientitycollection.html#end">Container.end</a> if the operation erased the last element in the
 							sequence.</p>
@@ -800,7 +850,7 @@
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#erase">erase</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#erase">erase</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3043</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3069</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -819,19 +869,19 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>begin: <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>begin: <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An iterator specifying a range of beginning to erase.</p>
 									</div>
 								</li>
 								<li>
-									<h5>end: <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>end: <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An iterator specifying a range of end to erase.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>An iterator pointing to the element that followed the last element erased by the function
 								call. This is the <a href="samchon.protocol.ientitycollection.html#end">Container.end</a> if the operation erased the last element in
 							the sequence.</p>
@@ -849,7 +899,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IEntityGroup.get</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:4437</li>
+									<li>Defined in lib/samchon.d.ts:4446</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -888,7 +938,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IEntityGroup.has</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:4415</li>
+									<li>Defined in lib/samchon.d.ts:4424</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -922,7 +972,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#haseventlistener">hasEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2668</li>
+									<li>Defined in lib/samchon.d.ts:2652</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -960,7 +1010,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from IEntity.key</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:533</li>
+									<li>Defined in lib/samchon.d.ts:509</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -997,7 +1047,7 @@ class Point extends Entity
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#push">push</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#push">push</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2996</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3022</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1032,21 +1082,21 @@ class Point extends Entity
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#rbegin">rbegin</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#rbegin">rbegin</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2958</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2974</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Return <a href="../classes/std.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>.</p>
+									<p>Return <a href="../classes/std.base.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>.</p>
 								</div>
-								<p>Returns a <a href="../classes/std.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
+								<p>Returns a <a href="../classes/std.base.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
 								its <i>reverse beginning</i>).</p>
-								<p><a href="../classes/std.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
+								<p><a href="../classes/std.base.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
 								beginning of the</p>
 								<p><a href="samchon.protocol.ientitycollection.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="samchon.protocol.ientitycollection.html#end">end</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.base.ireverseiterator.html" class="tsd-signature-type">IReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <a href="../classes/std.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
+							<p>A <a href="../classes/std.base.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
 						</li>
 					</ul>
 				</section>
@@ -1055,15 +1105,15 @@ class Point extends Entity
 					<h3>refresh</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
 						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span>it<span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span>it<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">refresh<span class="tsd-signature-symbol">(</span>first<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, last<span class="tsd-signature-symbol">: </span><a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from ICollection.refresh</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2025</li>
+									<li>Defined in lib/samchon.d.ts:2001</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1086,7 +1136,7 @@ class Point extends Entity
 							<aside class="tsd-sources">
 								<p>Inherited from ICollection.refresh</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2040</li>
+									<li>Defined in lib/samchon.d.ts:2016</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1104,7 +1154,7 @@ class Point extends Entity
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>it: <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>it: <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An iterator targeting the content changed element.</p>
 									</div>
@@ -1116,7 +1166,7 @@ class Point extends Entity
 							<aside class="tsd-sources">
 								<p>Inherited from ICollection.refresh</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2059</li>
+									<li>Defined in lib/samchon.d.ts:2035</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1134,15 +1184,15 @@ class Point extends Entity
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>first: <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>first: <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An Iterator to the initial position in a sequence of the content changed elmeents.</p>
 									</div>
 								</li>
 								<li>
-									<h5>last: <a href="../classes/std.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>last: <a href="../classes/std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>An <a href="../classes/std.iterator.html">Iterator</a> to the final position in a sequence of the content changed elements. The range
+										<p>An <a href="../classes/std.base.iterator.html">Iterator</a> to the final position in a sequence of the content changed elements. The range
 											used is [<em>first</em>, <em>last</em>), which contains all the elements between <em>first</em> and
 											<em>last</em>, including the element pointed by <em>first</em> but not the element pointed by
 										<em>last</em>.</p>
@@ -1158,13 +1208,13 @@ class Point extends Entity
 					<h3>remove<wbr>Event<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
 						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.library.html#basiceventlistener" class="tsd-signature-type">BasicEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.library.html#basiceventlistener" class="tsd-signature-type">BasicEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"insert"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"erase"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"refresh"</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, thisArg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -1172,7 +1222,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2077</li>
+									<li>Defined in lib/samchon.d.ts:2053</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1197,7 +1247,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2078</li>
+									<li>Defined in lib/samchon.d.ts:2054</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1206,7 +1256,7 @@ class Point extends Entity
 									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1216,7 +1266,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2079</li>
+									<li>Defined in lib/samchon.d.ts:2055</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1225,7 +1275,7 @@ class Point extends Entity
 									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1235,7 +1285,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2080</li>
+									<li>Defined in lib/samchon.d.ts:2056</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1244,7 +1294,7 @@ class Point extends Entity
 									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1254,7 +1304,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2084</li>
+									<li>Defined in lib/samchon.d.ts:2060</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1282,7 +1332,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2085</li>
+									<li>Defined in lib/samchon.d.ts:2061</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1291,7 +1341,7 @@ class Point extends Entity
 									<h5>type: <span class="tsd-signature-type">"insert"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -1304,7 +1354,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2086</li>
+									<li>Defined in lib/samchon.d.ts:2062</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1313,7 +1363,7 @@ class Point extends Entity
 									<h5>type: <span class="tsd-signature-type">"erase"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -1326,7 +1376,7 @@ class Point extends Entity
 								<p>Inherited from ICollection.removeEventListener</p>
 								<p>Overrides <a href="samchon.library.ieventdispatcher.html">IEventDispatcher</a>.<a href="samchon.library.ieventdispatcher.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:2087</li>
+									<li>Defined in lib/samchon.d.ts:2063</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1335,7 +1385,7 @@ class Point extends Entity
 									<h5>type: <span class="tsd-signature-type">"refresh"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a></h5>
+									<h5>listener: <a href="../modules/samchon.collections.html#collectioneventlistener" class="tsd-signature-type">CollectionEventListener</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5>thisArg: <span class="tsd-signature-type">Object</span></h5>
@@ -1357,20 +1407,20 @@ class Point extends Entity
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#rend">rend</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#rend">rend</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2970</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2986</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Return <a href="../classes/std.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>.</p>
+									<p>Return <a href="../classes/std.base.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>.</p>
 								</div>
-								<p>Returns a <a href="../classes/std.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
+								<p>Returns a <a href="../classes/std.base.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
 								first element in the container (which is considered its <i>reverse end</i>).</p>
 								<p>The range between <a href="../classes/std.base.container.html">Container</a>.<a href="samchon.protocol.ientitycollection.html#rbegin">rbegin</a> and <a href="../classes/std.base.container.html">Container</a>.<a href="samchon.protocol.ientitycollection.html#rend">rend</a> contains all
 								the elements of the container (in reverse order).</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.base.ireverseiterator.html" class="tsd-signature-type">IReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <a href="../classes/std.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
+							<p>A <a href="../classes/std.base.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
 						</li>
 					</ul>
 				</section>
@@ -1386,7 +1436,7 @@ class Point extends Entity
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#size">size</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#size">size</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2976</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:2917</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1411,7 +1461,7 @@ class Point extends Entity
 								<p>Inherited from <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#swap">swap</a></p>
 								<p>Overrides <a href="../classes/std.base.container.html">Container</a>.<a href="../classes/std.base.container.html#swap">swap</a></p>
 								<ul>
-									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3061</li>
+									<li>Defined in node_modules/tstl/lib/tstl.d.ts:3087</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1453,7 +1503,7 @@ class Point extends Entity
 								<p>Inherited from IEntityGroup.toXML</p>
 								<p>Overrides IEntity.toXML</p>
 								<ul>
-									<li>Defined in lib/samchon.d.ts:4454</li>
+									<li>Defined in lib/samchon.d.ts:4463</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1615,6 +1665,9 @@ class Point extends Entity
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited tsd-is-not-exported">
 								<a href="samchon.protocol.ientitycollection.html#tag" class="tsd-kind-icon">TAG</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
+								<a href="samchon.protocol.ientitycollection.html#___iterator" class="tsd-kind-icon">__@iterator</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited tsd-is-not-exported">
 								<a href="samchon.protocol.ientitycollection.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a>

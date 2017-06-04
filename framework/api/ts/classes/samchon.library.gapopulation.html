@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>GAPopulation | tstl</title>
+	<title>GAPopulation | samchon</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">tstl</a>
+					<a href="../index.html" class="title">samchon</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -129,18 +129,13 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported"><a href="samchon.library.gapopulation.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected tsd-is-not-exported">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="samchon.library.gapopulation.html#children_" class="tsd-kind-icon">children_</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported"><a href="samchon.library.gapopulation.html#compare_" class="tsd-kind-icon">compare_</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section tsd-is-not-exported">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="samchon.library.gapopulation.html#children" class="tsd-kind-icon">children</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="samchon.library.gapopulation.html#fittest" class="tsd-kind-icon">fit<wbr>Test</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="samchon.library.gapopulation.html#getchildren" class="tsd-kind-icon">get<wbr>Children</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="samchon.library.gapopulation.html#getcloner" class="tsd-kind-icon">get<wbr>Cloner</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-not-exported"><a href="samchon.library.gapopulation.html#getcompare" class="tsd-kind-icon">get<wbr>Compare</a></li>
 							</ul>
 						</section>
 					</div>
@@ -152,67 +147,30 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">new GAPopulation<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a></li>
-						<li class="tsd-signature tsd-kind-icon">new GAPopulation<span class="tsd-signature-symbol">(</span>geneArray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a></li>
-						<li class="tsd-signature tsd-kind-icon">new GAPopulation<span class="tsd-signature-symbol">(</span>geneArray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a></li>
+						<li class="tsd-signature tsd-kind-icon">new GAPopulation<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a></li>
+						<li class="tsd-signature tsd-kind-icon">new GAPopulation<span class="tsd-signature-symbol">(</span>geneArray<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span>, size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, compare<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, cloner<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/samchon.d.ts:3309</li>
+									<li>Defined in lib/samchon.d.ts:2868</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Private constructor with population.</p>
-								</div>
-								<p>Private constructor of GAPopulation does not create <a href="samchon.library.gapopulation.html#children">children</a>. (candidate genes) but only assigns
-								<em>null</em> repeatedly following the <em>population size</em>.</p>
-								<p>This private constructor is designed only for <a href="samchon.library.geneticalgorithm.html">GeneticAlgorithm</a>. Don&#39;t create <a href="samchon.library.gapopulation.html">GAPopulation</a>
-								with this constructor, by yourself.</p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>size: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Size of the population.</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in lib/samchon.d.ts:3321</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Construct from a {@link GeneArray} and <em>size of the population</em>.</p>
+									<p>Copy constructor.</p>
 								</div>
 								<p>This public constructor creates <em>GeneArray(s)</em> as population (size) having shuffled genes which are
-								came from the initial set of genes (<em>geneArray</em>). It uses <a href="../modules/std.html#greater">std.greater</a> as default comparison function.</p>
+								came from the initial set of genes (<em>geneArray</em>). The <em>compare</em> is used for comparison function.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>geneArray: <span class="tsd-signature-type">GeneArray</span></h5>
+									<h5>obj: <a href="samchon.library.gapopulation.html" class="tsd-signature-type">GAPopulation</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>An initial sequence listing.</p>
-										</div>
-									</div>
-								</li>
-								<li>
-									<h5>size: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>Size of the population.</p>
+											<p>Target to copy.</p>
 										</div>
 									</div>
 								</li>
@@ -222,7 +180,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/samchon.d.ts:3332</li>
+									<li>Defined in lib/samchon.d.ts:2874</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -246,7 +204,7 @@
 									<h5>size: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>Size of the population.</p>
+											<p>The size of population to have as children.</p>
 										</div>
 									</div>
 								</li>
@@ -260,20 +218,46 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>left<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span>, right<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>left: <span class="tsd-signature-type">GeneArray</span></h5>
+															<h5>x: <span class="tsd-signature-type">GeneArray</span></h5>
 														</li>
 														<li>
-															<h5>right: <span class="tsd-signature-type">GeneArray</span></h5>
+															<h5>y: <span class="tsd-signature-type">GeneArray</span></h5>
 														</li>
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<h5>cloner: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Copy constructor of the <em>GeneArray</em>.</p>
+										</div>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>obj: <span class="tsd-signature-type">GeneArray</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">GeneArray</span></h4>
 												</li>
 											</ul>
 										</li>
@@ -285,70 +269,8 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected tsd-is-not-exported">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported">
-					<a name="children_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> children_</h3>
-					<div class="tsd-signature tsd-kind-icon">children_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in lib/samchon.d.ts:3290</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Genes representing the population.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported">
-					<a name="compare_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> compare_</h3>
-					<div class="tsd-signature tsd-kind-icon">compare_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in lib/samchon.d.ts:3309</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A comparison function returns whether left gene is more optimal, greater.</p>
-						</div>
-						<p>Default value of this {@link compare} is <a href="../modules/std.html#greater">std.greater</a>. It means to compare two array
-						(GeneArray must be a type of <a href="../interfaces/std.base.iarraycontainer.html">std.base.IArrayContainer</a>). Thus, you&#39;ve to keep follwing rule.</p>
-						<ul>
-							<li> GeneArray is implemented from <a href="../interfaces/std.base.iarraycontainer.html">std.base.IArrayContainer</a>. </li>
-							<ul>
-								<li> <a href="std.vector.html">std.Vector</a> </li>
-								<li> <a href="std.deque.html">std.Deque</a> </li>
-							</ul>
-							<li> GeneArray has custom <code>public less(obj: T): boolean;</code> function. </li>
-						</ul>
-						<p>If you don&#39;t want to follow the rule or want a custom comparison function, you have to realize a
-						comparison function.</p>
-					</div>
-				</section>
-			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-					<a name="children" class="tsd-anchor"></a>
-					<h3>children</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.vector.html" class="tsd-signature-type">Vector</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in lib/samchon.d.ts:3345</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="std.vector.html" class="tsd-signature-type">Vector</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 					<a name="fittest" class="tsd-anchor"></a>
 					<h3>fit<wbr>Test</h3>
@@ -359,7 +281,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in lib/samchon.d.ts:3351</li>
+									<li>Defined in lib/samchon.d.ts:2920</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -369,6 +291,123 @@
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">GeneArray</span></h4>
 							<p>The best <em>GeneArray</em> in the {@link population}.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="getchildren" class="tsd-anchor"></a>
+					<h3>get<wbr>Children</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Children<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.iarraycontainer.html" class="tsd-signature-type">IArrayContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in lib/samchon.d.ts:2891</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Genes representing the population.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/std.base.iarraycontainer.html" class="tsd-signature-type">IArrayContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="getcloner" class="tsd-anchor"></a>
+					<h3>get<wbr>Cloner</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Cloner<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in lib/samchon.d.ts:2914</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Copy constructor of the <em>GeneArray</em>.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>obj: <span class="tsd-signature-type">GeneArray</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">GeneArray</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+					<a name="getcompare" class="tsd-anchor"></a>
+					<h3>get<wbr>Compare</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Compare<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in lib/samchon.d.ts:2910</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A comparison function returns whether left gene is more optimal, greater.</p>
+								</div>
+								<p>Default value of this {@link compare} is <a href="../modules/std.html#greater">std.greater</a>. It means to compare two array
+								(GeneArray must be a type of <a href="../interfaces/std.base.iarraycontainer.html">std.base.IArrayContainer</a>). Thus, you&#39;ve to keep follwing rule.</p>
+								<ul>
+									<li> GeneArray is implemented from <a href="../interfaces/std.base.iarraycontainer.html">std.base.IArrayContainer</a>. </li>
+									<ul>
+										<li> <a href="std.vector.html">std.Vector</a> </li>
+										<li> <a href="std.deque.html">std.Deque</a> </li>
+									</ul>
+									<li> GeneArray has custom <code>public less(obj: T): boolean;</code> function. </li>
+								</ul>
+								<p>If you don&#39;t want to follow the rule or want a custom comparison function, you have to realize a
+								comparison function.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter-siganture">
+									<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+										<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>x<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span>, y<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">GeneArray</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+									</ul>
+									<ul class="tsd-descriptions">
+										<li class="tsd-description">
+											<h4 class="tsd-parameters-title">Parameters</h4>
+											<ul class="tsd-parameters">
+												<li>
+													<h5>x: <span class="tsd-signature-type">GeneArray</span></h5>
+												</li>
+												<li>
+													<h5>y: <span class="tsd-signature-type">GeneArray</span></h5>
+												</li>
+											</ul>
+											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+										</li>
+									</ul>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -436,17 +475,17 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-not-exported">
 								<a href="samchon.library.gapopulation.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported">
-								<a href="samchon.library.gapopulation.html#children_" class="tsd-kind-icon">children_</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private tsd-is-not-exported">
-								<a href="samchon.library.gapopulation.html#compare_" class="tsd-kind-icon">compare_</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
-								<a href="samchon.library.gapopulation.html#children" class="tsd-kind-icon">children</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
 								<a href="samchon.library.gapopulation.html#fittest" class="tsd-kind-icon">fit<wbr>Test</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="samchon.library.gapopulation.html#getchildren" class="tsd-kind-icon">get<wbr>Children</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="samchon.library.gapopulation.html#getcloner" class="tsd-kind-icon">get<wbr>Cloner</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-not-exported">
+								<a href="samchon.library.gapopulation.html#getcompare" class="tsd-kind-icon">get<wbr>Compare</a>
 							</li>
 						</ul>
 					</li>

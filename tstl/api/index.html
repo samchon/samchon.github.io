@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -238,7 +236,7 @@ map.set(<span class="hljs-number">9</span>, <span class="hljs-string">"Nineth"</
 				<h5 id="c-stl">C++ STL</h5>
 				<pre><code class="lang-cpp"><span class="hljs-comment">// Vector</span>
 <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v(<span class="hljs-number">5</span>, <span class="hljs-number">1</span>);
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = v.begin(); it != it.end(); it++)
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = v.begin(); it != it.end(); ++it)
     <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
 
 <span class="hljs-comment">// TreeMap</span>
@@ -250,8 +248,11 @@ m.emplace(<span class="hljs-number">3</span>, <span class="hljs-string">"third"<
 m[<span class="hljs-number">4</span>] = <span class="hljs-string">"fourth"</span>;
 <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; m[<span class="hljs-number">4</span>] &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
 
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = m.begin(); it != m.end(); it++)
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = m.begin(); it != m.end(); ++it)
     <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="hljs-string">", "</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;x : m) <span class="hljs-comment">// NEW FEATURE, FULL-FORWARD-ITERATION</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; x.first &lt;&lt; <span class="hljs-string">", "</span> &lt;&lt; x.second &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
 </code></pre>
 				<h5 id="typescript-stl">TypeScript-STL</h5>
 				<pre><code class="lang-typescript"><span class="hljs-comment">// Vector</span>
@@ -269,7 +270,10 @@ m.set(<span class="hljs-number">4</span>, <span class="hljs-string">"fourth"</sp
 <span class="hljs-built_in">console</span>.log(m.get(<span class="hljs-number">4</span>));
 
 <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> it = m.begin(); !it.equals(m.end()); it = it.next())
-    <span class="hljs-built_in">console</span>.log(it.first, it.second);
+    <span class="hljs-built_in">console</span>.log(it.first, it.second); <span class="hljs-comment">// TRADITIONAL ITERATION</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x of m) <span class="hljs-comment">// NEW FEATURE, FULL-FORWARD ITERATION</span>
+    <span class="hljs-built_in">console</span>.log(x.first, x.second);
 </code></pre>
 				<h2 id="references">References</h2>
 				<ul>
@@ -301,7 +305,7 @@ m.set(<span class="hljs-number">4</span>, <span class="hljs-string">"fourth"</sp
 					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="modules/_tstl_.html">"tstl"</a>
 					</li>
-					<li class=" tsd-kind-module tsd-is-not-exported">
+					<li class=" tsd-kind-module">
 						<a href="modules/std.html">std</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
