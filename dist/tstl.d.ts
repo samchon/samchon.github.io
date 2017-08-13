@@ -1,12 +1,9 @@
-// Type definitions for TSTL v1.4.8
+// Type definitions for TSTL v1.5.6
 // Project: https://github.com/samchon/tstl
 // Definitions by: Jeongho Nam <http://samchon.org>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-declare module "tstl"
-{
-	export = std;
-}
+export = std;
 
 /**
  * # <u>T</u>ypeScript-<u>STL</u>
@@ -2888,7 +2885,7 @@ declare namespace std.base {
      *
      * @author Jeongho Nam <http://samchon.org>
      */
-    abstract class Container<T> {
+    abstract class Container<T> implements Iterable<T> {
         /**
          * Default Constructor.
          */
@@ -2909,6 +2906,22 @@ declare namespace std.base {
          * Removes all elements from the Container, leaving the container with a size of 0.
          */
         clear(): void;
+        /**
+         * Return the number of elements in the {@link Container}.
+         *
+         * @return The number of elements in the container.
+         */
+        abstract size(): number;
+        /**
+         * Test whether the container is empty.
+         * Returns whether the container is empty (i.e. whether its size is 0).
+         *
+         * This function does not modify the container in any way. To clear the content of the container,
+         * see {@link clear clear()}.
+         *
+         * @return <code>true</code> if the container size is 0, <code>false</code> otherwise.
+         */
+        empty(): boolean;
         /**
          * Return iterator to beginning.
          *
@@ -2969,21 +2982,31 @@ declare namespace std.base {
          */
         abstract rend(): IReverseIterator<T>;
         /**
-         * Return the number of elements in the {@link Container}.
+         * To the `for of` statement.
          *
-         * @return The number of elements in the container.
+         * The {@link [Symbol.iterator]} is a method returns an `IterableIterator` instance, who can implement the
+         * `for of` statement, supporting the *full-forward-iteration*. You don't need to call this method, but just
+         * use the `for of` statement such below:
+         *
+         * ```typescript
+         * let container: std.base.Container<number>;
+         * container.push(1, 2, 3, 4);
+         *
+         * for (let elem of container) // elem: number
+         *     console.log("An element in the container: " + elem);
+         *
+         * //--------
+         * // elem is the element in the container
+         * //--------
+         * // An element in the container: 1
+         * // An element in the container: 2
+         * // An element in the container: 3
+         * // An element in the container: 4
+         * ```
+         *
+         * @return An `IterableIterator` instance, but do not consider about it. Just use the `for of` statement.
          */
-        abstract size(): number;
-        /**
-         * Test whether the container is empty.
-         * Returns whether the container is empty (i.e. whether its size is 0).
-         *
-         * This function does not modify the container in any way. To clear the content of the container,
-         * see {@link clear clear()}.
-         *
-         * @return <code>true</code> if the container size is 0, <code>false</code> otherwise.
-         */
-        empty(): boolean;
+        [Symbol.iterator](): IterableIterator<T>;
         /**
          * Insert elements.
          *
@@ -3040,7 +3063,7 @@ declare namespace std.base {
          *		   call. This is the {@link end Container.end} if the operation erased the last element in
          *		   the sequence.
          */
-        abstract erase<U extends T>(begin: Iterator<U>, end: Iterator<U>): Iterator<T>;
+        abstract erase(begin: Iterator<T>, end: Iterator<T>): Iterator<T>;
         /**
          * Swap content.
          *
@@ -3216,8 +3239,8 @@ declare namespace std.base {
     }
 }
 declare namespace std.Vector {
-    type iterator<T> = VectorIterator<T>;
-    type reverse_iterator<T> = VectorReverseIterator<T>;
+    type iterator<T> = base.ArrayIterator<T, Vector<T>>;
+    type reverse_iterator<T> = base.ArrayReverseIterator<T, Vector<T>>;
 }
 declare namespace std {
     /**
@@ -3352,6 +3375,10 @@ declare namespace std {
          * @returns An array.
          */
         data(): Array<T>;
+        /**
+         * @inheritdoc
+         */
+        [Symbol.iterator](): IterableIterator<T>;
         /**
          * @inheritdoc
          */
@@ -3570,6 +3597,7 @@ declare namespace std {
          *		   measured in terms of the number elements it can hold.
          */
         capacity(): number;
+        [Symbol.iterator](): IterableIterator<T>;
         /**
          * @inheritdoc
          */
@@ -3874,10 +3902,6 @@ declare namespace std.base {
          *			  {@link List container}.
          */
         swap(obj: _ListContainer<T, BidirectionalIterator>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: Container<T>): void;
     }
 }
 declare namespace std.List {
@@ -3927,6 +3951,13 @@ declare namespace std {
      * @author Jeongho Nam <http://samchon.org>
      */
     class List<T> extends base._ListContainer<T, ListIterator<T>> implements base.IDequeContainer<T> {
+        /**
+         * @hidden
+         */
+        private ptr_;
+        /**
+         * @hidden
+         */
         private rend_;
         /**
          * Default Constructor.
@@ -4433,10 +4464,6 @@ declare namespace std {
          *			  {@link List container}.
          */
         swap(obj: List<T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<T>): void;
     }
 }
 declare namespace std.base {
@@ -4476,12 +4503,11 @@ declare namespace std.base {
      */
     abstract class SetContainer<T> extends Container<T> {
         /**
-         * {@link List} storing elements.
-         *
-         * Storing elements and keeping those sequence of the {@link SetContainer} are implemented by
-         * {@link data_ this list container}. Implementing index-table is also related with {@link data_ this list}
-         * by storing {@link ListIterator iterators} ({@link SetIterator} references {@link ListIterator}) who are
-         * created from {@link data_ here}.
+         * @hidden
+         */
+        private source_ptr_;
+        /**
+         * @hidden
          */
         private data_;
         /**
@@ -4657,7 +4683,7 @@ declare namespace std.base {
         /**
          * @hidden
          */
-        protected _Swap(obj: SetContainer<T>): void;
+        swap(obj: SetContainer<T>): void;
         /**
          * Merge two sets.
          *
@@ -4674,19 +4700,6 @@ declare namespace std.base {
          * @hidden
          */
         protected abstract _Handle_erase(first: SetIterator<T>, last: SetIterator<T>): void;
-    }
-    /**
-     * @hidden
-     */
-    class _SetElementList<T> extends _ListContainer<T, SetIterator<T>> {
-        private associative_;
-        private rend_;
-        constructor(associative: SetContainer<T>);
-        protected _Create_iterator(prev: SetIterator<T>, next: SetIterator<T>, val: T): SetIterator<T>;
-        protected _Set_begin(it: SetIterator<T>): void;
-        associative(): SetContainer<T>;
-        rbegin(): SetReverseIterator<T>;
-        rend(): SetReverseIterator<T>;
     }
 }
 declare namespace std.base {
@@ -4992,10 +5005,6 @@ declare namespace std {
          *			  with that of this {@link TreeSet container}.
          */
         swap(obj: TreeSet<T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<T>): void;
     }
 }
 declare namespace std.HashSet {
@@ -5174,10 +5183,6 @@ declare namespace std {
          *			  with that of this {@link HashSet container}.
          */
         swap(obj: HashSet<T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<T>): void;
     }
 }
 declare namespace std.base {
@@ -5427,10 +5432,6 @@ declare namespace std {
          *			  with that of this {@link TreeMultiSet container}.
          */
         swap(obj: TreeMultiSet<T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<T>): void;
     }
 }
 declare namespace std.HashMultiSet {
@@ -5613,10 +5614,6 @@ declare namespace std {
          *			  with that of this {@link HashMultiSet container}.
          */
         swap(obj: HashMultiSet<T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<T>): void;
     }
 }
 declare namespace std.base {
@@ -5662,6 +5659,10 @@ declare namespace std.base {
      * @author Jeongho Nam <http://samchon.org>
      */
     abstract class MapContainer<Key, T> extends Container<Pair<Key, T>> {
+        /**
+         * @hidden
+         */
+        private ptr_;
         /**
          * @hidden
          */
@@ -6033,7 +6034,7 @@ declare namespace std.base {
         /**
          * @hidden
          */
-        protected _Swap(obj: MapContainer<Key, T>): void;
+        swap(obj: MapContainer<Key, T>): void;
         /**
          * Merge two maps.
          *
@@ -6050,19 +6051,6 @@ declare namespace std.base {
          * @hidden
          */
         protected abstract _Handle_erase(first: MapIterator<Key, T>, last: MapIterator<Key, T>): void;
-    }
-    /**
-     * @hidden
-     */
-    class _MapElementList<Key, T> extends _ListContainer<Pair<Key, T>, MapIterator<Key, T>> {
-        private associative_;
-        private rend_;
-        constructor(associative: MapContainer<Key, T>);
-        protected _Create_iterator(prev: MapIterator<Key, T>, next: MapIterator<Key, T>, val: Pair<Key, T>): MapIterator<Key, T>;
-        protected _Set_begin(it: MapIterator<Key, T>): void;
-        associative(): MapContainer<Key, T>;
-        rbegin(): MapReverseIterator<Key, T>;
-        rend(): MapReverseIterator<Key, T>;
     }
 }
 declare namespace std.base {
@@ -6564,10 +6552,6 @@ declare namespace std {
          *			  with that of this {@link TreeMap container}.
          */
         swap(obj: TreeMap<Key, T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<Pair<Key, T>>): void;
     }
 }
 declare namespace std.HashMap {
@@ -6755,10 +6739,6 @@ declare namespace std {
          *			  with that of this {@link HashMap container}.
          */
         swap(obj: HashMap<Key, T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<Pair<Key, T>>): void;
     }
 }
 declare namespace std.base {
@@ -7091,10 +7071,6 @@ declare namespace std {
          *			  with that of this {@link TreeMapMulti container}.
          */
         swap(obj: TreeMultiMap<Key, T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<Pair<Key, T>>): void;
     }
 }
 declare namespace std.HashMultiMap {
@@ -7287,10 +7263,6 @@ declare namespace std {
          *			  with that of this {@link HashMultiMap container}.
          */
         swap(obj: HashMultiMap<Key, T>): void;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: base.Container<Pair<Key, T>>): void;
     }
 }
 declare namespace std {
@@ -7735,11 +7707,7 @@ declare namespace std {
      * @reference http://www.cplusplus.com/reference/exception/exception
      * @author Jeongho Nam <http://samchon.org>
      */
-    class Exception {
-        /**
-         * @hidden
-         */
-        private message_;
+    class Exception extends Error {
         /**
          * Default Constructor.
          */
@@ -8392,322 +8360,6 @@ declare namespace std {
 }
 declare namespace std {
     /**
-     * Function object class for equality comparison.
-     *
-     * Binary function object class whose call returns whether its two arguments compare <i>equal</i> (as returned by
-     * operator ==).
-     *
-     * Generically, function objects are instances of a class with member function {@link IComparable.equal_to equal_to}
-     * defined. This member function allows the object to be used with the same syntax as a function call.
-     *
-     * @param x First element to compare.
-     * @param y Second element to compare.
-     *
-     * @return Whether the arguments are equal.
-     */
-    function equal_to<T>(x: T, y: T): boolean;
-    /**
-     * Function object class for non-equality comparison.
-     *
-     * Binary function object class whose call returns whether its two arguments compare <i>not equal</i> (as returned
-     * by operator operator!=).
-     *
-     * Generically, function objects are instances of a class with member function {@link IComparable.equal_to equal_to}
-     * defined. This member function allows the object to be used with the same syntax as a function call.
-     *
-     * @param x First element to compare.
-     * @param y Second element to compare.
-     *
-     * @return Whether the arguments are not equal.
-     */
-    function not_equal_to<T>(x: T, y: T): boolean;
-    /**
-     * Function for less-than inequality comparison.
-     *
-     * Binary function returns whether the its first argument compares less than the second.
-     *
-     * Generically, function objects are instances of a class with member function {@link IComparable.less less}
-     * defined. If an object doesn't have the method, then its own uid will be used to compare insteadly.
-     * This member function allows the object to be used with the same syntax as a function call.
-     *
-     * Objects of this class can be used on standard algorithms such as {@link sort sort()}</code>,
-     * {@link merge merge()} or {@link TreeMap.lower_bound lower_bound()}.
-     *
-     * @param <T> Type of arguments to compare by the function call. The type shall supporrt the operation
-     *			  <i>operator<()</i> or method {@link IComparable.less less}.
-     *
-     * @param x First element, the standard of comparison.
-     * @param y Second element compare with the first.
-     *
-     * @return Whether the first parameter is less than the second.
-     */
-    function less<T>(x: T, y: T): boolean;
-    /**
-     * Function object class for less-than-or-equal-to comparison.
-     *
-     * Binary function object class whose call returns whether the its first argument compares {@link less less than} or
-     * {@link equal_to equal to} the second (as returned by operator <=).
-     *
-     * Generically, <i>function objects</i> are instances of a class with member function {@link IComparable.less less}
-     * and {@link IComparable.equal_to equal_to} defined. This member function allows the object to be used with the same
-     * syntax as a function call.
-     *
-     * @param x First element, the standard of comparison.
-     * @param y Second element compare with the first.
-     *
-     * @return Whether the <i>x</i> is {@link less less than} or {@link equal_to equal to} the <i>y</i>.
-     */
-    function less_equal<T>(x: T, y: T): boolean;
-    /**
-     * Function for greater-than inequality comparison.
-     *
-     * Binary function returns whether the its first argument compares greater than the second.
-     *
-     * Generically, function objects are instances of a class with member function {@link less} and
-     * {@link equal_to equal_to()} defined. If an object doesn't have those methods, then its own uid will be used
-     * to compare insteadly. This member function allows the object to be used with the same syntax as a function
-     * call.
-     *
-     * Objects of this class can be used on standard algorithms such as {@link sort sort()},
-     * {@link merge merge()} or {@link TreeMap.lower_bound lower_bound()}.
-     *
-     * @param <T> Type of arguments to compare by the function call. The type shall supporrt the operation
-     *			  <i>operator>()</i> or method {@link IComparable.greater greater}.
-     *
-     * @return Whether the <i>x</i> is greater than the <i>y</i>.
-     */
-    function greater<T>(x: T, y: T): boolean;
-    /**
-     * Function object class for greater-than-or-equal-to comparison.
-     *
-     * Binary function object class whose call returns whether the its first argument compares
-     * {@link greater greater than} or {@link equal_to equal to} the second (as returned by operator >=).
-     *
-     * Generically, function objects are instances of a class with member function {@link IComparable.less less}
-     * defined. If an object doesn't have the method, then its own uid will be used to compare insteadly.
-     * This member function allows the object to be used with the same syntax as a function call.
-     *
-     * @param x First element, the standard of comparison.
-     * @param y Second element compare with the first.
-     *
-     * @return Whether the <i>x</i> is {@link greater greater than} or {@link equal_to equal to} the <i>y</i>.
-     */
-    function greater_equal<T>(x: T, y: T): boolean;
-    /**
-     * Logical AND function object class.
-     *
-     * Binary function object class whose call returns the result of the <i>logical "and"</i> operation between its two
-     * arguments (as returned by operator &&).
-     *
-     * Generically, function objects are instances of a class with member function operator() defined. This member
-     * function allows the object to be used with the same syntax as a function call.
-     *
-     * @param x First element.
-     * @param y Second element.
-     *
-     * @return Result of logical AND operation.
-     */
-    function logical_and<T>(x: T, y: T): boolean;
-    /**
-     * Logical OR function object class.
-     *
-     * Binary function object class whose call returns the result of the <i>logical "or"</i> operation between its two
-     * arguments (as returned by operator ||).
-     *
-     * Generically, function objects are instances of a class with member function operator() defined. This member
-     * function allows the object to be used with the same syntax as a function call.
-     *
-     * @param x First element.
-     * @param y Second element.
-     *
-     * @return Result of logical OR operation.
-     */
-    function logical_or<T>(x: T, y: T): boolean;
-    /**
-     * Logical NOT function object class.
-     *
-     * Unary function object class whose call returns the result of the <i>logical "not"</i> operation on its argument
-     * (as returned by operator !).
-     *
-     * Generically, function objects are instances of a class with member function operator() defined. This member
-     * function allows the object to be used with the same syntax as a function call.
-     *
-     * @param x Target element.
-     *
-     * @return Result of logical NOT operation.
-     */
-    function logical_not<T>(x: T): boolean;
-    /**
-     * Bitwise AND function object class.
-     *
-     * Binary function object class whose call returns the result of applying the <i>bitwise "and"</i> operation between
-     * its two arguments (as returned by operator &).
-     *
-     * @param x First element.
-     * @param y Second element.
-     *
-     * @return Result of bitwise AND operation.
-     */
-    function bit_and(x: number, y: number): number;
-    /**
-     * Bitwise OR function object class.
-     *
-     * Binary function object class whose call returns the result of applying the <i>bitwise "and"</i> operation between
-     * its two arguments (as returned by operator &).
-     *
-     * @param x First element.
-     * @param y Second element.
-     *
-     * @return Result of bitwise OR operation.
-     */
-    function bit_or(x: number, y: number): number;
-    /**
-     * Bitwise XOR function object class.
-     *
-     * Binary function object class whose call returns the result of applying the <i>bitwise "exclusive or"</i>
-     * operation between its two arguments (as returned by operator ^).
-     *
-     * @param x First element.
-     * @param y Second element.
-     *
-     * @return Result of bitwise XOR operation.
-     */
-    function bit_xor(x: number, y: number): number;
-    /**
-     * Default hash function for number.
-     *
-     * Unary function that defines the default hash function used by the standard library.
-     *
-     * The functional call returns a hash value of its argument: A hash value is a value that depends solely on
-     * its argument, returning always the same value for the same argument (for a given execution of a program). The
-     * value returned shall have a small likelihood of being the same as the one returned for a different argument.
-     *
-     *
-     * @param val Value to be hashed.
-     *
-     * @return Returns a hash value for its argument, as a value of type number. The number is an unsigned integer.
-     */
-    function hash(val: number): number;
-    /**
-     * Default hash function for string.
-     *
-     * Unary function that defines the default hash function used by the standard library.
-     *
-     * The functional call returns a hash value of its argument: A hash value is a value that depends solely on
-     * its argument, returning always the same value for the same argument (for a given execution of a program). The
-     * value returned shall have a small likelihood of being the same as the one returned for a different argument.
-     *
-     * @param str A string to be hashed.
-     *
-     * @return Returns a hash value for its argument, as a value of type number. The number is an unsigned integer.
-     */
-    function hash(str: string): number;
-    /**
-     * Default hash function for Object.
-     *
-     * Unary function that defines the default hash function used by the standard library.
-     *
-     * The functional call returns a hash value of its argument: A hash value is a value that depends solely on
-     * its argument, returning always the same value for the same argument (for a given execution of a program). The
-     * value returned shall have a small likelihood of being the same as the one returned for a different argument.
-     *
-     *
-     * The default {@link hash} function of Object returns a value returned from {@link hash hash(number)} with
-     * an <b>unique id</b> of each Object. If you want to specify {@link hash} function of a specific class, then
-     * define a member function <code>public hashCode(): number</code> in the class.
-     *
-     * @param obj Object to be hashed.
-     *
-     * @return Returns a hash value for its argument, as a value of type number. The number is an unsigned integer.
-     */
-    function hash(obj: Object): number;
-    /**
-     * Exchange contents of {@link IContainers containers}.
-     *
-     * The contents of container <i>left</i> are exchanged with those of <i>right</i>. Both container objects must have
-     * same type of elements (same template parameters), although sizes may differ.
-     *
-     * After the call to this member function, the elements in <i>left</i> are those which were in <i>right</i> before
-     * the call, and the elements of <i>right</i> are those which were in <i>left</i>. All iterators, references and
-     * pointers remain valid for the swapped objects.
-     *
-     * This is an overload of the generic algorithm swap that improves its performance by mutually transferring
-     * ownership over their assets to the other container (i.e., the containers exchange references to their data, without
-     * actually performing any element copy or movement): It behaves as if <i>left</i>.
-     * {@link Container.swap swap}(<i>right</i>) was called.
-     *
-     * @param left A {@link Container container} to swap its contents.
-     * @param right A {@link Container container} to swap its contents.
-     */
-    function swap<T>(left: base.Container<T>, right: base.Container<T>): void;
-    /**
-     * Exchange contents of queues.
-     *
-     * Exchanges the contents of <i>left</i> and <i>right</i>.
-     *
-     * @param left A {@link Queue} container of the same type. Size may differ.
-     * @param right A {@link Queue} container of the same type. Size may differ.
-     */
-    function swap<T>(left: Queue<T>, right: Queue<T>): void;
-    /**
-     * Exchange contents of {@link PriorityQueue PriorityQueues}.
-     *
-     * Exchanges the contents of <i>left</i> and <i>right</i>.
-     *
-     * @param left A {@link PriorityQueue} container of the same type. Size may differ.
-     * @param right A {@link PriorityQueue} container of the same type. Size may differ.
-     */
-    function swap<T>(left: PriorityQueue<T>, right: PriorityQueue<T>): void;
-    /**
-     * Exchange contents of {@link Stack Stacks}.
-     *
-     * Exchanges the contents of <i>left</i> and <i>right</i>.
-     *
-     * @param left A {@link Stack} container of the same type. Size may differ.
-     * @param right A {@link Stack} container of the same type. Size may differ.
-     */
-    function swap<T>(left: Stack<T>, right: Stack<T>): void;
-    /**
-     * Exchanges the contents of two {@link UniqueMap unique maps}.
-     *
-     * The contents of container <i>left</i> are exchanged with those of <i>right</i>. Both container objects must
-     * be of the same type (same template parameters), although sizes may differ.
-     *
-     * After the call to this member function, the elements in <i>left</i> are those which were in <i>right</i>
-     * before the call, and the elements of <i>right</i> are those which were in <i>left</i>. All iterators, references
-     * and pointers remain valid for the swapped objects.
-     *
-     * This is an overload of the generic algorithm swap that improves its performance by mutually transferring
-     * ownership over their assets to the other container (i.e., the containers exchange references to their data,
-     * without actually performing any element copy or movement): It behaves as if
-     * <i>left</i>.{@link UniqueMap.swap swap}(<i>right</i>) was called.
-     *
-     * @param left An {@link UniqueMap unique map} to swap its conents.
-     * @param right An {@link UniqueMap unique map} to swap its conents.
-     */
-    function swap<Key, T>(left: base.UniqueMap<Key, T>, right: base.UniqueMap<Key, T>): void;
-    /**
-     * Exchanges the contents of two {@link MultiMap multi maps}.
-     *
-     * The contents of container <i>left</i> are exchanged with those of <i>right</i>. Both container objects must
-     * be of the same type (same template parameters), although sizes may differ.
-     *
-     * After the call to this member function, the elements in <i>left</i> are those which were in <i>right</i>
-     * before the call, and the elements of <i>right</i> are those which were in <i>left</i>. All iterators, references
-     * and pointers remain valid for the swapped objects.
-     *
-     * This is an overload of the generic algorithm swap that improves its performance by mutually transferring
-     * ownership over their assets to the other container (i.e., the containers exchange references to their data,
-     * without actually performing any element copy or movement): It behaves as if
-     * <i>left</i>.{@link MultiMap.swap swap}(<i>right</i>) was called.
-     *
-     * @param left A {@link MultiMap multi map} to swap its conents.
-     * @param right A {@link MultiMap multi map} to swap its conents.
-     */
-    function swap<Key, T>(left: base.MultiMap<Key, T>, right: base.MultiMap<Key, T>): void;
-}
-declare namespace std {
-    /**
      * Bind function arguments.
      *
      * Returns a function object based on <i>fn</i>, but with its arguments bound to <i>args</i>.
@@ -8818,6 +8470,867 @@ declare namespace std.placeholders {
     const _18: PlaceHolder;
     const _19: PlaceHolder;
     const _20: PlaceHolder;
+}
+declare namespace std {
+    /**
+     * Logical AND function object class.
+     *
+     * Binary function object class whose call returns the result of the <i>logical "and"</i> operation between its two
+     * arguments (as returned by operator &&).
+     *
+     * Generically, function objects are instances of a class with member function operator() defined. This member
+     * function allows the object to be used with the same syntax as a function call.
+     *
+     * @param x First element.
+     * @param y Second element.
+     *
+     * @return Result of logical AND operation.
+     */
+    function logical_and<T>(x: T, y: T): boolean;
+    /**
+     * Logical OR function object class.
+     *
+     * Binary function object class whose call returns the result of the <i>logical "or"</i> operation between its two
+     * arguments (as returned by operator ||).
+     *
+     * Generically, function objects are instances of a class with member function operator() defined. This member
+     * function allows the object to be used with the same syntax as a function call.
+     *
+     * @param x First element.
+     * @param y Second element.
+     *
+     * @return Result of logical OR operation.
+     */
+    function logical_or<T>(x: T, y: T): boolean;
+    /**
+     * Logical NOT function object class.
+     *
+     * Unary function object class whose call returns the result of the <i>logical "not"</i> operation on its argument
+     * (as returned by operator !).
+     *
+     * Generically, function objects are instances of a class with member function operator() defined. This member
+     * function allows the object to be used with the same syntax as a function call.
+     *
+     * @param x Target element.
+     *
+     * @return Result of logical NOT operation.
+     */
+    function logical_not<T>(x: T): boolean;
+    /**
+     * Bitwise AND function object class.
+     *
+     * Binary function object class whose call returns the result of applying the <i>bitwise "and"</i> operation between
+     * its two arguments (as returned by operator &).
+     *
+     * @param x First element.
+     * @param y Second element.
+     *
+     * @return Result of bitwise AND operation.
+     */
+    function bit_and(x: number, y: number): number;
+    /**
+     * Bitwise OR function object class.
+     *
+     * Binary function object class whose call returns the result of applying the <i>bitwise "and"</i> operation between
+     * its two arguments (as returned by operator &).
+     *
+     * @param x First element.
+     * @param y Second element.
+     *
+     * @return Result of bitwise OR operation.
+     */
+    function bit_or(x: number, y: number): number;
+    /**
+     * Bitwise XOR function object class.
+     *
+     * Binary function object class whose call returns the result of applying the <i>bitwise "exclusive or"</i>
+     * operation between its two arguments (as returned by operator ^).
+     *
+     * @param x First element.
+     * @param y Second element.
+     *
+     * @return Result of bitwise XOR operation.
+     */
+    function bit_xor(x: number, y: number): number;
+}
+declare namespace std {
+    /**
+     * Function object class for equality comparison.
+     *
+     * Binary function object class whose call returns whether its two arguments compare <i>equal</i> (as returned by
+     * operator ==).
+     *
+     * Generically, function objects are instances of a class with member function {@link IComparable.equal_to equal_to}
+     * defined. This member function allows the object to be used with the same syntax as a function call.
+     *
+     * @param x First element to compare.
+     * @param y Second element to compare.
+     *
+     * @return Whether the arguments are equal.
+     */
+    function equal_to<T>(x: T, y: T): boolean;
+    /**
+     * Function object class for non-equality comparison.
+     *
+     * Binary function object class whose call returns whether its two arguments compare <i>not equal</i> (as returned
+     * by operator operator!=).
+     *
+     * Generically, function objects are instances of a class with member function {@link IComparable.equal_to equal_to}
+     * defined. This member function allows the object to be used with the same syntax as a function call.
+     *
+     * @param x First element to compare.
+     * @param y Second element to compare.
+     *
+     * @return Whether the arguments are not equal.
+     */
+    function not_equal_to<T>(x: T, y: T): boolean;
+    /**
+     * Function for less-than inequality comparison.
+     *
+     * Binary function returns whether the its first argument compares less than the second.
+     *
+     * Generically, function objects are instances of a class with member function {@link IComparable.less less}
+     * defined. If an object doesn't have the method, then its own uid will be used to compare insteadly.
+     * This member function allows the object to be used with the same syntax as a function call.
+     *
+     * Objects of this class can be used on standard algorithms such as {@link sort sort()}</code>,
+     * {@link merge merge()} or {@link TreeMap.lower_bound lower_bound()}.
+     *
+     * @param <T> Type of arguments to compare by the function call. The type shall supporrt the operation
+     *			  <i>operator<()</i> or method {@link IComparable.less less}.
+     *
+     * @param x First element, the standard of comparison.
+     * @param y Second element compare with the first.
+     *
+     * @return Whether the first parameter is less than the second.
+     */
+    function less<T>(x: T, y: T): boolean;
+    /**
+     * Function object class for less-than-or-equal-to comparison.
+     *
+     * Binary function object class whose call returns whether the its first argument compares {@link less less than} or
+     * {@link equal_to equal to} the second (as returned by operator <=).
+     *
+     * Generically, <i>function objects</i> are instances of a class with member function {@link IComparable.less less}
+     * and {@link IComparable.equal_to equal_to} defined. This member function allows the object to be used with the same
+     * syntax as a function call.
+     *
+     * @param x First element, the standard of comparison.
+     * @param y Second element compare with the first.
+     *
+     * @return Whether the <i>x</i> is {@link less less than} or {@link equal_to equal to} the <i>y</i>.
+     */
+    function less_equal<T>(x: T, y: T): boolean;
+    /**
+     * Function for greater-than inequality comparison.
+     *
+     * Binary function returns whether the its first argument compares greater than the second.
+     *
+     * Generically, function objects are instances of a class with member function {@link less} and
+     * {@link equal_to equal_to()} defined. If an object doesn't have those methods, then its own uid will be used
+     * to compare insteadly. This member function allows the object to be used with the same syntax as a function
+     * call.
+     *
+     * Objects of this class can be used on standard algorithms such as {@link sort sort()},
+     * {@link merge merge()} or {@link TreeMap.lower_bound lower_bound()}.
+     *
+     * @param <T> Type of arguments to compare by the function call. The type shall supporrt the operation
+     *			  <i>operator>()</i> or method {@link IComparable.greater greater}.
+     *
+     * @return Whether the <i>x</i> is greater than the <i>y</i>.
+     */
+    function greater<T>(x: T, y: T): boolean;
+    /**
+     * Function object class for greater-than-or-equal-to comparison.
+     *
+     * Binary function object class whose call returns whether the its first argument compares
+     * {@link greater greater than} or {@link equal_to equal to} the second (as returned by operator >=).
+     *
+     * Generically, function objects are instances of a class with member function {@link IComparable.less less}
+     * defined. If an object doesn't have the method, then its own uid will be used to compare insteadly.
+     * This member function allows the object to be used with the same syntax as a function call.
+     *
+     * @param x First element, the standard of comparison.
+     * @param y Second element compare with the first.
+     *
+     * @return Whether the <i>x</i> is {@link greater greater than} or {@link equal_to equal to} the <i>y</i>.
+     */
+    function greater_equal<T>(x: T, y: T): boolean;
+}
+declare namespace std {
+    /**
+     * Default hash function.
+     *
+     * A variadic template function returning a hash value.
+     *
+     * This functioncal call returns a hash value of its arguments: A hash value is a value that depends solely on
+     * its arguments, returning always the same value for the same arguments (for a given execution of a program).
+     * The value returned shall have a small likelihood of being the same as the one retured for a different arguments.
+     *
+     * @param val A value to be hashed.
+     * @param args Rest parameters also to be hashed.
+     *
+     * @return A hash value for arguments. The number is an unsigned integer.
+     */
+    function hash<T>(val: T, ...args: any[]): number;
+}
+declare namespace std {
+    /**
+     * Exchange contents of {@link IContainers containers}.
+     *
+     * The contents of container <i>left</i> are exchanged with those of <i>right</i>. Both container objects must have
+     * same type of elements (same template parameters), although sizes may differ.
+     *
+     * After the call to this member function, the elements in <i>left</i> are those which were in <i>right</i> before
+     * the call, and the elements of <i>right</i> are those which were in <i>left</i>. All iterators, references and
+     * pointers remain valid for the swapped objects.
+     *
+     * This is an overload of the generic algorithm swap that improves its performance by mutually transferring
+     * ownership over their assets to the other container (i.e., the containers exchange references to their data, without
+     * actually performing any element copy or movement): It behaves as if <i>left</i>.
+     * {@link Container.swap swap}(<i>right</i>) was called.
+     *
+     * @param left A {@link Container container} to swap its contents.
+     * @param right A {@link Container container} to swap its contents.
+     */
+    function swap<T>(left: base.Container<T>, right: base.Container<T>): void;
+    /**
+     * Exchange contents of queues.
+     *
+     * Exchanges the contents of <i>left</i> and <i>right</i>.
+     *
+     * @param left A {@link Queue} container of the same type. Size may differ.
+     * @param right A {@link Queue} container of the same type. Size may differ.
+     */
+    function swap<T>(left: Queue<T>, right: Queue<T>): void;
+    /**
+     * Exchange contents of {@link PriorityQueue PriorityQueues}.
+     *
+     * Exchanges the contents of <i>left</i> and <i>right</i>.
+     *
+     * @param left A {@link PriorityQueue} container of the same type. Size may differ.
+     * @param right A {@link PriorityQueue} container of the same type. Size may differ.
+     */
+    function swap<T>(left: PriorityQueue<T>, right: PriorityQueue<T>): void;
+    /**
+     * Exchange contents of {@link Stack Stacks}.
+     *
+     * Exchanges the contents of <i>left</i> and <i>right</i>.
+     *
+     * @param left A {@link Stack} container of the same type. Size may differ.
+     * @param right A {@link Stack} container of the same type. Size may differ.
+     */
+    function swap<T>(left: Stack<T>, right: Stack<T>): void;
+    /**
+     * Exchanges the contents of two {@link UniqueMap unique maps}.
+     *
+     * The contents of container <i>left</i> are exchanged with those of <i>right</i>. Both container objects must
+     * be of the same type (same template parameters), although sizes may differ.
+     *
+     * After the call to this member function, the elements in <i>left</i> are those which were in <i>right</i>
+     * before the call, and the elements of <i>right</i> are those which were in <i>left</i>. All iterators, references
+     * and pointers remain valid for the swapped objects.
+     *
+     * This is an overload of the generic algorithm swap that improves its performance by mutually transferring
+     * ownership over their assets to the other container (i.e., the containers exchange references to their data,
+     * without actually performing any element copy or movement): It behaves as if
+     * <i>left</i>.{@link UniqueMap.swap swap}(<i>right</i>) was called.
+     *
+     * @param left An {@link UniqueMap unique map} to swap its conents.
+     * @param right An {@link UniqueMap unique map} to swap its conents.
+     */
+    function swap<Key, T>(left: base.UniqueMap<Key, T>, right: base.UniqueMap<Key, T>): void;
+    /**
+     * Exchanges the contents of two {@link MultiMap multi maps}.
+     *
+     * The contents of container <i>left</i> are exchanged with those of <i>right</i>. Both container objects must
+     * be of the same type (same template parameters), although sizes may differ.
+     *
+     * After the call to this member function, the elements in <i>left</i> are those which were in <i>right</i>
+     * before the call, and the elements of <i>right</i> are those which were in <i>left</i>. All iterators, references
+     * and pointers remain valid for the swapped objects.
+     *
+     * This is an overload of the generic algorithm swap that improves its performance by mutually transferring
+     * ownership over their assets to the other container (i.e., the containers exchange references to their data,
+     * without actually performing any element copy or movement): It behaves as if
+     * <i>left</i>.{@link MultiMap.swap swap}(<i>right</i>) was called.
+     *
+     * @param left A {@link MultiMap multi map} to swap its conents.
+     * @param right A {@link MultiMap multi map} to swap its conents.
+     */
+    function swap<Key, T>(left: base.MultiMap<Key, T>, right: base.MultiMap<Key, T>): void;
+}
+declare namespace std.base {
+    /**
+     * Bi-directional iterator.
+     *
+     * {@link Iterator Bidirectional iterators} are iterators that can be used to access the sequence of elements
+     * in a range in both directions (towards the end and towards the beginning).
+     *
+     * All {@link IArrayIterator random-access iterators} are also valid {@link Iterrator bidirectional iterators}.
+     *
+     * There is not a single type of {@link Iterator bidirectional iterator}: {@link Container Each container}
+     * may define its own specific iterator type able to iterate through it and access its elements.
+     *
+     * <a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a>
+     *
+     * @reference http://www.cplusplus.com/reference/iterator/BidirectionalIterator
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    abstract class Iterator<T> implements IComparable<Iterator<T>> {
+        /**
+         * Get iterator to previous element.
+         *
+         * If current iterator is the first item(equal with {@link Container.begin Container.begin()}),
+         * returns {@link Container.end Container.end()}.
+         *
+         * @return An iterator of the previous item.
+         */
+        abstract prev(): Iterator<T>;
+        /**
+         * Get iterator to next element.
+         *
+         * If current iterator is the last item, returns {@link Container.end Container.end()}.
+         *
+         * @return An iterator of the next item.
+         */
+        abstract next(): Iterator<T>;
+        /**
+         * Advances the {@link Iterator} by <i>n</i> element positions.
+         *
+         * @param n Number of element positions to advance.
+         * @return An advanced iterator.
+         */
+        abstract advance(n: number): Iterator<T>;
+        /**
+         * Get source container.
+         *
+         * Get source container of this iterator is directing for.
+         */
+        abstract source(): Container<T>;
+        /**
+         * Whether an iterator is equal with the iterator.
+         *
+         * Compare two iterators and returns whether they are equal or not.
+         *
+         * #### Note
+         * Iterator's {@link equals equals()} only compare souce container and index number.
+         *
+         * Although elements in a pair, key and value are {@link equal_to equal_to}, if the source map or
+         * index number is different, then the {@link equals equals()} will return false. If you want to
+         * compare the elements of a pair, compare them directly by yourself.
+         *
+         * @param obj An iterator to compare
+         * @return Indicates whether equal or not.
+         */
+        abstract equals(obj: Iterator<T>): boolean;
+        /**
+         * Get value of the iterator is pointing.
+         *
+         * @return A value of the iterator.
+         */
+        readonly abstract value: T;
+        abstract swap(obj: Iterator<T>): void;
+    }
+}
+declare namespace std.base {
+    /**
+     * This class reverses the direction in which a bidirectional or random-access iterator iterates through a range.
+     *
+     * A copy of the original iterator (the {@link Iterator base iterator}) is kept internally and used to reflect
+     * the operations performed on the {@link ReverseIterator}: whenever the {@link ReverseIterator} is incremented, its
+     * {@link Iterator base iterator} is decreased, and vice versa. A copy of the {@link Iterator base iterator} with the
+     * current state can be obtained at any time by calling member {@link base}.
+     *
+     * Notice however that when an iterator is reversed, the reversed version does not point to the same element in
+     * the range, but to <b>the one preceding it</b>. This is so, in order to arrange for the past-the-end element of a
+     * range: An iterator pointing to a past-the-end element in a range, when reversed, is pointing to the last element
+     * (not past it) of the range (this would be the first element of the reversed range). And if an iterator to the
+     * first element in a range is reversed, the reversed iterator points to the element before the first element (this
+     * would be the past-the-end element of the reversed range).
+     *
+     * <a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a>
+     *
+     * @reference http://www.cplusplus.com/reference/iterator/reverse_iterator
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    abstract class ReverseIterator<T, Source extends Container<T>, Base extends Iterator<T>, This extends ReverseIterator<T, Source, Base, This>> extends Iterator<T> implements IComparable<ReverseIterator<T, Source, Base, This>> {
+        /**
+         * @hidden
+         */
+        protected base_: Base;
+        /**
+         * Construct from base iterator.
+         *
+         * @param base A reference of the base iterator, which iterates in the opposite direction.
+         */
+        protected constructor(base: Base);
+        /**
+         * @hidden
+         */
+        protected abstract _Create_neighbor(base: Base): This;
+        source(): Source;
+        /**
+         * Return base iterator.
+         *
+         * Return a reference of the base iteraotr.
+         *
+         * The base iterator is an iterator of the same type as the one used to construct the {@link ReverseIterator},
+         * but pointing to the element next to the one the {@link ReverseIterator} is currently pointing to
+         * (a {@link ReverseIterator} has always an offset of -1 with respect to its base iterator).
+         *
+         * @return A reference of the base iterator, which iterates in the opposite direction.
+         */
+        base(): Base;
+        /**
+         * Get value of the iterator is pointing.
+         *
+         * @return A value of the reverse iterator.
+         */
+        readonly value: T;
+        /**
+         * @inheritdoc
+         */
+        prev(): This;
+        /**
+         * @inheritdoc
+         */
+        next(): This;
+        /**
+         * @inheritdoc
+         */
+        advance(n: number): This;
+        /**
+         * @inheritdoc
+         */
+        equals(obj: This): boolean;
+        /**
+         * @inheritdoc
+         */
+        swap(obj: This): void;
+    }
+}
+declare namespace std.base {
+    /**
+     * @hidden
+     */
+    class ArrayIterator<T, Source extends IArrayContainer<T>> extends Iterator<T> implements IArrayIterator<T> {
+        /**
+         * @hidden
+         */
+        private source_;
+        /**
+         * @hidden
+         */
+        private index_;
+        /**
+         * Construct from the source {@link ArrayContainer container}.
+         *
+         * #### Note
+         * Do not create the iterator directly, by yourself.
+         *
+         * Use {@link ArrayContainer.begin begin()}, {@link ArrayContainer.end end()} in {@link ArrayContainer container} instead.
+         *
+         * @param source The source {@link ArrayContainer container} to reference.
+         * @param index Sequence number of the element in the source {@link ArrayContainer}.
+         */
+        constructor(source: Source, index: number);
+        /**
+         * @inheritdoc
+         */
+        source(): Source;
+        /**
+         * @inheritdoc
+         */
+        index(): number;
+        /**
+         * @inheritdoc
+         */
+        /**
+         * Set value of the iterator is pointing to.
+         *
+         * @param val Value to set.
+         */
+        value: T;
+        /**
+         * @inheritdoc
+         */
+        prev(): ArrayIterator<T, Source>;
+        /**
+         * @inheritdoc
+         */
+        next(): ArrayIterator<T, Source>;
+        /**
+         * @inheritdoc
+         */
+        advance(n: number): ArrayIterator<T, Source>;
+        /**
+         * @inheritdoc
+         */
+        equals(obj: ArrayIterator<T, Source>): boolean;
+        /**
+         * @inheritdoc
+         */
+        swap(obj: ArrayIterator<T, Source>): void;
+    }
+}
+declare namespace std.base {
+    /**
+     * @hidden
+     */
+    class ArrayReverseIterator<T, Source extends IArrayContainer<T>> extends ReverseIterator<T, Source, ArrayIterator<T, Source>, ArrayReverseIterator<T, Source>> {
+        /**
+         * Construct from base iterator.
+         *
+         * @param base A reference of the base iterator, which iterates in the opposite direction.
+         */
+        constructor(base: ArrayIterator<T, Source>);
+        /**
+         * @hidden
+         */
+        protected _Create_neighbor(base: ArrayIterator<T, Source>): ArrayReverseIterator<T, Source>;
+        /**
+         * @inheritdoc
+         */
+        index(): number;
+        /**
+         * @inheritdoc
+         */
+        /**
+         * @inheritdoc
+         */
+        value: T;
+    }
+}
+declare namespace std {
+    type VectorIterator<T> = base.ArrayIterator<T, Vector<T>>;
+    type VectorReverseIterator<T> = base.ArrayReverseIterator<T, Vector<T>>;
+    var VectorIterator: typeof base.ArrayIterator;
+    var VectorReverseIterator: typeof base.ArrayReverseIterator;
+}
+declare namespace std {
+    type DequeIterator<T> = base.ArrayIterator<T, Deque<T>>;
+    type DequeReverseIterator<T> = base.ArrayReverseIterator<T, Deque<T>>;
+    var DequeIterator: typeof base.ArrayIterator;
+    var DequeReverseIterator: typeof base.ArrayReverseIterator;
+}
+declare namespace std.base {
+    /**
+     * @hidden
+     */
+    abstract class _ListIteratorBase<T> extends Iterator<T> implements IComparable<_ListIteratorBase<T>> {
+        /**
+         * @hidden
+         */
+        protected prev_: _ListIteratorBase<T>;
+        /**
+         * @hidden
+         */
+        protected next_: _ListIteratorBase<T>;
+        /**
+         * @hidden
+         */
+        protected value_: T;
+        /**
+         * @hidden
+         */
+        protected constructor(prev: _ListIteratorBase<T>, next: _ListIteratorBase<T>, value: T);
+        /**
+         * @inheritdoc
+         */
+        prev(): _ListIteratorBase<T>;
+        /**
+         * @inheritdoc
+         */
+        next(): _ListIteratorBase<T>;
+        /**
+         * @inheritdoc
+         */
+        advance(step: number): _ListIteratorBase<T>;
+        /**
+         * @inheritdoc
+         */
+        readonly value: T;
+        /**
+         * @inheritdoc
+         */
+        equals(obj: _ListIteratorBase<T>): boolean;
+        /**
+         * @inheritdoc
+         */
+        swap(obj: _ListIteratorBase<T>): void;
+    }
+}
+declare namespace std {
+    /**
+     * An iterator, node of a List.
+     *
+     * <a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" style="max-width: 100%" /></a>
+     *
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    class ListIterator<T> extends base._ListIteratorBase<T> implements IComparable<ListIterator<T>> {
+        /**
+         * @hidden
+         */
+        private source_ptr_;
+        /**
+         * @hidden
+         */
+        constructor(sourcePtr: IPointer<List<T>>, prev: ListIterator<T>, next: ListIterator<T>, value: T);
+        /**
+         * @inheritdoc
+         */
+        source(): List<T>;
+        /**
+         * @inheritdoc
+         */
+        /**
+         * Set value of the iterator is pointing to.
+         *
+         * @param val Value to set.
+         */
+        value: T;
+        /**
+         * @inheritdoc
+         */
+        prev(): ListIterator<T>;
+        /**
+         * @inheritdoc
+         */
+        next(): ListIterator<T>;
+        /**
+         * @inheritdoc
+         */
+        advance(step: number): ListIterator<T>;
+        /**
+         * @inheritdoc
+         */
+        equals(obj: ListIterator<T>): boolean;
+        /**
+         * @inheritdoc
+         */
+        swap(obj: ListIterator<T>): void;
+    }
+}
+declare namespace std {
+    /**
+     * A reverse-iterator of List.
+     *
+     * <a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" style="max-width: 100%" /></a>
+     *
+     * @param <T> Type of the elements.
+     *
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    class ListReverseIterator<T> extends base.ReverseIterator<T, List<T>, ListIterator<T>, ListReverseIterator<T>> implements base.ILinearIterator<T>, IComparable<ListReverseIterator<T>> {
+        /**
+         * Construct from base iterator.
+         *
+         * @param base A reference of the base iterator, which iterates in the opposite direction.
+         */
+        constructor(base: ListIterator<T>);
+        /**
+         * @hidden
+         */
+        protected _Create_neighbor(base: ListIterator<T>): ListReverseIterator<T>;
+        /**
+         * @inheritdoc
+         */
+        /**
+         * Set value of the iterator is pointing to.
+         *
+         * @param val Value to set.
+         */
+        value: T;
+    }
+}
+declare namespace std {
+    /**
+     * An iterator of a Set.
+     *
+     * <a href="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" style="max-width: 100%" /></a>
+     *
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    class SetIterator<T> extends base._ListIteratorBase<T> implements IComparable<SetIterator<T>> {
+        /**
+         * @hidden
+         */
+        private source_;
+        /**
+         * Construct from source and index number.
+         *
+         * #### Note
+         * Do not create iterator directly.
+         *
+         * Use begin(), find() or end() in Map instead.
+         *
+         * @param map The source Set to reference.
+         * @param index Sequence number of the element in the source Set.
+         */
+        constructor(source: base._SetElementList<T>, prev: SetIterator<T>, next: SetIterator<T>, val: T);
+        /**
+         * @inheritdoc
+         */
+        source(): base.SetContainer<T>;
+        /**
+         * @inheritdoc
+         */
+        prev(): SetIterator<T>;
+        /**
+         * @inheritdoc
+         */
+        next(): SetIterator<T>;
+        /**
+         * @inheritdoc
+         */
+        advance(size: number): SetIterator<T>;
+        /**
+         * @inheritdoc
+         */
+        less(obj: SetIterator<T>): boolean;
+        /**
+         * @inheritdoc
+         */
+        equals(obj: SetIterator<T>): boolean;
+        /**
+         * @inheritdoc
+         */
+        hashCode(): number;
+        /**
+         * @inheritdoc
+         */
+        swap(obj: SetIterator<T>): void;
+    }
+}
+declare namespace std {
+    /**
+     * A reverse-iterator of Set.
+     *
+     * <a href="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" style="max-width: 100%" /></a>
+     *
+     * @param <T> Type of the elements.
+     *
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    class SetReverseIterator<T> extends base.ReverseIterator<T, base.SetContainer<T>, SetIterator<T>, SetReverseIterator<T>> implements IComparable<SetReverseIterator<T>> {
+        /**
+         * Construct from base iterator.
+         *
+         * @param base A reference of the base iterator, which iterates in the opposite direction.
+         */
+        constructor(base: SetIterator<T>);
+        /**
+         * @hidden
+         */
+        protected _Create_neighbor(base: SetIterator<T>): SetReverseIterator<T>;
+    }
+}
+declare namespace std {
+    /**
+     * An iterator of {@link MapContainer map container}.
+     *
+     * <a href="http://samchon.github.io/tstl/images/design/class_diagram" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/design/class_diagram" style="max-width: 100%" /></a>
+     *
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    class MapIterator<Key, T> extends base._ListIteratorBase<Pair<Key, T>> implements IComparable<MapIterator<Key, T>> {
+        /**
+         * @hidden
+         */
+        private source_;
+        /**
+         * @hidden
+         */
+        constructor(associative: base._MapElementList<Key, T>, prev: MapIterator<Key, T>, next: MapIterator<Key, T>, val: Pair<Key, T>);
+        /**
+         * Get iterator to previous element.
+         */
+        prev(): MapIterator<Key, T>;
+        /**
+         * Get iterator to next element.
+         */
+        next(): MapIterator<Key, T>;
+        /**
+         * Advances the Iterator by n element positions.
+         *
+         * @param step Number of element positions to advance.
+         * @return An advanced Iterator.
+         */
+        advance(step: number): MapIterator<Key, T>;
+        /**
+         * @hidden
+         */
+        source(): base.MapContainer<Key, T>;
+        /**
+         * Get first, key element.
+         */
+        readonly first: Key;
+        /**
+         * Get second, value element.
+         */
+        /**
+         * Set second value.
+         */
+        second: T;
+        /**
+         * @inheritdoc
+         */
+        less(obj: MapIterator<Key, T>): boolean;
+        /**
+         * @inheritdoc
+         */
+        equals(obj: MapIterator<Key, T>): boolean;
+        /**
+         * @inheritdoc
+         */
+        hashCode(): number;
+        /**
+         * @inheritdoc
+         */
+        swap(obj: MapIterator<Key, T>): void;
+    }
+}
+declare namespace std {
+    /**
+     * A reverse-iterator of {@link MapContainer map container}.
+     *
+     * <a href="http://samchon.github.io/tstl/images/design/class_diagram" target="_blank">
+     * <img src="http://samchon.github.io/tstl/images/design/class_diagram" style="max-width: 100%" /></a>
+     *
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    class MapReverseIterator<Key, T> extends base.ReverseIterator<Pair<Key, T>, base.MapContainer<Key, T>, MapIterator<Key, T>, MapReverseIterator<Key, T>> implements IComparable<MapReverseIterator<Key, T>> {
+        /**
+         * Construct from base iterator.
+         *
+         * @param base A reference of the base iterator, which iterates in the opposite direction.
+         */
+        constructor(base: MapIterator<Key, T>);
+        /**
+         * @hidden
+         */
+        protected _Create_neighbor(base: MapIterator<Key, T>): MapReverseIterator<Key, T>;
+        /**
+         * Get first, key element.
+         */
+        readonly first: Key;
+        /**
+         * Get second, value element.
+         */
+        /**
+         * Set second value.
+         */
+        second: T;
+    }
 }
 declare namespace std {
     /**
@@ -8956,6 +9469,134 @@ declare namespace std {
     function make_reverse_iterator<Key, T>(it: MapIterator<Key, T>): MapReverseIterator<Key, T>;
 }
 declare namespace std {
+    class Mutex implements ILockable {
+        /**
+         * @hidden
+         */
+        private lock_count_;
+        /**
+         * @hidden
+         */
+        private listeners_;
+        /**
+         * Default Constructor.
+         */
+        constructor();
+        lock(): Promise<void>;
+        /**
+         * Lock mutex if not locked.
+         *
+         * Attempts to lock the {@link Mutex}, without blocking:
+         */
+        try_lock(): boolean;
+        unlock(): void;
+    }
+}
+declare namespace std {
+    class SharedMutex implements ILockable {
+        /**
+         * @hidden
+         */
+        private read_lock_count_;
+        /**
+         * @hidden
+         */
+        private write_lock_count_;
+        /**
+         * @hidden
+         */
+        private listeners_;
+        /**
+         * Default Constructor.
+         */
+        constructor();
+        lock(): Promise<void>;
+        try_lock(): boolean;
+        unlock(): void;
+        lock_shared(): Promise<void>;
+        try_lock_shared(): boolean;
+        unlock_shared(): void;
+    }
+}
+declare namespace std {
+    class TimedMutex implements ILockable {
+        /**
+         * @hidden
+         */
+        private lock_count_;
+        /**
+         * @hidden
+         */
+        private listeners_;
+        /**
+         * Default Constructor.
+         */
+        constructor();
+        lock(): Promise<void>;
+        /**
+         * Lock mutex if not locked.
+         *
+         * Attempts to lock the {@link Mutex}, without blocking:
+         */
+        try_lock(): boolean;
+        unlock(): void;
+        try_lock_for(ms: number): Promise<boolean>;
+        try_lock_until(at: Date): Promise<boolean>;
+    }
+}
+declare namespace std {
+    class SharedTimedMutex implements ILockable {
+        /**
+         * @hidden
+         */
+        private read_lock_count_;
+        /**
+         * @hidden
+         */
+        private write_lock_count_;
+        /**
+         * @hidden
+         */
+        private listeners_;
+        /**
+         * Default Constructor.
+         */
+        constructor();
+        lock(): Promise<void>;
+        try_lock(): boolean;
+        try_lock_for(ms: number): Promise<boolean>;
+        try_lock_until(at: Date): Promise<boolean>;
+        unlock(): void;
+        lock_shared(): Promise<void>;
+        try_lock_shared(): boolean;
+        try_lock_shared_for(ms: number): Promise<boolean>;
+        try_lock_shared_until(at: Date): Promise<boolean>;
+        unlock_shared(): void;
+    }
+}
+declare namespace std.experiments {
+    class Semaphore {
+        private acquired_count_;
+        private size_;
+        private listeners_;
+        constructor(size: number);
+        size(): number;
+        expand(size: number): void;
+        acquire(): Promise<void>;
+        acquire(count: number): Promise<void>;
+        try_acquire(): boolean;
+        try_acquire(count: number): boolean;
+        release(): void;
+        release(count: number): void;
+    }
+}
+declare namespace std {
+    function sleep_for(ms: number): Promise<void>;
+    function sleep_until(at: Date): Promise<void>;
+    function lock(...items: ILockable[]): Promise<void>;
+    function try_lock(...items: ILockable[]): number;
+}
+declare namespace std {
     /**
      * Pair of values.
      *
@@ -9002,6 +9643,10 @@ declare namespace std {
          * @inheritdoc
          */
         less<U1 extends T1, U2 extends T2>(pair: Pair<U1, U2>): boolean;
+        /**
+         * @inheritdoc
+         */
+        hashCode(): number;
     }
 }
 declare namespace std {
@@ -9036,6 +9681,48 @@ declare namespace std.base {
     /**
      * @hidden
      */
+    class _MapElementList<Key, T> extends _ListContainer<Pair<Key, T>, MapIterator<Key, T>> {
+        /**
+         * @hidden
+         */
+        private associative_;
+        /**
+         * @hidden
+         */
+        private rend_;
+        constructor(associative: MapContainer<Key, T>);
+        protected _Create_iterator(prev: MapIterator<Key, T>, next: MapIterator<Key, T>, val: Pair<Key, T>): MapIterator<Key, T>;
+        protected _Set_begin(it: MapIterator<Key, T>): void;
+        associative(): MapContainer<Key, T>;
+        rbegin(): MapReverseIterator<Key, T>;
+        rend(): MapReverseIterator<Key, T>;
+    }
+}
+declare namespace std.base {
+    /**
+     * @hidden
+     */
+    class _SetElementList<T> extends _ListContainer<T, SetIterator<T>> {
+        /**
+         * @hidden
+         */
+        private associative_;
+        /**
+         * @hidden
+         */
+        private rend_;
+        constructor(associative: SetContainer<T>);
+        protected _Create_iterator(prev: SetIterator<T>, next: SetIterator<T>, val: T): SetIterator<T>;
+        protected _Set_begin(it: SetIterator<T>): void;
+        associative(): SetContainer<T>;
+        rbegin(): SetReverseIterator<T>;
+        rend(): SetReverseIterator<T>;
+    }
+}
+declare namespace std.base {
+    /**
+     * @hidden
+     */
     enum _Hash {
         MIN_SIZE = 10,
         RATIO = 1,
@@ -9064,7 +9751,7 @@ declare namespace std.base {
      * @hidden
      */
     class _MapHashBuckets<K, T> extends _HashBuckets<MapIterator<K, T>> {
-        private map_;
+        private source_;
         constructor(map: IHashMap<K, T>);
         find(key: K): MapIterator<K, T>;
     }
@@ -9074,7 +9761,7 @@ declare namespace std.base {
      * @hidden
      */
     class _SetHashBuckets<T> extends _HashBuckets<SetIterator<T>> {
-        private set_;
+        private source_;
         constructor(set: IHashSet<T>);
         find(val: T): SetIterator<T>;
     }
@@ -9615,24 +10302,14 @@ declare namespace std.base {
         /**
          * Access first element.
          *
-<<<<<<< HEAD
-         * Returns a value of the first element in the {@link IListContainer container}.
-=======
          * Returns a value of the first element in the {@link ILinearContainer container}.
->>>>>>> v1.4
          *
          * Unlike member {@link begin begin()}, which returns an iterator to this same element, this
          * function returns a direct value.
          *
-<<<<<<< HEAD
-         * Calling this function on an {@link empty} {@link IListContainer container} causes undefined behavior.
-         *
-         * @return A value of the first element of the {@link IListContainer container}.
-=======
          * Calling this function on an {@link empty} {@link ILinearContainer container} causes undefined behavior.
          *
          * @return A value of the first element of the {@link ILinearContainer container}.
->>>>>>> v1.4
          */
         front(): T;
         /**
@@ -9645,34 +10322,20 @@ declare namespace std.base {
          *
          * Calling this funtion on an {@link empty} {@link IListContainer container} causes undefined behavior.
          *
-<<<<<<< HEAD
-         * @param val Value to newly assign.
-=======
          * @param val A value to newly assign at the first element.
->>>>>>> v1.4
          */
         front(val: T): void;
         /**
          * Access last element.
          *
-<<<<<<< HEAD
-         * Returns a value of the last element in the {@link IListContainer container}.
-=======
          * Returns a value of the last element in the {@link ILinearContainer container}.
->>>>>>> v1.4
          *
          * Unlike member {@link end end()}, which returns an iterator just past this element,
          * this function returns a direct value.
          *
-<<<<<<< HEAD
-         * Calling this function on an {@link empty} {@link IListContainer container} causes undefined behavior.
-         *
-         * @return A value of the last element of the {@link IListContainer container}.
-=======
          * Calling this function on an {@link empty} {@link ILinearContainer container} causes undefined behavior.
          *
          * @return A value of the last element of the {@link ILinearContainer container}.
->>>>>>> v1.4
          */
         back(): T;
         /**
@@ -9685,23 +10348,14 @@ declare namespace std.base {
          *
          * Calling this function on an {@link empty} {@link IListContainer container} causes undefined behavior.
          *
-<<<<<<< HEAD
-         * @param val Value to newly assign.
-=======
          * @param val A value to newly assign at the last element.
->>>>>>> v1.4
          */
         back(val: T): void;
         /**
          * Add element at the end.
          *
-<<<<<<< HEAD
-         * Adds a new element at the end of the {@link IListContainer container}, after its current last element.
-         * This effectively increases the {@link IListContainer container} {@link size} by one.
-=======
          * Adds a new element at the end of the {@link ILinearContainer container}, after its current last element.
          * This effectively increases the {@link ILinearContainer container} {@link size} by one.
->>>>>>> v1.4
          *
          * @param val Value to be copied to the new element.
          */
@@ -9709,31 +10363,18 @@ declare namespace std.base {
         /**
          * Delete last element.
          *
-<<<<<<< HEAD
-         * Removes the last element in the {@link IListContainer container}, effectively reducing the
-         * {@link IListContainer container} {@link size} by one.
-=======
          * Removes the last element in the {@link ILinearContainer container}, effectively reducing the
          * {@link ILinearContainer container} {@link size} by one.
->>>>>>> v1.4
          */
         pop_back(): void;
         /**
          * Insert an element.
          *
-<<<<<<< HEAD
-         * The {@link IListContainer conatiner} is extended by inserting new element before the element at the
-         * specified <i>position</i>, effectively increasing the {@link IListContainer container} {@link size} by
-         * one.
-         *
-         * @param position Position in the {@link IListContainer container} where the new elements are inserted.
-=======
          * The {@link ILinearContainer conatiner} is extended by inserting new element before the element at the
          * specified <i>position</i>, effectively increasing the {@link ILinearContainer container} {@link size} by
          * one.
          *
          * @param position Position in the {@link ILinearContainer container} where the new elements are inserted.
->>>>>>> v1.4
          *				   {@link iterator} is a member type, defined as a {@link iterator random access iterator}
          *				   type that points to elements.
          * @param val Value to be copied to the inserted element.
@@ -9744,19 +10385,11 @@ declare namespace std.base {
         /**
          * Insert elements by range iterators.
          *
-<<<<<<< HEAD
-         * The {@link IListContainer container} is extended by inserting new elements before the element at the
-         * specified <i>position</i>, effectively increasing the {@link IListContainer container} {@link size} by
-         * the number of repeating elements </i>n</i>.
-         *
-         * @param position Position in the {@link IListContainer container} where the new elements are inserted.
-=======
          * The {@link ILinearContainer container} is extended by inserting new elements before the element at the
          * specified <i>position</i>, effectively increasing the {@link ILinearContainer container} {@link size} by
          * the number of repeating elements </i>n</i>.
          *
          * @param position Position in the {@link ILinearContainer container} where the new elements are inserted.
->>>>>>> v1.4
          *				   {@link iterator} is a member type, defined as a {@link iterator random access iterator}
          *				   type that points to elements.
          * @param n Number of elements to insert. Each element is initialized to a copy of <i>val</i>.
@@ -9768,19 +10401,11 @@ declare namespace std.base {
         /**
          * Insert elements by range iterators.
          *
-<<<<<<< HEAD
-         * The {@link IListContainer container} is extended by inserting new elements before the element at the
-         * specified <i>position</i>, effectively increasing the {@link IListContainer container} {@link size} by
-         * the number of elements inserted by range iterators.
-         *
-         * @param position Position in the {@link IListContainer container} where the new elements are inserted.
-=======
          * The {@link ILinearContainer container} is extended by inserting new elements before the element at the
          * specified <i>position</i>, effectively increasing the {@link ILinearContainer container} {@link size} by
          * the number of elements inserted by range iterators.
          *
          * @param position Position in the {@link ILinearContainer container} where the new elements are inserted.
->>>>>>> v1.4
          *				   {@link iterator} is a member type, defined as a {@link iterator random access iterator}
          *				   type that points to elements.
          * @param first Input interator of the initial position in a sequence.
@@ -10132,216 +10757,15 @@ declare namespace std.base {
 }
 declare namespace std.base {
     /**
-     * Bi-directional iterator.
-     *
-     * {@link Iterator Bidirectional iterators} are iterators that can be used to access the sequence of elements
-     * in a range in both directions (towards the end and towards the beginning).
-     *
-     * All {@link IArrayIterator random-access iterators} are also valid {@link Iterrator bidirectional iterators}.
-     *
-     * There is not a single type of {@link Iterator bidirectional iterator}: {@link Container Each container}
-     * may define its own specific iterator type able to iterate through it and access its elements.
-     *
-     * <a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a>
-     *
-     * @reference http://www.cplusplus.com/reference/iterator/BidirectionalIterator
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    abstract class Iterator<T> implements IComparable<Iterator<T>> {
-        /**
-         * @hidden
-         */
-        protected source_: base.Container<T>;
-        /**
-         * Construct from the source {@link Container container}.
-         *
-         * @param source The source container.
-         */
-        protected constructor(source: base.Container<T>);
-        /**
-         * Get iterator to previous element.
-         *
-         * If current iterator is the first item(equal with {@link Container.begin Container.begin()}),
-         * returns {@link Container.end Container.end()}.
-         *
-         * @return An iterator of the previous item.
-         */
-        abstract prev(): Iterator<T>;
-        /**
-         * Get iterator to next element.
-         *
-         * If current iterator is the last item, returns {@link Container.end Container.end()}.
-         *
-         * @return An iterator of the next item.
-         */
-        abstract next(): Iterator<T>;
-        /**
-         * Advances the {@link Iterator} by <i>n</i> element positions.
-         *
-         * @param n Number of element positions to advance.
-         * @return An advanced iterator.
-         */
-        abstract advance(n: number): Iterator<T>;
-        /**
-         * Get source container.
-         *
-         * Get source container of this iterator is directing for.
-         */
-        abstract source(): base.Container<T>;
-        /**
-         * Whether an iterator is equal with the iterator.
-         *
-         * Compare two iterators and returns whether they are equal or not.
-         *
-         * #### Note
-         * Iterator's {@link equals equals()} only compare souce container and index number.
-         *
-         * Although elements in a pair, key and value are {@link equal_to equal_to}, if the source map or
-         * index number is different, then the {@link equals equals()} will return false. If you want to
-         * compare the elements of a pair, compare them directly by yourself.
-         *
-         * @param obj An iterator to compare
-         * @return Indicates whether equal or not.
-         */
-        equals(obj: Iterator<T>): boolean;
-        /**
-         * Get value of the iterator is pointing.
-         *
-         * @return A value of the iterator.
-         */
-        readonly abstract value: T;
-        abstract swap(obj: Iterator<T>): void;
-    }
-}
-declare namespace std.base {
-    /**
-     * This class reverses the direction in which a bidirectional or random-access iterator iterates through a range.
-     *
-     * A copy of the original iterator (the {@link Iterator base iterator}) is kept internally and used to reflect
-     * the operations performed on the {@link ReverseIterator}: whenever the {@link ReverseIterator} is incremented, its
-     * {@link Iterator base iterator} is decreased, and vice versa. A copy of the {@link Iterator base iterator} with the
-     * current state can be obtained at any time by calling member {@link base}.
-     *
-     * Notice however that when an iterator is reversed, the reversed version does not point to the same element in
-     * the range, but to <b>the one preceding it</b>. This is so, in order to arrange for the past-the-end element of a
-     * range: An iterator pointing to a past-the-end element in a range, when reversed, is pointing to the last element
-     * (not past it) of the range (this would be the first element of the reversed range). And if an iterator to the
-     * first element in a range is reversed, the reversed iterator points to the element before the first element (this
-     * would be the past-the-end element of the reversed range).
-     *
-     * <a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a>
-     *
-     * @reference http://www.cplusplus.com/reference/iterator/reverse_iterator
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    abstract class ReverseIterator<T, Source extends base.Container<T>, Base extends Iterator<T>, This extends ReverseIterator<T, Source, Base, This>> extends Iterator<T> implements IComparable<ReverseIterator<T, Source, Base, This>> {
-        /**
-         * @hidden
-         */
-        protected base_: Base;
-        /**
-         * Construct from base iterator.
-         *
-         * @param base A reference of the base iterator, which iterates in the opposite direction.
-         */
-        protected constructor(base: Base);
-        /**
-         * @hidden
-         */
-        protected abstract _Create_neighbor(base: Base): This;
-        source(): Source;
-        /**
-         * Return base iterator.
-         *
-         * Return a reference of the base iteraotr.
-         *
-         * The base iterator is an iterator of the same type as the one used to construct the {@link ReverseIterator},
-         * but pointing to the element next to the one the {@link ReverseIterator} is currently pointing to
-         * (a {@link ReverseIterator} has always an offset of -1 with respect to its base iterator).
-         *
-         * @return A reference of the base iterator, which iterates in the opposite direction.
-         */
-        base(): Base;
-        /**
-         * Get value of the iterator is pointing.
-         *
-         * @return A value of the reverse iterator.
-         */
-        readonly value: T;
-        /**
-         * @inheritdoc
-         */
-        prev(): This;
-        /**
-         * @inheritdoc
-         */
-        next(): This;
-        /**
-         * @inheritdoc
-         */
-        advance(n: number): This;
-        /**
-         * @inheritdoc
-         */
-        equals(obj: This): boolean;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: This): void;
-    }
-}
-declare namespace std.base {
-    /**
      * @hidden
      */
-    abstract class _ListIteratorBase<T> extends Iterator<T> implements IComparable<_ListIteratorBase<T>> {
-        /**
-         * @hidden
-         */
-        protected prev_: _ListIteratorBase<T>;
-        /**
-         * @hidden
-         */
-        protected next_: _ListIteratorBase<T>;
-        /**
-         * @hidden
-         */
-        protected value_: T;
-        /**
-         * Initializer Constructor.
-         *
-         * @param source The source {@link Container} to reference.
-         * @param prev A refenrece of previous node ({@link ListIterator iterator}).
-         * @param next A refenrece of next node ({@link ListIterator iterator}).
-         * @param value Value to be stored in the node (iterator).
-         */
-        protected constructor(source: Container<T>, prev: _ListIteratorBase<T>, next: _ListIteratorBase<T>, value: T);
-        /**
-         * @inheritdoc
-         */
-        prev(): _ListIteratorBase<T>;
-        /**
-         * @inheritdoc
-         */
-        next(): _ListIteratorBase<T>;
-        /**
-         * @inheritdoc
-         */
-        advance(step: number): _ListIteratorBase<T>;
-        /**
-         * @inheritdoc
-         */
-        readonly value: T;
-        /**
-         * @inheritdoc
-         */
-        equals(obj: _ListIteratorBase<T>): boolean;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: _ListIteratorBase<T>): void;
+    class _DequeForOfAdaptor<T> implements IterableIterator<T> {
+        private matrix_;
+        private row_;
+        private col_;
+        constructor(matrix: T[][]);
+        next(): IteratorResult<T>;
+        [Symbol.iterator](): IterableIterator<T>;
     }
 }
 declare namespace std.base {
@@ -10381,91 +10805,23 @@ declare namespace std.base {
     }
 }
 declare namespace std.base {
-    /**
-     * @hidden
-     */
-    class ArrayIterator<T, Source extends IArrayContainer<T>> extends Iterator<T> implements IArrayIterator<T> {
-        /**
-         * @hidden
-         */
-        private index_;
-        /**
-         * Construct from the source {@link ArrayContainer container}.
-         *
-         * #### Note
-         * Do not create the iterator directly, by yourself.
-         *
-         * Use {@link ArrayContainer.begin begin()}, {@link ArrayContainer.end end()} in {@link ArrayContainer container} instead.
-         *
-         * @param source The source {@link ArrayContainer container} to reference.
-         * @param index Sequence number of the element in the source {@link ArrayContainer}.
-         */
-        constructor(source: Source, index: number);
-        /**
-         * @inheritdoc
-         */
-        source(): Source;
-        /**
-         * @inheritdoc
-         */
-        index(): number;
-        /**
-         * @inheritdoc
-         */
-        /**
-         * Set value of the iterator is pointing to.
-         *
-         * @param val Value to set.
-         */
-        value: T;
-        /**
-         * @inheritdoc
-         */
-        prev(): ArrayIterator<T, Source>;
-        /**
-         * @inheritdoc
-         */
-        next(): ArrayIterator<T, Source>;
-        /**
-         * @inheritdoc
-         */
-        advance(n: number): ArrayIterator<T, Source>;
-        /**
-         * @inheritdoc
-         */
-        equals(obj: ArrayIterator<T, Source>): boolean;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: ArrayIterator<T, Source>): void;
+    class ForOfAdaptor<T> implements IterableIterator<T> {
+        private it_;
+        private last_;
+        constructor(first: Iterator<T>, last: Iterator<T>);
+        next(): IteratorResult<T>;
+        [Symbol.iterator](): IterableIterator<T>;
     }
 }
 declare namespace std.base {
     /**
      * @hidden
      */
-    class ArrayReverseIterator<T, Source extends IArrayContainer<T>> extends ReverseIterator<T, Source, ArrayIterator<T, Source>, ArrayReverseIterator<T, Source>> {
-        /**
-         * Construct from base iterator.
-         *
-         * @param base A reference of the base iterator, which iterates in the opposite direction.
-         */
-        constructor(base: ArrayIterator<T, Source>);
-        /**
-         * @hidden
-         */
-        protected _Create_neighbor(base: ArrayIterator<T, Source>): ArrayReverseIterator<T, Source>;
-        /**
-         * @inheritdoc
-         */
-        index(): number;
-        /**
-         * @inheritdoc
-         */
-        /**
-         * @inheritdoc
-         */
-        value: T;
+    class _LockType {
+        static readonly WRITE: boolean;
+        static readonly READ: boolean;
+        static readonly LOCK: boolean;
+        static readonly TRY_LOCK: boolean;
     }
 }
 declare namespace std.base {
@@ -10514,7 +10870,7 @@ declare namespace std.base {
      * @hidden
      */
     abstract class _MapTree<Key, T> extends _XTree<MapIterator<Key, T>> {
-        private map_;
+        private source_;
         private key_compare_;
         private value_compare_;
         constructor(map: ITreeMap<Key, T>, compare: (x: Key, y: Key) => boolean, itCompare: (x: MapIterator<Key, T>, y: MapIterator<Key, T>) => boolean);
@@ -10522,7 +10878,7 @@ declare namespace std.base {
         lower_bound(key: Key): MapIterator<Key, T>;
         abstract upper_bound(key: Key): MapIterator<Key, T>;
         equal_range(key: Key): Pair<MapIterator<Key, T>, MapIterator<Key, T>>;
-        map(): ITreeMap<Key, T>;
+        source(): ITreeMap<Key, T>;
         key_comp(): (x: Key, y: Key) => boolean;
         value_comp(): (x: Pair<Key, T>, y: Pair<Key, T>) => boolean;
     }
@@ -10540,7 +10896,7 @@ declare namespace std.base {
      * @hidden
      */
     abstract class _SetTree<T> extends _XTree<SetIterator<T>> {
-        private set_;
+        private source_;
         private key_comp_;
         /**
          * Default Constructor.
@@ -10550,7 +10906,7 @@ declare namespace std.base {
         lower_bound(val: T): SetIterator<T>;
         abstract upper_bound(val: T): SetIterator<T>;
         equal_range(val: T): Pair<SetIterator<T>, SetIterator<T>>;
-        set(): ITreeSet<T>;
+        source(): ITreeSet<T>;
         key_comp(): (x: T, y: T) => boolean;
         value_comp(): (x: T, y: T) => boolean;
     }
@@ -10602,284 +10958,6 @@ declare namespace std.base {
         readonly sibling: _XTreeNode<T>;
         readonly uncle: _XTreeNode<T>;
     }
-}
-declare namespace std {
-    type DequeIterator<T> = base.ArrayIterator<T, Deque<T>>;
-    type DequeReverseIterator<T> = base.ArrayReverseIterator<T, Deque<T>>;
-}
-declare namespace std {
-    /**
-     * An iterator, node of a List.
-     *
-     * <a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" style="max-width: 100%" /></a>
-     *
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    class ListIterator<T> extends base._ListIteratorBase<T> implements IComparable<ListIterator<T>> {
-        /**
-         * Initializer Constructor.
-         *
-         * #### Note
-         * Do not create the iterator directly, by yourself.
-         *
-         * Use {@link List.begin begin()}, {@link List.end end()} in {@link List container} instead.
-         *
-         * @param source The source {@link List container} to reference.
-         * @param prev A refenrece of previous node ({@link ListIterator iterator}).
-         * @param next A refenrece of next node ({@link ListIterator iterator}).
-         * @param value Value to be stored in the node (iterator).
-         */
-        constructor(source: List<T>, prev: ListIterator<T>, next: ListIterator<T>, value: T);
-        /**
-         * @inheritdoc
-         */
-        source(): List<T>;
-        /**
-         * @inheritdoc
-         */
-        /**
-         * Set value of the iterator is pointing to.
-         *
-         * @param val Value to set.
-         */
-        value: T;
-        /**
-         * @inheritdoc
-         */
-        prev(): ListIterator<T>;
-        /**
-         * @inheritdoc
-         */
-        next(): ListIterator<T>;
-        /**
-         * @inheritdoc
-         */
-        advance(step: number): ListIterator<T>;
-        /**
-         * @inheritdoc
-         */
-        equals(obj: ListIterator<T>): boolean;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: ListIterator<T>): void;
-    }
-}
-declare namespace std {
-    /**
-     * A reverse-iterator of List.
-     *
-     * <a href="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/design/class_diagram/linear_containers.png" style="max-width: 100%" /></a>
-     *
-     * @param <T> Type of the elements.
-     *
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    class ListReverseIterator<T> extends base.ReverseIterator<T, List<T>, ListIterator<T>, ListReverseIterator<T>> implements base.ILinearIterator<T>, IComparable<ListReverseIterator<T>> {
-        /**
-         * Construct from base iterator.
-         *
-         * @param base A reference of the base iterator, which iterates in the opposite direction.
-         */
-        constructor(base: ListIterator<T>);
-        /**
-         * @hidden
-         */
-        protected _Create_neighbor(base: ListIterator<T>): ListReverseIterator<T>;
-        /**
-         * @inheritdoc
-         */
-        /**
-         * Set value of the iterator is pointing to.
-         *
-         * @param val Value to set.
-         */
-        value: T;
-    }
-}
-declare namespace std {
-    /**
-     * An iterator of {@link MapContainer map container}.
-     *
-     * <a href="http://samchon.github.io/tstl/images/design/class_diagram" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/design/class_diagram" style="max-width: 100%" /></a>
-     *
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    class MapIterator<Key, T> extends base._ListIteratorBase<Pair<Key, T>> implements IComparable<MapIterator<Key, T>> {
-        /**
-         * Construct from the {@link MapContainer source map} and {@link ListIterator list iterator}.
-         *
-         * @param source The source {@link MapContainer}.
-         * @param list_iterator A {@link ListIterator} pointing {@link Pair} of <i>key</i> and <i>value</i>.
-         */
-        constructor(source: base._MapElementList<Key, T>, prev: MapIterator<Key, T>, next: MapIterator<Key, T>, val: Pair<Key, T>);
-        /**
-         * Get iterator to previous element.
-         */
-        prev(): MapIterator<Key, T>;
-        /**
-         * Get iterator to next element.
-         */
-        next(): MapIterator<Key, T>;
-        /**
-         * Advances the Iterator by n element positions.
-         *
-         * @param step Number of element positions to advance.
-         * @return An advanced Iterator.
-         */
-        advance(step: number): MapIterator<Key, T>;
-        /**
-         * @hidden
-         */
-        source(): base.MapContainer<Key, T>;
-        /**
-         * Get first, key element.
-         */
-        readonly first: Key;
-        /**
-         * Get second, value element.
-         */
-        /**
-         * Set second value.
-         */
-        second: T;
-        /**
-         * @inheritdoc
-         */
-        less(obj: MapIterator<Key, T>): boolean;
-        /**
-         * @inheritdoc
-         */
-        equals(obj: MapIterator<Key, T>): boolean;
-        /**
-         * @inheritdoc
-         */
-        hashCode(): number;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: MapIterator<Key, T>): void;
-    }
-}
-declare namespace std {
-    /**
-     * A reverse-iterator of {@link MapContainer map container}.
-     *
-     * <a href="http://samchon.github.io/tstl/images/design/class_diagram" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/design/class_diagram" style="max-width: 100%" /></a>
-     *
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    class MapReverseIterator<Key, T> extends base.ReverseIterator<Pair<Key, T>, base.MapContainer<Key, T>, MapIterator<Key, T>, MapReverseIterator<Key, T>> implements IComparable<MapReverseIterator<Key, T>> {
-        /**
-         * Construct from base iterator.
-         *
-         * @param base A reference of the base iterator, which iterates in the opposite direction.
-         */
-        constructor(base: MapIterator<Key, T>);
-        /**
-         * @hidden
-         */
-        protected _Create_neighbor(base: MapIterator<Key, T>): MapReverseIterator<Key, T>;
-        /**
-         * Get first, key element.
-         */
-        readonly first: Key;
-        /**
-         * Get second, value element.
-         */
-        /**
-         * Set second value.
-         */
-        second: T;
-    }
-}
-declare namespace std {
-    /**
-     * An iterator of a Set.
-     *
-     * <a href="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" style="max-width: 100%" /></a>
-     *
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    class SetIterator<T> extends base._ListIteratorBase<T> implements IComparable<SetIterator<T>> {
-        /**
-         * Construct from source and index number.
-         *
-         * #### Note
-         * Do not create iterator directly.
-         *
-         * Use begin(), find() or end() in Map instead.
-         *
-         * @param map The source Set to reference.
-         * @param index Sequence number of the element in the source Set.
-         */
-        constructor(source: base._SetElementList<T>, prev: SetIterator<T>, next: SetIterator<T>, val: T);
-        /**
-         * @inheritdoc
-         */
-        source(): base.SetContainer<T>;
-        /**
-         * @inheritdoc
-         */
-        prev(): SetIterator<T>;
-        /**
-         * @inheritdoc
-         */
-        next(): SetIterator<T>;
-        /**
-         * @inheritdoc
-         */
-        advance(size: number): SetIterator<T>;
-        /**
-         * @inheritdoc
-         */
-        less(obj: SetIterator<T>): boolean;
-        /**
-         * @inheritdoc
-         */
-        equals(obj: SetIterator<T>): boolean;
-        /**
-         * @inheritdoc
-         */
-        hashCode(): number;
-        /**
-         * @inheritdoc
-         */
-        swap(obj: SetIterator<T>): void;
-    }
-}
-declare namespace std {
-    /**
-     * A reverse-iterator of Set.
-     *
-     * <a href="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" target="_blank">
-     * <img src="http://samchon.github.io/tstl/images/class_diagram/set_containers.png" style="max-width: 100%" /></a>
-     *
-     * @param <T> Type of the elements.
-     *
-     * @author Jeongho Nam <http://samchon.org>
-     */
-    class SetReverseIterator<T> extends base.ReverseIterator<T, base.SetContainer<T>, SetIterator<T>, SetReverseIterator<T>> implements IComparable<SetReverseIterator<T>> {
-        /**
-         * Construct from base iterator.
-         *
-         * @param base A reference of the base iterator, which iterates in the opposite direction.
-         */
-        constructor(base: SetIterator<T>);
-        /**
-         * @hidden
-         */
-        protected _Create_neighbor(base: SetIterator<T>): SetReverseIterator<T>;
-    }
-}
-declare namespace std {
-    type VectorIterator<T> = base.ArrayIterator<T, Vector<T>>;
-    type VectorReverseIterator<T> = base.ArrayReverseIterator<T, Vector<T>>;
 }
 declare namespace std {
     /**
@@ -10969,6 +11047,18 @@ declare namespace std {
     var error_category: typeof ErrorCategory;
     var error_condition: typeof ErrorCondition;
     var error_code: typeof ErrorCode;
+    type mutex = Mutex;
+    type shared_mutex = SharedMutex;
+    type timed_mutex = TimedMutex;
+    type shared_timed_mutex = SharedTimedMutex;
+    var mutex: typeof Mutex;
+    var shared_mutex: typeof SharedMutex;
+    var timed_mutex: typeof TimedMutex;
+    var shared_timed_mutex: typeof SharedTimedMutex;
+    namespace experiments {
+        type semaphore = Semaphore;
+        var semaphore: typeof Semaphore;
+    }
 }
 declare namespace std {
     /**
@@ -11066,5 +11156,17 @@ declare namespace std {
          * @return An hash code who represents the object.
          */
         hashCode?(): number;
+    }
+}
+declare namespace std {
+    interface IPointer<T> {
+        value: T;
+    }
+}
+declare namespace std {
+    interface ILockable {
+        lock(): Promise<void>;
+        try_lock(): boolean;
+        unlock(): void;
     }
 }

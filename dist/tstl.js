@@ -8,6 +8,36 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i.return)) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
+var __values = (this && this.__values) || function (o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+};
 var std;
 (function (std) {
     function for_each(first, last, fn) {
@@ -1043,6 +1073,9 @@ var std;
             Container.prototype.empty = function () {
                 return this.size() == 0;
             };
+            Container.prototype[Symbol.iterator] = function () {
+                return new base.ForOfAdaptor(this.begin(), this.end());
+            };
             Container.prototype.swap = function (obj) {
                 var supplement = new std.Vector(this.begin(), this.end());
                 this.assign(obj.begin(), obj.end());
@@ -1104,6 +1137,8 @@ var std;
                 for (var _i = 0; _i < arguments.length; _i++) {
                     args[_i] = arguments[_i];
                 }
+                if (args[0].source() != this)
+                    throw new std.InvalidArgument("Parametric iterator is not this container's own.");
                 var ret;
                 var is_reverse_iterator = false;
                 if (args[0] instanceof base.ArrayReverseIterator) {
@@ -1131,6 +1166,8 @@ var std;
             };
             ArrayContainer.prototype.erase = function (first, last) {
                 if (last === void 0) { last = first.next(); }
+                if (first.source() != this || last.source() != this)
+                    throw new std.InvalidArgument("Parametric iterator is not this container's own.");
                 var ret;
                 var is_reverse_iterator = false;
                 if (first instanceof base.ArrayReverseIterator) {
@@ -1177,6 +1214,9 @@ var std;
                 var val = args[1];
                 _this.assign(size_2, val);
             }
+            else if (args.length == 1 && args[0] instanceof std.Vector) {
+                _this.data_ = args[0].data_.slice();
+            }
             else if (args.length == 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var begin_1 = args[0];
                 var end_1 = args[1];
@@ -1213,12 +1253,15 @@ var std;
         Vector.prototype.data = function () {
             return this.data_;
         };
+        Vector.prototype[Symbol.iterator] = function () {
+            return this.data_[Symbol.iterator]();
+        };
         Vector.prototype.push = function () {
             var items = [];
             for (var _i = 0; _i < arguments.length; _i++) {
                 items[_i] = arguments[_i];
             }
-            return (_a = this.data_).push.apply(_a, items);
+            return (_a = this.data_).push.apply(_a, __spread(items));
             var _a;
         };
         Vector.prototype.push_back = function (val) {
@@ -1237,7 +1280,7 @@ var std;
                     this.data_.push(first.value);
                     insert_size++;
                 }
-                (_a = this.data_).push.apply(_a, spliced_array);
+                (_a = this.data_).push.apply(_a, __spread(spliced_array));
                 return position;
             }
             var _a;
@@ -1258,7 +1301,7 @@ var std;
         };
         Vector.prototype.swap = function (obj) {
             if (obj instanceof Vector)
-                _a = [obj.data_, this.data_], this.data_ = _a[0], obj.data_ = _a[1];
+                _a = __read([obj.data_, this.data_], 2), this.data_ = _a[0], obj.data_ = _a[1];
             else
                 _super.prototype.swap.call(this, obj);
             var _a;
@@ -1333,6 +1376,9 @@ var std;
         };
         Deque.prototype.capacity = function () {
             return this.capacity_;
+        };
+        Deque.prototype[Symbol.iterator] = function () {
+            return new std.base._DequeForOfAdaptor(this.matrix_);
         };
         Deque.prototype.at = function (index) {
             if (index < this.size() && index >= 0) {
@@ -1440,7 +1486,7 @@ var std;
                     row = new Array();
                     var spliced_array = this.matrix_.splice(++indexes.first);
                     this.matrix_.push(row);
-                    (_a = this.matrix_).push.apply(_a, spliced_array);
+                    (_a = this.matrix_).push.apply(_a, __spread(spliced_array));
                 }
                 row.push(first.value);
             }
@@ -1451,7 +1497,7 @@ var std;
                     row = new Array();
                     var spliced_array = this.matrix_.splice(++indexes.first);
                     this.matrix_.push(row);
-                    (_b = this.matrix_).push.apply(_b, spliced_array);
+                    (_b = this.matrix_).push.apply(_b, __spread(spliced_array));
                 }
                 row.push(back_items[i]);
             }
@@ -1473,7 +1519,7 @@ var std;
         Deque.prototype._Try_add_row_at_front = function () {
             var col_size = this._Compute_col_size();
             if (this.matrix_[0].length >= col_size && this.matrix_.length < Deque.ROW_SIZE) {
-                this.matrix_ = (_a = [[]]).concat.apply(_a, this.matrix_);
+                this.matrix_ = (_a = [[]]).concat.apply(_a, __spread(this.matrix_));
                 return true;
             }
             else
@@ -1519,7 +1565,7 @@ var std;
             }
             if (first_row != null && second_row != null
                 && first_row.length + second_row.length <= this._Compute_col_size()) {
-                first_row.push.apply(first_row, second_row);
+                first_row.push.apply(first_row, __spread(second_row));
                 this.matrix_.splice(this.matrix_.indexOf(second_row), 1);
             }
             if (last.index() == -1)
@@ -1529,9 +1575,9 @@ var std;
         };
         Deque.prototype.swap = function (obj) {
             if (obj instanceof Deque) {
-                _a = [obj.matrix_, this.matrix_], this.matrix_ = _a[0], obj.matrix_ = _a[1];
-                _b = [obj.size_, this.size_], this.size_ = _b[0], obj.size_ = _b[1];
-                _c = [obj.capacity_, this.capacity_], this.capacity_ = _c[0], obj.capacity_ = _c[1];
+                _a = __read([obj.matrix_, this.matrix_], 2), this.matrix_ = _a[0], obj.matrix_ = _a[1];
+                _b = __read([obj.size_, this.size_], 2), this.size_ = _b[0], obj.size_ = _b[1];
+                _c = __read([obj.capacity_, this.capacity_], 2), this.capacity_ = _c[0], obj.capacity_ = _c[1];
             }
             else
                 _super.prototype.swap.call(this, obj);
@@ -1632,19 +1678,19 @@ var std;
                 this._Insert_by_range(this.end(), first, last);
                 return this.size();
             };
-            _ListContainer.prototype.insert = function () {
+            _ListContainer.prototype.insert = function (pos) {
                 var args = [];
-                for (var _i = 0; _i < arguments.length; _i++) {
-                    args[_i] = arguments[_i];
+                for (var _i = 1; _i < arguments.length; _i++) {
+                    args[_i - 1] = arguments[_i];
                 }
-                var ret;
-                if (args.length == 2)
-                    ret = this._Insert_by_repeating_val(args[0], 1, args[1]);
-                else if (args.length == 3 && typeof args[1] == "number")
-                    ret = this._Insert_by_repeating_val(args[0], args[1], args[2]);
+                if (pos.source() != this.end_.source())
+                    throw new std.InvalidArgument("Parametric iterator is not this container's own.");
+                if (args.length == 1)
+                    return this._Insert_by_repeating_val(pos, 1, args[0]);
+                else if (args.length == 2 && typeof args[0] == "number")
+                    return this._Insert_by_repeating_val(pos, args[0], args[1]);
                 else
-                    ret = this._Insert_by_range(args[0], args[1], args[2]);
-                return ret;
+                    return this._Insert_by_range(pos, args[0], args[1]);
             };
             _ListContainer.prototype._Insert_by_repeating_val = function (position, n, val) {
                 var first = new base._Repeater(0, val);
@@ -1652,8 +1698,6 @@ var std;
                 return this._Insert_by_range(position, first, last);
             };
             _ListContainer.prototype._Insert_by_range = function (position, begin, end) {
-                if (this != position.source_)
-                    throw new std.InvalidArgument("Parametric iterator is not this container's own.");
                 var prev = position.prev();
                 var first = null;
                 var size = 0;
@@ -1677,6 +1721,8 @@ var std;
                 return this._Erase_by_range(first, last);
             };
             _ListContainer.prototype._Erase_by_range = function (first, last) {
+                if (first.source() != this.end_.source() || last.source() != this.end_.source())
+                    throw new std.InvalidArgument("Parametric iterator is not this container's own.");
                 var prev = first.prev();
                 var size = std.distance(first, last);
                 prev.next_ = (last);
@@ -1687,13 +1733,9 @@ var std;
                 return last;
             };
             _ListContainer.prototype.swap = function (obj) {
-                if (obj instanceof _ListContainer) {
-                    _a = [obj.begin_, this.begin_], this.begin_ = _a[0], obj.begin_ = _a[1];
-                    _b = [obj.end_, this.end_], this.end_ = _b[0], obj.end_ = _b[1];
-                    _c = [obj.size_, this.size_], this.size_ = _c[0], obj.size_ = _c[1];
-                }
-                else
-                    _super.prototype.swap.call(this, obj);
+                _a = __read([obj.begin_, this.begin_], 2), this.begin_ = _a[0], obj.begin_ = _a[1];
+                _b = __read([obj.end_, this.end_], 2), this.end_ = _b[0], obj.end_ = _b[1];
+                _c = __read([obj.size_, this.size_], 2), this.size_ = _c[0], obj.size_ = _c[1];
                 var _a, _b, _c;
             };
             return _ListContainer;
@@ -1711,11 +1753,13 @@ var std;
                 args[_i] = arguments[_i];
             }
             var _this = _super.call(this) || this;
+            _this.ptr_ = { value: _this };
+            _this.end_.source_ptr_ = _this.ptr_;
             if (args.length == 0) {
             }
             else if (args.length == 1 && args[0] instanceof Array) {
                 var array = args[0];
-                _this.push.apply(_this, array);
+                _this.push.apply(_this, __spread(array));
             }
             else if (args.length == 1 && (args[0] instanceof List)) {
                 var container = args[0];
@@ -1734,7 +1778,7 @@ var std;
             return _this;
         }
         List.prototype._Create_iterator = function (prev, next, val) {
-            return new std.ListIterator(this, prev, next, val);
+            return new std.ListIterator(this.ptr_, prev, next, val);
         };
         List.prototype._Set_begin = function (it) {
             _super.prototype._Set_begin.call(this, it);
@@ -1855,10 +1899,10 @@ var std;
             for (; !it.equals(last); it = it.next())
                 if (compare(it.value, standard)) {
                     prev = prev.equals(this.end()) ? first : prev.next();
-                    _a = [it.value, prev.value], prev.value = _a[0], it.value = _a[1];
+                    _a = __read([it.value, prev.value], 2), prev.value = _a[0], it.value = _a[1];
                 }
             prev = prev.equals(this.end()) ? first : prev.next();
-            _b = [it.value, prev.value], prev.value = _b[0], it.value = _b[1];
+            _b = __read([it.value, prev.value], 2), prev.value = _b[0], it.value = _b[1];
             return prev;
             var _a, _b;
         };
@@ -1867,7 +1911,7 @@ var std;
             var prev_of_end = this.begin();
             for (var it = this.begin(); !it.equals(this.end());) {
                 var next_4 = it.next();
-                _a = [it.next_, it.prev_], it.prev_ = _a[0], it.next_ = _a[1];
+                _a = __read([it.next_, it.prev_], 2), it.prev_ = _a[0], it.next_ = _a[1];
                 it = next_4;
             }
             this._Set_begin(begin);
@@ -1876,7 +1920,9 @@ var std;
             var _a;
         };
         List.prototype.swap = function (obj) {
+            _a = __read([obj.ptr_.value, this.ptr_.value], 2), this.ptr_.value = _a[0], obj.ptr_.value = _a[1];
             _super.prototype.swap.call(this, obj);
+            var _a;
         };
         return List;
     }(std.base._ListContainer));
@@ -1890,7 +1936,8 @@ var std;
             __extends(SetContainer, _super);
             function SetContainer() {
                 var _this = _super.call(this) || this;
-                _this.data_ = new _SetElementList(_this);
+                _this.source_ptr_ = { value: _this };
+                _this.data_ = new base._SetElementList(_this);
                 return _this;
             }
             SetContainer.prototype.assign = function (begin, end) {
@@ -1997,39 +2044,14 @@ var std;
                 this._Handle_erase(first, last);
                 return it;
             };
-            SetContainer.prototype._Swap = function (obj) {
-                _a = [obj.data_, this.data_], this.data_ = _a[0], obj.data_ = _a[1];
-                var _a;
+            SetContainer.prototype.swap = function (obj) {
+                _a = __read([obj.data_.associative_, this.data_.associative_], 2), this.data_.associative_ = _a[0], obj.data_.associative_ = _a[1];
+                _b = __read([obj.data_, this.data_], 2), this.data_ = _b[0], obj.data_ = _b[1];
+                var _a, _b;
             };
             return SetContainer;
         }(base.Container));
         base.SetContainer = SetContainer;
-        var _SetElementList = (function (_super) {
-            __extends(_SetElementList, _super);
-            function _SetElementList(associative) {
-                var _this = _super.call(this) || this;
-                _this.associative_ = associative;
-                return _this;
-            }
-            _SetElementList.prototype._Create_iterator = function (prev, next, val) {
-                return new std.SetIterator(this, prev, next, val);
-            };
-            _SetElementList.prototype._Set_begin = function (it) {
-                _super.prototype._Set_begin.call(this, it);
-                this.rend_ = new std.SetReverseIterator(it);
-            };
-            _SetElementList.prototype.associative = function () {
-                return this.associative_;
-            };
-            _SetElementList.prototype.rbegin = function () {
-                return new std.SetReverseIterator(this.end());
-            };
-            _SetElementList.prototype.rend = function () {
-                return this.rend_;
-            };
-            return _SetElementList;
-        }(base._ListContainer));
-        base._SetElementList = _SetElementList;
     })(base = std.base || (std.base = {}));
 })(std || (std = {}));
 var std;
@@ -2113,7 +2135,7 @@ var std;
                 var items = args[0];
                 if (args.length == 2)
                     compare = args[1];
-                fn = (_a = _this.push).bind.apply(_a, [_this].concat(items));
+                fn = (_a = _this.push).bind.apply(_a, __spread([_this], items));
             }
             else if (args.length >= 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -2200,13 +2222,10 @@ var std;
                 this.tree_.erase(first);
         };
         TreeSet.prototype.swap = function (obj) {
-            if (obj instanceof TreeSet && this.key_comp() == obj.key_comp()) {
-                this._Swap(obj);
-                _a = [obj.tree_, this.tree_], this.tree_ = _a[0], obj.tree_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.tree_.source_, this.tree_.source_], 2), this.tree_.source_ = _a[0], obj.tree_.source_ = _a[1];
+            _b = __read([obj.tree_, this.tree_], 2), this.tree_ = _b[0], obj.tree_ = _b[1];
+            var _a, _b;
         };
         return TreeSet;
     }(std.base.UniqueSet));
@@ -2232,7 +2251,7 @@ var std;
             else if (args.length == 1 && args[0] instanceof Array) {
                 var items = args[0];
                 _this.rehash(items.length * std.base._Hash.RATIO);
-                _this.push.apply(_this, items);
+                _this.push.apply(_this, __spread(items));
             }
             else if (args.length == 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -2340,13 +2359,10 @@ var std;
                 this.hash_buckets_.erase(first);
         };
         HashSet.prototype.swap = function (obj) {
-            if (obj instanceof HashSet) {
-                this._Swap(obj);
-                _a = [obj.hash_buckets_, this.hash_buckets_], this.hash_buckets_ = _a[0], obj.hash_buckets_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.hash_buckets_.source_, this.hash_buckets_.source_], 2), this.hash_buckets_.source_ = _a[0], obj.hash_buckets_.source_ = _a[1];
+            _b = __read([obj.hash_buckets_, this.hash_buckets_], 2), this.hash_buckets_ = _b[0], obj.hash_buckets_ = _b[1];
+            var _a, _b;
         };
         return HashSet;
     }(std.base.UniqueSet));
@@ -2399,7 +2415,7 @@ var std;
                 var items = args[0];
                 if (args.length == 2)
                     compare = args[1];
-                fn = (_a = _this.push).bind.apply(_a, [_this].concat(items));
+                fn = (_a = _this.push).bind.apply(_a, __spread([_this], items));
             }
             else if (args.length >= 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -2485,13 +2501,10 @@ var std;
                 this.tree_.erase(first);
         };
         TreeMultiSet.prototype.swap = function (obj) {
-            if (obj instanceof TreeMultiSet && this.key_comp() == obj.key_comp()) {
-                this._Swap(obj);
-                _a = [obj.tree_, this.tree_], this.tree_ = _a[0], obj.tree_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.tree_.source_, this.tree_.source_], 2), this.tree_.source_ = _a[0], obj.tree_.source_ = _a[1];
+            _b = __read([obj.tree_, this.tree_], 2), this.tree_ = _b[0], obj.tree_ = _b[1];
+            var _a, _b;
         };
         return TreeMultiSet;
     }(std.base.MultiSet));
@@ -2517,7 +2530,7 @@ var std;
             else if (args.length == 1 && args[0] instanceof Array) {
                 var items = args[0];
                 _this.rehash(items.length * std.base._Hash.RATIO);
-                _this.push.apply(_this, items);
+                _this.push.apply(_this, __spread(items));
             }
             else if (args.length == 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -2619,13 +2632,10 @@ var std;
                 this.hash_buckets_.erase(first);
         };
         HashMultiSet.prototype.swap = function (obj) {
-            if (obj instanceof HashMultiSet) {
-                this._Swap(obj);
-                _a = [obj.hash_buckets_, this.hash_buckets_], this.hash_buckets_ = _a[0], obj.hash_buckets_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.hash_buckets_.source_, this.hash_buckets_.source_], 2), this.hash_buckets_.source_ = _a[0], obj.hash_buckets_.source_ = _a[1];
+            _b = __read([obj.hash_buckets_, this.hash_buckets_], 2), this.hash_buckets_ = _b[0], obj.hash_buckets_ = _b[1];
+            var _a, _b;
         };
         return HashMultiSet;
     }(std.base.MultiSet));
@@ -2639,7 +2649,8 @@ var std;
             __extends(MapContainer, _super);
             function MapContainer() {
                 var _this = _super.call(this) || this;
-                _this.data_ = new _MapElementList(_this);
+                _this.ptr_ = { value: _this };
+                _this.data_ = new base._MapElementList(_this);
                 return _this;
             }
             MapContainer.prototype.assign = function (first, last) {
@@ -2774,39 +2785,14 @@ var std;
                 this._Handle_erase(first, last);
                 return it;
             };
-            MapContainer.prototype._Swap = function (obj) {
-                _a = [obj.data_, this.data_], this.data_ = _a[0], obj.data_ = _a[1];
-                var _a;
+            MapContainer.prototype.swap = function (obj) {
+                _a = __read([obj.data_.associative_, this.data_.associative_], 2), this.data_.associative_ = _a[0], obj.data_.associative_ = _a[1];
+                _b = __read([obj.data_, this.data_], 2), this.data_ = _b[0], obj.data_ = _b[1];
+                var _a, _b;
             };
             return MapContainer;
         }(base.Container));
         base.MapContainer = MapContainer;
-        var _MapElementList = (function (_super) {
-            __extends(_MapElementList, _super);
-            function _MapElementList(associative) {
-                var _this = _super.call(this) || this;
-                _this.associative_ = associative;
-                return _this;
-            }
-            _MapElementList.prototype._Create_iterator = function (prev, next, val) {
-                return new std.MapIterator(this, prev, next, val);
-            };
-            _MapElementList.prototype._Set_begin = function (it) {
-                _super.prototype._Set_begin.call(this, it);
-                this.rend_ = new std.MapReverseIterator(it);
-            };
-            _MapElementList.prototype.associative = function () {
-                return this.associative_;
-            };
-            _MapElementList.prototype.rbegin = function () {
-                return new std.MapReverseIterator(this.end());
-            };
-            _MapElementList.prototype.rend = function () {
-                return this.rend_;
-            };
-            return _MapElementList;
-        }(base._ListContainer));
-        base._MapElementList = _MapElementList;
     })(base = std.base || (std.base = {}));
 })(std || (std = {}));
 var std;
@@ -2944,7 +2930,7 @@ var std;
                 var items = args[0];
                 if (args.length == 2)
                     compare = args[1];
-                fn = (_a = _this.push).bind.apply(_a, [_this].concat(items));
+                fn = (_a = _this.push).bind.apply(_a, __spread([_this], items));
             }
             else if (args.length >= 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -3032,13 +3018,10 @@ var std;
                 this.tree_.erase(first);
         };
         TreeMap.prototype.swap = function (obj) {
-            if (obj instanceof TreeMap && this.key_comp() == obj.key_comp()) {
-                this._Swap(obj);
-                _a = [obj.tree_, this.tree_], this.tree_ = _a[0], obj.tree_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.tree_.source_, this.tree_.source_], 2), this.tree_.source_ = _a[0], obj.tree_.source_ = _a[1];
+            _b = __read([obj.tree_, this.tree_], 2), this.tree_ = _b[0], obj.tree_ = _b[1];
+            var _a, _b;
         };
         return TreeMap;
     }(std.base.UniqueMap));
@@ -3064,7 +3047,7 @@ var std;
             else if (args.length == 1 && args[0] instanceof Array) {
                 var items = args[0];
                 _this.rehash(items.length * std.base._Hash.RATIO);
-                _this.push.apply(_this, items);
+                _this.push.apply(_this, __spread(items));
             }
             else if (args.length == 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -3172,13 +3155,10 @@ var std;
                 this.hash_buckets_.erase(first);
         };
         HashMap.prototype.swap = function (obj) {
-            if (obj instanceof HashMap) {
-                this._Swap(obj);
-                _a = [obj.hash_buckets_, this.hash_buckets_], this.hash_buckets_ = _a[0], obj.hash_buckets_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.hash_buckets_.source_, this.hash_buckets_.source_], 2), this.hash_buckets_.source_ = _a[0], obj.hash_buckets_.source_ = _a[1];
+            _b = __read([obj.hash_buckets_, this.hash_buckets_], 2), this.hash_buckets_ = _b[0], obj.hash_buckets_ = _b[1];
+            var _a, _b;
         };
         return HashMap;
     }(std.base.UniqueMap));
@@ -3241,7 +3221,7 @@ var std;
                 var items = args[0];
                 if (args.length == 2)
                     compare = args[1];
-                fn = (_a = _this.push).bind.apply(_a, [_this].concat(items));
+                fn = (_a = _this.push).bind.apply(_a, __spread([_this], items));
             }
             else if (args.length >= 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -3328,13 +3308,10 @@ var std;
                 this.tree_.erase(first);
         };
         TreeMultiMap.prototype.swap = function (obj) {
-            if (obj instanceof TreeMultiMap && this.key_comp() == obj.key_comp()) {
-                this._Swap(obj);
-                _a = [obj.tree_, this.tree_], this.tree_ = _a[0], obj.tree_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.tree_.source_, this.tree_.source_], 2), this.tree_.source_ = _a[0], obj.tree_.source_ = _a[1];
+            _b = __read([obj.tree_, this.tree_], 2), this.tree_ = _b[0], obj.tree_ = _b[1];
+            var _a, _b;
         };
         return TreeMultiMap;
     }(std.base.MultiMap));
@@ -3360,7 +3337,7 @@ var std;
             else if (args.length == 1 && args[0] instanceof Array) {
                 var items = args[0];
                 _this.rehash(items.length * std.base._Hash.RATIO);
-                _this.push.apply(_this, items);
+                _this.push.apply(_this, __spread(items));
             }
             else if (args.length == 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -3456,13 +3433,10 @@ var std;
                 this.hash_buckets_.erase(first);
         };
         HashMultiMap.prototype.swap = function (obj) {
-            if (obj instanceof HashMultiMap) {
-                this._Swap(obj);
-                _a = [obj.hash_buckets_, this.hash_buckets_], this.hash_buckets_ = _a[0], obj.hash_buckets_ = _a[1];
-            }
-            else
-                _super.prototype.swap.call(this, obj);
-            var _a;
+            _super.prototype.swap.call(this, obj);
+            _a = __read([obj.hash_buckets_.source_, this.hash_buckets_.source_], 2), this.hash_buckets_.source_ = _a[0], obj.hash_buckets_.source_ = _a[1];
+            _b = __read([obj.hash_buckets_, this.hash_buckets_], 2), this.hash_buckets_ = _b[0], obj.hash_buckets_ = _b[1];
+            var _a, _b;
         };
         return HashMultiMap;
     }(std.base.MultiMap));
@@ -3552,7 +3526,7 @@ var std;
                 var items = args[0];
                 if (args.length == 2)
                     this.container_.tree_.compare_ = (args[1]);
-                (_a = this.container_).push.apply(_a, items);
+                (_a = this.container_).push.apply(_a, __spread(items));
             }
             else if (args.length >= 2 && args[0] instanceof std.base.Iterator && args[1] instanceof std.base.Iterator) {
                 var first = args[0];
@@ -3590,16 +3564,17 @@ var std;
 })(std || (std = {}));
 var std;
 (function (std) {
-    var Exception = (function () {
+    var Exception = (function (_super) {
+        __extends(Exception, _super);
         function Exception(message) {
             if (message === void 0) { message = ""; }
-            this.message_ = message;
+            return _super.call(this, message) || this;
         }
         Exception.prototype.what = function () {
-            return this.message_;
+            return this.message;
         };
         return Exception;
-    }());
+    }(Error));
     std.Exception = Exception;
 })(std || (std = {}));
 var std;
@@ -3826,130 +3801,6 @@ var std;
 })(std || (std = {}));
 var std;
 (function (std) {
-    function equal_to(x, y) {
-        if (x instanceof Object) {
-            if (x.equals)
-                return x.equals(y);
-            else
-                return x == y;
-        }
-        else
-            return x == y;
-    }
-    std.equal_to = equal_to;
-    function not_equal_to(x, y) {
-        return !equal_to(x, y);
-    }
-    std.not_equal_to = not_equal_to;
-    function less(x, y) {
-        if (x instanceof Object)
-            if (x.less != undefined)
-                return x.less(y);
-            else
-                return x.__get_m_iUID() < y.__get_m_iUID();
-        else
-            return x < y;
-    }
-    std.less = less;
-    function less_equal(x, y) {
-        return less(x, y) || equal_to(x, y);
-    }
-    std.less_equal = less_equal;
-    function greater(x, y) {
-        return !less_equal(x, y);
-    }
-    std.greater = greater;
-    function greater_equal(x, y) {
-        return !less(x, y);
-    }
-    std.greater_equal = greater_equal;
-    function logical_and(x, y) {
-        return x && y;
-    }
-    std.logical_and = logical_and;
-    function logical_or(x, y) {
-        return x || y;
-    }
-    std.logical_or = logical_or;
-    function logical_not(x) {
-        return !x;
-    }
-    std.logical_not = logical_not;
-    function bit_and(x, y) {
-        return x & y;
-    }
-    std.bit_and = bit_and;
-    function bit_or(x, y) {
-        return x | y;
-    }
-    std.bit_or = bit_or;
-    function bit_xor(x, y) {
-        return x ^ y;
-    }
-    std.bit_xor = bit_xor;
-    function hash(par) {
-        var type = typeof par;
-        if (type == "number")
-            return _Hash_number(par);
-        else if (type == "string")
-            return _Hash_string(par);
-        else
-            return _Hash_object(par);
-    }
-    std.hash = hash;
-    function _Hash_number(val) {
-        var buffer = new ArrayBuffer(8);
-        var byteArray = new Int8Array(buffer);
-        var valueArray = new Float64Array(buffer);
-        valueArray[0] = val;
-        var code = 2166136261;
-        for (var i = 0; i < byteArray.length; i++) {
-            var byte = (byteArray[i] < 0) ? byteArray[i] + 256 : byteArray[i];
-            code ^= byte;
-            code *= 16777619;
-        }
-        return Math.abs(code);
-    }
-    function _Hash_string(str) {
-        var code = 2166136261;
-        for (var i = 0; i < str.length; i++) {
-            code ^= str.charCodeAt(i);
-            code *= 16777619;
-        }
-        return Math.abs(code);
-    }
-    function _Hash_object(obj) {
-        if (obj.hashCode != undefined)
-            return obj.hashCode();
-        else
-            return _Hash_number(obj.__get_m_iUID());
-    }
-    var __s_iUID;
-    if (__s_iUID == undefined)
-        __s_iUID = 0;
-    if (Object.prototype.hasOwnProperty("__get_m_iUID") == false) {
-        Object.defineProperties(Object.prototype, {
-            "__get_m_iUID": {
-                value: function () {
-                    if (this.hasOwnProperty("__m_iUID") == false) {
-                        var uid = ++__s_iUID;
-                        Object.defineProperty(this, "__m_iUID", {
-                            "get": function () {
-                                return uid;
-                            }
-                        });
-                    }
-                    return this.__m_iUID;
-                }
-            }
-        });
-    }
-    function swap(left, right) {
-        left.swap(right);
-    }
-    std.swap = swap;
-})(std || (std = {}));
-(function (std) {
     function bind(fn) {
         var args = [];
         for (var _i = 1; _i < arguments.length; _i++) {
@@ -4040,6 +3891,608 @@ var std;
 })(std || (std = {}));
 var std;
 (function (std) {
+    function logical_and(x, y) {
+        return x && y;
+    }
+    std.logical_and = logical_and;
+    function logical_or(x, y) {
+        return x || y;
+    }
+    std.logical_or = logical_or;
+    function logical_not(x) {
+        return !x;
+    }
+    std.logical_not = logical_not;
+    function bit_and(x, y) {
+        return x & y;
+    }
+    std.bit_and = bit_and;
+    function bit_or(x, y) {
+        return x | y;
+    }
+    std.bit_or = bit_or;
+    function bit_xor(x, y) {
+        return x ^ y;
+    }
+    std.bit_xor = bit_xor;
+})(std || (std = {}));
+var std;
+(function (std) {
+    function equal_to(x, y) {
+        if (x instanceof Object) {
+            if (x.equals)
+                return x.equals(y);
+            else
+                return x == y;
+        }
+        else
+            return x == y;
+    }
+    std.equal_to = equal_to;
+    function not_equal_to(x, y) {
+        return !equal_to(x, y);
+    }
+    std.not_equal_to = not_equal_to;
+    function less(x, y) {
+        if (x instanceof Object)
+            if (x.less != undefined)
+                return x.less(y);
+            else
+                return x.__get_m_iUID() < y.__get_m_iUID();
+        else
+            return x < y;
+    }
+    std.less = less;
+    function less_equal(x, y) {
+        return less(x, y) || equal_to(x, y);
+    }
+    std.less_equal = less_equal;
+    function greater(x, y) {
+        return !less_equal(x, y);
+    }
+    std.greater = greater;
+    function greater_equal(x, y) {
+        return !less(x, y);
+    }
+    std.greater_equal = greater_equal;
+})(std || (std = {}));
+var std;
+(function (std) {
+    function hash(val) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        args.unshift(val);
+        var ret = _HASH_INIT_VALUE;
+        try {
+            for (var args_1 = __values(args), args_1_1 = args_1.next(); !args_1_1.done; args_1_1 = args_1.next()) {
+                var item = args_1_1.value;
+                var type = typeof item;
+                if (type == "boolean")
+                    ret = _Hash_boolean(item, ret);
+                else if (type == "number")
+                    ret = _Hash_number(item, ret);
+                else if (type == "string")
+                    ret = _Hash_string(item, ret);
+                else {
+                    if (item.hashCode != undefined) {
+                        var hashed = item.hashCode();
+                        if (args.length == 1)
+                            return hashed;
+                        else {
+                            ret = ret ^ hashed;
+                            ret *= _HASH_MULTIPLIER;
+                        }
+                    }
+                    else
+                        ret = _Hash_number(item.__get_m_iUID(), ret);
+                }
+            }
+        }
+        catch (e_1_1) { e_1 = { error: e_1_1 }; }
+        finally {
+            try {
+                if (args_1_1 && !args_1_1.done && (_a = args_1.return)) _a.call(args_1);
+            }
+            finally { if (e_1) throw e_1.error; }
+        }
+        return ret;
+        var e_1, _a;
+    }
+    std.hash = hash;
+    function _Hash_boolean(val, ret) {
+        ret ^= val ? 1 : 0;
+        ret *= _HASH_MULTIPLIER;
+        return ret;
+    }
+    function _Hash_number(val, ret) {
+        var buffer = new ArrayBuffer(8);
+        var byteArray = new Int8Array(buffer);
+        var valueArray = new Float64Array(buffer);
+        valueArray[0] = val;
+        for (var i = 0; i < byteArray.length; i++) {
+            var byte = (byteArray[i] < 0) ? byteArray[i] + 256 : byteArray[i];
+            ret ^= byte;
+            ret *= _HASH_MULTIPLIER;
+        }
+        return Math.abs(ret);
+    }
+    function _Hash_string(str, ret) {
+        for (var i = 0; i < str.length; i++) {
+            ret ^= str.charCodeAt(i);
+            ret *= _HASH_MULTIPLIER;
+        }
+        return Math.abs(ret);
+    }
+    function _Hash_object(obj, ret) {
+        if (obj.hashCode != undefined)
+            return obj.hashCode();
+        else
+            return _Hash_number(obj.__get_m_iUID(), ret);
+    }
+    var _HASH_INIT_VALUE = 2166136261;
+    var _HASH_MULTIPLIER = 16777619;
+    var __s_iUID;
+    if (__s_iUID == undefined)
+        __s_iUID = 0;
+    if (Object.prototype.hasOwnProperty("__get_m_iUID") == false) {
+        Object.defineProperties(Object.prototype, {
+            "__get_m_iUID": {
+                value: function () {
+                    if (this.hasOwnProperty("__m_iUID") == false) {
+                        var uid = ++__s_iUID;
+                        Object.defineProperty(this, "__m_iUID", {
+                            "get": function () {
+                                return uid;
+                            }
+                        });
+                    }
+                    return this.__m_iUID;
+                }
+            }
+        });
+    }
+})(std || (std = {}));
+var std;
+(function (std) {
+    function swap(left, right) {
+        left.swap(right);
+    }
+    std.swap = swap;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var base;
+    (function (base) {
+        var Iterator = (function () {
+            function Iterator() {
+            }
+            return Iterator;
+        }());
+        base.Iterator = Iterator;
+    })(base = std.base || (std.base = {}));
+})(std || (std = {}));
+(function (std) {
+    var base;
+    (function (base_1) {
+        var ReverseIterator = (function (_super) {
+            __extends(ReverseIterator, _super);
+            function ReverseIterator(base) {
+                var _this = _super.call(this) || this;
+                _this.base_ = base.prev();
+                return _this;
+            }
+            ReverseIterator.prototype.source = function () {
+                return this.base_.source();
+            };
+            ReverseIterator.prototype.base = function () {
+                return this.base_.next();
+            };
+            Object.defineProperty(ReverseIterator.prototype, "value", {
+                get: function () {
+                    return this.base_.value;
+                },
+                enumerable: true,
+                configurable: true
+            });
+            ReverseIterator.prototype.prev = function () {
+                return this._Create_neighbor(this.base_);
+            };
+            ReverseIterator.prototype.next = function () {
+                return this._Create_neighbor(this.base().prev());
+            };
+            ReverseIterator.prototype.advance = function (n) {
+                return this._Create_neighbor(this.base().advance(-n));
+            };
+            ReverseIterator.prototype.equals = function (obj) {
+                return this.base_.equals(obj.base_);
+            };
+            ReverseIterator.prototype.swap = function (obj) {
+                this.base_.swap(obj.base_);
+            };
+            return ReverseIterator;
+        }(base_1.Iterator));
+        base_1.ReverseIterator = ReverseIterator;
+    })(base = std.base || (std.base = {}));
+})(std || (std = {}));
+var std;
+(function (std) {
+    var base;
+    (function (base) {
+        var ArrayIterator = (function (_super) {
+            __extends(ArrayIterator, _super);
+            function ArrayIterator(source, index) {
+                var _this = _super.call(this) || this;
+                _this.source_ = source;
+                _this.index_ = index;
+                return _this;
+            }
+            ArrayIterator.prototype.source = function () {
+                return this.source_;
+            };
+            ;
+            ArrayIterator.prototype.index = function () {
+                return this.index_;
+            };
+            Object.defineProperty(ArrayIterator.prototype, "value", {
+                get: function () {
+                    return this.source().at(this.index_);
+                },
+                set: function (val) {
+                    this.source().set(this.index_, val);
+                },
+                enumerable: true,
+                configurable: true
+            });
+            ;
+            ;
+            ArrayIterator.prototype.prev = function () {
+                if (this.index_ == -1)
+                    return new ArrayIterator(this.source(), this.source_.size() - 1);
+                else if (this.index_ - 1 < 0)
+                    return this.source().end();
+                else
+                    return new ArrayIterator(this.source(), this.index_ - 1);
+            };
+            ArrayIterator.prototype.next = function () {
+                if (this.index_ >= this.source_.size() - 1)
+                    return this.source().end();
+                else
+                    return new ArrayIterator(this.source(), this.index_ + 1);
+            };
+            ArrayIterator.prototype.advance = function (n) {
+                var new_index;
+                if (n < 0 && this.index_ == -1)
+                    new_index = this.source_.size() + n;
+                else
+                    new_index = this.index_ + n;
+                if (new_index < 0 || new_index >= this.source_.size())
+                    return this.source().end();
+                else
+                    return new ArrayIterator(this.source(), new_index);
+            };
+            ArrayIterator.prototype.equals = function (obj) {
+                return this.source_ == obj.source_ && this.index_ == obj.index_;
+            };
+            ArrayIterator.prototype.swap = function (obj) {
+                _a = __read([obj.value, this.value], 2), this.value = _a[0], obj.value = _a[1];
+                var _a;
+            };
+            ;
+            return ArrayIterator;
+        }(base.Iterator));
+        base.ArrayIterator = ArrayIterator;
+    })(base = std.base || (std.base = {}));
+})(std || (std = {}));
+(function (std) {
+    var base;
+    (function (base_2) {
+        var ArrayReverseIterator = (function (_super) {
+            __extends(ArrayReverseIterator, _super);
+            function ArrayReverseIterator(base) {
+                return _super.call(this, base) || this;
+            }
+            ArrayReverseIterator.prototype._Create_neighbor = function (base) {
+                return new ArrayReverseIterator(base);
+            };
+            ArrayReverseIterator.prototype.index = function () {
+                return this.base_.index();
+            };
+            Object.defineProperty(ArrayReverseIterator.prototype, "value", {
+                get: function () {
+                    return this.base_.value;
+                },
+                set: function (val) {
+                    this.base_.value = val;
+                },
+                enumerable: true,
+                configurable: true
+            });
+            return ArrayReverseIterator;
+        }(base_2.ReverseIterator));
+        base_2.ArrayReverseIterator = ArrayReverseIterator;
+    })(base = std.base || (std.base = {}));
+})(std || (std = {}));
+var std;
+(function (std) {
+    std.VectorIterator = std.base.ArrayIterator;
+    std.VectorReverseIterator = std.base.ArrayReverseIterator;
+})(std || (std = {}));
+var std;
+(function (std) {
+    std.DequeIterator = std.base.ArrayIterator;
+    std.DequeReverseIterator = std.base.ArrayReverseIterator;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var base;
+    (function (base) {
+        var _ListIteratorBase = (function (_super) {
+            __extends(_ListIteratorBase, _super);
+            function _ListIteratorBase(prev, next, value) {
+                var _this = _super.call(this) || this;
+                _this.prev_ = prev;
+                _this.next_ = next;
+                _this.value_ = value;
+                return _this;
+            }
+            _ListIteratorBase.prototype.prev = function () {
+                return this.prev_;
+            };
+            _ListIteratorBase.prototype.next = function () {
+                return this.next_;
+            };
+            _ListIteratorBase.prototype.advance = function (step) {
+                var it = this;
+                if (step >= 0) {
+                    for (var i = 0; i < step; i++) {
+                        it = it.next();
+                        if (it.equals(this.source().end()))
+                            return it;
+                    }
+                }
+                else {
+                    for (var i = 0; i < step; i++) {
+                        it = it.prev();
+                        if (it.equals(this.source().end()))
+                            return it;
+                    }
+                }
+                return it;
+            };
+            Object.defineProperty(_ListIteratorBase.prototype, "value", {
+                get: function () {
+                    return this.value_;
+                },
+                enumerable: true,
+                configurable: true
+            });
+            _ListIteratorBase.prototype.equals = function (obj) {
+                return this == obj;
+            };
+            _ListIteratorBase.prototype.swap = function (obj) {
+                var source = this.source();
+                var supp_prev = this.prev_;
+                var supp_next = this.next_;
+                this.prev_ = obj.prev_;
+                this.next_ = obj.next_;
+                obj.prev_ = supp_prev;
+                obj.next_ = supp_next;
+                if (source.end() == this)
+                    source.end_ = obj;
+                else if (source.end() == obj)
+                    source.end_ = this;
+                if (source.begin() == this)
+                    source.begin_ = obj;
+                else if (source.begin() == obj)
+                    source.begin_ = this;
+            };
+            return _ListIteratorBase;
+        }(base.Iterator));
+        base._ListIteratorBase = _ListIteratorBase;
+    })(base = std.base || (std.base = {}));
+})(std || (std = {}));
+var std;
+(function (std) {
+    var ListIterator = (function (_super) {
+        __extends(ListIterator, _super);
+        function ListIterator(sourcePtr, prev, next, value) {
+            var _this = _super.call(this, prev, next, value) || this;
+            _this.source_ptr_ = sourcePtr;
+            return _this;
+        }
+        ListIterator.prototype.source = function () {
+            return this.source_ptr_.value;
+        };
+        Object.defineProperty(ListIterator.prototype, "value", {
+            get: function () {
+                return this.value_;
+            },
+            set: function (val) {
+                this.value_ = val;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ListIterator.prototype.prev = function () {
+            return this.prev_;
+        };
+        ListIterator.prototype.next = function () {
+            return this.next_;
+        };
+        ListIterator.prototype.advance = function (step) {
+            return _super.prototype.advance.call(this, step);
+        };
+        ListIterator.prototype.equals = function (obj) {
+            return this == obj;
+        };
+        ListIterator.prototype.swap = function (obj) {
+            _super.prototype.swap.call(this, obj);
+        };
+        return ListIterator;
+    }(std.base._ListIteratorBase));
+    std.ListIterator = ListIterator;
+})(std || (std = {}));
+(function (std) {
+    var ListReverseIterator = (function (_super) {
+        __extends(ListReverseIterator, _super);
+        function ListReverseIterator(base) {
+            return _super.call(this, base) || this;
+        }
+        ListReverseIterator.prototype._Create_neighbor = function (base) {
+            return new ListReverseIterator(base);
+        };
+        Object.defineProperty(ListReverseIterator.prototype, "value", {
+            get: function () {
+                return this.base_.value;
+            },
+            set: function (val) {
+                this.base_.value = val;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return ListReverseIterator;
+    }(std.base.ReverseIterator));
+    std.ListReverseIterator = ListReverseIterator;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var SetIterator = (function (_super) {
+        __extends(SetIterator, _super);
+        function SetIterator(source, prev, next, val) {
+            var _this = _super.call(this, prev, next, val) || this;
+            _this.source_ = source;
+            return _this;
+        }
+        SetIterator.prototype.source = function () {
+            return this.source_.associative();
+        };
+        SetIterator.prototype.prev = function () {
+            return this.prev_;
+        };
+        SetIterator.prototype.next = function () {
+            return this.next_;
+        };
+        SetIterator.prototype.advance = function (size) {
+            return _super.prototype.advance.call(this, size);
+        };
+        SetIterator.prototype.less = function (obj) {
+            return std.less(this.value, obj.value);
+        };
+        SetIterator.prototype.equals = function (obj) {
+            return this == obj;
+        };
+        SetIterator.prototype.hashCode = function () {
+            return std.hash(this.value);
+        };
+        SetIterator.prototype.swap = function (obj) {
+            _super.prototype.swap.call(this, obj);
+        };
+        return SetIterator;
+    }(std.base._ListIteratorBase));
+    std.SetIterator = SetIterator;
+})(std || (std = {}));
+(function (std) {
+    var SetReverseIterator = (function (_super) {
+        __extends(SetReverseIterator, _super);
+        function SetReverseIterator(base) {
+            return _super.call(this, base) || this;
+        }
+        SetReverseIterator.prototype._Create_neighbor = function (base) {
+            return new SetReverseIterator(base);
+        };
+        return SetReverseIterator;
+    }(std.base.ReverseIterator));
+    std.SetReverseIterator = SetReverseIterator;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var MapIterator = (function (_super) {
+        __extends(MapIterator, _super);
+        function MapIterator(associative, prev, next, val) {
+            var _this = _super.call(this, prev, next, val) || this;
+            _this.source_ = associative;
+            return _this;
+        }
+        MapIterator.prototype.prev = function () {
+            return this.prev_;
+        };
+        MapIterator.prototype.next = function () {
+            return this.next_;
+        };
+        MapIterator.prototype.advance = function (step) {
+            return _super.prototype.advance.call(this, step);
+        };
+        MapIterator.prototype.source = function () {
+            return this.source_.associative();
+        };
+        Object.defineProperty(MapIterator.prototype, "first", {
+            get: function () {
+                return this.value.first;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(MapIterator.prototype, "second", {
+            get: function () {
+                return this.value.second;
+            },
+            set: function (val) {
+                this.value.second = val;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        MapIterator.prototype.less = function (obj) {
+            return std.less(this.first, obj.first);
+        };
+        MapIterator.prototype.equals = function (obj) {
+            return this == obj;
+        };
+        MapIterator.prototype.hashCode = function () {
+            return std.hash(this.first);
+        };
+        MapIterator.prototype.swap = function (obj) {
+            _super.prototype.swap.call(this, obj);
+        };
+        return MapIterator;
+    }(std.base._ListIteratorBase));
+    std.MapIterator = MapIterator;
+})(std || (std = {}));
+(function (std) {
+    var MapReverseIterator = (function (_super) {
+        __extends(MapReverseIterator, _super);
+        function MapReverseIterator(base) {
+            return _super.call(this, base) || this;
+        }
+        MapReverseIterator.prototype._Create_neighbor = function (base) {
+            return new MapReverseIterator(base);
+        };
+        Object.defineProperty(MapReverseIterator.prototype, "first", {
+            get: function () {
+                return this.base_.first;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(MapReverseIterator.prototype, "second", {
+            get: function () {
+                return this.base_.second;
+            },
+            set: function (val) {
+                this.base_.second = val;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        return MapReverseIterator;
+    }(std.base.ReverseIterator));
+    std.MapReverseIterator = MapReverseIterator;
+})(std || (std = {}));
+var std;
+(function (std) {
     function size(container) {
         return container.size();
     }
@@ -4104,6 +4557,416 @@ var std;
 })(std || (std = {}));
 var std;
 (function (std) {
+    var Mutex = (function () {
+        function Mutex() {
+            this.lock_count_ = 0;
+            this.listeners_ = new std.Queue();
+        }
+        Mutex.prototype.lock = function () {
+            var _this = this;
+            return new Promise(function (resolve) {
+                if (_this.lock_count_++ == 0)
+                    resolve();
+                else
+                    _this.listeners_.push(resolve);
+            });
+        };
+        Mutex.prototype.try_lock = function () {
+            if (this.lock_count_ != 0)
+                return false;
+            ++this.lock_count_;
+            return true;
+        };
+        Mutex.prototype.unlock = function () {
+            if (this.lock_count_ == 0)
+                throw new std.RangeError("This mutex is free.");
+            --this.lock_count_;
+            if (this.listeners_.empty() == false) {
+                var fn = this.listeners_.front();
+                this.listeners_.pop();
+                fn();
+            }
+        };
+        return Mutex;
+    }());
+    std.Mutex = Mutex;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var SharedMutex = (function () {
+        function SharedMutex() {
+            this.read_lock_count_ = 0;
+            this.write_lock_count_ = 0;
+            this.listeners_ = new std.Queue();
+        }
+        SharedMutex.prototype.lock = function () {
+            var _this = this;
+            return new Promise(function (resolve) {
+                if (_this.read_lock_count_ == 0 && _this.write_lock_count_++ == 0)
+                    resolve();
+                else
+                    _this.listeners_.push(std.make_pair(std.base._LockType.WRITE, resolve));
+            });
+        };
+        SharedMutex.prototype.try_lock = function () {
+            if (this.write_lock_count_ != 0 || this.read_lock_count_ != 0)
+                return false;
+            this.write_lock_count_++;
+            return true;
+        };
+        SharedMutex.prototype.unlock = function () {
+            if (this.write_lock_count_ == 0)
+                throw new std.RangeError("This mutex is free on the unique lock.");
+            while (this.listeners_.empty() == false) {
+                var access = this.listeners_.front().first;
+                var fn = this.listeners_.front().second;
+                this.listeners_.pop();
+                fn();
+                if (access == std.base._LockType.WRITE)
+                    break;
+            }
+            --this.write_lock_count_;
+        };
+        SharedMutex.prototype.lock_shared = function () {
+            var _this = this;
+            return new Promise(function (resolve) {
+                ++_this.read_lock_count_;
+                if (_this.write_lock_count_ == 0)
+                    resolve();
+                else
+                    _this.listeners_.push(std.make_pair(std.base._LockType.READ, resolve));
+            });
+        };
+        SharedMutex.prototype.try_lock_shared = function () {
+            if (this.write_lock_count_ != 0)
+                return false;
+            ++this.read_lock_count_;
+            return true;
+        };
+        SharedMutex.prototype.unlock_shared = function () {
+            if (this.read_lock_count_ == 0)
+                throw new std.RangeError("This mutex is free on the shared lock.");
+            --this.read_lock_count_;
+            if (this.listeners_.empty() == false) {
+                var fn = this.listeners_.front().second;
+                this.listeners_.pop();
+                fn();
+            }
+        };
+        return SharedMutex;
+    }());
+    std.SharedMutex = SharedMutex;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var TimedMutex = (function () {
+        function TimedMutex() {
+            this.lock_count_ = 0;
+            this.listeners_ = new std.HashMap();
+        }
+        TimedMutex.prototype.lock = function () {
+            var _this = this;
+            return new Promise(function (resolve) {
+                if (_this.lock_count_++ == 0)
+                    resolve();
+                else
+                    _this.listeners_.emplace(resolve, std.base._LockType.LOCK);
+            });
+        };
+        TimedMutex.prototype.try_lock = function () {
+            if (this.lock_count_ != 0)
+                return false;
+            ++this.lock_count_;
+            return true;
+        };
+        TimedMutex.prototype.unlock = function () {
+            if (this.lock_count_ == 0)
+                throw new std.RangeError("This mutex is free.");
+            --this.lock_count_;
+            if (this.listeners_.empty() == false) {
+                var it = this.listeners_.begin();
+                var listener = it.first;
+                this.listeners_.erase(it);
+                if (it.second == std.base._LockType.LOCK)
+                    listener();
+                else
+                    listener(true);
+            }
+        };
+        TimedMutex.prototype.try_lock_for = function (ms) {
+            var _this = this;
+            return new Promise(function (resolve) {
+                if (_this.lock_count_++ == 0)
+                    resolve(true);
+                else {
+                    _this.listeners_.emplace(resolve, std.base._LockType.TRY_LOCK);
+                    std.sleep_for(ms).then(function () {
+                        if (_this.listeners_.has(resolve) == false)
+                            return;
+                        _this.listeners_.erase(resolve);
+                        --_this.lock_count_;
+                        resolve(false);
+                    });
+                }
+            });
+        };
+        TimedMutex.prototype.try_lock_until = function (at) {
+            var now = new Date();
+            var ms = at.getTime() - now.getTime();
+            return this.try_lock_for(ms);
+        };
+        return TimedMutex;
+    }());
+    std.TimedMutex = TimedMutex;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var SharedTimedMutex = (function () {
+        function SharedTimedMutex() {
+            this.read_lock_count_ = 0;
+            this.write_lock_count_ = 0;
+            this.listeners_ = new std.HashMap();
+        }
+        SharedTimedMutex.prototype.lock = function () {
+            var _this = this;
+            return new Promise(function (resolve) {
+                if (_this.read_lock_count_ == 0 && _this.write_lock_count_++ == 0)
+                    resolve();
+                else
+                    _this.listeners_.emplace(resolve, {
+                        access: std.base._LockType.WRITE,
+                        lock: std.base._LockType.LOCK
+                    });
+            });
+        };
+        SharedTimedMutex.prototype.try_lock = function () {
+            if (this.write_lock_count_ != 0 || this.read_lock_count_ != 0)
+                return false;
+            ++this.write_lock_count_;
+            return true;
+        };
+        SharedTimedMutex.prototype.try_lock_for = function (ms) {
+            var _this = this;
+            return new Promise(function (resolve) {
+                if (_this.read_lock_count_ == 0 && _this.write_lock_count_++ == 0)
+                    resolve(true);
+                else {
+                    _this.listeners_.emplace(resolve, {
+                        access: std.base._LockType.WRITE,
+                        lock: std.base._LockType.TRY_LOCK
+                    });
+                    std.sleep_for(ms).then(function () {
+                        if (_this.listeners_.has(resolve) == false)
+                            return;
+                        _this.listeners_.erase(resolve);
+                        --_this.write_lock_count_;
+                        resolve(false);
+                    });
+                }
+            });
+        };
+        SharedTimedMutex.prototype.try_lock_until = function (at) {
+            var now = new Date();
+            var ms = at.getTime() - now.getTime();
+            return this.try_lock_for(ms);
+        };
+        SharedTimedMutex.prototype.unlock = function () {
+            if (this.write_lock_count_ == 0)
+                throw new std.RangeError("This mutex is free on the unique lock.");
+            while (this.listeners_.empty() == false) {
+                var it = this.listeners_.begin();
+                var listener = it.first;
+                var type = it.second;
+                this.listeners_.erase(it);
+                if (type.lock == std.base._LockType.LOCK)
+                    listener();
+                else
+                    listener(true);
+                if (type.access == std.base._LockType.WRITE)
+                    break;
+            }
+            --this.write_lock_count_;
+        };
+        SharedTimedMutex.prototype.lock_shared = function () {
+            var _this = this;
+            return new Promise(function (resolve) {
+                ++_this.read_lock_count_;
+                if (_this.write_lock_count_ == 0)
+                    resolve();
+                else
+                    _this.listeners_.emplace(resolve, {
+                        access: std.base._LockType.READ,
+                        lock: std.base._LockType.LOCK
+                    });
+            });
+        };
+        SharedTimedMutex.prototype.try_lock_shared = function () {
+            if (this.write_lock_count_ != 0)
+                return false;
+            ++this.read_lock_count_;
+            return true;
+        };
+        SharedTimedMutex.prototype.try_lock_shared_for = function (ms) {
+            var _this = this;
+            return new Promise(function (resolve) {
+                ++_this.read_lock_count_;
+                if (_this.write_lock_count_ == 0)
+                    resolve(true);
+                else {
+                    _this.listeners_.emplace(resolve, {
+                        access: std.base._LockType.READ,
+                        lock: std.base._LockType.TRY_LOCK
+                    });
+                    std.sleep_for(ms).then(function () {
+                        if (_this.listeners_.has(resolve) == false)
+                            return;
+                        _this.listeners_.erase(resolve);
+                        --_this.read_lock_count_;
+                        resolve(false);
+                    });
+                }
+            });
+        };
+        SharedTimedMutex.prototype.try_lock_shared_until = function (at) {
+            var now = new Date();
+            var ms = at.getTime() - now.getTime();
+            return this.try_lock_shared_for(ms);
+        };
+        SharedTimedMutex.prototype.unlock_shared = function () {
+            if (this.read_lock_count_ == 0)
+                throw new std.RangeError("This mutex is free on the shared lock.");
+            --this.read_lock_count_;
+            if (this.listeners_.empty() == false) {
+                var it = this.listeners_.begin();
+                var listener = it.first;
+                var type = it.second;
+                this.listeners_.erase(it);
+                if (type.lock == std.base._LockType.LOCK)
+                    listener();
+                else
+                    listener(true);
+            }
+        };
+        return SharedTimedMutex;
+    }());
+    std.SharedTimedMutex = SharedTimedMutex;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var experiments;
+    (function (experiments) {
+        var Semaphore = (function () {
+            function Semaphore(size) {
+                this.acquired_count_ = 0;
+                this.size_ = size;
+                this.listeners_ = new std.Queue();
+            }
+            Semaphore.prototype.size = function () {
+                return this.size_;
+            };
+            Semaphore.prototype.expand = function (size) {
+                this.size_ = size;
+            };
+            Semaphore.prototype.acquire = function (count) {
+                var _this = this;
+                if (count === void 0) { count = 1; }
+                return new Promise(function (resolve, reject) {
+                    var prev_acqured_count = _this.acquired_count_;
+                    _this.acquired_count_ += count;
+                    if (prev_acqured_count + count <= _this.size_)
+                        resolve();
+                    else
+                        _this.listeners_.push(std.make_pair(resolve, count));
+                });
+            };
+            Semaphore.prototype.try_acquire = function (count) {
+                if (count === void 0) { count = 1; }
+                if (this.acquired_count_ + count > this.size_)
+                    return false;
+                this.acquired_count_ += count;
+                return true;
+            };
+            Semaphore.prototype.release = function (count) {
+                if (count === void 0) { count = 1; }
+                this.acquired_count_ -= count;
+                while (count != 0) {
+                    if (this.listeners_.front().second > count) {
+                        this.listeners_.front().second -= count;
+                        count = 0;
+                    }
+                    else {
+                        var fn = this.listeners_.front().first;
+                        count -= this.listeners_.front().second;
+                        this.listeners_.pop();
+                        fn();
+                    }
+                }
+            };
+            return Semaphore;
+        }());
+        experiments.Semaphore = Semaphore;
+    })(experiments = std.experiments || (std.experiments = {}));
+})(std || (std = {}));
+var std;
+(function (std) {
+    function sleep_for(ms) {
+        return new Promise(function (resolve, reject) {
+            if (ms < 0)
+                reject(new std.InvalidArgument("Unable to sleep by negative duration."));
+            else
+                setTimeout(function () {
+                    resolve();
+                }, ms);
+        });
+    }
+    std.sleep_for = sleep_for;
+    function sleep_until(at) {
+        var now = new Date();
+        var ms = at.getTime() - now.getTime();
+        return sleep_for(ms);
+    }
+    std.sleep_until = sleep_until;
+    function lock() {
+        var items = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            items[_i] = arguments[_i];
+        }
+        return new Promise(function (resolve) {
+            var count = 0;
+            try {
+                for (var items_1 = __values(items), items_1_1 = items_1.next(); !items_1_1.done; items_1_1 = items_1.next()) {
+                    var mtx = items_1_1.value;
+                    mtx.lock().then(function () {
+                        if (++count == items.length)
+                            resolve();
+                    });
+                }
+            }
+            catch (e_2_1) { e_2 = { error: e_2_1 }; }
+            finally {
+                try {
+                    if (items_1_1 && !items_1_1.done && (_a = items_1.return)) _a.call(items_1);
+                }
+                finally { if (e_2) throw e_2.error; }
+            }
+            var e_2, _a;
+        });
+    }
+    std.lock = lock;
+    function try_lock() {
+        var items = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            items[_i] = arguments[_i];
+        }
+        for (var i = 0; i < items.length; ++i)
+            if (items[i].try_lock() == false)
+                return i;
+        return -1;
+    }
+    std.try_lock = try_lock;
+})(std || (std = {}));
+var std;
+(function (std) {
     var Pair = (function () {
         function Pair(first, second) {
             this.first = first;
@@ -4117,6 +4980,9 @@ var std;
                 return std.less(this.first, pair.first);
             else
                 return std.less(this.second, pair.second);
+        };
+        Pair.prototype.hashCode = function () {
+            return std.hash(this.first, this.second);
         };
         return Pair;
     }());
@@ -4136,6 +5002,70 @@ var std;
         return new std.Pair(x, y);
     }
     std.make_pair = make_pair;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var base;
+    (function (base) {
+        var _MapElementList = (function (_super) {
+            __extends(_MapElementList, _super);
+            function _MapElementList(associative) {
+                var _this = _super.call(this) || this;
+                _this.associative_ = associative;
+                return _this;
+            }
+            _MapElementList.prototype._Create_iterator = function (prev, next, val) {
+                return new std.MapIterator(this, prev, next, val);
+            };
+            _MapElementList.prototype._Set_begin = function (it) {
+                _super.prototype._Set_begin.call(this, it);
+                this.rend_ = new std.MapReverseIterator(it);
+            };
+            _MapElementList.prototype.associative = function () {
+                return this.associative_;
+            };
+            _MapElementList.prototype.rbegin = function () {
+                return new std.MapReverseIterator(this.end());
+            };
+            _MapElementList.prototype.rend = function () {
+                return this.rend_;
+            };
+            return _MapElementList;
+        }(base._ListContainer));
+        base._MapElementList = _MapElementList;
+    })(base = std.base || (std.base = {}));
+})(std || (std = {}));
+var std;
+(function (std) {
+    var base;
+    (function (base) {
+        var _SetElementList = (function (_super) {
+            __extends(_SetElementList, _super);
+            function _SetElementList(associative) {
+                var _this = _super.call(this) || this;
+                _this.associative_ = associative;
+                return _this;
+            }
+            _SetElementList.prototype._Create_iterator = function (prev, next, val) {
+                return new std.SetIterator(this, prev, next, val);
+            };
+            _SetElementList.prototype._Set_begin = function (it) {
+                _super.prototype._Set_begin.call(this, it);
+                this.rend_ = new std.SetReverseIterator(it);
+            };
+            _SetElementList.prototype.associative = function () {
+                return this.associative_;
+            };
+            _SetElementList.prototype.rbegin = function () {
+                return new std.SetReverseIterator(this.end());
+            };
+            _SetElementList.prototype.rend = function () {
+                return this.rend_;
+            };
+            return _SetElementList;
+        }(base._ListContainer));
+        base._SetElementList = _SetElementList;
+    })(base = std.base || (std.base = {}));
 })(std || (std = {}));
 var std;
 (function (std) {
@@ -4214,7 +5144,7 @@ var std;
             __extends(_MapHashBuckets, _super);
             function _MapHashBuckets(map) {
                 var _this = _super.call(this) || this;
-                _this.map_ = map;
+                _this.source_ = map;
                 return _this;
             }
             _MapHashBuckets.prototype.find = function (key) {
@@ -4223,7 +5153,7 @@ var std;
                 for (var i = 0; i < bucket.size(); i++)
                     if (std.equal_to(bucket.at(i).first, key))
                         return bucket.at(i);
-                return this.map_.end();
+                return this.source_.end();
             };
             return _MapHashBuckets;
         }(base._HashBuckets));
@@ -4238,7 +5168,7 @@ var std;
             __extends(_SetHashBuckets, _super);
             function _SetHashBuckets(set) {
                 var _this = _super.call(this) || this;
-                _this.set_ = set;
+                _this.source_ = set;
                 return _this;
             }
             _SetHashBuckets.prototype.find = function (val) {
@@ -4247,7 +5177,7 @@ var std;
                 for (var i = 0; i < bucket.size(); i++)
                     if (std.equal_to(bucket.at(i).value, val))
                         return bucket.at(i);
-                return this.set_.end();
+                return this.source_.end();
             };
             return _SetHashBuckets;
         }(base._HashBuckets));
@@ -4258,133 +5188,36 @@ var std;
 (function (std) {
     var base;
     (function (base) {
-        var Iterator = (function () {
-            function Iterator(source) {
-                this.source_ = source;
+        var _DequeForOfAdaptor = (function () {
+            function _DequeForOfAdaptor(matrix) {
+                this.matrix_ = matrix;
+                this.row_ = 0;
+                this.col_ = 0;
             }
-            Iterator.prototype.equals = function (obj) {
-                return this.source_ == obj.source_;
+            _DequeForOfAdaptor.prototype.next = function () {
+                if (this.row_ == this.matrix_.length)
+                    return {
+                        done: true,
+                        value: undefined
+                    };
+                else {
+                    var val = this.matrix_[this.row_][this.col_];
+                    if (++this.col_ == this.matrix_[this.row_].length) {
+                        this.row_++;
+                        this.col_ = 0;
+                    }
+                    return {
+                        done: false,
+                        value: val
+                    };
+                }
             };
-            return Iterator;
+            _DequeForOfAdaptor.prototype[Symbol.iterator] = function () {
+                return this;
+            };
+            return _DequeForOfAdaptor;
         }());
-        base.Iterator = Iterator;
-    })(base = std.base || (std.base = {}));
-})(std || (std = {}));
-(function (std) {
-    var base;
-    (function (base_1) {
-        var ReverseIterator = (function (_super) {
-            __extends(ReverseIterator, _super);
-            function ReverseIterator(base) {
-                var _this = this;
-                if (base == null)
-                    _this = _super.call(this, null) || this;
-                else {
-                    _this = _super.call(this, base.source()) || this;
-                    _this.base_ = base.prev();
-                }
-                return _this;
-            }
-            ReverseIterator.prototype.source = function () {
-                return this.source_;
-            };
-            ReverseIterator.prototype.base = function () {
-                return this.base_.next();
-            };
-            Object.defineProperty(ReverseIterator.prototype, "value", {
-                get: function () {
-                    return this.base_.value;
-                },
-                enumerable: true,
-                configurable: true
-            });
-            ReverseIterator.prototype.prev = function () {
-                return this._Create_neighbor(this.base().next());
-            };
-            ReverseIterator.prototype.next = function () {
-                return this._Create_neighbor(this.base().prev());
-            };
-            ReverseIterator.prototype.advance = function (n) {
-                return this._Create_neighbor(this.base().advance(-n));
-            };
-            ReverseIterator.prototype.equals = function (obj) {
-                return this.base_.equals(obj.base_);
-            };
-            ReverseIterator.prototype.swap = function (obj) {
-                this.base_.swap(obj.base_);
-            };
-            return ReverseIterator;
-        }(base_1.Iterator));
-        base_1.ReverseIterator = ReverseIterator;
-    })(base = std.base || (std.base = {}));
-})(std || (std = {}));
-var std;
-(function (std) {
-    var base;
-    (function (base) {
-        var _ListIteratorBase = (function (_super) {
-            __extends(_ListIteratorBase, _super);
-            function _ListIteratorBase(source, prev, next, value) {
-                var _this = _super.call(this, source) || this;
-                _this.prev_ = prev;
-                _this.next_ = next;
-                _this.value_ = value;
-                return _this;
-            }
-            _ListIteratorBase.prototype.prev = function () {
-                return this.prev_;
-            };
-            _ListIteratorBase.prototype.next = function () {
-                return this.next_;
-            };
-            _ListIteratorBase.prototype.advance = function (step) {
-                var it = this;
-                if (step >= 0) {
-                    for (var i = 0; i < step; i++) {
-                        it = it.next();
-                        if (it.equals(this.source_.end()))
-                            return it;
-                    }
-                }
-                else {
-                    for (var i = 0; i < step; i++) {
-                        it = it.prev();
-                        if (it.equals(this.source_.end()))
-                            return it;
-                    }
-                }
-                return it;
-            };
-            Object.defineProperty(_ListIteratorBase.prototype, "value", {
-                get: function () {
-                    return this.value_;
-                },
-                enumerable: true,
-                configurable: true
-            });
-            _ListIteratorBase.prototype.equals = function (obj) {
-                return this == obj;
-            };
-            _ListIteratorBase.prototype.swap = function (obj) {
-                var source = this.source_;
-                var supp_prev = this.prev_;
-                var supp_next = this.next_;
-                this.prev_ = obj.prev_;
-                this.next_ = obj.next_;
-                obj.prev_ = supp_prev;
-                obj.next_ = supp_next;
-                if (source.end() == this)
-                    source.end_ = obj;
-                else if (source.end() == obj)
-                    source.end_ = this;
-                if (source.begin() == this)
-                    source.begin_ = obj;
-                else if (source.begin() == obj)
-                    source.begin_ = this;
-            };
-            return _ListIteratorBase;
-        }(base.Iterator));
-        base._ListIteratorBase = _ListIteratorBase;
+        base._DequeForOfAdaptor = _DequeForOfAdaptor;
     })(base = std.base || (std.base = {}));
 })(std || (std = {}));
 var std;
@@ -4394,7 +5227,7 @@ var std;
         var _NativeArrayIterator = (function (_super) {
             __extends(_NativeArrayIterator, _super);
             function _NativeArrayIterator(data, index) {
-                var _this = _super.call(this, null) || this;
+                var _this = _super.call(this) || this;
                 _this.data_ = data;
                 _this.index_ = index;
                 return _this;
@@ -4428,8 +5261,8 @@ var std;
                 return this.data_ == obj.data_ && this.index_ == obj.index_;
             };
             _NativeArrayIterator.prototype.swap = function (obj) {
-                _a = [obj.data_, this.data_], this.data_ = _a[0], obj.data_ = _a[1];
-                _b = [obj.index_, this.index_], this.index_ = _b[0], obj.index_ = _b[1];
+                _a = __read([obj.data_, this.data_], 2), this.data_ = _a[0], obj.data_ = _a[1];
+                _b = __read([obj.index_, this.index_], 2), this.index_ = _b[0], obj.index_ = _b[1];
                 var _a, _b;
             };
             return _NativeArrayIterator;
@@ -4445,7 +5278,7 @@ var std;
             __extends(_Repeater, _super);
             function _Repeater(index, value) {
                 if (value === void 0) { value = null; }
-                var _this = _super.call(this, null) || this;
+                var _this = _super.call(this) || this;
                 _this.index_ = index;
                 _this.value_ = value;
                 return _this;
@@ -4479,7 +5312,7 @@ var std;
                 return this.index_ == obj.index_;
             };
             _Repeater.prototype.swap = function (obj) {
-                _a = [obj.index_, this.index_], this.index_ = _a[0], obj.index_ = _a[1];
+                _a = __read([obj.index_, this.index_], 2), this.index_ = _a[0], obj.index_ = _a[1];
                 var _a;
             };
             return _Repeater;
@@ -4491,97 +5324,48 @@ var std;
 (function (std) {
     var base;
     (function (base) {
-        var ArrayIterator = (function (_super) {
-            __extends(ArrayIterator, _super);
-            function ArrayIterator(source, index) {
-                var _this = _super.call(this, source) || this;
-                _this.index_ = index;
-                return _this;
+        var ForOfAdaptor = (function () {
+            function ForOfAdaptor(first, last) {
+                this.it_ = first;
+                this.last_ = last;
             }
-            ArrayIterator.prototype.source = function () {
-                return this.source_;
+            ForOfAdaptor.prototype.next = function () {
+                if (this.it_.equals(this.last_))
+                    return {
+                        done: true,
+                        value: undefined
+                    };
+                else {
+                    var it = this.it_;
+                    this.it_ = this.it_.next();
+                    return {
+                        done: false,
+                        value: it.value
+                    };
+                }
             };
-            ;
-            ArrayIterator.prototype.index = function () {
-                return this.index_;
+            ForOfAdaptor.prototype[Symbol.iterator] = function () {
+                return this;
             };
-            Object.defineProperty(ArrayIterator.prototype, "value", {
-                get: function () {
-                    return this.source().at(this.index_);
-                },
-                set: function (val) {
-                    this.source().set(this.index_, val);
-                },
-                enumerable: true,
-                configurable: true
-            });
-            ;
-            ;
-            ArrayIterator.prototype.prev = function () {
-                if (this.index_ == -1)
-                    return new ArrayIterator(this.source(), this.source_.size() - 1);
-                else if (this.index_ - 1 < 0)
-                    return this.source().end();
-                else
-                    return new ArrayIterator(this.source(), this.index_ - 1);
-            };
-            ArrayIterator.prototype.next = function () {
-                if (this.index_ >= this.source_.size() - 1)
-                    return this.source().end();
-                else
-                    return new ArrayIterator(this.source(), this.index_ + 1);
-            };
-            ArrayIterator.prototype.advance = function (n) {
-                var new_index;
-                if (n < 0 && this.index_ == -1)
-                    new_index = this.source_.size() + n;
-                else
-                    new_index = this.index_ + n;
-                if (new_index < 0 || new_index >= this.source_.size())
-                    return this.source().end();
-                else
-                    return new ArrayIterator(this.source(), new_index);
-            };
-            ArrayIterator.prototype.equals = function (obj) {
-                return this.source_ == obj.source_ && this.index_ == obj.index_;
-            };
-            ArrayIterator.prototype.swap = function (obj) {
-                _a = [obj.value, this.value], this.value = _a[0], obj.value = _a[1];
-                var _a;
-            };
-            ;
-            return ArrayIterator;
-        }(base.Iterator));
-        base.ArrayIterator = ArrayIterator;
+            return ForOfAdaptor;
+        }());
+        base.ForOfAdaptor = ForOfAdaptor;
     })(base = std.base || (std.base = {}));
 })(std || (std = {}));
+var std;
 (function (std) {
     var base;
-    (function (base_2) {
-        var ArrayReverseIterator = (function (_super) {
-            __extends(ArrayReverseIterator, _super);
-            function ArrayReverseIterator(base) {
-                return _super.call(this, base) || this;
+    (function (base) {
+        var _LockType = (function () {
+            function _LockType() {
             }
-            ArrayReverseIterator.prototype._Create_neighbor = function (base) {
-                return new ArrayReverseIterator(base);
-            };
-            ArrayReverseIterator.prototype.index = function () {
-                return this.base_.index();
-            };
-            Object.defineProperty(ArrayReverseIterator.prototype, "value", {
-                get: function () {
-                    return this.base_.value;
-                },
-                set: function (val) {
-                    this.base_.value = val;
-                },
-                enumerable: true,
-                configurable: true
-            });
-            return ArrayReverseIterator;
-        }(base_2.ReverseIterator));
-        base_2.ArrayReverseIterator = ArrayReverseIterator;
+            _LockType.WRITE = false;
+            _LockType.READ = true;
+            _LockType.LOCK = false;
+            _LockType.TRY_LOCK = true;
+            return _LockType;
+        }());
+        base._LockType = _LockType;
     })(base = std.base || (std.base = {}));
 })(std || (std = {}));
 var std;
@@ -4827,7 +5611,7 @@ var std;
             __extends(_MapTree, _super);
             function _MapTree(map, compare, itCompare) {
                 var _this = _super.call(this, itCompare) || this;
-                _this.map_ = map;
+                _this.source_ = map;
                 _this.key_compare_ = compare;
                 _this.value_compare_ =
                     function (x, y) {
@@ -4838,7 +5622,7 @@ var std;
             _MapTree.prototype.lower_bound = function (key) {
                 var node = this.find_by_key(key);
                 if (node == null)
-                    return this.map().end();
+                    return this.source().end();
                 else if (this.key_comp()(node.value.first, key))
                     return node.value.next();
                 else
@@ -4847,8 +5631,8 @@ var std;
             _MapTree.prototype.equal_range = function (key) {
                 return std.make_pair(this.lower_bound(key), this.upper_bound(key));
             };
-            _MapTree.prototype.map = function () {
-                return this.map_;
+            _MapTree.prototype.source = function () {
+                return this.source_;
             };
             _MapTree.prototype.key_comp = function () {
                 return this.key_compare_;
@@ -4906,7 +5690,7 @@ var std;
             _MultiMapTree.prototype.upper_bound = function (key) {
                 var node = this.root_;
                 if (node == null)
-                    return this.map().end();
+                    return this.source().end();
                 var matched = null;
                 while (true) {
                     var myNode = null;
@@ -4943,14 +5727,14 @@ var std;
             __extends(_SetTree, _super);
             function _SetTree(set, compare, itCompare) {
                 var _this = _super.call(this, itCompare) || this;
-                _this.set_ = set;
+                _this.source_ = set;
                 _this.key_comp_ = compare;
                 return _this;
             }
             _SetTree.prototype.lower_bound = function (val) {
                 var node = this.find_by_val(val);
                 if (node == null)
-                    return this.set_.end();
+                    return this.source_.end();
                 else if (this.key_comp()(node.value.value, val))
                     return node.value.next();
                 else
@@ -4959,8 +5743,8 @@ var std;
             _SetTree.prototype.equal_range = function (val) {
                 return std.make_pair(this.lower_bound(val), this.upper_bound(val));
             };
-            _SetTree.prototype.set = function () {
-                return this.set_;
+            _SetTree.prototype.source = function () {
+                return this.source_;
             };
             _SetTree.prototype.key_comp = function () {
                 return this.key_comp_;
@@ -5015,7 +5799,7 @@ var std;
             _MultiSetTree.prototype.upper_bound = function (val) {
                 var node = this.root_;
                 if (node == null)
-                    return this.set().end();
+                    return this.source().end();
                 var matched = null;
                 while (true) {
                     var myNode = null;
@@ -5077,7 +5861,7 @@ var std;
             _UniqueMapTree.prototype.upper_bound = function (key) {
                 var node = this.find_by_key(key);
                 if (node == null)
-                    return this.map().end();
+                    return this.source().end();
                 var it = node.value;
                 if (std.equal_to(it.first, key) || this.key_comp()(it.first, key))
                     return it.next();
@@ -5122,7 +5906,7 @@ var std;
             _UniqueSetTree.prototype.upper_bound = function (val) {
                 var node = this.find_by_val(val);
                 if (node == null)
-                    return this.set().end();
+                    return this.source().end();
                 var it = node.value;
                 if (std.equal_to(it.value, val) || this.key_comp()(it.value, val))
                     return it.next();
@@ -5171,203 +5955,11 @@ var std;
                 enumerable: true,
                 configurable: true
             });
+            _XTreeNode.sequence = 0;
             return _XTreeNode;
         }());
-        _XTreeNode.sequence = 0;
         base._XTreeNode = _XTreeNode;
     })(base = std.base || (std.base = {}));
-})(std || (std = {}));
-var std;
-(function (std) {
-    var ListIterator = (function (_super) {
-        __extends(ListIterator, _super);
-        function ListIterator(source, prev, next, value) {
-            return _super.call(this, source, prev, next, value) || this;
-        }
-        ListIterator.prototype.source = function () {
-            return this.source_;
-        };
-        Object.defineProperty(ListIterator.prototype, "value", {
-            get: function () {
-                return this.value_;
-            },
-            set: function (val) {
-                this.value_ = val;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        ListIterator.prototype.prev = function () {
-            return this.prev_;
-        };
-        ListIterator.prototype.next = function () {
-            return this.next_;
-        };
-        ListIterator.prototype.advance = function (step) {
-            return _super.prototype.advance.call(this, step);
-        };
-        ListIterator.prototype.equals = function (obj) {
-            return this == obj;
-        };
-        ListIterator.prototype.swap = function (obj) {
-            _super.prototype.swap.call(this, obj);
-        };
-        return ListIterator;
-    }(std.base._ListIteratorBase));
-    std.ListIterator = ListIterator;
-})(std || (std = {}));
-(function (std) {
-    var ListReverseIterator = (function (_super) {
-        __extends(ListReverseIterator, _super);
-        function ListReverseIterator(base) {
-            return _super.call(this, base) || this;
-        }
-        ListReverseIterator.prototype._Create_neighbor = function (base) {
-            return new ListReverseIterator(base);
-        };
-        Object.defineProperty(ListReverseIterator.prototype, "value", {
-            get: function () {
-                return this.base_.value;
-            },
-            set: function (val) {
-                this.base_.value = val;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        return ListReverseIterator;
-    }(std.base.ReverseIterator));
-    std.ListReverseIterator = ListReverseIterator;
-})(std || (std = {}));
-var std;
-(function (std) {
-    var MapIterator = (function (_super) {
-        __extends(MapIterator, _super);
-        function MapIterator(source, prev, next, val) {
-            return _super.call(this, source, prev, next, val) || this;
-        }
-        MapIterator.prototype.prev = function () {
-            return this.prev_;
-        };
-        MapIterator.prototype.next = function () {
-            return this.next_;
-        };
-        MapIterator.prototype.advance = function (step) {
-            return _super.prototype.advance.call(this, step);
-        };
-        MapIterator.prototype.source = function () {
-            return this.source_.associative();
-        };
-        Object.defineProperty(MapIterator.prototype, "first", {
-            get: function () {
-                return this.value.first;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(MapIterator.prototype, "second", {
-            get: function () {
-                return this.value.second;
-            },
-            set: function (val) {
-                this.value.second = val;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        MapIterator.prototype.less = function (obj) {
-            return std.less(this.first, obj.first);
-        };
-        MapIterator.prototype.equals = function (obj) {
-            return this == obj;
-        };
-        MapIterator.prototype.hashCode = function () {
-            return std.hash(this.first);
-        };
-        MapIterator.prototype.swap = function (obj) {
-            _super.prototype.swap.call(this, obj);
-        };
-        return MapIterator;
-    }(std.base._ListIteratorBase));
-    std.MapIterator = MapIterator;
-})(std || (std = {}));
-(function (std) {
-    var MapReverseIterator = (function (_super) {
-        __extends(MapReverseIterator, _super);
-        function MapReverseIterator(base) {
-            return _super.call(this, base) || this;
-        }
-        MapReverseIterator.prototype._Create_neighbor = function (base) {
-            return new MapReverseIterator(base);
-        };
-        Object.defineProperty(MapReverseIterator.prototype, "first", {
-            get: function () {
-                return this.base_.first;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        Object.defineProperty(MapReverseIterator.prototype, "second", {
-            get: function () {
-                return this.base_.second;
-            },
-            set: function (val) {
-                this.base_.second = val;
-            },
-            enumerable: true,
-            configurable: true
-        });
-        return MapReverseIterator;
-    }(std.base.ReverseIterator));
-    std.MapReverseIterator = MapReverseIterator;
-})(std || (std = {}));
-var std;
-(function (std) {
-    var SetIterator = (function (_super) {
-        __extends(SetIterator, _super);
-        function SetIterator(source, prev, next, val) {
-            return _super.call(this, source, prev, next, val) || this;
-        }
-        SetIterator.prototype.source = function () {
-            return this.source_.associative();
-        };
-        SetIterator.prototype.prev = function () {
-            return this.prev_;
-        };
-        SetIterator.prototype.next = function () {
-            return this.next_;
-        };
-        SetIterator.prototype.advance = function (size) {
-            return _super.prototype.advance.call(this, size);
-        };
-        SetIterator.prototype.less = function (obj) {
-            return std.less(this.value, obj.value);
-        };
-        SetIterator.prototype.equals = function (obj) {
-            return this == obj;
-        };
-        SetIterator.prototype.hashCode = function () {
-            return std.hash(this.value);
-        };
-        SetIterator.prototype.swap = function (obj) {
-            _super.prototype.swap.call(this, obj);
-        };
-        return SetIterator;
-    }(std.base._ListIteratorBase));
-    std.SetIterator = SetIterator;
-})(std || (std = {}));
-(function (std) {
-    var SetReverseIterator = (function (_super) {
-        __extends(SetReverseIterator, _super);
-        function SetReverseIterator(base) {
-            return _super.call(this, base) || this;
-        }
-        SetReverseIterator.prototype._Create_neighbor = function (base) {
-            return new SetReverseIterator(base);
-        };
-        return SetReverseIterator;
-    }(std.base.ReverseIterator));
-    std.SetReverseIterator = SetReverseIterator;
 })(std || (std = {}));
 var std;
 (function (std) {
@@ -5399,6 +5991,14 @@ var std;
     std.error_category = std.ErrorCategory;
     std.error_condition = std.ErrorCondition;
     std.error_code = std.ErrorCode;
+    std.mutex = std.Mutex;
+    std.shared_mutex = std.SharedMutex;
+    std.timed_mutex = std.TimedMutex;
+    std.shared_timed_mutex = std.SharedTimedMutex;
+    var experiments;
+    (function (experiments) {
+        experiments.semaphore = experiments.Semaphore;
+    })(experiments = std.experiments || (std.experiments = {}));
 })(std || (std = {}));
 try {
     module.exports = std;

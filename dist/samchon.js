@@ -8,6 +8,26 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __read = (this && this.__read) || function (o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i.return)) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+};
+var __spread = (this && this.__spread) || function () {
+    for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
+    return ar;
+};
 try {
     eval("var std = require('tstl');");
     eval("var http = require('http');");
@@ -175,6 +195,13 @@ var samchon;
             XML.prototype.setValue = function (val) {
                 this.value_ = val;
             };
+            XML.prototype.insertValue = function (tag, value) {
+                var xml = new XML();
+                xml.setTag(tag);
+                xml.setValue(value);
+                this.push(xml);
+                return xml;
+            };
             XML.prototype.setProperty = function (key, value) {
                 this.property_map_.set(key, value);
             };
@@ -243,7 +270,7 @@ var samchon;
                     new std.Pair("&lt;", "<"),
                     new std.Pair("&gt;", ">")
                 ];
-                return library.StringUtil.replaceAll.apply(library.StringUtil, [str].concat(pairs));
+                return library.StringUtil.replaceAll.apply(library.StringUtil, __spread([str], pairs));
             };
             XML.prototype._Encode_value = function (str) {
                 var pairs = [
@@ -251,7 +278,7 @@ var samchon;
                     new std.Pair("<", "&lt;"),
                     new std.Pair(">", "&gt;")
                 ];
-                return library.StringUtil.replaceAll.apply(library.StringUtil, [str].concat(pairs));
+                return library.StringUtil.replaceAll.apply(library.StringUtil, __spread([str], pairs));
             };
             XML.prototype._Decode_property = function (str) {
                 var pairs = [
@@ -264,7 +291,7 @@ var samchon;
                     new std.Pair("&#xA;", "\n"),
                     new std.Pair("&#xD;", "\r"),
                 ];
-                return library.StringUtil.replaceAll.apply(library.StringUtil, [str].concat(pairs));
+                return library.StringUtil.replaceAll.apply(library.StringUtil, __spread([str], pairs));
             };
             XML.prototype._Encode_property = function (str) {
                 var pairs = [
@@ -277,7 +304,7 @@ var samchon;
                     new std.Pair("\n", "&#xA;"),
                     new std.Pair("\r", "&#xD;"),
                 ];
-                return library.StringUtil.replaceAll.apply(library.StringUtil, [str].concat(pairs));
+                return library.StringUtil.replaceAll.apply(library.StringUtil, __spread([str], pairs));
             };
             XML.prototype.toString = function (tab) {
                 if (tab === void 0) { tab = 0; }
@@ -304,29 +331,6 @@ var samchon;
         library.XML = XML;
     })(library = samchon.library || (samchon.library = {}));
 })(samchon || (samchon = {}));
-(function (samchon) {
-    var library;
-    (function (library) {
-        var XMLList = (function (_super) {
-            __extends(XMLList, _super);
-            function XMLList() {
-                return _super !== null && _super.apply(this, arguments) || this;
-            }
-            XMLList.prototype.getTag = function () {
-                return this.front().getTag();
-            };
-            XMLList.prototype.toString = function (level) {
-                if (level === void 0) { level = 0; }
-                var str = "";
-                for (var i = 0; i < this.size(); i++)
-                    str += this.at(i).toString(level) + "\n";
-                return str;
-            };
-            return XMLList;
-        }(std.Deque));
-        library.XMLList = XMLList;
-    })(library = samchon.library || (samchon.library = {}));
-})(samchon || (samchon = {}));
 var samchon;
 (function (samchon) {
     var collections;
@@ -343,7 +347,7 @@ var samchon;
                 for (var _i = 0; _i < arguments.length; _i++) {
                     items[_i] = arguments[_i];
                 }
-                var ret = _super.prototype.push.apply(this, items);
+                var ret = _super.prototype.push.apply(this, __spread(items));
                 this._Notify_insert(this.end().advance(-items.length), this.end());
                 return ret;
             };
@@ -1184,7 +1188,7 @@ var samchon;
             __extends(CollectionEvent, _super);
             function CollectionEvent(type, first, last) {
                 var _this = _super.call(this, type, false, (type == "insert" || type == "erase")) || this;
-                if (type == "erase" && (first instanceof std.VectorIterator || first instanceof std.DequeIterator)) {
+                if (type == "erase" && first instanceof std.base.ArrayIterator) {
                     _this.temporary_container_ = new std.Vector(first, last);
                     _this.origin_first_ = first;
                     _this.first_ = _this.temporary_container_.begin();
@@ -1816,38 +1820,12 @@ var samchon;
             return CartesianProduct;
         }());
         library.CartesianProduct = CartesianProduct;
-        var RepeatedPermutation = (function () {
-            function RepeatedPermutation(n, r) {
-                this.n_ = n;
-                this.r_ = r;
-                this.size_ = Math.pow(n, r);
-                this.divider_array = new Array();
-                for (var i = 0; i < r; i++) {
-                    var x = r - (i + 1);
-                    var val = Math.pow(n, x);
-                    this.divider_array.push(val);
-                }
-            }
-            RepeatedPermutation.prototype.size = function () {
-                return this.size_;
-            };
-            RepeatedPermutation.prototype.n = function () {
-                return this.n_;
-            };
-            RepeatedPermutation.prototype.r = function () {
-                return this.r_;
-            };
-            RepeatedPermutation.prototype.at = function (index) {
-                var row = [];
-                for (var i = 0; i < this.r_; i++) {
-                    var val = Math.floor(index / this.divider_array[i]) % this.n_;
-                    row.push(val);
-                }
-                return row;
-            };
-            return RepeatedPermutation;
-        }());
-        library.RepeatedPermutation = RepeatedPermutation;
+    })(library = samchon.library || (samchon.library = {}));
+})(samchon || (samchon = {}));
+var samchon;
+(function (samchon) {
+    var library;
+    (function (library) {
         var Permutation = (function () {
             function Permutation(n, r) {
                 this.n_ = n;
@@ -1881,14 +1859,58 @@ var samchon;
             return Permutation;
         }());
         library.Permutation = Permutation;
+    })(library = samchon.library || (samchon.library = {}));
+})(samchon || (samchon = {}));
+var samchon;
+(function (samchon) {
+    var library;
+    (function (library) {
         var Factorial = (function (_super) {
             __extends(Factorial, _super);
             function Factorial(n) {
                 return _super.call(this, n, n) || this;
             }
             return Factorial;
-        }(Permutation));
+        }(library.Permutation));
         library.Factorial = Factorial;
+    })(library = samchon.library || (samchon.library = {}));
+})(samchon || (samchon = {}));
+var samchon;
+(function (samchon) {
+    var library;
+    (function (library) {
+        var RepeatedPermutation = (function () {
+            function RepeatedPermutation(n, r) {
+                this.n_ = n;
+                this.r_ = r;
+                this.size_ = Math.pow(n, r);
+                this.divider_array = new Array();
+                for (var i = 0; i < r; i++) {
+                    var x = r - (i + 1);
+                    var val = Math.pow(n, x);
+                    this.divider_array.push(val);
+                }
+            }
+            RepeatedPermutation.prototype.size = function () {
+                return this.size_;
+            };
+            RepeatedPermutation.prototype.n = function () {
+                return this.n_;
+            };
+            RepeatedPermutation.prototype.r = function () {
+                return this.r_;
+            };
+            RepeatedPermutation.prototype.at = function (index) {
+                var row = [];
+                for (var i = 0; i < this.r_; i++) {
+                    var val = Math.floor(index / this.divider_array[i]) % this.n_;
+                    row.push(val);
+                }
+                return row;
+            };
+            return RepeatedPermutation;
+        }());
+        library.RepeatedPermutation = RepeatedPermutation;
     })(library = samchon.library || (samchon.library = {}));
 })(samchon || (samchon = {}));
 var samchon;
@@ -1948,6 +1970,144 @@ var samchon;
             return EventDispatcher;
         }());
         library.EventDispatcher = EventDispatcher;
+    })(library = samchon.library || (samchon.library = {}));
+})(samchon || (samchon = {}));
+var samchon;
+(function (samchon) {
+    var library;
+    (function (library) {
+        var GAPopulation = (function () {
+            function GAPopulation() {
+                var args = [];
+                for (var _i = 0; _i < arguments.length; _i++) {
+                    args[_i] = arguments[_i];
+                }
+                if (args.length == 1) {
+                    var obj = args[0];
+                    this.children_ = new std.Vector(obj.children_);
+                    this.compare_ = obj.compare_;
+                    this.cloner_ = obj.cloner_;
+                }
+                else {
+                    var geneArray = args[0];
+                    var size = args[1];
+                    this.compare_ = args[2];
+                    this.cloner_ = args[3];
+                    this.children_ = new std.Vector();
+                    for (var i = 0; i < size; i++) {
+                        var child = this.cloner_(geneArray);
+                        if (i > 0)
+                            std.random_shuffle(child.begin(), child.end());
+                        this.children_.push_back(child);
+                    }
+                }
+            }
+            GAPopulation.prototype.getChildren = function () {
+                return this.children_;
+            };
+            GAPopulation.prototype.getCompare = function () {
+                return this.compare_;
+            };
+            GAPopulation.prototype.getCloner = function () {
+                return this.cloner_;
+            };
+            GAPopulation.prototype.fitTest = function () {
+                var best = this.children_.front();
+                for (var i = 1; i < this.children_.size(); i++)
+                    if (this.compare_(this.children_.at(i), best) == true)
+                        best = this.children_.at(i);
+                return best;
+            };
+            return GAPopulation;
+        }());
+        library.GAPopulation = GAPopulation;
+    })(library = samchon.library || (samchon.library = {}));
+})(samchon || (samchon = {}));
+var samchon;
+(function (samchon) {
+    var library;
+    (function (library) {
+        var GeneticAlgorithm = (function () {
+            function GeneticAlgorithm(unique, mutation_rate, tournament) {
+                if (unique === void 0) { unique = true; }
+                if (mutation_rate === void 0) { mutation_rate = .015; }
+                if (tournament === void 0) { tournament = 10; }
+                this.unique_ = unique;
+                this.mutation_rate_ = mutation_rate;
+                this.tournament_ = tournament;
+            }
+            GeneticAlgorithm.prototype.evolveGeneArray = function (individual, population, generation, compare, cloner) {
+                var ga_population = new library.GAPopulation(individual, population, compare, cloner);
+                for (var i = 0; i < generation; i++)
+                    ga_population = this.evolvePopulation(ga_population);
+                return ga_population.fitTest();
+            };
+            GeneticAlgorithm.prototype.evolvePopulation = function (population) {
+                var size = population.getChildren().size();
+                var evolved = new library.GAPopulation(population);
+                evolved.getChildren().set(0, population.fitTest());
+                for (var i = 1; i < size; i++) {
+                    var gene1 = this.selection(population);
+                    var gene2 = this.selection(population);
+                    var child = this.crossover(population, gene1, gene2);
+                    this.mutate(child);
+                    evolved.getChildren().set(i, child);
+                }
+                return evolved;
+            };
+            GeneticAlgorithm.prototype.selection = function (population) {
+                var size = population.getChildren().size();
+                var tournament = new library.GAPopulation(population);
+                for (var i = 0; i < size; i++) {
+                    var random_index = Math.floor(Math.random() * size);
+                    if (random_index == size)
+                        random_index--;
+                    tournament.getChildren().set(i, population.getChildren().at(random_index));
+                }
+                return tournament.fitTest();
+            };
+            GeneticAlgorithm.prototype.crossover = function (population, parent1, parent2) {
+                var individual = population.getCloner()(parent1);
+                var size = parent1.size();
+                if (this.unique_ == false) {
+                    for (var i = 0; i < size; i++)
+                        if (Math.random() > .5)
+                            individual.set(i, parent1.at(i));
+                }
+                else {
+                    var ptr_set = new std.HashSet();
+                    var index_set = new std.HashSet();
+                    var first = Math.random() * size;
+                    var last = Math.random() * size;
+                    if (first > last)
+                        _a = __read([last, first], 2), first = _a[0], last = _a[1];
+                    for (var i = 0; i < size; i++)
+                        if (first <= i && i < last)
+                            ptr_set.insert(parent1.at(i));
+                        else
+                            index_set.insert(i);
+                    for (var i = 0; i < size; i++) {
+                        var ptr = parent2.at(i);
+                        if (ptr_set.find(ptr).equals(ptr_set.end()) == false)
+                            continue;
+                        individual.set(index_set.begin().value, ptr);
+                        index_set.erase(index_set.begin());
+                    }
+                }
+                return individual;
+                var _a;
+            };
+            GeneticAlgorithm.prototype.mutate = function (individual) {
+                for (var it = individual.begin(); !it.equals(individual.end()); it = it.next()) {
+                    if (Math.random() > this.mutation_rate_)
+                        continue;
+                    var j = Math.floor(Math.random() * individual.size());
+                    it.swap(individual.begin().advance(j));
+                }
+            };
+            return GeneticAlgorithm;
+        }());
+        library.GeneticAlgorithm = GeneticAlgorithm;
     })(library = samchon.library || (samchon.library = {}));
 })(samchon || (samchon = {}));
 var samchon;
@@ -2116,138 +2276,6 @@ var samchon;
 (function (samchon) {
     var library;
     (function (library) {
-        var GeneticAlgorithm = (function () {
-            function GeneticAlgorithm(unique, mutation_rate, tournament) {
-                if (unique === void 0) { unique = true; }
-                if (mutation_rate === void 0) { mutation_rate = .015; }
-                if (tournament === void 0) { tournament = 10; }
-                this.unique_ = unique;
-                this.mutation_rate_ = mutation_rate;
-                this.tournament_ = tournament;
-            }
-            GeneticAlgorithm.prototype.evolveGeneArray = function (individual, population, generation, compare) {
-                if (compare === void 0) { compare = std.greater; }
-                var ga_population = new GAPopulation(individual, population);
-                for (var i = 0; i < generation; i++)
-                    ga_population = this.evolvePopulation(ga_population);
-                return ga_population.fitTest();
-            };
-            GeneticAlgorithm.prototype.evolvePopulation = function (population, compare) {
-                if (compare === void 0) { compare = std.greater; }
-                var size = population.children().size();
-                var evolved = new GAPopulation(size);
-                evolved.children().set(0, population.fitTest());
-                for (var i = 1; i < size; i++) {
-                    var gene1 = this.selection(population);
-                    var gene2 = this.selection(population);
-                    var child = this.crossover(gene1, gene2);
-                    this.mutate(child);
-                    evolved.children().set(i, child);
-                }
-                return evolved;
-            };
-            GeneticAlgorithm.prototype.selection = function (population) {
-                var size = population.children().size();
-                var tournament = new GAPopulation(size);
-                for (var i = 0; i < size; i++) {
-                    var random_index = Math.floor(Math.random() * size);
-                    if (random_index == size)
-                        random_index--;
-                    tournament.children().set(i, population.children().at(random_index));
-                }
-                return tournament.fitTest();
-            };
-            GeneticAlgorithm.prototype.crossover = function (parent1, parent2) {
-                var individual = parent1.constructor(parent1);
-                var size = parent1.size();
-                if (this.unique_ == false) {
-                    for (var i = 0; i < size; i++)
-                        if (Math.random() > .5)
-                            individual.set(i, parent1.at(i));
-                }
-                else {
-                    var ptr_set = new std.HashSet();
-                    var index_set = new std.HashSet();
-                    var first = Math.random() * size;
-                    var last = Math.random() * size;
-                    if (first > last)
-                        _a = [last, first], first = _a[0], last = _a[1];
-                    for (var i = 0; i < size; i++)
-                        if (first <= i && i < last)
-                            ptr_set.insert(parent1.at(i));
-                        else
-                            index_set.insert(i);
-                    for (var i = 0; i < size; i++) {
-                        var ptr = parent2.at(i);
-                        if (ptr_set.find(ptr).equals(ptr_set.end()) == false)
-                            continue;
-                        individual.set(index_set.begin().value, ptr);
-                        index_set.erase(index_set.begin());
-                    }
-                }
-                return individual;
-                var _a;
-            };
-            GeneticAlgorithm.prototype.mutate = function (individual) {
-                for (var it = individual.begin(); !it.equals(individual.end()); it = it.next()) {
-                    if (Math.random() > this.mutation_rate_)
-                        continue;
-                    var j = Math.floor(Math.random() * individual.size());
-                    it.swap(individual.begin().advance(j));
-                }
-            };
-            return GeneticAlgorithm;
-        }());
-        library.GeneticAlgorithm = GeneticAlgorithm;
-        var GAPopulation = (function () {
-            function GAPopulation() {
-                var args = [];
-                for (var _i = 0; _i < arguments.length; _i++) {
-                    args[_i] = arguments[_i];
-                }
-                if (args.length == 1) {
-                    this.children_ = new std.Vector();
-                }
-                else {
-                    var geneArray = args[0];
-                    var size = args[1];
-                    var compare = (args.length == 2) ? std.greater : args[2];
-                    this.children_ = new std.Vector();
-                    this.compare_ = compare;
-                    for (var i = 0; i < size; i++) {
-                        var child = this.clone(geneArray);
-                        if (i > 0)
-                            std.random_shuffle(child.begin(), child.end());
-                        this.children_.push_back(child);
-                    }
-                }
-            }
-            GAPopulation.prototype.children = function () {
-                return this.children_;
-            };
-            GAPopulation.prototype.fitTest = function () {
-                var best = this.children_.front();
-                for (var i = 1; i < this.children_.size(); i++)
-                    if (this.compare_(this.children_.at(i), best) == true)
-                        best = this.children_.at(i);
-                return best;
-            };
-            GAPopulation.prototype.clone = function (obj) {
-                var ret = eval("new obj.constructor()");
-                for (var key in obj)
-                    if (obj.hasOwnProperty(key) == true)
-                        ret[key] = obj[key];
-                return ret;
-            };
-            return GAPopulation;
-        }());
-        library.GAPopulation = GAPopulation;
-    })(library = samchon.library || (samchon.library = {}));
-})(samchon || (samchon = {}));
-var samchon;
-(function (samchon) {
-    var library;
-    (function (library) {
         var StringUtil = (function () {
             function StringUtil() {
             }
@@ -2303,7 +2331,7 @@ var samchon;
                 }
                 if (args.length == 0)
                     args = StringUtil.SPACE_ARRAY;
-                return StringUtil.ltrim.apply(StringUtil, [StringUtil.rtrim.apply(StringUtil, [str].concat(args))].concat(args));
+                return StringUtil.ltrim.apply(StringUtil, __spread([StringUtil.rtrim.apply(StringUtil, __spread([str], args))], args));
             };
             StringUtil.ltrim = function (str) {
                 var args = [];
@@ -2377,27 +2405,39 @@ var samchon;
                 while (true) {
                     if (args.length == 0)
                         break;
+                    var element = args[0];
                     var min_index = StringUtil._Fetch_substitute_index(format);
                     if (min_index == Number.MAX_VALUE)
                         break;
                     var symbol = "{" + min_index + "}";
-                    if (args[0] == null)
+                    if (element == null)
                         format = StringUtil.replaceAll(format, symbol, "NULL");
-                    else if (typeof args[0] == "number")
-                        format = StringUtil.replaceAll(format, symbol, String(args[0]));
-                    else if (typeof args[0] == "string")
-                        format = StringUtil.replaceAll(format, symbol, "'" + args[0] + "'");
+                    else if (typeof element == "boolean" || typeof element == "number")
+                        format = StringUtil.replaceAll(format, symbol, String(element));
+                    else if (typeof element == "string") {
+                        var str = StringUtil._Substitute_sql_string(element);
+                        format = StringUtil.replaceAll(format, symbol, str);
+                    }
+                    else if (element instanceof Array) {
+                    }
                     else {
-                        if (args[0].toXML != undefined) {
-                            var xml = args[0].toXML();
+                        if (element.toXML != undefined) {
+                            var xml = element.toXML();
                             if (xml instanceof library.XML)
-                                args[0] = xml;
+                                element = xml;
                         }
-                        format = StringUtil.replaceAll(format, symbol, "'" + args[0].toString() + "'");
+                        var str = element.toString();
+                        str = StringUtil._Substitute_sql_string(str);
+                        format = StringUtil.replaceAll(format, symbol, str);
                     }
                     args.shift();
                 }
                 return format;
+            };
+            StringUtil._Substitute_sql_string = function (str) {
+                str = StringUtil.replaceAll(str, "\\", "\\\\");
+                str = StringUtil.replaceAll(str, "'", "\\'");
+                return "'" + str + "'";
             };
             StringUtil._Fetch_substitute_index = function (format) {
                 var parenthesis_array = StringUtil.betweens(format, "{", "}");
@@ -2474,9 +2514,9 @@ var samchon;
                 if (precision === void 0) { precision = 2; }
                 return StringUtil.numberFormat(val * 100, precision) + " %";
             };
+            StringUtil.SPACE_ARRAY = [" ", "\t", "\r", "\n"];
             return StringUtil;
         }());
-        StringUtil.SPACE_ARRAY = [" ", "\t", "\r", "\n"];
         library.StringUtil = StringUtil;
     })(library = samchon.library || (samchon.library = {}));
 })(samchon || (samchon = {}));
@@ -2527,6 +2567,30 @@ var samchon;
             return URLVariables;
         }(std.HashMap));
         library.URLVariables = URLVariables;
+    })(library = samchon.library || (samchon.library = {}));
+})(samchon || (samchon = {}));
+var samchon;
+(function (samchon) {
+    var library;
+    (function (library) {
+        var XMLList = (function (_super) {
+            __extends(XMLList, _super);
+            function XMLList() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            XMLList.prototype.getTag = function () {
+                return this.front().getTag();
+            };
+            XMLList.prototype.toString = function (level) {
+                if (level === void 0) { level = 0; }
+                var str = "";
+                for (var i = 0; i < this.size(); i++)
+                    str += this.at(i).toString(level) + "\n";
+                return str;
+            };
+            return XMLList;
+        }(std.Deque));
+        library.XMLList = XMLList;
     })(library = samchon.library || (samchon.library = {}));
 })(samchon || (samchon = {}));
 var samchon;
@@ -3082,7 +3146,7 @@ var samchon;
                     prohibited_names[_i - 2] = arguments[_i];
                 }
                 entityGroup.clear();
-                protocol.IEntity.construct.apply(protocol.IEntity, [entityGroup, xml].concat(prohibited_names));
+                protocol.IEntity.construct.apply(protocol.IEntity, __spread([entityGroup, xml], prohibited_names));
                 if (xml.has(entityGroup.CHILD_TAG()) == false)
                     return;
                 var children = new std.Vector();
@@ -3102,7 +3166,7 @@ var samchon;
                 for (var _i = 1; _i < arguments.length; _i++) {
                     prohibited_names[_i - 1] = arguments[_i];
                 }
-                var xml = protocol.IEntity.toXML.apply(protocol.IEntity, [group].concat(prohibited_names));
+                var xml = protocol.IEntity.toXML.apply(protocol.IEntity, __spread([group], prohibited_names));
                 for (var it = group.begin(); !it.equals(group.end()); it = it.next())
                     xml.push(it.value.toXML());
                 return xml;
@@ -4367,6 +4431,7 @@ var samchon;
                     this.communicator_.sendData(invoke);
                 };
                 SlaveSystem.prototype._Reply_data = function (invoke) {
+                    var _this = this;
                     if (invoke.has("_History_uid")) {
                         var history_4 = new slave.InvokeHistory(invoke);
                         std.remove_if(invoke.begin(), invoke.end(), function (parameter) {
@@ -4374,13 +4439,22 @@ var samchon;
                                 || parameter.getName() == "_Process_name"
                                 || parameter.getName() == "_Process_weight";
                         });
-                        var pInvoke = new slave.PInvoke(invoke, history_4, this);
-                        this.replyData(pInvoke);
-                        if (pInvoke.isHold() == false)
-                            pInvoke.complete();
+                        var pInvoke_1 = new slave.PInvoke(invoke, history_4, this);
+                        var ret = this.replyData(pInvoke_1);
+                        if (ret.then instanceof Function && ret.catch instanceof Function) {
+                            ret.then(function () {
+                                _this._Complete_process(pInvoke_1);
+                            });
+                        }
+                        else
+                            this._Complete_process(pInvoke_1);
                     }
                     else
                         this.replyData(invoke);
+                };
+                SlaveSystem.prototype._Complete_process = function (pInvoke) {
+                    if (pInvoke.isHold() == false)
+                        pInvoke.complete();
                 };
                 return SlaveSystem;
             }());
@@ -5148,3 +5222,4 @@ var samchon;
         })(slave = templates.slave || (templates.slave = {}));
     })(templates = samchon.templates || (samchon.templates = {}));
 })(samchon || (samchon = {}));
+//# sourceMappingURL=samchon.js.map
