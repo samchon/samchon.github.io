@@ -2547,7 +2547,7 @@ var std;
             return this.hash_buckets_.find(key);
         };
         HashMultiSet.prototype.count = function (key) {
-            var index = std.hash(key) % this.hash_buckets_.item_size();
+            var index = std.hash(key) % this.hash_buckets_.size();
             var bucket = this.hash_buckets_.at(index);
             var cnt = 0;
             for (var i = 0; i < bucket.size(); i++)
@@ -3354,7 +3354,7 @@ var std;
             return this.hash_buckets_.find(key);
         };
         HashMultiMap.prototype.count = function (key) {
-            var index = std.hash(key) % this.hash_buckets_.item_size();
+            var index = std.hash(key) % this.hash_buckets_.size();
             var bucket = this.hash_buckets_.at(index);
             var cnt = 0;
             for (var i = 0; i < bucket.size(); i++)
@@ -4560,7 +4560,7 @@ var std;
     var Mutex = (function () {
         function Mutex() {
             this.lock_count_ = 0;
-            this.listeners_ = new std.Queue();
+            this.resolvers_ = new std.Queue();
         }
         Mutex.prototype.lock = function () {
             var _this = this;
@@ -4568,7 +4568,7 @@ var std;
                 if (_this.lock_count_++ == 0)
                     resolve();
                 else
-                    _this.listeners_.push(resolve);
+                    _this.resolvers_.push(resolve);
             });
         };
         Mutex.prototype.try_lock = function () {
@@ -4581,9 +4581,9 @@ var std;
             if (this.lock_count_ == 0)
                 throw new std.RangeError("This mutex is free.");
             --this.lock_count_;
-            if (this.listeners_.empty() == false) {
-                var fn = this.listeners_.front();
-                this.listeners_.pop();
+            if (this.resolvers_.empty() == false) {
+                var fn = this.resolvers_.front();
+                this.resolvers_.pop();
                 fn();
             }
         };
@@ -4597,7 +4597,7 @@ var std;
         function SharedMutex() {
             this.read_lock_count_ = 0;
             this.write_lock_count_ = 0;
-            this.listeners_ = new std.Queue();
+            this.resolvers_ = new std.Queue();
         }
         SharedMutex.prototype.lock = function () {
             var _this = this;
@@ -4605,7 +4605,7 @@ var std;
                 if (_this.read_lock_count_ == 0 && _this.write_lock_count_++ == 0)
                     resolve();
                 else
-                    _this.listeners_.push(std.make_pair(std.base._LockType.WRITE, resolve));
+                    _this.resolvers_.push(std.make_pair(std.base._LockType.WRITE, resolve));
             });
         };
         SharedMutex.prototype.try_lock = function () {
@@ -4617,10 +4617,10 @@ var std;
         SharedMutex.prototype.unlock = function () {
             if (this.write_lock_count_ == 0)
                 throw new std.RangeError("This mutex is free on the unique lock.");
-            while (this.listeners_.empty() == false) {
-                var access = this.listeners_.front().first;
-                var fn = this.listeners_.front().second;
-                this.listeners_.pop();
+            while (this.resolvers_.empty() == false) {
+                var access = this.resolvers_.front().first;
+                var fn = this.resolvers_.front().second;
+                this.resolvers_.pop();
                 fn();
                 if (access == std.base._LockType.WRITE)
                     break;
@@ -4634,7 +4634,7 @@ var std;
                 if (_this.write_lock_count_ == 0)
                     resolve();
                 else
-                    _this.listeners_.push(std.make_pair(std.base._LockType.READ, resolve));
+                    _this.resolvers_.push(std.make_pair(std.base._LockType.READ, resolve));
             });
         };
         SharedMutex.prototype.try_lock_shared = function () {
@@ -4647,9 +4647,9 @@ var std;
             if (this.read_lock_count_ == 0)
                 throw new std.RangeError("This mutex is free on the shared lock.");
             --this.read_lock_count_;
-            if (this.listeners_.empty() == false) {
-                var fn = this.listeners_.front().second;
-                this.listeners_.pop();
+            if (this.resolvers_.empty() == false) {
+                var fn = this.resolvers_.front().second;
+                this.resolvers_.pop();
                 fn();
             }
         };
@@ -4662,7 +4662,7 @@ var std;
     var TimedMutex = (function () {
         function TimedMutex() {
             this.lock_count_ = 0;
-            this.listeners_ = new std.HashMap();
+            this.resolvers_ = new std.HashMap();
         }
         TimedMutex.prototype.lock = function () {
             var _this = this;
@@ -4670,7 +4670,7 @@ var std;
                 if (_this.lock_count_++ == 0)
                     resolve();
                 else
-                    _this.listeners_.emplace(resolve, std.base._LockType.LOCK);
+                    _this.resolvers_.emplace(resolve, std.base._LockType.LOCK);
             });
         };
         TimedMutex.prototype.try_lock = function () {
@@ -4683,10 +4683,10 @@ var std;
             if (this.lock_count_ == 0)
                 throw new std.RangeError("This mutex is free.");
             --this.lock_count_;
-            if (this.listeners_.empty() == false) {
-                var it = this.listeners_.begin();
+            if (this.resolvers_.empty() == false) {
+                var it = this.resolvers_.begin();
                 var listener = it.first;
-                this.listeners_.erase(it);
+                this.resolvers_.erase(it);
                 if (it.second == std.base._LockType.LOCK)
                     listener();
                 else
@@ -4699,11 +4699,11 @@ var std;
                 if (_this.lock_count_++ == 0)
                     resolve(true);
                 else {
-                    _this.listeners_.emplace(resolve, std.base._LockType.TRY_LOCK);
+                    _this.resolvers_.emplace(resolve, std.base._LockType.TRY_LOCK);
                     std.sleep_for(ms).then(function () {
-                        if (_this.listeners_.has(resolve) == false)
+                        if (_this.resolvers_.has(resolve) == false)
                             return;
-                        _this.listeners_.erase(resolve);
+                        _this.resolvers_.erase(resolve);
                         --_this.lock_count_;
                         resolve(false);
                     });
@@ -4725,7 +4725,7 @@ var std;
         function SharedTimedMutex() {
             this.read_lock_count_ = 0;
             this.write_lock_count_ = 0;
-            this.listeners_ = new std.HashMap();
+            this.resolvers_ = new std.HashMap();
         }
         SharedTimedMutex.prototype.lock = function () {
             var _this = this;
@@ -4733,7 +4733,7 @@ var std;
                 if (_this.read_lock_count_ == 0 && _this.write_lock_count_++ == 0)
                     resolve();
                 else
-                    _this.listeners_.emplace(resolve, {
+                    _this.resolvers_.emplace(resolve, {
                         access: std.base._LockType.WRITE,
                         lock: std.base._LockType.LOCK
                     });
@@ -4751,14 +4751,14 @@ var std;
                 if (_this.read_lock_count_ == 0 && _this.write_lock_count_++ == 0)
                     resolve(true);
                 else {
-                    _this.listeners_.emplace(resolve, {
+                    _this.resolvers_.emplace(resolve, {
                         access: std.base._LockType.WRITE,
                         lock: std.base._LockType.TRY_LOCK
                     });
                     std.sleep_for(ms).then(function () {
-                        if (_this.listeners_.has(resolve) == false)
+                        if (_this.resolvers_.has(resolve) == false)
                             return;
-                        _this.listeners_.erase(resolve);
+                        _this.resolvers_.erase(resolve);
                         --_this.write_lock_count_;
                         resolve(false);
                     });
@@ -4773,11 +4773,11 @@ var std;
         SharedTimedMutex.prototype.unlock = function () {
             if (this.write_lock_count_ == 0)
                 throw new std.RangeError("This mutex is free on the unique lock.");
-            while (this.listeners_.empty() == false) {
-                var it = this.listeners_.begin();
+            while (this.resolvers_.empty() == false) {
+                var it = this.resolvers_.begin();
                 var listener = it.first;
                 var type = it.second;
-                this.listeners_.erase(it);
+                this.resolvers_.erase(it);
                 if (type.lock == std.base._LockType.LOCK)
                     listener();
                 else
@@ -4794,7 +4794,7 @@ var std;
                 if (_this.write_lock_count_ == 0)
                     resolve();
                 else
-                    _this.listeners_.emplace(resolve, {
+                    _this.resolvers_.emplace(resolve, {
                         access: std.base._LockType.READ,
                         lock: std.base._LockType.LOCK
                     });
@@ -4813,14 +4813,14 @@ var std;
                 if (_this.write_lock_count_ == 0)
                     resolve(true);
                 else {
-                    _this.listeners_.emplace(resolve, {
+                    _this.resolvers_.emplace(resolve, {
                         access: std.base._LockType.READ,
                         lock: std.base._LockType.TRY_LOCK
                     });
                     std.sleep_for(ms).then(function () {
-                        if (_this.listeners_.has(resolve) == false)
+                        if (_this.resolvers_.has(resolve) == false)
                             return;
-                        _this.listeners_.erase(resolve);
+                        _this.resolvers_.erase(resolve);
                         --_this.read_lock_count_;
                         resolve(false);
                     });
@@ -4836,11 +4836,11 @@ var std;
             if (this.read_lock_count_ == 0)
                 throw new std.RangeError("This mutex is free on the shared lock.");
             --this.read_lock_count_;
-            if (this.listeners_.empty() == false) {
-                var it = this.listeners_.begin();
+            if (this.resolvers_.empty() == false) {
+                var it = this.resolvers_.begin();
                 var listener = it.first;
                 var type = it.second;
-                this.listeners_.erase(it);
+                this.resolvers_.erase(it);
                 if (type.lock == std.base._LockType.LOCK)
                     listener();
                 else
@@ -4850,6 +4850,71 @@ var std;
         return SharedTimedMutex;
     }());
     std.SharedTimedMutex = SharedTimedMutex;
+})(std || (std = {}));
+var std;
+(function (std) {
+    var ConditionVariable = (function () {
+        function ConditionVariable() {
+            this.resolvers_ = new std.HashMap();
+        }
+        ConditionVariable.prototype.wait = function () {
+            var _this = this;
+            return new Promise(function (resolve) {
+                _this.resolvers_.emplace(resolve, std.base._LockType.LOCK);
+            });
+        };
+        ConditionVariable.prototype.wait_for = function (ms) {
+            var _this = this;
+            return new Promise(function (resolve) {
+                _this.resolvers_.emplace(resolve, std.base._LockType.TRY_LOCK);
+                std.sleep_for(ms).then(function () {
+                    if (_this.resolvers_.has(resolve) == false)
+                        return;
+                    _this.resolvers_.erase(resolve);
+                    resolve(false);
+                });
+            });
+        };
+        ConditionVariable.prototype.wait_until = function (at) {
+            var now = new Date();
+            var ms = at.getTime() - now.getTime();
+            return this.wait_for(ms);
+        };
+        ConditionVariable.prototype.notify_one = function () {
+            if (this.resolvers_.empty())
+                return;
+            var it = this.resolvers_.begin();
+            if (it.second == std.base._LockType.LOCK)
+                it.first();
+            else
+                it.first(true);
+            this.resolvers_.erase(it);
+        };
+        ConditionVariable.prototype.notify_all = function () {
+            if (this.resolvers_.empty())
+                return;
+            try {
+                for (var _a = __values(this.resolvers_), _b = _a.next(); !_b.done; _b = _a.next()) {
+                    var pair = _b.value;
+                    if (pair.second == std.base._LockType.LOCK)
+                        pair.first();
+                    else
+                        pair.first(true);
+                }
+            }
+            catch (e_2_1) { e_2 = { error: e_2_1 }; }
+            finally {
+                try {
+                    if (_b && !_b.done && (_c = _a.return)) _c.call(_a);
+                }
+                finally { if (e_2) throw e_2.error; }
+            }
+            this.resolvers_.clear();
+            var e_2, _c;
+        };
+        return ConditionVariable;
+    }());
+    std.ConditionVariable = ConditionVariable;
 })(std || (std = {}));
 var std;
 (function (std) {
@@ -4942,14 +5007,14 @@ var std;
                     });
                 }
             }
-            catch (e_2_1) { e_2 = { error: e_2_1 }; }
+            catch (e_3_1) { e_3 = { error: e_3_1 }; }
             finally {
                 try {
                     if (items_1_1 && !items_1_1.done && (_a = items_1.return)) _a.call(items_1);
                 }
-                finally { if (e_2) throw e_2.error; }
+                finally { if (e_3) throw e_3.error; }
             }
-            var e_2, _a;
+            var e_3, _a;
         });
     }
     std.lock = lock;
@@ -5359,12 +5424,12 @@ var std;
         var _LockType = (function () {
             function _LockType() {
             }
-            _LockType.WRITE = false;
-            _LockType.READ = true;
-            _LockType.LOCK = false;
-            _LockType.TRY_LOCK = true;
             return _LockType;
         }());
+        _LockType.WRITE = false;
+        _LockType.READ = true;
+        _LockType.LOCK = false;
+        _LockType.TRY_LOCK = true;
         base._LockType = _LockType;
     })(base = std.base || (std.base = {}));
 })(std || (std = {}));
@@ -5771,6 +5836,10 @@ var std;
                         return compare(x.value, y.value);
                 }) || this;
             }
+            _MultiSetTree.prototype.insert = function (val) {
+                val.__get_m_iUID();
+                _super.prototype.insert.call(this, val);
+            };
             _MultiSetTree.prototype.find_by_val = function (val) {
                 var node = this.root_;
                 if (node == null)
@@ -5955,9 +6024,9 @@ var std;
                 enumerable: true,
                 configurable: true
             });
-            _XTreeNode.sequence = 0;
             return _XTreeNode;
         }());
+        _XTreeNode.sequence = 0;
         base._XTreeNode = _XTreeNode;
     })(base = std.base || (std.base = {}));
 })(std || (std = {}));
@@ -5995,6 +6064,7 @@ var std;
     std.shared_mutex = std.SharedMutex;
     std.timed_mutex = std.TimedMutex;
     std.shared_timed_mutex = std.SharedTimedMutex;
+    std.condition_variable = std.ConditionVariable;
     var experiments;
     (function (experiments) {
         experiments.semaphore = experiments.Semaphore;

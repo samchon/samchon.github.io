@@ -2514,9 +2514,9 @@ var samchon;
                 if (precision === void 0) { precision = 2; }
                 return StringUtil.numberFormat(val * 100, precision) + " %";
             };
-            StringUtil.SPACE_ARRAY = [" ", "\t", "\r", "\n"];
             return StringUtil;
         }());
+        StringUtil.SPACE_ARRAY = [" ", "\t", "\r", "\n"];
         library.StringUtil = StringUtil;
     })(library = samchon.library || (samchon.library = {}));
 })(samchon || (samchon = {}));
@@ -4441,7 +4441,7 @@ var samchon;
                         });
                         var pInvoke_1 = new slave.PInvoke(invoke, history_4, this);
                         var ret = this.replyData(pInvoke_1);
-                        if (ret.then instanceof Function && ret.catch instanceof Function) {
+                        if (ret instanceof Function && ret.then instanceof Function && ret.catch instanceof Function) {
                             ret.then(function () {
                                 _this._Complete_process(pInvoke_1);
                             });

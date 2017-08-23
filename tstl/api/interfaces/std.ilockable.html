@@ -67,6 +67,21 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A lockable type.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>reference</dt>
+						<dd><p><a href="http://www.cplusplus.com/reference/concept/Lockable/">http://www.cplusplus.com/reference/concept/Lockable/</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -111,9 +126,15 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/540f425/src/std/threads/ILockable.ts#L5">threads/ILockable.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/threads/ILockable.ts#L16">threads/ILockable.ts:16</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Lock.</p>
+								</div>
+								<p>Bock until the <a href="std.ilockable.html#unlock">unlock</a> is called.2</p>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -128,10 +149,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/540f425/src/std/threads/ILockable.ts#L6">threads/ILockable.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/threads/ILockable.ts#L27">threads/ILockable.ts:27</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Try lock.</p>
+								</div>
+								<p>Attempts to lock without blocking:</p>
+								<ul>
+									<li>If the <a href="std.ilockable.html">ILockable</a> isn&#39;t currently locked, then <a href="std.ilockable.html#lock">locks</a> it and returns true.</li>
+									<li>If <a href="std.ilockable.html">ILockable</a> is currently locked, then do not wait and just returns false.</li>
+								</ul>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if succeeded to lock, false othersie.</p>
 						</li>
 					</ul>
 				</section>
@@ -145,9 +177,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/540f425/src/std/threads/ILockable.ts#L7">threads/ILockable.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/threads/ILockable.ts#L32">threads/ILockable.ts:32</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Unlock.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>

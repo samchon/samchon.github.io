@@ -1,4 +1,4 @@
-// Type definitions for TSTL v1.5.6
+// Type definitions for TSTL v1.5.9
 // Project: https://github.com/samchon/tstl
 // Definitions by: Jeongho Nam <http://samchon.org>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
@@ -9477,18 +9477,22 @@ declare namespace std {
         /**
          * @hidden
          */
-        private listeners_;
+        private resolvers_;
         /**
          * Default Constructor.
          */
         constructor();
+        /**
+         * @inheritDoc
+         */
         lock(): Promise<void>;
         /**
-         * Lock mutex if not locked.
-         *
-         * Attempts to lock the {@link Mutex}, without blocking:
+         * @inheritDoc
          */
         try_lock(): boolean;
+        /**
+         * @inheritDoc
+         */
         unlock(): void;
     }
 }
@@ -9505,16 +9509,31 @@ declare namespace std {
         /**
          * @hidden
          */
-        private listeners_;
+        private resolvers_;
         /**
          * Default Constructor.
          */
         constructor();
+        /**
+         * Write lock.
+         */
         lock(): Promise<void>;
+        /**
+         * Try write lock.
+         */
         try_lock(): boolean;
+        /**
+         * Write unlock.
+         */
         unlock(): void;
+        /**
+         * Read lock.
+         */
         lock_shared(): Promise<void>;
         try_lock_shared(): boolean;
+        /**
+         * Read unlock.
+         */
         unlock_shared(): void;
     }
 }
@@ -9527,19 +9546,28 @@ declare namespace std {
         /**
          * @hidden
          */
-        private listeners_;
+        private resolvers_;
         /**
          * Default Constructor.
          */
         constructor();
+        /**
+         * @inheritDoc
+         */
         lock(): Promise<void>;
         /**
-         * Lock mutex if not locked.
-         *
-         * Attempts to lock the {@link Mutex}, without blocking:
+         * @inheritDoc
          */
         try_lock(): boolean;
+        /**
+         * @inheritDoc
+         */
         unlock(): void;
+        /**
+         * Lock or timeout.
+         *
+         * @param ms Milliseconds of specified timeout.
+         */
         try_lock_for(ms: number): Promise<boolean>;
         try_lock_until(at: Date): Promise<boolean>;
     }
@@ -9557,7 +9585,7 @@ declare namespace std {
         /**
          * @hidden
          */
-        private listeners_;
+        private resolvers_;
         /**
          * Default Constructor.
          */
@@ -9572,6 +9600,58 @@ declare namespace std {
         try_lock_shared_for(ms: number): Promise<boolean>;
         try_lock_shared_until(at: Date): Promise<boolean>;
         unlock_shared(): void;
+    }
+}
+declare namespace std {
+    /**
+     * Condition variable.
+     *
+     * {@link ConditionVariable} is an object able to block until *notified* to resume.
+     *
+     * @reference http://www.cplusplus.com/reference/condition_variable/condition_variable/
+     * @author Jeongho Nam <http://samchon.org>
+     */
+    class ConditionVariable {
+        /**
+         * @hidden
+         */
+        private resolvers_;
+        /**
+         * Default Constructor.
+         */
+        constructor();
+        /**
+         * Wait until notified.
+         */
+        wait(): Promise<void>;
+        /**
+         * Wait until notified or timeout.
+         *
+         * @param ms Milliseconds of specified timeout.
+         */
+        wait_for(ms: number): Promise<boolean>;
+        /**
+         * Wait until notified or tie point.
+         *
+         * @param at Specified time point.
+         */
+        wait_until(at: Date): Promise<boolean>;
+        /**
+         * Notify one.
+         *
+         * Unlocks only one currently *waiting* for this condition.
+         *
+         * If there's nothing to *wait*, then this method does nothing.
+         */
+        notify_one(): void;
+        /**
+         * Notify all.
+         *
+         * Unblocks all currently *waiting* for this condition.
+         *
+         * If there's nothing to *wait*, then this method does nothing.
+         */
+        notify_all(): void;
     }
 }
 declare namespace std.experiments {
@@ -10917,6 +10997,7 @@ declare namespace std.base {
      */
     class _MultiSetTree<T> extends _SetTree<T> {
         constructor(set: TreeMultiSet<T>, compare: (x: T, y: T) => boolean);
+        insert(val: SetIterator<T>): void;
         find_by_val(val: T): _XTreeNode<SetIterator<T>>;
         upper_bound(val: T): SetIterator<T>;
     }
@@ -11051,10 +11132,12 @@ declare namespace std {
     type shared_mutex = SharedMutex;
     type timed_mutex = TimedMutex;
     type shared_timed_mutex = SharedTimedMutex;
+    type condition_variable = ConditionVariable;
     var mutex: typeof Mutex;
     var shared_mutex: typeof SharedMutex;
     var timed_mutex: typeof TimedMutex;
     var shared_timed_mutex: typeof SharedTimedMutex;
+    var condition_variable: typeof ConditionVariable;
     namespace experiments {
         type semaphore = Semaphore;
         var semaphore: typeof Semaphore;
@@ -11069,47 +11152,47 @@ declare namespace std {
      * @reference https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html
      * @author Jeongho Nam <http://samchon.org>
      */
-    interface IComparable<T> extends Object {
+    interface IComparable<T> {
         /**
          * Indicates whether some other object is &quot;equal to&quot; this one.
          *
-         * The {@link equal_to} method implements an equivalence relation on non-null object references:
+         * The {@link IComparable.equals} method implements an equivalence relation on non-null object references:
          *
          * <ul>
          *	<li>
-         *		It is <b>reflexive</b>: for any non-null reference value <code>x</code>, <code>x.equal_to(x)</code>
+         *		It is <b>reflexive</b>: for any non-null reference value <code>x</code>, <code>x.equals(x)</code>
          *		should return <code>true</code>.
          *	</li>
          *	<li>
          *		It is <b>symmetric</b>: for any non-null reference values <code>x</code> and <code>y</code>,
-         *		<code>x.equal_to(y)</code> should return <code>true</code> if and only if <code>y.equal_to(x)</code>
+         *		<code>x.equals(y)</code> should return <code>true</code> if and only if <code>y.equals(x)</code>
          *		returns <code>true</code>. </li>
          *	<li>
          *		It is <b>transitive</b>: for any non-null reference values <code>x</code>, <code>y</code>, and
-         *		<code>z</code>, if <code>x.equal_to(y)</code> returns <code>true</code> and <code>y.equal_to(z)</code>
-         *		returns <code>true</code>, then <code>x.equal_to(z)</code> should return <code>true</code>.
+         *		<code>z</code>, if <code>x.equals(y)</code> returns <code>true</code> and <code>y.equals(z)</code>
+         *		returns <code>true</code>, then <code>x.equals(z)</code> should return <code>true</code>.
          *	</li>
          *	<li>
          *		It is <b>consistent</b>: for any non-null reference values <code>x</code> and <code>y</code>, multiple
-         *		invocations of <code>x.equal_to(y)</code> consistently return <code>true</code> or consistently return
-         *		<code>false</code>, provided no information used in equal_to comparisons on the objects is modified.
+         *		invocations of <code>x.equals(y)</code> consistently return <code>true</code> or consistently return
+         *		<code>false</code>, provided no information used in equals comparisons on the objects is modified.
          *	</li>
          *	<li>
-         *		For any non-null reference value <code>x</code>, <code>x.equal_to(null)</code> should return
+         *		For any non-null reference value <code>x</code>, <code>x.equals(null)</code> should return
          *		<code>false</code>.
          *	</li>
          * </ul>
          *
-         * The {@link equal_to} method for interface {@link IComparable} implements the most discriminating possible
+         * The {@link IComparable.equals} method for interface {@link IComparable} implements the most discriminating possible
          * equivalence relation on objects; that is, for any non-null reference values <code>x</code> and
          * <code>y</code>, this method returns <code>true</code> if and only if <code>x</code> and <code>y</code>
          * refer to the same object (<code>x == y</code> has the value <code>true</code>).
          *
-         * Note that it is generally necessary to override the {@link hash_code} method whenever this method is
-         * overridden, so as to maintain the general contract for the {@link hash_code} method, which states that
+         * Note that it is generally necessary to override the {@link IComparable.hashCode} method whenever this method is
+         * overridden, so as to maintain the general contract for the {@link IComparable.hashCode} method, which states that
          * equal objects must have equal hash codes.
          *
-         * - {@link IComparable.equal_to} is called by {@link equal_to}.
+         * - {@link IComparable.equals} is called by {@link equal_to}.
          *
          * @param obj the reference object with which to compare.
          *
@@ -11138,20 +11221,15 @@ declare namespace std {
          * Issue a hash code.
          *
          * Returns a hash code value for the object. This method is supported for the benefit of hash tables such
-         * as those provided by hash containers; {@link HashSet}, {@link HashMap}, {@link MultiHashSet} and
-         * {@link MultiHashMap}.
+         * as those provided by hash containers; {@link HashSet}, {@link HashMap}, {@link HashMultiSet} and
+         * {@link HashMultiMap}.
          *
-         * As much as is reasonably practical, the {@link hash_code} method defined by interface
+         * As much as is reasonably practical, the {@link IComparable.hashCode} method defined by interface
          * {@link IComparable} does return distinct integers for distinct objects. (This is typically implemented by
          * converting the internal address of the object into an integer, but this implementation technique is not
          * required by the JavaScript programming language.)
          *
-         * <ul>
-         *	<li>
-         *		{@link IComparable.hash_code} is called by {@link hash_code}. If you want to keep basically
-         *		provided hash function, then returns {@link Hash.code}; <code>return Hash.code(this);</code>
-         *	</li>
-         * </ul>
+         * - {@link IComparable.hashCode} is called by {@link hash}.
          *
          * @return An hash code who represents the object.
          */
@@ -11164,9 +11242,32 @@ declare namespace std {
     }
 }
 declare namespace std {
+    /**
+     * A lockable type.
+     *
+     * @reference http://www.cplusplus.com/reference/concept/Lockable/
+     * @author Jeongho Nam <http://samchon.org>
+     */
     interface ILockable {
+        /**
+         * Lock.
+         *
+         * Bock until the {@link unlock} is called.2
+         */
         lock(): Promise<void>;
+        /**
+         * Try lock.
+         *
+         * Attempts to lock without blocking:
+         * - If the {@link ILockable} isn't currently locked, then {@link lock locks} it and returns true.
+         * - If {@link ILockable} is currently locked, then do not wait and just returns false.
+         *
+         * @return true if succeeded to lock, false othersie.
+         */
         try_lock(): boolean;
+        /**
+         * Unlock.
+         */
         unlock(): void;
     }
 }
