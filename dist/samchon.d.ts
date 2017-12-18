@@ -1,8 +1,3 @@
-// Type definitions for Samchon Framework v2.0.x
-// Project: https://github.com/samchon/framework
-// Definitions by: Jeongho Nam <http://samchon.org>
-// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-
 import std = require("tstl");
 
 export = samchon;
@@ -162,7 +157,7 @@ declare namespace samchon.library {
          * @return An iterator to the element, if an element with specified <i>key</i> is found, or
          *		   {@link end HashMap.end()} otherwise.
          */
-        findProperty(key: string): std.MapIterator<string, string>;
+        findProperty(key: string): std.HashMap.Iterator<string, string>;
         /**
          * Test whether a property exists.
          *
@@ -390,11 +385,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Insert_by_range<U extends T, InputIterator extends std.base.Iterator<U>>(position: std.VectorIterator<T>, begin: InputIterator, end: InputIterator): std.VectorIterator<T>;
+        protected _Insert_by_range<U extends T, InputIterator extends std.IForwardIterator<U>>(position: std.Vector.Iterator<T>, begin: InputIterator, end: InputIterator): std.Vector.Iterator<T>;
         /**
          * @hidden
          */
-        protected _Erase_by_range(first: std.VectorIterator<T>, last: std.VectorIterator<T>): std.VectorIterator<T>;
+        protected _Erase_by_range(first: std.Vector.Iterator<T>, last: std.Vector.Iterator<T>): std.Vector.Iterator<T>;
         /**
          * @hidden
          */
@@ -418,11 +413,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.VectorIterator<T>): void;
+        refresh(it: std.Vector.Iterator<T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.VectorIterator<T>, last: std.VectorIterator<T>): void;
+        refresh(first: std.Vector.Iterator<T>, last: std.Vector.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -646,11 +641,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Insert_by_range<U extends T, InputIterator extends std.base.Iterator<U>>(position: std.ListIterator<T>, begin: InputIterator, end: InputIterator): std.ListIterator<T>;
+        protected _Insert_by_range<U extends T, InputIterator extends std.IForwardIterator<U>>(position: std.List.Iterator<T>, begin: InputIterator, end: InputIterator): std.List.Iterator<T>;
         /**
          * @hidden
          */
-        protected _Erase_by_range(first: std.ListIterator<T>, last: std.ListIterator<T>): std.ListIterator<T>;
+        protected _Erase_by_range(first: std.List.Iterator<T>, last: std.List.Iterator<T>): std.List.Iterator<T>;
         /**
          * @hidden
          */
@@ -674,11 +669,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.ListIterator<T>): void;
+        refresh(it: std.List.Iterator<T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.ListIterator<T>, last: std.ListIterator<T>): void;
+        refresh(first: std.List.Iterator<T>, last: std.List.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -748,7 +743,7 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Insert_by_range<U extends T, InputIterator extends std.base.Iterator<U>>(position: std.DequeIterator<T>, begin: InputIterator, end: InputIterator): std.DequeIterator<T>;
+        protected _Insert_by_range<U extends T, InputIterator extends std.IForwardIterator<U>>(position: std.Deque.Iterator<T>, begin: InputIterator, end: InputIterator): std.Deque.Iterator<T>;
         /**
          * @inheritdoc
          */
@@ -760,7 +755,7 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Erase_by_range(first: std.DequeIterator<T>, last: std.DequeIterator<T>): std.DequeIterator<T>;
+        protected _Erase_by_range(first: std.Deque.Iterator<T>, last: std.Deque.Iterator<T>): std.Deque.Iterator<T>;
         /**
          * @hidden
          */
@@ -784,11 +779,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.DequeIterator<T>): void;
+        refresh(it: std.Deque.Iterator<T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.DequeIterator<T>, last: std.DequeIterator<T>): void;
+        refresh(first: std.Deque.Iterator<T>, last: std.Deque.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -1636,7 +1631,7 @@ declare namespace samchon.collections {
      * #### [Inherited] {@link HashMap}
      * @copydoc HashMap
      */
-    class HashMapCollection<Key, T> extends std.HashMap<Key, T> implements ICollection<std.Pair<Key, T>> {
+    class HashMapCollection<Key, T> extends std.HashMap<Key, T> implements ICollection<std.Entry<Key, T>> {
         /**
          * @hidden
          */
@@ -1644,11 +1639,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_insert(first: std.HashMap.Iterator<Key, T>, last: std.HashMap.Iterator<Key, T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_erase(first: std.HashMap.Iterator<Key, T>, last: std.HashMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -1664,11 +1659,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.MapIterator<Key, T>): void;
+        refresh(it: std.HashMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        refresh(first: std.HashMap.Iterator<Key, T>, last: std.HashMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -1719,7 +1714,7 @@ declare namespace samchon.collections {
      * #### [Inherited] {@link HashMultiMap}
      * @copydoc HashMultiMap
      */
-    class HashMultiMapCollection<Key, T> extends std.HashMultiMap<Key, T> implements ICollection<std.Pair<Key, T>> {
+    class HashMultiMapCollection<Key, T> extends std.HashMultiMap<Key, T> implements ICollection<std.Entry<Key, T>> {
         /**
          * @hidden
          */
@@ -1727,11 +1722,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_insert(first: std.HashMultiMap.Iterator<Key, T>, last: std.HashMultiMap.Iterator<Key, T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_erase(first: std.HashMultiMap.Iterator<Key, T>, last: std.HashMultiMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -1747,11 +1742,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.MapIterator<Key, T>): void;
+        refresh(it: std.HashMultiMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        refresh(first: std.HashMultiMap.Iterator<Key, T>, last: std.HashMultiMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -1809,11 +1804,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_insert(first: std.HashMultiSet.Iterator<T>, last: std.HashMultiSet.Iterator<T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_erase(first: std.HashMultiSet.Iterator<T>, last: std.HashMultiSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -1829,11 +1824,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.SetIterator<T>): void;
+        refresh(it: std.HashMultiSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        refresh(first: std.HashMultiSet.Iterator<T>, last: std.HashMultiSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -1893,11 +1888,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_insert(first: std.HashSet.Iterator<T>, last: std.HashSet.Iterator<T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_erase(first: std.HashSet.Iterator<T>, last: std.HashSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -1913,11 +1908,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.SetIterator<T>): void;
+        refresh(it: std.HashSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        refresh(first: std.HashSet.Iterator<T>, last: std.HashSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -2078,7 +2073,7 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        function _Dispatch_MapCollectionEvent<Key, T>(collection: ICollection<std.Pair<Key, T>>, type: string, first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        function _Dispatch_MapCollectionEvent<Key, T>(collection: ICollection<std.Pair<Key, T>>, type: string, first: std.base.MapIterator<Key, T, std.base.IMapContainer<Key, T>>, last: std.base.MapIterator<Key, T, std.base.IMapContainer<Key, T>>): void;
     }
 }
 declare namespace samchon.collections {
@@ -2089,15 +2084,15 @@ declare namespace samchon.collections {
      * @handbook [Collections](https://github.com/samchon/framework/wiki/TypeScript-STL#collections)
      * @author Jeongho Nam <http://samchon.org>
      */
-    class MapCollectionEvent<Key, T> extends CollectionEvent<std.Pair<Key, T>> {
+    class MapCollectionEvent<Key, T> extends CollectionEvent<std.Entry<Key, T>> {
         /**
          * @inheritdoc
          */
-        readonly first: std.MapIterator<Key, T>;
+        readonly first: std.base.MapIterator<Key, T, std.base.IMapContainer<Key, T>>;
         /**
          * @inheritdoc
          */
-        readonly last: std.MapIterator<Key, T>;
+        readonly last: std.base.MapIterator<Key, T, std.base.IMapContainer<Key, T>>;
     }
 }
 declare namespace samchon.collections {
@@ -2131,11 +2126,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_insert(first: std.TreeMap.Iterator<Key, T>, last: std.TreeMap.Iterator<Key, T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_erase(first: std.TreeMap.Iterator<Key, T>, last: std.TreeMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -2151,11 +2146,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.MapIterator<Key, T>): void;
+        refresh(it: std.TreeMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        refresh(first: std.TreeMap.Iterator<Key, T>, last: std.TreeMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -2214,11 +2209,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_insert(first: std.TreeMultiMap.Iterator<Key, T>, last: std.TreeMultiMap.Iterator<Key, T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        protected _Handle_erase(first: std.TreeMultiMap.Iterator<Key, T>, last: std.TreeMultiMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -2234,11 +2229,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.MapIterator<Key, T>): void;
+        refresh(it: std.TreeMultiMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.MapIterator<Key, T>, last: std.MapIterator<Key, T>): void;
+        refresh(first: std.TreeMultiMap.Iterator<Key, T>, last: std.TreeMultiMap.Iterator<Key, T>): void;
         /**
          * @inheritdoc
          */
@@ -2296,11 +2291,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_insert(first: std.TreeMultiSet.Iterator<T>, last: std.TreeMultiSet.Iterator<T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_erase(first: std.TreeMultiSet.Iterator<T>, last: std.TreeMultiSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -2316,11 +2311,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.SetIterator<T>): void;
+        refresh(it: std.TreeMultiSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        refresh(first: std.TreeMultiSet.Iterator<T>, last: std.TreeMultiSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -2380,11 +2375,11 @@ declare namespace samchon.collections {
         /**
          * @hidden
          */
-        protected _Handle_insert(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_insert(first: std.TreeSet.Iterator<T>, last: std.TreeSet.Iterator<T>): void;
         /**
          * @hidden
          */
-        protected _Handle_erase(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        protected _Handle_erase(first: std.TreeSet.Iterator<T>, last: std.TreeSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
@@ -2400,11 +2395,11 @@ declare namespace samchon.collections {
         /**
          * @inheritdoc
          */
-        refresh(it: std.SetIterator<T>): void;
+        refresh(it: std.TreeSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */
-        refresh(first: std.SetIterator<T>, last: std.SetIterator<T>): void;
+        refresh(first: std.TreeSet.Iterator<T>, last: std.TreeSet.Iterator<T>): void;
         /**
          * @inheritdoc
          */

@@ -904,7 +904,7 @@ var samchon;
                             var role_xml = role_xml_list.at(i);
                             var process_1 = this.createProcess(role_xml);
                             process_1.construct(role_xml);
-                            this.process_map_.insert([process_1.getName(), process_1]);
+                            this.process_map_.emplace(process_1.getName(), process_1);
                         }
                     }
                     _super.prototype.construct.call(this, xml);
@@ -919,7 +919,7 @@ var samchon;
                     return this.process_map_.get(name);
                 };
                 DistributedSystemArray.prototype.insertProcess = function (process) {
-                    return this.process_map_.insert([process.getName(), process]).second;
+                    return this.process_map_.emplace(process.getName(), process).second;
                 };
                 DistributedSystemArray.prototype.eraseProcess = function (name) {
                     var prev_size = this.process_map_.size();
@@ -2552,7 +2552,7 @@ var samchon;
                         key = var_pairs[i].substr(0, equal_index);
                         value = decodeURIComponent(var_pairs[i].substr(equal_index + 1));
                     }
-                    this.insert([key, value]);
+                    this.emplace(key, value);
                 }
             };
             URLVariables.prototype.toString = function () {
@@ -3698,14 +3698,14 @@ var samchon;
                     if (idle_system == null)
                         throw new std.OutOfRange("No remote system to send data exists.");
                     var history = new distributed.DSInvokeHistory(idle_system, this, invoke, weight);
-                    this.progress_list_.insert([uid, history]);
-                    idle_system.progress_list_.insert([uid, std.make_pair(invoke, history)]);
+                    this.progress_list_.emplace(uid, history);
+                    idle_system.progress_list_.emplace(uid, std.make_pair(invoke, history));
                     idle_system.sendData(invoke);
                     return idle_system;
                 };
                 DistributedProcess.prototype._Complete_history = function (history) {
                     this.progress_list_.erase(history.getUID());
-                    this.history_list_.insert([history.getUID(), history]);
+                    this.history_list_.emplace(history.getUID(), history);
                 };
                 DistributedProcess.prototype.TAG = function () {
                     return "process";
@@ -3839,10 +3839,7 @@ var samchon;
                         my_invoke.push_back(new samchon.protocol.InvokeParameter("_Piece_last", last));
                     }
                     var history = new parallel.PRInvokeHistory(my_invoke);
-                    this.progress_list_.insert([
-                        history.getUID(),
-                        std.make_pair(my_invoke, history)
-                    ]);
+                    this.progress_list_.emplace(history.getUID(), std.make_pair(my_invoke, history));
                     this.sendData(my_invoke);
                 };
                 ParallelSystem.prototype._Reply_data = function (invoke) {
@@ -3868,7 +3865,7 @@ var samchon;
                     history.first = progress_it.second.second.getFirst();
                     history.last = progress_it.second.second.computeSize();
                     this.progress_list_.erase(progress_it);
-                    this.history_list_.insert([history.getUID(), history]);
+                    this.history_list_.emplace(history.getUID(), history);
                     this.getSystemArray()._Complete_history(history);
                 };
                 ParallelSystem.prototype._Send_back_history = function (invoke, history) {
@@ -3939,7 +3936,7 @@ var samchon;
                     history.process_ = progress_it.second.second.getProcess();
                     history.weight_ = progress_it.second.second.getWeight();
                     this.progress_list_.erase(progress_it);
-                    this.history_list_.insert([history.getUID(), history]);
+                    this.history_list_.emplace(history.getUID(), history);
                     if (history.getProcess() != null)
                         history.getProcess()._Complete_history(history);
                     this.getSystemArray()._Complete_history(history);
@@ -4508,7 +4505,7 @@ var samchon;
                             this.sendData(new samchon.protocol.Invoke("_Send_back_history", history_5.getUID()));
                             return;
                         }
-                        this.progress_list_.insert([history_5.getUID(), history_5]);
+                        this.progress_list_.emplace(history_5.getUID(), history_5);
                         if (invoke.has("_Piece_first") == true) {
                             var first = invoke.get("_Piece_first").getValue();
                             var last = invoke.get("_Piece_last").getValue();
