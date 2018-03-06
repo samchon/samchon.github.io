@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -62,22 +64,30 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="typescript-stl">TypeScript-STL</h1>
-				<p><a href="https://nodei.co/npm/tstl"><img src="https://nodei.co/npm/tstl.png?downloads=true&amp;downloadRank=true&amp;stars=true" alt="NPM"></a></p>
+				<h1 id="typescript-standard-template-library"><strong>T</strong>ypeScript <strong>S</strong>tandard <strong>T</strong>emplate <strong>L</strong>ibrary</h1>
+				<p><a href="https://travis-ci.org/samchon/tstl"><img src="https://travis-ci.org/samchon/tstl.svg?branch=master" alt="Build Status"></a>
+					<a href="https://www.npmjs.com/package/tstl"><img src="https://badge.fury.io/js/tstl.svg" alt="npm version"></a>
+					<a href="https://www.npmjs.com/package/tstl"><img src="https://img.shields.io/npm/dm/tstl.svg" alt="Downloads"></a>
+					<a href="https://deepscan.io/dashboard#view=project&amp;pid=1798&amp;bid=7800"><img src="https://deepscan.io/api/projects/1798/branches/7800/badge/grade.svg" alt="DeepScan grade"></a>
+				<a href="https://gitter.im/samchon/tstl?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/samchon/tstl.svg" alt="Chat on Gitter"></a></p>
+				<p>Implementation of STL (Standard Template Library) in TypeScript.</p>
 				<ul>
-					<li>GitHub Repository: <a href="https://github.com/samchon/tstl">https://github.com/samchon/tstl</a></li>
-					<li>Guide Documents: <a href="https://github.com/samchon/tstl/wiki">https://github.com/samchon/tstl/wiki</a></li>
+					<li>Containers</li>
+					<li>Iterators</li>
+					<li>Algorithms</li>
+					<li>Functors</li>
 				</ul>
-				<h2 id="introduction">Introduction</h2>
-				<p>C++ STL (Standard Template Library) <em>Containers</em> and <em>Algorithms</em> for the <strong>TypeScript</strong>.</p>
-				<p><strong>T</strong>ypeScript-<strong>STL</strong> is an open-source project providing <strong>containers</strong> and <strong>algorithms</strong> migrated from <em>C++ STL</em> to <em>TypeScript</em>. You can enjoy the STL&#39;s own specific <em>coantainers</em> and <em>algorithms</em> in the JavaScript. If TypeScript, you also can take advantage of type restrictions and generic programming with the TypeScript.</p>
-				<p>Below components are list of provided objects in the <strong>T</strong>ypeScript-<strong>STL</strong>. If you want to know more about the <strong>TypeScript-STL</strong>, then please read the <a href="https://github.com/samchon/tstl/wiki"><strong>Guide Documents</strong></a>.</p>
+				<p><strong>TSTL</strong> is an open-source project providing features of STL, migrated from <em>C++</em> to <em>TypeScript</em>. You can enjoy the STL&#39;s own specific <em>containers</em>, <em>algorithms</em> and <em>functors</em> in the JavaScript. If TypeScript, you also can take advantage of type restrictions and generic programming with the TypeScript.</p>
+				<p>Below components are list of provided objects in the <strong>TSTL</strong>. If you want to know more about the <strong>TSTL</strong>, then please read the <a href="https://github.com/samchon/tstl/wiki"><strong>Guide Documents</strong></a>.</p>
+				<h2 id="features">Features</h2>
 				<h3 id="containers">Containers</h3>
 				<ul>
 					<li><strong>Linear Containers</strong><ul>
 							<li><a href="http://samchon.github.io/tstl/api/classes/std.vector.html">Vector <code>vector</code></a></li>
-							<li><a href="http://samchon.github.io/tstl/api/classes/std.list.html">List <code>list</code></a></li>
 							<li><a href="http://samchon.github.io/tstl/api/classes/std.deque.html">Deque <code>deque</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.list.html">List <code>list</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.forwardlist.html">ForwardList <code>forward_list</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.vectorboolean.html">VectorBoolean <code>vector_bool</code></a></li>
 						</ul>
 					</li>
 					<li><strong>Associative Containers</strong><ul>
@@ -104,19 +114,22 @@
 						</ul>
 					</li>
 				</ul>
-				<h3 id="global-functions">Global Functions</h3>
+				<h3 id="algorithms">Algorithms</h3>
 				<ul>
 					<li><a href="http://www.cplusplus.com/reference/algorithm/"><code>&lt;algorithm&gt;</code></a><ul>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/iterations.ts">iterations</a></li>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/modifiers.ts">modifiers</a></li>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/partition.ts">partition</a></li>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/sorting.ts">sorting</a></li>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/binary_search.ts">binary search</a></li>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/union_set.ts">union set</a></li>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/heap.ts">heap</a></li>
-							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithm/mathmatics.ts">mathmatics</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/iterations.ts">iterations</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/modifiers.ts">modifiers</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/partition.ts">partition</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/sorting.ts">sorting</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/binary_search.ts">binary search</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/union_set.ts">union set</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/heap.ts">heap</a></li>
+							<li><a href="https://github.com/samchon/tstl/tree/master/src/std/algorithms/mathmatics.ts">mathmatics</a></li>
 						</ul>
 					</li>
+				</ul>
+				<h3 id="functors">Functors</h3>
+				<ul>
 					<li><a href="http://www.cplusplus.com/reference/exception/"><code>&lt;exception&gt;</code></a><ul>
 							<li><a href="http://samchon.github.io/tstl/api/classes/std.exception.html">Exception <code>exception</code></a><ul>
 									<li><a href="http://samchon.github.io/tstl/api/classes/std.logicerror.html">LogicError <code>logic_error</code></a></li>
@@ -129,13 +142,17 @@
 							<li><a href="http://samchon.github.io/tstl/api/interfaces/std.icomparable.html">IComparable</a></li>
 						</ul>
 					</li>
+					<li><a href="http://en.cppreference.com/w/cpp/numeric/special_math"><code>&lt;special_math&gt;</code></a></li>
 					<li><a href="http://www.cplusplus.com/reference/utility/"><code>&lt;utility&gt;</code></a><ul>
 							<li><a href="http://samchon.github.io/tstl/api/classes/std.pair.html">Pair <code>pair</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.entry.html">Entry <code>entry</code></a></li>
 						</ul>
 					</li>
-					<li><a href="https://github.com/samchon/tstl/tree/master/src/std/threads"><code>&lt;thread&gt;</code></a><ul>
-							<li>sleep</li>
-							<li>critical section</li>
+					<li><a href="https://github.com/samchon/tstl/tree/master/src/std/thread.ts"><code>&lt;thread&gt;</code></a><ul>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.conditionvariable.html">ConditionVariable <code>condition_variable</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.mutex.html">Mutex <code>mutex</code></a> &amp; <a href="http://samchon.github.io/tstl/api/classes/std.timedmutex.html">TimedMutex <code>timed_mutex</code></a></li>
+							<li><a href="http://samchon.github.io/tstl/api/classes/std.sharedmutex.html">SharedMutex <code>shared_mutex</code></a> &amp; <a href="http://samchon.github.io/tstl/api/classes/std.sharedtimedmutex.html">SharedTimeMutex <code>shared_timed_mutex</code></a></li>
+							<li>(experiments) <a href="http://samchon.github.io/tstl/api/classes/std.experiments.semaphore.html">Semaphore <code>semaphore</code></a> &amp; <a href="http://samchon.github.io/tstl/api/classes/std.experiments.timedsemaphore.html">TimedSemaphore <code>timed_semaphore</code></a></li>
 						</ul>
 					</li>
 				</ul>
@@ -145,15 +162,14 @@
 				<pre><code class="lang-bash"><span class="hljs-comment"># Install TSTL from the NPM module</span>
 npm install --save tstl
 </code></pre>
-				<h3 id="usage-typescript-">Usage (TypeScript)</h3>
-				<pre><code class="lang-typescript"><span class="hljs-comment">/// &lt;reference types="tstl" /&gt;</span>
-<span class="hljs-keyword">import</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"tstl"</span>);
+				<h3 id="usage">Usage</h3>
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> std = <span class="hljs-built_in">require</span>(<span class="hljs-string">"tstl"</span>);
 
 <span class="hljs-keyword">let</span> map: std.TreeMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt; = <span class="hljs-keyword">new</span> std.TreeMap&lt;<span class="hljs-built_in">number</span>, <span class="hljs-built_in">string</span>&gt;();
 
 <span class="hljs-comment">// INSERT ITEMS</span>
-map.insert(std.make_pair(<span class="hljs-number">1</span>, <span class="hljs-string">"First"</span>));
-map.insert([<span class="hljs-number">4</span>, <span class="hljs-string">"Fourth"</span>]); <span class="hljs-comment">// via Tuple, C++11 Feature</span>
+map.insert(std.make_pair(<span class="hljs-number">1</span>, <span class="hljs-string">"First"</span>)); <span class="hljs-comment">// Via tuple</span>
+map.emplace(<span class="hljs-number">4</span>, <span class="hljs-string">"Fourth"</span>); <span class="hljs-comment">// C++11 Feature</span>
 map.insert_or_assign(<span class="hljs-number">5</span>, <span class="hljs-string">"Fifth"</span>); <span class="hljs-comment">// C++17 Feature</span>
 map.set(<span class="hljs-number">9</span>, <span class="hljs-string">"Nineth"</span>); <span class="hljs-comment">// Instead of the operetor[](Key)</span>
 
@@ -163,12 +179,7 @@ map.set(<span class="hljs-number">9</span>, <span class="hljs-string">"Nineth"</
 
 <span class="hljs-comment">// LOWER_BOUND</span>
 <span class="hljs-keyword">let</span> x = map.lower_bound(<span class="hljs-number">3</span>);
-<span class="hljs-built_in">console</span>.log(<span class="hljs-string">"lower bound of 3 is: "</span> + x.first + <span class="hljs-string">", "</span> + x.second);
-</code></pre>
-				<h3 id="in-browser">In Browser</h3>
-				<p><strong>TypeScript-STL</strong> follows the <code>CommonJS</code> module. </p>
-				<p>Use <a href="https://www.npmjs.com/package/browserify">browserify</a> or just include the <strong>TypeSript-STL</strong>&#39;s JS file with the <code>&lt;script&gt;</code> tag.</p>
-				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"http://samchon.github.io/dist/tstl.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`lower bound of 3 is: <span class="hljs-subst">${x.first}</span>, <span class="hljs-subst">${x.second}</span>`</span>);
 </code></pre>
 				<h2 id="references">References</h2>
 				<ul>
@@ -179,11 +190,12 @@ map.set(<span class="hljs-number">9</span>, <span class="hljs-string">"Nineth"</
 					</li>
 					<li><strong>Documents</strong><ul>
 							<li><a href="https://github.com/samchon/tstl/wiki"><strong>Guide Documents</strong></a></li>
-							<li><a href="http://samchon.github.io/samchon/tstl">API Documents</a></li>
+							<li><a href="http://samchon.github.io/tstl/api">API Documents</a></li>
 							<li><a href="http://samchon.github.io/tstl/design/class_diagram.pdf">Class Diagram</a></li>
 						</ul>
 					</li>
 					<li><strong>Related Projects</strong><ul>
+							<li><a href="https://github.com/samchon/sxml">Simple XML</a></li>
 							<li><a href="https://github.com/samchon/framework">Samchon-Framework</a></li>
 							<li><a href="https://github.com/betterwaysystems/packer">3D-Bin-Packing</a></li>
 						</ul>
@@ -197,17 +209,14 @@ map.set(<span class="hljs-number">9</span>, <span class="hljs-string">"Nineth"</
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="modules/std.html">std</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
 						<a href="modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="modules/std.experiments.html">std.experiments</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="modules/std.placeholders.html">std.placeholders</a>
+						<a href="modules/std.experimental.html">std.experimental</a>
 					</li>
 				</ul>
 			</nav>

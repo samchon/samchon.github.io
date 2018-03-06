@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -67,29 +69,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Error code.</p>
-					</div>
-					<p>Objects of this type hold an error code <a href="std.errorcode.html#value">value</a> associated with a <a href="std.errorcode.html#category">category</a>.</p>
-					<p>The operating system and other low-level applications and libraries generate numerical error codes to
-						represent possible results. These numerical values may carry essential information for a specific platform,
-					but be non-portable from one platform to another.</p>
-					<p>Objects of this class associate such numerical codes to <a href="std.errorcategory.html">error categories</a>, so that they
-					can be interpreted when needed as more abstract (and portable) <a href="std.errorcondition.html">error conditions</a>.</p>
-					<p><a href="http://samchon.github.io/tstl/images/design/class_diagram/exceptions.png" target="_blank">
-					<img src="http://samchon.github.io/tstl/images/design/class_diagram/exceptions.png" style="max-width: 100%" /> </a></p>
-					<dl class="tsd-comment-tags">
-						<dt>reference</dt>
-						<dd><p><a href="http://www.cplusplus.com/reference/system_error/error_code">http://www.cplusplus.com/reference/system_error/error_code</a></p>
-						</dd>
-						<dt>author</dt>
-						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -142,45 +121,25 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/exceptions/SystemError.ts#L329">exceptions/SystemError.ts:329</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/exceptions/SystemError.ts#L124">exceptions/SystemError.ts:124</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Default Constructor.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.errorcode.html" class="tsd-signature-type">ErrorCode</a></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/exceptions/SystemError.ts#L336">exceptions/SystemError.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/exceptions/SystemError.ts#L128">exceptions/SystemError.ts:128</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Construct from a numeric value and error category.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A numerical value identifying an error code.</p>
-										</div>
-									</div>
 								</li>
 								<li>
 									<h5>category: <a href="std.errorcategory.html" class="tsd-signature-type">ErrorCategory</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A reference to an <a href="std.errorcategory.html">ErrorCategory</a> object.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.errorcode.html" class="tsd-signature-type">ErrorCode</a></h4>
@@ -201,28 +160,16 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#assign">assign</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/ErrorInstance.ts#L65">base/ErrorInstance.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/ErrorInstance.ts#L29">base/ErrorInstance.ts:29</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Assign error instance.</p>
-								</div>
-								<p>Assigns the <a href="std.errorcode.html">ErrorCode</a> object a value of val associated with the <a href="std.errorcategory.html">ErrorCategory</a>.</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A numerical value identifying an error instance.</p>
-									</div>
 								</li>
 								<li>
 									<h5>category: <a href="std.errorcategory.html" class="tsd-signature-type">ErrorCategory</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A reference to an <a href="std.errorcategory.html">ErrorCategory</a> object.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -240,17 +187,10 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#category">category</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/ErrorInstance.ts#L92">base/ErrorInstance.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/ErrorInstance.ts#L43">base/ErrorInstance.ts:43</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get category.</p>
-								</div>
-								<p>Returns a reference to the <a href="std.errorcategory.html">ErrorCategory</a> associated with the <a href="std.errorcode.html">ErrorCode</a> object.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.errorcategory.html" class="tsd-signature-type">ErrorCategory</a></h4>
-							<p>A reference to a non-copyable object of a type derived from <a href="std.errorcategory.html">ErrorCategory</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -265,16 +205,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#clear">clear</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/ErrorInstance.ts#L77">base/ErrorInstance.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/ErrorInstance.ts#L35">base/ErrorInstance.ts:35</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Clear error instance.</p>
-								</div>
-								<p>Clears the value in the <a href="std.errorcode.html">ErrorCode</a> object so that it is set to a value of <i>0</i> of the
-								{@link ErrorCategory.systemCategory ErrorCategory.systemCategory()} (indicating no error).</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -290,21 +223,10 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#default_error_condition">default_error_condition</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/ErrorInstance.ts#L144">base/ErrorInstance.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/ErrorInstance.ts#L61">base/ErrorInstance.ts:61</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Default error condition.</p>
-								</div>
-								<p>Returns the default <a href="std.errorcondition.html">ErrorCondition</a>object associated with the <a href="std.errorcode.html">ErrorCode</a> object.</p>
-								<p>This function returns the same as if the following member was called:</p>
-								<p><code>category().default_error_condition(value())</code></p>
-								<p><a href="std.errorcategory.html#default_error_condition">ErrorCategory.default_error_condition()</a>
-								is a virtual member function, that can operate differently for each category.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.errorcondition.html" class="tsd-signature-type">ErrorCondition</a></h4>
-							<p>An <a href="std.errorcondition.html">ErrorCondition</a>object that corresponds to the <a href="std.errorcode.html">ErrorCode</a> object.</p>
 						</li>
 					</ul>
 				</section>
@@ -319,20 +241,10 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#message">message</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/ErrorInstance.ts#L122">base/ErrorInstance.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/ErrorInstance.ts#L53">base/ErrorInstance.ts:53</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get message.</p>
-								</div>
-								<p>Returns the message associated with the error instance.</p>
-								<p>Error messages are defined by the <a href="std.errorcode.html#category">category</a> the error instance belongs to.</p>
-								<p>This function returns the same as if the following member was called:</p>
-								<p><code>category().message(value())</code></p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
-							<p>A string object with the message associated with the <a href="std.errorcode.html">ErrorCode</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -347,19 +259,10 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#to_bool">to_bool</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/ErrorInstance.ts#L165">base/ErrorInstance.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/ErrorInstance.ts#L72">base/ErrorInstance.ts:72</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Convert to bool.</p>
-								</div>
-								<p>Returns whether the error instance has a numerical <a href="std.errorcode.html#value">value</a> other than 0.</p>
-								<p>If it is zero (which is generally used to represent no error), the function returns false, otherwise it returns true.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p><code>true</code> if the error&#39;s numerical value is not zero.
-							<code>false</code> otherwise.</p>
 						</li>
 					</ul>
 				</section>
@@ -374,17 +277,10 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.base.errorinstance.html">ErrorInstance</a>.<a href="std.base.errorinstance.html#value">value</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/ErrorInstance.ts#L104">base/ErrorInstance.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/ErrorInstance.ts#L48">base/ErrorInstance.ts:48</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Error value.</p>
-								</div>
-								<p>Returns the error value associated with the <a href="std.errorcode.html">ErrorCode</a> object.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The error value.</p>
 						</li>
 					</ul>
 				</section>
@@ -396,17 +292,14 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/std.html">std</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.experiments.html">std.experiments</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.placeholders.html">std.placeholders</a>
+						<a href="../modules/std.experimental.html">std.experimental</a>
 					</li>
 				</ul>
 			</nav>

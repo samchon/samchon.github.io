@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -70,33 +72,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>This class reverses the direction in which a bidirectional or random-access iterator iterates through a range.</p>
-					</div>
-					<p>A copy of the original iterator (the <a href="std.base.iterator.html">base iterator</a>) is kept internally and used to reflect
-						the operations performed on the <a href="std.base.reverseiterator.html">ReverseIterator</a>: whenever the <a href="std.base.reverseiterator.html">ReverseIterator</a> is incremented, its
-						<a href="std.base.iterator.html">base iterator</a> is decreased, and vice versa. A copy of the <a href="std.base.iterator.html">base iterator</a> with the
-					current state can be obtained at any time by calling member <a href="std.base.reverseiterator.html#base">base</a>.</p>
-					<p>Notice however that when an iterator is reversed, the reversed version does not point to the same element in
-						the range, but to <b>the one preceding it</b>. This is so, in order to arrange for the past-the-end element of a
-						range: An iterator pointing to a past-the-end element in a range, when reversed, is pointing to the last element
-						(not past it) of the range (this would be the first element of the reversed range). And if an iterator to the
-						first element in a range is reversed, the reversed iterator points to the element before the first element (this
-					would be the past-the-end element of the reversed range).</p>
-					<p><a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
-					<img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" /></a></p>
-					<dl class="tsd-comment-tags">
-						<dt>reference</dt>
-						<dd><p><a href="http://www.cplusplus.com/reference/iterator/reverse_iterator">http://www.cplusplus.com/reference/iterator/reverse_iterator</a></p>
-						</dd>
-						<dt>author</dt>
-						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -104,10 +79,10 @@
 						<h4>T</h4>
 					</li>
 					<li>
-						<h4>Source<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>Source<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Source</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Base</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
-						<h4>Base<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						<h4>Base<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Source</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Base</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 					<li>
 						<h4>This<span class="tsd-signature-symbol">: </span><a href="std.base.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Source</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Base</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -118,34 +93,19 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+						<span class="target">ReverseIterator</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">ReverseIterator</span>
-								<ul class="tsd-hierarchy">
-									<li>
-										<a href="../interfaces/std.base.ireverseiterator.html" class="tsd-signature-type">IReverseIterator</a>
-									</li>
-									<li>
-										<a href="std.listreverseiterator.html" class="tsd-signature-type">ListReverseIterator</a>
-									</li>
-									<li>
-										<a href="std.setreverseiterator.html" class="tsd-signature-type">SetReverseIterator</a>
-									</li>
-									<li>
-										<a href="std.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a>
-									</li>
-								</ul>
+								<a href="std.base.mapreverseiterator.html" class="tsd-signature-type">MapReverseIterator</a>
+							</li>
+							<li>
+								<a href="std.base.setreverseiterator.html" class="tsd-signature-type">SetReverseIterator</a>
+							</li>
+							<li>
+								<a href="std.list.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a>
 							</li>
 						</ul>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/std.icomparable.html" class="tsd-signature-type">IComparable</a><span class="tsd-signature-symbol">&lt;</span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
-					<li><a href="../interfaces/std.icomparable.html" class="tsd-signature-type">IComparable</a><span class="tsd-signature-symbol">&lt;</span><a href="std.base.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Source</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Base</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -161,19 +121,17 @@
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.reverseiterator.html#value" class="tsd-kind-icon">value</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="std.base.reverseiterator.html#value" class="tsd-kind-icon">value</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.reverseiterator.html#advance" class="tsd-kind-icon">advance</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.reverseiterator.html#base" class="tsd-kind-icon">base</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.reverseiterator.html#equals" class="tsd-kind-icon">equals</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.reverseiterator.html#next" class="tsd-kind-icon">next</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.reverseiterator.html#prev" class="tsd-kind-icon">prev</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.reverseiterator.html#source" class="tsd-kind-icon">source</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="std.base.reverseiterator.html#swap" class="tsd-kind-icon">swap</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.reverseiterator.html#equals" class="tsd-kind-icon">equals</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.reverseiterator.html#next" class="tsd-kind-icon">next</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.reverseiterator.html#prev" class="tsd-kind-icon">prev</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.reverseiterator.html#source" class="tsd-kind-icon">source</a></li>
 							</ul>
 						</section>
 					</div>
@@ -191,23 +149,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L123">base/iterators/Iterator.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/iterators/ReverseIterator.ts#L15">base/iterators/ReverseIterator.ts:15</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Construct from base iterator.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>base: <span class="tsd-signature-type">Base</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>A reference of the base iterator, which iterates in the opposite direction.</p>
-										</div>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="std.base.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a></h4>
@@ -217,63 +165,26 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="value" class="tsd-anchor"></a>
 					<h3>value</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> value<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="std.base.iterator.html">Iterator</a>.<a href="std.base.iterator.html#value">value</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L175">base/iterators/Iterator.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/iterators/ReverseIterator.ts#L44">base/iterators/ReverseIterator.ts:44</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get value of the iterator is pointing.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>A value of the reverse iterator.</p>
 						</li>
 					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="advance" class="tsd-anchor"></a>
-					<h3>advance</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">advance<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">This</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides <a href="std.base.iterator.html">Iterator</a>.<a href="std.base.iterator.html#advance">advance</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L202">base/iterators/Iterator.ts:202</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>n: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">This</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="base" class="tsd-anchor"></a>
 					<h3>base</h3>
@@ -284,43 +195,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L165">base/iterators/Iterator.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/iterators/ReverseIterator.ts#L39">base/iterators/ReverseIterator.ts:39</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return base iterator.</p>
-								</div>
-								<p>Return a reference of the base iteraotr.</p>
-								<p>The base iterator is an iterator of the same type as the one used to construct the <a href="std.base.reverseiterator.html">ReverseIterator</a>,
-									but pointing to the element next to the one the <a href="std.base.reverseiterator.html">ReverseIterator</a> is currently pointing to
-								(a <a href="std.base.reverseiterator.html">ReverseIterator</a> has always an offset of -1 with respect to its base iterator).</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Base</span></h4>
-							<p>A reference of the base iterator, which iterates in the opposite direction.</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="equals" class="tsd-anchor"></a>
 					<h3>equals</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">equals<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="std.base.iterator.html">Iterator</a>.<a href="std.base.iterator.html#equals">equals</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L213">base/iterators/Iterator.ts:213</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/iterators/ReverseIterator.ts#L67">base/iterators/ReverseIterator.ts:67</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -331,99 +225,54 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="next" class="tsd-anchor"></a>
 					<h3>next</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">This</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="std.base.iterator.html">Iterator</a>.<a href="std.base.iterator.html#next">next</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L194">base/iterators/Iterator.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/iterators/ReverseIterator.ts#L58">base/iterators/ReverseIterator.ts:58</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">This</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="prev" class="tsd-anchor"></a>
 					<h3>prev</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">prev<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">This</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="std.base.iterator.html">Iterator</a>.<a href="std.base.iterator.html#prev">prev</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L186">base/iterators/Iterator.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/iterators/ReverseIterator.ts#L52">base/iterators/ReverseIterator.ts:52</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">This</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="source" class="tsd-anchor"></a>
 					<h3>source</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">source<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Source</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="std.base.iterator.html">Iterator</a>.<a href="std.base.iterator.html#source">source</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L149">base/iterators/Iterator.ts:149</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/iterators/ReverseIterator.ts#L34">base/iterators/ReverseIterator.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Source</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="swap" class="tsd-anchor"></a>
-					<h3>swap</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">This</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides <a href="std.base.iterator.html">Iterator</a>.<a href="std.base.iterator.html#swap">swap</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/iterators/Iterator.ts#L221">base/iterators/Iterator.ts:221</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">This</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -435,22 +284,25 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/std.html">std</a>
 					</li>
 					<li class="current tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.experiments.html">std.experiments</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.placeholders.html">std.placeholders</a>
+						<a href="../modules/std.experimental.html">std.experimental</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.arraycontainer.html" class="tsd-kind-icon">Array<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.arrayiterator.html" class="tsd-kind-icon">Array<wbr>Iterator</a>
+					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.container.html" class="tsd-kind-icon">Container</a>
 					</li>
@@ -464,7 +316,19 @@
 						<a href="std.base.iterator.html" class="tsd-kind-icon">Iterator</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.listcontainer.html" class="tsd-kind-icon">List<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.listiterator.html" class="tsd-kind-icon">List<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.mapcontainer.html" class="tsd-kind-icon">Map<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.mapiterator.html" class="tsd-kind-icon">Map<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.mapreverseiterator.html" class="tsd-kind-icon">Map<wbr>Reverse<wbr>Iterator</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.multimap.html" class="tsd-kind-icon">Multi<wbr>Map</a>
@@ -480,29 +344,23 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-protected">
 								<a href="std.base.reverseiterator.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="std.base.reverseiterator.html#value" class="tsd-kind-icon">value</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="std.base.reverseiterator.html#advance" class="tsd-kind-icon">advance</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.reverseiterator.html#base" class="tsd-kind-icon">base</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.reverseiterator.html#equals" class="tsd-kind-icon">equals</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.reverseiterator.html#next" class="tsd-kind-icon">next</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.reverseiterator.html#prev" class="tsd-kind-icon">prev</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.reverseiterator.html#source" class="tsd-kind-icon">source</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="std.base.reverseiterator.html#swap" class="tsd-kind-icon">swap</a>
 							</li>
 						</ul>
 					</li>
@@ -512,43 +370,31 @@
 						<a href="std.base.setcontainer.html" class="tsd-kind-icon">Set<wbr>Container</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.setiterator.html" class="tsd-kind-icon">Set<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.setreverseiterator.html" class="tsd-kind-icon">Set<wbr>Reverse<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.uniquemap.html" class="tsd-kind-icon">Unique<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.uniqueset.html" class="tsd-kind-icon">Unique<wbr>Set</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base._multimaptree.html" class="tsd-kind-icon">_<wbr>Multi<wbr>Map<wbr>Tree</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/std.base._iempty.html" class="tsd-kind-icon">_IEmpty</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.iarraycontainer.html" class="tsd-kind-icon">IArray<wbr>Container</a>
+						<a href="../interfaces/std.base._iinsert.html" class="tsd-kind-icon">_IInsert</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.iarrayiterator.html" class="tsd-kind-icon">IArray<wbr>Iterator</a>
+						<a href="../interfaces/std.base._ipushback.html" class="tsd-kind-icon">_IPush<wbr>Back</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.idequecontainer.html" class="tsd-kind-icon">IDeque<wbr>Container</a>
+						<a href="../interfaces/std.base._ipushfront.html" class="tsd-kind-icon">_IPush<wbr>Front</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ihashmap.html" class="tsd-kind-icon">IHash<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ihashset.html" class="tsd-kind-icon">IHash<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ilinearcontainer.html" class="tsd-kind-icon">ILinear<wbr>Container</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ilineariterator.html" class="tsd-kind-icon">ILinear<wbr>Iterator</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ireverseiterator.html" class="tsd-kind-icon">IReverse<wbr>Iterator</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.itreemap.html" class="tsd-kind-icon">ITree<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.itreeset.html" class="tsd-kind-icon">ITree<wbr>Set</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/std.base._isize.html" class="tsd-kind-icon">_ISize</a>
 					</li>
 				</ul>
 			</nav>

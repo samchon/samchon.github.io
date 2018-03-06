@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -114,14 +116,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/threads/Mutex.ts#L15">threads/Mutex.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/threads/Mutex.ts#L15">threads/Mutex.ts:15</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Default Constructor.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.mutex.html" class="tsd-signature-type">Mutex</a></h4>
 						</li>
 					</ul>
@@ -140,15 +137,9 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.ilockable.html">ILockable</a>.<a href="../interfaces/std.ilockable.html#lock">lock</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/threads/Mutex.ts#L35">threads/Mutex.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/threads/Mutex.ts#L29">threads/Mutex.ts:29</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Lock.</p>
-								</div>
-								<p>Bock until the <a href="std.mutex.html#unlock">unlock</a> is called.2</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -164,21 +155,10 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.ilockable.html">ILockable</a>.<a href="../interfaces/std.ilockable.html#try_lock">try_lock</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/threads/Mutex.ts#L49">threads/Mutex.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/threads/Mutex.ts#L40">threads/Mutex.ts:40</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Try lock.</p>
-								</div>
-								<p>Attempts to lock without blocking:</p>
-								<ul>
-									<li>If the <a href="../interfaces/std.ilockable.html">ILockable</a> isn&#39;t currently locked, then <a href="std.mutex.html#lock">locks</a> it and returns true.</li>
-									<li>If <a href="../interfaces/std.ilockable.html">ILockable</a> is currently locked, then do not wait and just returns false.</li>
-								</ul>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p>true if succeeded to lock, false othersie.</p>
 						</li>
 					</ul>
 				</section>
@@ -186,22 +166,17 @@
 					<a name="unlock" class="tsd-anchor"></a>
 					<h3>unlock</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">unlock<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">unlock<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/std.ilockable.html">ILockable</a>.<a href="../interfaces/std.ilockable.html#unlock">unlock</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/threads/Mutex.ts#L61">threads/Mutex.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/threads/Mutex.ts#L49">threads/Mutex.ts:49</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Unlock.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -213,17 +188,14 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/std.html">std</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.experiments.html">std.experiments</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.placeholders.html">std.placeholders</a>
+						<a href="../modules/std.experimental.html">std.experimental</a>
 					</li>
 				</ul>
 			</nav>

@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -67,52 +69,11 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>LIFO stack.</p>
-					</div>
-					<p><a href="std.stack.html">Stack</a>s are a type of container adaptor, specifically designed to operate in a LIFO context
-					(last-in first-out), where elements are inserted and extracted only from one end of the</p>
-					<p><a href="std.stack.html">Stack</a>s are implemented as containers adaptors, which are classes that use an encapsulated object of
-						a specific container class as its <i>underlying container</i>, providing a specific set of member functions to
-						access its elements. Elements are pushed/popped from the <a href="../interfaces/std.base.ilinearcontainer.html#back">back()</a> of the
-					<a href="../interfaces/std.base.ilinearcontainer.html">specific container</a>, which is known as the top of the <a href="std.stack.html">Stack</a>.</p>
-					<p><a href="std.stack.html#container_">The underlying container</a> may be any of the standard container class templates or some
-					other specifically designed container class. The container shall support the following operations:</p>
-					<ul>
-						<li><a href="../interfaces/std.base.ilinearcontainer.html#empty">empty</a></li>
-						<li><a href="../interfaces/std.base.ilinearcontainer.html#size">size</a></li>
-						<li><a href="../interfaces/std.base.ilinearcontainer.html#front">front</a></li>
-						<li><a href="../interfaces/std.base.ilinearcontainer.html#back">back</a></li>
-						<li><a href="../interfaces/std.base.ilinearcontainer.html#push_back">push_back</a></li>
-						<li><a href="../interfaces/std.base.ilinearcontainer.html#pop_back">pop_back</a></li>
-					</ul>
-					<p>The standard container classes <a href="std.vector.html">Vector</a>, <a href="std.deque.html">Deque</a> and <a href="std.list.html">List</a> fulfill these requirements.
-						By default, if no container class is specified for a particular <a href="std.stack.html">Stack</a> class instantiation, the standard
-					container <a href="std.list.html">List</a> is used.</p>
-					<p><a href="http://samchon.github.io/tstl/images/class_diagram/linear_containers.png" target="_blank">
-					<img src="http://samchon.github.io/tstl/images/class_diagram/linear_containers.png" style="max-width: 100%" /></a></p>
-					<dl class="tsd-comment-tags">
-						<dt>reference</dt>
-						<dd><p><a href="http://www.cplusplus.com/reference/stack/stack">http://www.cplusplus.com/reference/stack/stack</a></p>
-						</dd>
-						<dt>author</dt>
-						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
 						<h4>T</h4>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Type of elements.</p>
-							</div>
-						</div>
 					</li>
 				</ul>
 			</section>
@@ -137,7 +98,7 @@
 						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.stack.html#container_" class="tsd-kind-icon">container_</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="std.stack.html#source_" class="tsd-kind-icon">source_</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -167,27 +128,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L43">containers/Stack.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L7">containers/Stack.ts:7</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Default Constructor.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.stack.html" class="tsd-signature-type">Stack</a></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L51">containers/Stack.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L12">containers/Stack.ts:12</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Copy Constructor.</p>
-								</div>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -202,19 +153,14 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="container_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> container_</h3>
-					<div class="tsd-signature tsd-kind-icon">container_<span class="tsd-signature-symbol">:</span> <a href="../interfaces/std.base.ilinearcontainer.html" class="tsd-signature-type">ILinearContainer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="source_" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> source_</h3>
+					<div class="tsd-signature tsd-kind-icon">source_<span class="tsd-signature-symbol">:</span> <a href="std.list.html" class="tsd-signature-type">List</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L43">containers/Stack.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L7">containers/Stack.ts:7</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The <i>underlying object</i> for implementing the <i>LIFO</i></p>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -229,20 +175,10 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L95">containers/Stack.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L32">containers/Stack.ts:32</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Test whether container is empty.</p>
-								</div>
-								<p>returns whether the <a href="std.stack.html">Stack</a> is empty: i.e. whether its <i>size</i> is zero.</p>
-								<p>This member function effectively calls member <a href="../interfaces/std.base.ilinearcontainer.html#empty">empty()</a> of the
-								<a href="std.stack.html#container_">underlying container</a> object.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p><code>true</code> if the <i>underlying container</i>&#39;s size is 0,
-							<code>false</code> otherwise.</p>
 						</li>
 					</ul>
 				</section>
@@ -256,19 +192,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L147">containers/Stack.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L50">containers/Stack.ts:50</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Remove top element.</p>
-								</div>
-								<p>Removes the element on top of the <a href="std.stack.html">Stack</a>, effectively reducing its size by one.</p>
-								<p>The element removed is the latest element inserted into the <a href="std.stack.html">Stack</a>, whose value can be retrieved
-								by calling member <a href="std.stack.html#top">Stack.top()</a>.</p>
-								<p>This member function effectively calls the member function <a href="../interfaces/std.base.ilinearcontainer.html#pop_back">pop<em>back()</a>
-								of the &lt;a href=&quot;std.stack.html#container</em>&quot;&gt;underlying container</a> object.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -283,24 +209,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L131">containers/Stack.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L45">containers/Stack.ts:45</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Insert element.</p>
-								</div>
-								<p>Inserts a new element at the top of the <a href="std.stack.html">Stack</a>, above its current top element.</p>
-								<p>This member function effectively calls the member function
-								<a href="../interfaces/std.base.ilinearcontainer.html#push_back">push<em>back()</a> of the &lt;a href=&quot;std.stack.html#container</em>&quot;&gt;underlying container</a> object.</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>val: <span class="tsd-signature-type">T</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Value to which the inserted element is initialized.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -317,19 +232,10 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L79">containers/Stack.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L27">containers/Stack.ts:27</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return size.</p>
-								</div>
-								<p>Returns the number of elements in the <a href="std.stack.html">Stack</a>.</p>
-								<p>This member function effectively calls member <a href="../interfaces/std.base.ilinearcontainer.html#size">size()</a> of the
-								<a href="std.stack.html#container_">underlying container</a> object.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The number of elements in the <a href="std.stack.html#container_">underlying container</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -343,25 +249,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L163">containers/Stack.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L55">containers/Stack.ts:55</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Swap contents.</p>
-								</div>
-								<p>Exchanges the contents of the container adaptor (<i>this</i>) by those of <i>obj</i>.</p>
-								<p>This member function calls the non-member function <a href="std.base.container.html#swap">swap</a> (unqualified) to swap
-								the <a href="std.stack.html#container_">underlying containers</a>.</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>obj: <a href="std.stack.html" class="tsd-signature-type">Stack</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Another <a href="std.stack.html">Stack</a> container adaptor of the same type (i.e., instantiated with the same
-										template parameter, <b>T</b>). Sizes may differ.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -378,21 +272,10 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/containers/Stack.ts#L113">containers/Stack.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/containers/Stack.ts#L37">containers/Stack.ts:37</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Access next element.</p>
-								</div>
-								<p>Returns a value of the top element in the <a href="std.stack.html">Stack</a>.</p>
-								<p>Since <a href="std.stack.html">Stack</a>s are last-in first-out containers, the top element is the last element inserted into
-								the <a href="std.stack.html">Stack</a>.</p>
-								<p>This member function effectively calls member <a href="../interfaces/std.base.ilinearcontainer.html#back">back()</a> of the
-								<a href="std.stack.html#container_">underlying container</a> object.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-							<p>A value of the top element in the <a href="std.stack.html">Stack</a>.</p>
 						</li>
 					</ul>
 				</section>
@@ -404,17 +287,14 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class="current tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/std.html">std</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.experiments.html">std.experiments</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.placeholders.html">std.placeholders</a>
+						<a href="../modules/std.experimental.html">std.experimental</a>
 					</li>
 				</ul>
 			</nav>
@@ -429,7 +309,7 @@
 								<a href="std.stack.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="std.stack.html#container_" class="tsd-kind-icon">container_</a>
+								<a href="std.stack.html#source_" class="tsd-kind-icon">source_</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.stack.html#empty" class="tsd-kind-icon">empty</a>

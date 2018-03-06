@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -63,48 +65,27 @@
 					<a href="std.base.container.html">Container</a>
 				</li>
 			</ul>
-			<h1>Class Container&lt;T&gt;</h1>
+			<h1>Class Container&lt;T, SourceT, IteratorT, ReverseIteratorT&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>An abstract container.</p>
-					</div>
-					<p><a href="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" target="_blank">
-							<img src="http://samchon.github.io/tstl/images/class_diagram/abstract_containers.png" style="max-width: 100%" />
-					</a></p>
-					<h3 id="container-properties">Container properties</h3>
-					<dl>
-						<dt> Sequence </dt>
-						<dd> Elements in sequence containers are ordered in a strict linear sequence. Individual elements are
-						accessed by their position in this sequence. </dd>
-						<dt> Doubly-linked list </dt>
-						<dd> Each element keeps information on how to locate the next and the previous elements, allowing
-							constant time insert and erase operations before or after a specific element (even of entire ranges),
-						but no direct random access. </dd>
-					</dl>
-					<dl class="tsd-comment-tags">
-						<dt>author</dt>
-						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
-						</dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
 						<h4>T</h4>
-						<div class="tsd-comment tsd-typography">
-							<div class="lead">
-								<p>Type of elements.</p>
-							</div>
-						</div>
+					</li>
+					<li>
+						<h4>SourceT<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">SourceT</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">IteratorT</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ReverseIteratorT</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+					<li>
+						<h4>IteratorT<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">SourceT</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">IteratorT</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ReverseIteratorT</span><span class="tsd-signature-symbol">&gt;</span></h4>
+					</li>
+					<li>
+						<h4>ReverseIteratorT<span class="tsd-signature-symbol">: </span><a href="std.base.reverseiterator.html" class="tsd-signature-type">ReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">SourceT</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">IteratorT</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">ReverseIteratorT</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -115,13 +96,16 @@
 						<span class="target">Container</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="std.base.setcontainer.html" class="tsd-signature-type">SetContainer</a>
+								<a href="std.base.arraycontainer.html" class="tsd-signature-type">ArrayContainer</a>
+							</li>
+							<li>
+								<a href="std.base.listcontainer.html" class="tsd-signature-type">ListContainer</a>
 							</li>
 							<li>
 								<a href="std.base.mapcontainer.html" class="tsd-signature-type">MapContainer</a>
 							</li>
 							<li>
-								<a href="../interfaces/std.base.ilinearcontainer.html" class="tsd-signature-type">ILinearContainer</a>
+								<a href="std.base.setcontainer.html" class="tsd-signature-type">SetContainer</a>
 							</li>
 						</ul>
 					</li>
@@ -153,11 +137,13 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#empty" class="tsd-kind-icon">empty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#end" class="tsd-kind-icon">end</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#erase" class="tsd-kind-icon">erase</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#insert" class="tsd-kind-icon">insert</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#rbegin" class="tsd-kind-icon">rbegin</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#rend" class="tsd-kind-icon">rend</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#size" class="tsd-kind-icon">size</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#swap" class="tsd-kind-icon">swap</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="std.base.container.html#tojson" class="tsd-kind-icon">toJSON</a></li>
 							</ul>
 						</section>
 					</div>
@@ -175,14 +161,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L29">base/containers/Container.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L10">base/containers/Container.ts:10</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Default Constructor.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <a href="std.base.container.html" class="tsd-signature-type">Container</a></h4>
 						</li>
 					</ul>
@@ -200,33 +181,10 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L190">base/containers/Container.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L58">base/containers/Container.ts:58</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>To the <code>for of</code> statement.</p>
-								</div>
-								<p>The {@link [Symbol.iterator]} is a method returns an <code>IterableIterator</code> instance, who can implement the
-									<code>for of</code> statement, supporting the <em>full-forward-iteration</em>. You don&#39;t need to call this method, but just
-								use the <code>for of</code> statement such below:</p>
-								<pre><code class="lang-typescript"><span class="hljs-keyword">let</span> container: std.base.Container&lt;<span class="hljs-built_in">number</span>&gt;;
-container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);
-
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> elem of container) <span class="hljs-comment">// elem: number</span>
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"An element in the container: "</span> + elem);
-
-<span class="hljs-comment">//--------</span>
-<span class="hljs-comment">// elem is the element in the container</span>
-<span class="hljs-comment">//--------</span>
-<span class="hljs-comment">// An element in the container: 1</span>
-<span class="hljs-comment">// An element in the container: 2</span>
-<span class="hljs-comment">// An element in the container: 3</span>
-<span class="hljs-comment">// An element in the container: 4</span>
-</code></pre>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IterableIterator</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>An <code>IterableIterator</code> instance, but do not consider about it. Just use the <code>for of</code> statement.</p>
 						</li>
 					</ul>
 				</section>
@@ -240,38 +198,25 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L58">base/containers/Container.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L27">base/containers/Container.ts:27</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Assign new content to content.</p>
-								</div>
-								<p>Assigns new contents to the container, replacing its current contents, and modifying its
-								<a href="std.base.container.html#size">size</a> accordingly.</p>
-							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
 									<h4>U<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></h4>
 								</li>
 								<li>
-									<h4>InputIterator<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span></h4>
+									<h4>InputIterator<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/std.iforwarditerator.html" class="tsd-signature-type">IForwardIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">U</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
 								</li>
 							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>begin: <span class="tsd-signature-type">InputIterator</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Input interator of the initial position in a sequence.</p>
-									</div>
 								</li>
 								<li>
 									<h5>end: <span class="tsd-signature-type">InputIterator</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Input interator of the final position in a sequence.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -282,25 +227,16 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 					<a name="begin" class="tsd-anchor"></a>
 					<h3>begin</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">begin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">begin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L112">base/containers/Container.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L52">base/containers/Container.ts:52</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return iterator to beginning.</p>
-								</div>
-								<p>Returns an iterator referring the first element in the</p>
-								<h4 id="note">Note</h4>
-								<p>If the container is <a href="std.base.container.html#empty">empty</a>, the returned iterator is same with <a href="std.base.container.html#end">end()</a>.</p>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>An iterator to the first element in the  The iterator containes the first element&#39;s value.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IteratorT</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -314,15 +250,9 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L66">base/containers/Container.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L30">base/containers/Container.ts:30</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Clear content.</p>
-								</div>
-								<p>Removes all elements from the Container, leaving the container with a size of 0.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -337,19 +267,10 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L94">base/containers/Container.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L44">base/containers/Container.ts:44</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Test whether the container is empty.
-									Returns whether the container is empty (i.e. whether its size is 0).</p>
-								</div>
-								<p>This function does not modify the container in any way. To clear the content of the container,
-								see <a href="std.base.container.html#clear">clear()</a>.</p>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p><code>true</code> if the container size is 0, <code>false</code> otherwise.</p>
 						</li>
 					</ul>
 				</section>
@@ -357,32 +278,16 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 					<a name="end" class="tsd-anchor"></a>
 					<h3>end</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">end<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L134">base/containers/Container.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L53">base/containers/Container.ts:53</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return iterator to end.
-									Returns an iterator referring to the past-the-end element in the</p>
-								</div>
-								<p>The past-the-end element is the theoretical element that would follow the last element in the
-								It does not point to any element, and thus shall not be dereferenced.</p>
-								<p>Because the ranges used by functions of the Container do not include the element reference by their
-									closing iterator, this function is often used in combination with <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a> to
-								specify a range including all the elements in the container.</p>
-								<h4 id="note">Note</h4>
-								<p>Returned iterator from <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#end">end</a> does not refer any element. Trying to accessing
-								element by the iterator will cause throwing exception (<a href="std.outofrange.html">OutOfRange</a>).</p>
-								<p>If the container is <a href="std.base.container.html#empty">empty</a>, this function returns the same as <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#begin">begin</a>.</p>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>An iterator to the end element in the</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IteratorT</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -390,69 +295,66 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 					<a name="erase" class="tsd-anchor"></a>
 					<h3>erase</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
-						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>, end<span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span></li>
+						<li class="tsd-signature tsd-kind-icon">erase<span class="tsd-signature-symbol">(</span>begin<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span>, end<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L244">base/containers/Container.ts:244</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L69">base/containers/Container.ts:69</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Erase an element.</p>
-								</div>
-								<p>Removes from the container a single element.</p>
-								<p>This effectively reduces the container size by the number of element removed.</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>position: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Iterator pointing to a single element to be removed from the Container.</p>
-									</div>
+									<h5>position: <span class="tsd-signature-type">IteratorT</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>An iterator pointing to the element that followed the last element erased by the function
-								call. This is the <a href="std.base.container.html#end">Container.end</a> if the operation erased the last element in the
-							sequence.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IteratorT</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L260">base/containers/Container.ts:260</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L70">base/containers/Container.ts:70</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Erase elements.</p>
-								</div>
-								<p>Removes from the container a range of elements.</p>
-								<p>This effectively reduces the container size by the number of elements removed.</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>begin: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An iterator specifying a range of beginning to erase.</p>
-									</div>
+									<h5>begin: <span class="tsd-signature-type">IteratorT</span></h5>
 								</li>
 								<li>
-									<h5>end: <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An iterator specifying a range of end to erase.</p>
-									</div>
+									<h5>end: <span class="tsd-signature-type">IteratorT</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.base.iterator.html" class="tsd-signature-type">Iterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>An iterator pointing to the element that followed the last element erased by the function
-								call. This is the <a href="std.base.container.html#end">Container.end</a> if the operation erased the last element in
-							the sequence.</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IteratorT</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="insert" class="tsd-anchor"></a>
+					<h3>insert</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">insert<span class="tsd-signature-symbol">(</span>position<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span>, val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">IteratorT</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L67">base/containers/Container.ts:67</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>position: <span class="tsd-signature-type">IteratorT</span></h5>
+								</li>
+								<li>
+									<h5>val: <span class="tsd-signature-type">T</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">IteratorT</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -466,26 +368,16 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L211">base/containers/Container.ts:211</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L66">base/containers/Container.ts:66</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Insert elements.</p>
-								</div>
-								<p>Appends new elements to the container, and returns the new size of the</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> <span class="tsd-signature-symbol">...</span>items: <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>New elements to insert.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>New size of the Container.</p>
 						</li>
 					</ul>
 				</section>
@@ -493,27 +385,16 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 					<a name="rbegin" class="tsd-anchor"></a>
 					<h3>rbegin</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">rbegin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.ireverseiterator.html" class="tsd-signature-type">IReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">rbegin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReverseIteratorT</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L150">base/containers/Container.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L55">base/containers/Container.ts:55</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return <a href="std.base.reverseiterator.html">reverse iterator</a> to <i>reverse beginning</i>.</p>
-								</div>
-								<p>Returns a <a href="std.base.reverseiterator.html">reverse iterator</a> pointing to the last element in the container (i.e.,
-								its <i>reverse beginning</i>).</p>
-								<p><a href="std.base.reverseiterator.html">reverse iterators</a> iterate backwards: increasing them moves them towards the
-								beginning of the</p>
-								<p><a href="std.base.container.html#rbegin">rbegin</a> points to the element right before the one that would be pointed to by member <a href="std.base.container.html#end">end</a>.</p>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/std.base.ireverseiterator.html" class="tsd-signature-type">IReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <a href="std.base.reverseiterator.html">reverse iterator</a> to the <i>reverse beginning</i> of the sequence</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReverseIteratorT</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -521,26 +402,16 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 					<a name="rend" class="tsd-anchor"></a>
 					<h3>rend</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">rend<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/std.base.ireverseiterator.html" class="tsd-signature-type">IReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">rend<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReverseIteratorT</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L163">base/containers/Container.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L56">base/containers/Container.ts:56</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return <a href="std.base.reverseiterator.html">reverse iterator</a> to <i>reverse end</i>.</p>
-								</div>
-								<p>Returns a <a href="std.base.reverseiterator.html">reverse iterator</a> pointing to the theoretical element preceding the
-								first element in the container (which is considered its <i>reverse end</i>).</p>
-								<p>The range between <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rbegin">rbegin</a> and <a href="std.base.container.html">Container</a>.<a href="std.base.container.html#rend">rend</a> contains all
-								the elements of the container (in reverse order).</p>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/std.base.ireverseiterator.html" class="tsd-signature-type">IReverseIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <a href="std.base.reverseiterator.html">reverse iterator</a> to the <i>reverse end</i> of the sequence</p>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReverseIteratorT</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -554,16 +425,10 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L83">base/containers/Container.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L42">base/containers/Container.ts:42</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Return the number of elements in the <a href="std.base.container.html">Container</a>.</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The number of elements in the container.</p>
 						</li>
 					</ul>
 				</section>
@@ -571,39 +436,39 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 					<a name="swap" class="tsd-anchor"></a>
 					<h3>swap</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">swap<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SourceT</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/51f57cb/src/std/base/containers/Container.ts#L282">base/containers/Container.ts:282</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L75">base/containers/Container.ts:75</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Swap content.</p>
-								</div>
-								<p>Exchanges the content of the container by the content of <i>obj</i>, which is another
-								<a href="std.base.container.html">container</a> object with same type of elements. Sizes and container type may differ.</p>
-								<p>After the call to this member function, the elements in this container are those which were in <i>obj</i>
-									before the call, and the elements of <i>obj</i> are those which were in this. All iterators, references and
-								pointers remain valid for the swapped objects.</p>
-								<p>Notice that a non-member function exists with the same name, <a href="std.base.container.html#swap">swap</a>, overloading that
-								algorithm with an optimization that behaves like this member function.</p>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <a href="std.base.container.html" class="tsd-signature-type">Container</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Another <a href="std.base.container.html">container</a> of the same type of elements (i.e., instantiated
-											with the same template parameter, <b>T</b>) whose content is swapped with that of this
-										<a href="std.base.container.html">container</a>.</p>
-									</div>
+									<h5>obj: <span class="tsd-signature-type">SourceT</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="tojson" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/base/containers/Container.ts#L77">base/containers/Container.ts:77</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -615,22 +480,25 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class=" tsd-kind-module tsd-is-not-exported">
 						<a href="../modules/std.html">std</a>
 					</li>
 					<li class="current tsd-kind-module tsd-parent-kind-module">
 						<a href="../modules/std.base.html">std.base</a>
 					</li>
 					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.experiments.html">std.experiments</a>
-					</li>
-					<li class=" tsd-kind-module tsd-parent-kind-module">
-						<a href="../modules/std.placeholders.html">std.placeholders</a>
+						<a href="../modules/std.experimental.html">std.experimental</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.arraycontainer.html" class="tsd-kind-icon">Array<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.arrayiterator.html" class="tsd-kind-icon">Array<wbr>Iterator</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
@@ -661,6 +529,9 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 								<a href="std.base.container.html#erase" class="tsd-kind-icon">erase</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.base.container.html#insert" class="tsd-kind-icon">insert</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.container.html#push" class="tsd-kind-icon">push</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -674,6 +545,9 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="std.base.container.html#swap" class="tsd-kind-icon">swap</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="std.base.container.html#tojson" class="tsd-kind-icon">toJSON</a>
 							</li>
 						</ul>
 					</li>
@@ -689,7 +563,19 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 						<a href="std.base.iterator.html" class="tsd-kind-icon">Iterator</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.listcontainer.html" class="tsd-kind-icon">List<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.listiterator.html" class="tsd-kind-icon">List<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.mapcontainer.html" class="tsd-kind-icon">Map<wbr>Container</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.mapiterator.html" class="tsd-kind-icon">Map<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.mapreverseiterator.html" class="tsd-kind-icon">Map<wbr>Reverse<wbr>Iterator</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.multimap.html" class="tsd-kind-icon">Multi<wbr>Map</a>
@@ -704,43 +590,31 @@ container.push(<span class="hljs-number">1</span>, <span class="hljs-number">2</
 						<a href="std.base.setcontainer.html" class="tsd-kind-icon">Set<wbr>Container</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.setiterator.html" class="tsd-kind-icon">Set<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="std.base.setreverseiterator.html" class="tsd-kind-icon">Set<wbr>Reverse<wbr>Iterator</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.uniquemap.html" class="tsd-kind-icon">Unique<wbr>Map</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
 						<a href="std.base.uniqueset.html" class="tsd-kind-icon">Unique<wbr>Set</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="std.base._multimaptree.html" class="tsd-kind-icon">_<wbr>Multi<wbr>Map<wbr>Tree</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/std.base._iempty.html" class="tsd-kind-icon">_IEmpty</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.iarraycontainer.html" class="tsd-kind-icon">IArray<wbr>Container</a>
+						<a href="../interfaces/std.base._iinsert.html" class="tsd-kind-icon">_IInsert</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.iarrayiterator.html" class="tsd-kind-icon">IArray<wbr>Iterator</a>
+						<a href="../interfaces/std.base._ipushback.html" class="tsd-kind-icon">_IPush<wbr>Back</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.idequecontainer.html" class="tsd-kind-icon">IDeque<wbr>Container</a>
+						<a href="../interfaces/std.base._ipushfront.html" class="tsd-kind-icon">_IPush<wbr>Front</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ihashmap.html" class="tsd-kind-icon">IHash<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ihashset.html" class="tsd-kind-icon">IHash<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ilinearcontainer.html" class="tsd-kind-icon">ILinear<wbr>Container</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ilineariterator.html" class="tsd-kind-icon">ILinear<wbr>Iterator</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.ireverseiterator.html" class="tsd-kind-icon">IReverse<wbr>Iterator</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.itreemap.html" class="tsd-kind-icon">ITree<wbr>Map</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
-						<a href="../interfaces/std.base.itreeset.html" class="tsd-kind-icon">ITree<wbr>Set</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/std.base._isize.html" class="tsd-kind-icon">_ISize</a>
 					</li>
 				</ul>
 			</nav>
