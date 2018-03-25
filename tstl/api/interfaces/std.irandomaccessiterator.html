@@ -62,18 +62,33 @@
 					<a href="std.irandomaccessiterator.html">IRandomAccessIterator</a>
 				</li>
 			</ul>
-			<h1>Interface IRandomAccessIterator&lt;T&gt;</h1>
+			<h1>Interface IRandomAccessIterator&lt;T, Iterator&gt;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Random access iterator.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
 						<h4>T</h4>
+					</li>
+					<li>
+						<h4>Iterator<span class="tsd-signature-symbol">: </span><a href="std.irandomaccessiterator.html" class="tsd-signature-type">IRandomAccessIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&gt;</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -81,13 +96,20 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="std.ibidirectionaliterator.html" class="tsd-signature-type">IBidirectionalIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="std.ibidirectionaliterator.html" class="tsd-signature-type">IBidirectionalIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">IRandomAccessIterator</span>
 							</li>
 						</ul>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../classes/std.base.arrayiterator.html" class="tsd-signature-type">ArrayIterator</a></li>
+					<li><a href="../classes/std.base.arrayreverseiterator.html" class="tsd-signature-type">ArrayReverseIterator</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -120,11 +142,16 @@
 					<h3>value</h3>
 					<div class="tsd-signature tsd-kind-icon">value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">T</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="std.iforwarditerator.html">IForwardIterator</a>.<a href="std.iforwarditerator.html#value">value</a></p>
+						<p>Inherited from <a href="std.ipointer.html">IPointer</a>.<a href="std.ipointer.html#value">value</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/iterators/IForwardIterator.ts#L5">iterators/IForwardIterator.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/samchon/tstl/blob/469a52e/src/std/functional/IPointer.ts#L13">functional/IPointer.ts:13</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Reference of the value.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -133,22 +160,31 @@
 					<a name="advance" class="tsd-anchor"></a>
 					<h3>advance</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">advance<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.irandomaccessiterator.html" class="tsd-signature-type">IRandomAccessIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">advance<span class="tsd-signature-symbol">(</span>n<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/iterators/IRandomAccessIterator.ts#L6">iterators/IRandomAccessIterator.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/469a52e/src/std/iterators/IRandomAccessIterator.ts#L24">iterators/IRandomAccessIterator.ts:24</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Advance iterator.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>n: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Step to advance.</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="std.irandomaccessiterator.html" class="tsd-signature-type">IRandomAccessIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span></h4>
+							<p>The advanced iterator.</p>
 						</li>
 					</ul>
 				</section>
@@ -156,23 +192,32 @@
 					<a name="equals" class="tsd-anchor"></a>
 					<h3>equals</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">equals<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><a href="std.iforwarditerator.html" class="tsd-signature-type">IForwardIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">equals<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.iforwarditerator.html">IForwardIterator</a>.<a href="std.iforwarditerator.html#equals">equals</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/iterators/IForwardIterator.ts#L8">iterators/IForwardIterator.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/469a52e/src/std/iterators/IForwardIterator.ts#L24">iterators/IForwardIterator.ts:24</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Test whether equal to other iterator.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>obj: <a href="std.iforwarditerator.html" class="tsd-signature-type">IForwardIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>obj: <span class="tsd-signature-type">Iterator</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The iterator to compare.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether equal or not.</p>
 						</li>
 					</ul>
 				</section>
@@ -186,10 +231,16 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/iterators/IRandomAccessIterator.ts#L5">iterators/IRandomAccessIterator.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/469a52e/src/std/iterators/IRandomAccessIterator.ts#L16">iterators/IRandomAccessIterator.ts:16</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get index.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>The index.</p>
 						</li>
 					</ul>
 				</section>
@@ -197,17 +248,23 @@
 					<a name="next" class="tsd-anchor"></a>
 					<h3>next</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.iforwarditerator.html" class="tsd-signature-type">IForwardIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">next<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.iforwarditerator.html">IForwardIterator</a>.<a href="std.iforwarditerator.html#next">next</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/iterators/IForwardIterator.ts#L7">iterators/IForwardIterator.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/469a52e/src/std/iterators/IForwardIterator.ts#L16">iterators/IForwardIterator.ts:16</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="std.iforwarditerator.html" class="tsd-signature-type">IForwardIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get next iterator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span></h4>
+							<p>The next iterator.</p>
 						</li>
 					</ul>
 				</section>
@@ -215,17 +272,23 @@
 					<a name="prev" class="tsd-anchor"></a>
 					<h3>prev</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">prev<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="std.ibidirectionaliterator.html" class="tsd-signature-type">IBidirectionalIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">prev<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Iterator</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="std.ibidirectionaliterator.html">IBidirectionalIterator</a>.<a href="std.ibidirectionaliterator.html#prev">prev</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tstl/blob/5223126/src/std/iterators/IBidirectionalIterator.ts#L5">iterators/IBidirectionalIterator.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tstl/blob/469a52e/src/std/iterators/IBidirectionalIterator.ts#L16">iterators/IBidirectionalIterator.ts:16</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="std.ibidirectionaliterator.html" class="tsd-signature-type">IBidirectionalIterator</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get previous iterator.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Iterator</span></h4>
+							<p>The previous iterator.</p>
 						</li>
 					</ul>
 				</section>
