@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SharedWorkerAcceptor | tgrid</title>
+	<title>CommunicatorBase | tgrid</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/tgrid_protocol_worker.html">tgrid.protocol.worker</a>
+					<a href="../modules/tgrid_basic.html">tgrid.basic</a>
 				</li>
 				<li>
-					<a href="tgrid_protocol_worker.sharedworkeracceptor.html">SharedWorkerAcceptor</a>
+					<a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>
 				</li>
 			</ul>
-			<h1>Class SharedWorkerAcceptor&lt;Provider&gt;</h1>
+			<h1>Class CommunicatorBase&lt;Provider&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -81,19 +81,31 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="tgrid_base.communicatorbase.html" class="tsd-signature-type">CommunicatorBase</a>
+						<span class="target">CommunicatorBase</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">SharedWorkerAcceptor</span>
+								<a href="tgrid_basic.communicator.html" class="tsd-signature-type">Communicator</a>
+							</li>
+							<li>
+								<a href="tgrid_protocols_web.webacceptor.html" class="tsd-signature-type">WebAcceptor</a>
+							</li>
+							<li>
+								<a href="tgrid_protocols_web.webconnector.html" class="tsd-signature-type">WebConnector</a>
+							</li>
+							<li>
+								<a href="tgrid_protocols_workers.workerserver.html" class="tsd-signature-type">WorkerServer</a>
+							</li>
+							<li>
+								<a href="tgrid_protocols_workers.workerconnector.html" class="tsd-signature-type">WorkerConnector</a>
+							</li>
+							<li>
+								<a href="tgrid_protocols_workers.sharedworkeracceptor.html" class="tsd-signature-type">SharedWorkerAcceptor</a>
+							</li>
+							<li>
+								<a href="tgrid_protocols_workers.sharedworkerconnector.html" class="tsd-signature-type">SharedWorkerConnector</a>
 							</li>
 						</ul>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implements</h3>
-				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">IAcceptor</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -103,12 +115,8 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="tgrid_protocol_worker.sharedworkeracceptor.html#accept" class="tsd-kind-icon">accept</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="tgrid_protocol_worker.sharedworkeracceptor.html#close" class="tsd-kind-icon">close</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="tgrid_protocol_worker.sharedworkeracceptor.html#getdriver" class="tsd-kind-icon">get<wbr>Driver</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="tgrid_protocol_worker.sharedworkeracceptor.html#join" class="tsd-kind-icon">join</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="tgrid_protocol_worker.sharedworkeracceptor.html#listen" class="tsd-kind-icon">listen</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="tgrid_protocol_worker.sharedworkeracceptor.html#reject" class="tsd-kind-icon">reject</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="tgrid_basic.communicatorbase.html#getdriver" class="tsd-kind-icon">get<wbr>Driver</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="tgrid_basic.communicatorbase.html#join" class="tsd-kind-icon">join</a></li>
 							</ul>
 						</section>
 					</div>
@@ -116,62 +124,17 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="accept" class="tsd-anchor"></a>
-					<h3>accept</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">accept<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/protocol/worker/SharedWorkerAcceptor.ts#L62">protocol/worker/SharedWorkerAcceptor.ts:62</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Accept connection.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="close" class="tsd-anchor"></a>
-					<h3>close</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/protocol/worker/SharedWorkerAcceptor.ts#L45">protocol/worker/SharedWorkerAcceptor.ts:45</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Close connection.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
 					<a name="getdriver" class="tsd-anchor"></a>
 					<h3>get<wbr>Driver</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Driver&lt;Controller&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/tgrid_base.html#driver" class="tsd-signature-type">Driver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Controller</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Driver&lt;Controller&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/tgrid_basic.html#driver" class="tsd-signature-type">Driver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Controller</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="tgrid_base.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_base.communicatorbase.html#getdriver">getDriver</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/base/CommunicatorBase.ts#L113">base/CommunicatorBase.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L113">basic/CommunicatorBase.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -185,15 +148,15 @@
 									<h4>Controller<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../modules/tgrid_base.html#driver" class="tsd-signature-type">Driver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Controller</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/tgrid_basic.html#driver" class="tsd-signature-type">Driver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Controller</span><span class="tsd-signature-symbol">&gt;</span></h4>
 							<p>A Driver for the remote Controller.</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="join" class="tsd-anchor"></a>
 					<h3>join</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">join<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">join<span class="tsd-signature-symbol">(</span>ms<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
 						<li class="tsd-signature tsd-kind-icon">join<span class="tsd-signature-symbol">(</span>at<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
@@ -201,9 +164,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="tgrid_base.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_base.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/base/CommunicatorBase.ts#L77">base/CommunicatorBase.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L77">basic/CommunicatorBase.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -215,9 +177,8 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="tgrid_base.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_base.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/base/CommunicatorBase.ts#L85">base/CommunicatorBase.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L85">basic/CommunicatorBase.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -239,9 +200,8 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="tgrid_base.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_base.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/base/CommunicatorBase.ts#L93">base/CommunicatorBase.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L93">basic/CommunicatorBase.ts:93</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -263,63 +223,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-					<a name="listen" class="tsd-anchor"></a>
-					<h3>listen</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">listen&lt;Provider&gt;<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/protocol/worker/SharedWorkerAcceptor.ts#L84">protocol/worker/SharedWorkerAcceptor.ts:84</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
-							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>Provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>provider: <span class="tsd-signature-type">Provider</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="reject" class="tsd-anchor"></a>
-					<h3>reject</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">reject<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b2327bd/src/protocol/worker/SharedWorkerAcceptor.ts#L73">protocol/worker/SharedWorkerAcceptor.ts:73</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Reject connection.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -331,60 +234,60 @@
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/tgrid.html">tgrid</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/tgrid_base.html">tgrid.base</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/tgrid_protocol.html">tgrid.protocol</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/tgrid_protocol_web.html">tgrid.protocol.web</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/tgrid_protocol_worker.html">tgrid.protocol.worker</a>
+						<a href="../modules/tgrid_basic.html">tgrid.basic</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_protocols.html">tgrid.protocols</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_protocols_web.html">tgrid.protocols.web</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_protocols_workers.html">tgrid.protocols.workers</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_utils.html">tgrid.utils</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="tgrid_basic.communicator.html" class="tsd-kind-icon">Communicator</a>
+					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="tgrid_protocol_worker.sharedworkeracceptor.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Acceptor</a>
+						<a href="tgrid_basic.communicatorbase.html" class="tsd-kind-icon">Communicator<wbr>Base</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="tgrid_protocol_worker.sharedworkeracceptor.html#accept" class="tsd-kind-icon">accept</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="tgrid_protocol_worker.sharedworkeracceptor.html#close" class="tsd-kind-icon">close</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="tgrid_protocol_worker.sharedworkeracceptor.html#getdriver" class="tsd-kind-icon">get<wbr>Driver</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="tgrid_protocol_worker.sharedworkeracceptor.html#join" class="tsd-kind-icon">join</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-								<a href="tgrid_protocol_worker.sharedworkeracceptor.html#listen" class="tsd-kind-icon">listen</a>
+								<a href="tgrid_basic.communicatorbase.html#getdriver" class="tsd-kind-icon">get<wbr>Driver</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="tgrid_protocol_worker.sharedworkeracceptor.html#reject" class="tsd-kind-icon">reject</a>
+								<a href="tgrid_basic.communicatorbase.html#join" class="tsd-kind-icon">join</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="tgrid_protocol_worker.sharedworkerconnector.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Connector</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../interfaces/tgrid_basic.ibase.html" class="tsd-kind-icon">IBase</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="tgrid_protocol_worker.sharedworkerserver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../interfaces/tgrid_basic.ifunction.html" class="tsd-kind-icon">IFunction</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="tgrid_protocol_worker.workerconnector.html" class="tsd-kind-icon">Worker<wbr>Connector</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../interfaces/tgrid_basic.ireturn.html" class="tsd-kind-icon">IReturn</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
-						<a href="tgrid_protocol_worker.workerserver.html" class="tsd-kind-icon">Worker<wbr>Server</a>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/tgrid_basic.html#driver" class="tsd-kind-icon">Driver</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/tgrid_basic.html#invoke" class="tsd-kind-icon">Invoke</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/tgrid_basic.html#promisify" class="tsd-kind-icon">Promisify</a>
 					</li>
 				</ul>
 			</nav>
