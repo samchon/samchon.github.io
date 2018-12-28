@@ -104,7 +104,13 @@ npm install --save tgrid</code></pre>
 main();</code></pre>
 				<h4 id="example-vector-client-ts"><code>example/vector/client.ts</code></h4>
 				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { WebConnector } <span class="hljs-keyword">from</span> <span class="hljs-string">"tgrid/protocols/web"</span>;
-<span class="hljs-keyword">import</span> { Vector } <span class="hljs-keyword">from</span> <span class="hljs-string">"tstl/container"</span>;
+
+<span class="hljs-keyword">interface</span> IVector&lt;T&gt;
+{
+    size(): <span class="hljs-built_in">number</span>;
+    at(index: <span class="hljs-built_in">number</span>): T;
+    push_back(val: T): <span class="hljs-built_in">void</span>;
+}
 
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;
 </span>{
@@ -118,12 +124,12 @@ main();</code></pre>
     <span class="hljs-comment">// wait server to provide the Vector</span>
     <span class="hljs-keyword">await</span> connector.wait();
 
-    <span class="hljs-comment">// get Driver&lt;Controller&gt;</span>
-    <span class="hljs-keyword">let</span> v = connector.getDriver&lt;Vector&lt;<span class="hljs-built_in">number</span>&gt;&gt;();
-
     <span class="hljs-comment">//----</span>
     <span class="hljs-comment">// CALL FUNCTIONS IN THE REMOTE SYSTEM</span>
     <span class="hljs-comment">//----</span>
+    <span class="hljs-comment">// get Driver&lt;Controller&gt;</span>
+    <span class="hljs-keyword">let</span> v = connector.getDriver&lt;IVector&lt;<span class="hljs-built_in">number</span>&gt;&gt;();
+
     <span class="hljs-comment">// insert elements</span>
     <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i: <span class="hljs-built_in">number</span> = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; ++i)
         <span class="hljs-keyword">await</span> v.push_back(i);
