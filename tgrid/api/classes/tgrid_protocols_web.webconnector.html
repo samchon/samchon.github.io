@@ -69,6 +69,21 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Web Socket Connector.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="tgrid_protocols_web.webserver.html">WebServer</a>, <a href="tgrid_protocols_web.webconnector.html">WebConnector</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -93,19 +108,14 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><span class="tsd-signature-type">IConnector</span><span class="tsd-signature-symbol">&lt;</span><a href="../enums/tgrid_protocols_web.webconnector.state.html" class="tsd-signature-type">State</a><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/tgrid_protocols_web.iwebcommunicator.html" class="tsd-signature-type">IWebCommunicator</a></li>
+					<li><a href="../modules/tgrid_protocols.iconnector.html" class="tsd-signature-type">IConnector</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">WebConnector.State</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Enumerations</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-class tsd-is-static"><a href="../enums/tgrid_protocols_web.webconnector.state.html" class="tsd-kind-icon">State</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
@@ -117,7 +127,8 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="tgrid_protocols_web.webconnector.html#extensions" class="tsd-kind-icon">extensions</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="tgrid_protocols_web.webconnector.html#protocol" class="tsd-kind-icon">protocol</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="tgrid_protocols_web.webconnector.html#state-1" class="tsd-kind-icon">state</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="tgrid_protocols_web.webconnector.html#provider" class="tsd-kind-icon">provider</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="tgrid_protocols_web.webconnector.html#state" class="tsd-kind-icon">state</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="tgrid_protocols_web.webconnector.html#url" class="tsd-kind-icon">url</a></li>
 							</ul>
 						</section>
@@ -147,7 +158,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CommunicatorBase.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L39">protocols/web/WebConnector.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L37">protocols/web/WebConnector.ts:37</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -183,7 +194,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L153">protocols/web/WebConnector.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L156">protocols/web/WebConnector.ts:156</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -200,24 +211,49 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L148">protocols/web/WebConnector.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L151">protocols/web/WebConnector.ts:151</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="provider" class="tsd-anchor"></a>
+					<h3>provider</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> provider<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Provider</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#provider">provider</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L120">basic/CommunicatorBase.ts:120</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Current <code>Provider</code>.</p>
+								</div>
+								<p>An object providing features (functions &amp; objects) for remote system. The remote
+								system would call the features (<code>Provider</code>) by using its <code>Driver&lt;Controller&gt;</code>.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Provider</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
-					<a name="state-1" class="tsd-anchor"></a>
+					<a name="state" class="tsd-anchor"></a>
 					<h3>state</h3>
 					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> state<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/tgrid_protocols_web.webconnector.state.html" class="tsd-signature-type">State</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> state<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebConnector.State</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L161">protocols/web/WebConnector.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L164">protocols/web/WebConnector.ts:164</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -226,7 +262,7 @@
 									<dd></dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/tgrid_protocols_web.webconnector.state.html" class="tsd-signature-type">State</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">WebConnector.State</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -240,7 +276,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L143">protocols/web/WebConnector.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L146">protocols/web/WebConnector.ts:146</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -259,28 +295,29 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/tgrid_protocols_web.iwebcommunicator.html">IWebCommunicator</a>.<a href="../interfaces/tgrid_protocols_web.iwebcommunicator.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L123">protocols/web/WebConnector.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L125">protocols/web/WebConnector.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Close connection.</p>
 								</div>
+								<p>Close connection with the remote websocket server and destroy all remote function
+									calls those are not returned (finished) yet. It would also destroy all the remote
+								function calls in the remote system (by <code>Driver&lt;Controller</code>&gt;), too.</p>
+								<p>If parameters <em>code</em> and <em>reason</em> are specified, it means the disconnection is
+									abnormal and it would throw exceptions (<code>WebError</code>) to the unreturned remote
+								function calls.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> code: <span class="tsd-signature-type">number</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Closing code.</p>
-									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> reason: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Reason why.</p>
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -297,13 +334,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L64">protocols/web/WebConnector.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L71">protocols/web/WebConnector.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Connect to remote web socket server.</p>
+									<p>Connect to remote websocket server.</p>
 								</div>
+								<p>Try connection to the remote websocket server with its address and waiting for the
+									server to accept the trial. If the server rejects your connection, then exception
+								would be thrown (in <em>Promise.catch</em>, as <code>WebError</code>).</p>
+								<p>Note that, acceptance of the connection doesn&#39;t mean that server provides features
+									(<code>Provider</code>) directly. The <code>Provider</code> would be provided when the server calls the
+									<a href="tgrid_protocols_web.webacceptor.html#listen">WebAcceptor.listen()</a> method. If you want to ensure the
+								server to provide the <code>Provider</code>, then call the <a href="tgrid_protocols_web.webconnector.html#wait">wait()</a> method.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -335,22 +379,34 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#getdriver">getDriver</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L113">basic/CommunicatorBase.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L184">basic/CommunicatorBase.ts:184</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get driver for remote controller.</p>
+									<p>Get Driver for RFC (Remote Function Call).</p>
 								</div>
+								<p>The <code>Controller</code> is an interface who defines provided functions from the remote
+									system. The <code>Driver</code> is an object who makes to call remote functions, defined in
+								the <code>Controller</code> and provided by <code>Provider</code> in the remote system, possible.</p>
+								<p>In other words, calling a functions in the <code>Driver&lt;Controller&gt;</code>, it means to call
+								a matched function in the remote system&#39;s <code>Provider</code> object.</p>
+								<ul>
+									<li><code>Controller</code>: Definition only</li>
+									<li><code>Driver</code>: Remote Function Call</li>
+								</ul>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
 									<h4>Controller<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
+									<div class="tsd-comment tsd-typography">
+										<p>An interface for provided features (functions &amp; objects) from the remote system (<code>Provider</code>).</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/tgrid_basic.html#driver" class="tsd-signature-type">Driver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Controller</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A Driver for the remote Controller.</p>
+							<p>A Driver for the RFC.</p>
 						</li>
 					</ul>
 				</section>
@@ -367,7 +423,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L77">basic/CommunicatorBase.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L131">basic/CommunicatorBase.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -381,7 +437,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L85">basic/CommunicatorBase.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L139">basic/CommunicatorBase.ts:139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -405,7 +461,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L93">basic/CommunicatorBase.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L147">basic/CommunicatorBase.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -439,7 +495,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L175">protocols/web/WebConnector.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L178">protocols/web/WebConnector.ts:178</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,7 +509,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L180">protocols/web/WebConnector.ts:180</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L183">protocols/web/WebConnector.ts:183</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -473,7 +529,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/web/WebConnector.ts#L185">protocols/web/WebConnector.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/WebConnector.ts#L188">protocols/web/WebConnector.ts:188</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -530,9 +586,6 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="tgrid_protocols_web.webconnector.html" class="tsd-kind-icon">Web<wbr>Connector</a>
 						<ul>
-							<li class=" tsd-kind-enum tsd-parent-kind-class tsd-is-static">
-								<a href="../enums/tgrid_protocols_web.webconnector.state.html" class="tsd-kind-icon">State</a>
-							</li>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="tgrid_protocols_web.webconnector.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
@@ -542,8 +595,11 @@
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="tgrid_protocols_web.webconnector.html#protocol" class="tsd-kind-icon">protocol</a>
 							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="tgrid_protocols_web.webconnector.html#provider" class="tsd-kind-icon">provider</a>
+							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="tgrid_protocols_web.webconnector.html#state-1" class="tsd-kind-icon">state</a>
+								<a href="tgrid_protocols_web.webconnector.html#state" class="tsd-kind-icon">state</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="tgrid_protocols_web.webconnector.html#url" class="tsd-kind-icon">url</a>
@@ -568,7 +624,13 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="tgrid_protocols_web.weberror.html" class="tsd-kind-icon">Web<wbr>Error</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="tgrid_protocols_web.webserver.html" class="tsd-kind-icon">Web<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/tgrid_protocols_web.iwebcommunicator.html" class="tsd-kind-icon">IWeb<wbr>Communicator</a>
 					</li>
 				</ul>
 			</nav>

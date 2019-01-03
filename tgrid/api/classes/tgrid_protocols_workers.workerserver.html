@@ -69,6 +69,36 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Worker Server.</p>
+					</div>
+					<p>The <code>WorkerServer</code> is a communicator class, used in worker environment, to interacting
+						with the remote client (browser or parent worker, anyway <code>WorkerConnector</code>) using RFC
+					(Remote Function Call).</p>
+					<blockquote>
+						<p><code>Worker</code> is designed to support thread in browser, however, the <code>Worker</code> cannot share
+							memory variable at all. The only way to interact with <code>Worker</code> and its parent is
+						using communication channel with inter-promised message (IPC).</p>
+						<p>It seems like network communication, right? That&#39;s the reason why TGrid considers
+							<code>Worker</code> as a remote system and supports RFC (Remote Function Call) in such worker
+						environments.</p>
+					</blockquote>
+					<p>You wanna interacting with the remote client, then call the <a href="tgrid_protocols_workers.workerserver.html#open">open()</a> method.
+						After the interaction, don&#39;t forget terminating this worker using <a href="tgrid_protocols_workers.workerserver.html#close">close()</a>
+						(or <a href="tgrid_protocols_workers.workerconnector.html#close">WorkerConnector.close()</a>). If you don&#39;t terminate it,
+					then vulnerable memory and communication channel leak would be happened.</p>
+					<dl class="tsd-comment-tags">
+						<dt>see</dt>
+						<dd><p><a href="tgrid_protocols_workers.workerconnector.html">WorkerConnector</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -81,7 +111,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="tgrid_basic.communicatorbase.html" class="tsd-signature-type">CommunicatorBase</a>
+						<a href="tgrid_basic.communicatorbase.html" class="tsd-signature-type">CommunicatorBase</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">WorkerServer</span>
@@ -95,21 +125,23 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-class tsd-is-static"><a href="../enums/tgrid_protocols_workers.workerserver.state.html" class="tsd-kind-icon">State</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="tgrid_protocols_workers.workerserver.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="tgrid_protocols_workers.workerserver.html#args_" class="tsd-kind-icon">args_</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="tgrid_protocols_workers.workerserver.html#arguments" class="tsd-kind-icon">arguments</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="tgrid_protocols_workers.workerserver.html#provider" class="tsd-kind-icon">provider</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="tgrid_protocols_workers.workerserver.html#state-1" class="tsd-kind-icon">state</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -118,7 +150,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="tgrid_protocols_workers.workerserver.html#close" class="tsd-kind-icon">close</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="tgrid_protocols_workers.workerserver.html#getdriver" class="tsd-kind-icon">get<wbr>Driver</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="tgrid_protocols_workers.workerserver.html#join" class="tsd-kind-icon">join</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="tgrid_protocols_workers.workerserver.html#open" class="tsd-kind-icon">open</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="tgrid_protocols_workers.workerserver.html#open" class="tsd-kind-icon">open</a></li>
 							</ul>
 						</section>
 					</div>
@@ -137,7 +169,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CommunicatorBase.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/workers/WorkerServer.ts#L23">protocols/workers/WorkerServer.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L45">protocols/workers/WorkerServer.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -148,19 +180,6 @@
 							<h4 class="tsd-returns-title">Returns <a href="tgrid_protocols_workers.workerserver.html" class="tsd-signature-type">WorkerServer</a></h4>
 						</li>
 					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="args_" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> args_</h3>
-					<div class="tsd-signature tsd-kind-icon">args_<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/workers/WorkerServer.ts#L23">protocols/workers/WorkerServer.ts:23</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -175,7 +194,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/workers/WorkerServer.ts#L64">protocols/workers/WorkerServer.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L126">protocols/workers/WorkerServer.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -184,6 +203,54 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="provider" class="tsd-anchor"></a>
+					<h3>provider</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> provider<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Provider</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#provider">provider</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L120">basic/CommunicatorBase.ts:120</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Current <code>Provider</code>.</p>
+								</div>
+								<p>An object providing features (functions &amp; objects) for remote system. The remote
+								system would call the features (<code>Provider</code>) by using its <code>Driver&lt;Controller&gt;</code>.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Provider</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="state-1" class="tsd-anchor"></a>
+					<h3>state</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> state<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/tgrid_protocols_workers.workerserver.state.html" class="tsd-signature-type">State</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L144">protocols/workers/WorkerServer.ts:144</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>inheritdoc</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/tgrid_protocols_workers.workerserver.state.html" class="tsd-signature-type">State</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -200,7 +267,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/workers/WorkerServer.ts#L48">protocols/workers/WorkerServer.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L98">protocols/workers/WorkerServer.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -223,22 +290,34 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#getdriver">getDriver</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L113">basic/CommunicatorBase.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L184">basic/CommunicatorBase.ts:184</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Get driver for remote controller.</p>
+									<p>Get Driver for RFC (Remote Function Call).</p>
 								</div>
+								<p>The <code>Controller</code> is an interface who defines provided functions from the remote
+									system. The <code>Driver</code> is an object who makes to call remote functions, defined in
+								the <code>Controller</code> and provided by <code>Provider</code> in the remote system, possible.</p>
+								<p>In other words, calling a functions in the <code>Driver&lt;Controller&gt;</code>, it means to call
+								a matched function in the remote system&#39;s <code>Provider</code> object.</p>
+								<ul>
+									<li><code>Controller</code>: Definition only</li>
+									<li><code>Driver</code>: Remote Function Call</li>
+								</ul>
 							</div>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
 								<li>
 									<h4>Controller<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
+									<div class="tsd-comment tsd-typography">
+										<p>An interface for provided features (functions &amp; objects) from the remote system (<code>Provider</code>).</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/tgrid_basic.html#driver" class="tsd-signature-type">Driver</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Controller</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A Driver for the remote Controller.</p>
+							<p>A Driver for the RFC.</p>
 						</li>
 					</ul>
 				</section>
@@ -255,7 +334,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L77">basic/CommunicatorBase.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L131">basic/CommunicatorBase.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -269,7 +348,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L85">basic/CommunicatorBase.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L139">basic/CommunicatorBase.ts:139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -293,7 +372,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/basic/CommunicatorBase.ts#L93">basic/CommunicatorBase.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L147">basic/CommunicatorBase.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -315,34 +394,36 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="open" class="tsd-anchor"></a>
 					<h3>open</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">open&lt;Provider&gt;<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">open<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/0abbc27/src/protocols/workers/WorkerServer.ts#L39">protocols/workers/WorkerServer.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L73">protocols/workers/WorkerServer.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Open server.</p>
+									<p>Open server with <code>Provider</code>.</p>
 								</div>
+								<p>Open worker server and start interaction with the remote system (browser or parent
+								worker).</p>
+								<p>Note that, after the interaction, you should terminate this worker to prevent waste
+									of memory leak. Close this worker by yourself (<a href="tgrid_protocols_workers.workerserver.html#close">close()</a>) or let remote
+								client to close this worker (<a href="tgrid_protocols_workers.workerconnector.html#close">WorkerConnector.close()</a>).</p>
 							</div>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>Provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
-								</li>
-							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>provider: <span class="tsd-signature-type">Provider</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> provider: <span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>An object providing featrues for the remote system.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -385,7 +466,7 @@
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="tgrid_protocols_workers.sharedworkerconnector.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Connector</a>
 					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="tgrid_protocols_workers.sharedworkerserver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
@@ -396,14 +477,20 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="tgrid_protocols_workers.workerserver.html" class="tsd-kind-icon">Worker<wbr>Server</a>
 						<ul>
+							<li class=" tsd-kind-enum tsd-parent-kind-class tsd-is-static">
+								<a href="../enums/tgrid_protocols_workers.workerserver.state.html" class="tsd-kind-icon">State</a>
+							</li>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="tgrid_protocols_workers.workerserver.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="tgrid_protocols_workers.workerserver.html#args_" class="tsd-kind-icon">args_</a>
-							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="tgrid_protocols_workers.workerserver.html#arguments" class="tsd-kind-icon">arguments</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="tgrid_protocols_workers.workerserver.html#provider" class="tsd-kind-icon">provider</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="tgrid_protocols_workers.workerserver.html#state-1" class="tsd-kind-icon">state</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="tgrid_protocols_workers.workerserver.html#close" class="tsd-kind-icon">close</a>
@@ -414,16 +501,13 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="tgrid_protocols_workers.workerserver.html#join" class="tsd-kind-icon">join</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="tgrid_protocols_workers.workerserver.html#open" class="tsd-kind-icon">open</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/tgrid_protocols_workers.html#execute" class="tsd-kind-icon">execute</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
