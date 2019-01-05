@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IAcceptor | tgrid</title>
+	<title>IWorkerSystem | tgrid</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,35 +56,43 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="tgrid_protocols.html">tgrid.protocols</a>
+					<a href="../modules/tgrid_protocols_workers.html">tgrid.protocols.workers</a>
 				</li>
 				<li>
-					<a href="tgrid_protocols.iacceptor.html">IAcceptor</a>
+					<a href="tgrid_protocols_workers.iworkersystem.html">IWorkerSystem</a>
 				</li>
 			</ul>
-			<h1>Module IAcceptor&lt;State, Provider&gt;</h1>
+			<h1>Interface IWorkerSystem</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-type-parameters">
-				<h3>Type parameters</h3>
-				<ul class="tsd-type-parameters">
-					<li>
-						<h4>State<span class="tsd-signature-symbol">: </span><a href="../enums/tgrid_protocols.iacceptor.state.html" class="tsd-signature-type">State</a></h4>
-					</li>
-					<li>
-						<h4>Provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
-					</li>
-				</ul>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Common interface for communicators based on <code>Worker</code>.</p>
+					</div>
+					<h4 id="why-workers-be-network-systems-">Why workers be network systems?</h4>
+					<p><code>Worker</code> is designed to support thread in JavaScript. However, the <code>Worker</code> cannot share
+						memory variable at all. The only way to interact with <code>Worker</code> and its parent is using
+					the <code>MessagePort</code> with inter-promised message (IPC, inter-process communication).</p>
+					<ul>
+						<li><em>Worker</em>, it&#39;s a type of <em>thread</em> in physical level.</li>
+						<li><em>Worker</em>, it&#39;s a type of <em>process</em> in logical level.</li>
+						<li><strong>Worker</strong>, it&#39;s same with <strong>network system</strong> in conceptual level.</li>
+					</ul>
+					<p>It seems like network communication, isn&#39;t it? That&#39;s the reason why TGrid considers
+						<code>Worker</code> as a remote system and supports RFC (Remote Function Call) in such worker
+					environments.</p>
+				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IAcceptor</span>
+						<span class="target">IWorkerSystem</span>
 					</li>
 				</ul>
 			</section>
@@ -92,7 +100,9 @@
 				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../classes/tgrid_protocols_workers.sharedworkeracceptor.html" class="tsd-signature-type">SharedWorkerAcceptor</a></li>
-					<li><a href="../classes/tgrid_protocols_web.webacceptor.html" class="tsd-signature-type">WebAcceptor</a></li>
+					<li><a href="../classes/tgrid_protocols_workers.sharedworkerconnector.html" class="tsd-signature-type">SharedWorkerConnector</a></li>
+					<li><a href="../classes/tgrid_protocols_workers.workerconnector.html" class="tsd-signature-type">WorkerConnector</a></li>
+					<li><a href="../classes/tgrid_protocols_workers.workerserver.html" class="tsd-signature-type">WorkerServer</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -100,101 +110,38 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Enumerations</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/tgrid_protocols.iacceptor.state.html" class="tsd-kind-icon">State</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-module"><a href="tgrid_protocols.iacceptor.html#state-1" class="tsd-kind-icon">state</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Functions</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="tgrid_protocols.iacceptor.html#inspect" class="tsd-kind-icon">inspect</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-module"><a href="tgrid_protocols.iacceptor.html#listen" class="tsd-kind-icon">listen</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="tgrid_protocols_workers.iworkersystem.html#close" class="tsd-kind-icon">close</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-module">
-					<a name="state-1" class="tsd-anchor"></a>
-					<h3>state</h3>
-					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">State</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/internal/IAcceptor.ts#L8">protocols/internal/IAcceptor.ts:8</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="inspect" class="tsd-anchor"></a>
-					<h3>inspect</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">inspect<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><a href="../enums/tgrid_protocols.iacceptor.state.html" class="tsd-signature-type">State</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/internal/IAcceptor.ts#L32">protocols/internal/IAcceptor.ts:32</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>state: <a href="../enums/tgrid_protocols.iacceptor.state.html" class="tsd-signature-type">State</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Error</span></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-module">
-					<a name="listen" class="tsd-anchor"></a>
-					<h3>listen</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">listen<span class="tsd-signature-symbol">(</span>provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="close" class="tsd-anchor"></a>
+					<h3>close</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">close<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/internal/IAcceptor.ts#L17">protocols/internal/IAcceptor.ts:17</a></li>
+									<li>Defined in protocols/workers/internal/IWorkerSystem.ts:31</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Start listening.</p>
+									<p>Close connection.</p>
 								</div>
-								<p>Start listening data from the remote client.</p>
+								<p>Close connection between the remote worker system.</p>
+								<p>It destroies all RFCs (remote function calls) between this and the remote system
+									(through <code>Driver&lt;Controller&gt;</code>) that are not returned (completed) yet. The destruction
+								causes all incompleted RFCs to throw exceptions.</p>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>provider: <span class="tsd-signature-type">Provider</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A provider for the remote client.</p>
-									</div>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
@@ -207,22 +154,55 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid.html">tgrid</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_basic.html">tgrid.basic</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_protocols.html">tgrid.protocols</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_protocols_web.html">tgrid.protocols.web</a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/tgrid_protocols_workers.html">tgrid.protocols.workers</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/tgrid_utils.html">tgrid.utils</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/tgrid_protocols.iacceptor.state.html" class="tsd-kind-icon">State</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/tgrid_protocols_workers.sharedworkeracceptor.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Acceptor</a>
 					</li>
-					<li class=" tsd-kind-property tsd-parent-kind-module">
-						<a href="tgrid_protocols.iacceptor.html#state-1" class="tsd-kind-icon">state</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/tgrid_protocols_workers.sharedworkerconnector.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Connector</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="tgrid_protocols.iacceptor.html#inspect" class="tsd-kind-icon">inspect</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/tgrid_protocols_workers.sharedworkerserver.html" class="tsd-kind-icon">Shared<wbr>Worker<wbr>Server</a>
 					</li>
-					<li class=" tsd-kind-method tsd-parent-kind-module">
-						<a href="tgrid_protocols.iacceptor.html#listen" class="tsd-kind-icon">listen</a>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/tgrid_protocols_workers.workerconnector.html" class="tsd-kind-icon">Worker<wbr>Connector</a>
 					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/tgrid_protocols_workers.workerserver.html" class="tsd-kind-icon">Worker<wbr>Server</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="tgrid_protocols_workers.iworkersystem.html" class="tsd-kind-icon">IWorker<wbr>System</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="tgrid_protocols_workers.iworkersystem.html#close" class="tsd-kind-icon">close</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

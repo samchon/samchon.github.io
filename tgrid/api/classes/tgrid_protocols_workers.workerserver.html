@@ -74,24 +74,34 @@
 					<div class="lead">
 						<p>Worker Server.</p>
 					</div>
-					<p>The <code>WorkerServer</code> is a communicator class, used in worker environment, to interacting
-						with the remote client (browser or parent worker, anyway <code>WorkerConnector</code>) using RFC
-					(Remote Function Call).</p>
+					<p>The <code>WorkerServer</code> is a class representing a <code>Worker</code> server who can communicate with
+						remote client, parent and creator of the <code>Worker</code> (anyway <a href="tgrid_protocols_workers.workerconnector.html">WorkerConnector</a>), using
+					RFC (Remote Function Call).</p>
+					<p>Unlike other servers, <code>WorkerServer</code> can accept only a client (<a href="tgrid_protocols_workers.workerconnector.html">WorkerConnector</a>)
+						because the worker is dependent on its parent instance (web page, node or parent worker).
+						Thus, <code>WorkerServer</code> does not have any acceptor and communicates with client (its parent)
+					by itself.</p>
+					<p>To start communication with the remote client, call the <a href="tgrid_protocols_workers.workerserver.html#open">open</a>() method with special
+						<code>Provider</code>. After your business, don&#39;t forget terminating this worker using <a href="tgrid_protocols_workers.workerserver.html#close">close</a>()
+						or <a href="tgrid_protocols_workers.workerconnector.html#close">WorkerConnector.close</a>() method. If you don&#39;t terminate it, then vulnerable
+					memory and communication channel would be kept and it may cause the memory leak.</p>
 					<blockquote>
-						<p><code>Worker</code> is designed to support thread in browser, however, the <code>Worker</code> cannot share
-							memory variable at all. The only way to interact with <code>Worker</code> and its parent is
-						using communication channel with inter-promised message (IPC).</p>
-						<p>It seems like network communication, right? That&#39;s the reason why TGrid considers
+						<h4 id="why-workers-be-network-systems-">Why workers be network systems?</h4>
+						<p><code>Worker</code> is designed to support thread in JavaScript. However, the <code>Worker</code> cannot share
+							memory variable at all. The only way to interact with <code>Worker</code> and its parent is using
+						the <code>MessagePort</code> with inter-promised message (IPC, inter-process communication).</p>
+						<ul>
+							<li><em>Worker</em>, it&#39;s a type of <em>thread</em> in physical level.</li>
+							<li><em>Worker</em>, it&#39;s a type of <em>process</em> in logical level.</li>
+							<li><strong>Worker</strong>, it&#39;s same with <strong>network system</strong> in conceptual level.</li>
+						</ul>
+						<p>It seems like network communication, isn&#39;t it? That&#39;s the reason why TGrid considers
 							<code>Worker</code> as a remote system and supports RFC (Remote Function Call) in such worker
 						environments.</p>
 					</blockquote>
-					<p>You wanna interacting with the remote client, then call the <a href="tgrid_protocols_workers.workerserver.html#open">open()</a> method.
-						After the interaction, don&#39;t forget terminating this worker using <a href="tgrid_protocols_workers.workerserver.html#close">close()</a>
-						(or <a href="tgrid_protocols_workers.workerconnector.html#close">WorkerConnector.close()</a>). If you don&#39;t terminate it,
-					then vulnerable memory and communication channel leak would be happened.</p>
 					<dl class="tsd-comment-tags">
-						<dt>see</dt>
-						<dd><p><a href="tgrid_protocols_workers.workerconnector.html">WorkerConnector</a></p>
+						<dt>wiki</dt>
+						<dd><p><a href="https://github.com/samchon/tgrid/wiki/Workers">https://github.com/samchon/tgrid/wiki/Workers</a></p>
 						</dd>
 						<dt>author</dt>
 						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
@@ -118,6 +128,12 @@
 							</li>
 						</ul>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/tgrid_protocols_workers.iworkersystem.html" class="tsd-signature-type">IWorkerSystem</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -169,7 +185,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CommunicatorBase.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L45">protocols/workers/WorkerServer.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L57">protocols/workers/WorkerServer.ts:57</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -194,7 +210,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L126">protocols/workers/WorkerServer.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L138">protocols/workers/WorkerServer.ts:138</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -217,7 +233,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#provider">provider</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L120">basic/CommunicatorBase.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L121">basic/CommunicatorBase.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -241,7 +257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L144">protocols/workers/WorkerServer.ts:144</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L156">protocols/workers/WorkerServer.ts:156</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -266,14 +282,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/tgrid_protocols_workers.iworkersystem.html">IWorkerSystem</a>.<a href="../interfaces/tgrid_protocols_workers.iworkersystem.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L98">protocols/workers/WorkerServer.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L110">protocols/workers/WorkerServer.ts:110</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Close server.</p>
+									<p>Close connection.</p>
 								</div>
+								<p>Close connection between the remote worker system.</p>
+								<p>It destroies all RFCs (remote function calls) between this and the remote system
+									(through <code>Driver&lt;Controller&gt;</code>) that are not returned (completed) yet. The destruction
+								causes all incompleted RFCs to throw exceptions.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -290,7 +311,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#getdriver">getDriver</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L184">basic/CommunicatorBase.ts:184</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L185">basic/CommunicatorBase.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -334,7 +355,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L131">basic/CommunicatorBase.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L132">basic/CommunicatorBase.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -348,7 +369,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L139">basic/CommunicatorBase.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L140">basic/CommunicatorBase.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -372,7 +393,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L147">basic/CommunicatorBase.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L148">basic/CommunicatorBase.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -404,18 +425,18 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L73">protocols/workers/WorkerServer.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L85">protocols/workers/WorkerServer.ts:85</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Open server with <code>Provider</code>.</p>
 								</div>
-								<p>Open worker server and start interaction with the remote system (browser or parent
-								worker).</p>
-								<p>Note that, after the interaction, you should terminate this worker to prevent waste
-									of memory leak. Close this worker by yourself (<a href="tgrid_protocols_workers.workerserver.html#close">close()</a>) or let remote
-								client to close this worker (<a href="tgrid_protocols_workers.workerconnector.html#close">WorkerConnector.close()</a>).</p>
+								<p>Open worker server and start communication with the remote system
+								(<a href="tgrid_protocols_workers.workerconnector.html">WorkerConnector</a>).</p>
+								<p>Note that, after your business, you should terminate this worker to prevent waste
+									of memory leak. Close this worker by yourself (<a href="tgrid_protocols_workers.workerserver.html#close">close</a>) or let remote client to
+								close this worker (<a href="tgrid_protocols_workers.workerconnector.html#close">WorkerConnector.close</a>).</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -508,6 +529,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/tgrid_protocols_workers.iworkersystem.html" class="tsd-kind-icon">IWorker<wbr>System</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

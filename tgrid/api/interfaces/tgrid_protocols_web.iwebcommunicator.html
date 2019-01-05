@@ -143,19 +143,19 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/internal/IWebCommunicator.ts#L23">protocols/web/internal/IWebCommunicator.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/web/internal/IWebCommunicator.ts#L24">protocols/web/internal/IWebCommunicator.ts:24</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Close connection.</p>
 								</div>
-								<p>Close connection with the remote websocket server and destroy all remote function
-									calls those are not returned (finished) yet. It would also destroy all the remote
-								function calls in the remote system (by <code>Driver&lt;Controller</code>&gt;), too.</p>
-								<p>If parameters <em>code</em> and <em>reason</em> are specified, it means the disconnection is
-									abnormal and it would throw exceptions (<code>WebError</code>) to the unreturned remote
-								function calls.</p>
+								<p>Close connection with the remote websocket system.</p>
+								<p>It destories all RFCs (remote function calls) between this and remote websocket system
+									(through <code>Driver&lt;Controller&gt;</code>) that are not returned (completed) yet. The destruction
+								causes all incompleted RFCs to throw exceptions.</p>
+								<p>If parametric <em>code</em> and <em>reason</em> are specified, it means the disconnection is
+								abnormal and it would throw special exceptions (<code>WebError</code>) to the incompleted RFCs.</p>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">

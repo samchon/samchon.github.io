@@ -69,6 +69,45 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>SharedWorker Connector</p>
+						<ul>
+							<li>available only in Web Browser.</li>
+						</ul>
+					</div>
+					<p>The <code>SharedWorkerConnector</code> is a communicator class, who can connect to an <code>SharedWorker</code>
+						instance and communicate with it using RFC (Remote Function Call), considering the
+					<code>SharedWorker</code> as a remote system (<a href="tgrid_protocols_workers.workerserver.html">WorkerServer</a>).</p>
+					<p>You can connect to an <code>SharedWorker</code> instance with <a href="tgrid_protocols_workers.sharedworkerconnector.html#connect">connect</a>() method. If the
+						<code>SharedWorker</code> instance does not exist yet, a new <code>SharedWorker</code> instance would be newly
+						created. After the creation, you have to let the <code>SharedWorker</code> program to open a sever
+						using the <a href="tgrid_protocols_workers.sharedworkerserver.html#open">SharedWorkerServer.open</a>() method. Your connection would be linked with
+					a <a href="tgrid_protocols_workers.sharedworkeracceptor.html">SharedWorkerAcceptor</a> object in the server.</p>
+					<p>Note that, although you called the <a href="tgrid_protocols_workers.sharedworkerconnector.html#connect">connect</a>() method and the connection has been
+						succeded, it means only server <a href="tgrid_protocols_workers.sharedworkeracceptor.html#accept">accepted</a> your connection
+						request. The acceptance does not mean that server is ready to start communication directly.
+						The server would be ready when it calls the <a href="tgrid_protocols_workers.sharedworkeracceptor.html#listen">SharedWorkerAcceptor.listen</a>() method.
+					If you want to ensure the server to be ready, call the <a href="tgrid_protocols_workers.sharedworkerconnector.html#wait">wait</a>() method.</p>
+					<p>After your business has been completed, you&#39;ve to close the <code>SharedWorker</code> using one of
+						them below. If you don&#39;t close that, vulnerable memory usage and communication channel
+					would not be destroyed and it may cause the memory leak:</p>
+					<ul>
+						<li><a href="tgrid_protocols_workers.sharedworkerconnector.html#close">close</a>()</li>
+						<li><a href="tgrid_protocols_workers.sharedworkeracceptor.html#close">SharedWorkerAcceptor.close</a>()</li>
+						<li><a href="tgrid_protocols_workers.sharedworkerserver.html#close">SharedWorkerServer.close</a>()</li>
+					</ul>
+					<dl class="tsd-comment-tags">
+						<dt>wiki</dt>
+						<dd><p><a href="https://github.com/samchon/tgrid/wiki/Workers">https://github.com/samchon/tgrid/wiki/Workers</a></p>
+						</dd>
+						<dt>author</dt>
+						<dd><p>Jeongho Nam <a href="http://samchon.org">http://samchon.org</a></p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -93,7 +132,8 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../modules/tgrid_protocols.iconnector.html" class="tsd-signature-type">IConnector</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SharedWorkerConnector.State</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/tgrid_protocols_workers.iworkersystem.html" class="tsd-signature-type">IWorkerSystem</a></li>
+					<li><span class="tsd-signature-type">IConnector</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">SharedWorkerConnector.State</span><span class="tsd-signature-symbol">&gt;</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -141,13 +181,23 @@
 							<aside class="tsd-sources">
 								<p>Overrides CommunicatorBase.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L41">protocols/workers/SharedWorkerConnector.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L73">protocols/workers/SharedWorkerConnector.ts:73</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Initializer Constructor.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> provider: <span class="tsd-signature-type">Provider</span><span class="tsd-signature-symbol"> =&nbsp;null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>An object providing features (functions &amp; objects) for remote system.</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="tgrid_protocols_workers.sharedworkerconnector.html" class="tsd-signature-type">SharedWorkerConnector</a></h4>
@@ -168,7 +218,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#provider">provider</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L120">basic/CommunicatorBase.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L121">basic/CommunicatorBase.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -192,7 +242,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L135">protocols/workers/SharedWorkerConnector.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L196">protocols/workers/SharedWorkerConnector.ts:196</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -217,14 +267,19 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/tgrid_protocols_workers.iworkersystem.html">IWorkerSystem</a>.<a href="../interfaces/tgrid_protocols_workers.iworkersystem.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L108">protocols/workers/SharedWorkerConnector.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L169">protocols/workers/SharedWorkerConnector.ts:169</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Close connection.</p>
 								</div>
+								<p>Close connection between the remote worker system.</p>
+								<p>It destroies all RFCs (remote function calls) between this and the remote system
+									(through <code>Driver&lt;Controller&gt;</code>) that are not returned (completed) yet. The destruction
+								causes all incompleted RFCs to throw exceptions.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
@@ -240,13 +295,38 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L59">protocols/workers/SharedWorkerConnector.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L120">protocols/workers/SharedWorkerConnector.ts:120</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Connect to remote server.</p>
+								</div>
+								<p>The <a href="tgrid_protocols_workers.sharedworkerconnector.html#connect">connect</a>() method tries to connect an <code>SharedWorker</code> instance. If the
+									<code>SharedWorker</code> instance is not created yet, the <code>SharedWorker</code> instance would be newly
+									created. After the creation, the <code>SharedWorker</code> program must open that server using
+								the <a href="tgrid_protocols_workers.sharedworkerserver.html#open">SharedWorkerServer.open</a>() method.</p>
+								<p>Note that, although the connection has been succeded, it means only server accepted
+									your connection request; <a href="tgrid_protocols_workers.sharedworkeracceptor.html#accept">SharedWorkerAcceptor.accept</a>(). The acceptance does not
+									mean that server is ready to start communication directly. The server would be ready
+									when it calls the <a href="tgrid_protocols_workers.sharedworkeracceptor.html#listen">SharedWorkerAcceptor.listen</a>() method. If you want to ensure
+								the server to be ready, call the <a href="tgrid_protocols_workers.sharedworkerconnector.html#wait">wait</a>() method.</p>
+								<p>After you business has been completed, you&#39;ve to close the <code>SharedWorker</code> using one of
+									them below. If you don&#39;t close that, vulnerable memory usage and communication channel
+								would not be destroyed and it may cause the memory leak:</p>
+								<ul>
+									<li><a href="tgrid_protocols_workers.sharedworkerconnector.html#close">close</a>()</li>
+									<li>{@link ShareDWorkerAcceptor.close}()</li>
+									<li><a href="tgrid_protocols_workers.sharedworkerserver.html#close">SharedWorkerServer.close</a>()</li>
+								</ul>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>jsFile: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>JS File to be <a href="tgrid_protocols_workers.sharedworkerserver.html">SharedWorkerServer</a>.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -264,7 +344,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#getdriver">getDriver</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L184">basic/CommunicatorBase.ts:184</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L185">basic/CommunicatorBase.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -308,7 +388,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L131">basic/CommunicatorBase.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L132">basic/CommunicatorBase.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -322,7 +402,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L139">basic/CommunicatorBase.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L140">basic/CommunicatorBase.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -346,7 +426,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L147">basic/CommunicatorBase.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L148">basic/CommunicatorBase.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -380,56 +460,62 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L143">protocols/workers/SharedWorkerConnector.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L206">protocols/workers/SharedWorkerConnector.ts:206</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Wait server to be ready.</p>
+								</div>
+								<p>Wait the server to call the <a href="tgrid_protocols_workers.sharedworkeracceptor.html#listen">SharedWorkerAcceptor.listen</a>() method.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L148">protocols/workers/SharedWorkerConnector.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L214">protocols/workers/SharedWorkerConnector.ts:214</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Wait server to be ready or timeout.</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>ms: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The maximum milliseconds for waiting.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Whether awaken by completion or timeout.</p>
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L153">protocols/workers/SharedWorkerConnector.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L222">protocols/workers/SharedWorkerConnector.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<dl class="tsd-comment-tags">
-									<dt>inheritdoc</dt>
-									<dd></dd>
-								</dl>
+								<div class="lead">
+									<p>Wait server to be ready or time expiration.</p>
+								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>at: <span class="tsd-signature-type">Date</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The maximum time point to wait.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Whether awaken by completion or time expiration.</p>
 						</li>
 					</ul>
 				</section>
@@ -443,16 +529,25 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L258">protocols/workers/SharedWorkerConnector.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L333">protocols/workers/SharedWorkerConnector.ts:333</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Compile JS source code.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>content: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Source code</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>Temporary URL.</p>
 						</li>
 					</ul>
 				</section>
@@ -466,13 +561,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L263">protocols/workers/SharedWorkerConnector.ts:263</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/SharedWorkerConnector.ts#L343">protocols/workers/SharedWorkerConnector.ts:343</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Remove compiled JS file.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>url: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Temporary URL.</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -559,6 +662,9 @@
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="tgrid_protocols_workers.workerserver.html" class="tsd-kind-icon">Worker<wbr>Server</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/tgrid_protocols_workers.iworkersystem.html" class="tsd-kind-icon">IWorker<wbr>System</a>
 					</li>
 				</ul>
 			</nav>
