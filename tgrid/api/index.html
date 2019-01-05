@@ -97,8 +97,7 @@ npm install --save tgrid</code></pre>
     <span class="hljs-keyword">await</span> server.open(<span class="hljs-number">10101</span>, <span class="hljs-keyword">async</span> acceptor =&gt;
     {
         <span class="hljs-comment">// accept connection &amp; provide Vector</span>
-        <span class="hljs-keyword">await</span> acceptor.accept();
-        <span class="hljs-keyword">await</span> acceptor.listen(<span class="hljs-keyword">new</span> Vector&lt;<span class="hljs-built_in">number</span>&gt;());
+        <span class="hljs-keyword">await</span> acceptor.accept(<span class="hljs-keyword">new</span> Vector&lt;<span class="hljs-built_in">number</span>&gt;());
     });
 }
 main();</code></pre>
@@ -114,15 +113,9 @@ main();</code></pre>
 
 <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>): <span class="hljs-title">Promise</span>&lt;<span class="hljs-title">void</span>&gt;
 </span>{
-    <span class="hljs-comment">//----</span>
-    <span class="hljs-comment">// PREPARE</span>
-    <span class="hljs-comment">//----</span>
     <span class="hljs-comment">// do connect</span>
     <span class="hljs-keyword">let</span> connector = <span class="hljs-keyword">new</span> WebConnector();
     <span class="hljs-keyword">await</span> connector.connect(<span class="hljs-string">"ws://127.0.0.1:10101"</span>);
-
-    <span class="hljs-comment">// wait server to provide the Vector</span>
-    <span class="hljs-keyword">await</span> connector.wait();
 
     <span class="hljs-comment">//----</span>
     <span class="hljs-comment">// CALL FUNCTIONS IN THE REMOTE SYSTEM</span>

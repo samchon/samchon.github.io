@@ -85,20 +85,6 @@
 						<code>Provider</code>. After your business, don&#39;t forget terminating this worker using <a href="tgrid_protocols_workers.workerserver.html#close">close</a>()
 						or <a href="tgrid_protocols_workers.workerconnector.html#close">WorkerConnector.close</a>() method. If you don&#39;t terminate it, then vulnerable
 					memory and communication channel would be kept and it may cause the memory leak.</p>
-					<blockquote>
-						<h4 id="why-workers-be-network-systems-">Why workers be network systems?</h4>
-						<p><code>Worker</code> is designed to support thread in JavaScript. However, the <code>Worker</code> cannot share
-							memory variable at all. The only way to interact with <code>Worker</code> and its parent is using
-						the <code>MessagePort</code> with inter-promised message (IPC, inter-process communication).</p>
-						<ul>
-							<li><em>Worker</em>, it&#39;s a type of <em>thread</em> in physical level.</li>
-							<li><em>Worker</em>, it&#39;s a type of <em>process</em> in logical level.</li>
-							<li><strong>Worker</strong>, it&#39;s same with <strong>network system</strong> in conceptual level.</li>
-						</ul>
-						<p>It seems like network communication, isn&#39;t it? That&#39;s the reason why TGrid considers
-							<code>Worker</code> as a remote system and supports RFC (Remote Function Call) in such worker
-						environments.</p>
-					</blockquote>
 					<dl class="tsd-comment-tags">
 						<dt>wiki</dt>
 						<dd><p><a href="https://github.com/samchon/tgrid/wiki/Workers">https://github.com/samchon/tgrid/wiki/Workers</a></p>
@@ -114,6 +100,11 @@
 				<ul class="tsd-type-parameters">
 					<li>
 						<h4>Provider<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Type of features provided for remote system.</p>
+							</div>
+						</div>
 					</li>
 				</ul>
 			</section>
@@ -185,7 +176,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CommunicatorBase.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L57">protocols/workers/WorkerServer.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/protocols/workers/WorkerServer.ts#L45">protocols/workers/WorkerServer.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -210,7 +201,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L138">protocols/workers/WorkerServer.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/protocols/workers/WorkerServer.ts#L134">protocols/workers/WorkerServer.ts:134</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -233,7 +224,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#provider">provider</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L121">basic/CommunicatorBase.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/basic/CommunicatorBase.ts#L121">basic/CommunicatorBase.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -257,7 +248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L156">protocols/workers/WorkerServer.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/protocols/workers/WorkerServer.ts#L126">protocols/workers/WorkerServer.ts:126</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -284,7 +275,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/tgrid_protocols_workers.iworkersystem.html">IWorkerSystem</a>.<a href="../interfaces/tgrid_protocols_workers.iworkersystem.html#close">close</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L110">protocols/workers/WorkerServer.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/protocols/workers/WorkerServer.ts#L98">protocols/workers/WorkerServer.ts:98</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -311,7 +302,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#getdriver">getDriver</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L185">basic/CommunicatorBase.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/basic/CommunicatorBase.ts#L185">basic/CommunicatorBase.ts:185</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +346,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L132">basic/CommunicatorBase.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/basic/CommunicatorBase.ts#L132">basic/CommunicatorBase.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -369,7 +360,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L140">basic/CommunicatorBase.ts:140</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/basic/CommunicatorBase.ts#L140">basic/CommunicatorBase.ts:140</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -393,7 +384,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="tgrid_basic.communicatorbase.html">CommunicatorBase</a>.<a href="tgrid_basic.communicatorbase.html#join">join</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/basic/CommunicatorBase.ts#L148">basic/CommunicatorBase.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/basic/CommunicatorBase.ts#L148">basic/CommunicatorBase.ts:148</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -425,7 +416,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/6f1a80f/src/protocols/workers/WorkerServer.ts#L85">protocols/workers/WorkerServer.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/samchon/tgrid/blob/b20305e/src/protocols/workers/WorkerServer.ts#L73">protocols/workers/WorkerServer.ts:73</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
